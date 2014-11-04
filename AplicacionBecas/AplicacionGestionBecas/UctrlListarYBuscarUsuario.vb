@@ -35,7 +35,10 @@ Public Class UctrlListarYBuscarUsuario
 
     Public Sub btnCrearUsuario_Click(sender As Object, e As EventArgs) Handles btnCrearUsuario.Click
         FrmIniciarSesion.principal.Controls.Add(ucntrlUsuario)
+<<<<<<< HEAD
         ucntrlUsuario.setLista(Me)
+=======
+>>>>>>> origin/prophet94
         ucntrlUsuario.Location = New Point(300, 100)
         ucntrlUsuario.BringToFront()
         ucntrlUsuario.Show()
@@ -76,7 +79,10 @@ Public Class UctrlListarYBuscarUsuario
     Public Sub eliminarUsuario(ByVal parametro As String)
         Dim ucntrl As UctrlEliminarUsuario = New UctrlEliminarUsuario()
         ucntrl.setParametro(parametro)
+<<<<<<< HEAD
         ucntrl.refrescarLista(Me)
+=======
+>>>>>>> origin/prophet94
         'FrmIniciarSesion.principal.Controls.Add(ctrlUsuario)
         Me.Controls.Add(ucntrl)
         Me.dgUsuarios.SendToBack()
@@ -84,6 +90,10 @@ Public Class UctrlListarYBuscarUsuario
         ucntrl.BringToFront()
         ucntrl.Location = New Point(280, 250)
         ucntrl.Show()
+<<<<<<< HEAD
+=======
+        refrescarLista()
+>>>>>>> origin/prophet94
     End Sub
 
     '<summary> Método que se encarga de modificar un usuario del sistema</summary>
@@ -135,6 +145,13 @@ Public Class UctrlListarYBuscarUsuario
         End Try
 
     End Sub
+<<<<<<< HEAD
+=======
+    Public Sub refrescarLista()
+        dgUsuarios.Rows.Clear()
+        listarUsuarios()
+    End Sub
+>>>>>>> origin/prophet94
 
 End Class
 

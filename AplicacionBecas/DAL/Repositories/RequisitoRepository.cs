@@ -13,7 +13,10 @@ namespace DAL.Repositories
 {
     public class RequisitoRepository : IRepository<Requisito>
     {
+<<<<<<< HEAD
         public string actividad;
+=======
+>>>>>>> origin/prophet94
         private static RequisitoRepository instance;
         private List<IEntity> _insertItems;
         private List<IEntity> _deleteItems;
@@ -240,9 +243,12 @@ namespace DAL.Repositories
 
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_crearRequisito");
 
+<<<<<<< HEAD
                 actividad = "Se ha Registrado un Requisito";
                 registrarAccion(actividad);
 
+=======
+>>>>>>> origin/prophet94
             }
             catch (Exception ex)
             {
@@ -262,10 +268,17 @@ namespace DAL.Repositories
 
                 cmd.Parameters.Add(new SqlParameter("@nombre", objRequisito.nombre));
                 cmd.Parameters.Add(new SqlParameter("@ubicacion", objRequisito.descripcion));
+<<<<<<< HEAD
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "");
 
                 actividad = "Se ha Editado un Requisito";
                 registrarAccion(actividad);
+=======
+
+
+
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "");
+>>>>>>> origin/prophet94
 
             }
             catch (Exception ex)
@@ -284,10 +297,14 @@ namespace DAL.Repositories
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Parameters.Add(new SqlParameter("@", objRequisito.Id));
+<<<<<<< HEAD
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "");
 
                 actividad = "Se ha Eliminado un Requisito";
                 registrarAccion(actividad);
+=======
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "pa_borrar_Musculo");
+>>>>>>> origin/prophet94
 
             }
             catch (SqlException ex)
@@ -303,6 +320,7 @@ namespace DAL.Repositories
             }
         }
 
+<<<<<<< HEAD
         public void registrarAccion(string pactividad)
         {
 
@@ -329,5 +347,7 @@ namespace DAL.Repositories
 
         }
 
+=======
+>>>>>>> origin/prophet94
     }
 }

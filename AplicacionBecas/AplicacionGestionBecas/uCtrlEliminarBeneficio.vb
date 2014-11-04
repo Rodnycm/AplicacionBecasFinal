@@ -5,7 +5,10 @@
     Dim porcentaje As Double
     Dim aplicabilidad As String
     Dim uCtrl As uCntrlBuscarBeneficio
+<<<<<<< HEAD
     Dim mBlnFormDragging As Boolean
+=======
+>>>>>>> origin/prophet94
 
 
     ''' <summary>
@@ -49,6 +52,7 @@
 
     Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
 
+<<<<<<< HEAD
         Try
 
             objGestorBeneficio.eliminarBeneficio(id, nombre, porcentaje, aplicabilidad)
@@ -74,6 +78,11 @@
 
 
         End Try
+=======
+        objGestorBeneficio.eliminarBeneficio(id, nombre, porcentaje, aplicabilidad)
+        MsgBox("beneficio eliminado")
+        objGestorBeneficio.guardarCambios()
+>>>>>>> origin/prophet94
 
         uCtrl.dtaBuscarBeneficio.Rows.Clear()
         uCtrl.listarBeneficios()
@@ -95,6 +104,7 @@
         Me.Dispose()
         Me.Hide()
     End Sub
+<<<<<<< HEAD
 
     Private Sub uCtrlEliminarBeneficio_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Me.MouseMove
 
@@ -121,4 +131,6 @@
 
     End Sub
 
+=======
+>>>>>>> origin/prophet94
 End Class

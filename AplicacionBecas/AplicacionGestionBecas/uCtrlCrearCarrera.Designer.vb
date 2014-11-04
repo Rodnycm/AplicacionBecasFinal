@@ -32,6 +32,8 @@ Partial Class uCtrlCrearCarrera
         Me.cmbAcademico = New System.Windows.Forms.ComboBox()
         Me.btnColor = New System.Windows.Forms.Button()
         Me.btnAñadir = New System.Windows.Forms.Button()
+        Me.btnCerrar = New System.Windows.Forms.Button()
+        Me.btnCancelar = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
@@ -76,6 +78,7 @@ Partial Class uCtrlCrearCarrera
         '
         'txtNombre
         '
+        Me.txtNombre.BackColor = System.Drawing.Color.White
         Me.txtNombre.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNombre.Location = New System.Drawing.Point(199, 69)
         Me.txtNombre.Name = "txtNombre"
@@ -113,19 +116,48 @@ Partial Class uCtrlCrearCarrera
         '
         'btnAñadir
         '
-        Me.btnAñadir.Location = New System.Drawing.Point(275, 243)
+        Me.btnAñadir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAñadir.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAñadir.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(248, Byte), Integer))
+        Me.btnAñadir.Location = New System.Drawing.Point(337, 268)
         Me.btnAñadir.Name = "btnAñadir"
-        Me.btnAñadir.Size = New System.Drawing.Size(75, 23)
+        Me.btnAñadir.Size = New System.Drawing.Size(86, 29)
         Me.btnAñadir.TabIndex = 8
         Me.btnAñadir.Text = "Añadir"
         Me.btnAñadir.UseVisualStyleBackColor = True
         '
-        'uCtrlCarrera
+        'btnCerrar
+        '
+        Me.btnCerrar.BackColor = System.Drawing.Color.Transparent
+        Me.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCerrar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(248, Byte), Integer))
+        Me.btnCerrar.Location = New System.Drawing.Point(438, 3)
+        Me.btnCerrar.Name = "btnCerrar"
+        Me.btnCerrar.Size = New System.Drawing.Size(20, 21)
+        Me.btnCerrar.TabIndex = 19
+        Me.btnCerrar.UseVisualStyleBackColor = False
+        '
+        'btnCancelar
+        '
+        Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCancelar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(248, Byte), Integer))
+        Me.btnCancelar.Location = New System.Drawing.Point(233, 268)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(86, 29)
+        Me.btnCancelar.TabIndex = 20
+        Me.btnCancelar.Text = "Cancelar"
+        Me.btnCancelar.UseVisualStyleBackColor = True
+        '
+        'uCtrlCrearCarrera
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.Controls.Add(Me.btnCancelar)
+        Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.btnAñadir)
         Me.Controls.Add(Me.btnColor)
         Me.Controls.Add(Me.cmbAcademico)
@@ -136,7 +168,7 @@ Partial Class uCtrlCrearCarrera
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Location = New System.Drawing.Point(300, 100)
-        Me.Name = "uCtrlCarrera"
+        Me.Name = "uCtrlCrearCarrera"
         Me.Size = New System.Drawing.Size(461, 321)
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -151,5 +183,7 @@ Partial Class uCtrlCrearCarrera
     Friend WithEvents cmbAcademico As System.Windows.Forms.ComboBox
     Friend WithEvents btnColor As System.Windows.Forms.Button
     Friend WithEvents btnAñadir As System.Windows.Forms.Button
+    Friend WithEvents btnCerrar As System.Windows.Forms.Button
+    Friend WithEvents btnCancelar As System.Windows.Forms.Button
 
 End Class

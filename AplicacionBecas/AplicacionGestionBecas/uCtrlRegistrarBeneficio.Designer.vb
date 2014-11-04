@@ -22,6 +22,7 @@ Partial Class uCtrlRegistrarBeneficio
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+<<<<<<< HEAD
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(uCtrlRegistrarBeneficio))
         Me.btnCerrar = New System.Windows.Forms.Button()
         Me.lblCrear = New System.Windows.Forms.Label()
@@ -88,31 +89,73 @@ Partial Class uCtrlRegistrarBeneficio
         Me.btnAñadir.Text = "Añadir"
         Me.btnAñadir.UseVisualStyleBackColor = False
         '
+=======
+        Me.txtAplicacion = New System.Windows.Forms.TextBox()
+        Me.txPorcentaje = New System.Windows.Forms.TextBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.lblAplicacion = New System.Windows.Forms.Label()
+        Me.txtPorcentaje = New System.Windows.Forms.TextBox()
+        Me.lblPorcentaje = New System.Windows.Forms.Label()
+        Me.txtNombre = New System.Windows.Forms.TextBox()
+        Me.lblNombre = New System.Windows.Forms.Label()
+        Me.lblCrear = New System.Windows.Forms.Label()
+        Me.btnCancelar = New System.Windows.Forms.Button()
+        Me.btnAñadir = New System.Windows.Forms.Button()
+        Me.btnCerrar = New System.Windows.Forms.Button()
+        Me.SuspendLayout()
+        '
+>>>>>>> origin/prophet94
         'txtAplicacion
         '
         Me.txtAplicacion.Font = New System.Drawing.Font("Segoe UI Light", 9.75!)
         Me.txtAplicacion.ForeColor = System.Drawing.Color.Black
+<<<<<<< HEAD
         Me.txtAplicacion.Location = New System.Drawing.Point(193, 201)
         Me.txtAplicacion.Margin = New System.Windows.Forms.Padding(4)
         Me.txtAplicacion.Name = "txtAplicacion"
         Me.txtAplicacion.Size = New System.Drawing.Size(121, 25)
         Me.txtAplicacion.TabIndex = 29
+=======
+        Me.txtAplicacion.Location = New System.Drawing.Point(179, 191)
+        Me.txtAplicacion.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtAplicacion.Name = "txtAplicacion"
+        Me.txtAplicacion.Size = New System.Drawing.Size(121, 25)
+        Me.txtAplicacion.TabIndex = 19
+>>>>>>> origin/prophet94
         '
         'txPorcentaje
         '
         Me.txPorcentaje.Font = New System.Drawing.Font("Segoe UI Light", 9.75!)
         Me.txPorcentaje.ForeColor = System.Drawing.Color.Black
+<<<<<<< HEAD
         Me.txPorcentaje.Location = New System.Drawing.Point(193, 140)
         Me.txPorcentaje.Margin = New System.Windows.Forms.Padding(4)
         Me.txPorcentaje.Name = "txPorcentaje"
         Me.txPorcentaje.Size = New System.Drawing.Size(121, 25)
         Me.txPorcentaje.TabIndex = 28
+=======
+        Me.txPorcentaje.Location = New System.Drawing.Point(179, 132)
+        Me.txPorcentaje.Margin = New System.Windows.Forms.Padding(4)
+        Me.txPorcentaje.Name = "txPorcentaje"
+        Me.txPorcentaje.Size = New System.Drawing.Size(121, 25)
+        Me.txPorcentaje.TabIndex = 18
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(454, 393)
+        Me.TextBox1.Margin = New System.Windows.Forms.Padding(4)
+        Me.TextBox1.Multiline = True
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(2, 2)
+        Me.TextBox1.TabIndex = 17
+>>>>>>> origin/prophet94
         '
         'lblAplicacion
         '
         Me.lblAplicacion.AutoSize = True
         Me.lblAplicacion.BackColor = System.Drawing.Color.Transparent
         Me.lblAplicacion.Font = New System.Drawing.Font("Segoe UI Light", 12.75!)
+<<<<<<< HEAD
         Me.lblAplicacion.Location = New System.Drawing.Point(32, 199)
         Me.lblAplicacion.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblAplicacion.Name = "lblAplicacion"
@@ -120,16 +163,43 @@ Partial Class uCtrlRegistrarBeneficio
         Me.lblAplicacion.TabIndex = 27
         Me.lblAplicacion.Text = "A que se aplica"
         '
+=======
+        Me.lblAplicacion.Location = New System.Drawing.Point(18, 189)
+        Me.lblAplicacion.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblAplicacion.Name = "lblAplicacion"
+        Me.lblAplicacion.Size = New System.Drawing.Size(120, 23)
+        Me.lblAplicacion.TabIndex = 16
+        Me.lblAplicacion.Text = "A que se aplica"
+        '
+        'txtPorcentaje
+        '
+        Me.txtPorcentaje.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(248, Byte), Integer))
+        Me.txtPorcentaje.Location = New System.Drawing.Point(269, 161)
+        Me.txtPorcentaje.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtPorcentaje.Multiline = True
+        Me.txtPorcentaje.Name = "txtPorcentaje"
+        Me.txtPorcentaje.Size = New System.Drawing.Size(2, 2)
+        Me.txtPorcentaje.TabIndex = 15
+        '
+>>>>>>> origin/prophet94
         'lblPorcentaje
         '
         Me.lblPorcentaje.AutoSize = True
         Me.lblPorcentaje.BackColor = System.Drawing.Color.Transparent
         Me.lblPorcentaje.Font = New System.Drawing.Font("Segoe UI Light", 12.75!)
+<<<<<<< HEAD
         Me.lblPorcentaje.Location = New System.Drawing.Point(31, 140)
         Me.lblPorcentaje.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblPorcentaje.Name = "lblPorcentaje"
         Me.lblPorcentaje.Size = New System.Drawing.Size(131, 23)
         Me.lblPorcentaje.TabIndex = 26
+=======
+        Me.lblPorcentaje.Location = New System.Drawing.Point(17, 130)
+        Me.lblPorcentaje.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblPorcentaje.Name = "lblPorcentaje"
+        Me.lblPorcentaje.Size = New System.Drawing.Size(131, 23)
+        Me.lblPorcentaje.TabIndex = 14
+>>>>>>> origin/prophet94
         Me.lblPorcentaje.Text = "Porcentaje (0.00)"
         '
         'txtNombre
@@ -137,17 +207,26 @@ Partial Class uCtrlRegistrarBeneficio
         Me.txtNombre.BackColor = System.Drawing.Color.White
         Me.txtNombre.Font = New System.Drawing.Font("Segoe UI Light", 9.75!)
         Me.txtNombre.ForeColor = System.Drawing.Color.Black
+<<<<<<< HEAD
         Me.txtNombre.Location = New System.Drawing.Point(193, 86)
         Me.txtNombre.Margin = New System.Windows.Forms.Padding(4)
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(121, 25)
         Me.txtNombre.TabIndex = 25
+=======
+        Me.txtNombre.Location = New System.Drawing.Point(179, 76)
+        Me.txtNombre.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtNombre.Name = "txtNombre"
+        Me.txtNombre.Size = New System.Drawing.Size(121, 25)
+        Me.txtNombre.TabIndex = 13
+>>>>>>> origin/prophet94
         '
         'lblNombre
         '
         Me.lblNombre.AutoSize = True
         Me.lblNombre.BackColor = System.Drawing.Color.Transparent
         Me.lblNombre.Font = New System.Drawing.Font("Segoe UI Light", 12.75!)
+<<<<<<< HEAD
         Me.lblNombre.Location = New System.Drawing.Point(31, 86)
         Me.lblNombre.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblNombre.Name = "lblNombre"
@@ -155,12 +234,78 @@ Partial Class uCtrlRegistrarBeneficio
         Me.lblNombre.TabIndex = 24
         Me.lblNombre.Text = "Nombre"
         '
+=======
+        Me.lblNombre.Location = New System.Drawing.Point(17, 76)
+        Me.lblNombre.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblNombre.Name = "lblNombre"
+        Me.lblNombre.Size = New System.Drawing.Size(71, 23)
+        Me.lblNombre.TabIndex = 12
+        Me.lblNombre.Text = "Nombre"
+        '
+        'lblCrear
+        '
+        Me.lblCrear.AutoSize = True
+        Me.lblCrear.BackColor = System.Drawing.Color.Transparent
+        Me.lblCrear.Font = New System.Drawing.Font("Segoe UI Light", 13.0!)
+        Me.lblCrear.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.lblCrear.Location = New System.Drawing.Point(17, 0)
+        Me.lblCrear.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblCrear.Name = "lblCrear"
+        Me.lblCrear.Size = New System.Drawing.Size(53, 25)
+        Me.lblCrear.TabIndex = 22
+        Me.lblCrear.Text = "Crear"
+        '
+        'btnCancelar
+        '
+        Me.btnCancelar.BackColor = System.Drawing.Color.Transparent
+        Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCancelar.Font = New System.Drawing.Font("Segoe UI Light", 12.75!)
+        Me.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(248, Byte), Integer))
+        Me.btnCancelar.Location = New System.Drawing.Point(231, 290)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(86, 29)
+        Me.btnCancelar.TabIndex = 21
+        Me.btnCancelar.Text = "Cancelar"
+        Me.btnCancelar.UseVisualStyleBackColor = False
+        '
+        'btnAñadir
+        '
+        Me.btnAñadir.BackColor = System.Drawing.Color.Transparent
+        Me.btnAñadir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAñadir.Font = New System.Drawing.Font("Segoe UI Light", 12.75!)
+        Me.btnAñadir.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(248, Byte), Integer))
+        Me.btnAñadir.Location = New System.Drawing.Point(354, 290)
+        Me.btnAñadir.Name = "btnAñadir"
+        Me.btnAñadir.Size = New System.Drawing.Size(86, 29)
+        Me.btnAñadir.TabIndex = 20
+        Me.btnAñadir.Text = "Añadir"
+        Me.btnAñadir.UseVisualStyleBackColor = False
+        '
+        'btnCerrar
+        '
+        Me.btnCerrar.BackColor = System.Drawing.Color.Transparent
+        Me.btnCerrar.BackgroundImage = Global.UI.My.Resources.Resources.cerrar
+        Me.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnCerrar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(248, Byte), Integer))
+        Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCerrar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(248, Byte), Integer))
+        Me.btnCerrar.Location = New System.Drawing.Point(451, 4)
+        Me.btnCerrar.Name = "btnCerrar"
+        Me.btnCerrar.Size = New System.Drawing.Size(20, 21)
+        Me.btnCerrar.TabIndex = 23
+        Me.btnCerrar.UseVisualStyleBackColor = False
+        '
+>>>>>>> origin/prophet94
         'uCtrlRegistrarBeneficio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 23.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
+<<<<<<< HEAD
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+=======
+        Me.BackgroundImage = Global.UI.My.Resources.Resources.tablaFinalMedianaAzul
+>>>>>>> origin/prophet94
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.lblCrear)
@@ -168,7 +313,13 @@ Partial Class uCtrlRegistrarBeneficio
         Me.Controls.Add(Me.btnAñadir)
         Me.Controls.Add(Me.txtAplicacion)
         Me.Controls.Add(Me.txPorcentaje)
+<<<<<<< HEAD
         Me.Controls.Add(Me.lblAplicacion)
+=======
+        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.lblAplicacion)
+        Me.Controls.Add(Me.txtPorcentaje)
+>>>>>>> origin/prophet94
         Me.Controls.Add(Me.lblPorcentaje)
         Me.Controls.Add(Me.txtNombre)
         Me.Controls.Add(Me.lblNombre)
@@ -180,15 +331,29 @@ Partial Class uCtrlRegistrarBeneficio
         Me.PerformLayout()
 
     End Sub
+<<<<<<< HEAD
     Friend WithEvents btnCerrar As System.Windows.Forms.Button
     Friend WithEvents lblCrear As System.Windows.Forms.Label
+=======
+>>>>>>> origin/prophet94
     Friend WithEvents btnCancelar As System.Windows.Forms.Button
     Friend WithEvents btnAñadir As System.Windows.Forms.Button
     Friend WithEvents txtAplicacion As System.Windows.Forms.TextBox
     Friend WithEvents txPorcentaje As System.Windows.Forms.TextBox
+<<<<<<< HEAD
     Friend WithEvents lblAplicacion As System.Windows.Forms.Label
     Friend WithEvents lblPorcentaje As System.Windows.Forms.Label
     Friend WithEvents txtNombre As System.Windows.Forms.TextBox
     Friend WithEvents lblNombre As System.Windows.Forms.Label
+=======
+    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents lblAplicacion As System.Windows.Forms.Label
+    Friend WithEvents txtPorcentaje As System.Windows.Forms.TextBox
+    Friend WithEvents lblPorcentaje As System.Windows.Forms.Label
+    Friend WithEvents txtNombre As System.Windows.Forms.TextBox
+    Friend WithEvents lblNombre As System.Windows.Forms.Label
+    Friend WithEvents lblCrear As System.Windows.Forms.Label
+    Friend WithEvents btnCerrar As System.Windows.Forms.Button
+>>>>>>> origin/prophet94
 
 End Class

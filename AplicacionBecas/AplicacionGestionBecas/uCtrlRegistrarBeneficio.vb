@@ -32,6 +32,7 @@
             porcentaje = CType(txPorcentaje.Text, Double)
             asociacion = txtAplicacion.Text
 
+<<<<<<< HEAD
             Try
                 objGestorBeneficio.agregarBeneficio(nombre, porcentaje, asociacion)
                 objGestorBeneficio.guardarCambios()
@@ -64,6 +65,16 @@
             UCtrl.Location = New Point(300, 100)
             UCtrl.BringToFront()
             UCtrl.Show()
+=======
+            objGestorBeneficio.agregarBeneficio(nombre, porcentaje, asociacion)
+            objGestorBeneficio.guardarCambios()
+
+            MsgBox("El Beneficio se creo correctamente")
+
+        Else
+
+            MsgBox("El Porcentaje debe ser un numero")
+>>>>>>> origin/prophet94
 
         End If
 

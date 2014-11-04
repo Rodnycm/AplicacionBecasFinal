@@ -12,6 +12,7 @@
 
         InitializeComponent()
         MenuLateral.Renderer = New MyRenderer()
+        MenuHorizontal.Renderer = New MyRenderer2()
 
     End Sub
 
@@ -21,6 +22,7 @@
         ucMenuMant.Hide()
         ucMenuAcad.Hide()
         ucMenuMant.uCtrlMantCarreras.Dispose()
+        ucMenuMant.uCtrlMantRequisitos.Dispose()
         btnsMenus.Show()
 
     End Sub
@@ -96,6 +98,23 @@ Public Class MyRenderer
 
         Dim rc As New Rectangle(Point.Empty, e.Item.Size)
         Dim c As Color = IIf(e.Item.Selected, Color.FromArgb(96, 96, 96), Color.FromArgb(0, 48, 44, 43))
+
+        Using brush As New SolidBrush(c)
+            e.Graphics.FillRectangle(brush, rc)
+        End Using
+
+    End Sub
+
+End Class
+
+Public Class MyRenderer2
+
+    Inherits ToolStripProfessionalRenderer
+
+    Protected Overloads Overrides Sub OnRenderMenuItemBackground(ByVal e As ToolStripItemRenderEventArgs)
+
+        Dim rc As New Rectangle(Point.Empty, e.Item.Size)
+        Dim c As Color = IIf(e.Item.Selected, Color.FromArgb(50, 133, 43, 153), Color.FromArgb(0, 48, 44, 43))
 
         Using brush As New SolidBrush(c)
             e.Graphics.FillRectangle(brush, rc)

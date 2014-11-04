@@ -13,7 +13,10 @@ namespace DAL.Repositories
 {
     public class RolRepository : IRepository<Rol>
     {
+<<<<<<< HEAD
         private string actividad;
+=======
+>>>>>>> origin/prophet94
         private static RolRepository instance;
         private List<IEntity> _insertItems;
         private List<IEntity> _deleteItems;
@@ -80,7 +83,11 @@ namespace DAL.Repositories
             List<Rol> pRol = null;
 
             SqlCommand cmd = new SqlCommand();
+<<<<<<< HEAD
             DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_listarRol");
+=======
+            DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_consultarRoles");
+>>>>>>> origin/prophet94
 
             if (ds.Tables[0].Rows.Count > 0)
             {
@@ -89,7 +96,11 @@ namespace DAL.Repositories
                 {
                     pRol.Add(new Rol
                     {
+<<<<<<< HEAD
                         Id = Convert.ToInt32(dr["IdRol"]),
+=======
+                        //Id = Convert.ToInt32(dr["IdRol"]),
+>>>>>>> origin/prophet94
                         Nombre = dr["Nombre"].ToString()
                     });
                 }
@@ -238,9 +249,12 @@ namespace DAL.Repositories
                 cmd.Parameters.Add(new SqlParameter("@Nombre", objRol.Nombre));
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_agregarRol");
 
+<<<<<<< HEAD
 
                 actividad = "Se ha registrado un Rol";
                 registrarAccion(actividad);
+=======
+>>>>>>> origin/prophet94
             }
             catch (Exception ex)
             {
@@ -264,9 +278,12 @@ namespace DAL.Repositories
                 cmd.Parameters.Add(new SqlParameter("@Nombre", objRol.Nombre));
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_modificarRol");
 
+<<<<<<< HEAD
 
                 actividad = "Se ha Editado un Rol";
                 registrarAccion(actividad);
+=======
+>>>>>>> origin/prophet94
             }
             catch (Exception ex)
             {
@@ -285,10 +302,13 @@ namespace DAL.Repositories
                 cmd.Parameters.Add(new SqlParameter("@IdRol", objRol.Id));
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_eliminarRol");
 
+<<<<<<< HEAD
 
                 actividad = "Se ha Eliminado un Rol";
                 registrarAccion(actividad);
 
+=======
+>>>>>>> origin/prophet94
             }
             catch (SqlException ex)
             {
@@ -305,6 +325,7 @@ namespace DAL.Repositories
             }
         }
 
+<<<<<<< HEAD
         public void registrarAccion(string pactividad)
         {
 
@@ -331,5 +352,7 @@ namespace DAL.Repositories
 
         }
 
+=======
+>>>>>>> origin/prophet94
     }
 }

@@ -74,6 +74,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CrearCursos.Designer.vb">
+      <DependentUpon>CrearCursos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CrearCursos.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="DB_Proyecto2DataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -208,6 +214,12 @@
     <Compile Include="uCtrlEliminarBeneficio.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="uCtrlEliminarCurso.Designer.vb">
+      <DependentUpon>uCtrlEliminarCurso.vb</DependentUpon>
+    </Compile>
+    <Compile Include="uCtrlEliminarCurso.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="uCtrlEliminarRol.Designer.vb">
       <DependentUpon>uCtrlEliminarRol.vb</DependentUpon>
     </Compile>
@@ -292,6 +304,12 @@
     <Compile Include="uCtrlModificarCarrera.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="uCtrlModificarCurso.Designer.vb">
+      <DependentUpon>uCtrlModificarCurso.vb</DependentUpon>
+    </Compile>
+    <Compile Include="uCtrlModificarCurso.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="uCtrlModificarRol.Designer.vb">
       <DependentUpon>uCtrlModificarRol.vb</DependentUpon>
     </Compile>
@@ -324,6 +342,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CrearCursos.resx">
+      <DependentUpon>CrearCursos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmIniciarSesion.resx">
       <DependentUpon>FrmIniciarSesion.vb</DependentUpon>
     </EmbeddedResource>
@@ -384,6 +405,9 @@
     <EmbeddedResource Include="uCtrlEliminarBeneficio.resx">
       <DependentUpon>uCtrlEliminarBeneficio.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="uCtrlEliminarCurso.resx">
+      <DependentUpon>uCtrlEliminarCurso.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="uCtrlEliminarRol.resx">
       <DependentUpon>uCtrlEliminarRol.vb</DependentUpon>
     </EmbeddedResource>
@@ -425,6 +449,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="uCtrlModificarCarrera.resx">
       <DependentUpon>uCtrlModificarCarrera.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uCtrlModificarCurso.resx">
+      <DependentUpon>uCtrlModificarCurso.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="uCtrlModificarRol.resx">
       <DependentUpon>uCtrlModificarRol.vb</DependentUpon>

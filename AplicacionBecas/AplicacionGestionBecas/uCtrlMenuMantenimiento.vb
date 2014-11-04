@@ -11,7 +11,7 @@
 
         Me.Hide()
         uCtrlMantRequisitos = New uCtrlMantenimientoRequisitos()
-        frmPrincipal.Controls.Add(uCtrlMantRequisitos)
+        FrmIniciarSesion.principal.Controls.Add(uCtrlMantRequisitos)
         uCtrlMantRequisitos.Show()
 
     End Sub
@@ -24,7 +24,7 @@
 
         Me.Hide()
         uCtrlMantCursos = New uCtrlMantenimientoCursos()
-        frmPrincipal.Controls.Add(uCtrlMantCursos)
+        FrmIniciarSesion.principal.Controls.Add(uCtrlMantCursos)
         uCtrlMantCursos.Show()
 
     End Sub
@@ -37,7 +37,7 @@
 
         Me.Hide()
         uCtrlMantCarreras = New uCtrlMantenimientoCarreras()
-        frmPrincipal.Controls.Add(uCtrlMantCarreras)
+        FrmIniciarSesion.principal.Controls.Add(uCtrlMantCarreras)
         uCtrlMantCarreras.Show()
 
     End Sub

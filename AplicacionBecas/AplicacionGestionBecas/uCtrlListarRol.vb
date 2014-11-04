@@ -45,8 +45,12 @@ Public Class uCtrlListarRol
             uCtrlModRol.recieveData(value1, idROl)
             uCtrlModRol.txtNombre.Text = CType(value1, String)
             uCtrlModRol.getFrmBuscar(Me)
+<<<<<<< HEAD
             'frmPrincipal.Controls.Add(uCtrlModRol)
             frmIniciarSesion.principal.Controls.Add(uCtrlModRol)
+=======
+            frmPrincipal.Controls.Add(uCtrlModRol)
+>>>>>>> origin/prophet94
             uCtrlModRol.Show()
             uCtrlModRol.BringToFront()
             uCtrlModRol.Location = New Point(250, 170)
@@ -67,8 +71,12 @@ Public Class uCtrlListarRol
             Dim uCtrlEliRol As New uCtrlEliminarRol()
             uCtrlEliRol.recieveData(value1, idROl)
             uCtrlEliRol.getFrmBuscar(Me)
+<<<<<<< HEAD
             'frmPrincipal.Controls.Add(uCtrlEliRol)
             frmIniciarSesion.principal.Controls.Add(uCtrlEliRol)
+=======
+            frmPrincipal.Controls.Add(uCtrlEliRol)
+>>>>>>> origin/prophet94
             uCtrlEliRol.Show()
             uCtrlEliRol.Location = New Point(256, 226)
             uCtrlEliRol.BringToFront()
@@ -92,8 +100,12 @@ Public Class uCtrlListarRol
             uCtrlConsulRol.recieveData(value1, idROl)
             uCtrlConsulRol.txtNombre.Text = value1
             uCtrlConsulRol.getFrmBuscar(Me)
+<<<<<<< HEAD
             frmIniciarSesion.principal.Controls.Add(uCtrlConsulRol)
             'frmPrincipal.Controls.Add(uCtrlConsulRol)
+=======
+            frmPrincipal.Controls.Add(uCtrlConsulRol)
+>>>>>>> origin/prophet94
             uCtrlConsulRol.Show()
             uCtrlConsulRol.BringToFront()
             uCtrlConsulRol.Location = New Point(250, 170)
@@ -146,7 +158,11 @@ Public Class uCtrlListarRol
     Private Sub btnCrearRoles_Click(sender As Object, e As EventArgs) Handles btnCrearRoles.Click
         uCtrlRol = New UCntrlRegistrarRol()
         uCtrlRol.getFrmBuscar(Me)
+<<<<<<< HEAD
         frmIniciarSesion.principal.Controls.Add(uCtrlRol)
+=======
+        frmPrincipal.Controls.Add(uCtrlRol)
+>>>>>>> origin/prophet94
         uCtrlRol.BringToFront()
         uCtrlRol.Show()
         uCtrlRol.Location = New Point(250, 170)

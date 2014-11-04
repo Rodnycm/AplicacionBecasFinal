@@ -1,12 +1,20 @@
+<<<<<<< HEAD
 
 Imports EntitiesLayer
+=======
+﻿Imports EntitiesLayer
+>>>>>>> origin/prophet94
 Public Class UctrlModificarUsuario
 
     Dim idUsuario As Integer
     Dim parametro As String
     Dim ucntrl As UctrlListarYBuscarUsuario
+<<<<<<< HEAD
     Dim alerta As UctrlAlerta
     Dim mBlnFormDragging As Boolean
+=======
+    Dim alerta As UctrlAlerta = New UctrlAlerta()
+>>>>>>> origin/prophet94
 
 
     Public Sub setIdUsuario(ByVal pid As Integer)
@@ -36,7 +44,10 @@ Public Class UctrlModificarUsuario
                 cmbRoles.Items.Add(listaRoles(i).Nombre)
             Next
         Catch ex As Exception
+<<<<<<< HEAD
             alerta = New UctrlAlerta
+=======
+>>>>>>> origin/prophet94
             alerta.lblAlerta.Text = ex.Message
             FrmIniciarSesion.principal.Controls.Add(alerta)
             alerta.BringToFront()
@@ -106,7 +117,10 @@ Public Class UctrlModificarUsuario
             ucntrl.listarUsuarios()
             Me.Dispose()
         Catch ex As Exception
+<<<<<<< HEAD
             alerta = New UctrlAlerta()
+=======
+>>>>>>> origin/prophet94
             alerta.lblAlerta.Text = ex.Message
             FrmIniciarSesion.principal.Controls.Add(alerta)
             alerta.BringToFront()
@@ -123,6 +137,7 @@ Public Class UctrlModificarUsuario
         ucntrl.Show()
     End Sub
 
+<<<<<<< HEAD
     Public Sub uCtrlModificarUsuario_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Me.MouseMove
 
         If mBlnFormDragging = True Then
@@ -149,5 +164,7 @@ Public Class UctrlModificarUsuario
     End Sub
 
 
+=======
+>>>>>>> origin/prophet94
 
 End Class

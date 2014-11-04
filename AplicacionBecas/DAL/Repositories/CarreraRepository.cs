@@ -7,14 +7,13 @@ using System.Collections;
 using System.Transactions;
 using System.Data.SqlClient;
 using System.Data;
-using DAL.Repositories;
 
-namespace DAL
+namespace DAL.Repositories
 {
 
     public class CarreraRepository : IRepository<Carrera>
     {
-        public string actividad;
+
         private static CarreraRepository instance;
         private List<IEntity> _insertItems;
         private List<IEntity> _deleteItems;
@@ -70,6 +69,7 @@ namespace DAL
 
             List<Carrera> pCarrera = null;
             SqlCommand cmd = new SqlCommand();
+            Usuario directorAcademico = null;
             DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_consultarCarreras");
 
             if (ds.Tables[0].Rows.Count > 0)
@@ -78,15 +78,15 @@ namespace DAL
                 pCarrera = new List<Carrera>();
                 foreach (DataRow dr in ds.Tables[0].Rows)
                 {
-
+                    string idDirector = Convert.ToString(dr["Fk_Tb_Personas_Tb_Usuarios_Identicacion"]);
+                    directorAcademico = UsuarioRepository.Instance.GetByNombre(idDirector);
                     pCarrera.Add(new Carrera
                     {
-
                         nombre = dr["Nombre"].ToString(),
-                        codigo = dr["Código"].ToString(),
+                        codigo = dr["Codigo"].ToString(),
                         color = dr["Color"].ToString(),
-                        Id = Convert.ToInt32(dr["id"])
-                        //DirectorAcademico = dr["director"].ToString()
+                        Id = Convert.ToInt32(dr["idCarrera"]),
+                        directorAcademico = directorAcademico
                     });
                 }
             }
@@ -94,11 +94,31 @@ namespace DAL
             return pCarrera;
         }
 
+
         public Carrera GetByNombre(String parametro)
         {
-            Carrera objCarrera = null;
 
-            return objCarrera;
+            Carrera carrera = new Carrera();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Parameters.AddWithValue("@parametro", parametro);
+
+            DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_buscarCarrera");
+
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                var dr = ds.Tables[0].Rows[0];
+
+                carrera = new Carrera
+                {
+                    codigo = dr["Codigo"].ToString(),
+                    nombre = dr["Nombre"].ToString(),
+                    color = dr["Color"].ToString(),
+                };
+
+                carrera.Id = Convert.ToInt32(dr["idCarrera"]);
+            }
+            Console.WriteLine(carrera);
+            return carrera;
         }
 
         public Carrera GetById(int id)
@@ -121,7 +141,7 @@ namespace DAL
                     nombre = dr["nombre"].ToString(),
                     codigo = dr["tipo"].ToString(),
                     color = dr["color"].ToString(),
-                    directorAcademico = dr["director"].ToString()
+                    //directorAcademico = dr["director"].ToString()
                 };
             }
 
@@ -150,13 +170,13 @@ namespace DAL
                         }
                     }
 
-                    if (_updateItems.Count > 0)
-                    {
-                        foreach (Carrera p in _updateItems)
-                        {
-                            UpdateCarrera(p);
-                        }
-                    }
+                    //if (_updateItems.Count > 0)
+                    //{
+                    //    foreach (Carrera p in _updateItems)
+                    //    {
+                    //        UpdateCarrera(p);
+                    //    }
+                    //}
 
                     if (_deleteItems.Count > 0)
                     {
@@ -203,20 +223,17 @@ namespace DAL
 
             try
             {
-
                 SqlCommand cmd = new SqlCommand();
+                cmd.Parameters.Add(new SqlParameter("@Codigo", objCarrera.codigo));
                 cmd.Parameters.Add(new SqlParameter("@Nombre", objCarrera.nombre));
-                cmd.Parameters.Add(new SqlParameter("@Código", objCarrera.codigo));
                 cmd.Parameters.Add(new SqlParameter("@Color", objCarrera.color));
+                cmd.Parameters.Add(new SqlParameter("@DirectorAcademico", objCarrera.directorAcademico.Id));
 
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_agregarCarrera");
-
-                actividad = "Se ha Registrado una Carrera";
-                registrarAccion(actividad);
             }
             catch (Exception ex)
             {
-
+                throw ex;
             }
         }
 
@@ -224,23 +241,18 @@ namespace DAL
         ///<param name="objCarrera">Objeto de tipo carrera</param>
         //<autor>Alvaro Artavia</autor>
 
-        private void UpdateCarrera(Carrera objCarrera)
+        public void UpdateCarrera(Carrera objCarrera, Usuario antiguo)
         {
-
             try
             {
-
                 SqlCommand cmd = new SqlCommand();
-
-                cmd.Parameters.Add(new SqlParameter("@Nombre", objCarrera.nombre));
+                cmd.Parameters.Add(new SqlParameter("@antiguo", antiguo.Id ));
                 cmd.Parameters.Add(new SqlParameter("@Codigo", objCarrera.codigo));
+                cmd.Parameters.Add(new SqlParameter("@Nombre", objCarrera.nombre));
                 cmd.Parameters.Add(new SqlParameter("@Color", objCarrera.color));
                 cmd.Parameters.Add(new SqlParameter("@idCarrera", objCarrera.Id));
-                //cmd.Parameters.Add(new SqlParameter("@directorAcademico", objCarrera.DirectorAcademico));
+                cmd.Parameters.Add(new SqlParameter("@DirectorAcademico", objCarrera.directorAcademico.Id));
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_modificarCarrera");
-
-                actividad = "Se ha Editado una Carrera";
-                registrarAccion(actividad);
 
             }
             catch (Exception ex)
@@ -258,11 +270,8 @@ namespace DAL
             {
 
                 SqlCommand cmd = new SqlCommand();
-                cmd.Parameters.Add(new SqlParameter("@Codigo", objCarrera.codigo));
-                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_eliminarCarrera");
-
-                actividad = "Se ha Eliminado una Carrera";
-                registrarAccion(actividad);
+                cmd.Parameters.Add(new SqlParameter("@codigo", objCarrera.codigo));
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_borrarCarrera");
 
             }
             catch (SqlException ex)
@@ -271,31 +280,6 @@ namespace DAL
                 //throw new DataAccessException("Ha ocurrido un error al eliminar un usuario", ex);
             }
         }
-
-        public void registrarAccion(string pactividad)
-        {
-
-            RegistroAccion objRegistro;
-            DateTime fecha = DateTime.Today;
-            string nombreUsuario = Globals.userName;
-            string nombreRol = Globals.userRol.Nombre;
-            string descripcion = pactividad;
-
-
-            objRegistro = new RegistroAccion(nombreUsuario, nombreRol, descripcion, fecha);
-
-            try
-            {
-
-                RegistroAccionRepository objRegistroRep = new RegistroAccionRepository();
-                objRegistroRep.InsertAccion(objRegistro);
-            }
-            catch (Exception e)
-            {
-
-                throw e;
-            }
-
-        }
     }
 }
+

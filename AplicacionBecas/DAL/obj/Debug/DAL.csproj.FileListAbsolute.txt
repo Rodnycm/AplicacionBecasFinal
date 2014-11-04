@@ -1,3 +1,35 @@
+<<<<<<< HEAD
+=======
+C:\Users\Prophet\Desktop\AplicacionBecas\DAL\bin\Debug\DAL.dll
+C:\Users\Prophet\Desktop\AplicacionBecas\DAL\bin\Debug\DAL.pdb
+C:\Users\Prophet\Desktop\AplicacionBecas\DAL\bin\Debug\EntitiesLayer.dll
+C:\Users\Prophet\Desktop\AplicacionBecas\DAL\bin\Debug\EntitiesLayer.pdb
+C:\Users\Prophet\Desktop\AplicacionBecas\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\Prophet\Desktop\AplicacionBecas\DAL\obj\Debug\DAL.Properties.Resources.resources
+C:\Users\Prophet\Desktop\AplicacionBecas\DAL\obj\Debug\DAL.csproj.GenerateResource.Cache
+C:\Users\Prophet\Desktop\AplicacionBecas\DAL\obj\Debug\DAL.dll
+C:\Users\Prophet\Desktop\AplicacionBecas\DAL\obj\Debug\DAL.pdb
+C:\Users\Mathias\Documents\GitHub\AplicacionBecas\AplicacionBecas\DAL\bin\Debug\DAL.dll
+C:\Users\Mathias\Documents\GitHub\AplicacionBecas\AplicacionBecas\DAL\bin\Debug\DAL.pdb
+C:\Users\Mathias\Documents\GitHub\AplicacionBecas\AplicacionBecas\DAL\bin\Debug\EntitiesLayer.dll
+C:\Users\Mathias\Documents\GitHub\AplicacionBecas\AplicacionBecas\DAL\bin\Debug\EntitiesLayer.pdb
+C:\Users\Mathias\Documents\GitHub\AplicacionBecas\AplicacionBecas\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\Mathias\Documents\GitHub\AplicacionBecas\AplicacionBecas\DAL\obj\Debug\DAL.Properties.Resources.resources
+C:\Users\Mathias\Documents\GitHub\AplicacionBecas\AplicacionBecas\DAL\obj\Debug\DAL.csproj.GenerateResource.Cache
+C:\Users\Mathias\Documents\GitHub\AplicacionBecas\AplicacionBecas\DAL\obj\Debug\DAL.dll
+C:\Users\Mathias\Documents\GitHub\AplicacionBecas\AplicacionBecas\DAL\obj\Debug\DAL.pdb
+C:\Users\backi_000\Documents\GitHub\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\DAL\bin\Debug\DAL.dll
+C:\Users\backi_000\Documents\GitHub\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\DAL\bin\Debug\DAL.pdb
+C:\Users\backi_000\Documents\GitHub\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\DAL\bin\Debug\EntitiesLayer.dll
+C:\Users\backi_000\Documents\GitHub\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\DAL\bin\Debug\TIL.dll
+C:\Users\backi_000\Documents\GitHub\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\DAL\bin\Debug\EntitiesLayer.pdb
+C:\Users\backi_000\Documents\GitHub\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\DAL\bin\Debug\TIL.pdb
+C:\Users\backi_000\Documents\GitHub\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\backi_000\Documents\GitHub\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\DAL\obj\Debug\DAL.Properties.Resources.resources
+C:\Users\backi_000\Documents\GitHub\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\DAL\obj\Debug\DAL.csproj.GenerateResource.Cache
+C:\Users\backi_000\Documents\GitHub\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\DAL\obj\Debug\DAL.dll
+C:\Users\backi_000\Documents\GitHub\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\DAL\obj\Debug\DAL.pdb
+>>>>>>> origin/prophet94
 R:\Horus\GitHub\AplicacionBecas\AplicacionBecas\DAL\bin\Debug\DAL.dll
 R:\Horus\GitHub\AplicacionBecas\AplicacionBecas\DAL\bin\Debug\DAL.pdb
 R:\Horus\GitHub\AplicacionBecas\AplicacionBecas\DAL\bin\Debug\EntitiesLayer.dll
@@ -9,6 +41,7 @@ R:\Horus\GitHub\AplicacionBecas\AplicacionBecas\DAL\obj\Debug\DAL.Properties.Res
 R:\Horus\GitHub\AplicacionBecas\AplicacionBecas\DAL\obj\Debug\DAL.csproj.GenerateResource.Cache
 R:\Horus\GitHub\AplicacionBecas\AplicacionBecas\DAL\obj\Debug\DAL.dll
 R:\Horus\GitHub\AplicacionBecas\AplicacionBecas\DAL\obj\Debug\DAL.pdb
+<<<<<<< HEAD
 C:\Users\Mathias\Documents\GitHub\AplicacionBecas\AplicacionBecas\DAL\bin\Debug\DAL.dll
 C:\Users\Mathias\Documents\GitHub\AplicacionBecas\AplicacionBecas\DAL\bin\Debug\DAL.pdb
 C:\Users\Mathias\Documents\GitHub\AplicacionBecas\AplicacionBecas\DAL\bin\Debug\EntitiesLayer.dll
@@ -20,3 +53,29 @@ C:\Users\Mathias\Documents\GitHub\AplicacionBecas\AplicacionBecas\DAL\obj\Debug\
 C:\Users\Mathias\Documents\GitHub\AplicacionBecas\AplicacionBecas\DAL\obj\Debug\DAL.csproj.GenerateResource.Cache
 C:\Users\Mathias\Documents\GitHub\AplicacionBecas\AplicacionBecas\DAL\obj\Debug\DAL.dll
 C:\Users\Mathias\Documents\GitHub\AplicacionBecas\AplicacionBecas\DAL\obj\Debug\DAL.pdb
+=======
+C:\Users\Mathias\Documents\GitHub\AplicacionBecas\AplicacionBecas\DAL\bin\Debug\TIL.dll
+C:\Users\Mathias\Documents\GitHub\AplicacionBecas\AplicacionBecas\DAL\bin\Debug\TIL.pdb
+C:\Users\Prophet\Desktop\Nueva carpeta\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\DAL\bin\Debug\DAL.dll
+C:\Users\Prophet\Desktop\Nueva carpeta\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\DAL\bin\Debug\DAL.pdb
+C:\Users\Prophet\Desktop\Nueva carpeta\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\DAL\bin\Debug\EntitiesLayer.dll
+C:\Users\Prophet\Desktop\Nueva carpeta\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\DAL\bin\Debug\TIL.dll
+C:\Users\Prophet\Desktop\Nueva carpeta\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\DAL\bin\Debug\EntitiesLayer.pdb
+C:\Users\Prophet\Desktop\Nueva carpeta\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\DAL\bin\Debug\TIL.pdb
+C:\Users\Prophet\Desktop\Nueva carpeta\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\Prophet\Desktop\Nueva carpeta\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\DAL\obj\Debug\DAL.Properties.Resources.resources
+C:\Users\Prophet\Desktop\Nueva carpeta\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\DAL\obj\Debug\DAL.csproj.GenerateResource.Cache
+C:\Users\Prophet\Desktop\Nueva carpeta\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\DAL\obj\Debug\DAL.dll
+C:\Users\Prophet\Desktop\Nueva carpeta\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\DAL\obj\Debug\DAL.pdb
+C:\Users\Prophet\Desktop\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\DAL\bin\Debug\DAL.dll
+C:\Users\Prophet\Desktop\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\DAL\bin\Debug\DAL.pdb
+C:\Users\Prophet\Desktop\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\DAL\bin\Debug\EntitiesLayer.dll
+C:\Users\Prophet\Desktop\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\DAL\bin\Debug\TIL.dll
+C:\Users\Prophet\Desktop\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\DAL\bin\Debug\EntitiesLayer.pdb
+C:\Users\Prophet\Desktop\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\DAL\bin\Debug\TIL.pdb
+C:\Users\Prophet\Desktop\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\Prophet\Desktop\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\DAL\obj\Debug\DAL.Properties.Resources.resources
+C:\Users\Prophet\Desktop\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\DAL\obj\Debug\DAL.csproj.GenerateResource.Cache
+C:\Users\Prophet\Desktop\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\DAL\obj\Debug\DAL.dll
+C:\Users\Prophet\Desktop\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\DAL\obj\Debug\DAL.pdb
+>>>>>>> origin/prophet94

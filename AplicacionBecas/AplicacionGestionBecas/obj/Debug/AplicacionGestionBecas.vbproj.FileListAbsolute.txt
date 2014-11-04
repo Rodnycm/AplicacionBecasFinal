@@ -1,0 +1,27 @@
+c:\users\prophet\documents\visual studio 2013\Projects\AplicacionGestionBecas\AplicacionGestionBecas\bin\Debug\AplicacionGestionBecas.exe.config
+c:\users\prophet\documents\visual studio 2013\Projects\AplicacionGestionBecas\AplicacionGestionBecas\bin\Debug\AplicacionGestionBecas.exe
+c:\users\prophet\documents\visual studio 2013\Projects\AplicacionGestionBecas\AplicacionGestionBecas\bin\Debug\AplicacionGestionBecas.pdb
+c:\users\prophet\documents\visual studio 2013\Projects\AplicacionGestionBecas\AplicacionGestionBecas\bin\Debug\AplicacionGestionBecas.xml
+c:\users\prophet\documents\visual studio 2013\Projects\AplicacionGestionBecas\AplicacionGestionBecas\obj\Debug\AplicacionGestionBecas.Form1.resources
+c:\users\prophet\documents\visual studio 2013\Projects\AplicacionGestionBecas\AplicacionGestionBecas\obj\Debug\AplicacionGestionBecas.Resources.resources
+c:\users\prophet\documents\visual studio 2013\Projects\AplicacionGestionBecas\AplicacionGestionBecas\obj\Debug\AplicacionGestionBecas.vbproj.GenerateResource.Cache
+c:\users\prophet\documents\visual studio 2013\Projects\AplicacionGestionBecas\AplicacionGestionBecas\obj\Debug\AplicacionGestionBecas.exe
+c:\users\prophet\documents\visual studio 2013\Projects\AplicacionGestionBecas\AplicacionGestionBecas\obj\Debug\AplicacionGestionBecas.xml
+c:\users\prophet\documents\visual studio 2013\Projects\AplicacionGestionBecas\AplicacionGestionBecas\obj\Debug\AplicacionGestionBecas.pdb
+c:\users\prophet\documents\visual studio 2013\Projects\AplicacionGestionBecas\AplicacionGestionBecas\obj\Debug\AplicacionGestionBecas.uctrlMenu.resources
+C:\Users\Prophet\documents\visual studio 2013\Projects\AplicacionGestionBecas\AplicacionGestionBecas\obj\Debug\AplicacionGestionBecas.vbprojResolveAssemblyReference.cache
+C:\Users\Prophet\documents\visual studio 2013\Projects\AplicacionGestionBecas\AplicacionGestionBecas\obj\Debug\AplicacionGestionBecas.uCtrlMenuMantenimiento.resources
+C:\Users\Prophet\Desktop\AplicacionBecas\AplicacionGestionBecas\bin\Debug\AplicacionGestionBecas.exe.config
+C:\Users\Prophet\Desktop\AplicacionBecas\AplicacionGestionBecas\bin\Debug\AplicacionGestionBecas.exe
+C:\Users\Prophet\Desktop\AplicacionBecas\AplicacionGestionBecas\bin\Debug\AplicacionGestionBecas.pdb
+C:\Users\Prophet\Desktop\AplicacionBecas\AplicacionGestionBecas\bin\Debug\AplicacionGestionBecas.xml
+C:\Users\Prophet\Desktop\AplicacionBecas\AplicacionGestionBecas\obj\Debug\AplicacionGestionBecas.frmPrincipal.resources
+C:\Users\Prophet\Desktop\AplicacionBecas\AplicacionGestionBecas\obj\Debug\AplicacionGestionBecas.Resources.resources
+C:\Users\Prophet\Desktop\AplicacionBecas\AplicacionGestionBecas\obj\Debug\AplicacionGestionBecas.uCtrlMenuAcademico.resources
+C:\Users\Prophet\Desktop\AplicacionBecas\AplicacionGestionBecas\obj\Debug\AplicacionGestionBecas.uCtrlMenuBecas.resources
+C:\Users\Prophet\Desktop\AplicacionBecas\AplicacionGestionBecas\obj\Debug\AplicacionGestionBecas.uCtrlMenuMantenimiento.resources
+C:\Users\Prophet\Desktop\AplicacionBecas\AplicacionGestionBecas\obj\Debug\AplicacionGestionBecas.uCtrlMenuReportes.resources
+C:\Users\Prophet\Desktop\AplicacionBecas\AplicacionGestionBecas\obj\Debug\AplicacionGestionBecas.vbproj.GenerateResource.Cache
+C:\Users\Prophet\Desktop\AplicacionBecas\AplicacionGestionBecas\obj\Debug\AplicacionGestionBecas.exe
+C:\Users\Prophet\Desktop\AplicacionBecas\AplicacionGestionBecas\obj\Debug\AplicacionGestionBecas.xml
+C:\Users\Prophet\Desktop\AplicacionBecas\AplicacionGestionBecas\obj\Debug\AplicacionGestionBecas.pdb

@@ -2,7 +2,7 @@
 
 Public Class uCtrlMantenimientoCarreras
 
-    Public Property uCtrlCarrera As uCtrlCrearCarrera = New uCtrlCrearCarrera()
+    Public Property uCtrlCarrera As uCtrlCrearCarrera
 
     ''' <summary>Metodo que se ejecuta cuando el usuario da click al boton crear carrera, muestra 
     ''' al usuario los datos para crear una carrera</summary>
@@ -11,7 +11,7 @@ Public Class uCtrlMantenimientoCarreras
     Private Sub btnMantenimiento_Click(sender As Object, e As EventArgs) Handles btnMantenimiento.Click
 
         uCtrlCarrera = New uCtrlCrearCarrera()
-        frmPrincipal.Controls.Add(uCtrlCarrera)
+        FrmIniciarSesion.principal.Controls.Add(uCtrlCarrera)
         uCtrlCarrera.BringToFront()
         uCtrlCarrera.Show()
 
@@ -22,15 +22,13 @@ Public Class uCtrlMantenimientoCarreras
 
     Public Sub listarCarreras()
 
+        dgvCarreras.Rows.Clear()
         Dim listaCarreras As New List(Of Carrera)
         listaCarreras = objGestorCarrera.consultarCarreras
 
-        For k As Integer = 0 To listaCarreras.Count - 1
+        For Each carrera As Carrera In listaCarreras
 
-            dgvCarreras.Rows.Add(1)
-            dgvCarreras.Rows(k).Cells(0).Value = listaCarreras.Item(k).Nombre
-            dgvCarreras.Rows(k).Cells(1).Value = listaCarreras.Item(k).codigo
-            dgvCarreras.Rows(k).Cells(4).Value = listaCarreras.Item(k).Id
+            dgvCarreras.Rows.Add(carrera.codigo, carrera.nombre, carrera.directorAcademico.primerNombre & " " & carrera.directorAcademico.primerApellido & " " & carrera.directorAcademico.segundoApellido, "", "", carrera.Id)
 
         Next
 
@@ -38,7 +36,7 @@ Public Class uCtrlMantenimientoCarreras
 
     Private Sub dgvConsultaCarreras_EditingControlShowing(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewEditingControlShowingEventArgs) Handles dgvCarreras.EditingControlShowing
         ' Only for a DatagridComboBoxColumn at ColumnIndex 1.
-        If dgvCarreras.CurrentCell.ColumnIndex = 3 Then
+        If dgvCarreras.CurrentCell.ColumnIndex = 4 Then
             Dim combo As ComboBox = CType(e.Control, ComboBox)
             If (combo IsNot Nothing) Then
                 ' Remove an existing event-handler, if present, to avoid 
@@ -62,8 +60,6 @@ Public Class uCtrlMantenimientoCarreras
 
         If combo.SelectedItem = "Editar" Then
 
-
-            MsgBox(fila)
             modificarCarrera(fila)
 
         ElseIf combo.SelectedItem = "Eliminar" Then
@@ -80,7 +76,6 @@ Public Class uCtrlMantenimientoCarreras
 
     End Sub
 
-
     ''' <summary>Metodo encargado instanciar la pantalla de modificar carrera y enviar los datos</summary>
     ''' <param name="numfila">Numero de fila en la que se encuentra el combobox</param>
     ''' <autor>Alvaro Artavia</autor>
@@ -90,12 +85,16 @@ Public Class uCtrlMantenimientoCarreras
         Dim value1 As Object = dgvCarreras.Rows(numfila).Cells(0).Value
         Dim value2 As Object = dgvCarreras.Rows(numfila).Cells(1).Value
         Dim value3 As Object = dgvCarreras.Rows(numfila).Cells(2).Value
+        Dim value4 As Object = dgvCarreras.Rows(numfila).Cells(5).Value
 
         Dim uCtrlModCarrera As New uCtrlModificarCarrera()
         uCtrlModCarrera.txtCodigo.Text = CType(value1, String)
         uCtrlModCarrera.txtNombre.Text = CType(value2, String)
+        uCtrlModCarrera.idCarrera = CType(value4, Integer)
+        uCtrlModCarrera.cmbAcademico.Text = value3
+        uCtrlModCarrera.directorAntiguo = value3
         uCtrlModCarrera.mantenimientoCarreras = Me
-        frmPrincipal.Controls.Add(uCtrlModCarrera)
+        FrmIniciarSesion.principal.Controls.Add(uCtrlModCarrera)
         uCtrlModCarrera.Show()
         uCtrlModCarrera.BringToFront()
 
@@ -112,21 +111,60 @@ Public Class uCtrlMantenimientoCarreras
         Dim value2 As Object = dgvCarreras.Rows(numFila).Cells(1).Value
         uCtrlElimCarrera.nombre = CType(value2, String)
         uCtrlElimCarrera.codigo = CType(value1, String)
-        frmPrincipal.Controls.Add(uCtrlElimCarrera)
+        FrmIniciarSesion.principal.Controls.Add(uCtrlElimCarrera)
         uCtrlElimCarrera.Show()
         uCtrlElimCarrera.BringToFront()
+        uCtrlElimCarrera.mantenimientoCarreras = Me
+
+    End Sub
+    
+    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.MouseClick
+
+        txtBuscar.Text = ""
 
     End Sub
 
-    'Private Sub dtaConsultaCarreras_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtaConsultaCarreras.CellContentClick
+    Private Sub txtBuscar_KeyDown(sender As Object, e As System.Windows.Forms.KeyEventArgs) Handles txtBuscar.KeyDown
 
-    '    Dim senderGrid = DirectCast(sender, DataGridView)
-    '    If TypeOf senderGrid.Columns(e.ColumnIndex) Is DataGridViewComboBoxColumn AndAlso e.RowIndex >= 0 Then
-    '    End If
+        Dim param As String = txtBuscar.Text
 
-    'End Sub
+        If e.KeyCode = 13 Then
+
+            buscarCarrera(param)
+
+        End If
+
+    End Sub
+
+    Private Sub buscarCarrera(ByVal param As String)
+
+        Dim c As Carrera = objGestorCarrera.buscarCarrera(param)
+
+        dgvCarreras.Rows.Clear()
+        dgvCarreras.Rows.Add(c.codigo, c.nombre, "", "")
+
+        If c.codigo = "" Then
+
+            dgvCarreras.Rows.Clear()
+            listarCarreras()
+
+        End If
+
+    End Sub
+
+    Public Sub asignarCursosACarrera()
+
+        Dim listaCursos As New List(Of Curso)
+        'listaCursos = objGestorCurso.
+
+    End Sub
 
     Private Sub dgvCarreras_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvCarreras.CellContentClick
 
+        If dgvCarreras.Columns(e.ColumnIndex).Name = "Cursos" Then
+
+        End If
+
     End Sub
+
 End Class

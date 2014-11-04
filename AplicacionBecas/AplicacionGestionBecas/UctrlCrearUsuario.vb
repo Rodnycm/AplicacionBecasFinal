@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 Imports EntitiesLayer
 
@@ -5,11 +6,21 @@ Public Class UctrlCrearUsuario
     Dim alerta As UctrlAlerta = New UctrlAlerta()
     Dim lista As UctrlListarYBuscarUsuario
     Dim mBlnFormDragging As Boolean
+=======
+﻿Imports EntitiesLayer
+
+Public Class UctrlCrearUsuario
+    Dim alerta As UctrlAlerta = New UctrlAlerta()
+>>>>>>> origin/prophet94
     '<summary> Método que se encarga mandar al gestor la información para crear un nuevo usuario</summary>
     '<author> Gabriela Gutiérrez Corrales </author> 
     '<param> No recibe valor  </param>
     '<returns> No retorna valor.</returns> 
     Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/prophet94
         Dim pNombre As String = txtNombre.Text
         Dim sNombre As String = txtSegundoNombre.Text
         Dim pApellido As String = txtPrimerApellido.Text
@@ -35,6 +46,7 @@ Public Class UctrlCrearUsuario
         Try
             objGestorUsuario.crearUsuario(pNombre, sNombre, pApellido, sApellido, identificacion, telefono, fechaNacimiento, rol, genero, correoElectronico)
             objGestorUsuario.guardarCambios()
+<<<<<<< HEAD
             lista.dgUsuarios.Rows.Clear()
             lista.listarUsuarios()
             MsgBox("Usuario creado correctamente")
@@ -49,6 +61,14 @@ Public Class UctrlCrearUsuario
         lista.dgUsuarios.Rows.Clear()
         lista.listarUsuarios()
 
+=======
+        Catch ex As Exception
+            alerta.lblAlerta.Text = ex.Message
+            FrmIniciarSesion.principal.Controls.Add(alerta)
+            alerta.BringToFront()
+            alerta.Show()
+        End Try
+>>>>>>> origin/prophet94
     End Sub
 
 
@@ -98,6 +118,7 @@ Public Class UctrlCrearUsuario
         ucntrl.Show()
     End Sub
 
+<<<<<<< HEAD
     Public Sub setLista(ByVal plista As UctrlListarYBuscarUsuario)
         lista = plista
     End Sub
@@ -128,3 +149,73 @@ Public Class UctrlCrearUsuario
     End Sub
 
 End Class
+=======
+    Private Sub lblNombre_Click(sender As Object, e As EventArgs) Handles lblNombre.Click
+
+    End Sub
+    Private Sub txtNombre_TextChanged(sender As Object, e As EventArgs) Handles txtNombre.TextChanged
+
+    End Sub
+    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
+
+    End Sub
+    Private Sub txtSegundoNombre_TextChanged(sender As Object, e As EventArgs) Handles txtSegundoNombre.TextChanged
+
+    End Sub
+    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
+
+    End Sub
+    Private Sub txtPrimerApellido_TextChanged(sender As Object, e As EventArgs) Handles txtPrimerApellido.TextChanged
+
+    End Sub
+    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
+
+    End Sub
+    Private Sub txtSegundoApellido_TextChanged(sender As Object, e As EventArgs) Handles txtSegundoApellido.TextChanged
+
+    End Sub
+    Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click
+
+    End Sub
+    Private Sub txtIdentificacion_TextChanged(sender As Object, e As EventArgs) Handles txtIdentificacion.TextChanged
+
+    End Sub
+    Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
+
+    End Sub
+    Private Sub txtTelefono_TextChanged(sender As Object, e As EventArgs) Handles txtTelefono.TextChanged
+
+    End Sub
+    Private Sub Label7_Click(sender As Object, e As EventArgs) Handles Label7.Click
+
+    End Sub
+    Private Sub DtpFechaNacimiento_ValueChanged(sender As Object, e As EventArgs) Handles DtpFechaNacimiento.ValueChanged
+
+    End Sub
+    Private Sub Label8_Click(sender As Object, e As EventArgs) Handles Label8.Click
+
+    End Sub
+    Private Sub rbtMasculino_CheckedChanged(sender As Object, e As EventArgs) Handles rbtMasculino.CheckedChanged
+
+    End Sub
+    Private Sub rbtFemenino_CheckedChanged(sender As Object, e As EventArgs) Handles rbtFemenino.CheckedChanged
+
+    End Sub
+    Private Sub rbtOtro_CheckedChanged(sender As Object, e As EventArgs) Handles rbtOtro.CheckedChanged
+
+    End Sub
+    Private Sub Label9_Click(sender As Object, e As EventArgs) Handles Label9.Click
+
+    End Sub
+    Private Sub cmbRoles_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbRoles.SelectedIndexChanged
+
+    End Sub
+    Private Sub Label10_Click(sender As Object, e As EventArgs) Handles Label10.Click
+
+    End Sub
+    Private Sub txtCorreoElectronico_TextChanged(sender As Object, e As EventArgs) Handles txtCorreoElectronico.TextChanged
+
+    End Sub
+End Class
+
+>>>>>>> origin/prophet94

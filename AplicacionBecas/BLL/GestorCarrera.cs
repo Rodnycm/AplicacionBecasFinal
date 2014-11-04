@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using EntitiesLayer;
 using DAL;
+using DAL.Repositories;
 
 namespace BLL
 {
@@ -11,45 +12,104 @@ namespace BLL
     public class GestorCarrera
     {
 
-        public void agregarCarrera(string nombre, string codigo, string color)
+        public void agregarCarrera(string nombre, string codigo, string color, string idDirector)
         {
-
+            Usuario director = UsuarioRepository.Instance.GetByNombre(idDirector);
+            Carrera carrera = ContenedorMantenimiento.Instance.crearObjetoCarrera(nombre, codigo, color, director);
             try
             {
-                CarreraRepository.Instance.Insert(ContenedorMantenimiento.Instance.crearObjetoCarrera(nombre, codigo, color));
+                if (carrera.IsValid)
+                {
+
+                    CarreraRepository.Instance.Insert(carrera);
+
+                }
+                else {
+
+                    StringBuilder sb = new StringBuilder();
+                    foreach (RuleViolation rv in carrera.GetRuleViolations())
+                    {
+                        sb.AppendLine(rv.ErrorMessage);
+                    }
+                    throw new ApplicationException(sb.ToString());
+                
+                }
+                
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                throw ex;
             }
         }
 
-        public void modificarCarrera(string nombre, string codigo, string color, int idCarrera)
+        public IEnumerable <Usuario> consultarDirectoresAcademicos() {
+
+            return UsuarioRepository.Instance.GetDirectoresAcademicos();
+        
+        }
+
+        public void modificarCarrera(string nombre, string codigo, string color, int idCarrera, string idDirector ,string directorAntiguo)
         {
+            Usuario director = UsuarioRepository.Instance.GetByNombre(idDirector);
+            Usuario antiguo = UsuarioRepository.Instance.GetByNombre(directorAntiguo);
+            Carrera carrera = ContenedorMantenimiento.Instance.crearObjetoCarrera(nombre, codigo, color, idCarrera, director);
 
             try
             {
-                CarreraRepository.Instance.Update(ContenedorMantenimiento.Instance.crearObjetoCarrera(nombre, codigo, color, idCarrera));
+                if(carrera.IsValid){
+                    CarreraRepository.Instance.UpdateCarrera(carrera, antiguo);
+                }else{
+                    
+                    StringBuilder sb = new StringBuilder();
+                    foreach (RuleViolation rv in carrera.GetRuleViolations())
+                    {
+                        sb.AppendLine(rv.ErrorMessage);
+                    }
+                    throw new ApplicationException(sb.ToString());
+                }
+               
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                throw ex;
             }
+        }
+
+        public Carrera buscarCarrera(String param)
+        {
+            return CarreraRepository.Instance.GetByNombre(param);
         }
 
         public void eliminarCarrera(String codigo)
         {
 
+            Carrera carrera = ContenedorMantenimiento.Instance.crearObjetoCarrera(codigo);
+
             try
             {
-                CarreraRepository.Instance.Delete(ContenedorMantenimiento.Instance.crearObjetoCarrera(codigo));
+                if (carrera.IsValid)
+                {
+
+                    CarreraRepository.Instance.Delete(carrera);
+                }
+                else {
+
+                    StringBuilder sb = new StringBuilder();
+                    foreach (RuleViolation rv in carrera.GetRuleViolations())
+                    {
+                        sb.AppendLine(rv.ErrorMessage);
+                    }
+                    throw new ApplicationException(sb.ToString());
+                
+                }
+                
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                throw ex;
             }
         }
 
@@ -67,4 +127,5 @@ namespace BLL
         }
     }
 }
+
 

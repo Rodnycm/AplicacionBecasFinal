@@ -22,7 +22,6 @@ Partial Class uCtrlModificarCarrera
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnColor = New System.Windows.Forms.Button()
         Me.cmbAcademico = New System.Windows.Forms.ComboBox()
         Me.txtCodigo = New System.Windows.Forms.TextBox()
@@ -31,16 +30,10 @@ Partial Class uCtrlModificarCarrera
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.btnCerrar = New System.Windows.Forms.Button()
+        Me.btnCancelar = New System.Windows.Forms.Button()
+        Me.btnModificar = New System.Windows.Forms.Button()
         Me.SuspendLayout()
-        '
-        'btnModificar
-        '
-        Me.btnModificar.Location = New System.Drawing.Point(322, 236)
-        Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(75, 23)
-        Me.btnModificar.TabIndex = 17
-        Me.btnModificar.Text = "Modificar"
-        Me.btnModificar.UseVisualStyleBackColor = True
         '
         'btnColor
         '
@@ -119,6 +112,43 @@ Partial Class uCtrlModificarCarrera
         Me.Label1.TabIndex = 9
         Me.Label1.Text = "Nombre:"
         '
+        'btnCerrar
+        '
+        Me.btnCerrar.BackColor = System.Drawing.Color.Transparent
+        Me.btnCerrar.BackgroundImage = Global.UI.My.Resources.Resources.cerrar
+        Me.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCerrar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(248, Byte), Integer))
+        Me.btnCerrar.Location = New System.Drawing.Point(438, 3)
+        Me.btnCerrar.Name = "btnCerrar"
+        Me.btnCerrar.Size = New System.Drawing.Size(20, 21)
+        Me.btnCerrar.TabIndex = 18
+        Me.btnCerrar.UseVisualStyleBackColor = False
+        '
+        'btnCancelar
+        '
+        Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCancelar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(248, Byte), Integer))
+        Me.btnCancelar.Location = New System.Drawing.Point(247, 262)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(86, 29)
+        Me.btnCancelar.TabIndex = 22
+        Me.btnCancelar.Text = "Cancelar"
+        Me.btnCancelar.UseVisualStyleBackColor = True
+        '
+        'btnModificar
+        '
+        Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnModificar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnModificar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(248, Byte), Integer))
+        Me.btnModificar.Location = New System.Drawing.Point(351, 262)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(86, 29)
+        Me.btnModificar.TabIndex = 21
+        Me.btnModificar.Text = "Modificar"
+        Me.btnModificar.UseVisualStyleBackColor = True
+        '
         'uCtrlModificarCarrera
         '
         Me.AllowDrop = True
@@ -126,7 +156,9 @@ Partial Class uCtrlModificarCarrera
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImage = Global.UI.My.Resources.Resources.tablaFinalMedianaAzul
+        Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.btnModificar)
+        Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.btnColor)
         Me.Controls.Add(Me.cmbAcademico)
         Me.Controls.Add(Me.txtCodigo)
@@ -142,7 +174,6 @@ Partial Class uCtrlModificarCarrera
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents btnModificar As System.Windows.Forms.Button
     Friend WithEvents btnColor As System.Windows.Forms.Button
     Friend WithEvents cmbAcademico As System.Windows.Forms.ComboBox
     Friend WithEvents txtCodigo As System.Windows.Forms.TextBox
@@ -151,5 +182,8 @@ Partial Class uCtrlModificarCarrera
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents btnCerrar As System.Windows.Forms.Button
+    Friend WithEvents btnCancelar As System.Windows.Forms.Button
+    Friend WithEvents btnModificar As System.Windows.Forms.Button
 
 End Class

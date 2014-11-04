@@ -27,14 +27,14 @@ namespace BLL
                 return instance;
             }
         }
-        public Carrera crearObjetoCarrera(string nombre, string codigo, string color)
+        public Carrera crearObjetoCarrera(string nombre, string codigo, string color, Usuario director)
         {
-            return new Carrera(nombre, codigo, color);
+            return new Carrera(nombre, codigo, color, director);
         }
 
-        public Carrera crearObjetoCarrera(string nombre, string codigo, string color, int idCarrera)
+        public Carrera crearObjetoCarrera(string nombre, string codigo, string color, int idCarrera, Usuario director)
         {
-            return new Carrera(nombre, codigo, color, idCarrera);
+            return new Carrera(nombre, codigo, color, idCarrera, director);
         }
 
         public Carrera crearObjetoCarrera(string nombre)
@@ -113,5 +113,37 @@ namespace BLL
         {
             return new Rol(nombre);
         }
+        //<summary> Método que se encarga de crear instancias de la clase Curso</summary>
+        //<author> Valeria Ramírez Cordero </author> 
+        //<param name = "nombre"> variable de tipo String que almacena el nombre del curso  </param>
+        //<param name= "codigo" > variable de tipo String que almacena el código de curso  </param>
+        //<param name= "codigo" > variable de tipo String que almacena el cuatrimestre en el que se encuetra el curso  </param>
+        //<param name= "codigo" > variable de tipo String que almacena los créditos del curso  </param>
+        //<param name= "codigo" > variable de tipo String que almacena el precio del curso </param>
+        //<returns>Retorna un objeto de tipo Curso</returns> 
+        public Curso crearObjetoCurso(string pnombre, string pcodigo, string pcuatrimestre, int pcreditos, double pprecio, int pid)
+        {
+
+            Curso curso = new Curso(pnombre, pcodigo, pcuatrimestre, pcreditos, pprecio, pid);
+            curso.Id = pid;
+            return curso;
+        }
+
+        public Curso crearObjetoCurso(string pnombre, string pcodigo, int pid)
+        {
+
+            Curso curso = new Curso(pnombre, pcodigo, pid);
+            curso.Id = pid;
+            return curso;
+        }
+
+        public Curso crearObjetoCurso(string pnombre, string pcodigo, string pcuatrimestre, int pcreditos, double pprecio)
+        {
+
+            Curso curso = new Curso(pnombre, pcodigo, pcuatrimestre, pcreditos, pprecio);
+
+            return curso;
+        }      
+
     }
 }

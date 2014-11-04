@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace EntitiesLayer
 {
     public class Curso : IEntity
     {
 
-        private int _idProducto;
+        private int _idCurso;
         public int Id
         {
-            get { return _idProducto; }
-            set { _idProducto = value; }
+            get { return _idCurso; }
+            set { _idCurso = value; }
         }
 
         //<summary> Métodos set y get de la variable nombre</summary>
@@ -59,6 +60,7 @@ namespace EntitiesLayer
         //<returns> No retorna valor.</returns> 
         public Curso()
         {
+
             nombre = "";
             codigo = "";
             cuatrimestre = "";
@@ -78,7 +80,7 @@ namespace EntitiesLayer
         //<returns> No retorna valor.</returns> 
         public Curso(String pnombre, String pcodigo, String pcuatrimestre, int pcreditos, double pprecio)
         {
-            Id = 0;
+
             nombre = pnombre;
             codigo = pcodigo;
             cuatrimestre = pcuatrimestre;
@@ -86,8 +88,25 @@ namespace EntitiesLayer
             precio = pprecio;
         }
 
+        public Curso(String pnombre, String pcodigo, String pcuatrimestre, int pcreditos, double pprecio, int pid)
+        {
 
+            nombre = pnombre;
+            codigo = pcodigo;
+            cuatrimestre = pcuatrimestre;
+            creditos = pcreditos;
+            precio = pprecio;
+            _idCurso = pid;
 
+        }
+
+        public Curso(String pnombre, String pcodigo, int pid)
+        {
+
+            nombre = pnombre;
+            codigo = pcodigo;
+            _idCurso = pid;
+        }
 
         //<summary> Constructor de la clase Curso</summary>
         //<author> Valeria Ramírez Cordero </author> 
@@ -98,7 +117,7 @@ namespace EntitiesLayer
         //<returns> No retorna valor.</returns> 
         public Curso(String pnombre, String pcodigo, String pcuatrimestre, int pcreditos)
         {
-            Id = 0;
+            _idCurso = Id;
             nombre = pnombre;
             codigo = pcodigo;
             cuatrimestre = pcuatrimestre;
@@ -107,35 +126,76 @@ namespace EntitiesLayer
 
 
 
-        //        public bool IsValid{ 
 
-        //            get { return (GetRuleViolations().Count() == 0); }
-        //        }
+        public Curso(String pnombre, String pcodigo)
+        {
 
-        //        public IEnumerable<RuleViolation> GetRuleViolations()
-        //        {
-        //            if (String.IsNullOrEmpty(Nombre))
-        //            {
-        //                yield return new RuleViolation("precio");
-        //            }
-        //            if (precio <= 0)
-
-        //                yield return new RuleViolation("El precio debe tener un valor", "Precio");
-        //            }
-
-        //            yield break;
-        //        }
+            nombre = pnombre;
+            codigo = pcodigo;
+        }
 
 
-        //        public IEnumerable<RuleViolation> GetRuleViolations()
-        //        {
-        //            throw new NotImplementedException();
-        //}
-        //}
+
+        public bool IsValid
+        {
+            get { return (GetRuleViolations().Count() == 0); }
+        }
 
 
+        //Validacion espacios en blanco
+        public IEnumerable<RuleViolation> GetRuleViolations()
+        {
+            if (String.IsNullOrEmpty(nombre))
+            {
+                yield return new RuleViolation("Nombre Requerido", "Nombre");
+            }
+
+            if (String.IsNullOrEmpty(codigo))
+            {
+                yield return new RuleViolation("Código Requerido", "Codigo");
+            }
+
+
+            if (String.IsNullOrEmpty(cuatrimestre))
+            {
+                yield return new RuleViolation("Cuatrimestre Requerido", "Cuatrimestre");
+            }
+
+            if (creditos <= 0)
+            {
+                yield return new RuleViolation("Error en los creditos", "Creditos incorrectos");
+
+            }
+
+            if (!(Regex.IsMatch(cuatrimestre, "^[\\p{L} .'-]+$")))
+            {
+                yield return new RuleViolation("Solo se permiten letras en el cuatrimestre", "Cuatrimestre");
+
+            }
+
+
+
+
+            if ((Regex.IsMatch(codigo, "^([0-9a-zA-Z]{12}$")))
+            {
+                yield return new RuleViolation("Error en el código", "Código incorrecto");
+            }
+
+
+            if ((Regex.IsMatch(nombre, "^([0-9a-zA-Z]{1})$")))
+            {
+                yield return new RuleViolation("Error en el nombre", "Nombre incorrecto");
+            }
+        }
     }
 }
+
+
+       
+
+        
+
+
 
 
 

@@ -1,0 +1,9 @@
+R:\Horus\GitHub\AplicacionBecas\AplicacionBecas\EntitiesLayer\bin\Debug\EntitiesLayer.dll
+R:\Horus\GitHub\AplicacionBecas\AplicacionBecas\EntitiesLayer\bin\Debug\EntitiesLayer.pdb
+R:\Horus\GitHub\AplicacionBecas\AplicacionBecas\EntitiesLayer\obj\Debug\EntitiesLayer.dll
+R:\Horus\GitHub\AplicacionBecas\AplicacionBecas\EntitiesLayer\obj\Debug\EntitiesLayer.pdb
+C:\Users\Mathias\Documents\GitHub\AplicacionBecas\AplicacionBecas\EntitiesLayer\bin\Debug\EntitiesLayer.dll
+C:\Users\Mathias\Documents\GitHub\AplicacionBecas\AplicacionBecas\EntitiesLayer\bin\Debug\EntitiesLayer.pdb
+C:\Users\Mathias\Documents\GitHub\AplicacionBecas\AplicacionBecas\EntitiesLayer\obj\Debug\EntitiesLayer.csprojResolveAssemblyReference.cache
+C:\Users\Mathias\Documents\GitHub\AplicacionBecas\AplicacionBecas\EntitiesLayer\obj\Debug\EntitiesLayer.dll
+C:\Users\Mathias\Documents\GitHub\AplicacionBecas\AplicacionBecas\EntitiesLayer\obj\Debug\EntitiesLayer.pdb

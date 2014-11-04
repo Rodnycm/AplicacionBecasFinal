@@ -46,7 +46,7 @@ Public Class uCtrlModificarRol
 
             CompararPermisos()
         Catch ex As Exception
-            MsgBox("No tiene Permisos Asignados")
+            
         End Try
         
     End Sub
@@ -123,14 +123,21 @@ Public Class uCtrlModificarRol
 
             Next indexSeleccionado
         Catch
-            MsgBox("Debe escoger almenos una opcion")
+
         End Try
 
 
-        For i As Integer = 0 To listaPermisosSeleccionados.Count - 1
-            objGestorRol.asignarPermisoAUnRol(listaPermisosSeleccionados.Item(i).Id(), idRol)
 
-        Next
+        ValidarPermisos(listaPermisosSeleccionados)
+
+
+        'For i As Integer = 0 To listaPermisosSeleccionados.Count - 1
+        '    objGestorRol.asignarPermisoAUnRol(listaPermisosSeleccionados.Item(i).Id(), idRol)
+
+        'Next
+
+
+
 
         For j As Integer = 0 To listaPermisosSeleccionados.Count - 1
             For i As Integer = 0 To listaPermisos.Count - 1
@@ -147,10 +154,14 @@ Public Class uCtrlModificarRol
 
 
 
-        'For i As Integer = 0 To listaIdROlesPermisos.Count - 1
-        '    objGestorRol.eliminarPermisoAUnRol(listaIdROlesPermisos.Item(i))
-        'Next
+        For i As Integer = 0 To listaIdROlesPermisos.Count - 1
+            objGestorRol.eliminarPermisoAUnRol(listaIdROlesPermisos.Item(i))
+        Next
 
+
+    End Sub
+
+    Public Sub ValidarPermisos(ByVal plistaPermisos As List(Of Permiso))
 
     End Sub
 

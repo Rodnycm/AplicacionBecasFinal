@@ -35,7 +35,6 @@ Partial Class uCtrlListarRol
         Me.btnCrearRol = New System.Windows.Forms.Button()
         Me.PbUsuarios = New System.Windows.Forms.PictureBox()
         Me.txtBuscarRol = New System.Windows.Forms.TextBox()
-        Me.lblBuscarRol = New System.Windows.Forms.Label()
         Me.btnCrearRoles = New System.Windows.Forms.Button()
         Me.DGVRol = New System.Windows.Forms.DataGridView()
         Me.dtaId = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -152,20 +151,12 @@ Partial Class uCtrlListarRol
         '
         'txtBuscarRol
         '
-        Me.txtBuscarRol.Location = New System.Drawing.Point(113, 122)
+        Me.txtBuscarRol.Font = New System.Drawing.Font("Segoe UI Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBuscarRol.Location = New System.Drawing.Point(23, 122)
         Me.txtBuscarRol.Name = "txtBuscarRol"
-        Me.txtBuscarRol.Size = New System.Drawing.Size(222, 20)
+        Me.txtBuscarRol.Size = New System.Drawing.Size(569, 23)
         Me.txtBuscarRol.TabIndex = 23
-        '
-        'lblBuscarRol
-        '
-        Me.lblBuscarRol.AutoSize = True
-        Me.lblBuscarRol.Font = New System.Drawing.Font("Segoe UI Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblBuscarRol.Location = New System.Drawing.Point(26, 120)
-        Me.lblBuscarRol.Name = "lblBuscarRol"
-        Me.lblBuscarRol.Size = New System.Drawing.Size(50, 20)
-        Me.lblBuscarRol.TabIndex = 22
-        Me.lblBuscarRol.Text = "Buscar"
+        Me.txtBuscarRol.Text = "Buscar..."
         '
         'btnCrearRoles
         '
@@ -173,7 +164,7 @@ Partial Class uCtrlListarRol
         Me.btnCrearRoles.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCrearRoles.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCrearRoles.ForeColor = System.Drawing.Color.White
-        Me.btnCrearRoles.Location = New System.Drawing.Point(598, 30)
+        Me.btnCrearRoles.Location = New System.Drawing.Point(598, 71)
         Me.btnCrearRoles.Name = "btnCrearRoles"
         Me.btnCrearRoles.Size = New System.Drawing.Size(222, 79)
         Me.btnCrearRoles.TabIndex = 21
@@ -229,7 +220,6 @@ Partial Class uCtrlListarRol
         Me.Controls.Add(Me.DGVRol)
         Me.Controls.Add(Me.PbUsuarios)
         Me.Controls.Add(Me.txtBuscarRol)
-        Me.Controls.Add(Me.lblBuscarRol)
         Me.Controls.Add(Me.btnCrearRoles)
         Me.Name = "uCtrlListarRol"
         Me.Size = New System.Drawing.Size(947, 530)
@@ -253,7 +243,6 @@ Partial Class uCtrlListarRol
     Friend WithEvents btnBuscar As System.Windows.Forms.Button
     Friend WithEvents PbUsuarios As System.Windows.Forms.PictureBox
     Friend WithEvents txtBuscarRol As System.Windows.Forms.TextBox
-    Friend WithEvents lblBuscarRol As System.Windows.Forms.Label
     Friend WithEvents btnCrearRoles As System.Windows.Forms.Button
     Friend WithEvents DGVRol As System.Windows.Forms.DataGridView
     Friend WithEvents dtaId As System.Windows.Forms.DataGridViewTextBoxColumn

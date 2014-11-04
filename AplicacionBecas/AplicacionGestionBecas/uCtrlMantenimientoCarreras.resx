@@ -126,12 +126,11 @@
   <metadata name="dtaDirector.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-<<<<<<< HEAD
-=======
+
   <metadata name="Cursos.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
->>>>>>> origin/prophet94
+
   <metadata name="Modificarcmb.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -451,7 +450,7 @@
         LCVzT+4Bjmg8ZoOYy533+wl5wU0NrkSU+gPMqtYMXNgcowAAAABJRU5ErkJggg==
 </value>
   </data>
-<<<<<<< HEAD
+<!--<<<<<<< HEAD
   <data name="UCtrlCarrera1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         /9j/4AAQSkZJRgABAQEASABIAAD/7gAOQWRvYmUAZAAAAAAB/+EHhkV4aWYAAE1NACoAAAAIAAcBEgAD
@@ -628,7 +627,6 @@
         Fi0jgeZFqLPZ55ugKixaRwPMi1Fns883QFRYtI4HmRaiz2eeboCosWkcDzItRZ7PPN0BUWLSOB5kWos9
         nnm6AqLFpHA8yLUWezzzdAVFi0jgeZFqLPZ55ugKixaRwPMi1Fns883QFRYtI4HmRaiz2eeb83//2Q==
 </value>
-  </data>
-=======
->>>>>>> origin/prophet94
+  </data>-->
+
 </root>

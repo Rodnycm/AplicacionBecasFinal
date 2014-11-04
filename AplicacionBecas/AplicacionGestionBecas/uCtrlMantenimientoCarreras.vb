@@ -64,7 +64,7 @@ Public Class uCtrlMantenimientoCarreras
 
         ElseIf combo.SelectedItem = "Eliminar" Then
 
-            eliminarCarrera(fila)
+            'eliminarCarrera(fila)
 
         End If
 
@@ -104,19 +104,19 @@ Public Class uCtrlMantenimientoCarreras
     ''' <param name="numfila">Numero de fila en la que se encuentra el combobox</param>
     ''' <autor>Alvaro Artavia</autor>
 
-    Public Sub eliminarCarrera(numFila As Integer)
+    'Public Sub eliminarCarrera(numFila As Integer)
 
-        Dim uCtrlElimCarrera As New uCtrlEliminar()
-        Dim value1 As Object = dgvCarreras.Rows(numFila).Cells(0).Value
-        Dim value2 As Object = dgvCarreras.Rows(numFila).Cells(1).Value
-        uCtrlElimCarrera.nombre = CType(value2, String)
-        uCtrlElimCarrera.codigo = CType(value1, String)
-        FrmIniciarSesion.principal.Controls.Add(uCtrlElimCarrera)
-        uCtrlElimCarrera.Show()
-        uCtrlElimCarrera.BringToFront()
-        uCtrlElimCarrera.mantenimientoCarreras = Me
+    '    Dim uCtrlElimCarrera As New uCtrlEliminar()
+    '    Dim value1 As Object = dgvCarreras.Rows(numFila).Cells(0).Value
+    '    Dim value2 As Object = dgvCarreras.Rows(numFila).Cells(1).Value
+    '    uCtrlElimCarrera.nombre = CType(value2, String)
+    '    uCtrlElimCarrera.codigo = CType(value1, String)
+    '    FrmIniciarSesion.principal.Controls.Add(uCtrlElimCarrera)
+    '    uCtrlElimCarrera.Show()
+    '    uCtrlElimCarrera.BringToFront()
+    '    uCtrlElimCarrera.mantenimientoCarreras = Me
 
-    End Sub
+    'End Sub
     
     Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.MouseClick
 

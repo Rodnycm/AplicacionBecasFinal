@@ -7,11 +7,7 @@
     Dim uCntrlBuscarBeneficio As uCntrlBuscarBeneficio
     Dim mBlnFormDragging As Boolean
 
-<<<<<<< HEAD
 
-=======
-  
->>>>>>> origin/prophet94
     Public Sub getFrmBuscar(puCntrlBuscarBeneficio As uCntrlBuscarBeneficio)
 
         uCntrlBuscarBeneficio = puCntrlBuscarBeneficio
@@ -35,11 +31,7 @@
 
     End Sub
 
-<<<<<<< HEAD
 
-=======
-   
->>>>>>> origin/prophet94
     ''' <summary>
     ''' Este método se encarga de 'Setear' las variables globales del userControl.
     ''' Las variables se setean con la informacion que se encuentra en los textbox.
@@ -50,7 +42,6 @@
     ''' <param name="e"></param>
     Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
 
-<<<<<<< HEAD
         If (IsNumeric(txtPorcentaje.Text) = True) Then
             nombre = txtNombre.Text
             porcentaje = CType(txtPorcentaje.Text, Double)
@@ -92,22 +83,7 @@
 
         uCntrlBuscarBeneficio.dtaBuscarBeneficio.Rows.Clear()
         uCntrlBuscarBeneficio.listarBeneficios()
-=======
-        nombre = txtNombre.Text
-        porcentaje = CType(txtPorcentaje.Text, Double)
-        aplicacion = txtAplicabilidad.Text
 
-
-        objGestorBeneficio.modificarBeneficio(id, nombre, porcentaje, aplicacion)
-        objGestorBeneficio.guardarCambios()
-
-        MsgBox("El beneficio se modifico correctamente")
-
-        uCntrlBuscarBeneficio.dtaBuscarBeneficio.Rows.Clear()
-        uCntrlBuscarBeneficio.listarBeneficios()
-        Me.Hide()
-        Me.Dispose()
->>>>>>> origin/prophet94
 
     End Sub
 
@@ -126,14 +102,9 @@
         Me.Dispose()
     End Sub
 
-<<<<<<< HEAD
 
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
-=======
-  
-    Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
 
->>>>>>> origin/prophet94
         uCntrlBuscarBeneficio.dtaBuscarBeneficio.Rows.Clear()
         uCntrlBuscarBeneficio.listarBeneficios()
         Me.Hide()

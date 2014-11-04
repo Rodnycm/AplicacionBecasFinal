@@ -6,26 +6,20 @@ using System.Threading.Tasks;
 using EntitiesLayer;
 using DAL;
 using DAL.Repositories;
-<<<<<<< HEAD
+
 using TIL;
 using System.Data.SqlClient;
-=======
->>>>>>> origin/prophet94
+
 
 
 namespace BLL
 {
-<<<<<<< HEAD
+
     public class GestorBeneficios
     {
         public string actividad;
 
-=======
-    public class GestorBeneficios:IGestor
-    {
-        public string actividad;
-    
->>>>>>> origin/prophet94
+
         //private BeneficioRepository repBeneficio;
         /// <summary>
         /// Este método recive los parametros necesarios para instanciar un beneficio.
@@ -51,12 +45,6 @@ namespace BLL
                 {
 
                     BeneficioRepository.Instance.Insert(objBeneficio);
-<<<<<<< HEAD
-
-=======
-                     actividad = "Se ha registrado un Beneficio";
-                    registrarAccion(actividad);
->>>>>>> origin/prophet94
                 }
                 else
                 {
@@ -70,16 +58,9 @@ namespace BLL
             }
             catch (Exception e)
             {
-<<<<<<< HEAD
+
                 throw e;
-=======
 
-
-                String error = e.ToString();
-
-                System.Console.Write(error);
-                throw new ApplicationException("Noooooo");
->>>>>>> origin/prophet94
             }
         }
         /// <summary>
@@ -103,11 +84,7 @@ namespace BLL
                 if (objBeneficio.IsValid)
                 {
                     BeneficioRepository.Instance.Update(objBeneficio);
-<<<<<<< HEAD
-=======
-                     actividad = "Se ha modificado un Beneficio";
-                    registrarAccion(actividad);
->>>>>>> origin/prophet94
+
                 }
                 else
                 {
@@ -119,16 +96,11 @@ namespace BLL
                     throw new ApplicationException(sb.ToString());
                 }
             }
-<<<<<<< HEAD
+
             catch (Exception e)
             {
                 throw e;
-=======
-            catch (Exception)
-            {
 
-                throw;
->>>>>>> origin/prophet94
             }
         }
 
@@ -151,22 +123,14 @@ namespace BLL
             {
 
                 BeneficioRepository.Instance.Delete(objBeneficio);
-<<<<<<< HEAD
+
             }
 
             catch (Exception e)
             {
 
                 throw e;
-=======
-                 actividad = "Se ha eliminado un Beneficio";
-                    registrarAccion(actividad);
-            }
 
-            catch (Exception)
-            {
-                throw;
->>>>>>> origin/prophet94
             }
         }
 
@@ -178,33 +142,22 @@ namespace BLL
 
         public void guardarCambios()
         {
-<<<<<<< HEAD
+
             try
             {
                 BeneficioRepository.Instance.Save();
             }
-=======
-            //try
-            //{
-            BeneficioRepository.Instance.Save();
-            //}
->>>>>>> origin/prophet94
+
             //catch (DataAccessException ex)
             //{
             //    throw ex;
             //}
-<<<<<<< HEAD
+
             catch (Exception e)
             {
                 throw e;
             }
-=======
-            //catch (Exception ex)
-            //{
-            //    //logear a la bd
-            //    throw new BusinessLogicException("Ha ocurrido un error al eliminar un usuario", ex);
-            //}
->>>>>>> origin/prophet94
+
         }
 
         /// <summary>
@@ -215,7 +168,7 @@ namespace BLL
 
         public IEnumerable<Beneficio> buscarBeneficios()
         {
-<<<<<<< HEAD
+
             try
             {
                 return BeneficioRepository.Instance.GetAll();
@@ -229,9 +182,7 @@ namespace BLL
                 throw e;
             }
 
-=======
-            return BeneficioRepository.Instance.GetAll();
->>>>>>> origin/prophet94
+
         }
         /// <summary>
         /// Llama al método GetByNombre() del repositorio y recibe una instancia de un beneficio.
@@ -243,29 +194,6 @@ namespace BLL
         {
             return BeneficioRepository.Instance.GetByNombre(pnombre);
         }
-<<<<<<< HEAD
-=======
 
-        public void registrarAccion(string pactividad)
-        {
-
-            RegistroAccion objRegistro;
-            DateTime fecha = DateTime.Today;
-            string nombreUsuario;
-            string nombreRol = "Decano";
-            string descripcion = pactividad;
-            //nombreUsuario = Globals.userName;
-            nombreUsuario = "Pedro";
-
-
-            objRegistro = new RegistroAccion(nombreUsuario, nombreRol, descripcion, fecha);
-
-            RegistroAccionRepository objRegistroRep = new RegistroAccionRepository();
-
-            objRegistroRep.InsertAccion(objRegistro);
-
-        }
-
->>>>>>> origin/prophet94
     }
 }

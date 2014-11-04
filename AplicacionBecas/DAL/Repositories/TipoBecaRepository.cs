@@ -14,10 +14,9 @@ namespace DAL.Repositories
 {
     public class TipoBecaRepository : IRepository<TipoBeca>
     {
-<<<<<<< HEAD
+
         private string actividad;
-=======
->>>>>>> origin/prophet94
+
         private static TipoBecaRepository instance;
         private List<IEntity> _insertItems;
         private List<IEntity> _deleteItems;
@@ -273,12 +272,11 @@ namespace DAL.Repositories
 
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_agregarTipoBeca");
 
-<<<<<<< HEAD
+
                 actividad = "Se ha registrado un Beneficio";
                 registrarAccion(actividad);
 
-=======
->>>>>>> origin/prophet94
+
             }
             catch (Exception ex)
             {
@@ -301,15 +299,12 @@ namespace DAL.Repositories
                 cmd.Parameters.Add(new SqlParameter("@estado", objTipoBeca.estado));
                 cmd.Parameters.Add(new SqlParameter("@descripcion", objTipoBeca.descripcion));
 
-<<<<<<< HEAD
+
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_modificarTipoBeca");
 
                 actividad = "Se ha modificado un Beneficio";
                 registrarAccion(actividad);
-=======
 
-                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_modificarTipoBeca");
->>>>>>> origin/prophet94
 
             }
             catch (Exception ex)
@@ -331,12 +326,11 @@ namespace DAL.Repositories
                 cmd.Parameters.Add(new SqlParameter("@", objTipoBeca.Id));
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_eliminarTipoBeca");
 
-<<<<<<< HEAD
+
                 actividad = "Se ha modificado un Beneficio";
                 registrarAccion(actividad);
 
-=======
->>>>>>> origin/prophet94
+
             }
             catch (SqlException ex)
             {
@@ -350,7 +344,7 @@ namespace DAL.Repositories
                 //throw new DataAccessException("Ha ocurrido un error al eliminar un tipo de beca", ex);
             }
         }
-<<<<<<< HEAD
+
 
         public void registrarAccion(string pactividad)
         {
@@ -377,8 +371,7 @@ namespace DAL.Repositories
             }
 
         }
-=======
->>>>>>> origin/prophet94
+
     }
 }
 

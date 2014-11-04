@@ -1,32 +1,4 @@
-<<<<<<< HEAD
-R:\Horus\GitHub\AplicacionBecas\AplicacionBecas\TIL\bin\Debug\TIL.dll
-R:\Horus\GitHub\AplicacionBecas\AplicacionBecas\TIL\bin\Debug\TIL.pdb
-=======
-C:\Users\backi_000\Documents\GitHub\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\TIL\bin\Debug\TIL.dll
-C:\Users\backi_000\Documents\GitHub\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\TIL\bin\Debug\TIL.pdb
-C:\Users\backi_000\Documents\GitHub\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\TIL\obj\Debug\TIL.dll
-C:\Users\backi_000\Documents\GitHub\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\TIL\obj\Debug\TIL.pdb
-C:\Users\backi_000\Documents\GitHub\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\TIL\obj\Debug\TIL.csprojResolveAssemblyReference.cache
-R:\Horus\GitHub\AplicacionBecas\AplicacionBecas\TIL\bin\Debug\TIL.dll
-R:\Horus\GitHub\AplicacionBecas\AplicacionBecas\TIL\bin\Debug\TIL.pdb
-R:\Horus\GitHub\AplicacionBecas\AplicacionBecas\TIL\obj\Debug\TIL.csprojResolveAssemblyReference.cache
->>>>>>> origin/prophet94
-R:\Horus\GitHub\AplicacionBecas\AplicacionBecas\TIL\obj\Debug\TIL.dll
-R:\Horus\GitHub\AplicacionBecas\AplicacionBecas\TIL\obj\Debug\TIL.pdb
-C:\Users\Mathias\Documents\GitHub\AplicacionBecas\AplicacionBecas\TIL\bin\Debug\TIL.dll
-C:\Users\Mathias\Documents\GitHub\AplicacionBecas\AplicacionBecas\TIL\bin\Debug\TIL.pdb
-C:\Users\Mathias\Documents\GitHub\AplicacionBecas\AplicacionBecas\TIL\obj\Debug\TIL.csprojResolveAssemblyReference.cache
-C:\Users\Mathias\Documents\GitHub\AplicacionBecas\AplicacionBecas\TIL\obj\Debug\TIL.dll
-C:\Users\Mathias\Documents\GitHub\AplicacionBecas\AplicacionBecas\TIL\obj\Debug\TIL.pdb
-<<<<<<< HEAD
-=======
-C:\Users\Prophet\Desktop\Nueva carpeta\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\TIL\bin\Debug\TIL.dll
-C:\Users\Prophet\Desktop\Nueva carpeta\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\TIL\bin\Debug\TIL.pdb
-C:\Users\Prophet\Desktop\Nueva carpeta\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\TIL\obj\Debug\TIL.csprojResolveAssemblyReference.cache
-C:\Users\Prophet\Desktop\Nueva carpeta\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\TIL\obj\Debug\TIL.dll
-C:\Users\Prophet\Desktop\Nueva carpeta\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\TIL\obj\Debug\TIL.pdb
-C:\Users\Prophet\Desktop\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\TIL\bin\Debug\TIL.dll
-C:\Users\Prophet\Desktop\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\TIL\bin\Debug\TIL.pdb
-C:\Users\Prophet\Desktop\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\TIL\obj\Debug\TIL.dll
-C:\Users\Prophet\Desktop\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\AplicacionBecas\TIL\obj\Debug\TIL.pdb
->>>>>>> origin/prophet94
+C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\TIL\bin\Debug\TIL.dll
+C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\TIL\bin\Debug\TIL.pdb
+C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\TIL\obj\Debug\TIL.dll
+C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\TIL\obj\Debug\TIL.pdb

@@ -46,24 +46,24 @@ Partial Class uCntrlBuscarBeneficio
         CType(Me.ErrorProvider3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pctbxBeneficios, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'ErrorProvider1
-        '
-        Me.ErrorProvider1.ContainerControl = Me
-        '
-        'ErrorProvider2
-        '
-        Me.ErrorProvider2.ContainerControl = Me
-        '
+        ''
+        ''ErrorProvider1
+        ''
+        'Me.ErrorProvider1.ContainerControl = Me
+        ''
+        ''ErrorProvider2
+        ''
+        'Me.ErrorProvider2.ContainerControl = Me
+        ''
 
-        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.txtBuscar = New System.Windows.Forms.TextBox()
-        Me.btnMantenimiento = New System.Windows.Forms.Button()
-        Me.pctbxBeneficios = New System.Windows.Forms.PictureBox()
-        CType(Me.dtaBuscarBeneficio, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pctbxBeneficios, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SuspendLayout()
+        'Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        'Me.txtBuscar = New System.Windows.Forms.TextBox()
+        'Me.btnMantenimiento = New System.Windows.Forms.Button()
+        'Me.pctbxBeneficios = New System.Windows.Forms.PictureBox()
+        'CType(Me.dtaBuscarBeneficio, System.ComponentModel.ISupportInitialize).BeginInit()
+        'CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
+        'CType(Me.pctbxBeneficios, System.ComponentModel.ISupportInitialize).BeginInit()
+        'Me.SuspendLayout()
         '
 
         'dtaBuscarBeneficio

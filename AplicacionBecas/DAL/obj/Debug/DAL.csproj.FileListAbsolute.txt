@@ -9,3 +9,14 @@ C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\DAL\
 C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\DAL\obj\Debug\DAL.csproj.GenerateResource.Cache
 C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\DAL\obj\Debug\DAL.dll
 C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\DAL\obj\Debug\DAL.pdb
+C:\Users\backi_000\Documents\GitHub\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecas\DAL\bin\Debug\DAL.dll
+C:\Users\backi_000\Documents\GitHub\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecas\DAL\bin\Debug\DAL.pdb
+C:\Users\backi_000\Documents\GitHub\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecas\DAL\bin\Debug\EntitiesLayer.dll
+C:\Users\backi_000\Documents\GitHub\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecas\DAL\bin\Debug\TIL.dll
+C:\Users\backi_000\Documents\GitHub\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecas\DAL\bin\Debug\EntitiesLayer.pdb
+C:\Users\backi_000\Documents\GitHub\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecas\DAL\bin\Debug\TIL.pdb
+C:\Users\backi_000\Documents\GitHub\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecas\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\backi_000\Documents\GitHub\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecas\DAL\obj\Debug\DAL.Properties.Resources.resources
+C:\Users\backi_000\Documents\GitHub\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecas\DAL\obj\Debug\DAL.csproj.GenerateResource.Cache
+C:\Users\backi_000\Documents\GitHub\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecas\DAL\obj\Debug\DAL.dll
+C:\Users\backi_000\Documents\GitHub\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecas\DAL\obj\Debug\DAL.pdb

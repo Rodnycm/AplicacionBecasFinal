@@ -33,11 +33,16 @@ Partial Class UctrlListarYBuscarUsuario
         Me.dgUsuarios = New System.Windows.Forms.DataGridView()
         Me.Identificación = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tel = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.gen = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.RolAsignado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CorreoElect = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.opciones = New System.Windows.Forms.DataGridViewComboBoxColumn()
-        Me.btnCrearUsuario = New System.Windows.Forms.Button()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
+        Me.btnCrearUsuario = New System.Windows.Forms.Button()
         Me.PbUsuarios = New System.Windows.Forms.PictureBox()
+        Me.btnVolver = New System.Windows.Forms.Button()
         CType(Me.dgUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PbUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -57,7 +62,7 @@ Partial Class UctrlListarYBuscarUsuario
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgUsuarios.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgUsuarios.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Identificación, Me.Nombre, Me.RolAsignado, Me.opciones})
+        Me.dgUsuarios.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Identificación, Me.Nombre, Me.tel, Me.Fecha, Me.gen, Me.RolAsignado, Me.CorreoElect, Me.opciones})
         DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle6.Font = New System.Drawing.Font("Segoe UI Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -67,7 +72,7 @@ Partial Class UctrlListarYBuscarUsuario
         DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.dgUsuarios.DefaultCellStyle = DataGridViewCellStyle6
         Me.dgUsuarios.GridColor = System.Drawing.Color.White
-        Me.dgUsuarios.Location = New System.Drawing.Point(43, 207)
+        Me.dgUsuarios.Location = New System.Drawing.Point(42, 233)
         Me.dgUsuarios.Name = "dgUsuarios"
         Me.dgUsuarios.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -80,7 +85,7 @@ Partial Class UctrlListarYBuscarUsuario
         Me.dgUsuarios.RowHeadersDefaultCellStyle = DataGridViewCellStyle7
         Me.dgUsuarios.RowHeadersVisible = False
         Me.dgUsuarios.Size = New System.Drawing.Size(947, 271)
-        Me.dgUsuarios.TabIndex = 20
+        Me.dgUsuarios.TabIndex = 16
         '
         'Identificación
         '
@@ -98,6 +103,24 @@ Partial Class UctrlListarYBuscarUsuario
         Me.Nombre.HeaderText = "Nombre"
         Me.Nombre.Name = "Nombre"
         '
+        'tel
+        '
+        Me.tel.HeaderText = "Teléfono"
+        Me.tel.Name = "tel"
+        Me.tel.Visible = False
+        '
+        'Fecha
+        '
+        Me.Fecha.HeaderText = "Fecha Nacimiento"
+        Me.Fecha.Name = "Fecha"
+        Me.Fecha.Visible = False
+        '
+        'gen
+        '
+        Me.gen.HeaderText = "Género"
+        Me.gen.Name = "gen"
+        Me.gen.Visible = False
+        '
         'RolAsignado
         '
         Me.RolAsignado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
@@ -106,6 +129,12 @@ Partial Class UctrlListarYBuscarUsuario
         Me.RolAsignado.HeaderText = "Rol Asignado"
         Me.RolAsignado.Name = "RolAsignado"
         Me.RolAsignado.Width = 99
+        '
+        'CorreoElect
+        '
+        Me.CorreoElect.HeaderText = "Correo Electrónico"
+        Me.CorreoElect.Name = "CorreoElect"
+        Me.CorreoElect.Visible = False
         '
         'opciones
         '
@@ -119,44 +148,60 @@ Partial Class UctrlListarYBuscarUsuario
         Me.opciones.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         Me.opciones.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
         '
+        'txtBuscar
+        '
+        Me.txtBuscar.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBuscar.Location = New System.Drawing.Point(30, 158)
+        Me.txtBuscar.Name = "txtBuscar"
+        Me.txtBuscar.Size = New System.Drawing.Size(746, 29)
+        Me.txtBuscar.TabIndex = 17
+        Me.txtBuscar.Text = "Buscar:"
+        '
         'btnCrearUsuario
         '
         Me.btnCrearUsuario.BackgroundImage = CType(resources.GetObject("btnCrearUsuario.BackgroundImage"), System.Drawing.Image)
         Me.btnCrearUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCrearUsuario.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCrearUsuario.ForeColor = System.Drawing.Color.White
-        Me.btnCrearUsuario.Location = New System.Drawing.Point(784, 82)
+        Me.btnCrearUsuario.Location = New System.Drawing.Point(783, 108)
         Me.btnCrearUsuario.Name = "btnCrearUsuario"
         Me.btnCrearUsuario.Size = New System.Drawing.Size(222, 79)
-        Me.btnCrearUsuario.TabIndex = 19
+        Me.btnCrearUsuario.TabIndex = 15
         Me.btnCrearUsuario.Text = "Crear Usuario"
         Me.btnCrearUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnCrearUsuario.UseVisualStyleBackColor = True
-        '
-        'txtBuscar
-        '
-        Me.txtBuscar.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBuscar.Location = New System.Drawing.Point(31, 132)
-        Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(746, 29)
-        Me.txtBuscar.TabIndex = 21
-        Me.txtBuscar.Text = "Buscar:"
         '
         'PbUsuarios
         '
         Me.PbUsuarios.BackgroundImage = CType(resources.GetObject("PbUsuarios.BackgroundImage"), System.Drawing.Image)
         Me.PbUsuarios.Image = CType(resources.GetObject("PbUsuarios.Image"), System.Drawing.Image)
-        Me.PbUsuarios.Location = New System.Drawing.Point(31, 176)
+        Me.PbUsuarios.Location = New System.Drawing.Point(30, 202)
         Me.PbUsuarios.Name = "PbUsuarios"
         Me.PbUsuarios.Size = New System.Drawing.Size(975, 321)
-        Me.PbUsuarios.TabIndex = 18
+        Me.PbUsuarios.TabIndex = 14
         Me.PbUsuarios.TabStop = False
+        '
+        'btnVolver
+        '
+        Me.btnVolver.BackColor = System.Drawing.Color.White
+        Me.btnVolver.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(248, Byte), Integer))
+        Me.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnVolver.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnVolver.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(248, Byte), Integer))
+        Me.btnVolver.Location = New System.Drawing.Point(880, 529)
+        Me.btnVolver.Name = "btnVolver"
+        Me.btnVolver.Size = New System.Drawing.Size(89, 29)
+        Me.btnVolver.TabIndex = 65
+        Me.btnVolver.Text = "Volver"
+        Me.btnVolver.UseVisualStyleBackColor = False
+        Me.btnVolver.Visible = False
         '
         'UctrlListarYBuscarUsuario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
+        Me.Controls.Add(Me.btnVolver)
         Me.Controls.Add(Me.dgUsuarios)
         Me.Controls.Add(Me.btnCrearUsuario)
         Me.Controls.Add(Me.txtBuscar)
@@ -169,13 +214,18 @@ Partial Class UctrlListarYBuscarUsuario
         Me.PerformLayout()
 
     End Sub
+    Friend WithEvents PbUsuarios As System.Windows.Forms.PictureBox
+    Friend WithEvents btnCrearUsuario As System.Windows.Forms.Button
     Friend WithEvents dgUsuarios As System.Windows.Forms.DataGridView
+    Friend WithEvents txtBuscar As System.Windows.Forms.TextBox
     Friend WithEvents Identificación As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Nombre As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents tel As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Fecha As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents gen As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents RolAsignado As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents CorreoElect As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents opciones As System.Windows.Forms.DataGridViewComboBoxColumn
-    Friend WithEvents btnCrearUsuario As System.Windows.Forms.Button
-    Friend WithEvents txtBuscar As System.Windows.Forms.TextBox
-    Friend WithEvents PbUsuarios As System.Windows.Forms.PictureBox
+    Friend WithEvents btnVolver As System.Windows.Forms.Button
 
 End Class

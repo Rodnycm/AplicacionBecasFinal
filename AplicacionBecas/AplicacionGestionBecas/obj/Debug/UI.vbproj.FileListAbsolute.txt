@@ -281,3 +281,7 @@ R:\Horus\GitHub\xAplicacionBecas\AplicacionBecas\AplicacionGestionBecas\obj\Debu
 R:\Horus\GitHub\xAplicacionBecas\AplicacionBecas\AplicacionGestionBecas\obj\Debug\RdlCompile.cache
 R:\Horus\GitHub\xAplicacionBecas\AplicacionBecas\AplicacionGestionBecas\obj\Debug\RdlCompile.compiled
 >>>>>>> origin/Prophet94
+C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\bin\Debug\UI.exe.config
+C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\UI.exe
+C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\UI.xml
+C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\UI.pdb

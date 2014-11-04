@@ -202,12 +202,6 @@
     <Compile Include="uCtrlCurso.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="uCtrlEliminar.Designer.vb">
-      <DependentUpon>uCtrlEliminar.vb</DependentUpon>
-    </Compile>
-    <Compile Include="uCtrlEliminar.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Include="uCtrlEliminarBeneficio.Designer.vb">
       <DependentUpon>uCtrlEliminarBeneficio.vb</DependentUpon>
     </Compile>
@@ -398,9 +392,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="uCtrlCurso.resx">
       <DependentUpon>uCtrlCurso.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="uCtrlEliminar.resx">
-      <DependentUpon>uCtrlEliminar.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="uCtrlEliminarBeneficio.resx">
       <DependentUpon>uCtrlEliminarBeneficio.vb</DependentUpon>

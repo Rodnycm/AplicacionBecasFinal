@@ -12,7 +12,7 @@ namespace BLL
     {
         //<summary> Método que se encarga de un nuevo Requisito</summary>
         //<author> Gabriela Gutiérrez Corrales </author> 
-        //<param name = "ppNombre"> variable de tipo String que almacena el nombre del requisito  </param>
+        //<param name = "pNombre"> variable de tipo String que almacena el nombre del requisito  </param>
         //<param name= "pdescripcion" > variable de tipo String que almacena la descripción del requisito  </param>
         //<returns>No retorna valor</returns> 
         public void crearRequisito(String pnombre, String pdescripcion)

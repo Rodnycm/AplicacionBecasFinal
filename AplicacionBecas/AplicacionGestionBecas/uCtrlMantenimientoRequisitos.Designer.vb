@@ -30,6 +30,7 @@ Partial Class uCtrlMantenimientoRequisitos
         Me.Modificarcmb = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnCrearRequisito = New System.Windows.Forms.Button()
+        Me.txtBuscar = New System.Windows.Forms.TextBox()
         CType(Me.dgvRequisitos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -55,7 +56,7 @@ Partial Class uCtrlMantenimientoRequisitos
         Me.dgvRequisitos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         Me.dgvRequisitos.RowHeadersVisible = False
         Me.dgvRequisitos.ShowEditingIcon = False
-        Me.dgvRequisitos.Size = New System.Drawing.Size(947, 271)
+        Me.dgvRequisitos.Size = New System.Drawing.Size(952, 271)
         Me.dgvRequisitos.TabIndex = 15
         '
         'dtaNombre
@@ -63,12 +64,13 @@ Partial Class uCtrlMantenimientoRequisitos
         Me.dtaNombre.HeaderText = "Nombre"
         Me.dtaNombre.Name = "dtaNombre"
         Me.dtaNombre.ReadOnly = True
-        Me.dtaNombre.Width = 300
+        Me.dtaNombre.Width = 160
         '
         'descripcion
         '
         Me.descripcion.HeaderText = "Descripcion"
         Me.descripcion.Name = "descripcion"
+        Me.descripcion.Width = 570
         '
         'Modificarcmb
         '
@@ -101,11 +103,22 @@ Partial Class uCtrlMantenimientoRequisitos
         Me.btnCrearRequisito.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnCrearRequisito.UseVisualStyleBackColor = True
         '
+        'txtBuscar
+        '
+        Me.txtBuscar.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBuscar.ForeColor = System.Drawing.Color.Black
+        Me.txtBuscar.Location = New System.Drawing.Point(31, 84)
+        Me.txtBuscar.Name = "txtBuscar"
+        Me.txtBuscar.Size = New System.Drawing.Size(746, 27)
+        Me.txtBuscar.TabIndex = 16
+        Me.txtBuscar.Text = "Buscar:"
+        '
         'uCtrlMantenimientoRequisitos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
+        Me.Controls.Add(Me.txtBuscar)
         Me.Controls.Add(Me.dgvRequisitos)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.btnCrearRequisito)
@@ -115,11 +128,13 @@ Partial Class uCtrlMantenimientoRequisitos
         CType(Me.dgvRequisitos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents dgvRequisitos As System.Windows.Forms.DataGridView
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents btnCrearRequisito As System.Windows.Forms.Button
+    Friend WithEvents txtBuscar As System.Windows.Forms.TextBox
     Friend WithEvents dtaNombre As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents descripcion As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Modificarcmb As System.Windows.Forms.DataGridViewComboBoxColumn

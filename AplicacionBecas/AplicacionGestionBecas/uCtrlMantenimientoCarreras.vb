@@ -2,6 +2,8 @@
 
 Public Class uCtrlMantenimientoCarreras
 
+    Implements IDisposable
+
     Public Property uCtrlCarrera As uCtrlCrearCarrera
 
     ''' <summary>Metodo que se ejecuta cuando el usuario da click al boton crear carrera, muestra 
@@ -11,6 +13,7 @@ Public Class uCtrlMantenimientoCarreras
     Private Sub btnMantenimiento_Click(sender As Object, e As EventArgs) Handles btnMantenimiento.Click
 
         uCtrlCarrera = New uCtrlCrearCarrera()
+        uCtrlCarrera.mantenimientoCarreras = Me
         FrmIniciarSesion.principal.Controls.Add(uCtrlCarrera)
         uCtrlCarrera.BringToFront()
         uCtrlCarrera.Show()
@@ -22,15 +25,28 @@ Public Class uCtrlMantenimientoCarreras
 
     Public Sub listarCarreras()
 
-        dgvCarreras.Rows.Clear()
-        Dim listaCarreras As New List(Of Carrera)
-        listaCarreras = objGestorCarrera.consultarCarreras
+        Try
 
-        For Each carrera As Carrera In listaCarreras
+            dgvCarreras.Rows.Clear()
+            Dim listaCarreras As New List(Of Carrera)
+            listaCarreras = objGestorCarrera.consultarCarreras
 
-            dgvCarreras.Rows.Add(carrera.codigo, carrera.nombre, carrera.directorAcademico.primerNombre & " " & carrera.directorAcademico.primerApellido & " " & carrera.directorAcademico.segundoApellido, "", "", carrera.Id)
+            For Each carrera As Carrera In listaCarreras
 
-        Next
+                dgvCarreras.Rows.Add(carrera.codigo, carrera.nombre, carrera.directorAcademico.primerNombre & " " & carrera.directorAcademico.primerApellido & " " & carrera.directorAcademico.segundoApellido, "", "", carrera.Id)
+
+            Next
+
+        Catch ex As Exception
+
+            Dim uctrlAlerta As UctrlAlerta = New UctrlAlerta()
+            Me.Controls.Add(uctrlAlerta)
+            uctrlAlerta.Location = New Point(300, 100)
+            uctrlAlerta.BringToFront()
+            uctrlAlerta.lblAlerta.Text = "No hay carreras registradas"
+            uctrlAlerta.Show()
+
+        End Try
 
     End Sub
 
@@ -64,7 +80,7 @@ Public Class uCtrlMantenimientoCarreras
 
         ElseIf combo.SelectedItem = "Eliminar" Then
 
-            'eliminarCarrera(fila)
+            eliminarCarrera(fila)
 
         End If
 
@@ -104,25 +120,31 @@ Public Class uCtrlMantenimientoCarreras
     ''' <param name="numfila">Numero de fila en la que se encuentra el combobox</param>
     ''' <autor>Alvaro Artavia</autor>
 
-    'Public Sub eliminarCarrera(numFila As Integer)
+    Public Sub eliminarCarrera(numFila As Integer)
 
-    '    Dim uCtrlElimCarrera As New uCtrlEliminar()
-    '    Dim value1 As Object = dgvCarreras.Rows(numFila).Cells(0).Value
-    '    Dim value2 As Object = dgvCarreras.Rows(numFila).Cells(1).Value
-    '    uCtrlElimCarrera.nombre = CType(value2, String)
-    '    uCtrlElimCarrera.codigo = CType(value1, String)
-    '    FrmIniciarSesion.principal.Controls.Add(uCtrlElimCarrera)
-    '    uCtrlElimCarrera.Show()
-    '    uCtrlElimCarrera.BringToFront()
-    '    uCtrlElimCarrera.mantenimientoCarreras = Me
+        Dim uCtrlElimCarrera As New uCtrlEliminarCarrera()
+        Dim value1 As Object = dgvCarreras.Rows(numFila).Cells(0).Value
+        Dim value2 As Object = dgvCarreras.Rows(numFila).Cells(1).Value
+        uCtrlElimCarrera.nombre = CType(value2, String)
+        uCtrlElimCarrera.codigo = CType(value1, String)
+        FrmIniciarSesion.principal.Controls.Add(uCtrlElimCarrera)
+        uCtrlElimCarrera.Show()
+        uCtrlElimCarrera.BringToFront()
+        uCtrlElimCarrera.mantenimientoCarreras = Me
 
-    'End Sub
-    
+    End Sub
+
+    ''' <summary>Cuando el evento se ejecuta el nombre del textbox queda vacio</summary>
+    ''' <autor>Alvaro Artavia</autor>
+
     Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.MouseClick
 
         txtBuscar.Text = ""
 
     End Sub
+
+    ''' <summary>Cuando el evento se ejecuta al dar presionar la tecla enter llama al metodo eliminar carrera</summary>
+    ''' <autor>Alvaro Artavia</autor>
 
     Private Sub txtBuscar_KeyDown(sender As Object, e As System.Windows.Forms.KeyEventArgs) Handles txtBuscar.KeyDown
 
@@ -136,28 +158,47 @@ Public Class uCtrlMantenimientoCarreras
 
     End Sub
 
+    ''' <summary>Busca la carrera por medio del parametro que el usuario digito</summary>
+    ''' <param name="param">Parametro nombre o codigo para filtrar la busqueda</param>
+    ''' <autor>Alvaro Artavia</autor>
+
     Private Sub buscarCarrera(ByVal param As String)
 
-        Dim c As Carrera = objGestorCarrera.buscarCarrera(param)
+        Try
 
-        dgvCarreras.Rows.Clear()
-        dgvCarreras.Rows.Add(c.codigo, c.nombre, "", "")
-
-        If c.codigo = "" Then
-
+            Dim c As Carrera = objGestorCarrera.buscarCarrera(param)
             dgvCarreras.Rows.Clear()
-            listarCarreras()
+            dgvCarreras.Rows.Add(c.codigo, c.nombre, c.directorAcademico.primerNombre & " " & c.directorAcademico.primerApellido & " " & c.directorAcademico.segundoApellido, "", "", c.Id)
 
-        End If
+            If c.codigo = "" Then
+
+                dgvCarreras.Rows.Clear()
+                listarCarreras()
+
+            End If
+
+        Catch ex As Exception
+
+            Dim uctrlAlerta As UctrlAlerta = New UctrlAlerta()
+            Me.Controls.Add(uctrlAlerta)
+            uctrlAlerta.Location = New Point(300, 100)
+            uctrlAlerta.BringToFront()
+            uctrlAlerta.lblAlerta.Text = "No se encontró la carrera"
+            uctrlAlerta.Show()
+
+        End Try
 
     End Sub
 
     Public Sub asignarCursosACarrera()
 
         Dim listaCursos As New List(Of Curso)
-        'listaCursos = objGestorCurso.
+        'listaCursos = objGestorCurso.listarCursos
 
     End Sub
+
+    ''' <summary>Evento que se ejecuta cuando el usuario da click al boton cursos del datagridview</summary>
+    ''' <autor>Alvaro Artavia</autor>
 
     Private Sub dgvCarreras_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvCarreras.CellContentClick
 

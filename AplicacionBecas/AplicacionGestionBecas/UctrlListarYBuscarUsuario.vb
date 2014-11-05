@@ -1,9 +1,14 @@
 ﻿Imports EntitiesLayer
+
 Public Class UctrlListarYBuscarUsuario
+
+
     Dim ucntrlUsuario As UctrlCrearUsuario = New UctrlCrearUsuario()
   
     Public Sub UctrlListarYBuscarUsuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         listarUsuarios()
+
     End Sub
 
     '<summary> Método que se encarga de listar los usuarios que hay registrados en el sistema</summary>

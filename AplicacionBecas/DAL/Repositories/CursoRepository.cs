@@ -29,9 +29,6 @@ namespace DAL
             _updateItems = new List<IEntity>();
         }
 
-
-
-
         //<summary> Método que se encarga de instanciar un CursoRepository</summary>
         //<author> Valeria Ramírez Cordero </author> 
         //<param> No recibe valor  </param>
@@ -48,7 +45,6 @@ namespace DAL
                 return instance;
             }
         }
-
 
         //<summary> Método que se encarga de agregar un curso a la lista de cursos que se desean insertar</summary>
         //<author> Valeria Ramírez Cordero </author> 

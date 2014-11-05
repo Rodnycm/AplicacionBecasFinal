@@ -18,6 +18,9 @@ namespace DAL.Repositories
         private List<IEntity> _insertItems;
         private List<IEntity> _deleteItems;
         private List<IEntity> _updateItems;
+        private static Excepciones exceptions = new Excepciones();
+        private  static int numero;
+        private static string mensaje;
 
         public UsuarioRepository()
         {
@@ -76,22 +79,103 @@ namespace DAL.Repositories
         //<returns>Retorna una lista con todos los usuarios registrados en el sistema.</returns> 
         public IEnumerable<Usuario> GetAll()
         {
-            List<Usuario> pusuario = null;
-            SqlCommand cmd = new SqlCommand();
-            DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_buscarUsuarios");
-            Rol rolUsuario = null;
-
-
-            if (ds.Tables[0].Rows.Count > 0)
+            try
             {
-                pusuario = new List<Usuario>();
+                List<Usuario> pusuario = null;
+                SqlCommand cmd = new SqlCommand();
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_buscarUsuarios");
+                Rol rolUsuario = null;
 
-                foreach (DataRow dr in ds.Tables[0].Rows)
+                if (ds.Tables[0].Rows.Count > 0)
                 {
+                    pusuario = new List<Usuario>();
+
+                    foreach (DataRow dr in ds.Tables[0].Rows)
+                    {
+                        int rol = Convert.ToInt32(dr["Fk_Tb_Roles_Tb_Usuarios_IdRol"]);
+
+                        rolUsuario = RolRepository.Instance.GetById(rol);
+                        Usuario objUsuario = new Usuario
+                        {
+                            primerNombre = dr["PrimerNombre"].ToString(),
+                            segundoNombre = dr["SegundoNombre"].ToString(),
+                            primerApellido = dr["PrimerApellido"].ToString(),
+                            segundoApellido = dr["SegundoApellido"].ToString(),
+                            identificacion = dr["Identificacion"].ToString(),
+                            telefono = dr["Telefono"].ToString(),
+                            fechaNacimiento = Convert.ToDateTime(dr["FechaNacimiento"]),
+                            rol = rolUsuario,
+                            genero = Convert.ToInt32(dr["Genero"]),
+                            correoElectronico = dr["CorreoElectronico"].ToString(),
+                            contraseña = dr["Contraseña"].ToString()
+                        };
+                        objUsuario.Id = Convert.ToInt32(dr["id"]);
+                        pusuario.Add(objUsuario);
+                    }
+                }
+                return pusuario;
+            }
+
+            catch (SqlException  ex)
+            {
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+         
+        }
+
+        //<summary> Método que se encarga de traer de la base de datos un usuario específico </summary>
+        //<author> Gabriela Gutiérrez Corrales </author> 
+        //<param name "id"> parámetro de tipo int que contiene el Id del usuario que se desea traer </param>
+        //<returns>Retorna el usuario deseado</returns> 
+
+        public Usuario GetById(int id)
+        {
+            try {
+            Usuario objUsuario = null;
+            return objUsuario;
+            
+            }
+            catch (SqlException ex){
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
+            }
+            catch(Exception ex){
+
+                throw ex;
+            
+            }
+            
+        }
+
+        //<summary> Método que se encarga de traer de la base de datos un usuario específico </summary>
+        //<author> Gabriela Gutiérrez Corrales </author> 
+        //<param name "parametro"> parámetro de tipo string que contiene el nombre o identificación del usuario que se desea traer </param>
+        //<returns>Retorna el usuario deseado</returns> 
+
+        public Usuario GetByNombre(String parametro)
+        {
+            try {
+                Usuario objUsuario = null;
+                Rol rolUsuario = null;
+                SqlCommand cmd = new SqlCommand();
+                cmd.Parameters.AddWithValue("@parametro", parametro);
+
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_buscarUnUsuario");
+
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    var dr = ds.Tables[0].Rows[0];
                     int rol = Convert.ToInt32(dr["Fk_Tb_Roles_Tb_Usuarios_IdRol"]);
 
                     rolUsuario = RolRepository.Instance.GetById(rol);
-                    Usuario objUsuario = new Usuario
+                    objUsuario = new Usuario
                     {
                         primerNombre = dr["PrimerNombre"].ToString(),
                         segundoNombre = dr["SegundoNombre"].ToString(),
@@ -103,63 +187,25 @@ namespace DAL.Repositories
                         rol = rolUsuario,
                         genero = Convert.ToInt32(dr["Genero"]),
                         correoElectronico = dr["CorreoElectronico"].ToString(),
-                        contraseña = dr["Contraseña"].ToString()
+                        contraseña = dr["Contraseña"].ToString(),
                     };
                     objUsuario.Id = Convert.ToInt32(dr["id"]);
-                    pusuario.Add(objUsuario);
                 }
+                return objUsuario;
+            
             }
-            return pusuario;
-        }
+            catch(SqlException ex) {
 
-        //<summary> Método que se encarga de traer de la base de datos un usuario específico </summary>
-        //<author> Gabriela Gutiérrez Corrales </author> 
-        //<param name "id"> parámetro de tipo int que contiene el Id del usuario que se desea traer </param>
-        //<returns>Retorna el usuario deseado</returns> 
-
-        public Usuario GetById(int id)
-        {
-            Usuario objUsuario = null;
-            return objUsuario;
-        }
-
-        //<summary> Método que se encarga de traer de la base de datos un usuario específico </summary>
-        //<author> Gabriela Gutiérrez Corrales </author> 
-        //<param name "parametro"> parámetro de tipo string que contiene el nombre o identificación del usuario que se desea traer </param>
-        //<returns>Retorna el usuario deseado</returns> 
-
-        public Usuario GetByNombre(String parametro)
-        {
-            Usuario objUsuario = null;
-            Rol rolUsuario = null;
-            SqlCommand cmd = new SqlCommand();
-            cmd.Parameters.AddWithValue("@parametro", parametro);
-
-            DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_buscarUnUsuario");
-
-            if (ds.Tables[0].Rows.Count > 0)
-            {
-                var dr = ds.Tables[0].Rows[0];
-                int rol = Convert.ToInt32(dr["Fk_Tb_Roles_Tb_Usuarios_IdRol"]);
-
-                rolUsuario = RolRepository.Instance.GetById(rol);
-                objUsuario = new Usuario
-                {
-                    primerNombre = dr["PrimerNombre"].ToString(),
-                    segundoNombre = dr["SegundoNombre"].ToString(),
-                    primerApellido = dr["PrimerApellido"].ToString(),
-                    segundoApellido = dr["SegundoApellido"].ToString(),
-                    identificacion = dr["Identificacion"].ToString(),
-                    telefono = dr["Telefono"].ToString(),
-                    fechaNacimiento = Convert.ToDateTime(dr["FechaNacimiento"]),
-                    rol = rolUsuario,
-                    genero = Convert.ToInt32(dr["Genero"]),
-                    correoElectronico = dr["CorreoElectronico"].ToString(),
-                    contraseña = dr["Contraseña"].ToString(),
-                };
-                objUsuario.Id = Convert.ToInt32(dr["id"]);
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
+            
             }
-            return objUsuario;
+            catch(Exception ex){
+
+                throw ex;
+            }
+               
         }
 
         //<summary> Método que se encarga de guardar en la base de datos los cambios realizados </summary>
@@ -251,10 +297,20 @@ namespace DAL.Repositories
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_crearUsuario");
 
             }
+
+            catch (SqlException ex)
+            {
+                
+                numero = ex.Number;
+                mensaje = exceptions.excepciones(numero);
+               throw new CustomExceptions.DataAccessException(mensaje, ex);
+
+            }
             catch (Exception ex)
             {
 
                 throw ex;
+              
             }
         }
 
@@ -272,7 +328,7 @@ namespace DAL.Repositories
 
                 cmd.Parameters.Add(new SqlParameter("@id", objUsuario.Id));
                 cmd.Parameters.Add(new SqlParameter("@nombre", objUsuario.primerNombre));
-                cmd.Parameters.Add(new SqlParameter("@segundoNombre", objUsuario.segundoNombre));
+                cmd.Parameters.Add(new SqlParameter("@segundoNombre", objUsuario.segundoNombre  ));
                 cmd.Parameters.Add(new SqlParameter("@primerApellido", objUsuario.primerApellido));
                 cmd.Parameters.Add(new SqlParameter("@segundoApellido", objUsuario.segundoApellido));
                 cmd.Parameters.Add(new SqlParameter("@identificacion", objUsuario.identificacion));
@@ -284,6 +340,14 @@ namespace DAL.Repositories
                 cmd.Parameters.Add(new SqlParameter("@contraseña", objUsuario.contraseña));
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_modificarUsuario");
 
+            }
+
+            catch (SqlException ex)
+            {
+                numero = ex.Number;
+                
+                mensaje = exceptions.validarExcepcion (numero );
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
             }
             catch (Exception ex)
             {
@@ -306,84 +370,57 @@ namespace DAL.Repositories
             }
             catch (SqlException ex)
             {
-                //logear la excepcion a la bd con un Exception
-
-                //throw new CustomExceptions.DataAccessException("Ha ocurrido un error al eliminar un usuario", ex);
-
-
-
-
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
+             
 
             }
             catch (Exception ex)
             {
 
-               // throw new CustomExceptions.DataAccessException("Ha ocurrido un error al eliminar un usuario", ex);
-
-
+                throw new CustomExceptions.DataAccessException("Ha ocurrido un error al eliminar un usuario", ex);
+               
             }
         }
 
         public static int autenticar(String pusuario, String pcontraseña)
         {
-            int resultado = 1;
-            SqlCommand cmd = new SqlCommand();
-            return resultado;
+            try {
+                int resultado = 1;
+                SqlCommand cmd = new SqlCommand();
+                return resultado;
+            
+            }
+            catch(SqlException ex) {
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
+            }
+            catch(Exception ex){
+                throw ex;
+            }
+           
         }
 
         public Usuario iniciarSesion(String pnombreUsuario)
         {
-            Usuario objUsuario = null;
+            try {
+                Usuario objUsuario = null;
 
-            Rol rolUsuario = null;
-            SqlCommand cmd = new SqlCommand();
-            cmd.Parameters.AddWithValue("@nombreUsuario", pnombreUsuario);
+                Rol rolUsuario = null;
+                SqlCommand cmd = new SqlCommand();
+                cmd.Parameters.AddWithValue("@nombreUsuario", pnombreUsuario);
 
-            DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_iniciarSesion");
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_iniciarSesion");
 
-            if (ds.Tables[0].Rows.Count > 0)
-            {
-                var dr = ds.Tables[0].Rows[0];
-                int rol = Convert.ToInt32(dr["Fk_Tb_Roles_Tb_Usuarios_IdRol"]);
-
-                rolUsuario = RolRepository.Instance.GetById(rol);
-                objUsuario = new Usuario
+                if (ds.Tables[0].Rows.Count > 0)
                 {
-                    primerNombre = dr["PrimerNombre"].ToString(),
-                    segundoNombre = dr["SegundoNombre"].ToString(),
-                    primerApellido = dr["PrimerApellido"].ToString(),
-                    segundoApellido = dr["SegundoApellido"].ToString(),
-                    identificacion = dr["Identificacion"].ToString(),
-                    telefono = dr["Telefono"].ToString(),
-                    fechaNacimiento = Convert.ToDateTime(dr["FechaNacimiento"]),
-                    rol = rolUsuario,
-                    genero = Convert.ToInt32(dr["Genero"]),
-                    correoElectronico = dr["CorreoElectronico"].ToString(),
-                    contraseña = dr["Contraseña"].ToString(),
-                };
-                objUsuario.Id = Convert.ToInt32(dr["id"]);
-            }
-            return objUsuario;
-
-        }
-
-        public IEnumerable<Usuario> GetDirectoresAcademicos()
-        {
-            List<Usuario> pusuario = null;
-            SqlCommand cmd = new SqlCommand();
-            DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_buscarDirectoresAcademicos");
-            Rol rolUsuario = null;
-
-            if (ds.Tables[0].Rows.Count > 0)
-            {
-                pusuario = new List<Usuario>();
-
-                foreach (DataRow dr in ds.Tables[0].Rows)
-                {
+                    var dr = ds.Tables[0].Rows[0];
                     int rol = Convert.ToInt32(dr["Fk_Tb_Roles_Tb_Usuarios_IdRol"]);
 
                     rolUsuario = RolRepository.Instance.GetById(rol);
-                    Usuario objUsuario = new Usuario
+                    objUsuario = new Usuario
                     {
                         primerNombre = dr["PrimerNombre"].ToString(),
                         segundoNombre = dr["SegundoNombre"].ToString(),
@@ -398,10 +435,73 @@ namespace DAL.Repositories
                         contraseña = dr["Contraseña"].ToString(),
                     };
                     objUsuario.Id = Convert.ToInt32(dr["id"]);
-                    pusuario.Add(objUsuario);
                 }
+                return objUsuario;
+            
             }
-            return pusuario;
+            catch (SqlException ex)
+            {
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public IEnumerable<Usuario> GetDirectoresAcademicos()
+        {
+
+            try {
+
+                List<Usuario> pusuario = null;
+                SqlCommand cmd = new SqlCommand();
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_buscarDirectoresAcademicos");
+                Rol rolUsuario = null;
+
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    pusuario = new List<Usuario>();
+
+                    foreach (DataRow dr in ds.Tables[0].Rows)
+                    {
+                        int rol = Convert.ToInt32(dr["Fk_Tb_Roles_Tb_Usuarios_IdRol"]);
+
+                        rolUsuario = RolRepository.Instance.GetById(rol);
+                        Usuario objUsuario = new Usuario
+                        {
+                            primerNombre = dr["PrimerNombre"].ToString(),
+                            segundoNombre = dr["SegundoNombre"].ToString(),
+                            primerApellido = dr["PrimerApellido"].ToString(),
+                            segundoApellido = dr["SegundoApellido"].ToString(),
+                            identificacion = dr["Identificacion"].ToString(),
+                            telefono = dr["Telefono"].ToString(),
+                            fechaNacimiento = Convert.ToDateTime(dr["FechaNacimiento"]),
+                            rol = rolUsuario,
+                            genero = Convert.ToInt32(dr["Genero"]),
+                            correoElectronico = dr["CorreoElectronico"].ToString(),
+                            contraseña = dr["Contraseña"].ToString(),
+                        };
+                        objUsuario.Id = Convert.ToInt32(dr["id"]);
+                        pusuario.Add(objUsuario);
+                    }
+                }
+                return pusuario;
+            
+            
+            }
+            catch (SqlException ex) {
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
+            
+            }
+            catch (Exception ex) {
+                throw ex;
+            }
+     
         }
     }
 }

@@ -53,6 +53,7 @@ namespace TIL
             }
             public PresentationLayerException(string message, Exception ex)
                 : base(message, ex)
+
             {
             }
         }

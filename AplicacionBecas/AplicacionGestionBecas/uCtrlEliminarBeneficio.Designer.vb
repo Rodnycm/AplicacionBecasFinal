@@ -22,22 +22,11 @@ Partial Class uCtrlEliminarBeneficio
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(uCtrlEliminarBeneficio))
-        'Me.lblEliminar = New System.Windows.Forms.Label()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.btnAceptar = New System.Windows.Forms.Button()
+        Me.lblEliminar = New System.Windows.Forms.Label()
         Me.SuspendLayout()
-        '
-        'lblEliminar
-        '
-        'Me.lblEliminar.AutoSize = True
-        'Me.lblEliminar.BackColor = System.Drawing.Color.Transparent
-        'Me.lblEliminar.Font = New System.Drawing.Font("Segoe UI Light", 13.0!)
-        'Me.lblEliminar.Location = New System.Drawing.Point(40, 29)
-        'Me.lblEliminar.Name = "lblEliminar"
-        'Me.lblEliminar.Size = New System.Drawing.Size(0, 25)
-        'Me.lblEliminar.TabIndex = 5
         '
         'btnCancelar
         '
@@ -64,18 +53,24 @@ Partial Class uCtrlEliminarBeneficio
         Me.btnAceptar.TabIndex = 3
         Me.btnAceptar.Text = "Aceptar"
         Me.btnAceptar.UseVisualStyleBackColor = False
-
+        '
+        'lblEliminar
+        '
+        Me.lblEliminar.AutoSize = True
+        Me.lblEliminar.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblEliminar.Location = New System.Drawing.Point(25, 36)
+        Me.lblEliminar.Name = "lblEliminar"
+        Me.lblEliminar.Size = New System.Drawing.Size(0, 17)
+        Me.lblEliminar.TabIndex = 5
         '
         'uCtrlEliminarBeneficio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        'Me.Controls.Add(Me.lblEliminar)
-
+        Me.Controls.Add(Me.lblEliminar)
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.btnAceptar)
         Me.Name = "uCtrlEliminarBeneficio"
@@ -88,6 +83,7 @@ Partial Class uCtrlEliminarBeneficio
     Friend WithEvents btnAceptar As System.Windows.Forms.Button
     Friend WithEvents btnCancelar As System.Windows.Forms.Button
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents lblEliminar As System.Windows.Forms.Label
 
 
 End Class

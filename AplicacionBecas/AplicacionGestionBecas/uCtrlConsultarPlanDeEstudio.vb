@@ -27,6 +27,23 @@ Public Class uCtrlConsultarPlanDeEstudio
 
     Public Sub llenarComboCursos()
 
+        Try
+            Dim listaCursos As New List(Of Curso)
+
+            listaCursos = objGestorCurso.getCursoPorCuatrimestre()
+
+            For i As Integer = 0 To listaRoles.Count - 1
+
+                cmbCursos.Items.Add(listaRoles(i).Nombre)
+            Next
+        Catch ex As Exception
+            alerta.lblAlerta.Text = ex.Message
+            FrmIniciarSesion.principal.Controls.Add(alerta)
+            alerta.BringToFront()
+            alerta.Show()
+        End Try
+
+
     End Sub
 
     Public Sub listarCursosPorCuatri()

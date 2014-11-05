@@ -99,6 +99,7 @@ Public Class uCntrlBuscarBeneficio
 
         If combo.SelectedItem = "Ver" Then
 
+
             verBeneficios()
 
         ElseIf combo.SelectedItem = "Editar" Then
@@ -132,15 +133,28 @@ Public Class uCntrlBuscarBeneficio
 
    
     Private Sub verBeneficios()
-        Dim nombre As String = dtaBuscarBeneficio.CurrentRow.Cells(1).Value
 
+        btnVolver.Visible = True
+        Dim beneficio As New Beneficio
+        Dim parametro = dtaBuscarBeneficio.CurrentRow.Cells(1).Value
+        Try
+            dtaBuscarBeneficio.Rows.Clear()
 
-        dtaBuscarBeneficio.Rows.Clear()
+            beneficio = objGestorBeneficio.buscarPorNombre(parametro)
+            dtaBuscarBeneficio.Columns("dtaAplicabilidad").Visible = True
+            dtaBuscarBeneficio.Columns("dtaOpciones").Visible = False
 
+            dtaBuscarBeneficio.Rows.Add(beneficio.Id, beneficio.Nombre, beneficio.Porcentaje, beneficio.Aplicacion)
 
-        Me.Hide()
-        Me.Dispose()
+        Catch ex As Exception
+            Dim UCtrl As New UctrlAlerta
 
+            Me.Controls.Add(UCtrl)
+            UCtrl.lblAlerta.Text = ex.Message
+            UCtrl.Location = New Point(300, 100)
+            UCtrl.BringToFront()
+            UCtrl.Show()
+        End Try
 
 
 
@@ -153,7 +167,9 @@ Public Class uCntrlBuscarBeneficio
     ''' <remarks></remarks>
     Private Sub editarBeneficios()
 
+        Try
 
+      
         Dim id As Integer = dtaBuscarBeneficio.CurrentRow.Cells(0).Value
         Dim nombre As String = dtaBuscarBeneficio.CurrentRow.Cells(1).Value
         Dim porcentaje As Double = dtaBuscarBeneficio.CurrentRow.Cells(2).Value
@@ -170,7 +186,17 @@ Public Class uCntrlBuscarBeneficio
         uCtrlModificarBeneficio.recieveData(id, nombre, porcentaje, aplicacion)
         uCtrlModificarBeneficio.BringToFront()
         uCtrlModificarBeneficio.Show()
-        uCtrlModificarBeneficio.Location = New Point(290, 48)
+            uCtrlModificarBeneficio.Location = New Point(290, 48)
+
+        Catch ex As Exception
+            Dim UCtrl As New UctrlAlerta
+
+            Me.Controls.Add(UCtrl)
+            UCtrl.lblAlerta.Text = ex.Message
+            UCtrl.Location = New Point(300, 100)
+            UCtrl.BringToFront()
+            UCtrl.Show()
+        End Try
 
     End Sub
 
@@ -183,7 +209,9 @@ Public Class uCntrlBuscarBeneficio
 
     Private Sub eliminarBeneficios()
 
+        Try
 
+        
         Dim id As Integer = dtaBuscarBeneficio.CurrentRow.Cells(0).Value
         Dim nombre As String = dtaBuscarBeneficio.CurrentRow.Cells(1).Value
         Dim porcentaje As Double = dtaBuscarBeneficio.CurrentRow.Cells(2).Value
@@ -194,7 +222,7 @@ Public Class uCntrlBuscarBeneficio
 
         FrmIniciarSesion.principal.Controls.Add(uCtrlEliminarBeneficio)
         uCtrlEliminarBeneficio.getUCtrlInstance(Me)
-        'uCtrlEliminarBeneficio.lblEliminar.Text = "¿Esta seguro que desea eliminar el beneficio?"
+            uCtrlEliminarBeneficio.lblEliminar.Text = "¿Esta seguro que desea eliminar el beneficio?"
 
         uCtrlEliminarBeneficio.recibirInfo(id, nombre, porcentaje, aplicacion)
         uCtrlEliminarBeneficio.BringToFront()
@@ -202,7 +230,19 @@ Public Class uCntrlBuscarBeneficio
         uCtrlEliminarBeneficio.Location = New Point(290, 48)
 
         dtaBuscarBeneficio.Rows.Clear()
-        listarBeneficios()
+            listarBeneficios()
+
+        Catch ex As Exception
+
+            Dim UCtrl As New UctrlAlerta
+
+            Me.Controls.Add(UCtrl)
+            UCtrl.lblAlerta.Text = ex.Message
+            UCtrl.Location = New Point(300, 100)
+            UCtrl.BringToFront()
+            UCtrl.Show()
+
+        End Try
 
     End Sub
 
@@ -239,5 +279,15 @@ Public Class uCntrlBuscarBeneficio
             dtaBuscarBeneficio.Rows.Clear()
             listarBeneficios()
         End Try
+    End Sub
+
+    Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
+
+        btnVolver.Visible = False
+        dtaBuscarBeneficio.Columns("dtaAplicabilidad").Visible = False
+        dtaBuscarBeneficio.Rows.Clear()
+        listarBeneficios()
+
+
     End Sub
 End Class

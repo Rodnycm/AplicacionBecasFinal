@@ -8,3 +8,8 @@ C:\Users\backi_000\Documents\GitHub\AplicacionBecasFinal\AplicacionBecasFinal\Ap
 C:\Users\backi_000\Documents\GitHub\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecas\EntitiesLayer\obj\Debug\EntitiesLayer.csprojResolveAssemblyReference.cache
 C:\Users\backi_000\Documents\GitHub\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecas\EntitiesLayer\obj\Debug\EntitiesLayer.dll
 C:\Users\backi_000\Documents\GitHub\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecas\EntitiesLayer\obj\Debug\EntitiesLayer.pdb
+C:\Users\backi_000\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\EntitiesLayer\bin\Debug\EntitiesLayer.dll
+C:\Users\backi_000\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\EntitiesLayer\bin\Debug\EntitiesLayer.pdb
+C:\Users\backi_000\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\EntitiesLayer\obj\Debug\EntitiesLayer.csprojResolveAssemblyReference.cache
+C:\Users\backi_000\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\EntitiesLayer\obj\Debug\EntitiesLayer.dll
+C:\Users\backi_000\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\EntitiesLayer\obj\Debug\EntitiesLayer.pdb

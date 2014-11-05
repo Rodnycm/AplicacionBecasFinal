@@ -78,7 +78,7 @@ namespace DAL.Repositories
                 pCarrera = new List<Carrera>();
                 foreach (DataRow dr in ds.Tables[0].Rows)
                 {
-                    string idDirector = Convert.ToString(dr["Fk_Tb_Personas_Tb_Usuarios_Identicacion"]);
+                    string idDirector = Convert.ToString(dr["Fk_Tb_Carreras_Tb_Usuario_Identificacion"]);
                     directorAcademico = UsuarioRepository.Instance.GetByNombre(idDirector);
                     pCarrera.Add(new Carrera
                     {
@@ -227,7 +227,7 @@ namespace DAL.Repositories
                 cmd.Parameters.Add(new SqlParameter("@Codigo", objCarrera.codigo));
                 cmd.Parameters.Add(new SqlParameter("@Nombre", objCarrera.nombre));
                 cmd.Parameters.Add(new SqlParameter("@Color", objCarrera.color));
-                cmd.Parameters.Add(new SqlParameter("@DirectorAcademico", objCarrera.directorAcademico.Id));
+                cmd.Parameters.Add(new SqlParameter("@DirectorAcademico", objCarrera.directorAcademico.identificacion ));
 
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_agregarCarrera");
             }

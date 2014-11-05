@@ -5,7 +5,7 @@ Imports EntitiesLayer
 Public Class uCtrlModificarRol
 
     Dim nombre As String
-    Dim idRol As String
+    Dim idRol As Integer
     Dim listarRoles As uCtrlListarRol
 
     Dim listaPermisos As New List(Of Permiso)
@@ -110,11 +110,43 @@ Public Class uCtrlModificarRol
     End Sub
 
     Sub asignarPermisosAUnRol()
-        Dim indexSeleccionado As Integer = 0
+
         Dim listaPermisosSeleccionados As New List(Of Permiso)
         Dim ListaPermisosQuitar As New List(Of Permiso)
         Dim listaIdROlesPermisos As New List(Of Integer)
 
+        listaPermisosSeleccionados = PermisosSeleccionados()
+        ListaPermisosQuitar = PermisosNoSeleccionados(listaPermisosSeleccionados)
+
+        listaPermisosSeleccionados = ValidarPermisos(listaPermisosSeleccionados, ListaPermisosQuitar)
+
+
+        If ListaPermisosQuitar.Count <> Nothing Then
+
+            For i As Integer = 0 To ListaPermisosQuitar.Count - 1
+                objGestorRol.eliminarPermisoAUnRol(ListaPermisosQuitar.Item(i).Id, idRol)
+            Next
+
+        End If
+
+
+        If listaPermisosSeleccionados.Count <> Nothing Then
+            For i As Integer = 0 To listaPermisosSeleccionados.Count - 1
+                objGestorRol.asignarPermisoAUnRol(listaPermisosSeleccionados.Item(i).Id(), idRol)
+
+            Next
+        End If
+
+        ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+
+
+
+    End Sub
+
+    Public Function PermisosSeleccionados()
+        Dim indexSeleccionado As Integer = 0
+        Dim listaPermisosSeleccionados As New List(Of Permiso)
         Try
 
             For Each indexSeleccionado In CLBPermisos.CheckedIndices
@@ -122,48 +154,56 @@ Public Class uCtrlModificarRol
                 listaPermisosSeleccionados.Add(listaPermisos.Item(indexSeleccionado))
 
             Next indexSeleccionado
+
+
+
+
         Catch
+        End Try
+
+        Return listaPermisosSeleccionados
+    End Function
+
+    Public Function PermisosNoSeleccionados(ByVal plistaPermisosSeleccionados As List(Of Permiso))
+
+        Dim ListaPermisosQuitar As New List(Of Permiso)
+        ListaPermisosQuitar = listaPermisos
+        Try
+
+            For j As Integer = 0 To plistaPermisosSeleccionados.Count - 1
+                Dim result As Boolean = False
+                For i As Integer = 0 To listaPermisos.Count - 1 And result = True
+
+                    If (plistaPermisosSeleccionados.Item(j).Id = listaPermisos.Item(i).Id) Then
+                        ListaPermisosQuitar.RemoveAt(i)
+                        result = True
+                    End If
+
+                Next
+            Next
+
+
+        Catch ex As Exception
 
         End Try
 
+        Return ListaPermisosQuitar
 
+    End Function
 
-        ValidarPermisos(listaPermisosSeleccionados)
-
-
-        'For i As Integer = 0 To listaPermisosSeleccionados.Count - 1
-        '    objGestorRol.asignarPermisoAUnRol(listaPermisosSeleccionados.Item(i).Id(), idRol)
-
-        'Next
-
-
-
-
-        For j As Integer = 0 To listaPermisosSeleccionados.Count - 1
-            For i As Integer = 0 To listaPermisos.Count - 1
-                If (listaPermisosSeleccionados.Item(j).Id <> listaPermisos.Item(i).Id) Then
-                    ListaPermisosQuitar.Add(listaPermisos.Item(i))
+    Public Function ValidarPermisos(ByVal plistaPermisos As List(Of Permiso), ByVal plistaQuitar As List(Of Permiso))
+        Dim listaPermisos As List(Of Permiso) = Nothing
+        For j As Integer = 0 To plistaPermisos.Count - 1
+            For i As Integer = 0 To plistaQuitar.Count - 1
+                If (plistaPermisos.Item(j).Id = plistaQuitar(i).Id) Then
+                    listaPermisos.Add(plistaPermisos.Item(i))
                 End If
 
             Next
         Next
 
-        For i As Integer = 0 To ListaPermisosQuitar.Count - 1
-            listaIdROlesPermisos = objGestorRol.ConsultarIdPermisoROl(ListaPermisosQuitar.Item(i).Id, idRol)
-        Next
-
-
-
-        For i As Integer = 0 To listaIdROlesPermisos.Count - 1
-            objGestorRol.eliminarPermisoAUnRol(listaIdROlesPermisos.Item(i))
-        Next
-
-
-    End Sub
-
-    Public Sub ValidarPermisos(ByVal plistaPermisos As List(Of Permiso))
-
-    End Sub
+        Return listaPermisos
+    End Function
 
 
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click

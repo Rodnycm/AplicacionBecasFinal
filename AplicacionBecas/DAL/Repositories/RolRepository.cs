@@ -95,7 +95,6 @@ namespace DAL.Repositories
                     {
 
                         Id = Convert.ToInt32(dr["IdRol"]),
-
                         Nombre = dr["Nombre"].ToString()
                     });
                 }

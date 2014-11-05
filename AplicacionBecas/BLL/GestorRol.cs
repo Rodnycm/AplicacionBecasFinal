@@ -99,9 +99,9 @@ namespace BLL
 
         }
 
-        public void eliminarPermisoAUnRol(int pIdPermisoROl)
+        public void eliminarPermisoAUnRol(int pIdPermiso, int pIdROl)
         {
-            PermisoRepository.Instance.EliminarPermisoAUnRol(pIdPermisoROl);
+            PermisoRepository.Instance.EliminarPermisoAUnRol(pIdPermiso, pIdROl);
         }
        /// <summary>
        /// Elimina un rol

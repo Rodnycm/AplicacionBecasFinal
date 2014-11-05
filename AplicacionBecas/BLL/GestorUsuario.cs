@@ -497,11 +497,11 @@ namespace BLL
                 String encriptada = encriptar(contraseña);
                 usuario.contraseña = encriptada;
                 UsuarioRepository.Instance.UpdateUsuario(usuario);
-                Alerts.Show("Contraseña enviada al correo electrónico");
+             //   Alerts.Show("Contraseña enviada al correo electrónico");
             }
             else
             {
-                Alerts.Show("El usuario ingresado es incorrecto");
+               // Alerts.Show("El usuario ingresado es incorrecto");
             }
         }
 

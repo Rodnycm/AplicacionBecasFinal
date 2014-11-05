@@ -6,18 +6,7 @@ Public Class uCntrlBuscarBeneficio
 
     Private Sub PantallaConsultarBeneficio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-
-        Try
             listarBeneficios()
-
-        Catch
-
-
-
-        End Try
-
-
-
 
     End Sub
 
@@ -27,8 +16,6 @@ Public Class uCntrlBuscarBeneficio
     ''' </summary>
     ''' <author>Mathias Muller</author>
     Public Sub listarBeneficios()
-
-
 
         Try
 
@@ -49,7 +36,7 @@ Public Class uCntrlBuscarBeneficio
 
         Catch ex As Exception
 
-            Dim UCtrl As UctrlAlerta = New UctrlAlerta()
+            Dim UCtrl As New UctrlAlerta
 
             Me.Controls.Add(UCtrl)
             UCtrl.lblAlerta.Text = ex.Message

@@ -136,6 +136,22 @@ namespace BLL
             //    }
         }
 
+        public IEnumerable<Curso> getCursoPorCuatrimestre(String pcuatri) {
 
+            try{
+
+            return CursoRepository.Instance.getCursoPorCuatrimestre(pcuatri);
+
+            }
+            catch (Exception ex){
+
+                throw ex;
+
+            }
+
+
+
+
+        }
     }
 }

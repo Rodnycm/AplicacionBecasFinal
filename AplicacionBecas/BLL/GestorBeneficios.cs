@@ -173,10 +173,6 @@ namespace BLL
             {
                 return BeneficioRepository.Instance.GetAll();
             }
-            //catch (DataAccessException ex)
-            //{
-            //    throw ex;
-            //}
             catch (Exception e)
             {
                 throw e;

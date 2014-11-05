@@ -33,13 +33,13 @@ namespace BLL
                         sb.Append(rv.ErrorMessage);
                     }
                     new ApplicationException(sb.ToString());
-                    Alerts.Show(sb.ToString());
+                    
                 }
             }
 
             catch (Exception ex)
             {
-                Alerts.Show(ex.ToString());
+                
             }
         }
 

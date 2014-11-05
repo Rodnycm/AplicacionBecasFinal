@@ -147,6 +147,37 @@ namespace DAL
         }
 
 
+        public IEnumerable<Curso> getCursoPorCuatrimestre(String pcuatri) {
+
+
+
+            List<Curso> listaCursos = null;
+            SqlCommand cmd = new SqlCommand();
+            cmd.Parameters.AddWithValue("@Cuatrimestre", pcuatri);
+            DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_buscarCursoPorCuatrimestre");
+
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                listaCursos = new List<Curso>();
+                foreach (DataRow dr in ds.Tables[0].Rows)
+                {
+                    listaCursos.Add(new Curso
+                    {
+
+                        codigo = dr["Codigo"].ToString(),
+                        nombre = dr["Nombre"].ToString(),
+                        cuatrimestre = dr["Cuatrimestre"].ToString(),
+                        creditos = Convert.ToInt32(dr["Creditos"]),
+                        precio = Convert.ToDouble(dr["Precio"]),
+                        //Id = Convert.ToInt32(dr["IdCurso"])
+                    });
+                }
+            }
+
+            return listaCursos;
+
+        }
+
 
         //<summary> Método que se encarga de traer de la base de datos un curso específico </summary>
         //<author> Valeria Ramírez Cordero</author> 

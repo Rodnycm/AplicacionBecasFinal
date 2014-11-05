@@ -26,7 +26,7 @@ Partial Class uCtrlMenuReportes
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.btnConsultarBitacoraAcciones = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
+        Me.btnPlanDeEstudio = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -40,7 +40,7 @@ Partial Class uCtrlMenuReportes
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 189.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.btnConsultarBitacoraAcciones, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Button5, 1, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.Button4, 2, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.btnPlanDeEstudio, 2, 0)
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(250, 134)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 2
@@ -77,18 +77,18 @@ Partial Class uCtrlMenuReportes
         Me.Button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Button5.UseVisualStyleBackColor = True
         '
-        'Button4
+        'btnPlanDeEstudio
         '
-        Me.Button4.BackgroundImage = CType(resources.GetObject("Button4.BackgroundImage"), System.Drawing.Image)
-        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button4.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.ForeColor = System.Drawing.Color.White
-        Me.Button4.Location = New System.Drawing.Point(333, 3)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(128, 99)
-        Me.Button4.TabIndex = 9
-        Me.Button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.btnPlanDeEstudio.BackgroundImage = CType(resources.GetObject("btnPlanDeEstudio.BackgroundImage"), System.Drawing.Image)
+        Me.btnPlanDeEstudio.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnPlanDeEstudio.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPlanDeEstudio.ForeColor = System.Drawing.Color.White
+        Me.btnPlanDeEstudio.Location = New System.Drawing.Point(333, 3)
+        Me.btnPlanDeEstudio.Name = "btnPlanDeEstudio"
+        Me.btnPlanDeEstudio.Size = New System.Drawing.Size(128, 99)
+        Me.btnPlanDeEstudio.TabIndex = 9
+        Me.btnPlanDeEstudio.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnPlanDeEstudio.UseVisualStyleBackColor = True
         '
         'uCtrlMenuReportes
         '
@@ -105,6 +105,6 @@ Partial Class uCtrlMenuReportes
     Friend WithEvents TableLayoutPanel1 As System.Windows.Forms.TableLayoutPanel
     Friend WithEvents btnConsultarBitacoraAcciones As System.Windows.Forms.Button
     Friend WithEvents Button5 As System.Windows.Forms.Button
-    Friend WithEvents Button4 As System.Windows.Forms.Button
+    Friend WithEvents btnPlanDeEstudio As System.Windows.Forms.Button
 
 End Class

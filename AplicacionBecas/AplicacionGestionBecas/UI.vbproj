@@ -178,6 +178,12 @@
     <Compile Include="uCtrlConsultarBeneficio.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="uCtrlConsultarPlanDeEstudio.Designer.vb">
+      <DependentUpon>uCtrlConsultarPlanDeEstudio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="uCtrlConsultarPlanDeEstudio.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UCtrlConsultarUsuario.Designer.vb">
       <DependentUpon>UCtrlConsultarUsuario.vb</DependentUpon>
     </Compile>
@@ -380,6 +386,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="uCtrlConsultarBeneficio.resx">
       <DependentUpon>uCtrlConsultarBeneficio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uCtrlConsultarPlanDeEstudio.resx">
+      <DependentUpon>uCtrlConsultarPlanDeEstudio.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCtrlConsultarUsuario.resx">
       <DependentUpon>UCtrlConsultarUsuario.vb</DependentUpon>

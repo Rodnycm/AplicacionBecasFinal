@@ -143,12 +143,7 @@ Public Class uCntrlBuscarBeneficio
     'End Sub
     '//////////////////////////////////////////////////////////////////////////////////////////
 
-    ''' <summary>
-
-    ''' Muestra un beneficio en un data gird
-
-    ''' </summary>
-    ''' <remarks></remarks>
+   
     Private Sub verBeneficios()
         Dim nombre As String = dtaBuscarBeneficio.CurrentRow.Cells(1).Value
 

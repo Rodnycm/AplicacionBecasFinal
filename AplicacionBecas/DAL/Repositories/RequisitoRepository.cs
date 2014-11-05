@@ -80,29 +80,25 @@ namespace DAL.Repositories
         //<returns>Retorna una lista con todos los requisitos registrados en el sistema.</returns> 
         public IEnumerable<Requisito> GetAll()
         {
-            List<Requisito> prequisito = null;
-            /*var sqlQuery = "SELECT Id, Nombre, Precio FROM Producto";
-            SqlCommand cmd = new SqlCommand(sqlQuery);
 
-            var ds = DBAccess.ExecuteQuery(cmd);
+            List<Requisito> pRequisito = null;
+            SqlCommand cmd = new SqlCommand();
+            DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_consultarRequisitos");
 
             if (ds.Tables[0].Rows.Count > 0)
             {
-                pmusculo = new List<Musculo>();
+                pRequisito = new List<Requisito>();
                 foreach (DataRow dr in ds.Tables[0].Rows)
                 {
-                    pmusculo.Add(new Musculo
+                    pRequisito.Add(new Requisito
                     {
-                        Id = Convert.ToInt32(dr["Id"]),
-                        nombre = dr["nombre"].ToString(),
-                       ubicacion = dr["ubicacion"].ToString(),
-                        origen = dr["Origen"].ToString(),
-                        insercion = dr["insercion"].ToString()
+                        nombre = dr["Nombre"].ToString(),
+                        descripcion = dr["Descripcion"].ToString(),
+                        Id = Convert.ToInt32(dr["IdRequisito"].ToString())
                     });
                 }
-            }*/
-
-            return prequisito;
+            }
+            return pRequisito;
         }
 
         //<summary> Método que se encarga de traer de la base de datos un requisito específico </summary>
@@ -135,32 +131,28 @@ namespace DAL.Repositories
             return objRequisito;
         }
 
-        public Requisito GetByNombre(String pnombre)
+        public Requisito GetByNombre(String parametro)
         {
-            Requisito objRequisito = null;
-            /*var sqlQuery = "SELECT Id, Nombre, Precio FROM Producto WHERE id = @idProducto";
-            SqlCommand cmd = new SqlCommand(sqlQuery);
-            cmd.Parameters.AddWithValue("@idProducto", id);
+            Requisito requisito = new Requisito();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Parameters.AddWithValue("@parametro", parametro);
 
-            var ds = DBAccess.ExecuteQuery(cmd);
+            DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_buscarRequisito");
 
             if (ds.Tables[0].Rows.Count > 0)
             {
                 var dr = ds.Tables[0].Rows[0];
 
-                objMusculo = new Musculo
+                requisito = new Requisito
                 {
-                    Id = Convert.ToInt32(dr["Id"]),
-                    nombre = dr["nombre"].ToString(),
-                    ubicacion = dr["ubicacion"].ToString(),
-                    origen = dr["Origen"].ToString(),
-                    insercion = dr["insercion"].ToString()
+                    nombre = dr["Nombre"].ToString(),
+                    descripcion = dr["Descripcion"].ToString()
                 };
-            }*/
 
-            return objRequisito;
+                requisito.Id = Convert.ToInt32(dr["idRequisito"]);
+            }
+            return requisito;
         }
-
 
         //<summary> Método que se encarga de guardar en la base de datos los cambios realizados </summary>
         //<author> Gabriela Gutiérrez Corrales </author> 

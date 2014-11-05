@@ -59,7 +59,7 @@ namespace BLL
         //<author> Valeria Ramírez Cordero </author> 
         //<param > No recibe parámetros  </param>
         //<returns> Retorna una lista con los cursos registrados</returns> 
-        public IEnumerable<Curso> listarCursos()
+        public IEnumerable<Curso> consultarCursos()
         {
             return CursoRepository.Instance.GetAll();
         }

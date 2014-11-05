@@ -10,7 +10,7 @@
     Private Sub btnRequisitos_Click(sender As Object, e As EventArgs) Handles btnRequisitos.Click
 
         Me.Hide()
-        uCtrlMantRequisitos = New uCtrlMantenimientoRequisitos()
+        'uCtrlMantRequisitos = New uCtrlMantenimientoRequisitos()
         FrmIniciarSesion.principal.Controls.Add(uCtrlMantRequisitos)
         uCtrlMantRequisitos.Show()
 
@@ -23,7 +23,7 @@
     Private Sub btnCursos_Click(sender As Object, e As EventArgs) Handles btnCursos.Click
 
         Me.Hide()
-        uCtrlMantCursos = New uCtrlMantenimientoCursos()
+        'uCtrlMantCursos = New uCtrlMantenimientoCursos()
         FrmIniciarSesion.principal.Controls.Add(uCtrlMantCursos)
         uCtrlMantCursos.Show()
 
@@ -36,7 +36,7 @@
     Private Sub btnCarreras_Click(sender As Object, e As EventArgs) Handles btnCarreras.Click
 
         Me.Hide()
-        uCtrlMantCarreras = New uCtrlMantenimientoCarreras()
+        'uCtrlMantCarreras = New uCtrlMantenimientoCarreras()
         FrmIniciarSesion.principal.Controls.Add(uCtrlMantCarreras)
         uCtrlMantCarreras.Show()
 
@@ -51,7 +51,7 @@
 
     Private Sub btnUsuarios_Click(sender As Object, e As EventArgs) Handles btnUsuarios.Click
 
-        Dim ucntrlUsuario As UctrlListarYBuscarUsuario = New UctrlListarYBuscarUsuario()
+        'Dim ucntrlUsuario As UctrlListarYBuscarUsuario = New UctrlListarYBuscarUsuario()
 
         Me.SendToBack()
         Me.Hide()

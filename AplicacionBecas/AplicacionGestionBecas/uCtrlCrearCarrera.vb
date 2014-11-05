@@ -6,8 +6,8 @@ Public Class uCtrlCrearCarrera
     Dim mBlnFormDragging As Boolean
     Dim listaDirectores As List(Of Usuario)
     Dim alerta As UctrlAlerta = New UctrlAlerta()
-
     Dim c As ColorDialog = New ColorDialog()
+
     ''' <summary>Metodo que se ejecuta cuando el usuario da click al boton seleccionar color, este metodo 
     ''' muestra al usuario una paleta de colores</summary>
     ''' <autor>Alvaro Artavia</autor>
@@ -21,6 +21,9 @@ Public Class uCtrlCrearCarrera
 
     End Sub
 
+    ''' <summary>Posiciona la ventana mientras el usuario da click al compomente</summary>
+    ''' <autor>Alvaro Artavia</autor>
+
     Private Sub uCtrlCrearCarrera_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Me.MouseMove
 
         If mBlnFormDragging = True Then
@@ -32,6 +35,9 @@ Public Class uCtrlCrearCarrera
 
     End Sub
 
+    ''' <summary>Situa el componente en la posicion final</summary>
+    ''' <autor>Alvaro Artavia</autor>
+
     Private Sub uCtrlCrearCarrera_MouseUp(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Me.MouseUp
 
         mBlnFormDragging = False
@@ -40,11 +46,18 @@ Public Class uCtrlCrearCarrera
 
     End Sub
 
+
+    ''' <summary>Indica si el usuario da click al componente para moverlo</summary>
+    ''' <autor>Alvaro Artavia</autor>
+
     Public Sub uCtrlCrearCarrera_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Me.MouseDown
 
         mBlnFormDragging = True
 
     End Sub
+
+    ''' <summary>Llena en un combobox los directores academicos</summary>
+    ''' <autor>Alvaro Artavia</autor>
 
     Public Sub llenarDirectoresCmb()
 
@@ -112,13 +125,23 @@ Public Class uCtrlCrearCarrera
 
     End Sub
 
+
+    ''' <summary>Cierra la ventana cuando el usuario da click al boton cerrar</summary>
+    ''' <autor>Alvaro Artavia</autor>
+
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
         Me.Dispose()
     End Sub
 
+    ''' <summary>Cierra la ventana cuando el usuario da click al boton cancelar</summary>
+    ''' <autor>Alvaro Artavia</autor>
+
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
         Me.Dispose()
     End Sub
+
+    ''' <summary>Cuando se instancia el componente se llama al metodo llenarDirectoresCmb</summary>
+    ''' <autor>Alvaro Artavia</autor>
 
     Private Sub uCtrlCrearCarrera_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 

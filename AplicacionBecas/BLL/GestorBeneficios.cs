@@ -6,21 +6,15 @@ using System.Threading.Tasks;
 using EntitiesLayer;
 using DAL;
 using DAL.Repositories;
-
 using TIL;
 using System.Data.SqlClient;
-
-
 
 namespace BLL
 {
 
     public class GestorBeneficios
     {
-        public string actividad;
 
-
-        //private BeneficioRepository repBeneficio;
         /// <summary>
         /// Este método recive los parametros necesarios para instanciar un beneficio.
         /// Enviá los parametros para crear el beneficio y recibe una instancia.
@@ -36,9 +30,8 @@ namespace BLL
         public void agregarBeneficio(string pnombre, double pporcentaje, string pasociacion)
         {
 
-
             Beneficio objBeneficio = ContenedorMantenimiento.Instance.crearBeneficio(pnombre, pporcentaje, pasociacion);
-
+    
             try
             {
                 if (objBeneficio.IsValid)

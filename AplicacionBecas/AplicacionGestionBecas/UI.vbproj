@@ -208,6 +208,12 @@
     <Compile Include="uCtrlEliminarBeneficio.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="uCtrlEliminarCarrera.Designer.vb">
+      <DependentUpon>uCtrlEliminarCarrera.vb</DependentUpon>
+    </Compile>
+    <Compile Include="uCtrlEliminarCarrera.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="uCtrlEliminarCurso.Designer.vb">
       <DependentUpon>uCtrlEliminarCurso.vb</DependentUpon>
     </Compile>
@@ -224,6 +230,12 @@
       <DependentUpon>UctrlEliminarUsuario.vb</DependentUpon>
     </Compile>
     <Compile Include="UctrlEliminarUsuario.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UctrlEmailConfiguration.Designer.vb">
+      <DependentUpon>UctrlEmailConfiguration.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UctrlEmailConfiguration.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="uCtrlListarRol.Designer.vb">
@@ -396,6 +408,9 @@
     <EmbeddedResource Include="uCtrlEliminarBeneficio.resx">
       <DependentUpon>uCtrlEliminarBeneficio.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="uCtrlEliminarCarrera.resx">
+      <DependentUpon>uCtrlEliminarCarrera.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="uCtrlEliminarCurso.resx">
       <DependentUpon>uCtrlEliminarCurso.vb</DependentUpon>
     </EmbeddedResource>
@@ -404,6 +419,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UctrlEliminarUsuario.resx">
       <DependentUpon>UctrlEliminarUsuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UctrlEmailConfiguration.resx">
+      <DependentUpon>UctrlEmailConfiguration.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="uCtrlListarRol.resx">
       <DependentUpon>uCtrlListarRol.vb</DependentUpon>
@@ -523,6 +541,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cerrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerrarMorado.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

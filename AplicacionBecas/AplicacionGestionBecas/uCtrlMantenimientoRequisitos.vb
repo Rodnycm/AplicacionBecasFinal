@@ -2,42 +2,71 @@
 
 Public Class uCtrlMantenimientoRequisitos
 
-    Dim uCntrlRequisito As uCtrlMantenimientoCrearRequisito = New uCtrlMantenimientoCrearRequisito()
-    Dim uCntrlRol As UCntrlRegistrarRol = New UCntrlRegistrarRol()
-    Dim ucntrlUsuario As UctrlListarYBuscarUsuario = New UctrlListarYBuscarUsuario()
+    Public Sub listarRequisitos()
 
+        Try
 
-    Public Sub listarCarreras()
+            dgvRequisitos.Rows.Clear()
+            Dim listaRequisitos As New List(Of Requisito)
+            listaRequisitos = objGestorRequisito.consultarRequisitos
 
-        Dim listaRequisitos As New List(Of Requisito)
-        listaRequisitos = objGestorRequisito.consultarRequisitos
+            For Each requisito As Requisito In listaRequisitos
 
-        For k As Integer = 0 To listaRequisitos.Count - 1
+                dgvRequisitos.Rows.Add(requisito.nombre, requisito.descripcion, "", requisito.Id)
 
-            dgvRequisitos.Rows.Add(1)
-            dgvRequisitos.Rows(k).Cells(0).Value = listaRequisitos.Item(k).nombre
-            dgvRequisitos.Rows(k).Cells(1).Value = listaRequisitos.Item(k).descripcion
+            Next
 
-        Next
+        Catch ex As Exception
+
+            Dim uctrlAlerta As UctrlAlerta = New UctrlAlerta()
+            Me.Controls.Add(uctrlAlerta)
+            uctrlAlerta.Location = New Point(300, 100)
+            uctrlAlerta.BringToFront()
+            uctrlAlerta.lblAlerta.Text = "No hay requisitos registrados"
+            uctrlAlerta.Show()
+
+        End Try
 
     End Sub
 
-    Private Sub dtaConsultaCarreras_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvRequisitos.CellContentClick
+    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.MouseClick
+
+        txtBuscar.Text = ""
+
+    End Sub
+
+    Private Sub txtBuscar_KeyDown(sender As Object, e As System.Windows.Forms.KeyEventArgs) Handles txtBuscar.KeyDown
+
+        Dim param As String = txtBuscar.Text
+
+        If e.KeyCode = 13 Then
+
+            buscarRequisito(param)
+
+        End If
+
+    End Sub
+
+    Private Sub buscarRequisito(ByVal param As String)
+
+        Dim r As Requisito = objGestorRequisito.buscarRequisito(param)
+
+        dgvRequisitos.Rows.Clear()
+        dgvRequisitos.Rows.Add(r.nombre, r.descripcion, "", "")
+
+        If r.nombre = "" Then
+
+            dgvRequisitos.Rows.Clear()
+            listarRequisitos()
+
+        End If
 
     End Sub
 
     Private Sub uCtrlMantenimientoRequisitos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        listarCarreras()
+        listarRequisitos()
 
     End Sub
 
-    Private Sub btnCrearRequisito_Click(sender As Object, e As EventArgs) Handles btnCrearRequisito.Click
-
-        Me.Hide()
-        frmPrincipal.Controls.Add(uCntrlRequisito)
-        uCntrlRequisito.Location = New Point(400, 150)
-        uCntrlRequisito.Show()
-
-    End Sub
 End Class

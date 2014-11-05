@@ -51,8 +51,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Repositories\BeneficioRepository.cs" />
-    <Compile Include="Repositories\CarreraRepository.cs" />
     <Compile Include="IRepository.cs" />
+    <Compile Include="Repositories\CarreraRepository.cs" />
     <Compile Include="Repositories\CursoRepository.cs" />
     <Compile Include="Repositories\PermisoRepository.cs" />
     <Compile Include="Repositories\RegistroAccionRepository.cs" />

@@ -35,8 +35,6 @@ Public Class uCtrlBuscarCursos
     ''' <summary>Metodo encargado de controlar cuando se da click al combobox se ejecuten las acciones</summary>
     ''' <autor>Valeria Ramírez Cordero</autor>
 
-
-
     Private Sub ComboBox_SelectionChangeCommitted(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
         Dim combo As ComboBox = CType(sender, ComboBox)
@@ -112,7 +110,7 @@ Public Class uCtrlBuscarCursos
 
 
         Dim listarCursos As List(Of Curso)
-        listarCursos = objGestorCurso.listarCursos()
+        listarCursos = objGestorCurso.consultarCursos()
 
         For i As Integer = 0 To listarCursos.Count - 1
 

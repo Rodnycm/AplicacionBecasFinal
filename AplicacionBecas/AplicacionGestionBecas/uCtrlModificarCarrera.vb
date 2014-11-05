@@ -25,8 +25,7 @@ Public Class uCtrlModificarCarrera
 
     End Sub
 
-    ''' <summary>Metodo que se ejecuta cuando el usuario da click al boton modificar y llama a la clase
-    ''' gestor para modificar la informaciòn</summary>
+    ''' <summary>Posiciona la ventana mientras el usuario da click al compomente</summary>
     ''' <autor>Alvaro Artavia</autor>
 
     Private Sub uCtrlModificarCarrera_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Me.MouseMove
@@ -40,6 +39,9 @@ Public Class uCtrlModificarCarrera
 
     End Sub
 
+    ''' <summary>Situa el componente en la posicion final</summary>
+    ''' <autor>Alvaro Artavia</autor>
+
     Private Sub uCtrlModificarCarrera_MouseUp(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Me.MouseUp
 
         mBlnFormDragging = False
@@ -48,11 +50,18 @@ Public Class uCtrlModificarCarrera
 
     End Sub
 
+    ''' <summary>Indica si el usuario da click al componente para moverlo</summary>
+    ''' <autor>Alvaro Artavia</autor>
+
     Public Sub uCtrlModificarCarrera_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Me.MouseDown
 
         mBlnFormDragging = True
 
     End Sub
+
+    ''' <summary>Metodo que se ejecuta cuando el usuario da click al boton modificar y llama a la clase
+    ''' gestor para modificar la informaciòn</summary>
+    ''' <autor>Alvaro Artavia</autor>
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
 
@@ -60,17 +69,12 @@ Public Class uCtrlModificarCarrera
         Dim codigo As String = txtCodigo.Text
         Dim color As String = "#" + c.Color.R.ToString("X2") + c.Color.G.ToString("X2") + c.Color.B.ToString("X2")
         Dim directorAcademico As String = cmbAcademico.Text
-        Dim idDirector As String = ""
-        Dim idAntiguo As String = ""
-
-
-        idDirector = buscarAntiguoDirector(directorAcademico)
-        idAntiguo = buscarAntiguoDirector(Me.directorAntiguo)
+        Dim idDirector As String = buscarDirector(directorAcademico)
 
         Try
 
-            objGestorCarrera.modificarCarrera(nombre, codigo, color, idCarrera, idDirector, idAntiguo)
-
+            objGestorCarrera.modificarCarrera(nombre, codigo, color, idCarrera, idDirector)
+            objGestorCarrera.guardarCambios()
             mantenimientoCarreras.listarCarreras()
 
         Catch ex As Exception
@@ -85,6 +89,9 @@ Public Class uCtrlModificarCarrera
         Me.Dispose()
 
     End Sub
+
+    ''' <summary>Llena en un combobox los directores academicos</summary>
+    ''' <autor>Alvaro Artavia</autor>
 
     Public Sub llenarDirectoresCmb()
 
@@ -108,11 +115,17 @@ Public Class uCtrlModificarCarrera
 
     End Sub
 
+    ''' <summary>Cierra la ventana cuando el usuario da click al boton cancelar</summary>
+    ''' <autor>Alvaro Artavia</autor>
+
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
 
         Me.Dispose()
 
     End Sub
+
+    ''' <summary>Cierra la ventana cuando el usuario da click al boton cerrar</summary>
+    ''' <autor>Alvaro Artavia</autor>
 
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
 
@@ -120,13 +133,22 @@ Public Class uCtrlModificarCarrera
 
     End Sub
 
+    ''' <summary>Cuando se instancia el componente se llama al metodo llenarDirectoresCmb</summary>
+    ''' <autor>Alvaro Artavia</autor>
+
     Private Sub uCtrlModificarCarrera_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         llenarDirectoresCmb()
 
     End Sub
 
-    Public Function buscarAntiguoDirector(ByVal pdirector As String) As String
+
+    ''' <summary>Busca el director academico anterior para eliminarlo de la base de datos</summary>
+    ''' <param name="pdirector">Nombre del director academico</param>
+    ''' <autor>Alvaro Artavia</autor>
+
+    Public Function buscarDirector(ByVal pdirector As String) As String
+
         Dim nombreCompleto As String
         Dim idDirector As String = ""
         For i As Integer = 0 To listaDirectores.Count - 1

@@ -78,7 +78,7 @@ namespace DAL.Repositories
                 pCarrera = new List<Carrera>();
                 foreach (DataRow dr in ds.Tables[0].Rows)
                 {
-                    string idDirector = Convert.ToString(dr["Fk_Tb_Personas_Tb_Usuarios_Identicacion"]);
+                    string idDirector = Convert.ToString(dr["Fk_Tb_Carreras_Tb_Usuario_Identificacion"]);
                     directorAcademico = UsuarioRepository.Instance.GetByNombre(idDirector);
                     pCarrera.Add(new Carrera
                     {
@@ -99,6 +99,7 @@ namespace DAL.Repositories
         {
 
             Carrera carrera = new Carrera();
+            Usuario directorAcademico = null;
             SqlCommand cmd = new SqlCommand();
             cmd.Parameters.AddWithValue("@parametro", parametro);
 
@@ -108,16 +109,17 @@ namespace DAL.Repositories
             {
                 var dr = ds.Tables[0].Rows[0];
 
+                string idDirector = Convert.ToString(dr["Fk_Tb_Carreras_Tb_Usuario_Identificacion"]);
+                directorAcademico = UsuarioRepository.Instance.GetByNombre(idDirector);
                 carrera = new Carrera
                 {
-                    codigo = dr["Codigo"].ToString(),
                     nombre = dr["Nombre"].ToString(),
+                    codigo = dr["Codigo"].ToString(),
                     color = dr["Color"].ToString(),
+                    Id = Convert.ToInt32(dr["IdCarrera"]),
+                    directorAcademico = directorAcademico
                 };
-
-                carrera.Id = Convert.ToInt32(dr["idCarrera"]);
             }
-            Console.WriteLine(carrera);
             return carrera;
         }
 
@@ -170,13 +172,13 @@ namespace DAL.Repositories
                         }
                     }
 
-                    //if (_updateItems.Count > 0)
-                    //{
-                    //    foreach (Carrera p in _updateItems)
-                    //    {
-                    //        UpdateCarrera(p);
-                    //    }
-                    //}
+                    if (_updateItems.Count > 0)
+                    {
+                        foreach (Carrera p in _updateItems)
+                        {
+                            UpdateCarrera(p);
+                        }
+                    }
 
                     if (_deleteItems.Count > 0)
                     {
@@ -227,7 +229,7 @@ namespace DAL.Repositories
                 cmd.Parameters.Add(new SqlParameter("@Codigo", objCarrera.codigo));
                 cmd.Parameters.Add(new SqlParameter("@Nombre", objCarrera.nombre));
                 cmd.Parameters.Add(new SqlParameter("@Color", objCarrera.color));
-                cmd.Parameters.Add(new SqlParameter("@DirectorAcademico", objCarrera.directorAcademico.Id));
+                cmd.Parameters.Add(new SqlParameter("@DirectorAcademico", objCarrera.directorAcademico.identificacion));
 
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_agregarCarrera");
             }
@@ -241,17 +243,16 @@ namespace DAL.Repositories
         ///<param name="objCarrera">Objeto de tipo carrera</param>
         //<autor>Alvaro Artavia</autor>
 
-        public void UpdateCarrera(Carrera objCarrera, Usuario antiguo)
+        public void UpdateCarrera(Carrera objCarrera)
         {
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                cmd.Parameters.Add(new SqlParameter("@antiguo", antiguo.Id ));
                 cmd.Parameters.Add(new SqlParameter("@Codigo", objCarrera.codigo));
                 cmd.Parameters.Add(new SqlParameter("@Nombre", objCarrera.nombre));
                 cmd.Parameters.Add(new SqlParameter("@Color", objCarrera.color));
                 cmd.Parameters.Add(new SqlParameter("@idCarrera", objCarrera.Id));
-                cmd.Parameters.Add(new SqlParameter("@DirectorAcademico", objCarrera.directorAcademico.Id));
+                cmd.Parameters.Add(new SqlParameter("@DirectorAcademico", objCarrera.directorAcademico.identificacion));
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_modificarCarrera");
 
             }

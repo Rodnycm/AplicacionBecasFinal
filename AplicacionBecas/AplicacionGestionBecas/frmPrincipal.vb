@@ -6,7 +6,6 @@
     Dim ucMenuAcad As New uCtrlMenuAcademico()
     Dim ucMenuRep As New uCtrlMenuReportes()
     Dim ucMenuBecas As New uCtrlMenuBecas()
-    'Public Property uCtrlMantCarreras As uCtrlMantenimientoCarreras = New uCtrlMantenimientoCarreras()
 
     Public Sub New()
 
@@ -18,47 +17,27 @@
 
     Private Sub InicioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InicioToolStripMenuItem.Click
 
-        ucMenuRep.Hide()
-        ucMenuMant.Hide()
-        ucMenuAcad.Hide()
-        ucMenuMant.uCtrlMantCarreras.Dispose()
-        ucMenuMant.uCtrlMantRequisitos.Dispose()
-        btnsMenus.Show()
+        ocultarComponentes()
 
     End Sub
 
     Private Sub MantenimientoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MantenimientoToolStripMenuItem.Click
 
-        ucMenuRep.Hide()
-        ucMenuAcad.Hide()
-        btnsMenus.Hide()
-        ucMenuMant.uCtrlMantCarreras.Dispose()
-        Me.Controls.Add(ucMenuMant)
-        ucMenuMant.Show()
+        ocultarComponentes()
 
     End Sub
 
 
     Private Sub AcadémicoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AcadémicoToolStripMenuItem.Click
 
-        ucMenuRep.Hide()
-        btnsMenus.Hide()
-        ucMenuMant.Hide()
-        ucMenuMant.uCtrlMantCarreras.Dispose()
-        Me.Controls.Add(ucMenuAcad)
-        ucMenuAcad.Show()
+        ocultarComponentes()
 
     End Sub
 
 
     Private Sub ReportesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReportesToolStripMenuItem.Click
 
-        btnsMenus.Hide()
-        ucMenuMant.Hide()
-        ucMenuAcad.Hide()
-        ucMenuMant.uCtrlMantCarreras.Dispose()
-        Me.Controls.Add(ucMenuRep)
-        ucMenuRep.Show()
+        ocultarComponentes()
 
     End Sub
 
@@ -72,19 +51,25 @@
 
     Private Sub btnAcademico_Click(sender As Object, e As EventArgs) Handles btnAcademico.Click
 
-        btnsMenus.Hide()
-        Me.Controls.Add(ucMenuAcad)
-        ucMenuAcad.Show()
+        ocultarComponentes()
 
     End Sub
 
     Private Sub btnReportes_Click(sender As Object, e As EventArgs) Handles btnReportes.Click
 
-        btnsMenus.Hide()
-        ucMenuMant.Hide()
-        ucMenuAcad.Hide()
-        Me.Controls.Add(ucMenuRep)
-        ucMenuRep.Show()
+        ocultarComponentes()
+
+    End Sub
+
+    Public Sub ocultarComponentes()
+
+        ucMenuMant.uCtrlMantCarreras.Hide()
+        ucMenuMant.uCtrlMantCursos.Hide()
+        ucMenuMant.uCtrlMantRequisitos.Hide()
+        ucMenuMant.uCntrlMantRol.Hide()
+        ucMenuMant.ucntrlUsuario.Hide()
+        ucMenuMant.uCntrlBuscarBeneficio.Hide()
+        btnsMenus.Show()
 
     End Sub
 

@@ -1,7 +1,8 @@
-﻿
+﻿Imports EntitiesLayer
 Public Class UCntrlRegistrarRol
 
     Dim listarRoles As uCtrlListarRol
+    Dim listaPermisos As New List(Of Permiso)
 
     '''<summary>crea un nuevo Rol en el sistema </summary>
     '''<author>Rodny Castro Mathews </author> 
@@ -50,4 +51,22 @@ Public Class UCntrlRegistrarRol
         Me.Dispose()
     End Sub
 
+    Public Sub listarPermisos()
+        Try
+            listaPermisos = objGestorRol.consultarPermisos()
+            For i As Integer = 0 To listaPermisos.Count - 1
+                CLBPermisos.Items.Add(listaPermisos.Item(i).Nombre)
+
+            Next
+
+            'CompararPermisos()
+        Catch ex As Exception
+            
+        End Try
+
+    End Sub
+
+    Private Sub UCntrlRegistrarRol_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

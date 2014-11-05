@@ -327,12 +327,13 @@ namespace DAL
 
         }
 
-        public void EliminarPermisoAUnRol(Int32 idRolPermiso)
+        public void EliminarPermisoAUnRol(int idPermiso,int pidrol)
         {
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                cmd.Parameters.Add(new SqlParameter("@IdRolPermiso", idRolPermiso));
+                cmd.Parameters.Add(new SqlParameter("@IdPermiso", idPermiso));
+                cmd.Parameters.Add(new SqlParameter("@IdRol", pidrol));
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_eliminarPermisoAUnRol");
 
             }

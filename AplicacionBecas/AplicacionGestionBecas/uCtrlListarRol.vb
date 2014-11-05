@@ -11,20 +11,25 @@ Public Class uCtrlListarRol
 
         Try
 
-        
-        Dim listaRoles As New List(Of Rol)
-        listaRoles = objGestorRol.consultarRoles()
 
-        For i As Integer = 0 To listaRoles.Count - 1
+            Dim listaRoles As New List(Of Rol)
+            listaRoles = objGestorRol.consultarRoles()
 
-            DGVRol.Rows.Add(1)
-            DGVRol.Rows(i).Cells(0).Value = listaRoles.Item(i).Id()
-            DGVRol.Rows(i).Cells(1).Value = listaRoles.Item(i).Nombre()
-            DGVRol.Columns("dtaId").Visible = False
+            For i As Integer = 0 To listaRoles.Count - 1
+
+                DGVRol.Rows.Add(1)
+                DGVRol.Rows(i).Cells(0).Value = listaRoles.Item(i).Id()
+                DGVRol.Rows(i).Cells(1).Value = listaRoles.Item(i).Nombre()
+                DGVRol.Columns("dtaId").Visible = False
             Next
 
         Catch
-            MsgBox("Debe agregar un rol")
+            Dim uctrlAlerta As UctrlAlerta = New UctrlAlerta()
+            Me.Controls.Add(uctrlAlerta)
+            uctrlAlerta.Location = New Point(300, 100)
+            uctrlAlerta.BringToFront()
+            uctrlAlerta.lblAlerta.Text = "No hay roles registrados"
+            uctrlAlerta.Show()
         End Try
     End Sub
     '''<summary>Este metodo hace que apenas se abra el usuario de control le liste los roles </summary>

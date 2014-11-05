@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using EntitiesLayer;
+using System.Text.RegularExpressions;
 
 
 namespace EntitiesLayer
@@ -60,18 +60,28 @@ namespace EntitiesLayer
 
             listaPermisos = plistaPermisos;
         }
-
+        /// <summary>
+        /// Verifica si hay algun dato no valido
+        /// </summary>
         public bool IsValid
         {
             get { return (GetRuleViolations().Count() == 0); }
         }
 
-
+        /// <summary>
+        /// Valida si los datos recibidos son validos
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<RuleViolation> GetRuleViolations()
         {
             if (String.IsNullOrEmpty(Nombre))
             {
                 yield return new RuleViolation("Nombre Requerido", "Nombre");
+            }
+
+            if (!(Regex.IsMatch(Nombre, "^[\\p{L} .'-]+$")))
+            {
+                yield return new RuleViolation("Error en el nombre", "Nombre incorrecto");
             }
 
 

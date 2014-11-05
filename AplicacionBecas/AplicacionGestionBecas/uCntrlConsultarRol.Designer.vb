@@ -34,6 +34,7 @@ Partial Class uCntrlConsultarRol
         'CLBPermisos
         '
         Me.CLBPermisos.BackColor = System.Drawing.Color.White
+        Me.CLBPermisos.Enabled = False
         Me.CLBPermisos.FormattingEnabled = True
         Me.CLBPermisos.Location = New System.Drawing.Point(292, 66)
         Me.CLBPermisos.Name = "CLBPermisos"
@@ -45,7 +46,7 @@ Partial Class uCntrlConsultarRol
         Me.txtNombre.Enabled = False
         Me.txtNombre.Location = New System.Drawing.Point(120, 85)
         Me.txtNombre.Name = "txtNombre"
-        Me.txtNombre.Size = New System.Drawing.Size(100, 20)
+        Me.txtNombre.Size = New System.Drawing.Size(154, 20)
         Me.txtNombre.TabIndex = 18
         '
         'btnVolver

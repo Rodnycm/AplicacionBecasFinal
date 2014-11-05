@@ -3,8 +3,3 @@ C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\TIL\
 C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\TIL\obj\Debug\TIL.csprojResolveAssemblyReference.cache
 C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\TIL\obj\Debug\TIL.dll
 C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\TIL\obj\Debug\TIL.pdb
-C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecas\TIL\bin\Debug\TIL.dll
-C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecas\TIL\bin\Debug\TIL.pdb
-C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecas\TIL\obj\Debug\TIL.csprojResolveAssemblyReference.cache
-C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecas\TIL\obj\Debug\TIL.dll
-C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecas\TIL\obj\Debug\TIL.pdb

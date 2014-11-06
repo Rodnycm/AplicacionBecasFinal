@@ -214,13 +214,6 @@
     <Compile Include="UCtrlRequisitos\UCtrlConsultarRequisitos.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="uCtrlConsultarPlanDeEstudio.Designer.vb">
-      <DependentUpon>uCtrlConsultarPlanDeEstudio.vb</DependentUpon>
-    </Compile>
-    <Compile Include="uCtrlConsultarPlanDeEstudio.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UCtrlConsultarUsuario.Designer.vb">
     <Compile Include="UCtrlTipoBeca\UCtrlConsultarTipoBeca.Designer.vb">
       <DependentUpon>UCtrlConsultarTipoBeca.vb</DependentUpon>
     </Compile>
@@ -469,10 +462,6 @@
     <EmbeddedResource Include="UCtrlTipoBeca\UCtrlConsultarBeneficios.resx">
       <DependentUpon>UCtrlConsultarBeneficios.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="uCtrlConsultarPlanDeEstudio.resx">
-      <DependentUpon>uCtrlConsultarPlanDeEstudio.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UCtrlConsultarUsuario.resx">
     <EmbeddedResource Include="UCtrlRequisitos\UCtrlConsultarRequisitos.resx">
       <DependentUpon>UCtrlConsultarRequisitos.vb</DependentUpon>
     </EmbeddedResource>
@@ -613,9 +602,7 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.csproj">

@@ -96,7 +96,7 @@ Public Class uCtrlListarRol
 
             Dim value1 As Object = DGVRol.Rows(numfila).Cells(1).Value
             Dim idROl As Integer = DGVRol.Rows(numfila).Cells(0).Value
-            Dim uCtrlConsulRol As New UCtrlConsultarRol()
+            Dim uCtrlConsulRol As New uCntrlConsultarRol()
             uCtrlConsulRol.enseñarDatos(value1)
             uCtrlConsulRol.recieveData(value1, idROl)
             uCtrlConsulRol.txtNombre.Text = value1

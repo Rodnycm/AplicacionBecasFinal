@@ -42,13 +42,11 @@ Partial Class UctrlListarYBuscarUsuario
         Me.RolAsignado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CorreoElect = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.opciones = New System.Windows.Forms.DataGridViewComboBoxColumn()
-<<<<<<< HEAD:AplicacionBecas/AplicacionGestionBecas/UctrlListarYBuscarUsuario.Designer.vb
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.btnCrearUsuario = New System.Windows.Forms.Button()
         Me.PbUsuarios = New System.Windows.Forms.PictureBox()
         Me.btnVolver = New System.Windows.Forms.Button()
-=======
->>>>>>> origin/prophet1994:AplicacionBecas/AplicacionGestionBecas/UCtrlUsuarios/UCtrlListarYBuscarUsuario.Designer.vb
+
         CType(Me.dgUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PbUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -78,11 +76,8 @@ Partial Class UctrlListarYBuscarUsuario
         DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.dgUsuarios.DefaultCellStyle = DataGridViewCellStyle6
         Me.dgUsuarios.GridColor = System.Drawing.Color.White
-<<<<<<< HEAD:AplicacionBecas/AplicacionGestionBecas/UctrlListarYBuscarUsuario.Designer.vb
         Me.dgUsuarios.Location = New System.Drawing.Point(42, 233)
-=======
-        Me.dgUsuarios.Location = New System.Drawing.Point(40, 235)
->>>>>>> origin/prophet1994:AplicacionBecas/AplicacionGestionBecas/UCtrlUsuarios/UCtrlListarYBuscarUsuario.Designer.vb
+
         Me.dgUsuarios.Name = "dgUsuarios"
         Me.dgUsuarios.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -190,9 +185,7 @@ Partial Class UctrlListarYBuscarUsuario
         Me.opciones.Name = "opciones"
         Me.opciones.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         Me.opciones.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        '
-<<<<<<< HEAD:AplicacionBecas/AplicacionGestionBecas/UctrlListarYBuscarUsuario.Designer.vb
-        'txtBuscar
+        '        'txtBuscar
         '
         Me.txtBuscar.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtBuscar.Location = New System.Drawing.Point(30, 158)
@@ -240,8 +233,7 @@ Partial Class UctrlListarYBuscarUsuario
         Me.btnVolver.UseVisualStyleBackColor = False
         Me.btnVolver.Visible = False
         '
-=======
->>>>>>> origin/prophet1994:AplicacionBecas/AplicacionGestionBecas/UCtrlUsuarios/UCtrlListarYBuscarUsuario.Designer.vb
+
         'UctrlListarYBuscarUsuario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -264,13 +256,8 @@ Partial Class UctrlListarYBuscarUsuario
     Friend WithEvents PbUsuarios As System.Windows.Forms.PictureBox
     Friend WithEvents btnCrearUsuario As System.Windows.Forms.Button
     Friend WithEvents dgUsuarios As System.Windows.Forms.DataGridView
-<<<<<<< HEAD:AplicacionBecas/AplicacionGestionBecas/UctrlListarYBuscarUsuario.Designer.vb
     Friend WithEvents txtBuscar As System.Windows.Forms.TextBox
-=======
-    Friend WithEvents btnCrearUsuario As System.Windows.Forms.Button
-    Friend WithEvents txtBuscar As System.Windows.Forms.TextBox
-    Friend WithEvents PbUsuarios As System.Windows.Forms.PictureBox
->>>>>>> origin/prophet1994:AplicacionBecas/AplicacionGestionBecas/UCtrlUsuarios/UCtrlListarYBuscarUsuario.Designer.vb
+
     Friend WithEvents Identificación As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Nombre As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents tel As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -279,9 +266,7 @@ Partial Class UctrlListarYBuscarUsuario
     Friend WithEvents RolAsignado As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents CorreoElect As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents opciones As System.Windows.Forms.DataGridViewComboBoxColumn
-<<<<<<< HEAD:AplicacionBecas/AplicacionGestionBecas/UctrlListarYBuscarUsuario.Designer.vb
     Friend WithEvents btnVolver As System.Windows.Forms.Button
-=======
->>>>>>> origin/prophet1994:AplicacionBecas/AplicacionGestionBecas/UCtrlUsuarios/UCtrlListarYBuscarUsuario.Designer.vb
+
 
 End Class

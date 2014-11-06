@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class UCtrlConsultarRol
+Partial Class uCntrlConsultarRol
     Inherits System.Windows.Forms.UserControl
 
     'UserControl reemplaza a Dispose para limpiar la lista de componentes.
@@ -22,7 +22,7 @@ Partial Class UCtrlConsultarRol
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(UCtrlConsultarRol))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(uCntrlConsultarRol))
         Me.CLBPermisos = New System.Windows.Forms.CheckedListBox()
         Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.btnVolver = New System.Windows.Forms.Button()

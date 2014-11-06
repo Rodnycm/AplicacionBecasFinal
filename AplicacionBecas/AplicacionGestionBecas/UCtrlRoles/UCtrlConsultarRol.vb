@@ -1,12 +1,7 @@
 ﻿Imports EntitiesLayer
 
-<<<<<<< HEAD:AplicacionBecas/AplicacionGestionBecas/uCntrlConsultarRol.vb
 Class uCntrlConsultarRol
     Dim listaPermisosRol As New List(Of Permiso)
-=======
-Class UCtrlConsultarRol
-
->>>>>>> origin/prophet1994:AplicacionBecas/AplicacionGestionBecas/UCtrlRoles/UCtrlConsultarRol.vb
     Dim nombre As String
     Dim idRol As String
     Dim listarRoles As uCtrlListarRol
@@ -44,7 +39,7 @@ Class UCtrlConsultarRol
             Next
             CompararPermisos()
         Catch ex As Exception
-            
+
         End Try
 
     End Sub

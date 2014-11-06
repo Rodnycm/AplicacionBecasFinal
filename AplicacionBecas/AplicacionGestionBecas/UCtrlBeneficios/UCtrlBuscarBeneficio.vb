@@ -149,14 +149,14 @@ Public Class uCntrlBuscarBeneficio
         Catch ex As Exception
             Dim UCtrl As New UctrlAlerta
 
-<<<<<<< HEAD
+
             Me.Controls.Add(UCtrl)
             UCtrl.lblAlerta.Text = ex.Message
             UCtrl.Location = New Point(300, 100)
             UCtrl.BringToFront()
             UCtrl.Show()
         End Try
-=======
+
     End Sub
 
 
@@ -170,7 +170,7 @@ Public Class uCntrlBuscarBeneficio
     ''' <autor>Alvaro Artavia</autor>
 
     Private Sub txtBuscar_KeyDown(sender As Object, e As System.Windows.Forms.KeyEventArgs) Handles txtBuscar.KeyDown
->>>>>>> origin/prophet1994
+
 
         Dim param As String = txtBuscar.Text
 
@@ -302,7 +302,7 @@ Public Class uCntrlBuscarBeneficio
 
     End Sub
 
-<<<<<<< HEAD
+
     Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
 
         btnVolver.Visible = False
@@ -312,7 +312,5 @@ Public Class uCntrlBuscarBeneficio
 
 
     End Sub
-=======
-   
->>>>>>> origin/prophet1994
+
 End Class

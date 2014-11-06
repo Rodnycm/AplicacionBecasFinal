@@ -24,16 +24,14 @@ Public Class uCtrlListarRol
             Next
 
         Catch
-<<<<<<< HEAD
+
             Dim uctrlAlerta As UctrlAlerta = New UctrlAlerta()
             Me.Controls.Add(uctrlAlerta)
             uctrlAlerta.Location = New Point(300, 100)
             uctrlAlerta.BringToFront()
             uctrlAlerta.lblAlerta.Text = "No hay roles registrados"
             uctrlAlerta.Show()
-=======
 
->>>>>>> origin/prophet1994
         End Try
 
     End Sub

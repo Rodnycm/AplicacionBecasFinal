@@ -50,7 +50,7 @@ Public Class UctrlListarYBuscarUsuario
 
     Public Sub dgUsuarios_EditingControlShowing(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewEditingControlShowingEventArgs) Handles dgUsuarios.EditingControlShowing
         ' Only for a DatagridComboBoxColumn at ColumnIndex 1.
-        If dgUsuarios.CurrentCell.ColumnIndex = 3 Then
+        If dgUsuarios.CurrentCell.ColumnIndex = 7 Then
             Dim combo As ComboBox = CType(e.Control, ComboBox)
             If (combo IsNot Nothing) Then
                 ' Remove an existing event-handler, if present, to avoid 

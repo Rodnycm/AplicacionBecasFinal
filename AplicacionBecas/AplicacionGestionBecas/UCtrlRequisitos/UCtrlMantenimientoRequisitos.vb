@@ -70,6 +70,10 @@ Public Class uCtrlMantenimientoRequisitos
     End Sub
 
     Private Sub btnCrearRequisito_Click(sender As Object, e As EventArgs) Handles btnCrearRequisito.Click
-
+        Dim ucntrlRequisitos As uCtrlMantenimientoCrearRequisito = New uCtrlMantenimientoCrearRequisito()
+        FrmIniciarSesion.principal.Controls.Add(ucntrlRequisitos)
+        ucntrlRequisitos.Location = New Point(300, 100)
+        ucntrlRequisitos.BringToFront()
+        ucntrlRequisitos.Show()
     End Sub
 End Class

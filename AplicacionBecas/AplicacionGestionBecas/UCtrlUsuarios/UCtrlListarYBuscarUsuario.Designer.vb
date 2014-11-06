@@ -42,9 +42,6 @@ Partial Class UctrlListarYBuscarUsuario
         Me.RolAsignado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CorreoElect = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.opciones = New System.Windows.Forms.DataGridViewComboBoxColumn()
-        Me.txtBuscar = New System.Windows.Forms.TextBox()
-        Me.btnCrearUsuario = New System.Windows.Forms.Button()
-        Me.PbUsuarios = New System.Windows.Forms.PictureBox()
         Me.btnVolver = New System.Windows.Forms.Button()
 
         CType(Me.dgUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()

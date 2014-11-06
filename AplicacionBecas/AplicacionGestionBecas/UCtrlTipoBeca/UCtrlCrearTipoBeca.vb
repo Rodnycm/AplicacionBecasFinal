@@ -37,7 +37,7 @@ Public Class uCtrlCrearTipoBeca
     
     Private Sub btnBeneficios_Click(sender As Object, e As EventArgs) Handles btnBeneficios.Click
         Dim beneficio As SeleccionarBeneficios = New SeleccionarBeneficios()
-        frmPrincipal.Controls.Add(beneficio)
+        FrmIniciarSesion.principal.Controls.Add(beneficio)
         beneficio.enviarbeneficios(Me)
         beneficio.Location = New Point(150, 250)
         beneficio.BringToFront()
@@ -48,7 +48,7 @@ Public Class uCtrlCrearTipoBeca
 
     Private Sub btnRequisitos_Click(sender As Object, e As EventArgs) Handles btnRequisitos.Click
         Dim requisito As uCtrlAsignarRequisitos = New uCtrlAsignarRequisitos()
-        frmPrincipal.Controls.Add(requisito)
+        FrmIniciarSesion.principal.Controls.Add(requisito)
         requisito.enviarrequisitos(Me)
         requisito.Location = New Point(150, 250)
         requisito.BringToFront()

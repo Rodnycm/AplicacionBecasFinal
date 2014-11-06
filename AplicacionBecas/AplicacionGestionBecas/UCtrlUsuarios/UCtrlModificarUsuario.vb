@@ -7,10 +7,9 @@ Public Class UctrlModificarUsuario
     Dim idUsuario As Integer
     Dim parametro As String
     Dim ucntrl As UctrlListarYBuscarUsuario
-
     Dim alerta As UctrlAlerta
     Dim mBlnFormDragging As Boolean
-
+    Dim confirmacionPopUp As uCtrlConfirmacion
 
 
     Public Sub setIdUsuario(ByVal pid As Integer)
@@ -110,11 +109,16 @@ Public Class UctrlModificarUsuario
             objGestorUsuario.guardarCambios()
             ucntrl.dgUsuarios.Rows.Clear()
             ucntrl.listarUsuarios()
-            Me.Dispose()
+            confirmacionPopUp = New uCtrlConfirmacion()
+            confirmacionPopUp.lblConfirmacion.Text = "Datos modificados con éxito"
+            Me.Controls.Add(confirmacionPopUp)
+            confirmacionPopUp.Location = New Point(200, 250)
+            confirmacionPopUp.BringToFront()
+            confirmacionPopUp.Show()
+            'Me.Dispose()
+
         Catch ex As Exception
-
             alerta = New UctrlAlerta()
-
             alerta.lblAlerta.Text = ex.Message
             FrmIniciarSesion.principal.Controls.Add(alerta)
             alerta.BringToFront()

@@ -2,9 +2,10 @@
 Imports EntitiesLayer
 
 Public Class UctrlCrearUsuario
-    Dim alerta As UctrlAlerta = New UctrlAlerta()
+    Dim alerta As UctrlAlerta
     Dim lista As UctrlListarYBuscarUsuario
     Dim mBlnFormDragging As Boolean
+    Dim confirmacion As uCtrlConfirmacion
 
     '<summary> Método que se encarga mandar al gestor la información para crear un nuevo usuario</summary>
     '<author> Gabriela Gutiérrez Corrales </author> 
@@ -40,8 +41,14 @@ Public Class UctrlCrearUsuario
 
             lista.dgUsuarios.Rows.Clear()
             lista.listarUsuarios()
-            MsgBox("Usuario creado correctamente")
+            confirmacion = New uCtrlConfirmacion()
+            confirmacion.lblConfirmacion.Text = "Usuario creado correctamente"
+            Me.Controls.Add(confirmacion)
+            confirmacion.Location = New Point(200, 250)
+            confirmacion.BringToFront()
+            confirmacion.Show()
         Catch ex As Exception
+            alerta = New UctrlAlerta()
             alerta.lblAlerta.Text = ex.Message
             FrmIniciarSesion.principal.Controls.Add(alerta)
             alerta.Location = New Point(500, 250)
@@ -71,6 +78,7 @@ Public Class UctrlCrearUsuario
                 cmbRoles.Items.Add(listaRoles(i).Nombre)
             Next
         Catch ex As Exception
+            alerta = New UctrlAlerta()
             alerta.lblAlerta.Text = ex.Message
             FrmIniciarSesion.principal.Controls.Add(alerta)
             alerta.BringToFront()

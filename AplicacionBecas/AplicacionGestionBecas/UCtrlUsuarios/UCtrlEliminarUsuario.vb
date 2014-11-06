@@ -3,6 +3,9 @@ Public Class UctrlEliminarUsuario
     Dim parametro As String
     Dim Uctrl As UctrlListarYBuscarUsuario
     Dim mBlnFormDragging As Boolean
+    Dim confirmacionPopUp As uCtrlConfirmacion
+
+
     Public Sub setParametro(ByVal pparametro As String)
         parametro = pparametro
     End Sub
@@ -10,8 +13,13 @@ Public Class UctrlEliminarUsuario
     Public Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
         objGestorUsuario.eliminarUsuario(Me.parametro)
         objGestorUsuario.guardarCambios()
+        'confirmacionPopUp = New uCtrlConfirmacion()
+        'confirmacionPopUp.lblConfirmacion.Text = "El usuario ha sido eliminado"
+        'Me.Controls.Add(confirmacionPopUp)
+        'confirmacionPopUp.Location = New Point(200, 250)
+        'confirmacionPopUp.BringToFront()
+        'confirmacionPopUp.Show()
         Me.Dispose()
-
         Uctrl.dgUsuarios.Rows.Clear()
         Uctrl.listarUsuarios()
     End Sub

@@ -148,7 +148,7 @@ Public Class uCtrlBuscarTipoBeca
     Private Sub btnCrearTipoBeca_Click(sender As Object, e As EventArgs) Handles btnCrearTipoBeca.Click
         crearTipo.Location = New Point(200, 250)
         crearTipo.BringToFront()
-        frmPrincipal.Controls.Add(crearTipo)
+        FrmIniciarSesion.principal.Controls.Add(crearTipo)
         crearTipo.Show()
         Me.Hide()
     End Sub

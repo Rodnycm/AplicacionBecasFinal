@@ -104,6 +104,7 @@ Public Class UctrlListarYBuscarUsuario
         ucntrl.BringToFront()
         ucntrl.Location = New Point(280, 250)
         ucntrl.Show()
+      
     End Sub
 
     '<summary> Método que se encarga de modificar un usuario del sistema</summary>

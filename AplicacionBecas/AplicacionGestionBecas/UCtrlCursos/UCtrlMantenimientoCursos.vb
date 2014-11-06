@@ -5,7 +5,7 @@
     Private Sub btnCrearCurso_Click(sender As Object, e As EventArgs) Handles btnCrearCurso.Click
 
         uCtrlCursos = New UCtrlCrearCursos()
-        frmPrincipal.Controls.Add(uCtrlCursos)
+        FrmIniciarSesion.principal.Controls.Add(uCtrlCursos)
         uCtrlCursos.BringToFront()
         uCtrlCursos.Show()
 

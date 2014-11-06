@@ -9,8 +9,29 @@ Public Class UCntrlRegistrarRol
     Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
         Dim nombre As String = txtNombre.Text
 
-        objGestorRol.agregarRol(nombre)
-        objGestorRol.guardarCambios()
+        Try
+            objGestorRol.agregarRol(nombre)
+            objGestorRol.guardarCambios()
+
+            Dim Uctrl As uCtrlConfirmacion = New uCtrlConfirmacion
+            FrmIniciarSesion.principal.Controls.Add(Uctrl)
+            Uctrl.lblConfirmacion.Text = "El rol se creo correctamente"
+            Uctrl.Location = New Point(300, 100)
+            Uctrl.BringToFront()
+            Uctrl.Show()
+
+        Catch ex As Exception
+            Dim UCtrl As UctrlAlerta = New UctrlAlerta()
+
+            FrmIniciarSesion.principal.Controls.Add(UCtrl)
+            UCtrl.lblAlerta.Text = ex.Message
+            UCtrl.Location = New Point(300, 100)
+            UCtrl.BringToFront()
+            UCtrl.Show()
+        End Try
+
+
+        
         listarRoles.DGVRol.Rows.Clear()
         listarRoles.ListarRoles()
         Me.Dispose()
@@ -67,6 +88,6 @@ Public Class UCntrlRegistrarRol
     End Sub
 
     Private Sub UCntrlRegistrarRol_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        listarPermisos()
     End Sub
 End Class

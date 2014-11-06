@@ -180,9 +180,11 @@ Public Class uCtrlListarRol
             DGVRol.Rows(0).Cells(1).Value = Rol.Nombre()
 
         Catch ex As Exception
-            DGVRol.Rows.Clear()
-            ListarRoles()
+            
         End Try
+
+        DGVRol.Rows.Clear()
+        ListarRoles()
     End Sub
 
 End Class

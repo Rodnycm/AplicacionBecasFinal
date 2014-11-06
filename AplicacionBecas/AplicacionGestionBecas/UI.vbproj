@@ -217,9 +217,7 @@
     <Compile Include="uCtrlEliminarCarrera.Designer.vb">
       <DependentUpon>uCtrlEliminarCarrera.vb</DependentUpon>
     </Compile>
-    <Compile Include="uCtrlEliminarCarrera.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="uCtrlEliminarCarrera.vb" />
     <Compile Include="uCtrlEliminarCurso.Designer.vb">
       <DependentUpon>uCtrlEliminarCurso.vb</DependentUpon>
     </Compile>
@@ -241,9 +239,7 @@
     <Compile Include="UctrlEmailConfiguration.Designer.vb">
       <DependentUpon>UctrlEmailConfiguration.vb</DependentUpon>
     </Compile>
-    <Compile Include="UctrlEmailConfiguration.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="UctrlEmailConfiguration.vb" />
     <Compile Include="uCtrlListarRol.Designer.vb">
       <DependentUpon>uCtrlListarRol.vb</DependentUpon>
     </Compile>

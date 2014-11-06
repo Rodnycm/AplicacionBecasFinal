@@ -25,8 +25,8 @@ namespace EntitiesLayer
         public string estado { get; set; }
         public string descripcion { get; set; }
         public DateTime objD { get; set; }
-        private List<Beneficio> listaBeneficios { get; set; }
-        private List<Requisito> listaRequisitos { get; set; }
+        public List<Beneficio> listaBeneficios { get; set; }
+        public List<Requisito> listaRequisitos { get; set; }
 
         /// <summary>
         /// Constructor TipoBeca que crea una instancia de un TipoBeca.

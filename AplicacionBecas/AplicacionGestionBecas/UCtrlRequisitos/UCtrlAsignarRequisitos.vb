@@ -46,7 +46,7 @@ Public Class uCtrlAsignarRequisitos
 
     Private Sub uCtrlAsignarRequisitos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        'listaRequisitos = objGestorRequisito.buscarRequisito()
+        listaRequisitos = objGestorRequisito.consultarRequisitos()
 
         For i As Integer = 0 To listaRequisitos.Count - 1
 

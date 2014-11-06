@@ -54,7 +54,14 @@ namespace EntitiesLayer
             Aplicacion = "";
 
         }
+        public Beneficio(int pid, String pnombre, double pporcentaje, String paplicacion)
+        {
+            Id = pid;
+            Nombre = pnombre;
+            Porcentaje = pporcentaje;
+            Aplicacion = paplicacion;
 
+        }
         public bool IsValid
         {
             get { return (GetRuleViolations().Count() == 0); }

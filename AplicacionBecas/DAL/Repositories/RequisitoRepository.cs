@@ -82,24 +82,24 @@ namespace DAL.Repositories
         public IEnumerable<Requisito> GetAll()
         {
             List<Requisito> prequisito = null;
-            /*var sqlQuery = "SELECT Id, Nombre, Precio FROM Producto";
-            SqlCommand cmd = new SqlCommand(sqlQuery);
 
-            var ds = DBAccess.ExecuteQuery(cmd);
+            //SqlCommand cmd = new SqlCommand();
 
-            if (ds.Tables[0].Rows.Count > 0)
-            {
-                pmusculo = new List<Musculo>();
-                foreach (DataRow dr in ds.Tables[0].Rows)
-                {
-                    pmusculo.Add(new Musculo
-                    {
-                        nombre = dr["Nombre"].ToString(),
-                        descripcion = dr["Descripcion"].ToString(),
-                        Id = Convert.ToInt32(dr["IdRequisito"].ToString())
-                    });
-                }
-            }*/
+            //DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_buscarRequisito");
+
+            //if (ds.Tables[0].Rows.Count > 0)
+            //{
+            //    prequisito = new List<Requisito>();
+            //    foreach (DataRow dr in ds.Tables[0].Rows)
+            //    {
+            //        prequisito.Add(new Requisito
+            //        (
+            //            Convert.ToInt32(dr["idRequisito"]),
+            //            dr["Nombre"].ToString(),
+            //            dr["Descripcion"].ToString()
+            //        ));
+            //    }
+            //}
 
             return prequisito;
         }
@@ -156,6 +156,34 @@ namespace DAL.Repositories
 
             return objRequisito;
         }
+        public IEnumerable<Requisito> GetLista(TipoBeca objTipoBeca)
+        {
+
+            List<Requisito> prequisito = null;
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.Parameters.Add(new SqlParameter("@Nombre", objTipoBeca.nombre));
+
+            DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_consultarTipoBecaRequisito");
+
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                prequisito = new List<Requisito>();
+                foreach (DataRow dr in ds.Tables[0].Rows)
+                {
+                    prequisito.Add(new Requisito
+                    (
+                         
+                        dr["Nombre"].ToString(),
+                        dr["Descripcion"].ToString(),
+                         Convert.ToInt32(dr["idRequisito"])
+                    ));
+                }
+            }
+
+            return prequisito;
+        }
+
 
         //<summary> Método que se encarga de guardar en la base de datos los cambios realizados </summary>
         //<author> Gabriela Gutiérrez Corrales </author> 

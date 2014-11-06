@@ -141,7 +141,8 @@ namespace DAL.Repositories
               );
             }
 
-
+            objTipoBeca.listaRequisitos = asociarRequisitos(objTipoBeca.Id);
+            objTipoBeca.listaBeneficios = asociarBeneficios(objTipoBeca.Id);
 
             return objTipoBeca;
         }
@@ -341,6 +342,52 @@ namespace DAL.Repositories
         public void asignarRequisitosTipoBeca(TipoBeca objTipoBeca, Requisito objRequisito)
         {
 
+        }
+        private List<Requisito> asociarRequisitos(int pid)
+        {
+            List<Requisito> prequisito = new List<Requisito>();
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.Parameters.Add(new SqlParameter("@id", pid));
+
+            DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_buscarRequisitosTipoBeca");
+
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                //prequisito = new List<Requisito>();
+                foreach (DataRow dr in ds.Tables[0].Rows)
+                {
+                    prequisito.Add(new Requisito
+                    (
+                         dr["Nombre"].ToString(),
+                        dr["Descripcion"].ToString(),
+                        Convert.ToInt32(dr["idRequisito"])
+                    ));
+                }
+            }
+
+            return prequisito;
+        }
+        private List<Beneficio> asociarBeneficios(int pid)
+        {
+            List<Beneficio> pbeneficio = new List<Beneficio>();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Parameters.Add(new SqlParameter("@id", pid));
+            DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_buscarBeneficiosTipoBeca");
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                foreach (DataRow dr in ds.Tables[0].Rows)
+                {
+                    pbeneficio.Add(new Beneficio
+                        (
+                         Convert.ToInt32(dr["idBeneficio"]),
+                         dr["Nombre"].ToString(),
+                         Convert.ToDouble(dr["Porcentaje"]),
+                         dr["Aplicabilidad"].ToString()
+                        ));
+                }
+            }
+            return pbeneficio;
         }
     }
 }

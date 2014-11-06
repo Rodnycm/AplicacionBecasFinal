@@ -65,7 +65,6 @@ Public Class uCtrlMantenimientoCarreras
         End If
     End Sub
 
-
     ''' <summary>Metodo encargado de controlar cuando se da click al combobox se ejecuten las acciones</summary>
     ''' <autor>Alvaro Artavia</autor>
 
@@ -170,21 +169,9 @@ Public Class uCtrlMantenimientoCarreras
             dgvCarreras.Rows.Clear()
             dgvCarreras.Rows.Add(c.codigo, c.nombre, c.directorAcademico.primerNombre & " " & c.directorAcademico.primerApellido & " " & c.directorAcademico.segundoApellido, "", "", c.Id)
 
-            If c.codigo = "" Then
-
-                dgvCarreras.Rows.Clear()
-                listarCarreras()
-
-            End If
-
         Catch ex As Exception
 
-            Dim uctrlAlerta As UctrlAlerta = New UctrlAlerta()
-            Me.Controls.Add(uctrlAlerta)
-            uctrlAlerta.Location = New Point(300, 100)
-            uctrlAlerta.BringToFront()
-            uctrlAlerta.lblAlerta.Text = "No se encontró la carrera"
-            uctrlAlerta.Show()
+            listarCarreras()
 
         End Try
 

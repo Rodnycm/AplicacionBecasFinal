@@ -21,9 +21,10 @@ Public Class UctrlListarYBuscarUsuario
             Next
         Catch ex As Exception
             Dim uctrlAlerta As UctrlAlerta = New UctrlAlerta()
-            Me.Controls.Add(ucntrlUsuario)
+            Me.Controls.Add(uctrlAlerta)
             uctrlAlerta.Location = New Point(300, 100)
             uctrlAlerta.BringToFront()
+            Me.SendToBack()
             uctrlAlerta.lblAlerta.Text = "No hay usuarios registrados"
             uctrlAlerta.Show()
 
@@ -139,7 +140,28 @@ Public Class UctrlListarYBuscarUsuario
         End If
     End Sub
 
-    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged, txtBuscar.VisibleChanged
+    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.MouseClick
+
+        txtBuscar.Text = ""
+
+    End Sub
+
+    ''' <summary>Cuando el evento se ejecuta al dar presionar la tecla enter llama al metodo eliminar carrera</summary>
+    ''' <autor>Alvaro Artavia</autor>
+
+    Private Sub txtBuscar_KeyDown(sender As Object, e As System.Windows.Forms.KeyEventArgs) Handles txtBuscar.KeyDown
+
+        Dim param As String = txtBuscar.Text
+
+        If e.KeyCode = 13 Then
+
+            buscarUsuario(param)
+
+        End If
+
+    End Sub
+
+    Public Sub buscarUsuario(ByVal pparametro As String)
         Try
             Dim objUsuario As Usuario = objGestorUsuario.buscarUnUsuario(txtBuscar.Text)
             dgUsuarios.Rows.Clear()
@@ -148,7 +170,6 @@ Public Class UctrlListarYBuscarUsuario
             dgUsuarios.Rows.Clear()
             listarUsuarios()
         End Try
-
     End Sub
 
 
@@ -163,9 +184,10 @@ Public Class UctrlListarYBuscarUsuario
         listarUsuarios()
 
     End Sub
-
-    Private Sub dgUsuarios_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgUsuarios.CellContentClick
-
+    Private Sub txtBuscar_TextChanged_1(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
+        If txtBuscar.Text = "" Then
+            listarUsuarios()
+        End If
     End Sub
 End Class
 

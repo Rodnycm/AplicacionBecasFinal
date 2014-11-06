@@ -8,7 +8,7 @@ using System.Transactions;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Data;
-
+using TIL;
 namespace DAL.Repositories
 {
     public class RequisitoRepository : IRepository<Requisito>
@@ -20,6 +20,9 @@ namespace DAL.Repositories
         private List<IEntity> _insertItems;
         private List<IEntity> _deleteItems;
         private List<IEntity> _updateItems;
+        private int numero;
+        private String mensaje;
+        private Excepciones exceptions;
         public static TipoBeca objTipoBeca { get; set; }
 
         public RequisitoRepository()
@@ -81,24 +84,40 @@ namespace DAL.Repositories
         public IEnumerable<Requisito> GetAll()
         {
 
-            List<Requisito> pRequisito = null;
-            SqlCommand cmd = new SqlCommand();
-            DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_consultarRequisitos");
+            try {
 
-            if (ds.Tables[0].Rows.Count > 0)
-            {
-                pRequisito = new List<Requisito>();
-                foreach (DataRow dr in ds.Tables[0].Rows)
+                List<Requisito> pRequisito = null;
+                SqlCommand cmd = new SqlCommand();
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_consultarRequisitos");
+
+                if (ds.Tables[0].Rows.Count > 0)
                 {
-                    pRequisito.Add(new Requisito
+                    pRequisito = new List<Requisito>();
+                    foreach (DataRow dr in ds.Tables[0].Rows)
                     {
-                        Id = Convert.ToInt32(dr["idRequisito"]),                   
-                        nombre = dr["Nombre"].ToString(),
-                        descripcion = dr["Descripcion"].ToString(),
-                    });
+                        pRequisito.Add(new Requisito
+                        {
+                            Id = Convert.ToInt32(dr["idRequisito"]),
+                            nombre = dr["Nombre"].ToString(),
+                            descripcion = dr["Descripcion"].ToString(),
+                        });
+                    }
                 }
+                return pRequisito;
             }
-            return pRequisito;
+
+            catch (SqlException ex)
+            {
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+           
         }
 
         //<summary> Método que se encarga de traer de la base de datos un requisito específico </summary>
@@ -108,25 +127,40 @@ namespace DAL.Repositories
 
         public Requisito GetByNombre(String parametro)
         {
-            Requisito requisito = new Requisito();
-            SqlCommand cmd = new SqlCommand();
-            cmd.Parameters.AddWithValue("@parametro", parametro);
-            DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_buscarRequisito");
 
-            if (ds.Tables[0].Rows.Count > 0)
-            {
-                var dr = ds.Tables[0].Rows[0];
+            try {
+                Requisito requisito = new Requisito();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Parameters.AddWithValue("@parametro", parametro);
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_buscarRequisito");
 
-                requisito = new Requisito
+                if (ds.Tables[0].Rows.Count > 0)
                 {
+                    var dr = ds.Tables[0].Rows[0];
 
-                    nombre = dr["Nombre"].ToString(),
-                    descripcion = dr["Descripcion"].ToString()
-                };
+                    requisito = new Requisito
+                    {
 
-                requisito.Id = Convert.ToInt32(dr["idRequisito"]);
+                        nombre = dr["Nombre"].ToString(),
+                        descripcion = dr["Descripcion"].ToString()
+                    };
+
+                    requisito.Id = Convert.ToInt32(dr["idRequisito"]);
+                }
+                return requisito;
             }
-            return requisito;
+
+            catch (SqlException ex)
+            {
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+           
         }
 
 
@@ -223,9 +257,15 @@ namespace DAL.Repositories
                 registrarAccion(actividad);
 
             }
+            catch (SqlException ex)
+            {
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
+            }
             catch (Exception ex)
             {
-
+                throw ex;
             }
         }
 
@@ -246,9 +286,14 @@ namespace DAL.Repositories
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_modificarRequisitos");
 
             }
+            catch (SqlException ex)
+            {
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
+            }
             catch (Exception ex)
             {
-
                 throw ex;
             }
         }
@@ -273,14 +318,13 @@ namespace DAL.Repositories
             }
             catch (SqlException ex)
             {
-                //logear la excepcion a la bd con un Exception
-                //throw new DataAccessException("Ha ocurrido un error al eliminar un usuario", ex);
-
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
             }
             catch (Exception ex)
             {
-                //logear la excepcion a la bd con un Exception
-                //throw new DataAccessException("Ha ocurrido un error al eliminar un usuario", ex);
+                throw ex;
             }
         }
 
@@ -302,12 +346,16 @@ namespace DAL.Repositories
                 RegistroAccionRepository objRegistroRep = new RegistroAccionRepository();
                 objRegistroRep.InsertAccion(objRegistro);
             }
-            catch (Exception e)
+            catch (SqlException ex)
             {
-
-                throw e;
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
             }
-
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
         public void asignarRequisitoTipoBeca(Requisito objRequisito)
         {
@@ -321,9 +369,15 @@ namespace DAL.Repositories
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_insertarRequisitoTipoBeca");
 
             }
+            catch (SqlException ex)
+            {
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
+            }
             catch (Exception ex)
             {
-
+                throw ex;
             }
         }
 

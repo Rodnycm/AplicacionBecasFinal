@@ -24,8 +24,6 @@ Partial Class uCtrlMantenimientoRequisitos
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(uCtrlMantenimientoRequisitos))
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.dgvRequisitos = New System.Windows.Forms.DataGridView()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnCrearRequisito = New System.Windows.Forms.Button()
@@ -33,13 +31,13 @@ Partial Class uCtrlMantenimientoRequisitos
         Me.dtaNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Modificarcmb = New System.Windows.Forms.DataGridViewComboBoxColumn()
+        Me.colmId = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgvRequisitos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'dgvRequisitos
         '
-        Me.dgvRequisitos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvRequisitos.BackgroundColor = System.Drawing.Color.White
         Me.dgvRequisitos.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvRequisitos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
@@ -52,7 +50,7 @@ Partial Class uCtrlMantenimientoRequisitos
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvRequisitos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvRequisitos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvRequisitos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dtaNombre, Me.descripcion, Me.Modificarcmb})
+        Me.dgvRequisitos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dtaNombre, Me.descripcion, Me.Modificarcmb, Me.colmId})
         Me.dgvRequisitos.GridColor = System.Drawing.Color.White
         Me.dgvRequisitos.Location = New System.Drawing.Point(41, 159)
         Me.dgvRequisitos.Name = "dgvRequisitos"
@@ -97,18 +95,16 @@ Partial Class uCtrlMantenimientoRequisitos
         '
         'dtaNombre
         '
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtaNombre.DefaultCellStyle = DataGridViewCellStyle2
         Me.dtaNombre.HeaderText = "Nombre"
         Me.dtaNombre.Name = "dtaNombre"
         Me.dtaNombre.ReadOnly = True
+        Me.dtaNombre.Width = 160
         '
         'descripcion
         '
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 9.75!)
-        Me.descripcion.DefaultCellStyle = DataGridViewCellStyle3
         Me.descripcion.HeaderText = "Descripcion"
         Me.descripcion.Name = "descripcion"
+        Me.descripcion.Width = 570
         '
         'Modificarcmb
         '
@@ -116,6 +112,13 @@ Partial Class uCtrlMantenimientoRequisitos
         Me.Modificarcmb.HeaderText = "Modificar"
         Me.Modificarcmb.Items.AddRange(New Object() {"Editar", "Eliminar"})
         Me.Modificarcmb.Name = "Modificarcmb"
+        Me.Modificarcmb.Width = 190
+        '
+        'colmId
+        '
+        Me.colmId.HeaderText = ""
+        Me.colmId.Name = "colmId"
+        Me.colmId.Visible = False
         '
         'uCtrlMantenimientoRequisitos
         '
@@ -142,5 +145,6 @@ Partial Class uCtrlMantenimientoRequisitos
     Friend WithEvents dtaNombre As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents descripcion As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Modificarcmb As System.Windows.Forms.DataGridViewComboBoxColumn
+    Friend WithEvents colmId As System.Windows.Forms.DataGridViewTextBoxColumn
 
 End Class

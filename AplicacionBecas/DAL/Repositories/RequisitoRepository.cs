@@ -81,25 +81,27 @@ namespace DAL.Repositories
         //<returns>Retorna una lista con todos los requisitos registrados en el sistema.</returns> 
         public IEnumerable<Requisito> GetAll()
         {
+            List<Requisito> prequisito = null;
+            /*var sqlQuery = "SELECT Id, Nombre, Precio FROM Producto";
+            SqlCommand cmd = new SqlCommand(sqlQuery);
 
-            List<Requisito> pRequisito = null;
-            SqlCommand cmd = new SqlCommand();
-            DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_consultarRequisitos");
+            var ds = DBAccess.ExecuteQuery(cmd);
 
             if (ds.Tables[0].Rows.Count > 0)
             {
-                pRequisito = new List<Requisito>();
+                pmusculo = new List<Musculo>();
                 foreach (DataRow dr in ds.Tables[0].Rows)
                 {
-                    pRequisito.Add(new Requisito
+                    pmusculo.Add(new Musculo
                     {
                         nombre = dr["Nombre"].ToString(),
                         descripcion = dr["Descripcion"].ToString(),
                         Id = Convert.ToInt32(dr["IdRequisito"].ToString())
                     });
                 }
-            }
-            return pRequisito;
+            }*/
+
+            return prequisito;
         }
 
         //<summary> Método que se encarga de traer de la base de datos un requisito específico </summary>
@@ -132,27 +134,27 @@ namespace DAL.Repositories
             return objRequisito;
         }
 
-        public Requisito GetByNombre(String parametro)
+        public Requisito GetByNombre(String pnombre)
         {
-            Requisito requisito = new Requisito();
-            SqlCommand cmd = new SqlCommand();
-            cmd.Parameters.AddWithValue("@parametro", parametro);
+            Requisito objRequisito = null;
+            /*var sqlQuery = "SELECT Id, Nombre, Precio FROM Producto WHERE id = @idProducto";
+            SqlCommand cmd = new SqlCommand(sqlQuery);
+            cmd.Parameters.AddWithValue("@idProducto", id);
 
-            DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_buscarRequisito");
+            var ds = DBAccess.ExecuteQuery(cmd);
 
             if (ds.Tables[0].Rows.Count > 0)
             {
                 var dr = ds.Tables[0].Rows[0];
 
-                requisito = new Requisito
+                objMusculo = new Musculo
                 {
                     nombre = dr["Nombre"].ToString(),
                     descripcion = dr["Descripcion"].ToString()
                 };
+            }*/
 
-                requisito.Id = Convert.ToInt32(dr["idRequisito"]);
-            }
-            return requisito;
+            return objRequisito;
         }
 
         //<summary> Método que se encarga de guardar en la base de datos los cambios realizados </summary>
@@ -256,19 +258,17 @@ namespace DAL.Repositories
             {
                 SqlCommand cmd = new SqlCommand();
 
-                cmd.Parameters.Add(new SqlParameter("@nombre", objRequisito.nombre));
-                cmd.Parameters.Add(new SqlParameter("@ubicacion", objRequisito.descripcion));
+                cmd.Parameters.Add(new SqlParameter("@Nombre", objRequisito.nombre));
+                cmd.Parameters.Add(new SqlParameter("@Descripcion", objRequisito.descripcion));
+                cmd.Parameters.Add(new SqlParameter("@IdRequisito", objRequisito.Id));
 
-                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "");
-
-                actividad = "Se ha Editado un Requisito";
-                registrarAccion(actividad);
-
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_modificarRequisitos");
 
             }
             catch (Exception ex)
             {
 
+                throw ex;
             }
         }
 
@@ -362,7 +362,7 @@ namespace DAL.Repositories
                     }
 
                     scope.Complete();
-                }
+        }
                 catch (TransactionAbortedException ex)
                 {
 
@@ -376,8 +376,8 @@ namespace DAL.Repositories
                     Clear();
                 }
 
-            }
-        }
+    }
+}
     }
 }
         

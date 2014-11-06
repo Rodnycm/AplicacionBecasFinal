@@ -39,6 +39,7 @@ Public Class UctrlCrearUsuario
             objGestorUsuario.crearUsuario(pNombre, sNombre, pApellido, sApellido, identificacion, telefono, fechaNacimiento, rol, genero, correoElectronico)
             objGestorUsuario.guardarCambios()
 
+<<<<<<< HEAD:AplicacionBecas/AplicacionGestionBecas/UCtrlUsuarios/UCtrlCrearUsuario.vb
             lista.dgUsuarios.Rows.Clear()
             lista.listarUsuarios()
             confirmacion = New uCtrlConfirmacion()
@@ -47,6 +48,12 @@ Public Class UctrlCrearUsuario
             confirmacion.Location = New Point(200, 250)
             confirmacion.BringToFront()
             confirmacion.Show()
+=======
+            'lista.dgUsuarios.Rows.Clear()
+            'lista.listarUsuarios()
+            'Me.Dispose()
+            MsgBox("Usuario creado correctamente")
+>>>>>>> origin/valeram:AplicacionBecas/AplicacionGestionBecas/UctrlCrearUsuario.vb
         Catch ex As Exception
             alerta = New UctrlAlerta()
             alerta.lblAlerta.Text = ex.Message
@@ -58,6 +65,8 @@ Public Class UctrlCrearUsuario
 
         lista.dgUsuarios.Rows.Clear()
         lista.listarUsuarios()
+        Me.Dispose()
+
 
     End Sub
 

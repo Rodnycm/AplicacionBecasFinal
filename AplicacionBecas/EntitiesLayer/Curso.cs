@@ -7,6 +7,7 @@ using System.Text.RegularExpressions;
 
 namespace EntitiesLayer
 {
+
     public class Curso : IEntity
     {
 
@@ -43,7 +44,7 @@ namespace EntitiesLayer
         //<author>  Valeria Ramírez Cordero </author> 
         //<param > variable de tipo int que almacena los creditos del curso</param>
         //<returns> Retorna una variable int con los creditos del curso.</returns> 
-        public int creditos { get; set; }
+        public Int32 creditos { get; set; }
 
         //<summary> Métodos set y get de la variable precio</summary>
         //<author>  Valeria Ramírez Cordero </author> 
@@ -77,6 +78,7 @@ namespace EntitiesLayer
         //<param name = "pcuatrimestre"> variable de tipo String que almacena el cuatrimestre en el que se encuentra el curso </param>
         //<param name = " pcreditos"> variable de tipo int que almacena los créditos del curso</param>
         //<param name = "pprecio"> variable de tipo double que almacena el precio del curso</param>
+        //<param name = "pprecio"> variable de tipo double que almacena el precio del curso</param>
         //<returns> No retorna valor.</returns> 
         public Curso(String pnombre, String pcodigo, String pcuatrimestre, int pcreditos, double pprecio)
         {
@@ -88,6 +90,15 @@ namespace EntitiesLayer
             precio = pprecio;
         }
 
+        //<summary> Constructor de la clase Curso</summary>
+        //<author> Valeria Ramírez Cordero </author> 
+        //<param name = "pnombre"> variable de tipo String que almacena el  nombre del curso  </param>
+        //<param name= "pcodigo" > variable de tipo String que almacena el código del curso </param>
+        //<param name = "pcuatrimestre"> variable de tipo String que almacena el cuatrimestre en el que se encuentra el curso </param>
+        //<param name = " pcreditos"> variable de tipo int que almacena los créditos del curso</param>
+        //<param name = "pprecio"> variable de tipo double que almacena el precio del curso</param>
+        //<param name = "pid"> variable de tipo int que almacena el id  del curso</param>
+        //<returns> No retorna valor.</returns> 
         public Curso(String pnombre, String pcodigo, String pcuatrimestre, int pcreditos, double pprecio, int pid)
         {
 
@@ -100,6 +111,13 @@ namespace EntitiesLayer
 
         }
 
+
+        //<summary> Constructor de la clase Curso</summary>
+        //<author> Valeria Ramírez Cordero </author> 
+        //<param name = "pnombre"> variable de tipo String que almacena el  nombre del curso  </param>
+        //<param name= "pcodigo" > variable de tipo String que almacena el código del curso </param>
+        //<param name = "pid"> variable de tipo int que almacena el id  del curso</param>
+        //<returns> No retorna valor.</returns> 
         public Curso(String pnombre, String pcodigo, int pid)
         {
 
@@ -126,7 +144,11 @@ namespace EntitiesLayer
 
 
 
-
+        //<summary> Constructor de la clase Curso</summary>
+        //<author> Valeria Ramírez Cordero </author> 
+        //<param name = "pnombre"> variable de tipo String que almacena el  nombre del curso  </param>
+        //<param name= "pcodigo" > variable de tipo String que almacena el código del curso </param>
+        //<returns> No retorna valor.</returns> 
         public Curso(String pnombre, String pcodigo)
         {
 
@@ -167,27 +189,33 @@ namespace EntitiesLayer
 
             }
 
-            if (!(Regex.IsMatch(cuatrimestre, "^[\\p{L} .'-]+$")))
-            {
+
+            if (!(Regex.IsMatch(cuatrimestre, "^[\\p{L} .'-]+$"))){
                 yield return new RuleViolation("Solo se permiten letras en el cuatrimestre", "Cuatrimestre");
 
             }
 
+           
+
+            //if ((Regex.IsMatch(codigo, "^([0-9a-zA-Z]{1}$")))
+            //{
+            //    yield return new RuleViolation("Error en el código", "Código incorrecto");
+            //}
+
+
+            //if ((Regex.IsMatch(nombre, "^([0-9a-zA-Z]{1})$")))
+            //{
+            //    yield return new RuleViolation("Error en el nombre", "Nombre incorrecto");
+            
 
 
 
-            if ((Regex.IsMatch(codigo, "^([0-9a-zA-Z]{12}$")))
-            {
-                yield return new RuleViolation("Error en el código", "Código incorrecto");
-            }
 
-
-            if ((Regex.IsMatch(nombre, "^([0-9a-zA-Z]{1})$")))
-            {
-                yield return new RuleViolation("Error en el nombre", "Nombre incorrecto");
-            }
         }
+
+
     }
+
 }
 
 

@@ -1,9 +1,10 @@
 ﻿
+
 Imports BLL
 Imports EntitiesLayer
 
 
-Public Class UCtrlCrearCursos
+Public Class CrearCursos
 
     Dim alerta As uCtrlAlerta
     Dim ucBuscarCursos As New uCtrlBuscarCursos
@@ -20,32 +21,25 @@ Public Class UCtrlCrearCursos
         Try
             objGestorCurso.agregarCurso(nombre, codigo, cuatrimestre, creditos, precio)
             objGestorCurso.guardarCambios()
+            ucBuscarCursos.dtaListarCursos.Rows.Clear()
+            ucBuscarCursos.listarCursos()
+            Me.Dispose()
         Catch ex As Exception
             alerta = New uCtrlAlerta()
             alerta.lblAlerta.Text = ex.Message
-            frmPrincipal.Controls.Add(alerta)
+            FrmIniciarSesion.principal.Controls.Add(alerta)
             alerta.BringToFront()
             alerta.Location = New Point(290, 48)
             alerta.Show()
 
-            ucBuscarCursos.dtaListarCursos.Rows.Clear()
-            ucBuscarCursos.listarCursos()
+         
         End Try
-        Me.Hide()
+
 
     End Sub
 
-    Public Sub refrescarPantalla()
-
-        Me.Hide()
-        ucBuscarCursos.Refresh()
-        ucBuscarCursos.dtaListarCursos.Rows.Clear()
-        ucBuscarCursos.listarCursos()
-
-
-
-
-
+    Public Sub refrecarLista(ByVal puctrl As uCtrlBuscarCursos)
+        ucBuscarCursos = puctrl
     End Sub
     Private Sub btnCancelarAgregarCurso_Click(sender As Object, e As EventArgs) Handles btnCancelarAgregarCurso.Click
 
@@ -57,4 +51,16 @@ Public Class UCtrlCrearCursos
 
     End Sub
 
+
+    Private Sub imgCrearCurso_Click(sender As Object, e As EventArgs) Handles imgCrearCurso.Click
+
+    End Sub
+
+    Private Sub MaskedTextBox1_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles MaskedTextBox1.MaskInputRejected
+
+    End Sub
+
+    Private Sub txtCreditosCurso_TextChanged(sender As Object, e As EventArgs) Handles txtCreditosCurso.TextChanged
+
+    End Sub
 End Class

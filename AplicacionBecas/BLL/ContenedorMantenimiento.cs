@@ -51,6 +51,16 @@ namespace BLL
             return new Requisito(nombre, descripcion);
         }
 
+        //<summary> Método que se encarga de crear instancias de la clase Requisito</summary>
+        //<author> Gabriela Gutiérrez Corrales </author> 
+        //<param name = "ppNombre"> variable de tipo String que almacena el nombre del requisito  </param>
+        //<param name= "pdescripcion" > variable de tipo String que almacena la descripción del requisito  </param>
+        //<returns>Retorna un objeto de tipo Requisito</returns> 
+        public Requisito crearRequisito(string pnombre, string pdescripcion,int pid){
+            return new Requisito(pnombre, pdescripcion,pid);
+        }
+
+
          //<summary> Método que se encarga de crear instancias de la clase Usuario</summary>
         //<author> Gabriela Gutiérrez Corrales </author> 
         //<param name = "ppNombre"> variable de tipo String que almacena el primer nombre del usuario  </param>
@@ -113,13 +123,16 @@ namespace BLL
         {
             return new Rol(nombre);
         }
+
+
         //<summary> Método que se encarga de crear instancias de la clase Curso</summary>
         //<author> Valeria Ramírez Cordero </author> 
         //<param name = "nombre"> variable de tipo String que almacena el nombre del curso  </param>
         //<param name= "codigo" > variable de tipo String que almacena el código de curso  </param>
-        //<param name= "codigo" > variable de tipo String que almacena el cuatrimestre en el que se encuetra el curso  </param>
-        //<param name= "codigo" > variable de tipo String que almacena los créditos del curso  </param>
-        //<param name= "codigo" > variable de tipo String que almacena el precio del curso </param>
+        //<param name= "cuatrimestre" > variable de tipo String que almacena el cuatrimestre en el que se encuetra el curso  </param>
+        //<param name= "creditos" > variable de tipo String que almacena los créditos del curso  </param>
+        //<param name= "precio" > variable de tipo String que almacena el precio del curso </param>
+        //<param name= "id" > variable de tipo int que almacena el id del curso </param>
         //<returns>Retorna un objeto de tipo Curso</returns> 
         public Curso crearObjetoCurso(string pnombre, string pcodigo, string pcuatrimestre, int pcreditos, double pprecio, int pid)
         {
@@ -129,6 +142,12 @@ namespace BLL
             return curso;
         }
 
+        //<summary> Método que se encarga de crear instancias de la clase Curso</summary>
+        //<author> Valeria Ramírez Cordero </author> 
+        //<param name = "nombre"> variable de tipo String que almacena el nombre del curso  </param>
+        //<param name= "codigo" > variable de tipo String que almacena el código de curso  </param>
+        //<param name= "id" > variable de tipo int que almacena el id del curso  </param>
+        //<returns>Retorna un objeto de tipo Curso</returns> 
         public Curso crearObjetoCurso(string pnombre, string pcodigo, int pid)
         {
 
@@ -137,6 +156,14 @@ namespace BLL
             return curso;
         }
 
+        //<summary> Método que se encarga de crear instancias de la clase Curso</summary>
+        //<author> Valeria Ramírez Cordero </author> 
+        //<param name = "nombre"> variable de tipo String que almacena el nombre del curso  </param>
+        //<param name= "codigo" > variable de tipo String que almacena el código de curso  </param>
+        //<param name= "cuatrimestre" > variable de tipo String que almacena el cuatrimestre en el que se encuetra el curso  </param>
+        //<param name= "creditos" > variable de tipo String que almacena los créditos del curso  </param>
+        //<param name= "precio" > variable de tipo String que almacena el precio del curso </param>
+        //<returns>Retorna un objeto de tipo Curso</returns> 
         public Curso crearObjetoCurso(string pnombre, string pcodigo, string pcuatrimestre, int pcreditos, double pprecio)
         {
 

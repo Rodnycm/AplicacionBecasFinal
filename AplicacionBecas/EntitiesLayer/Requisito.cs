@@ -57,6 +57,18 @@ namespace EntitiesLayer
             descripcion = pdescripcion;
         }
 
+        //<summary> Constructor de la clase Requisito</summary>
+        //<author> Gabriela Gutiérrez Corrales </author> 
+        //<param name = "ppNombre"> variable de tipo String que almacena el nombre del requisito  </param>
+        //<param name= "pdescripcion" > variable de tipo String que almacena la descripción del requisito  </param>
+        //<returns> No retorna valor.</returns> 
+        public Requisito(String pnombre, String pdescripcion,int pid)
+        {
+            Id=pid;
+            nombre = pnombre;
+            descripcion = pdescripcion;
+        }
+
         //<summary> Método que se encarga de determinar si los datos ingresados del requisito son validos</summary>
         //<author> Gabriela Gutiérrez Corrales </author> 
         //<param > No recibe parámetros </param>

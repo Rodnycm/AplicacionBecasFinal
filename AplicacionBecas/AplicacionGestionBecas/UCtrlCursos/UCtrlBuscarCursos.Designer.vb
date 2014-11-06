@@ -123,6 +123,7 @@ Partial Class uCtrlBuscarCursos
         '
         Me.id.HeaderText = ""
         Me.id.Name = "id"
+        Me.id.Visible = False
         '
         'lblBuscar
         '

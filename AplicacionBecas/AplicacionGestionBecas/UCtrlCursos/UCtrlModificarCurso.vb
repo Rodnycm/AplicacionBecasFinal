@@ -9,13 +9,13 @@ Public Class uCtrlModificarCurso
     Dim nombre As String
     Dim codigo As String
     Dim cuatrimestre As String
-    Dim creditos As Integer
-    Dim precio As Double
+    Dim creditos As String
+    Dim precio As String
     Dim alerta As uCtrlAlerta
 
 
 
-    Public Sub recieveData(pnombre As String, pcodigo As String, pcuatrimestre As String, pcreditos As Integer, pprecio As Double, pid As Integer)
+    Public Sub recieveData(pnombre As String, pcodigo As String, pcuatrimestre As String, pcreditos As String, pprecio As String, pid As Integer)
 
 
         txtNombreCurso.Text = pnombre
@@ -24,10 +24,12 @@ Public Class uCtrlModificarCurso
         txtCreditosCurso.Text = pcreditos
         txtPrecioCurso.Text = pprecio
         txtId.Text = pid
-        MsgBox(pid)
+
 
     End Sub
-
+    Public Sub refrecarLista(ByVal puctrl As uCtrlBuscarCursos)
+        ucBuscarCursos = puctrl
+    End Sub
     Private Sub btnAceptarModificarCurso_Click(sender As Object, e As EventArgs) Handles btnAceptarModificarCurso.Click
 
 
@@ -37,26 +39,26 @@ Public Class uCtrlModificarCurso
         creditos = txtCreditosCurso.Text
         precio = txtPrecioCurso.Text
         Id = txtId.Text
-        MsgBox(Id)
+
 
         Try
             objGestorCurso.modificarCurso(nombre, codigo, cuatrimestre, creditos, precio, Id)
             objGestorCurso.guardarCambios()
+
+
+            ucBuscarCursos.dtaListarCursos.Rows.Clear()
+            ucBuscarCursos.listarCursos()
+            Me.Dispose()
         Catch ex As Exception
             alerta = New uCtrlAlerta()
             alerta.lblAlerta.Text = ex.Message
-            frmPrincipal.Controls.Add(alerta)
+            FrmIniciarSesion.principal.Controls.Add(alerta)
             alerta.BringToFront()
             alerta.Location = New Point(290, 48)
             alerta.Show()
         End Try
 
-
-        'ucBuscarCursos.listarCursos()
-        'ucBuscarCursos.dtaListarCursos.Rows.Clear()
-
-        Me.Hide()
-        Me.Dispose()
+     
 
     End Sub
 
@@ -69,6 +71,5 @@ Public Class uCtrlModificarCurso
 
 
     End Sub
-
 
 End Class

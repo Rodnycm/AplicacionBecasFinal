@@ -8,6 +8,10 @@ Public Class UCtrlIniciar
 
         'Dim nombreUsuario As String = txtNombreUsuario.Text
         'Dim contraseña As String = txtContraseña.Text
+<<<<<<< HEAD:AplicacionBecas/AplicacionGestionBecas/MenusAplicacion/UCtrlIniciar.vb
+=======
+
+>>>>>>> origin/valeram:AplicacionBecas/AplicacionGestionBecas/UcntrlIniciar.vb
         Dim nombreUsuario As String = "backi-g@hotmail.com"
         Dim contraseña As String = "1234"
         Dim listaUsuarios As List(Of Usuario)

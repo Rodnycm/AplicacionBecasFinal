@@ -172,12 +172,6 @@
     <Compile Include="UCtrlAlerta.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UCtrlRequisitos\UCtrlAsignarRequisitos.Designer.vb">
-      <DependentUpon>UCtrlAsignarRequisitos.vb</DependentUpon>
-    </Compile>
-    <Compile Include="UCtrlRequisitos\UCtrlAsignarRequisitos.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Include="UCtrlBitacoraAcciones.Designer.vb">
       <DependentUpon>UCtrlBitacoraAcciones.vb</DependentUpon>
     </Compile>
@@ -188,6 +182,12 @@
       <DependentUpon>UCtrlBuscarCursos.vb</DependentUpon>
     </Compile>
     <Compile Include="UCtrlCursos\UCtrlBuscarCursos.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCtrlTipoBeca\UCtrlAsignarRequisitos.Designer.vb">
+      <DependentUpon>UCtrlAsignarRequisitos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UCtrlTipoBeca\UCtrlAsignarRequisitos.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UCtrlTipoBeca\UCtrlBuscarTipoBeca.Designer.vb">
@@ -450,14 +450,14 @@
     <EmbeddedResource Include="UCtrlAlerta.resx">
       <DependentUpon>UCtrlAlerta.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UCtrlRequisitos\UCtrlAsignarRequisitos.resx">
-      <DependentUpon>UCtrlAsignarRequisitos.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UCtrlBitacoraAcciones.resx">
       <DependentUpon>UCtrlBitacoraAcciones.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCtrlCursos\UCtrlBuscarCursos.resx">
       <DependentUpon>UCtrlBuscarCursos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCtrlTipoBeca\UCtrlAsignarRequisitos.resx">
+      <DependentUpon>UCtrlAsignarRequisitos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCtrlTipoBeca\UCtrlBuscarTipoBeca.resx">
       <DependentUpon>UCtrlBuscarTipoBeca.vb</DependentUpon>

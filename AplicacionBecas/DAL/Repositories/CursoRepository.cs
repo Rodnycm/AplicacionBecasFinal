@@ -119,28 +119,28 @@ namespace DAL{
         {
 
             Curso objCurso = null;
-            var sqlQuery = "SELECT Id, Nombre, Precio FROM Producto WHERE id = @idProducto";
-            SqlCommand cmd = new SqlCommand(sqlQuery);
-            cmd.Parameters.AddWithValue("@idProducto", Id);
+            //var sqlQuery = "SELECT Id, Nombre, Precio FROM Producto WHERE id = @idProducto";
+            //SqlCommand cmd = new SqlCommand(sqlQuery);
+            //cmd.Parameters.AddWithValue("@idProducto", Id);
 
-            //var ds = DBAccess.ExecuteQuery(cmd);
-            DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_buscarUnCurso");
+            ////var ds = DBAccess.ExecuteQuery(cmd);
+            //DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_buscarUnCurso");
 
-            if (ds.Tables[0].Rows.Count > 0)
-            {
+            //if (ds.Tables[0].Rows.Count > 0)
+            //{
 
-                var dr = ds.Tables[0].Rows[0];
-                objCurso = new Curso
-                {
+            //    var dr = ds.Tables[0].Rows[0];
+            //    objCurso = new Curso
+            //    {
 
-                    nombre = dr["Nombre"].ToString(),
-                    codigo = dr["Codigo"].ToString(),
-                    cuatrimestre = dr["Cuatrimestre"].ToString(),
-                    creditos = Convert.ToInt32(dr["Creditos"]),
-                    precio = Convert.ToDouble(dr["Precio"]),
-                    Id = Convert.ToInt32(dr["IdCurso"]),
-                };
-            }
+            //        nombre = dr["Nombre"].ToString(),
+            //        codigo = dr["Codigo"].ToString(),
+            //        cuatrimestre = dr["Cuatrimestre"].ToString(),
+            //        creditos = Convert.ToInt32(dr["Creditos"]),
+            //        precio = Convert.ToDouble(dr["Precio"]),
+            //        Id = Convert.ToInt32(dr["IdCurso"]),
+            //    };
+            //}
 
             return objCurso;
         }

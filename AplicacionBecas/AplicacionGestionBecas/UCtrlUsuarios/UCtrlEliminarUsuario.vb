@@ -11,6 +11,7 @@ Public Class UctrlEliminarUsuario
     End Sub
 
     Public Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
+
         objGestorUsuario.eliminarUsuario(Me.parametro)
         objGestorUsuario.guardarCambios()
         'confirmacionPopUp = New uCtrlConfirmacion()

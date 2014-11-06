@@ -35,7 +35,6 @@ Partial Class CrearCursos
         Me.lblNombreCurso = New System.Windows.Forms.Label()
         Me.cmbCuatrimestreCurso = New System.Windows.Forms.ComboBox()
         Me.imgCrearCurso = New System.Windows.Forms.PictureBox()
-        Me.MaskedTextBox1 = New System.Windows.Forms.MaskedTextBox()
         CType(Me.imgCrearCurso, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -157,28 +156,17 @@ Partial Class CrearCursos
         '
         'imgCrearCurso
         '
-        '' Me.imgCrearCurso.Image = Global.UI.My.Resources.Resources.tablaFinalMedianaAzul2
         Me.imgCrearCurso.Location = New System.Drawing.Point(0, 0)
         Me.imgCrearCurso.Name = "imgCrearCurso"
         Me.imgCrearCurso.Size = New System.Drawing.Size(458, 252)
         Me.imgCrearCurso.TabIndex = 14
         Me.imgCrearCurso.TabStop = False
         '
-        'MaskedTextBox1
-        '
-        Me.MaskedTextBox1.Location = New System.Drawing.Point(327, 120)
-        Me.MaskedTextBox1.Mask = "99999"
-        Me.MaskedTextBox1.Name = "MaskedTextBox1"
-        Me.MaskedTextBox1.Size = New System.Drawing.Size(121, 20)
-        Me.MaskedTextBox1.TabIndex = 28
-        Me.MaskedTextBox1.ValidatingType = GetType(Integer)
-        '
         'CrearCursos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.Controls.Add(Me.MaskedTextBox1)
         Me.Controls.Add(Me.cmbCuatrimestreCurso)
         Me.Controls.Add(Me.btnAgregarCurso)
         Me.Controls.Add(Me.btnCancelarAgregarCurso)
@@ -212,6 +200,5 @@ Partial Class CrearCursos
     Friend WithEvents lblNombreCurso As System.Windows.Forms.Label
     Friend WithEvents imgCrearCurso As System.Windows.Forms.PictureBox
     Friend WithEvents cmbCuatrimestreCurso As System.Windows.Forms.ComboBox
-    Friend WithEvents MaskedTextBox1 As System.Windows.Forms.MaskedTextBox
 
 End Class

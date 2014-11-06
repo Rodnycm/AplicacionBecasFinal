@@ -40,22 +40,20 @@ Public Class uCtrlBuscarCursos
     Private Sub ComboBox_SelectionChangeCommitted(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
         Dim combo As ComboBox = CType(sender, ComboBox)
-        Dim fila As Integer = dtaListarCursos.CurrentCell.RowIndex
+        Dim fila As String = dtaListarCursos.CurrentRow.Cells(1).Value()
 
         If combo.SelectedItem = "Editar" Then
 
-            Dim parametro = dtaListarCursos.CurrentRow.Cells(0).Value
-            modificarCurso()
+            modificarCurso(fila)
 
 
-            'modificarCarrera(fila)
 
         ElseIf combo.SelectedItem = "Eliminar" Then
 
-            eliminarCurso()
+            eliminarCurso(fila)
 
 
-            'eliminarCarrera(fila)
+            '
 
         End If
 
@@ -63,21 +61,13 @@ Public Class uCtrlBuscarCursos
 
     End Sub
 
-    Public Sub modificarCurso()
+    Public Sub modificarCurso(ByVal pfila As String)
 
-
-        'Dim id As Integer
-
-        Dim nombre As String = dtaListarCursos.CurrentRow.Cells(0).Value
-        Dim codigo As String = dtaListarCursos.CurrentRow.Cells(1).Value
-        Dim cuatrimestre As String = dtaListarCursos.CurrentRow.Cells(2).Value
-        Dim creditos As Integer = dtaListarCursos.CurrentRow.Cells(3).Value
-        Dim precio As Double = dtaListarCursos.CurrentRow.Cells(4).Value
-        Dim id As Integer = dtaListarCursos.CurrentRow.Cells(6).Value
+        Dim codigo As String = pfila
 
         Dim ucntrl As uCtrlModificarCurso = New uCtrlModificarCurso()
 
-        ucntrl.recieveData(nombre, codigo, cuatrimestre, creditos, precio, id)
+        ucntrl.recieveData(codigo)
 
         'imgBuscarCursos.Hide()
         FrmIniciarSesion.principal.Controls.Add(ucntrl)
@@ -87,23 +77,15 @@ Public Class uCtrlBuscarCursos
         ucntrl.Location = New Point(290, 48)
         ucntrl.refrecarLista(Me)
 
-
-
-
     End Sub
 
-    Public Sub eliminarCurso()
+    Public Sub eliminarCurso(ByVal pfila As String)
 
-        Dim nombre As String = dtaListarCursos.CurrentRow.Cells(0).Value
-        Dim codigo As String = dtaListarCursos.CurrentRow.Cells(1).Value
-        Dim cuatrimestre As String = dtaListarCursos.CurrentRow.Cells(2).Value
-        Dim creditos As Integer = dtaListarCursos.CurrentRow.Cells(3).Value
-        Dim precio As Double = dtaListarCursos.CurrentRow.Cells(4).Value
-        Dim id As Integer = dtaListarCursos.CurrentRow.Cells(6).Value
+
+        Dim codigo As String = pfila
 
         Dim ucntrl As uCtrlEliminarCurso = New uCtrlEliminarCurso()
-        ucntrl.recieveData(id, nombre, codigo)
-        MsgBox(id)
+        ucntrl.recieveData(codigo)
         FrmIniciarSesion.principal.Controls.Add(ucntrl)
         ucntrl.BringToFront()
         ucntrl.Show()

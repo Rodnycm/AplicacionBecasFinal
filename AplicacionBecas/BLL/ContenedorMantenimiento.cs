@@ -148,12 +148,11 @@ namespace BLL
         //<param name= "codigo" > variable de tipo String que almacena el código de curso  </param>
         //<param name= "id" > variable de tipo int que almacena el id del curso  </param>
         //<returns>Retorna un objeto de tipo Curso</returns> 
-        public Curso crearObjetoCurso(string pnombre, string pcodigo, int pid)
+        public Curso crearObjetoCurso(string pcodigo)
         {
 
-            Curso curso = new Curso(pnombre, pcodigo, pid);
-            curso.Id = pid;
-            return curso;
+            Curso objCurso = new Curso (pcodigo);
+            return objCurso;
         }
 
         //<summary> Método que se encarga de crear instancias de la clase Curso</summary>

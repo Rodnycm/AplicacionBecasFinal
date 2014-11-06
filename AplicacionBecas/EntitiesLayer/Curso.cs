@@ -118,12 +118,16 @@ namespace EntitiesLayer
         //<param name= "pcodigo" > variable de tipo String que almacena el código del curso </param>
         //<param name = "pid"> variable de tipo int que almacena el id  del curso</param>
         //<returns> No retorna valor.</returns> 
-        public Curso(String pnombre, String pcodigo, int pid)
+        public Curso(String pcodigo)
         {
 
-            nombre = pnombre;
-            codigo = pcodigo;
-            _idCurso = pid;
+            Id = 0;
+            nombre = "";
+            codigo  = pcodigo ;
+            cuatrimestre  = "";
+            creditos  = 0;  
+            precio = 0;
+
         }
 
         //<summary> Constructor de la clase Curso</summary>

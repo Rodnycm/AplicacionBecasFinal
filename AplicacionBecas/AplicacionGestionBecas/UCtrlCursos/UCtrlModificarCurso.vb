@@ -1,4 +1,5 @@
 ﻿Imports EntitiesLayer
+
 Imports BLL
 
 
@@ -11,19 +12,27 @@ Public Class uCtrlModificarCurso
     Dim cuatrimestre As String
     Dim creditos As String
     Dim precio As String
-    Dim alerta As uCtrlAlerta
+    Dim alerta As UctrlAlerta
+    Dim objCurso As Curso
 
 
 
-    Public Sub recieveData(pnombre As String, pcodigo As String, pcuatrimestre As String, pcreditos As String, pprecio As String, pid As Integer)
+
+    Public Sub recieveData(pcodigo As String)
 
 
-        txtNombreCurso.Text = pnombre
-        txtCodigoCurso.Text = pcodigo
-        cmbCuatrimestreCurso.Text = pcuatrimestre
-        txtCreditosCurso.Text = pcreditos
-        txtPrecioCurso.Text = pprecio
-        txtId.Text = pid
+        objCurso = objGestorCurso.BuscarCurso(pcodigo)
+        llenarInfoModificar(objCurso)
+
+    End Sub
+
+    Public Sub llenarInfoModificar(ByVal pobjCurso As Curso)
+
+        txtNombreCurso.Text = pobjCurso.nombre
+        txtCodigoCurso.Text = pobjCurso.codigo
+        txtCreditosCurso.Text = pobjCurso.creditos
+        txtPrecioCurso.Text = pobjCurso.precio
+        cmbCuatrimestreCurso.Text = pobjCurso.cuatrimestre
 
 
     End Sub
@@ -38,19 +47,18 @@ Public Class uCtrlModificarCurso
         cuatrimestre = cmbCuatrimestreCurso.Text
         creditos = txtCreditosCurso.Text
         precio = txtPrecioCurso.Text
-        Id = txtId.Text
-
+        Id = objCurso.Id
 
         Try
-            objGestorCurso.modificarCurso(nombre, codigo, cuatrimestre, creditos, precio, Id)
+
+            objGestorCurso.modificarCurso(codigo, nombre, cuatrimestre, creditos, precio, Id)
             objGestorCurso.guardarCambios()
-
-
             ucBuscarCursos.dtaListarCursos.Rows.Clear()
             ucBuscarCursos.listarCursos()
             Me.Dispose()
         Catch ex As Exception
-            alerta = New uCtrlAlerta()
+
+            alerta = New UctrlAlerta()
             alerta.lblAlerta.Text = ex.Message
             FrmIniciarSesion.principal.Controls.Add(alerta)
             alerta.BringToFront()

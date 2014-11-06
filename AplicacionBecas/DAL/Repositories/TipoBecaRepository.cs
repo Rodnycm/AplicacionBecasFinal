@@ -14,9 +14,6 @@ namespace DAL.Repositories
 {
     public class TipoBecaRepository : IRepository<TipoBeca>
     {
-
-        private string actividad;
-
         private static TipoBecaRepository instance;
         private List<IEntity> _insertItems;
         private List<IEntity> _deleteItems;
@@ -92,20 +89,18 @@ namespace DAL.Repositories
         {
             List<TipoBeca> ptipoBeca = null;
             SqlCommand cmd = new SqlCommand();
-            DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_consultarTipoBecas");
+            DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_consultaTipoBeca");
             if (ds.Tables[0].Rows.Count > 0)
             {
                 ptipoBeca = new List<TipoBeca>();
                 foreach (DataRow dr in ds.Tables[0].Rows)
                 {
-                    ptipoBeca.Add(new TipoBeca
-                    {
-                        Id = Convert.ToInt32(dr["idTipoBeca"]),
-                        nombre = dr["nombre"].ToString(),
-                        objD = Convert.ToDateTime(dr["fechaCreacion"]),
-                        estado = dr["estado"].ToString(),
-                        descripcion = dr["descripcion"].ToString()
-                    });
+                    ptipoBeca.Add(new TipoBeca(
+                      Convert.ToInt32(dr["idTipoDeBeca"]),
+                      dr["Nombre"].ToString(),
+                      Convert.ToDateTime(dr["FechaCreacion"]),
+                      dr["Estado"].ToString(),
+                      dr["Descripcion"].ToString()));
                 }
             }
 
@@ -120,27 +115,30 @@ namespace DAL.Repositories
         /// <author>María Jesús Gutiérrez</author>
         /// <param name="id"></param>
         /// <returns>Retorna un objeto de tipo beca</returns>
-        public TipoBeca GetByNombre(string nombre)
+        public TipoBeca GetByNombre(string pnombre)
         {
+
             TipoBeca objTipoBeca = null;
 
-            SqlCommand cmd = new SqlCommand();
-            cmd.Parameters.AddWithValue("@nombre", nombre);
 
-            var ds = DBAccess.ExecuteQuery(cmd);
+            SqlCommand cmd = new SqlCommand();
+            cmd.Parameters.Add(new SqlParameter("@Nombre", pnombre));
+
+            var ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_buscarTipoBecaNombre");
 
             if (ds.Tables[0].Rows.Count > 0)
             {
                 var dr = ds.Tables[0].Rows[0];
 
+
                 objTipoBeca = new TipoBeca
-                {
-                    Id = Convert.ToInt32(dr["Id"]),
-                    nombre = dr["nombre"].ToString(),
-                    objD = Convert.ToDateTime(dr["fechaCreacion"]),
-                    estado = dr["estado"].ToString(),
-                    descripcion = dr["descripcion"].ToString()
-                };
+                (
+                    Convert.ToInt32(dr["idTipoDeBeca"]),
+                    dr["Nombre"].ToString(),
+                    Convert.ToDateTime(dr["FechaCreacion"]),
+                    dr["Estado"].ToString(),
+                    dr["Descripcion"].ToString()
+              );
             }
 
 
@@ -160,7 +158,7 @@ namespace DAL.Repositories
         {
             TipoBeca objTipoBeca = null;
             SqlCommand cmd = new SqlCommand();
-            cmd.Parameters.AddWithValue("@idProducto", id);
+            cmd.Parameters.AddWithValue("@idTipoDeBeca", id);
 
             var ds = DBAccess.ExecuteQuery(cmd);
 
@@ -169,12 +167,13 @@ namespace DAL.Repositories
                 var dr = ds.Tables[0].Rows[0];
 
                 objTipoBeca = new TipoBeca
-                {
-                    Id = Convert.ToInt32(dr["Id"]),
-                    nombre = dr["nombre"].ToString(),
-                    estado = dr["estado"].ToString(),
-                    descripcion = dr["descripcion"].ToString()
-                };
+                (
+                    Convert.ToInt32(dr["idTipoDeBeca"]),
+                    dr["Nombre"].ToString(),
+                    Convert.ToDateTime(dr["FechaCreacion"]),
+                    dr["Estado"].ToString(),
+                    dr["Descripcion"].ToString()
+              );
             }
 
 
@@ -197,6 +196,7 @@ namespace DAL.Repositories
                         foreach (TipoBeca objTipoBeca in _insertItems)
                         {
                             InsertTipoBeca(objTipoBeca);
+                            //throw new Exception("No se pudo insertar el tipo de beca");
                         }
                     }
 
@@ -266,22 +266,19 @@ namespace DAL.Repositories
                 SqlCommand cmd = new SqlCommand();
 
                 cmd.Parameters.Add(new SqlParameter("@nombre", objTipoBeca.nombre));
-                cmd.Parameters.Add(new SqlParameter("@fechaCreación", objTipoBeca.objD));
+                cmd.Parameters.Add(new SqlParameter("@fechaCreacion", objTipoBeca.objD));
                 cmd.Parameters.Add(new SqlParameter("@estado", objTipoBeca.estado));
                 cmd.Parameters.Add(new SqlParameter("@descripcion", objTipoBeca.descripcion));
 
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_agregarTipoBeca");
 
-
-                actividad = "Se ha registrado un Beneficio";
-                registrarAccion(actividad);
-
-
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
-
+                throw ex;
             }
+
+
         }
 
         /// <summary>
@@ -295,6 +292,7 @@ namespace DAL.Repositories
             {
                 SqlCommand cmd = new SqlCommand();
 
+                cmd.Parameters.Add(new SqlParameter("@id", objTipoBeca.Id));
                 cmd.Parameters.Add(new SqlParameter("@nombre", objTipoBeca.nombre));
                 cmd.Parameters.Add(new SqlParameter("@estado", objTipoBeca.estado));
                 cmd.Parameters.Add(new SqlParameter("@descripcion", objTipoBeca.descripcion));
@@ -302,15 +300,12 @@ namespace DAL.Repositories
 
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_modificarTipoBeca");
 
-                actividad = "Se ha modificado un Beneficio";
-                registrarAccion(actividad);
-
-
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
-                //throw new DataAccessException("No se pudó modificar el tipo de la beca", ex);
+                throw ex;
             }
+
         }
 
         /// <summary>
@@ -323,55 +318,30 @@ namespace DAL.Repositories
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                cmd.Parameters.Add(new SqlParameter("@", objTipoBeca.Id));
+                cmd.Parameters.Add(new SqlParameter("@nombre", objTipoBeca.nombre));
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_eliminarTipoBeca");
-
-
-                actividad = "Se ha modificado un Beneficio";
-                registrarAccion(actividad);
-
 
             }
             catch (SqlException ex)
             {
-                //logear la excepcion a la bd con un Exception
+
                 //throw new DataAccessException("Ha ocurrido un error al eliminar el tipo de beca", ex);
 
             }
             catch (Exception ex)
             {
-                //logear la excepcion a la bd con un Exception
-                //throw new DataAccessException("Ha ocurrido un error al eliminar un tipo de beca", ex);
+
+                throw ex;
             }
         }
-
-
-        public void registrarAccion(string pactividad)
+        public void asignarBeneficiosTipoBeca(TipoBeca objTipoBeca, Beneficio objBeneficio)
         {
 
-            RegistroAccion objRegistro;
-            DateTime fecha = DateTime.Today;
-            string nombreUsuario = Globals.userName;
-            string nombreRol = Globals.userRol.Nombre;
-            string descripcion = pactividad;
-
-
-            objRegistro = new RegistroAccion(nombreUsuario, nombreRol, descripcion, fecha);
-
-            try
-            {
-
-                RegistroAccionRepository objRegistroRep = new RegistroAccionRepository();
-                objRegistroRep.InsertAccion(objRegistro);
-            }
-            catch (Exception e)
-            {
-
-                throw e;
-            }
+        }
+        public void asignarRequisitosTipoBeca(TipoBeca objTipoBeca, Requisito objRequisito)
+        {
 
         }
-
     }
 }
 

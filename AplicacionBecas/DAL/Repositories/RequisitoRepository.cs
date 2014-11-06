@@ -20,6 +20,7 @@ namespace DAL.Repositories
         private List<IEntity> _insertItems;
         private List<IEntity> _deleteItems;
         private List<IEntity> _updateItems;
+        public static TipoBeca objTipoBeca { get; set; }
 
         public RequisitoRepository()
         {
@@ -327,7 +328,56 @@ namespace DAL.Repositories
             }
 
         }
+        public void asignarRequisitoTipoBeca(Requisito objRequisito)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
 
+                cmd.Parameters.Add(new SqlParameter("@idRequisito", objRequisito.Id));
+                cmd.Parameters.Add(new SqlParameter("@Nombre", objTipoBeca.nombre));
 
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_insertarRequisitoTipoBeca");
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        public void asignarRequisito()
+        {
+            using (TransactionScope scope = new TransactionScope())
+            {
+                try
+                {
+                    if (_insertItems.Count > 0)
+                    {
+                        foreach (Requisito objRequisito in _insertItems)
+                        {
+                            asignarRequisitoTipoBeca(objRequisito);
+
+                        }
+                    }
+
+                    scope.Complete();
+                }
+                catch (TransactionAbortedException ex)
+                {
+
+                }
+                catch (ApplicationException ex)
+                {
+
+                }
+                finally
+                {
+                    Clear();
+                }
+
+            }
+        }
     }
 }
+        

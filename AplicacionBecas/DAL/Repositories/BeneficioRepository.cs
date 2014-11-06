@@ -7,7 +7,6 @@ using System.Collections;
 using System.Transactions;
 using System.Data.SqlClient;
 using System.Data;
-
 using TIL;
 using DAL.Repositories;
 
@@ -18,7 +17,7 @@ namespace DAL
     {
 
         private string actividad;
-
+        public static TipoBeca objTipoBeca { get; set; }
         private static BeneficioRepository instance;
         private List<IEntity> _insertItems;
         private List<IEntity> _deleteItems;
@@ -86,6 +85,33 @@ namespace DAL
         /// </summary>
         /// <author>Mathias Muller</author>
         /// <returns>Una lista de beneficios</returns>
+        public IEnumerable<Beneficio> GetLista(TipoBeca objTipoBeca)
+        {
+
+            List<Beneficio> pbeneficio = null;
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.Parameters.Add(new SqlParameter("@Nombre", objTipoBeca.nombre));
+
+            DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_consultarTipoBecaBeneficios");
+
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                pbeneficio = new List<Beneficio>();
+                foreach (DataRow dr in ds.Tables[0].Rows)
+                {
+                    pbeneficio.Add(new Beneficio
+                    {
+                        Id = Convert.ToInt32(dr["idBeneficio"]),
+                        Nombre = dr["Nombre"].ToString(),
+                        Porcentaje = Convert.ToDouble(dr["Porcentaje"]),
+                        Aplicacion = dr["Aplicabilidad"].ToString()
+                    });
+                }
+            }
+
+            return pbeneficio;
+        }
 
         public IEnumerable<Beneficio> GetAll()
         {
@@ -403,6 +429,58 @@ namespace DAL
             }
 
 
+        }
+        public void asignarBeneficioTipoBeca(Beneficio objBeneficio)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+
+                cmd.Parameters.Add(new SqlParameter("@idBeneficio", objBeneficio.Id));
+                cmd.Parameters.Add(new SqlParameter("@Nombre", objTipoBeca.nombre));
+
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_insertarTipoBecaCompleto");
+
+            }
+            catch (Exception ex)
+            {
+
+
+            }
+        }
+        public void asignarBeneficio()
+        {
+            using (TransactionScope scope = new TransactionScope())
+            {
+                try
+                {
+                    if (_insertItems.Count > 0)
+                    {
+                        foreach (Beneficio objBeneficio in _insertItems)
+                        {
+                            asignarBeneficioTipoBeca(objBeneficio);
+
+                        }
+                    }
+
+
+
+                    scope.Complete();
+                }
+                catch (TransactionAbortedException ex)
+                {
+
+                }
+                catch (ApplicationException ex)
+                {
+
+                }
+                finally
+                {
+                    Clear();
+                }
+
+            }
         }
 
     }

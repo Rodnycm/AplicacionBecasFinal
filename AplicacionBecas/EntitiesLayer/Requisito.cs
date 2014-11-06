@@ -95,11 +95,10 @@ namespace EntitiesLayer
                 yield return new RuleViolation("Descripción Requerida", "descripción");
             }
 
-            if (!(Regex.IsMatch(nombre, "^[a-zA-Z]+$")))
+            if (!(Regex.IsMatch(nombre, "^[\\p{L} .'-]+$")))
             {
-                yield return new RuleViolation("ERROR", "Nombre incorrecto");
+                yield return new RuleViolation("Nombre del registro incorrecto", "Nombre incorrecto");
             }
-
             yield break;
         }
     }

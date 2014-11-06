@@ -260,11 +260,8 @@ Public Class uCtrlListarYBuscarBeneficiosvb
             dtaBuscarBeneficio.Columns("dtaAplicabilidad").Visible = False
             dtaBuscarBeneficio.Columns("dtaId").Visible = False
 
-
-
         Catch
 
-            dtaBuscarBeneficio.Rows.Clear()
             listarBeneficios()
         End Try
     End Sub

@@ -29,9 +29,26 @@ Public Class uCtrlEliminarRol
     '''<summary>Elimina El rol seleccionado </summary>
     '''<author>Rodny Castro Mathews </author> 
     Private Sub btnAñadir_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+        Try
+            objGestorRol.eliminarRol(nombre, IdROl)
+            objGestorRol.guardarCambios()
+            Dim Uctrl As uCtrlConfirmacion = New uCtrlConfirmacion
+            FrmIniciarSesion.principal.Controls.Add(Uctrl)
+            Uctrl.lblConfirmacion.Text = "El rol se eliminó correctamente"
+            Uctrl.Location = New Point(300, 100)
+            Uctrl.BringToFront()
+            Uctrl.Show()
 
-        objGestorRol.eliminarRol(nombre, IdROl)
-        objGestorRol.guardarCambios()
+        Catch ex As Exception
+            Dim UCtrl As UctrlAlerta = New UctrlAlerta()
+
+            FrmIniciarSesion.principal.Controls.Add(UCtrl)
+            UCtrl.lblAlerta.Text = ex.Message
+            UCtrl.Location = New Point(300, 100)
+            UCtrl.BringToFront()
+            UCtrl.Show()
+        End Try
+
         listarRoles.DGVRol.Rows.Clear()
         listarRoles.ListarRoles()
         Me.Dispose()

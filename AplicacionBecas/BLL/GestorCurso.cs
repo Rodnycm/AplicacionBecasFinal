@@ -102,12 +102,12 @@ namespace BLL{
             {
                 int creditos = Convert.ToInt32(pcreditos);
                 double precio = Convert.ToDouble(pprecio);
-                Curso objetoCurso = ContenedorMantenimiento.Instance.crearObjetoCurso(pcodigo, pnombre, pcuatrimestre, pcreditos, pprecio, pidCurso);
+                Curso objetoCurso = ContenedorMantenimiento.Instance.crearObjetoCurso(pnombre, pcodigo, pcuatrimestre, pcreditos, pprecio, pidCurso);
                 CursoRepository.Instance.Update(objetoCurso);
 
                  if (objetoCurso.IsValid)
                 {
-                    CursoRepository.Instance.Insert(objetoCurso);
+                    CursoRepository.Instance.Update(objetoCurso);
                 }
                 else
                 {
@@ -129,9 +129,9 @@ namespace BLL{
 
 
 
-        public void eliminarCurso(int pidCurso, String pcodigo, String pnombre)
+        public void eliminarCurso(String pcodigo)
         {
-            Curso objCurso = ContenedorMantenimiento.Instance.crearObjetoCurso(pcodigo, pnombre, pidCurso);
+            Curso objCurso = ContenedorMantenimiento.Instance.crearObjetoCurso(pcodigo);
             CursoRepository.Instance.Delete(objCurso);
 
         }

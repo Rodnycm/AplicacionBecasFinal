@@ -341,7 +341,7 @@ namespace DAL{
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                cmd.Parameters.Add(new SqlParameter("@IdCurso", objCurso.Id));
+                cmd.Parameters.Add(new SqlParameter("@Codigo", objCurso.codigo));
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_eliminarCurso");
 
             }

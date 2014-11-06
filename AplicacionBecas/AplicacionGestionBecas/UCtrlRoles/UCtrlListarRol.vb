@@ -11,16 +11,19 @@ Public Class uCtrlListarRol
 
         Try
 
-
+            DGVRol.Rows.Clear()
             Dim listaRoles As New List(Of Rol)
             listaRoles = objGestorRol.consultarRoles()
 
-            For i As Integer = 0 To listaRoles.Count - 1
+            'For i As Integer = 0 To listaRoles.Count - 1
 
-                DGVRol.Rows.Add(1)
-                DGVRol.Rows(i).Cells(0).Value = listaRoles.Item(i).Id()
-                DGVRol.Rows(i).Cells(1).Value = listaRoles.Item(i).Nombre()
-                DGVRol.Columns("dtaId").Visible = False
+            '    DGVRol.Rows.Add(1)
+            '    DGVRol.Rows(i).Cells(0).Value = listaRoles.Item(i).Id()
+            '    DGVRol.Rows(i).Cells(1).Value = listaRoles.Item(i).Nombre()
+            '    DGVRol.Columns("dtaId").Visible = False
+            'Next
+            For Each rol As Rol In listaRoles
+                DGVRol.Rows.Add(rol.Id, rol.Nombre)
             Next
 
         Catch

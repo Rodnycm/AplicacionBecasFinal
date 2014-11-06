@@ -82,10 +82,11 @@ namespace DAL.Repositories
         /// <returns>una lista de roles</returns>
         public IEnumerable<Rol> GetAll()
         {
-            List<Rol> pRol = null;
+            
 
             try
             {
+                List<Rol> pRol = null;
                 SqlCommand cmd = new SqlCommand();
 
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_listarRol");
@@ -105,6 +106,8 @@ namespace DAL.Repositories
                     }
                 }
 
+                return pRol;
+
             }
             catch (SqlException ex)
             {
@@ -116,14 +119,15 @@ namespace DAL.Repositories
             {
                 throw ex;
             }
-            return pRol;
+            
         }
 
         public Rol GetById(int id)
         {
-            Rol objRol = null;
+            
             try
             {
+                Rol objRol = null;
                 SqlCommand cmd = new SqlCommand();
                 cmd.Parameters.AddWithValue("@id", id);
 
@@ -139,7 +143,7 @@ namespace DAL.Repositories
                         Nombre = dr["Nombre"].ToString(),
                     };
                 }
-
+                return objRol;
             }
             catch (SqlException ex)
             {
@@ -151,7 +155,7 @@ namespace DAL.Repositories
             {
                 throw ex;
             }
-          return objRol;
+          
         }
         /// <summary>
         /// consulta por nombre el rol
@@ -163,10 +167,10 @@ namespace DAL.Repositories
         public Rol GetByNombre(String pnombre)
         {
 
-            Rol objRol = null;
+            
             try
             {
-
+                Rol objRol = null;
                 SqlCommand cmd = new SqlCommand();
                 cmd.Parameters.Add(new SqlParameter("@Nombre", pnombre));
 
@@ -182,7 +186,7 @@ namespace DAL.Repositories
                         Nombre = dr["Nombre"].ToString()
                     };
                 }
-
+              return objRol;
             }
 
             catch (SqlException ex)
@@ -197,7 +201,7 @@ namespace DAL.Repositories
             }
 
 
-            return objRol;
+            
         }
 
         /// <summary>

@@ -49,6 +49,7 @@ Partial Class UctrlListarYBuscarUsuario
         '
         'dgUsuarios
         '
+        Me.dgUsuarios.AllowUserToAddRows = False
         Me.dgUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgUsuarios.BackgroundColor = System.Drawing.Color.White
         Me.dgUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.None
@@ -206,6 +207,7 @@ Partial Class UctrlListarYBuscarUsuario
         Me.Controls.Add(Me.btnCrearUsuario)
         Me.Controls.Add(Me.txtBuscar)
         Me.Controls.Add(Me.PbUsuarios)
+        Me.Location = New System.Drawing.Point(145, 50)
         Me.Name = "UctrlListarYBuscarUsuario"
         Me.Size = New System.Drawing.Size(1037, 578)
         CType(Me.dgUsuarios, System.ComponentModel.ISupportInitialize).EndInit()

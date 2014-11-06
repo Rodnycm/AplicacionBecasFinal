@@ -143,18 +143,18 @@ Partial Class uCtrlListarRol
         '
         Me.PbUsuarios.BackgroundImage = CType(resources.GetObject("PbUsuarios.BackgroundImage"), System.Drawing.Image)
         Me.PbUsuarios.Image = CType(resources.GetObject("PbUsuarios.Image"), System.Drawing.Image)
-        Me.PbUsuarios.Location = New System.Drawing.Point(23, 156)
+        Me.PbUsuarios.Location = New System.Drawing.Point(31, 198)
         Me.PbUsuarios.Name = "PbUsuarios"
-        Me.PbUsuarios.Size = New System.Drawing.Size(797, 324)
+        Me.PbUsuarios.Size = New System.Drawing.Size(975, 321)
         Me.PbUsuarios.TabIndex = 25
         Me.PbUsuarios.TabStop = False
         '
         'txtBuscarRol
         '
-        Me.txtBuscarRol.Font = New System.Drawing.Font("Segoe UI Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBuscarRol.Location = New System.Drawing.Point(23, 122)
+        Me.txtBuscarRol.Font = New System.Drawing.Font("Segoe UI", 11.25!)
+        Me.txtBuscarRol.Location = New System.Drawing.Point(31, 160)
         Me.txtBuscarRol.Name = "txtBuscarRol"
-        Me.txtBuscarRol.Size = New System.Drawing.Size(569, 23)
+        Me.txtBuscarRol.Size = New System.Drawing.Size(746, 27)
         Me.txtBuscarRol.TabIndex = 23
         Me.txtBuscarRol.Text = "Buscar..."
         '
@@ -164,7 +164,7 @@ Partial Class uCtrlListarRol
         Me.btnCrearRoles.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCrearRoles.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCrearRoles.ForeColor = System.Drawing.Color.White
-        Me.btnCrearRoles.Location = New System.Drawing.Point(598, 71)
+        Me.btnCrearRoles.Location = New System.Drawing.Point(784, 104)
         Me.btnCrearRoles.Name = "btnCrearRoles"
         Me.btnCrearRoles.Size = New System.Drawing.Size(222, 79)
         Me.btnCrearRoles.TabIndex = 21
@@ -189,11 +189,11 @@ Partial Class uCtrlListarRol
         Me.DGVRol.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGVRol.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dtaId, Me.DataGridViewTextBoxColumn1, Me.dtaOpciones})
         Me.DGVRol.GridColor = System.Drawing.Color.White
-        Me.DGVRol.Location = New System.Drawing.Point(23, 186)
+        Me.DGVRol.Location = New System.Drawing.Point(41, 228)
         Me.DGVRol.Name = "DGVRol"
         Me.DGVRol.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         Me.DGVRol.RowHeadersVisible = False
-        Me.DGVRol.Size = New System.Drawing.Size(797, 294)
+        Me.DGVRol.Size = New System.Drawing.Size(947, 271)
         Me.DGVRol.TabIndex = 27
         '
         'dtaId

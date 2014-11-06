@@ -51,18 +51,21 @@ Public Class uCtrlMantenimientoRequisitos
 
     Private Sub buscarRequisito(ByVal param As String)
 
-        Dim r As Requisito = objGestorRequisito.buscarRequisito(param)
+        Try
 
-        dgvRequisitos.Rows.Clear()
-        dgvRequisitos.Rows.Add(r.nombre, r.descripcion, "", "")
+            Dim r As Requisito = objGestorRequisito.buscarRequisito(param)
 
-        If r.nombre = "" Then
+            dgvRequisitos.Rows.Clear()
+            dgvRequisitos.Rows.Add(r.nombre, r.descripcion, "", "")
+
+        Catch ex As Exception
+
 
             dgvRequisitos.Rows.Clear()
             listarRequisitos()
 
-        End If
-
+        End Try
+       
     End Sub
 
     Private Sub uCtrlMantenimientoRequisitos_Load(sender As Object, e As EventArgs) Handles MyBase.Load

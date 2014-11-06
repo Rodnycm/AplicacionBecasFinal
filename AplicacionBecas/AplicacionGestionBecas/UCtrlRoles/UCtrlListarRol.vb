@@ -24,13 +24,18 @@ Public Class uCtrlListarRol
             Next
 
         Catch
+<<<<<<< HEAD
             Dim uctrlAlerta As UctrlAlerta = New UctrlAlerta()
             Me.Controls.Add(uctrlAlerta)
             uctrlAlerta.Location = New Point(300, 100)
             uctrlAlerta.BringToFront()
             uctrlAlerta.lblAlerta.Text = "No hay roles registrados"
             uctrlAlerta.Show()
+=======
+
+>>>>>>> origin/prophet1994
         End Try
+
     End Sub
     '''<summary>Este metodo hace que apenas se abra el usuario de control le liste los roles </summary>
     '''<author>Rodny Castro Mathews </author> 
@@ -144,7 +149,7 @@ Public Class uCtrlListarRol
             eliminarRol(fila)
 
         ElseIf combo.SelectedItem = "Ver" Then
-            MsgBox(fila)
+
             consultarRol(fila)
 
 

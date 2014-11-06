@@ -23,16 +23,13 @@ Partial Class uCtrlMantenimientoCarreras
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(uCtrlMantenimientoCarreras))
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(uCtrlMantenimientoCarreras))
         Me.dgvCarreras = New System.Windows.Forms.DataGridView()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.btnMantenimiento = New System.Windows.Forms.Button()
-        Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.dtaCodigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dtaNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dtaDirector = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -40,6 +37,10 @@ Partial Class uCtrlMantenimientoCarreras
         Me.Modificarcmb = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.color = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.btnMantenimiento = New System.Windows.Forms.Button()
+        Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.txtBuscar = New System.Windows.Forms.TextBox()
         CType(Me.dgvCarreras, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -47,18 +48,20 @@ Partial Class uCtrlMantenimientoCarreras
         'dgvCarreras
         '
         Me.dgvCarreras.AllowUserToAddRows = False
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dgvCarreras.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvCarreras.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvCarreras.BackgroundColor = System.Drawing.Color.White
         Me.dgvCarreras.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvCarreras.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Maroon
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvCarreras.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.Maroon
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvCarreras.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvCarreras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvCarreras.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dtaCodigo, Me.dtaNombre, Me.dtaDirector, Me.Cursos, Me.Modificarcmb, Me.id, Me.color})
         Me.dgvCarreras.GridColor = System.Drawing.Color.White
@@ -69,6 +72,63 @@ Partial Class uCtrlMantenimientoCarreras
         Me.dgvCarreras.ShowEditingIcon = False
         Me.dgvCarreras.Size = New System.Drawing.Size(947, 271)
         Me.dgvCarreras.TabIndex = 12
+        '
+        'dtaCodigo
+        '
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 9.75!)
+        Me.dtaCodigo.DefaultCellStyle = DataGridViewCellStyle3
+        Me.dtaCodigo.HeaderText = "Codigo"
+        Me.dtaCodigo.Name = "dtaCodigo"
+        Me.dtaCodigo.ReadOnly = True
+        '
+        'dtaNombre
+        '
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Segoe UI", 9.75!)
+        Me.dtaNombre.DefaultCellStyle = DataGridViewCellStyle4
+        Me.dtaNombre.HeaderText = "Nombre"
+        Me.dtaNombre.Name = "dtaNombre"
+        Me.dtaNombre.ReadOnly = True
+        '
+        'dtaDirector
+        '
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Segoe UI", 9.75!)
+        Me.dtaDirector.DefaultCellStyle = DataGridViewCellStyle5
+        Me.dtaDirector.HeaderText = "Director Academico"
+        Me.dtaDirector.Name = "dtaDirector"
+        Me.dtaDirector.ReadOnly = True
+        '
+        'Cursos
+        '
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(248, Byte), Integer))
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(248, Byte), Integer))
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White
+        Me.Cursos.DefaultCellStyle = DataGridViewCellStyle6
+        Me.Cursos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Cursos.HeaderText = "Cursos"
+        Me.Cursos.Name = "Cursos"
+        Me.Cursos.Text = "Agregar"
+        '
+        'Modificarcmb
+        '
+        Me.Modificarcmb.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Modificarcmb.HeaderText = "Modificar"
+        Me.Modificarcmb.Items.AddRange(New Object() {"Editar", "Eliminar"})
+        Me.Modificarcmb.Name = "Modificarcmb"
+        '
+        'id
+        '
+        Me.id.HeaderText = "id"
+        Me.id.Name = "id"
+        Me.id.Visible = False
+        '
+        'color
+        '
+        Me.color.HeaderText = "color"
+        Me.color.Name = "color"
+        Me.color.Visible = False
         '
         'PictureBox1
         '
@@ -108,63 +168,6 @@ Partial Class uCtrlMantenimientoCarreras
         Me.txtBuscar.Size = New System.Drawing.Size(746, 27)
         Me.txtBuscar.TabIndex = 15
         Me.txtBuscar.Text = "Buscar:"
-        '
-        'dtaCodigo
-        '
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 9.75!)
-        Me.dtaCodigo.DefaultCellStyle = DataGridViewCellStyle2
-        Me.dtaCodigo.HeaderText = "Codigo"
-        Me.dtaCodigo.Name = "dtaCodigo"
-        Me.dtaCodigo.ReadOnly = True
-        '
-        'dtaNombre
-        '
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 9.75!)
-        Me.dtaNombre.DefaultCellStyle = DataGridViewCellStyle3
-        Me.dtaNombre.HeaderText = "Nombre"
-        Me.dtaNombre.Name = "dtaNombre"
-        Me.dtaNombre.ReadOnly = True
-        '
-        'dtaDirector
-        '
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Segoe UI", 9.75!)
-        Me.dtaDirector.DefaultCellStyle = DataGridViewCellStyle4
-        Me.dtaDirector.HeaderText = "Director Academico"
-        Me.dtaDirector.Name = "dtaDirector"
-        Me.dtaDirector.ReadOnly = True
-        '
-        'Cursos
-        '
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(248, Byte), Integer))
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(248, Byte), Integer))
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White
-        Me.Cursos.DefaultCellStyle = DataGridViewCellStyle5
-        Me.Cursos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Cursos.HeaderText = "Cursos"
-        Me.Cursos.Name = "Cursos"
-        Me.Cursos.Text = "Agregar"
-        '
-        'Modificarcmb
-        '
-        Me.Modificarcmb.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Modificarcmb.HeaderText = "Modificar"
-        Me.Modificarcmb.Items.AddRange(New Object() {"Editar", "Eliminar"})
-        Me.Modificarcmb.Name = "Modificarcmb"
-        '
-        'id
-        '
-        Me.id.HeaderText = "id"
-        Me.id.Name = "id"
-        Me.id.Visible = False
-        '
-        'color
-        '
-        Me.color.HeaderText = "color"
-        Me.color.Name = "color"
-        Me.color.Visible = False
         '
         'uCtrlMantenimientoCarreras
         '

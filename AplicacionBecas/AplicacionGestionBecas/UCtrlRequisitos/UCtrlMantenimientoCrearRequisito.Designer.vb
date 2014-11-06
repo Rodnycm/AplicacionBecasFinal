@@ -30,6 +30,7 @@ Partial Class uCtrlMantenimientoCrearRequisito
         Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.lblNombre = New System.Windows.Forms.Label()
+        Me.btnCerrar = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label3
@@ -38,7 +39,7 @@ Partial Class uCtrlMantenimientoCrearRequisito
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(3, 9)
+        Me.Label3.Location = New System.Drawing.Point(3, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(55, 25)
         Me.Label3.TabIndex = 7
@@ -51,7 +52,7 @@ Partial Class uCtrlMantenimientoCrearRequisito
         Me.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAceptar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAceptar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(248, Byte), Integer))
-        Me.btnAceptar.Location = New System.Drawing.Point(375, 263)
+        Me.btnAceptar.Location = New System.Drawing.Point(348, 277)
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(89, 29)
         Me.btnAceptar.TabIndex = 18
@@ -65,7 +66,7 @@ Partial Class uCtrlMantenimientoCrearRequisito
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCancelar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(248, Byte), Integer))
-        Me.btnCancelar.Location = New System.Drawing.Point(274, 263)
+        Me.btnCancelar.Location = New System.Drawing.Point(236, 277)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(89, 29)
         Me.btnCancelar.TabIndex = 17
@@ -109,12 +110,26 @@ Partial Class uCtrlMantenimientoCrearRequisito
         Me.lblNombre.TabIndex = 13
         Me.lblNombre.Text = "Nombre"
         '
+        'btnCerrar
+        '
+        Me.btnCerrar.BackColor = System.Drawing.Color.Transparent
+        Me.btnCerrar.BackgroundImage = Global.UI.My.Resources.Resources.cerrar
+        Me.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCerrar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(248, Byte), Integer))
+        Me.btnCerrar.Location = New System.Drawing.Point(467, 5)
+        Me.btnCerrar.Name = "btnCerrar"
+        Me.btnCerrar.Size = New System.Drawing.Size(20, 21)
+        Me.btnCerrar.TabIndex = 20
+        Me.btnCerrar.UseVisualStyleBackColor = False
+        '
         'uCtrlMantenimientoCrearRequisito
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.btnAceptar)
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.txtDescripcion)
@@ -122,6 +137,7 @@ Partial Class uCtrlMantenimientoCrearRequisito
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.lblNombre)
         Me.Controls.Add(Me.Label3)
+        Me.Location = New System.Drawing.Point(300, 100)
         Me.Name = "uCtrlMantenimientoCrearRequisito"
         Me.Size = New System.Drawing.Size(490, 348)
         Me.ResumeLayout(False)
@@ -135,5 +151,6 @@ Partial Class uCtrlMantenimientoCrearRequisito
     Friend WithEvents txtNombre As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents lblNombre As System.Windows.Forms.Label
+    Friend WithEvents btnCerrar As System.Windows.Forms.Button
 
 End Class

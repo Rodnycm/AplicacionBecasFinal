@@ -6,6 +6,7 @@ Public Class uCtrlAsignarRequisitos
    
 
     Private Sub btnAsignar_Click(sender As Object, e As EventArgs) Handles btnAsignar.Click
+
         Dim indexSeleccionado As Integer = 0
         
         Try
@@ -46,7 +47,7 @@ Public Class uCtrlAsignarRequisitos
 
     Private Sub uCtrlAsignarRequisitos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        'listaRequisitos = objGestorRequisito.buscarRequisito()
+        listaRequisitos = objGestorRequisito.consultarRequisitos()
 
         For i As Integer = 0 To listaRequisitos.Count - 1
 
@@ -55,4 +56,5 @@ Public Class uCtrlAsignarRequisitos
         Next
 
     End Sub
+
 End Class

@@ -22,17 +22,15 @@ Partial Class uCtrlAsignarRequisitos
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(uCtrlAsignarRequisitos))
         Me.chkRequisitos = New System.Windows.Forms.CheckedListBox()
         Me.btnAsignar = New System.Windows.Forms.Button()
         Me.btnCancelar = New System.Windows.Forms.Button()
-        Me.btnCerrar = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'chkRequisitos
         '
         Me.chkRequisitos.FormattingEnabled = True
-        Me.chkRequisitos.Location = New System.Drawing.Point(13, 94)
+        Me.chkRequisitos.Location = New System.Drawing.Point(15, 64)
         Me.chkRequisitos.Name = "chkRequisitos"
         Me.chkRequisitos.Size = New System.Drawing.Size(380, 214)
         Me.chkRequisitos.TabIndex = 0
@@ -63,23 +61,12 @@ Partial Class uCtrlAsignarRequisitos
         Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = False
         '
-        'btnCerrar
-        '
-
-        Me.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnCerrar.Location = New System.Drawing.Point(383, 20)
-        Me.btnCerrar.Name = "btnCerrar"
-        Me.btnCerrar.Size = New System.Drawing.Size(23, 21)
-        Me.btnCerrar.TabIndex = 3
-        Me.btnCerrar.UseVisualStyleBackColor = True
-        '
         'uCtrlAsignarRequisitos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.BackgroundImage = Global.UI.My.Resources.Resources.tablaFinalMedianaAzul
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.btnAsignar)
         Me.Controls.Add(Me.chkRequisitos)
@@ -91,6 +78,5 @@ Partial Class uCtrlAsignarRequisitos
     Friend WithEvents chkRequisitos As System.Windows.Forms.CheckedListBox
     Friend WithEvents btnAsignar As System.Windows.Forms.Button
     Friend WithEvents btnCancelar As System.Windows.Forms.Button
-    Friend WithEvents btnCerrar As System.Windows.Forms.Button
 
 End Class

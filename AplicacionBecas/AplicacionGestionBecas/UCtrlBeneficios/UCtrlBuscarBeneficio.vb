@@ -149,14 +149,36 @@ Public Class uCntrlBuscarBeneficio
         Catch ex As Exception
             Dim UCtrl As New UctrlAlerta
 
+<<<<<<< HEAD
             Me.Controls.Add(UCtrl)
             UCtrl.lblAlerta.Text = ex.Message
             UCtrl.Location = New Point(300, 100)
             UCtrl.BringToFront()
             UCtrl.Show()
         End Try
+=======
+    End Sub
 
 
+    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.MouseClick
+
+        txtBuscar.Text = ""
+
+    End Sub
+
+    ''' <summary>Cuando el evento se ejecuta al dar presionar la tecla enter llama al metodo eliminar carrera</summary>
+    ''' <autor>Alvaro Artavia</autor>
+
+    Private Sub txtBuscar_KeyDown(sender As Object, e As System.Windows.Forms.KeyEventArgs) Handles txtBuscar.KeyDown
+>>>>>>> origin/prophet1994
+
+        Dim param As String = txtBuscar.Text
+
+        If e.KeyCode = 13 Then
+
+            buscarBeneficio(param)
+
+        End If
 
     End Sub
 
@@ -252,16 +274,13 @@ Public Class uCntrlBuscarBeneficio
     ''' Si el parametro es NULL, entonces la lista se referesca nada mas
     ''' </summary>
     ''' <author>Mathias Muller</author>
-    ''' <param name="sender"></param>
-    ''' <param name="e"></param>
     ''' <remarks></remarks>
-    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
 
-        Dim parametro As String = txtBuscar.Text
+    Public Sub buscarBeneficio(ByVal param As String)
 
         Try
 
-            Dim beneficio As Beneficio = objGestorBeneficio.buscarPorNombre(parametro)
+            Dim beneficio As Beneficio = objGestorBeneficio.buscarPorNombre(param)
 
             dtaBuscarBeneficio.Rows.Clear()
             dtaBuscarBeneficio.Rows.Add(1)
@@ -279,8 +298,11 @@ Public Class uCntrlBuscarBeneficio
             dtaBuscarBeneficio.Rows.Clear()
             listarBeneficios()
         End Try
+
+
     End Sub
 
+<<<<<<< HEAD
     Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
 
         btnVolver.Visible = False
@@ -290,4 +312,7 @@ Public Class uCntrlBuscarBeneficio
 
 
     End Sub
+=======
+   
+>>>>>>> origin/prophet1994
 End Class

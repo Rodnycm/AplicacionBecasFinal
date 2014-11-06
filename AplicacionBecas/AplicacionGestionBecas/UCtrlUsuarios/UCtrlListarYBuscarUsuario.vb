@@ -4,7 +4,8 @@ Public Class UctrlListarYBuscarUsuario
 
 
     Dim ucntrlUsuario As UctrlCrearUsuario = New UctrlCrearUsuario()
-  
+    Dim ctrlUsuario As UCtrlConsultarUsuario = New UCtrlConsultarUsuario()
+
     Public Sub UctrlListarYBuscarUsuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         listarUsuarios()
@@ -22,13 +23,9 @@ Public Class UctrlListarYBuscarUsuario
             listaUsuarios = objGestorUsuario.buscarUsuarios()
 
             For Each usuario As Usuario In listaUsuarios
-                dgUsuarios.Rows.Add(usuario.identificacion, usuario.primerNombre & " " & usuario.primerApellido & " " & usuario.segundoApellido, usuario.telefono, usuario.fechaNacimiento, "", usuario.rol.Nombre, usuario.correoElectronico)
+                dgUsuarios.Rows.Add(usuario.identificacion, usuario.primerNombre & " " & usuario.primerApellido & " " & usuario.segundoApellido, usuario.rol.Nombre)
             Next
         Catch ex As Exception
-
-            dgUsuarios.Rows.Clear()
-            listarUsuarios()
-
             Dim uctrlAlerta As UctrlAlerta = New UctrlAlerta()
             Me.Controls.Add(uctrlAlerta)
             uctrlAlerta.Location = New Point(300, 100)
@@ -38,10 +35,12 @@ Public Class UctrlListarYBuscarUsuario
 
 
         End Try
-           
+
     End Sub
 
     Public Sub btnCrearUsuario_Click(sender As Object, e As EventArgs) Handles btnCrearUsuario.Click
+
+        ucntrlUsuario = New UctrlCrearUsuario()
         FrmIniciarSesion.principal.Controls.Add(ucntrlUsuario)
         ucntrlUsuario.setLista(Me)
         ucntrlUsuario.Location = New Point(300, 100)
@@ -51,7 +50,7 @@ Public Class UctrlListarYBuscarUsuario
 
     Public Sub dgUsuarios_EditingControlShowing(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewEditingControlShowingEventArgs) Handles dgUsuarios.EditingControlShowing
         ' Only for a DatagridComboBoxColumn at ColumnIndex 1.
-        If dgUsuarios.CurrentCell.ColumnIndex = 7 Then
+        If dgUsuarios.CurrentCell.ColumnIndex = 3 Then
             Dim combo As ComboBox = CType(e.Control, ComboBox)
             If (combo IsNot Nothing) Then
                 ' Remove an existing event-handler, if present, to avoid 
@@ -69,27 +68,11 @@ Public Class UctrlListarYBuscarUsuario
     '<param name = "parametro"> variable que almacena el parametro con la identificacion del usuario que se desea consultar </param>
     '<returns> No retorna valor.</returns> 
     Public Sub consultarUsuario(ByVal pparametro As String)
-        Dim objUsuario As Usuario = objGestorUsuario.buscarUnUsuario(pparametro)
-       
-        Dim genero As String
-        dgUsuarios.Rows.Clear()
-
-        If objUsuario.genero = 1 Then
-            genero = "Masculino"
-        ElseIf objUsuario.genero = 2 Then
-            genero = "Femenino"
-        Else
-            genero = "Otro"
-        End If
-
-        dgUsuarios.Columns("tel").Visible = True
-        dgUsuarios.Columns("Fecha").Visible = True
-        dgUsuarios.Columns("gen").Visible = True
-        dgUsuarios.Columns("CorreoElect").Visible = True
-        dgUsuarios.Columns("opciones").Visible = False
-        btnVolver.Visible = True
-
-        dgUsuarios.Rows.Add(objUsuario.identificacion, objUsuario.primerNombre & " " & objUsuario.primerApellido & " " & objUsuario.segundoApellido, objUsuario.telefono, objUsuario.fechaNacimiento, genero, objUsuario.rol.Nombre, objUsuario.correoElectronico)
+        Me.Hide()
+        ctrlUsuario.setParametro(pparametro)
+        FrmIniciarSesion.principal.Controls.Add(ctrlUsuario)
+        ctrlUsuario.Location = New Point(120, 0)
+        ctrlUsuario.Show()
 
     End Sub
 
@@ -100,7 +83,9 @@ Public Class UctrlListarYBuscarUsuario
     Public Sub eliminarUsuario(ByVal parametro As String)
         Dim ucntrl As UctrlEliminarUsuario = New UctrlEliminarUsuario()
         ucntrl.setParametro(parametro)
+
         ucntrl.refrescarLista(Me)
+
         'FrmIniciarSesion.principal.Controls.Add(ctrlUsuario)
         Me.Controls.Add(ucntrl)
         Me.dgUsuarios.SendToBack()
@@ -108,7 +93,7 @@ Public Class UctrlListarYBuscarUsuario
         ucntrl.BringToFront()
         ucntrl.Location = New Point(280, 250)
         ucntrl.Show()
-      
+
     End Sub
 
     '<summary> Método que se encarga de modificar un usuario del sistema</summary>
@@ -149,36 +134,41 @@ Public Class UctrlListarYBuscarUsuario
         End If
     End Sub
 
-    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged, txtBuscar.VisibleChanged
-        Try
-            Dim objUsuario As Usuario = objGestorUsuario.buscarUnUsuario(txtBuscar.Text)
-            dgUsuarios.Rows.Clear()
-            dgUsuarios.Rows.Add(objUsuario.identificacion, objUsuario.primerNombre & " " & objUsuario.primerApellido & " " & objUsuario.segundoApellido, objUsuario.telefono, objUsuario.fechaNacimiento, "", objUsuario.rol.Nombre, objUsuario.correoElectronico)
-        Catch ex As Exception
+    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.MouseClick
 
+        txtBuscar.Text = ""
+
+    End Sub
+
+    ''' <summary>Cuando el evento se ejecuta al dar presionar la tecla enter llama al metodo eliminar carrera</summary>
+    ''' <autor>Alvaro Artavia</autor>
+
+    Private Sub txtBuscar_KeyDown(sender As Object, e As System.Windows.Forms.KeyEventArgs) Handles txtBuscar.KeyDown
+
+        Dim param As String = txtBuscar.Text
+
+        If e.KeyCode = 13 Then
+
+            buscarUsuario(param)
+
+        End If
+
+    End Sub
+
+    Public Sub buscarUsuario(ByVal param As String)
+
+        Try
+            Dim objUsuario As Usuario = objGestorUsuario.buscarUnUsuario(param)
+            dgUsuarios.Rows.Clear()
+            dgUsuarios.Rows.Add(objUsuario.identificacion, objUsuario.primerNombre & " " & objUsuario.primerApellido & " " & objUsuario.segundoApellido, objUsuario.rol.Nombre)
+        Catch ex As Exception
             dgUsuarios.Rows.Clear()
             listarUsuarios()
         End Try
 
-
     End Sub
 
 
-    Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
-        dgUsuarios.Columns("tel").Visible = False
-        dgUsuarios.Columns("Fecha").Visible = False
-        dgUsuarios.Columns("gen").Visible = False
-        dgUsuarios.Columns("CorreoElect").Visible = False
-        dgUsuarios.Columns("opciones").Visible = True
-        btnVolver.Visible = False
-        dgUsuarios.Rows.Clear()
-        listarUsuarios()
-
-    End Sub
-
-    Private Sub dgUsuarios_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgUsuarios.CellContentClick
-
-    End Sub
 End Class
 
 

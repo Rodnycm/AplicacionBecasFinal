@@ -3,12 +3,12 @@
 Public Class uCtrlModificarCarrera
 
     Public Property idCarrera As Integer
+    Public Property colorHexadecimal As String
     Public Property mantenimientoCarreras As uCtrlMantenimientoCarreras
     Dim alerta As UctrlAlerta = New UctrlAlerta()
     Dim listaDirectores As List(Of Usuario)
     Dim mBlnFormDragging As Boolean
     Public Property directorAntiguo As String = ""
-
     Dim c As ColorDialog = New ColorDialog()
 
     ''' <summary>Metodo que se ejecuta cuando el usuario da click al boton seleccionar color, este metodo 
@@ -138,9 +138,15 @@ Public Class uCtrlModificarCarrera
 
     Private Sub uCtrlModificarCarrera_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        'ColorTranslator.FromHtml(colorHexadecimal)
+        'c.Color = ColorTranslator.FromHtml(colorHexadecimal)
+        btnColor.BackColor = ColorTranslator.FromHtml(colorHexadecimal)
+        btnColor.ForeColor = Color.White
         llenarDirectoresCmb()
 
     End Sub
+
+
 
 
     ''' <summary>Busca el director academico anterior para eliminarlo de la base de datos</summary>

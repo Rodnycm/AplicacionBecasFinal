@@ -2,6 +2,8 @@
 
 Public Class uCtrlMantenimientoRequisitos
 
+    Public Property UCtrlCrearRequisito As uCtrlMantenimientoCrearRequisito = New uCtrlMantenimientoCrearRequisito()
+
     Public Sub listarRequisitos()
 
         Try
@@ -70,6 +72,12 @@ Public Class uCtrlMantenimientoRequisitos
     End Sub
 
     Private Sub btnCrearRequisito_Click(sender As Object, e As EventArgs) Handles btnCrearRequisito.Click
+
+        UCtrlCrearRequisito = New uCtrlMantenimientoCrearRequisito()
+        UCtrlCrearRequisito.mantenimientoRequisito = Me
+        FrmIniciarSesion.principal.Controls.Add(uCtrlCrearRequisito)
+        uCtrlCrearRequisito.BringToFront()
+        uCtrlCrearRequisito.Show()
 
     End Sub
 End Class

@@ -1,11 +1,12 @@
 ﻿Public Class uCtrlMenuMantenimiento
 
-    Public Property uCtrlMantCarreras As uCtrlMantenimientoCarreras = New uCtrlMantenimientoCarreras()
+    Public Property uCtrlMantCarreras As uCtrlMantenimientoCarreras = New uCtrlMantenimientoCarreras
     Public Property uCtrlMantCursos As uCtrlMantenimientoCursos = New uCtrlMantenimientoCursos()
     Public Property uCtrlMantRequisitos As uCtrlMantenimientoRequisitos = New uCtrlMantenimientoRequisitos()
     Public Property uCntrlMantRol As uCtrlListarRol = New uCtrlListarRol()
     Public Property ucntrlUsuario As UctrlListarYBuscarUsuario = New UctrlListarYBuscarUsuario()
     Public Property uCntrlBuscarBeneficio As UCtrlBuscarBeneficio = New UCtrlBuscarBeneficio()
+    Public Property uCtrlTipoBeca As uCtrlBuscarTipoBeca = New uCtrlBuscarTipoBeca
     '' Dim ListarRol As New ListarRol()
     Private Sub btnRequisitos_Click(sender As Object, e As EventArgs) Handles btnRequisitos.Click
 
@@ -36,7 +37,7 @@
     Private Sub btnCarreras_Click(sender As Object, e As EventArgs) Handles btnCarreras.Click
 
         Me.Hide()
-        'uCtrlMantCarreras = New uCtrlMantenimientoCarreras()
+        uCtrlMantCarreras = New uCtrlMantenimientoCarreras()
         FrmIniciarSesion.principal.Controls.Add(uCtrlMantCarreras)
         uCtrlMantCarreras.Show()
 
@@ -65,6 +66,11 @@
     End Sub
 
     Private Sub btnBecas_Click(sender As Object, e As EventArgs) Handles btnBecas.Click
+
+        Me.Hide()
+        uCtrlTipoBeca = New uCtrlBuscarTipoBeca()
+        FrmIniciarSesion.principal.Controls.Add(uCtrlTipoBeca)
+        uCtrlTipoBeca.Show()
 
     End Sub
 End Class

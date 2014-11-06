@@ -1580,6 +1580,12 @@ TableAdapterManager is used to coordinate TableAdapters in the dataset to enable
 </member><member name="M:UI.uCtrlBuscarCursos.ComboBox_SelectionChangeCommitted(System.Object,System.EventArgs)">
 	<summary>Metodo encargado de controlar cuando se da click al combobox se ejecuten las acciones</summary>
 	<autor>Valeria Ramírez Cordero</autor>
+</member><member name="M:UI.uCtrlMantenimientoCrearRequisito.uCtrlCrearRequisito_MouseUp(System.Object,System.Windows.Forms.MouseEventArgs)">
+	<summary>Situa el componente en la posicion final</summary>
+	<autor>Alvaro Artavia</autor>
+</member><member name="M:UI.uCtrlMantenimientoCrearRequisito.uCtrlCrearRequisito_MouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
+	<summary>Indica si el usuario da click al componente para moverlo</summary>
+	<autor>Alvaro Artavia</autor>
 </member><member name="T:UI.DB_Proyecto2DataSetConsultarRegistroAcciones.Tb_BecasDataTable">
 	<summary>
 Represents the strongly named DataTable class.
@@ -2260,6 +2266,9 @@ Used to sort self-referenced table's rows
 	<summary>
 TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
 </summary>
+</member><member name="M:UI.UctrlListarYBuscarUsuario.txtBuscar_KeyDown(System.Object,System.Windows.Forms.KeyEventArgs)">
+	<summary>Cuando el evento se ejecuta al dar presionar la tecla enter llama al metodo eliminar carrera</summary>
+	<autor>Alvaro Artavia</autor>
 </member><member name="M:UI.uCtrlModificarBeneficio.recieveData(System.Int32,System.String,System.Double,System.String)">
 	<summary>
  Este método se encarga de 'Setear' los textbox con los parametros recibidos
@@ -2459,6 +2468,10 @@ TableAdapterManager is used to coordinate TableAdapters in the dataset to enable
 	<summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
+</member><member name="P:UI.My.Resources.Resources.tablecrearUsuario">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
 </member><member name="T:UI.My.Resources.Resources">
 	<summary>
   Clase de recurso fuertemente tipado, para buscar cadenas traducidas, etc.
@@ -2530,6 +2543,9 @@ TableAdapterManager is used to coordinate TableAdapters in the dataset to enable
 	<param name="sender"></param>
 	<param name="e"></param>
 	<remarks></remarks>
+</member><member name="M:UI.UCtrlBuscarBeneficio.txtBuscar_KeyDown(System.Object,System.Windows.Forms.KeyEventArgs)">
+	<summary>Cuando el evento se ejecuta al dar presionar la tecla enter llama al metodo eliminar carrera</summary>
+	<autor>Alvaro Artavia</autor>
 </member><member name="M:UI.UCtrlBuscarBeneficio.editarBeneficios">
 	<summary>
  Edita un beneficio
@@ -2542,14 +2558,12 @@ TableAdapterManager is used to coordinate TableAdapters in the dataset to enable
  </summary>
 	<author>Mathias Muller</author>
 	<remarks></remarks>
-</member><member name="M:UI.UCtrlBuscarBeneficio.txtBuscar_TextChanged(System.Object,System.EventArgs)">
+</member><member name="M:UI.UCtrlBuscarBeneficio.buscarBeneficio(System.String)">
 	<summary>
  Busca un beneficio dependiendo del valor del parametro
  Si el parametro es NULL, entonces la lista se referesca nada mas
  </summary>
 	<author>Mathias Muller</author>
-	<param name="sender"></param>
-	<param name="e"></param>
 	<remarks></remarks>
 </member><member name="M:UI.uCtrlModificarCarrera.btnColor_Click(System.Object,System.EventArgs)">
 	<summary>Metodo que se ejecuta cuando el usuario da click al boton seleccionar color, este metodo 

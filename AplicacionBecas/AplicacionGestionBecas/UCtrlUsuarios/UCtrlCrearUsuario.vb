@@ -86,19 +86,11 @@ Public Class UctrlCrearUsuario
     End Sub
 
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
-        Dim ucntrl As UctrlListarYBuscarUsuario = New UctrlListarYBuscarUsuario()
-        Me.SendToBack()
-        FrmIniciarSesion.principal.Controls.Add(ucntrl)
-        ucntrl.Location = New Point(120, 0)
-        ucntrl.Show()
+        Me.Dispose()
     End Sub
 
     Private Sub btnX_Click(sender As Object, e As EventArgs) Handles btnX.Click
-        Dim ucntrl As UctrlListarYBuscarUsuario = New UctrlListarYBuscarUsuario()
-        Me.SendToBack()
-        FrmIniciarSesion.principal.Controls.Add(ucntrl)
-        ucntrl.Location = New Point(120, 0)
-        ucntrl.Show()
+        Me.Dispose()
     End Sub
 
     Public Sub setLista(ByVal plista As UctrlListarYBuscarUsuario)

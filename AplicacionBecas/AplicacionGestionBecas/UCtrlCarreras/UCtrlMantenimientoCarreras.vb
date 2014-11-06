@@ -33,7 +33,7 @@ Public Class uCtrlMantenimientoCarreras
 
             For Each carrera As Carrera In listaCarreras
 
-                dgvCarreras.Rows.Add(carrera.codigo, carrera.nombre, carrera.directorAcademico.primerNombre & " " & carrera.directorAcademico.primerApellido & " " & carrera.directorAcademico.segundoApellido, "", "", carrera.Id)
+                dgvCarreras.Rows.Add(carrera.codigo, carrera.nombre, carrera.directorAcademico.primerNombre & " " & carrera.directorAcademico.primerApellido & " " & carrera.directorAcademico.segundoApellido, "", "", carrera.Id, carrera.color)
 
             Next
 
@@ -97,17 +97,18 @@ Public Class uCtrlMantenimientoCarreras
 
     Private Sub modificarCarrera(numfila As Integer)
 
-        Dim value1 As Object = dgvCarreras.Rows(numfila).Cells(0).Value
-        Dim value2 As Object = dgvCarreras.Rows(numfila).Cells(1).Value
-        Dim value3 As Object = dgvCarreras.Rows(numfila).Cells(2).Value
-        Dim value4 As Object = dgvCarreras.Rows(numfila).Cells(5).Value
+        Dim codigo As Object = dgvCarreras.Rows(numfila).Cells(0).Value
+        Dim nombre As Object = dgvCarreras.Rows(numfila).Cells(1).Value
+        Dim director As Object = dgvCarreras.Rows(numfila).Cells(2).Value
+        Dim id As Object = dgvCarreras.Rows(numfila).Cells(5).Value
+        Dim color As String = dgvCarreras.Rows(numfila).Cells(6).Value
 
         Dim uCtrlModCarrera As New uCtrlModificarCarrera()
-        uCtrlModCarrera.txtCodigo.Text = CType(value1, String)
-        uCtrlModCarrera.txtNombre.Text = CType(value2, String)
-        uCtrlModCarrera.idCarrera = CType(value4, Integer)
-        uCtrlModCarrera.cmbAcademico.Text = value3
-        uCtrlModCarrera.directorAntiguo = value3
+        uCtrlModCarrera.txtCodigo.Text = CType(codigo, String)
+        uCtrlModCarrera.txtNombre.Text = CType(nombre, String)
+        uCtrlModCarrera.idCarrera = CType(id, Integer)
+        uCtrlModCarrera.cmbAcademico.Text = director
+        uCtrlModCarrera.colorHexadecimal = color
         uCtrlModCarrera.mantenimientoCarreras = Me
         FrmIniciarSesion.principal.Controls.Add(uCtrlModCarrera)
         uCtrlModCarrera.Show()
@@ -167,7 +168,7 @@ Public Class uCtrlMantenimientoCarreras
 
             Dim c As Carrera = objGestorCarrera.buscarCarrera(param)
             dgvCarreras.Rows.Clear()
-            dgvCarreras.Rows.Add(c.codigo, c.nombre, c.directorAcademico.primerNombre & " " & c.directorAcademico.primerApellido & " " & c.directorAcademico.segundoApellido, "", "", c.Id)
+            dgvCarreras.Rows.Add(c.codigo, c.nombre, c.directorAcademico.primerNombre & " " & c.directorAcademico.primerApellido & " " & c.directorAcademico.segundoApellido, "", "", c.Id, c.color)
 
         Catch ex As Exception
 

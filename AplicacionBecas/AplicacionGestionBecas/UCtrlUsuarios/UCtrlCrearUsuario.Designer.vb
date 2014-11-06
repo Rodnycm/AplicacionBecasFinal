@@ -57,7 +57,7 @@ Partial Class UctrlCrearUsuario
         Me.Label13.BackColor = System.Drawing.Color.Transparent
         Me.Label13.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.ForeColor = System.Drawing.Color.White
-        Me.Label13.Location = New System.Drawing.Point(3, 11)
+        Me.Label13.Location = New System.Drawing.Point(3, 3)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(58, 25)
         Me.Label13.TabIndex = 36
@@ -70,7 +70,7 @@ Partial Class UctrlCrearUsuario
         Me.btnX.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnX.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnX.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(248, Byte), Integer))
-        Me.btnX.Location = New System.Drawing.Point(676, 18)
+        Me.btnX.Location = New System.Drawing.Point(696, 3)
         Me.btnX.Name = "btnX"
         Me.btnX.Size = New System.Drawing.Size(20, 21)
         Me.btnX.TabIndex = 61
@@ -322,7 +322,7 @@ Partial Class UctrlCrearUsuario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.BackgroundImage = Global.UI.My.Resources.Resources.tablecrearUsuario
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Controls.Add(Me.btnX)
         Me.Controls.Add(Me.txtCorreoElectronico)

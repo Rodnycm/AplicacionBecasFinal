@@ -39,10 +39,10 @@ Public Class UctrlListarYBuscarUsuario
     End Sub
 
     Public Sub btnCrearUsuario_Click(sender As Object, e As EventArgs) Handles btnCrearUsuario.Click
+
+        ucntrlUsuario = New UctrlCrearUsuario()
         FrmIniciarSesion.principal.Controls.Add(ucntrlUsuario)
-
         ucntrlUsuario.setLista(Me)
-
         ucntrlUsuario.Location = New Point(300, 100)
         ucntrlUsuario.BringToFront()
         ucntrlUsuario.Show()
@@ -134,9 +134,31 @@ Public Class UctrlListarYBuscarUsuario
         End If
     End Sub
 
-    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged, txtBuscar.VisibleChanged
+    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.MouseClick
+
+        txtBuscar.Text = ""
+
+    End Sub
+
+    ''' <summary>Cuando el evento se ejecuta al dar presionar la tecla enter llama al metodo eliminar carrera</summary>
+    ''' <autor>Alvaro Artavia</autor>
+
+    Private Sub txtBuscar_KeyDown(sender As Object, e As System.Windows.Forms.KeyEventArgs) Handles txtBuscar.KeyDown
+
+        Dim param As String = txtBuscar.Text
+
+        If e.KeyCode = 13 Then
+
+            buscarUsuario(param)
+
+        End If
+
+    End Sub
+
+    Public Sub buscarUsuario(ByVal param As String)
+
         Try
-            Dim objUsuario As Usuario = objGestorUsuario.buscarUnUsuario(txtBuscar.Text)
+            Dim objUsuario As Usuario = objGestorUsuario.buscarUnUsuario(param)
             dgUsuarios.Rows.Clear()
             dgUsuarios.Rows.Add(objUsuario.identificacion, objUsuario.primerNombre & " " & objUsuario.primerApellido & " " & objUsuario.segundoApellido, objUsuario.rol.Nombre)
         Catch ex As Exception
@@ -145,7 +167,6 @@ Public Class UctrlListarYBuscarUsuario
         End Try
 
     End Sub
-
 
 
 End Class

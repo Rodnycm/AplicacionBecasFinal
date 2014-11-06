@@ -22,7 +22,6 @@ Partial Class uCtrlCrearTipoBeca
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(uCtrlCrearTipoBeca))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -41,7 +40,7 @@ Partial Class uCtrlCrearTipoBeca
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Segoe UI Light", 12.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(24, 90)
+        Me.Label1.Location = New System.Drawing.Point(31, 88)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(68, 23)
         Me.Label1.TabIndex = 0
@@ -49,7 +48,7 @@ Partial Class uCtrlCrearTipoBeca
         '
         'txtNombre
         '
-        Me.txtNombre.Location = New System.Drawing.Point(105, 96)
+        Me.txtNombre.Location = New System.Drawing.Point(137, 91)
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(132, 20)
         Me.txtNombre.TabIndex = 1
@@ -59,7 +58,7 @@ Partial Class uCtrlCrearTipoBeca
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Segoe UI Light", 12.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(31, 146)
+        Me.Label2.Location = New System.Drawing.Point(31, 125)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(57, 23)
         Me.Label2.TabIndex = 2
@@ -67,9 +66,9 @@ Partial Class uCtrlCrearTipoBeca
         '
         'txtEstado
         '
-        Me.txtEstado.Location = New System.Drawing.Point(105, 146)
+        Me.txtEstado.Location = New System.Drawing.Point(137, 129)
         Me.txtEstado.Name = "txtEstado"
-        Me.txtEstado.Size = New System.Drawing.Size(100, 20)
+        Me.txtEstado.Size = New System.Drawing.Size(132, 20)
         Me.txtEstado.TabIndex = 3
         '
         'Label3
@@ -77,7 +76,7 @@ Partial Class uCtrlCrearTipoBeca
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Segoe UI Light", 12.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(240, 125)
+        Me.Label3.Location = New System.Drawing.Point(31, 169)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(92, 23)
         Me.Label3.TabIndex = 4
@@ -85,9 +84,9 @@ Partial Class uCtrlCrearTipoBeca
         '
         'txtDescripcion
         '
-        Me.txtDescripcion.Location = New System.Drawing.Point(330, 149)
+        Me.txtDescripcion.Location = New System.Drawing.Point(137, 173)
         Me.txtDescripcion.Name = "txtDescripcion"
-        Me.txtDescripcion.Size = New System.Drawing.Size(100, 20)
+        Me.txtDescripcion.Size = New System.Drawing.Size(132, 20)
         Me.txtDescripcion.TabIndex = 5
         '
         'btnRequisitos
@@ -96,7 +95,7 @@ Partial Class uCtrlCrearTipoBeca
         Me.btnRequisitos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnRequisitos.Font = New System.Drawing.Font("Segoe UI Light", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnRequisitos.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(248, Byte), Integer))
-        Me.btnRequisitos.Location = New System.Drawing.Point(16, 186)
+        Me.btnRequisitos.Location = New System.Drawing.Point(14, 265)
         Me.btnRequisitos.Name = "btnRequisitos"
         Me.btnRequisitos.Size = New System.Drawing.Size(85, 33)
         Me.btnRequisitos.TabIndex = 6
@@ -109,7 +108,7 @@ Partial Class uCtrlCrearTipoBeca
         Me.btnBeneficios.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBeneficios.Font = New System.Drawing.Font("Segoe UI Light", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBeneficios.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.btnBeneficios.Location = New System.Drawing.Point(105, 186)
+        Me.btnBeneficios.Location = New System.Drawing.Point(105, 265)
         Me.btnBeneficios.Name = "btnBeneficios"
         Me.btnBeneficios.Size = New System.Drawing.Size(85, 33)
         Me.btnBeneficios.TabIndex = 7
@@ -144,7 +143,7 @@ Partial Class uCtrlCrearTipoBeca
         '
         'btnCerrar
         '
-
+        Me.btnCerrar.BackgroundImage = Global.UI.My.Resources.Resources.cerrar
         Me.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCerrar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(248, Byte), Integer))
@@ -159,7 +158,7 @@ Partial Class uCtrlCrearTipoBeca
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Transparent
-        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.BackgroundImage = Global.UI.My.Resources.Resources.tablaFinalMedianaAzul
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.btnAñadir)
@@ -172,6 +171,7 @@ Partial Class uCtrlCrearTipoBeca
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.txtNombre)
         Me.Controls.Add(Me.Label1)
+        Me.Location = New System.Drawing.Point(300, 100)
         Me.Name = "uCtrlCrearTipoBeca"
         Me.Size = New System.Drawing.Size(474, 321)
         Me.ResumeLayout(False)

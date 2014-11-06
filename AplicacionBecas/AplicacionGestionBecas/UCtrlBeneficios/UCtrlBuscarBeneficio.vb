@@ -154,8 +154,27 @@ Public Class UCtrlBuscarBeneficio
         Me.Hide()
         Me.Dispose()
 
+    End Sub
 
 
+    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.MouseClick
+
+        txtBuscar.Text = ""
+
+    End Sub
+
+    ''' <summary>Cuando el evento se ejecuta al dar presionar la tecla enter llama al metodo eliminar carrera</summary>
+    ''' <autor>Alvaro Artavia</autor>
+
+    Private Sub txtBuscar_KeyDown(sender As Object, e As System.Windows.Forms.KeyEventArgs) Handles txtBuscar.KeyDown
+
+        Dim param As String = txtBuscar.Text
+
+        If e.KeyCode = 13 Then
+
+            buscarBeneficio(param)
+
+        End If
 
     End Sub
 
@@ -225,16 +244,13 @@ Public Class UCtrlBuscarBeneficio
     ''' Si el parametro es NULL, entonces la lista se referesca nada mas
     ''' </summary>
     ''' <author>Mathias Muller</author>
-    ''' <param name="sender"></param>
-    ''' <param name="e"></param>
     ''' <remarks></remarks>
-    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
 
-        Dim parametro As String = txtBuscar.Text
+    Public Sub buscarBeneficio(ByVal param As String)
 
         Try
 
-            Dim beneficio As Beneficio = objGestorBeneficio.buscarPorNombre(parametro)
+            Dim beneficio As Beneficio = objGestorBeneficio.buscarPorNombre(param)
 
             dtaBuscarBeneficio.Rows.Clear()
             dtaBuscarBeneficio.Rows.Add(1)
@@ -252,5 +268,9 @@ Public Class UCtrlBuscarBeneficio
             dtaBuscarBeneficio.Rows.Clear()
             listarBeneficios()
         End Try
+
+
     End Sub
+
+   
 End Class

@@ -24,8 +24,9 @@ Public Class uCtrlListarRol
             Next
 
         Catch
-            MsgBox("Debe agregar un rol")
+
         End Try
+
     End Sub
     '''<summary>Este metodo hace que apenas se abra el usuario de control le liste los roles </summary>
     '''<author>Rodny Castro Mathews </author> 
@@ -139,7 +140,7 @@ Public Class uCtrlListarRol
             eliminarRol(fila)
 
         ElseIf combo.SelectedItem = "Ver" Then
-            MsgBox(fila)
+
             consultarRol(fila)
 
 

@@ -68,6 +68,7 @@
         ucMenuMant.uCtrlMantRequisitos.Hide()
         ucMenuMant.uCntrlMantRol.Hide()
         ucMenuMant.ucntrlUsuario.Hide()
+        ucMenuMant.uCtrlTipoBeca.Hide()
         ucMenuMant.uCntrlBuscarBeneficio.Hide()
         btnsMenus.Show()
 

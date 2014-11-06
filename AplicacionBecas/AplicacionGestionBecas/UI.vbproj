@@ -127,9 +127,7 @@
     <Compile Include="uCntrlBuscarBeneficio.Designer.vb">
       <DependentUpon>uCntrlBuscarBeneficio.vb</DependentUpon>
     </Compile>
-    <Compile Include="uCntrlBuscarBeneficio.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="uCntrlBuscarBeneficio.vb" />
     <Compile Include="uCntrlConsultarRol.Designer.vb">
       <DependentUpon>uCntrlConsultarRol.vb</DependentUpon>
     </Compile>
@@ -217,7 +215,9 @@
     <Compile Include="uCtrlEliminarCarrera.Designer.vb">
       <DependentUpon>uCtrlEliminarCarrera.vb</DependentUpon>
     </Compile>
-    <Compile Include="uCtrlEliminarCarrera.vb" />
+    <Compile Include="uCtrlEliminarCarrera.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="uCtrlEliminarCurso.Designer.vb">
       <DependentUpon>uCtrlEliminarCurso.vb</DependentUpon>
     </Compile>
@@ -239,11 +239,19 @@
     <Compile Include="UctrlEmailConfiguration.Designer.vb">
       <DependentUpon>UctrlEmailConfiguration.vb</DependentUpon>
     </Compile>
-    <Compile Include="UctrlEmailConfiguration.vb" />
+    <Compile Include="UctrlEmailConfiguration.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="uCtrlListarRol.Designer.vb">
       <DependentUpon>uCtrlListarRol.vb</DependentUpon>
     </Compile>
     <Compile Include="uCtrlListarRol.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uCtrlListarYBuscarBeneficiosvb.Designer.vb">
+      <DependentUpon>uCtrlListarYBuscarBeneficiosvb.vb</DependentUpon>
+    </Compile>
+    <Compile Include="uCtrlListarYBuscarBeneficiosvb.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UctrlListarYBuscarUsuario.Designer.vb">
@@ -430,6 +438,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="uCtrlListarRol.resx">
       <DependentUpon>uCtrlListarRol.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uCtrlListarYBuscarBeneficiosvb.resx">
+      <DependentUpon>uCtrlListarYBuscarBeneficiosvb.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UctrlListarYBuscarUsuario.resx">
       <DependentUpon>UctrlListarYBuscarUsuario.vb</DependentUpon>

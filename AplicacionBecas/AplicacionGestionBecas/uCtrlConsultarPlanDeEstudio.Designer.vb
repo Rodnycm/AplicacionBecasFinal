@@ -36,6 +36,7 @@ Partial Class uCtrlConsultarPlanDeEstudio
         Me.lblCreditos = New System.Windows.Forms.Label()
         Me.lblSumaCreditos = New System.Windows.Forms.Label()
         Me.lblSumaPrecio = New System.Windows.Forms.Label()
+        Me.btnRefrescar = New System.Windows.Forms.Button()
         CType(Me.dtaConsultarPlanEstudio, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pctbxBeneficios, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -117,46 +118,64 @@ Partial Class uCtrlConsultarPlanDeEstudio
         Me.cmbCursos.Name = "cmbCursos"
         Me.cmbCursos.Size = New System.Drawing.Size(220, 21)
         Me.cmbCursos.TabIndex = 35
+        Me.cmbCursos.Text = "Cuatrimestres"
         '
         'lblPrecio
         '
         Me.lblPrecio.AutoSize = True
+        Me.lblPrecio.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPrecio.Location = New System.Drawing.Point(705, 520)
         Me.lblPrecio.Name = "lblPrecio"
-        Me.lblPrecio.Size = New System.Drawing.Size(64, 13)
+        Me.lblPrecio.Size = New System.Drawing.Size(71, 17)
         Me.lblPrecio.TabIndex = 36
         Me.lblPrecio.Text = "Precio Total"
         '
         'lblCreditos
         '
         Me.lblCreditos.AutoSize = True
+        Me.lblCreditos.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCreditos.Location = New System.Drawing.Point(362, 520)
         Me.lblCreditos.Name = "lblCreditos"
-        Me.lblCreditos.Size = New System.Drawing.Size(72, 13)
+        Me.lblCreditos.Size = New System.Drawing.Size(82, 17)
         Me.lblCreditos.TabIndex = 37
         Me.lblCreditos.Text = "Total Creditos"
         '
         'lblSumaCreditos
         '
         Me.lblSumaCreditos.AutoSize = True
+        Me.lblSumaCreditos.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblSumaCreditos.Location = New System.Drawing.Point(441, 520)
         Me.lblSumaCreditos.Name = "lblSumaCreditos"
-        Me.lblSumaCreditos.Size = New System.Drawing.Size(0, 13)
+        Me.lblSumaCreditos.Size = New System.Drawing.Size(0, 17)
         Me.lblSumaCreditos.TabIndex = 38
         '
         'lblSumaPrecio
         '
         Me.lblSumaPrecio.AutoSize = True
+        Me.lblSumaPrecio.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblSumaPrecio.Location = New System.Drawing.Point(775, 520)
         Me.lblSumaPrecio.Name = "lblSumaPrecio"
-        Me.lblSumaPrecio.Size = New System.Drawing.Size(0, 13)
+        Me.lblSumaPrecio.Size = New System.Drawing.Size(0, 17)
         Me.lblSumaPrecio.TabIndex = 39
+        '
+        'btnRefrescar
+        '
+        Me.btnRefrescar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnRefrescar.Font = New System.Drawing.Font("Segoe UI Light", 8.75!)
+        Me.btnRefrescar.ForeColor = System.Drawing.Color.DarkViolet
+        Me.btnRefrescar.Location = New System.Drawing.Point(650, 87)
+        Me.btnRefrescar.Name = "btnRefrescar"
+        Me.btnRefrescar.Size = New System.Drawing.Size(75, 23)
+        Me.btnRefrescar.TabIndex = 40
+        Me.btnRefrescar.Text = "Ver Todos"
+        Me.btnRefrescar.UseVisualStyleBackColor = True
         '
         'uCtrlConsultarPlanDeEstudio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
+        Me.Controls.Add(Me.btnRefrescar)
         Me.Controls.Add(Me.lblSumaPrecio)
         Me.Controls.Add(Me.lblSumaCreditos)
         Me.Controls.Add(Me.lblCreditos)
@@ -184,5 +203,6 @@ Partial Class uCtrlConsultarPlanDeEstudio
     Friend WithEvents lblCreditos As System.Windows.Forms.Label
     Friend WithEvents lblSumaCreditos As System.Windows.Forms.Label
     Friend WithEvents lblSumaPrecio As System.Windows.Forms.Label
+    Friend WithEvents btnRefrescar As System.Windows.Forms.Button
 
 End Class

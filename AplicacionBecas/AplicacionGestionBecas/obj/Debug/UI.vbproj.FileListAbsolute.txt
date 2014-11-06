@@ -119,9 +119,6 @@ C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\Apli
 C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\UI.xml
 C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\UI.pdb
 C:\Users\Mathias\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\bin\Debug\UI.exe.config
-C:\Users\Mathias\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\UI.exe
-C:\Users\Mathias\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\UI.xml
-C:\Users\Mathias\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\UI.pdb
 C:\Users\Mathias\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\bin\Debug\UI.exe
 C:\Users\Mathias\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\bin\Debug\UI.pdb
 C:\Users\Mathias\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\bin\Debug\UI.xml
@@ -159,6 +156,7 @@ C:\Users\Mathias\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\Aplicacio
 C:\Users\Mathias\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\UI.UctrlEliminarUsuario.resources
 C:\Users\Mathias\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\UI.UctrlEmailConfiguration.resources
 C:\Users\Mathias\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\UI.uCtrlListarRol.resources
+C:\Users\Mathias\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\UI.uCtrlListarYBuscarBeneficiosvb.resources
 C:\Users\Mathias\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\UI.UctrlListarYBuscarUsuario.resources
 C:\Users\Mathias\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\UI.uCtrlMantenimientoCarreras.resources
 C:\Users\Mathias\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\UI.uCtrlMantenimientoCrearRequisito.resources
@@ -179,3 +177,6 @@ C:\Users\Mathias\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\Aplicacio
 C:\Users\Mathias\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\UI.vbproj.GenerateResource.Cache
 C:\Users\Mathias\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\RdlCompile.cache
 C:\Users\Mathias\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\RdlCompile.compiled
+C:\Users\Mathias\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\UI.exe
+C:\Users\Mathias\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\UI.xml
+C:\Users\Mathias\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\UI.pdb

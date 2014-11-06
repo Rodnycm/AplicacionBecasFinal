@@ -56,8 +56,9 @@
     End Sub
 
     Private Sub btnReportes_Click(sender As Object, e As EventArgs) Handles btnReportes.Click
-
-        ocultarComponentes()
+        btnsMenus.Hide()
+        Me.Controls.Add(ucMenuRep)
+        ucMenuRep.Show()
 
     End Sub
 

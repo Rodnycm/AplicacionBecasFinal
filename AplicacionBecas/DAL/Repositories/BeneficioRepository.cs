@@ -22,6 +22,9 @@ namespace DAL
         private List<IEntity> _insertItems;
         private List<IEntity> _deleteItems;
         private List<IEntity> _updateItems;
+        private static Excepciones exceptions = new Excepciones();
+        private static int numero;
+        private static string mensaje;
 
         /// <summary>
         /// Es el constructor del repositorio.
@@ -145,11 +148,10 @@ namespace DAL
             }
             catch (SqlException ex)
             {
-
-                throw new CustomExceptions.DataAccessException("Ha ocurrido un error al Consultar todos los beneficios", ex);
-
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
             }
-            
             catch (Exception e) {
 
                 throw e;
@@ -205,9 +207,9 @@ namespace DAL
             }
             catch (SqlException ex)
             {
-
-                throw new CustomExceptions.DataAccessException("Ha ocurrido un error al buscar un beneficio por nombre", ex);
-
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
             }
             catch (Exception e)
             {
@@ -311,11 +313,10 @@ namespace DAL
             }
             catch (SqlException ex)
             {
-
-                throw new CustomExceptions.DataAccessException("Ha ocurrido un error al crear un beneficio", ex);
-
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
             }
-
             catch (Exception ex)
             {
 
@@ -354,11 +355,10 @@ namespace DAL
             }
             catch (SqlException ex)
             {
-
-                throw new CustomExceptions.DataAccessException("Ha ocurrido un error al editar un beneficio", ex);
-
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
             }
-
             catch (Exception ex){
 
                 throw ex;
@@ -387,9 +387,9 @@ namespace DAL
 
             catch (SqlException ex)
             {
-
-                throw new CustomExceptions.DataAccessException("Ha ocurrido un error al eliminar un beneficio", ex);
-
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
             }
 
             catch (Exception e)
@@ -418,17 +418,15 @@ namespace DAL
             }
             catch (SqlException ex)
             {
-
-                throw new CustomExceptions.DataAccessException("Ha ocurrido un error al registrar una accion", ex);
-
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
             }
             catch (Exception e)
             {
 
                 throw e;
             }
-
-
         }
         public void asignarBeneficioTipoBeca(Beneficio objBeneficio)
         {

@@ -25,8 +25,12 @@ Public Class UctrlListarYBuscarUsuario
                 dgUsuarios.Rows.Add(usuario.identificacion, usuario.primerNombre & " " & usuario.primerApellido & " " & usuario.segundoApellido, usuario.telefono, usuario.fechaNacimiento, "", usuario.rol.Nombre, usuario.correoElectronico)
             Next
         Catch ex As Exception
+
+            dgUsuarios.Rows.Clear()
+            listarUsuarios()
+
             Dim uctrlAlerta As UctrlAlerta = New UctrlAlerta()
-            Me.Controls.Add(ucntrlUsuario)
+            Me.Controls.Add(uctrlAlerta)
             uctrlAlerta.Location = New Point(300, 100)
             uctrlAlerta.BringToFront()
             uctrlAlerta.lblAlerta.Text = "No hay usuarios registrados"
@@ -151,9 +155,11 @@ Public Class UctrlListarYBuscarUsuario
             dgUsuarios.Rows.Clear()
             dgUsuarios.Rows.Add(objUsuario.identificacion, objUsuario.primerNombre & " " & objUsuario.primerApellido & " " & objUsuario.segundoApellido, objUsuario.telefono, objUsuario.fechaNacimiento, "", objUsuario.rol.Nombre, objUsuario.correoElectronico)
         Catch ex As Exception
+
             dgUsuarios.Rows.Clear()
             listarUsuarios()
         End Try
+
 
     End Sub
 

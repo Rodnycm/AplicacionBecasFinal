@@ -14,6 +14,7 @@ namespace DAL.Repositories
 {
     public class UsuarioRepository : IRepository<Usuario>
     {
+        private string actividad;
         private static UsuarioRepository instance;
         private List<IEntity> _insertItems;
         private List<IEntity> _deleteItems;
@@ -296,6 +297,8 @@ namespace DAL.Repositories
 
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_crearUsuario");
 
+                actividad = "Se ha registrado un Usuario";
+                registrarAccion(actividad);
             }
 
             catch (SqlException ex)
@@ -340,6 +343,9 @@ namespace DAL.Repositories
                 cmd.Parameters.Add(new SqlParameter("@contraseña", objUsuario.contraseña));
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_modificarUsuario");
 
+                actividad = "Se ha modificado un Usuario";
+                registrarAccion(actividad);
+
             }
 
             catch (SqlException ex)
@@ -366,6 +372,9 @@ namespace DAL.Repositories
                 SqlCommand cmd = new SqlCommand();
                 cmd.Parameters.Add(new SqlParameter("@identificacion", objUsuario.identificacion));
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_borrarUsuario");
+
+                actividad = "Se ha eliminado un Usuario";
+                registrarAccion(actividad);
 
             }
             catch (SqlException ex)
@@ -501,7 +510,36 @@ namespace DAL.Repositories
             catch (Exception ex) {
                 throw ex;
             }
-     
+        }
+        public void registrarAccion(string pactividad)
+        {
+
+            RegistroAccion objRegistro;
+            DateTime fecha = DateTime.Today;
+            string nombreUsuario = Globals.userName;
+            string nombreRol = Globals.userRol.Nombre;
+            string descripcion = pactividad;
+
+
+            objRegistro = new RegistroAccion(nombreUsuario, nombreRol, descripcion, fecha);
+
+            try
+            {
+
+                RegistroAccionRepository objRegistroRep = new RegistroAccionRepository();
+                objRegistroRep.InsertAccion(objRegistro);
+            }
+            catch (SqlException ex)
+            {
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
         }
     }
 }

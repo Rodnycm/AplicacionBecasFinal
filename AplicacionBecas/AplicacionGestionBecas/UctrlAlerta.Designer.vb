@@ -34,7 +34,7 @@ Partial Class UctrlAlerta
         Me.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAceptar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAceptar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(248, Byte), Integer))
-        Me.btnAceptar.Location = New System.Drawing.Point(234, 122)
+        Me.btnAceptar.Location = New System.Drawing.Point(240, 120)
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(89, 29)
         Me.btnAceptar.TabIndex = 13
@@ -63,7 +63,7 @@ Partial Class UctrlAlerta
         Me.Controls.Add(Me.btnAceptar)
         Me.Controls.Add(Me.lblAlerta)
         Me.Name = "UctrlAlerta"
-        Me.Size = New System.Drawing.Size(547, 166)
+        Me.Size = New System.Drawing.Size(573, 166)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

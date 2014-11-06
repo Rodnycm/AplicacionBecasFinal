@@ -167,10 +167,23 @@ namespace BLL{
                 throw ex;
 
             }
+        }
 
+        public Array consultarCursosPorCuatrimestre()
+        {
 
+            try
+            {
 
+                return CursoRepository.Instance.consultarCursosPorCuatrimestre();
 
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+
+            }
         }
     }
 

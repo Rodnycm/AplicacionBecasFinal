@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class UCtrlBuscarBeneficio
+Partial Class uCntrlBuscarBeneficio
     Inherits System.Windows.Forms.UserControl
 
     'UserControl reemplaza a Dispose para limpiar la lista de componentes.
@@ -23,25 +23,22 @@ Partial Class UCtrlBuscarBeneficio
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(UCtrlBuscarBeneficio))
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(uCntrlBuscarBeneficio))
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.ErrorProvider2 = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.dtaBuscarBeneficio = New System.Windows.Forms.DataGridView()
-        Me.ErrorProvider3 = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.txtBuscar = New System.Windows.Forms.TextBox()
-        Me.btnMantenimiento = New System.Windows.Forms.Button()
-        Me.pctbxBeneficios = New System.Windows.Forms.PictureBox()
         Me.dtaId = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dtaNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dtaPorcentaje = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dtaAplicabilidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dtaOpciones = New System.Windows.Forms.DataGridViewComboBoxColumn()
+        Me.ErrorProvider3 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.txtBuscar = New System.Windows.Forms.TextBox()
+        Me.btnMantenimiento = New System.Windows.Forms.Button()
+        Me.pctbxBeneficios = New System.Windows.Forms.PictureBox()
+        Me.btnVolver = New System.Windows.Forms.Button()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ErrorProvider2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dtaBuscarBeneficio, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -63,18 +60,18 @@ Partial Class UCtrlBuscarBeneficio
         Me.dtaBuscarBeneficio.BackgroundColor = System.Drawing.Color.White
         Me.dtaBuscarBeneficio.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dtaBuscarBeneficio.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Transparent
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 9.75!)
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dtaBuscarBeneficio.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.Transparent
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Segoe UI Light", 9.75!)
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dtaBuscarBeneficio.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.dtaBuscarBeneficio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtaBuscarBeneficio.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dtaId, Me.dtaNombre, Me.dtaPorcentaje, Me.dtaAplicabilidad, Me.dtaOpciones})
         Me.dtaBuscarBeneficio.GridColor = System.Drawing.Color.White
-        Me.dtaBuscarBeneficio.Location = New System.Drawing.Point(40, 235)
+        Me.dtaBuscarBeneficio.Location = New System.Drawing.Point(50, 176)
         Me.dtaBuscarBeneficio.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.dtaBuscarBeneficio.Name = "dtaBuscarBeneficio"
         Me.dtaBuscarBeneficio.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
@@ -90,17 +87,43 @@ Partial Class UCtrlBuscarBeneficio
         Me.dtaBuscarBeneficio.Size = New System.Drawing.Size(947, 271)
         Me.dtaBuscarBeneficio.TabIndex = 28
         '
+        'dtaId
+        '
+        Me.dtaId.HeaderText = "Id"
+        Me.dtaId.Name = "dtaId"
+        '
+        'dtaNombre
+        '
+        Me.dtaNombre.HeaderText = "Nombre"
+        Me.dtaNombre.Name = "dtaNombre"
+        '
+        'dtaPorcentaje
+        '
+        Me.dtaPorcentaje.HeaderText = "Porcentaje"
+        Me.dtaPorcentaje.Name = "dtaPorcentaje"
+        '
+        'dtaAplicabilidad
+        '
+        Me.dtaAplicabilidad.HeaderText = "Aplicabilidad"
+        Me.dtaAplicabilidad.Name = "dtaAplicabilidad"
+        '
+        'dtaOpciones
+        '
+        Me.dtaOpciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.dtaOpciones.HeaderText = "Opciones"
+        Me.dtaOpciones.Items.AddRange(New Object() {"Ver", "Editar", "Eliminar"})
+        Me.dtaOpciones.Name = "dtaOpciones"
+        '
         'ErrorProvider3
         '
         Me.ErrorProvider3.ContainerControl = Me
         '
         'txtBuscar
         '
-        Me.txtBuscar.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBuscar.Location = New System.Drawing.Point(31, 160)
+        Me.txtBuscar.Location = New System.Drawing.Point(36, 74)
         Me.txtBuscar.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(732, 27)
+        Me.txtBuscar.Size = New System.Drawing.Size(732, 25)
         Me.txtBuscar.TabIndex = 29
         Me.txtBuscar.Text = "Buscar:"
         '
@@ -110,7 +133,7 @@ Partial Class UCtrlBuscarBeneficio
         Me.btnMantenimiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnMantenimiento.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnMantenimiento.ForeColor = System.Drawing.Color.White
-        Me.btnMantenimiento.Location = New System.Drawing.Point(783, 108)
+        Me.btnMantenimiento.Location = New System.Drawing.Point(789, 20)
         Me.btnMantenimiento.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.btnMantenimiento.Name = "btnMantenimiento"
         Me.btnMantenimiento.Size = New System.Drawing.Size(222, 79)
@@ -124,62 +147,39 @@ Partial Class UCtrlBuscarBeneficio
         Me.pctbxBeneficios.BackColor = System.Drawing.Color.White
         Me.pctbxBeneficios.BackgroundImage = Global.UI.My.Resources.Resources.tablaFinalGrandeAzul
         Me.pctbxBeneficios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.pctbxBeneficios.Location = New System.Drawing.Point(30, 202)
+        Me.pctbxBeneficios.Location = New System.Drawing.Point(36, 136)
         Me.pctbxBeneficios.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.pctbxBeneficios.Name = "pctbxBeneficios"
         Me.pctbxBeneficios.Size = New System.Drawing.Size(975, 321)
         Me.pctbxBeneficios.TabIndex = 26
         Me.pctbxBeneficios.TabStop = False
         '
-        'dtaId
+        'btnVolver
         '
-        Me.dtaId.HeaderText = "Id"
-        Me.dtaId.Name = "dtaId"
+        Me.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnVolver.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(248, Byte), Integer))
+        Me.btnVolver.Location = New System.Drawing.Point(830, 473)
+        Me.btnVolver.Name = "btnVolver"
+        Me.btnVolver.Size = New System.Drawing.Size(118, 33)
+        Me.btnVolver.TabIndex = 30
+        Me.btnVolver.Text = "Volver"
+        Me.btnVolver.UseVisualStyleBackColor = True
+        Me.btnVolver.Visible = False
         '
-        'dtaNombre
-        '
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 9.75!)
-        Me.dtaNombre.DefaultCellStyle = DataGridViewCellStyle2
-        Me.dtaNombre.HeaderText = "Nombre"
-        Me.dtaNombre.Name = "dtaNombre"
-        '
-        'dtaPorcentaje
-        '
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 9.75!)
-        Me.dtaPorcentaje.DefaultCellStyle = DataGridViewCellStyle3
-        Me.dtaPorcentaje.HeaderText = "Porcentaje"
-        Me.dtaPorcentaje.Name = "dtaPorcentaje"
-        '
-        'dtaAplicabilidad
-        '
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Segoe UI", 9.75!)
-        Me.dtaAplicabilidad.DefaultCellStyle = DataGridViewCellStyle4
-        Me.dtaAplicabilidad.HeaderText = "Aplicabilidad"
-        Me.dtaAplicabilidad.Name = "dtaAplicabilidad"
-        '
-        'dtaOpciones
-        '
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Segoe UI", 9.75!)
-        Me.dtaOpciones.DefaultCellStyle = DataGridViewCellStyle5
-        Me.dtaOpciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.dtaOpciones.HeaderText = "Opciones"
-        Me.dtaOpciones.Items.AddRange(New Object() {"Ver", "Editar", "Eliminar"})
-        Me.dtaOpciones.Name = "dtaOpciones"
-        '
-        'UCtrlBuscarBeneficio
+        'uCntrlBuscarBeneficio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
+        Me.Controls.Add(Me.btnVolver)
         Me.Controls.Add(Me.dtaBuscarBeneficio)
         Me.Controls.Add(Me.txtBuscar)
         Me.Controls.Add(Me.btnMantenimiento)
         Me.Controls.Add(Me.pctbxBeneficios)
         Me.Font = New System.Drawing.Font("Segoe UI Light", 9.75!)
-        Me.Location = New System.Drawing.Point(145, 50)
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.Name = "UCtrlBuscarBeneficio"
-        Me.Size = New System.Drawing.Size(1037, 578)
+        Me.Name = "uCntrlBuscarBeneficio"
+        Me.Size = New System.Drawing.Size(1042, 519)
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ErrorProvider2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dtaBuscarBeneficio, System.ComponentModel.ISupportInitialize).EndInit()
@@ -195,16 +195,17 @@ Partial Class UCtrlBuscarBeneficio
     Friend WithEvents ErrorProvider2 As System.Windows.Forms.ErrorProvider
     Friend WithEvents dtaBuscarBeneficio As System.Windows.Forms.DataGridView
 
-
-    Friend WithEvents txtBuscar As System.Windows.Forms.TextBox
-    Friend WithEvents btnMantenimiento As System.Windows.Forms.Button
-    Friend WithEvents pctbxBeneficios As System.Windows.Forms.PictureBox
-    Friend WithEvents ErrorProvider3 As System.Windows.Forms.ErrorProvider
     Friend WithEvents dtaId As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents dtaNombre As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents dtaPorcentaje As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents dtaAplicabilidad As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents dtaOpciones As System.Windows.Forms.DataGridViewComboBoxColumn
+
+    Friend WithEvents txtBuscar As System.Windows.Forms.TextBox
+    Friend WithEvents btnMantenimiento As System.Windows.Forms.Button
+    Friend WithEvents pctbxBeneficios As System.Windows.Forms.PictureBox
+    Friend WithEvents ErrorProvider3 As System.Windows.Forms.ErrorProvider
+    Friend WithEvents btnVolver As System.Windows.Forms.Button
 
 
 End Class

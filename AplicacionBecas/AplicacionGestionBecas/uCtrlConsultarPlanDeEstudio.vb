@@ -14,18 +14,32 @@ Public Class uCtrlConsultarPlanDeEstudio
         limpiarGrid()
 
         Dim listaCursos As New List(Of Curso)
-        listaCursos = objGestorCurso.consultarCursos
+        listaCursos = objGestorCurso.consultarCursos()
+        Dim totalCreditos = 0
+        Dim precioTotal = 0
 
         For Each Curso In listaCursos
 
             dtaConsultarPlanEstudio.Rows.Add(Curso.nombre, Curso.creditos, Curso.precio)
-
+            totalCreditos = totalCreditos + Curso.creditos
+            precioTotal = precioTotal + Curso.precio
         Next
 
+        lblSumaCreditos.Text = totalCreditos
+        lblSumaPrecio.Text = precioTotal
 
     End Sub
 
     Public Sub llenarComboCursos()
+
+        Dim listaCursos As Array
+        listaCursos = objGestorCurso.consultarCursosPorCuatrimestre()
+
+        For i As Integer = 0 To listaCursos.Length - 1
+
+            cmbCursos.Items.Add(listaCursos(i))
+        Next
+
 
     End Sub
 
@@ -59,5 +73,12 @@ Public Class uCtrlConsultarPlanDeEstudio
 
     Private Sub cmbCursos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbCursos.SelectedIndexChanged
         listarCursosPorCuatri()
+    End Sub
+
+    Private Sub btnRefrescar_Click(sender As Object, e As EventArgs) Handles btnRefrescar.Click
+
+        listarCursos()
+        cmbCursos.Text = "Cuatrimestres"
+
     End Sub
 End Class

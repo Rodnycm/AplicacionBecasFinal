@@ -4,7 +4,11 @@
     Dim nombre As String
     Dim porcentaje As Double
     Dim aplicabilidad As String
+<<<<<<< HEAD:AplicacionBecas/AplicacionGestionBecas/UCtrlBeneficios/UCtrlEliminarBeneficio.vb
     Dim uCtrl As UCtrlBuscarBeneficio
+=======
+    Dim uCtrl As uCtrlListarYBuscarBeneficiosvb
+>>>>>>> origin/MMuller2:AplicacionBecas/AplicacionGestionBecas/uCtrlEliminarBeneficio.vb
 
     Dim mBlnFormDragging As Boolean
 
@@ -16,7 +20,11 @@
     ''' <author>Mathias Muller</author>
     ''' <param name="puCtrl">Es una instancia del user control</param>
     ''' <remarks></remarks>
+<<<<<<< HEAD:AplicacionBecas/AplicacionGestionBecas/UCtrlBeneficios/UCtrlEliminarBeneficio.vb
     Public Sub getUCtrlInstance(puCtrl As UCtrlBuscarBeneficio)
+=======
+    Public Sub getUCtrlInstance(puCtrl As uCtrlListarYBuscarBeneficiosvb)
+>>>>>>> origin/MMuller2:AplicacionBecas/AplicacionGestionBecas/uCtrlEliminarBeneficio.vb
 
         uCtrl = puCtrl
 

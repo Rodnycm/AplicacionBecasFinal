@@ -7,13 +7,14 @@ using System.Collections;
 using System.Transactions;
 using System.Data.SqlClient;
 using System.Data;
+using DAL.Repositories;
 
 
 namespace DAL{
 
     public class CursoRepository : IRepository<Curso>
     {
-
+        private String actividad;
         private static CursoRepository instance;
         private List<IEntity> _insertItems;
         private List<IEntity> _deleteItems;
@@ -173,6 +174,31 @@ namespace DAL{
 
         }
 
+        public Array consultarCursosPorCuatrimestre()
+        {
+
+            int i = 0;
+            String cuatrimestre;
+            String[] listaCursos = null;
+            SqlCommand cmd = new SqlCommand();
+            DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_consultarCursosPorCuatrimestre");
+
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                listaCursos = new String[ds.Tables[0].Rows.Count];
+
+                foreach (DataRow dr in ds.Tables[0].Rows)
+                {    
+                   cuatrimestre = dr["Cuatrimestre"].ToString();
+                
+                   listaCursos[i] = cuatrimestre;
+                    i = i + 1;
+                }
+            }
+
+            return listaCursos;
+
+        }
 
         //<summary> Método que se encarga de traer de la base de datos un curso específico </summary>
         //<author> Valeria Ramírez Cordero</author> 
@@ -296,6 +322,8 @@ namespace DAL{
 
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_crearCurso ");
 
+                actividad = "Se ha creado un Curso";
+                registrarAccion(actividad);
             }
             catch (Exception ex)
             {
@@ -324,6 +352,9 @@ namespace DAL{
 
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_modificarCursos");
 
+                actividad = "Se ha modificado un Curso";
+                registrarAccion(actividad);
+
             }
             catch (Exception ex)
             {
@@ -344,6 +375,9 @@ namespace DAL{
                 cmd.Parameters.Add(new SqlParameter("@IdCurso", objCurso.Id));
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_eliminarCurso");
 
+                actividad = "Se ha eliminado un Curso";
+                registrarAccion(actividad);
+
             }
             catch (SqlException ex)
             {
@@ -358,6 +392,39 @@ namespace DAL{
                 //logear la excepcion a la bd con un Exception
                 //throw new DataAccessException("Ha ocurrido un error al eliminar un usuario", ex);
             }
+        }
+
+        public void registrarAccion(string pactividad)
+        {
+
+            RegistroAccion objRegistro;
+            DateTime fecha = DateTime.Today;
+            string nombreUsuario = Globals.userName;
+            string nombreRol = Globals.userRol.Nombre;
+            string descripcion = pactividad;
+
+
+            objRegistro = new RegistroAccion(nombreUsuario, nombreRol, descripcion, fecha);
+
+            try
+            {
+
+                RegistroAccionRepository objRegistroRep = new RegistroAccionRepository();
+                objRegistroRep.InsertAccion(objRegistro);
+            }
+            //catch (SqlException ex)
+            //{
+            //    numero = ex.Number;
+            //    mensaje = exceptions.validarExcepcion(numero);
+            //    throw new CustomExceptions.DataAccessException(mensaje, ex);
+            //}
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+
+
         }
     }
     

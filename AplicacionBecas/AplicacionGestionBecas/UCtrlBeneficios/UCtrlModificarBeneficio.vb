@@ -4,11 +4,19 @@
     Dim nombre As String
     Dim porcentaje As Double
     Dim aplicacion As String
+<<<<<<< HEAD:AplicacionBecas/AplicacionGestionBecas/UCtrlBeneficios/UCtrlModificarBeneficio.vb
     Dim uCntrlBuscarBeneficio As UCtrlBuscarBeneficio
     Dim mBlnFormDragging As Boolean
 
 
     Public Sub getFrmBuscar(puCntrlBuscarBeneficio As UCtrlBuscarBeneficio)
+=======
+    Dim uCntrlBuscarBeneficio As uCtrlListarYBuscarBeneficiosvb
+    Dim mBlnFormDragging As Boolean
+
+
+    Public Sub getFrmBuscar(puCntrlBuscarBeneficio As uCtrlListarYBuscarBeneficiosvb)
+>>>>>>> origin/MMuller2:AplicacionBecas/AplicacionGestionBecas/uCtrlModificarBeneficio.vb
 
         uCntrlBuscarBeneficio = puCntrlBuscarBeneficio
     End Sub
@@ -42,12 +50,14 @@
     ''' <param name="e"></param>
     Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
 
-        If (IsNumeric(txtPorcentaje.Text) = True) Then
-            nombre = txtNombre.Text
-            porcentaje = CType(txtPorcentaje.Text, Double)
-            aplicacion = txtAplicabilidad.Text
+        Try
 
-            Try
+            If (IsNumeric(txtPorcentaje.Text) = True) Then
+                nombre = txtNombre.Text
+                porcentaje = CType(txtPorcentaje.Text, Double)
+                aplicacion = txtAplicabilidad.Text
+
+
                 objGestorBeneficio.modificarBeneficio(id, nombre, porcentaje, aplicacion)
                 objGestorBeneficio.guardarCambios()
                 Dim Uctrl As uCtrlConfirmacion = New uCtrlConfirmacion
@@ -57,29 +67,28 @@
                 Uctrl.BringToFront()
                 Uctrl.Show()
 
-            Catch ex As Exception
+            Else
 
-                Dim UCtrl As UCtrlAlerta = New UCtrlAlerta()
-
+                Dim UCtrl As UctrlAlerta = New UctrlAlerta()
                 FrmIniciarSesion.principal.Controls.Add(UCtrl)
-                UCtrl.lblAlerta.Text = ex.Message
-                UCtrl.Location = New Point(250, 50)
+                UCtrl.lblAlerta.Text = "El porcentaje debe ser numerico (0.00)"
+                UCtrl.Location = New Point(300, 100)
                 UCtrl.BringToFront()
                 UCtrl.Show()
 
+            End If
 
-            End Try
+        Catch ex As Exception
 
-        Else
-            Dim UCtrl As UCtrlAlerta = New UCtrlAlerta()
+            Dim UCtrl As UctrlAlerta = New UctrlAlerta()
+
             FrmIniciarSesion.principal.Controls.Add(UCtrl)
-            UCtrl.lblAlerta.Text = "El porcentaje debe ser numerico (0.00)"
-            Uctrl.Location = New Point(300, 100)
-            Uctrl.BringToFront()
-            Uctrl.Show()
+            UCtrl.lblAlerta.Text = ex.Message
+            UCtrl.Location = New Point(250, 50)
+            UCtrl.BringToFront()
+            UCtrl.Show()
 
-
-        End If
+        End Try
 
         uCntrlBuscarBeneficio.dtaBuscarBeneficio.Rows.Clear()
         uCntrlBuscarBeneficio.listarBeneficios()

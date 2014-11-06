@@ -167,7 +167,7 @@ Partial Class uCtrlModificarCurso
         '
         'PictureBox1
         '
-        Me.PictureBox1.Image = Global.UI.My.Resources.Resources.tablaFinalMedianaAzul1
+        '' Me.PictureBox1.Image = Global.UI.My.Resources.Resources.tablaFinalMedianaAzul1
         Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(462, 273)

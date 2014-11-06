@@ -116,7 +116,7 @@ Public Class uCtrlBuscarCursos
 
 
         Dim listarCursos As List(Of Curso)
-        listarCursos = objGestorCurso.listarCursos()
+        listarCursos = objGestorCurso.consultarCursos()
 
         For i As Integer = 0 To listarCursos.Count - 1
 

@@ -74,7 +74,7 @@
     End Sub
 
     Private Sub CerrarSesiónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CerrarSesiónToolStripMenuItem.Click
-        Dim UcntrlIniciar As UcntrlIniciar = New UcntrlIniciar()
+        Dim UcntrlIniciar As UCtrlIniciar = New UCtrlIniciar()
         objGestorUsuario.cerrarSesion()
         Me.Hide()
         FrmIniciarSesion.Show()

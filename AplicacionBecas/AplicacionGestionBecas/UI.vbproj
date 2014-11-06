@@ -138,9 +138,6 @@
     </Compile>
     <Compile Include="UCtrlBeneficios\UCtrlBuscarBeneficio.Designer.vb">
       <DependentUpon>UCtrlBuscarBeneficio.vb</DependentUpon>
-    <Compile Include="uCntrlBuscarBeneficio.vb" />
-    <Compile Include="uCntrlConsultarRol.Designer.vb">
-      <DependentUpon>uCntrlConsultarRol.vb</DependentUpon>
     </Compile>
     <Compile Include="UCtrlBeneficios\UCtrlBuscarBeneficio.vb">
       <SubType>UserControl</SubType>
@@ -291,14 +288,6 @@
     </Compile>
     <Compile Include="UCtrlRoles\UCtrlListarRol.Designer.vb">
       <DependentUpon>UCtrlListarRol.vb</DependentUpon>
-    <Compile Include="uCtrlListarYBuscarBeneficiosvb.Designer.vb">
-      <DependentUpon>uCtrlListarYBuscarBeneficiosvb.vb</DependentUpon>
-    </Compile>
-    <Compile Include="uCtrlListarYBuscarBeneficiosvb.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UctrlListarYBuscarUsuario.Designer.vb">
-      <DependentUpon>UctrlListarYBuscarUsuario.vb</DependentUpon>
     </Compile>
     <Compile Include="UCtrlRoles\UCtrlListarRol.vb">
       <SubType>UserControl</SubType>
@@ -514,11 +503,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UCtrlRoles\UCtrlListarRol.resx">
       <DependentUpon>UCtrlListarRol.vb</DependentUpon>
-    <EmbeddedResource Include="uCtrlListarYBuscarBeneficiosvb.resx">
-      <DependentUpon>uCtrlListarYBuscarBeneficiosvb.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UctrlListarYBuscarUsuario.resx">
-      <DependentUpon>UctrlListarYBuscarUsuario.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCtrlUsuarios\UCtrlListarYBuscarUsuario.resx">
       <DependentUpon>UCtrlListarYBuscarUsuario.vb</DependentUpon>

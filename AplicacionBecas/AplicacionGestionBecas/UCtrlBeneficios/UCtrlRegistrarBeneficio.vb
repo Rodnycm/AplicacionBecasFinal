@@ -1,10 +1,7 @@
 ﻿Public Class uCtrlRegistrarBeneficio
 
-<<<<<<< HEAD:AplicacionBecas/AplicacionGestionBecas/UCtrlBeneficios/UCtrlRegistrarBeneficio.vb
     Dim uCntrlBuscarBeneficio As UCtrlBuscarBeneficio
-=======
-    Dim uCntrlBuscarBeneficio As uCtrlListarYBuscarBeneficiosvb
->>>>>>> origin/MMuller2:AplicacionBecas/AplicacionGestionBecas/uCtrlRegistrarBeneficio.vb
+
     Dim mBlnFormDragging As Boolean
 
     ''' <summary>
@@ -12,11 +9,9 @@
     ''' </summary>
     ''' <param name="puCntrlBuscarBeneficio">Es la instancia del usrControl</param>
     ''' <remarks></remarks>
-<<<<<<< HEAD:AplicacionBecas/AplicacionGestionBecas/UCtrlBeneficios/UCtrlRegistrarBeneficio.vb
+
     Public Sub getFrmBuscar(puCntrlBuscarBeneficio As UCtrlBuscarBeneficio)
-=======
-    Public Sub getFrmBuscar(puCntrlBuscarBeneficio As uCtrlListarYBuscarBeneficiosvb)
->>>>>>> origin/MMuller2:AplicacionBecas/AplicacionGestionBecas/uCtrlRegistrarBeneficio.vb
+
 
         uCntrlBuscarBeneficio = puCntrlBuscarBeneficio
     End Sub

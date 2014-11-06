@@ -4,19 +4,12 @@
     Dim nombre As String
     Dim porcentaje As Double
     Dim aplicacion As String
-<<<<<<< HEAD:AplicacionBecas/AplicacionGestionBecas/UCtrlBeneficios/UCtrlModificarBeneficio.vb
     Dim uCntrlBuscarBeneficio As UCtrlBuscarBeneficio
     Dim mBlnFormDragging As Boolean
 
 
     Public Sub getFrmBuscar(puCntrlBuscarBeneficio As UCtrlBuscarBeneficio)
-=======
-    Dim uCntrlBuscarBeneficio As uCtrlListarYBuscarBeneficiosvb
-    Dim mBlnFormDragging As Boolean
 
-
-    Public Sub getFrmBuscar(puCntrlBuscarBeneficio As uCtrlListarYBuscarBeneficiosvb)
->>>>>>> origin/MMuller2:AplicacionBecas/AplicacionGestionBecas/uCtrlModificarBeneficio.vb
 
         uCntrlBuscarBeneficio = puCntrlBuscarBeneficio
     End Sub

@@ -6,8 +6,7 @@ using EntitiesLayer;
 using DAL;
 
 
-namespace BLL
-{
+namespace BLL{
 
     public class GestorCurso
     {
@@ -101,7 +100,25 @@ namespace BLL
 
             try
             {
+                int creditos = Convert.ToInt32(pcreditos);
+                double precio = Convert.ToDouble(pprecio);
                 Curso objetoCurso = ContenedorMantenimiento.Instance.crearObjetoCurso(pcodigo, pnombre, pcuatrimestre, pcreditos, pprecio, pidCurso);
+                CursoRepository.Instance.Update(objetoCurso);
+
+                 if (objetoCurso.IsValid)
+                {
+                    CursoRepository.Instance.Insert(objetoCurso);
+                }
+                else
+                {
+                    StringBuilder sb = new StringBuilder();
+                    foreach (RuleViolation rv in objetoCurso.GetRuleViolations())
+                    {
+                        sb.AppendLine(rv.ErrorMessage + "\n");
+                    }
+                    throw new ApplicationException(sb.ToString());
+                }
+            
             }
             catch (Exception ex)
             {
@@ -109,6 +126,8 @@ namespace BLL
                 throw ex;
             }
         }
+
+
 
         public void eliminarCurso(int pidCurso, String pcodigo, String pnombre)
         {
@@ -138,4 +157,6 @@ namespace BLL
 
 
     }
+
+  
 }

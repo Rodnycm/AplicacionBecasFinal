@@ -304,6 +304,12 @@
     <Compile Include="uCtrlModificarCurso.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="uCtrlModificarRequisito.Designer.vb">
+      <DependentUpon>uCtrlModificarRequisito.vb</DependentUpon>
+    </Compile>
+    <Compile Include="uCtrlModificarRequisito.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="uCtrlModificarRol.Designer.vb">
       <DependentUpon>uCtrlModificarRol.vb</DependentUpon>
     </Compile>
@@ -444,6 +450,9 @@
     <EmbeddedResource Include="uCtrlModificarCurso.resx">
       <DependentUpon>uCtrlModificarCurso.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="uCtrlModificarRequisito.resx">
+      <DependentUpon>uCtrlModificarRequisito.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="uCtrlModificarRol.resx">
       <DependentUpon>uCtrlModificarRol.vb</DependentUpon>
     </EmbeddedResource>
@@ -523,6 +532,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cerrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eliminarMorado.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tablaFinalMedianaAzul1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tablaFinalMedianaAzul2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tablaFinalMedianaAzul3.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -9,8 +9,7 @@ using System.Data.SqlClient;
 using System.Data;
 
 
-namespace DAL
-{
+namespace DAL{
 
     public class CursoRepository : IRepository<Curso>
     {
@@ -227,7 +226,7 @@ namespace DAL
                 }
                 catch (ApplicationException ex)
                 {
-
+                    throw ex;
                 }
                 finally
                 {
@@ -289,12 +288,12 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
 
-                cmd.Parameters.Add(new SqlParameter("@Código", objCurso.codigo));
+                cmd.Parameters.Add(new SqlParameter("@Codigo", objCurso.codigo));
                 cmd.Parameters.Add(new SqlParameter("@Nombre", objCurso.nombre));
                 cmd.Parameters.Add(new SqlParameter("@Cuatrimestre", objCurso.cuatrimestre));
-                cmd.Parameters.Add(new SqlParameter("@Creditos", objCurso.cuatrimestre));
+                cmd.Parameters.Add(new SqlParameter("@Creditos", objCurso.creditos));
                 cmd.Parameters.Add(new SqlParameter("@Precio", objCurso.precio));
-                cmd.Parameters.Add(new SqlParameter("@idCurso", objCurso.Id));
+                cmd.Parameters.Add(new SqlParameter("@IdCurso", objCurso.Id));
 
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_modificarCursos");
 
@@ -334,4 +333,5 @@ namespace DAL
             }
         }
     }
+    
 }

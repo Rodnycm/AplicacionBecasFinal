@@ -37,6 +37,7 @@ Partial Class frmPrincipal
         Me.MenuHorizontal = New System.Windows.Forms.MenuStrip()
         Me.AlvaroArtaviaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VerPerfilToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CerrarSesiónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuLateral.SuspendLayout()
         Me.btnsMenus.SuspendLayout()
         Me.MenuHorizontal.SuspendLayout()
@@ -106,7 +107,7 @@ Partial Class frmPrincipal
         Me.btnsMenus.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.39516!))
         Me.btnsMenus.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.60484!))
         Me.btnsMenus.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 244.0!))
-        Me.btnsMenus.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 262.0!))
+        Me.btnsMenus.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 263.0!))
         Me.btnsMenus.Controls.Add(Me.btnReportes, 3, 0)
         Me.btnsMenus.Controls.Add(Me.btnAcademico, 1, 0)
         Me.btnsMenus.Controls.Add(Me.btnBecas, 2, 0)
@@ -124,7 +125,7 @@ Partial Class frmPrincipal
         Me.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnReportes.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnReportes.ForeColor = System.Drawing.Color.White
-        Me.btnReportes.Location = New System.Drawing.Point(715, 3)
+        Me.btnReportes.Location = New System.Drawing.Point(714, 3)
         Me.btnReportes.Name = "btnReportes"
         Me.btnReportes.Size = New System.Drawing.Size(225, 79)
         Me.btnReportes.TabIndex = 6
@@ -152,7 +153,7 @@ Partial Class frmPrincipal
         Me.btnBecas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBecas.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBecas.ForeColor = System.Drawing.Color.White
-        Me.btnBecas.Location = New System.Drawing.Point(471, 3)
+        Me.btnBecas.Location = New System.Drawing.Point(470, 3)
         Me.btnBecas.Name = "btnBecas"
         Me.btnBecas.Size = New System.Drawing.Size(225, 79)
         Me.btnBecas.TabIndex = 7
@@ -188,7 +189,7 @@ Partial Class frmPrincipal
         '
         'AlvaroArtaviaToolStripMenuItem
         '
-        Me.AlvaroArtaviaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.VerPerfilToolStripMenuItem})
+        Me.AlvaroArtaviaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.VerPerfilToolStripMenuItem, Me.CerrarSesiónToolStripMenuItem})
         Me.AlvaroArtaviaToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 11.0!)
         Me.AlvaroArtaviaToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.AlvaroArtaviaToolStripMenuItem.Name = "AlvaroArtaviaToolStripMenuItem"
@@ -202,8 +203,16 @@ Partial Class frmPrincipal
         Me.VerPerfilToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.VerPerfilToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(72, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(67, Byte), Integer))
         Me.VerPerfilToolStripMenuItem.Name = "VerPerfilToolStripMenuItem"
-        Me.VerPerfilToolStripMenuItem.Size = New System.Drawing.Size(123, 22)
+        Me.VerPerfilToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.VerPerfilToolStripMenuItem.Text = "Ver Perfil"
+        '
+        'CerrarSesiónToolStripMenuItem
+        '
+        Me.CerrarSesiónToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CerrarSesiónToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(72, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(67, Byte), Integer))
+        Me.CerrarSesiónToolStripMenuItem.Name = "CerrarSesiónToolStripMenuItem"
+        Me.CerrarSesiónToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.CerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión"
         '
         'frmPrincipal
         '
@@ -240,5 +249,6 @@ Partial Class frmPrincipal
     Friend WithEvents MenuHorizontal As System.Windows.Forms.MenuStrip
     Friend WithEvents AlvaroArtaviaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents VerPerfilToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents CerrarSesiónToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

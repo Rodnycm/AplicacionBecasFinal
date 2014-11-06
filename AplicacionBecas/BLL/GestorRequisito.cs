@@ -52,8 +52,27 @@ namespace BLL
         }
 
         public Requisito buscarRequisito(String param)
-        {
+      {
             return RequisitoRepository.Instance.GetByNombre(param);
+        }
+
+
+        //<summary> Método que se encarga de modificcar un requisito</summary>
+        //<author> Valeria Ramírez Cordero </author> 
+        //<param name = "pnombre"> variable de tipo String que almacena el nombre del requisito  </param>
+        //<param name = "pdescripcion"> variable de tipo String que almacena la descripción del requisito</param>
+        //<param name = "pid"> variable de tipo int que almacena el id del requisito</param>
+        //<returns> No retorna valor </returns> 
+        public void modificarRequisito(String pnombre,String pdescripcion,int pid){
+
+            try{
+                Requisito objRequisito = ContenedorMantenimiento.Instance.crearRequisito(pnombre,pdescripcion,pid);
+                RequisitoRepository.Instance.Update(objRequisito);
+            }
+            catch (Exception ex){
+
+                throw ex;
+            }
         }
 
 

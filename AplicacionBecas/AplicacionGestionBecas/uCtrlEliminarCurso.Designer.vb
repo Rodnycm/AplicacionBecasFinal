@@ -71,7 +71,7 @@ Partial Class uCtrlEliminarCurso
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-
+        Me.BackgroundImage = Global.UI.My.Resources.Resources.eliminarMorado
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.btnEliminar)
         Me.Controls.Add(Me.lblNombre)

@@ -6,8 +6,12 @@ Public Class UcntrlIniciar
     Dim alerta As UctrlAlerta
 
     Private Sub btnIniciarSesion_Click(sender As Object, e As EventArgs) Handles btnIniciarSesion.Click
-        Dim nombreUsuario As String = txtNombreUsuario.Text
-        Dim contraseña As String = txtContraseña.Text
+
+        'Dim nombreUsuario As String = txtNombreUsuario.Text
+        'Dim contraseña As String = txtContraseña.Text
+
+        Dim nombreUsuario As String = "backi-g@hotmail.com"
+        Dim contraseña As String = "1234"
         Dim listaUsuarios As List(Of Usuario)
 
         Try

@@ -77,14 +77,15 @@ Public Class uCtrlBuscarCursos
 
         Dim ucntrl As uCtrlModificarCurso = New uCtrlModificarCurso()
 
-        ucntrl.recieveData(nombre, codigo, cuatrimestre, creditos, precio,id)
+        ucntrl.recieveData(nombre, codigo, cuatrimestre, creditos, precio, id)
 
         'imgBuscarCursos.Hide()
-        frmPrincipal.Controls.Add(ucntrl)
+        FrmIniciarSesion.principal.Controls.Add(ucntrl)
         ucntrl.BringToFront()
         ucntrl.Show()
         'ucntrl.setParametro(pparametro)
         ucntrl.Location = New Point(290, 48)
+        ucntrl.refrecarLista(Me)
 
 
 
@@ -95,16 +96,19 @@ Public Class uCtrlBuscarCursos
 
         Dim nombre As String = dtaListarCursos.CurrentRow.Cells(0).Value
         Dim codigo As String = dtaListarCursos.CurrentRow.Cells(1).Value
+        Dim cuatrimestre As String = dtaListarCursos.CurrentRow.Cells(2).Value
+        Dim creditos As Integer = dtaListarCursos.CurrentRow.Cells(3).Value
+        Dim precio As Double = dtaListarCursos.CurrentRow.Cells(4).Value
         Dim id As Integer = dtaListarCursos.CurrentRow.Cells(6).Value
 
         Dim ucntrl As uCtrlEliminarCurso = New uCtrlEliminarCurso()
-        ucntrl.recieveData(idCurso, nombre, codigo)
-
-        frmPrincipal.Controls.Add(ucntrl)
+        ucntrl.recieveData(id, nombre, codigo)
+        MsgBox(id)
+        FrmIniciarSesion.principal.Controls.Add(ucntrl)
         ucntrl.BringToFront()
         ucntrl.Show()
         ucntrl.Location = New Point(280, 48)
-
+        ucntrl.refrecarLista(Me)
 
     End Sub
     Public Sub listarCursos()
@@ -165,18 +169,18 @@ Public Class uCtrlBuscarCursos
 
 
     End Sub
-    Private Sub btnCrearCurso_Click(sender As Object, e As EventArgs)
+    'Private Sub btnCrearCurso_Click(sender As Object, e As EventArgs)
 
 
-        ucCrearCurso = New CrearCursos()
-        frmPrincipal.Controls.Add(ucCrearCurso)
-        ucCrearCurso.BringToFront()
-        ucCrearCurso.Show()
-        ucCrearCurso.Location = New Point(300, 100)
+    '    ucCrearCurso = New uCtrlCurso()
+    '    frmPrincipal.Controls.Add(ucCrearCurso)
+    '    ucCrearCurso.BringToFront()
+    '    ucCrearCurso.Show()
+    '    ucCrearCurso.Location = New Point(300, 100)
 
 
 
-    End Sub
+    'End Sub
     Private Sub uCtrlBuscarCursos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
 
@@ -188,11 +192,12 @@ Public Class uCtrlBuscarCursos
 
 
         ucCrearCurso = New CrearCursos()
-        frmPrincipal.Controls.Add(ucCrearCurso)
+        FrmIniciarSesion.principal.Controls.Add(ucCrearCurso)
+        ucCrearCurso.Visible = True
         ucCrearCurso.BringToFront()
         ucCrearCurso.Show()
         ucCrearCurso.Location = New Point(290, 48)
-
+        ucCrearCurso.refrecarLista(Me)
 
 
     End Sub

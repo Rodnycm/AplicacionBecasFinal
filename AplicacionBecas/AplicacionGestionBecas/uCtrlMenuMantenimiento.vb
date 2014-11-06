@@ -1,7 +1,7 @@
 ﻿Public Class uCtrlMenuMantenimiento
 
     Public Property uCtrlMantCarreras As uCtrlMantenimientoCarreras = New uCtrlMantenimientoCarreras()
-    Public Property uCtrlMantCursos As uCtrlMantenimientoCursos = New uCtrlMantenimientoCursos()
+    Public Property uCtrlBuscarCursos As uCtrlBuscarCursos = New uCtrlBuscarCursos()
     Public Property uCtrlMantRequisitos As uCtrlMantenimientoRequisitos = New uCtrlMantenimientoRequisitos()
     Public Property uCntrlMantRol As uCtrlListarRol = New uCtrlListarRol()
     Public Property ucntrlUsuario As UctrlListarYBuscarUsuario = New UctrlListarYBuscarUsuario()
@@ -10,7 +10,7 @@
     Private Sub btnRequisitos_Click(sender As Object, e As EventArgs) Handles btnRequisitos.Click
 
         Me.Hide()
-        uCtrlMantRequisitos = New uCtrlMantenimientoRequisitos()
+        Dim uCtrlMantRequisitos As uCtrlMantenimientoRequisitos = New uCtrlMantenimientoRequisitos()
         FrmIniciarSesion.principal.Controls.Add(uCtrlMantRequisitos)
         uCtrlMantRequisitos.Show()
 
@@ -23,9 +23,9 @@
     Private Sub btnCursos_Click(sender As Object, e As EventArgs) Handles btnCursos.Click
 
         Me.Hide()
-        uCtrlMantCursos = New uCtrlMantenimientoCursos()
-        FrmIniciarSesion.principal.Controls.Add(uCtrlMantCursos)
-        uCtrlMantCursos.Show()
+        uCtrlBuscarCursos = New uCtrlBuscarCursos()
+        FrmIniciarSesion.principal.Controls.Add(uCtrlBuscarCursos)
+        uCtrlBuscarCursos.Show()
 
     End Sub
 

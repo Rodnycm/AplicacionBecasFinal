@@ -38,8 +38,9 @@ Public Class UctrlCrearUsuario
             objGestorUsuario.crearUsuario(pNombre, sNombre, pApellido, sApellido, identificacion, telefono, fechaNacimiento, rol, genero, correoElectronico)
             objGestorUsuario.guardarCambios()
 
-            lista.dgUsuarios.Rows.Clear()
-            lista.listarUsuarios()
+            'lista.dgUsuarios.Rows.Clear()
+            'lista.listarUsuarios()
+            'Me.Dispose()
             MsgBox("Usuario creado correctamente")
         Catch ex As Exception
             alerta.lblAlerta.Text = ex.Message
@@ -51,6 +52,8 @@ Public Class UctrlCrearUsuario
 
         lista.dgUsuarios.Rows.Clear()
         lista.listarUsuarios()
+        Me.Dispose()
+
 
     End Sub
 

@@ -33,9 +33,9 @@ Partial Class uCtrlModificarCurso
         Me.lblCodigoCurso = New System.Windows.Forms.Label()
         Me.txtNombreCurso = New System.Windows.Forms.TextBox()
         Me.lblNombreCurso = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.cmbCuatrimestreCurso = New System.Windows.Forms.ComboBox()
         Me.txtId = New System.Windows.Forms.TextBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -45,7 +45,7 @@ Partial Class uCtrlModificarCurso
         Me.btnAceptarModificarCurso.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAceptarModificarCurso.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAceptarModificarCurso.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(248, Byte), Integer))
-        Me.btnAceptarModificarCurso.Location = New System.Drawing.Point(373, 227)
+        Me.btnAceptarModificarCurso.Location = New System.Drawing.Point(363, 233)
         Me.btnAceptarModificarCurso.Name = "btnAceptarModificarCurso"
         Me.btnAceptarModificarCurso.Size = New System.Drawing.Size(86, 29)
         Me.btnAceptarModificarCurso.TabIndex = 38
@@ -58,7 +58,7 @@ Partial Class uCtrlModificarCurso
         Me.btnCancelarAgregarCurso.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCancelarAgregarCurso.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCancelarAgregarCurso.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(248, Byte), Integer))
-        Me.btnCancelarAgregarCurso.Location = New System.Drawing.Point(281, 227)
+        Me.btnCancelarAgregarCurso.Location = New System.Drawing.Point(271, 233)
         Me.btnCancelarAgregarCurso.Name = "btnCancelarAgregarCurso"
         Me.btnCancelarAgregarCurso.Size = New System.Drawing.Size(86, 29)
         Me.btnCancelarAgregarCurso.TabIndex = 37
@@ -148,15 +148,6 @@ Partial Class uCtrlModificarCurso
         Me.lblNombreCurso.TabIndex = 27
         Me.lblNombreCurso.Text = "Nombre"
         '
-        'PictureBox1
-        '
-
-        Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(462, 273)
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
-        '
         'cmbCuatrimestreCurso
         '
         Me.cmbCuatrimestreCurso.FormattingEnabled = True
@@ -173,6 +164,15 @@ Partial Class uCtrlModificarCurso
         Me.txtId.Size = New System.Drawing.Size(121, 20)
         Me.txtId.TabIndex = 40
         Me.txtId.Visible = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.UI.My.Resources.Resources.tablaFinalMedianaAzul1
+        Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(462, 273)
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = False
         '
         'uCtrlModificarCurso
         '

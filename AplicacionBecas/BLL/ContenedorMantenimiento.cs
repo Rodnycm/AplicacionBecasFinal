@@ -143,7 +143,15 @@ namespace BLL
             Curso curso = new Curso(pnombre, pcodigo, pcuatrimestre, pcreditos, pprecio);
 
             return curso;
-        }      
-
+        }
+        public TipoBeca crearTipoBeca(string nombre, string estado, string direccion)
+        {
+            return new TipoBeca(nombre, estado, direccion);
+        }
+        public TipoBeca crearTipoBeca(string pnombre)
+        {
+            TipoBeca objTipoBeca = new TipoBeca(pnombre);
+            return objTipoBeca;
+        }
     }
 }

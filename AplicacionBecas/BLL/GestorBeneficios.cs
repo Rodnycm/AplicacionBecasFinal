@@ -187,6 +187,10 @@ namespace BLL
         {
             return BeneficioRepository.Instance.GetByNombre(pnombre);
         }
+        public IEnumerable<Beneficio> mostrarBeneficioTB(TipoBeca ptipoBeca)
+        {
+            return BeneficioRepository.Instance.GetLista(ptipoBeca);
+        }
 
     }
 }

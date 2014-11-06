@@ -26,3 +26,17 @@ C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecas\BLL\obj\Debug\BLL.
 C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecas\BLL\obj\Debug\BLL.csproj.GenerateResource.Cache
 C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecas\BLL\obj\Debug\BLL.dll
 C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecas\BLL\obj\Debug\BLL.pdb
+C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecas\BLL\bin\Debug\BLL.dll
+C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecas\BLL\bin\Debug\BLL.pdb
+C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecas\BLL\bin\Debug\DAL.dll
+C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecas\BLL\bin\Debug\EntitiesLayer.dll
+C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecas\BLL\bin\Debug\TIL.dll
+C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecas\BLL\bin\Debug\DAL.pdb
+C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecas\BLL\bin\Debug\EntitiesLayer.pdb
+C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecas\BLL\bin\Debug\TIL.pdb
+C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecas\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecas\BLL\obj\Debug\BLL.Alerts.resources
+C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecas\BLL\obj\Debug\BLL.Properties.Resources.resources
+C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecas\BLL\obj\Debug\BLL.csproj.GenerateResource.Cache
+C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecas\BLL\obj\Debug\BLL.dll
+C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecas\BLL\obj\Debug\BLL.pdb

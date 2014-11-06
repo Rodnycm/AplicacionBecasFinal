@@ -20,3 +20,14 @@ C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecas\DAL\obj\Debug\DAL.
 C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecas\DAL\obj\Debug\DAL.csproj.GenerateResource.Cache
 C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecas\DAL\obj\Debug\DAL.dll
 C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecas\DAL\obj\Debug\DAL.pdb
+C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecas\DAL\bin\Debug\DAL.dll
+C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecas\DAL\bin\Debug\DAL.pdb
+C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecas\DAL\bin\Debug\EntitiesLayer.dll
+C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecas\DAL\bin\Debug\TIL.dll
+C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecas\DAL\bin\Debug\EntitiesLayer.pdb
+C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecas\DAL\bin\Debug\TIL.pdb
+C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecas\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecas\DAL\obj\Debug\DAL.Properties.Resources.resources
+C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecas\DAL\obj\Debug\DAL.csproj.GenerateResource.Cache
+C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecas\DAL\obj\Debug\DAL.dll
+C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecas\DAL\obj\Debug\DAL.pdb

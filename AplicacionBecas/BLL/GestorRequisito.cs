@@ -56,6 +56,11 @@ namespace BLL
             return RequisitoRepository.Instance.GetByNombre(param);
         }
 
+        //public IEnumerable<Requisito> mostrarRequisitoTB(TipoBeca ptipoBeca)
+        //{
+
+        //    return RequisitoRepository.Instance.GetLista(ptipoBeca);
+        //}
 
         //<summary> Método que se encarga de guardar los cambios de un requisito</summary>
         //<author> Gabriela Gutiérrez Corrales </author> 

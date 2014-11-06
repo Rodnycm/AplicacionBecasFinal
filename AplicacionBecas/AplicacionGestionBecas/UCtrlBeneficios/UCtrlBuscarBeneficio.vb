@@ -2,9 +2,7 @@
 Imports System.Windows.Forms
 Imports System.Drawing
 
-
-Public Class UCtrlBuscarBeneficio
-
+Public Class uCntrlBuscarBeneficio
 
     Private Sub PantallaConsultarBeneficio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -130,11 +128,8 @@ Public Class UCtrlBuscarBeneficio
     '    uCtrlAsignarBeneficios.Show()
     '    uCtrlAsignarBeneficios.Location = New Point(250, 50)
 
-
-
-    Private Sub verBeneficios()
-        Dim nombre As String = dtaBuscarBeneficio.CurrentRow.Cells(1).Value
-
+    'End Sub
+    '//////////////////////////////////////////////////////////////////////////////////////////
 
 
     Private Sub verBeneficios()

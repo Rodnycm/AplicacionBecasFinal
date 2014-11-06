@@ -145,7 +145,7 @@ namespace DAL{
 
         public IEnumerable<Curso> getCursoPorCuatrimestre(String pcuatri) {
 
-
+             try {
 
             List<Curso> listaCursos = null;
             SqlCommand cmd = new SqlCommand();
@@ -172,10 +172,18 @@ namespace DAL{
 
             return listaCursos;
 
+             }
+             catch (Exception ex)
+             {
+                 throw ex;
+             }
+
         }
 
         public Array consultarCursosPorCuatrimestre()
         {
+            try {
+
 
             int i = 0;
             String cuatrimestre;
@@ -197,6 +205,11 @@ namespace DAL{
             }
 
             return listaCursos;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
 
         }
 

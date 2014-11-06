@@ -5,7 +5,7 @@
     Public Property uCtrlMantRequisitos As uCtrlMantenimientoRequisitos = New uCtrlMantenimientoRequisitos()
     Public Property uCntrlMantRol As uCtrlListarRol = New uCtrlListarRol()
     Public Property ucntrlUsuario As UctrlListarYBuscarUsuario = New UctrlListarYBuscarUsuario()
-    Public Property uCntrlBuscarBeneficio As UCtrlBuscarBeneficio = New UCtrlBuscarBeneficio()
+    Public Property uCntrlBuscarBeneficio As UI.uCntrlBuscarBeneficio = New UI.uCntrlBuscarBeneficio()
     Public Property uCntrlBuscarTipoBeca As uCtrlBuscarTipoBeca = New uCtrlBuscarTipoBeca()
     '' Dim ListarRol As New ListarRol()
     Private Sub btnRequisitos_Click(sender As Object, e As EventArgs) Handles btnRequisitos.Click

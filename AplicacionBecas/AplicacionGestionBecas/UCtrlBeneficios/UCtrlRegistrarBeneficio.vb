@@ -1,6 +1,6 @@
 ﻿Public Class uCtrlRegistrarBeneficio
 
-    Dim uCntrlBuscarBeneficio As UCtrlBuscarBeneficio
+    Dim uCntrlBuscarBeneficio As UI.uCntrlBuscarBeneficio
 
     Dim mBlnFormDragging As Boolean
 
@@ -10,7 +10,7 @@
     ''' <param name="puCntrlBuscarBeneficio">Es la instancia del usrControl</param>
     ''' <remarks></remarks>
 
-    Public Sub getFrmBuscar(puCntrlBuscarBeneficio As UCtrlBuscarBeneficio)
+    Public Sub getFrmBuscar(puCntrlBuscarBeneficio As UI.uCntrlBuscarBeneficio)
 
 
         uCntrlBuscarBeneficio = puCntrlBuscarBeneficio

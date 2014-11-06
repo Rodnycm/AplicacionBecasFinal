@@ -5,7 +5,7 @@
     Dim porcentaje As Double
     Dim aplicabilidad As String
 
-    Dim uCtrl As UCtrlBuscarBeneficio
+    Dim uCtrl As UI.uCntrlBuscarBeneficio
 
     Dim mBlnFormDragging As Boolean
 
@@ -18,7 +18,7 @@
     ''' <param name="puCtrl">Es una instancia del user control</param>
     ''' <remarks></remarks>
 
-    Public Sub getUCtrlInstance(puCtrl As UCtrlBuscarBeneficio)
+    Public Sub getUCtrlInstance(puCtrl As UI.uCntrlBuscarBeneficio)
 
 
         uCtrl = puCtrl

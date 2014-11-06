@@ -6,7 +6,7 @@ UI
 </name>
 </assembly>
 <members>
-<member name="M:UI.uCtrlEliminarBeneficio.getUCtrlInstance(UI.UCtrlBuscarBeneficio)">
+<member name="M:UI.uCtrlEliminarBeneficio.getUCtrlInstance(UI.uCntrlBuscarBeneficio)">
 	<summary>
  Recibe una instancia del userControlBuscarBeneficio y la setea.
  </summary>
@@ -793,7 +793,7 @@ TableAdapterManager is used to coordinate TableAdapters in the dataset to enable
 	<summary>
   Clase de recurso fuertemente tipado, para buscar cadenas traducidas, etc.
 </summary>
-</member><member name="M:UI.uCtrlRegistrarBeneficio.getFrmBuscar(UI.UCtrlBuscarBeneficio)">
+</member><member name="M:UI.uCtrlRegistrarBeneficio.getFrmBuscar(UI.uCntrlBuscarBeneficio)">
 	<summary>
  Setea una instancia del UsrControlBuscarBeneficio
  </summary>
@@ -2431,13 +2431,13 @@ TableAdapterManager is used to coordinate TableAdapters in the dataset to enable
 	<author>Mathias Muller</author>
 	<param name="pnombre">Es el nombre del beneficio</param>
 	<remarks></remarks>
-</member><member name="M:UI.UCtrlBuscarBeneficio.listarBeneficios">
+</member><member name="M:UI.uCntrlBuscarBeneficio.listarBeneficios">
 	<summary>
  Este método llama a un método en el gestor y recibe una lista de beneficios.
  Llena el data grid con la lista de beneficios.
  </summary>
 	<author>Mathias Muller</author>
-</member><member name="M:UI.UCtrlBuscarBeneficio.dtaBuscarBeneficio_EditingControlShowing(System.Object,System.Windows.Forms.DataGridViewEditingControlShowingEventArgs)">
+</member><member name="M:UI.uCntrlBuscarBeneficio.dtaBuscarBeneficio_EditingControlShowing(System.Object,System.Windows.Forms.DataGridViewEditingControlShowingEventArgs)">
 	<summary>
  Este método agarra el valor seleccionado del combobox y crea un evento
  </summary>
@@ -2445,7 +2445,7 @@ TableAdapterManager is used to coordinate TableAdapters in the dataset to enable
 	<param name="sender"></param>
 	<param name="e"></param>
 	<remarks></remarks>
-</member><member name="M:UI.UCtrlBuscarBeneficio.ComboBox_SelectionChangeCommitted(System.Object,System.EventArgs)">
+</member><member name="M:UI.uCntrlBuscarBeneficio.ComboBox_SelectionChangeCommitted(System.Object,System.EventArgs)">
 	<summary>
  Dependiendo de la seleccion del usuario, el sistema realiza diferentes acciones.
  --&gt;La opcion ver: consulta un beneficio.
@@ -2456,19 +2456,19 @@ TableAdapterManager is used to coordinate TableAdapters in the dataset to enable
 	<param name="sender"></param>
 	<param name="e"></param>
 	<remarks></remarks>
-</member><member name="M:UI.UCtrlBuscarBeneficio.editarBeneficios">
+</member><member name="M:UI.uCntrlBuscarBeneficio.editarBeneficios">
 	<summary>
  Edita un beneficio
  </summary>
 	<author>Mathias Muller</author>
 	<remarks></remarks>
-</member><member name="M:UI.UCtrlBuscarBeneficio.eliminarBeneficios">
+</member><member name="M:UI.uCntrlBuscarBeneficio.eliminarBeneficios">
 	<summary>
  Elimina un beneficio
  </summary>
 	<author>Mathias Muller</author>
 	<remarks></remarks>
-</member><member name="M:UI.UCtrlBuscarBeneficio.txtBuscar_TextChanged(System.Object,System.EventArgs)">
+</member><member name="M:UI.uCntrlBuscarBeneficio.txtBuscar_TextChanged(System.Object,System.EventArgs)">
 	<summary>
  Busca un beneficio dependiendo del valor del parametro
  Si el parametro es NULL, entonces la lista se referesca nada mas

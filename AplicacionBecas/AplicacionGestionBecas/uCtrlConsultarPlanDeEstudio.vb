@@ -11,6 +11,8 @@ Public Class uCtrlConsultarPlanDeEstudio
 
     Public Sub listarCursos()
 
+        Try
+
         limpiarGrid()
 
         Dim listaCursos As New List(Of Curso)
@@ -28,23 +30,49 @@ Public Class uCtrlConsultarPlanDeEstudio
         lblSumaCreditos.Text = totalCreditos
         lblSumaPrecio.Text = precioTotal
 
+        Catch ex As Exception
+
+            Dim UCtrl As New UctrlAlerta
+
+            Me.Controls.Add(UCtrl)
+            UCtrl.lblAlerta.Text = ex.Message
+            UCtrl.Location = New Point(300, 100)
+            UCtrl.BringToFront()
+            UCtrl.Show()
+
+        End Try
+
     End Sub
 
     Public Sub llenarComboCursos()
+        Try
 
-        Dim listaCursos As Array
-        listaCursos = objGestorCurso.consultarCursosPorCuatrimestre()
+            Dim listaCursos As Array
+            listaCursos = objGestorCurso.consultarCursosPorCuatrimestre()
 
-        For i As Integer = 0 To listaCursos.Length - 1
+            For i As Integer = 0 To listaCursos.Length - 1
 
-            cmbCursos.Items.Add(listaCursos(i))
-        Next
+                cmbCursos.Items.Add(listaCursos(i))
+            Next
 
+        Catch ex As Exception
+
+            Dim UCtrl As New UctrlAlerta
+
+            Me.Controls.Add(UCtrl)
+            UCtrl.lblAlerta.Text = ex.Message
+            UCtrl.Location = New Point(300, 100)
+            UCtrl.BringToFront()
+            UCtrl.Show()
+
+        End Try
 
     End Sub
 
     Public Sub listarCursosPorCuatri()
+        Try
 
+       
         Dim listaCursos As New List(Of Curso)
         listaCursos = objGestorCurso.getCursoPorCuatrimestre(cmbCursos.SelectedItem)
         Dim precioTotal As Double
@@ -60,7 +88,20 @@ Public Class uCtrlConsultarPlanDeEstudio
         Next
 
         lblSumaCreditos.Text = totalCreditos
-        lblSumaPrecio.Text = precioTotal
+            lblSumaPrecio.Text = precioTotal
+
+        Catch ex As Exception
+
+
+            Dim UCtrl As New UctrlAlerta
+
+            Me.Controls.Add(UCtrl)
+            UCtrl.lblAlerta.Text = ex.Message
+            UCtrl.Location = New Point(300, 100)
+            UCtrl.BringToFront()
+            UCtrl.Show()
+
+        End Try
 
     End Sub
 

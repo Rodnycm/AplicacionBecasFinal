@@ -46,7 +46,7 @@ Public Class uCtrlConsultarBeneficio
         Me.Hide()
         Me.Dispose()
 
-        Dim uctrl As UCtrlBuscarBeneficio = New UCtrlBuscarBeneficio
+        Dim uctrl As uCntrlBuscarBeneficio = New uCntrlBuscarBeneficio
         FrmIniciarSesion.principal.Controls.Add(uctrl)
         uctrl.Show()
         uctrl.Location = New Point(130, 50)

@@ -7,7 +7,6 @@ Public Class uCtrlModificarRol
     Dim nombre As String
     Dim idRol As Integer
     Dim listarRoles As uCtrlListarRol
-
     Dim listaPermisos As New List(Of Permiso)
     Dim listaPermisosRol As New List(Of Permiso)
 
@@ -135,9 +134,7 @@ Public Class uCtrlModificarRol
 
         listaPermisosSeleccionados = PermisosSeleccionados()
         ListaPermisosQuitar = PermisosNoSeleccionados(listaPermisosSeleccionados)
-
         listaPermisosSeleccionados = ValidarPermisos(listaPermisosSeleccionados, ListaPermisosQuitar)
-
 
         If ListaPermisosQuitar.Count <> Nothing Then
 
@@ -147,19 +144,12 @@ Public Class uCtrlModificarRol
 
         End If
 
-
         If listaPermisosSeleccionados.Count <> Nothing Then
             For i As Integer = 0 To listaPermisosSeleccionados.Count - 1
                 objGestorRol.asignarPermisoAUnRol(listaPermisosSeleccionados.Item(i).Id(), idRol)
 
             Next
         End If
-
-        ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
-
-
-
     End Sub
 
     Public Function PermisosSeleccionados()

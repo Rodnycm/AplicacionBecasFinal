@@ -3,16 +3,19 @@ Public Class UCntrlRegistrarRol
 
     Dim listarRoles As uCtrlListarRol
     Dim listaPermisos As New List(Of Permiso)
-
+    Dim listaPermisosSeleccionados As New List(Of Permiso)
+    Dim idRol As Integer
     '''<summary>crea un nuevo Rol en el sistema </summary>
     '''<author>Rodny Castro Mathews </author> 
     Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
         Dim nombre As String = txtNombre.Text
 
+
         Try
             objGestorRol.agregarRol(nombre)
             objGestorRol.guardarCambios()
-
+            idRol = objGestorRol.consultarRolPorNombre(nombre).Id
+            asignarPermisosAUnRol()
             Dim Uctrl As uCtrlConfirmacion = New uCtrlConfirmacion
             FrmIniciarSesion.principal.Controls.Add(Uctrl)
             Uctrl.lblConfirmacion.Text = "El rol se creo correctamente"
@@ -86,6 +89,42 @@ Public Class UCntrlRegistrarRol
         End Try
 
     End Sub
+
+    Sub asignarPermisosAUnRol()
+
+        Dim listaPermisosSeleccionados As New List(Of Permiso)
+        Dim ListaPermisosQuitar As New List(Of Permiso)
+        Dim listaIdROlesPermisos As New List(Of Integer)
+
+        listaPermisosSeleccionados = PermisosSeleccionados()
+
+        If listaPermisosSeleccionados.Count <> Nothing Then
+            For i As Integer = 0 To listaPermisosSeleccionados.Count - 1
+                objGestorRol.asignarPermisoAUnRol(listaPermisosSeleccionados.Item(i).Id(), idRol)
+
+            Next
+        End If
+    End Sub
+
+    Public Function PermisosSeleccionados()
+        Dim indexSeleccionado As Integer = 0
+        Dim listaPermisosSeleccionados As New List(Of Permiso)
+        Try
+
+            For Each indexSeleccionado In CLBPermisos.CheckedIndices
+
+                listaPermisosSeleccionados.Add(listaPermisos.Item(indexSeleccionado))
+
+            Next indexSeleccionado
+
+
+
+
+        Catch
+        End Try
+
+        Return listaPermisosSeleccionados
+    End Function
 
     Private Sub UCntrlRegistrarRol_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         listarPermisos()

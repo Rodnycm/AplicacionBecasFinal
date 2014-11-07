@@ -22,18 +22,18 @@ Partial Class uCtrlAsignarCursosCarrera
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.CheckedListBox1 = New System.Windows.Forms.CheckedListBox()
+        Me.chkCursos = New System.Windows.Forms.CheckedListBox()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.btnAsignar = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
-        'CheckedListBox1
+        'chkCursos
         '
-        Me.CheckedListBox1.FormattingEnabled = True
-        Me.CheckedListBox1.Location = New System.Drawing.Point(14, 53)
-        Me.CheckedListBox1.Name = "CheckedListBox1"
-        Me.CheckedListBox1.Size = New System.Drawing.Size(380, 259)
-        Me.CheckedListBox1.TabIndex = 0
+        Me.chkCursos.FormattingEnabled = True
+        Me.chkCursos.Location = New System.Drawing.Point(14, 53)
+        Me.chkCursos.Name = "chkCursos"
+        Me.chkCursos.Size = New System.Drawing.Size(380, 259)
+        Me.chkCursos.TabIndex = 0
         '
         'btnCancelar
         '
@@ -69,13 +69,13 @@ Partial Class uCtrlAsignarCursosCarrera
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Controls.Add(Me.btnAsignar)
         Me.Controls.Add(Me.btnCancelar)
-        Me.Controls.Add(Me.CheckedListBox1)
+        Me.Controls.Add(Me.chkCursos)
         Me.Name = "uCtrlAsignarCursosCarrera"
         Me.Size = New System.Drawing.Size(409, 357)
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents CheckedListBox1 As System.Windows.Forms.CheckedListBox
+    Friend WithEvents chkCursos As System.Windows.Forms.CheckedListBox
     Friend WithEvents btnCancelar As System.Windows.Forms.Button
     Friend WithEvents btnAsignar As System.Windows.Forms.Button
 

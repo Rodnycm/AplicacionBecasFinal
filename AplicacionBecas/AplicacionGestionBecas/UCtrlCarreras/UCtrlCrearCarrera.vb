@@ -7,11 +7,13 @@ Public Class uCtrlCrearCarrera
     Dim listaDirectores As List(Of Usuario)
     Dim alerta As UctrlAlerta = New UctrlAlerta()
     Dim c As ColorDialog = New ColorDialog()
-
+    Dim listasC As List(Of Curso)
     ''' <summary>Metodo que se ejecuta cuando el usuario da click al boton seleccionar color, este metodo 
     ''' muestra al usuario una paleta de colores</summary>
     ''' <autor>Alvaro Artavia</autor>
-
+    Public Sub setListasC(ByVal plistasC As List(Of Curso))
+        listasC = plistasC
+    End Sub
     Private Sub btnColor_Click(sender As Object, e As EventArgs) Handles btnColor.Click
 
         If c.ShowDialog() = DialogResult.OK Then
@@ -109,8 +111,9 @@ Public Class uCtrlCrearCarrera
 
         Try
 
-            objGestorCarrera.agregarCarrera(nombre, codigo, color, idDirector)
+            Dim carrera As Carrera = objGestorCarrera.agregarCarrera(nombre, codigo, color, idDirector)
             objGestorCarrera.guardarCambios()
+            objGestorCarrera.asignarCursoCarrera(listasC, carrera)
             mantenimientoCarreras.listarCarreras()
 
         Catch ex As Exception
@@ -147,5 +150,14 @@ Public Class uCtrlCrearCarrera
 
         llenarDirectoresCmb()
 
+    End Sub
+
+    Private Sub btnCursos_Click(sender As Object, e As EventArgs) Handles btnCursos.Click
+        Dim cursos As uCtrlAsignarCursosCarrera = New uCtrlAsignarCursosCarrera()
+        FrmIniciarSesion.principal.Controls.Add(cursos)
+        cursos.enviarcursos(Me)
+        cursos.Location = New Point(150, 250)
+        cursos.BringToFront()
+        cursos.Show()
     End Sub
 End Class

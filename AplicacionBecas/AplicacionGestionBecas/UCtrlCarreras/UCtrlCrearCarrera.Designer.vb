@@ -34,6 +34,7 @@ Partial Class uCtrlCrearCarrera
         Me.btnAñadir = New System.Windows.Forms.Button()
         Me.btnCerrar = New System.Windows.Forms.Button()
         Me.btnCancelar = New System.Windows.Forms.Button()
+        Me.btnCursos = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
@@ -150,12 +151,26 @@ Partial Class uCtrlCrearCarrera
         Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = True
         '
+        'btnCursos
+        '
+        Me.btnCursos.BackColor = System.Drawing.Color.White
+        Me.btnCursos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCursos.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCursos.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(248, Byte), Integer))
+        Me.btnCursos.Location = New System.Drawing.Point(70, 268)
+        Me.btnCursos.Name = "btnCursos"
+        Me.btnCursos.Size = New System.Drawing.Size(86, 29)
+        Me.btnCursos.TabIndex = 21
+        Me.btnCursos.Text = "Cursos"
+        Me.btnCursos.UseVisualStyleBackColor = False
+        '
         'uCtrlCrearCarrera
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.Controls.Add(Me.btnCursos)
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.btnAñadir)
@@ -185,5 +200,6 @@ Partial Class uCtrlCrearCarrera
     Friend WithEvents btnAñadir As System.Windows.Forms.Button
     Friend WithEvents btnCerrar As System.Windows.Forms.Button
     Friend WithEvents btnCancelar As System.Windows.Forms.Button
+    Friend WithEvents btnCursos As System.Windows.Forms.Button
 
 End Class

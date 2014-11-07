@@ -19,7 +19,7 @@ namespace DAL{
         private List<IEntity> _deleteItems;
         private List<IEntity> _updateItems;
 
-
+        public static Carrera objCarrera { get; set; }
 
         private CursoRepository()
         {
@@ -357,6 +357,113 @@ namespace DAL{
                 throw ex;
                 //logear la excepcion a la bd con un Exception
                 //throw new DataAccessException("Ha ocurrido un error al eliminar un usuario", ex);
+            }
+        }
+        public void asignarCurso(Curso objCurso)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+
+                cmd.Parameters.Add(new SqlParameter("@idCurso", objCurso.Id));
+                cmd.Parameters.Add(new SqlParameter("@Nombre", objCarrera.nombre));
+
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_insertarCursoCarrera");
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+
+        public void asignarCurso(Curso objCurso, Carrera objCarrera)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+
+                cmd.Parameters.Add(new SqlParameter("@idRequisito", objRequisito.id));
+                cmd.Parameters.Add(new SqlParameter("@idTipoBeca", objCarrera.id));
+
+
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_insertarRequisitoTB");
+
+            }
+            catch (Exception ex)
+            {
+
+
+            }
+        }
+
+        public void asignarRequisito()
+        {
+            using (TransactionScope scope = new TransactionScope())
+            {
+                try
+                {
+                    if (_insertItems.Count > 0)
+                    {
+                        foreach (Requisito objRequisito in _insertItems)
+                        {
+                            asignarRequisitoTipoBeca(objRequisito);
+
+                        }
+                    }
+
+
+
+                    scope.Complete();
+                }
+                catch (TransactionAbortedException ex)
+                {
+
+                }
+                catch (ApplicationException ex)
+                {
+
+                }
+                finally
+                {
+                    Clear();
+                }
+
+            }
+        }
+        public void asignarRequisito(TipoBeca objTipoBeca)
+        {
+            using (TransactionScope scope = new TransactionScope())
+            {
+                try
+                {
+                    if (_insertItems.Count > 0)
+                    {
+                        foreach (Requisito objRequisito in _insertItems)
+                        {
+                            asignarRequisitoTipoBeca(objRequisito, objTipoBeca);
+
+                        }
+                    }
+
+
+
+                    scope.Complete();
+                }
+                catch (TransactionAbortedException ex)
+                {
+
+                }
+                catch (ApplicationException ex)
+                {
+
+                }
+                finally
+                {
+                    Clear();
+                }
+
             }
         }
     }

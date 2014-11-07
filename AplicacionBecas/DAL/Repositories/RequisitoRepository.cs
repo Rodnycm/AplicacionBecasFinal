@@ -83,7 +83,9 @@ namespace DAL.Repositories
 
         public IEnumerable<Requisito> GetAll()
         {
-
+            try
+            {
+            List<Requisito> prequisito = new List<Requisito>();
             SqlCommand cmd = new SqlCommand();
 
             DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_buscarRequisito");
@@ -102,23 +104,9 @@ namespace DAL.Repositories
                     ));
                 }
             }
+            return prequisito;
 
-                if (ds.Tables[0].Rows.Count > 0)
-                {
-                    pRequisito = new List<Requisito>();
-                    foreach (DataRow dr in ds.Tables[0].Rows)
-                    {
-                        pRequisito.Add(new Requisito
-                        {
-                            Id = Convert.ToInt32(dr["idRequisito"]),
-                            nombre = dr["Nombre"].ToString(),
-                            descripcion = dr["Descripcion"].ToString(),
-                        });
-        }
-                }
-                return pRequisito;
             }
-
             catch (SqlException ex)
             {
                 numero = ex.Number;
@@ -129,10 +117,10 @@ namespace DAL.Repositories
             {
                 throw ex;
             }
+            }
 
+            
 
-           
-        }
 
         //<summary> Método que se encarga de traer de la base de datos un requisito específico </summary>
         //<author> Gabriela Gutiérrez Corrales </author> 

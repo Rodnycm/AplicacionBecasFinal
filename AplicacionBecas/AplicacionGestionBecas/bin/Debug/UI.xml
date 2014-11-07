@@ -6,16 +6,7 @@ UI
 </name>
 </assembly>
 <members>
-<member name="M:UI.UCtrlAsignarCursos.uCtrlAsignarCursos_MouseMove(System.Object,System.Windows.Forms.MouseEventArgs)">
-	<summary>Posiciona la ventana mientras el usuario da click al compomente</summary>
-	<autor>Alvaro Artavia</autor>
-</member><member name="M:UI.UCtrlAsignarCursos.uCtrlAsignarCursos_MouseUp(System.Object,System.Windows.Forms.MouseEventArgs)">
-	<summary>Situa el componente en la posicion final</summary>
-	<autor>Alvaro Artavia</autor>
-</member><member name="M:UI.UCtrlAsignarCursos.uCtrlAsignarCursos_MouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
-	<summary>Indica si el usuario da click al componente para moverlo</summary>
-	<autor>Alvaro Artavia</autor>
-</member><member name="M:UI.uCtrlEliminarBeneficio.getUCtrlInstance(UI.uCntrlBuscarBeneficio)">
+<member name="M:UI.uCtrlEliminarBeneficio.getUCtrlInstance(UI.uCntrlBuscarBeneficio)">
 	<summary>
  Recibe una instancia del userControlBuscarBeneficio y la setea.
  </summary>
@@ -878,6 +869,15 @@ TableAdapterManager is used to coordinate TableAdapters in the dataset to enable
 	<autor>Alvaro Artavia</autor>
 </member><member name="M:UI.uCtrlMantenimientoCarreras.dgvCarreras_CellContentClick(System.Object,System.Windows.Forms.DataGridViewCellEventArgs)">
 	<summary>Evento que se ejecuta cuando el usuario da click al boton cursos del datagridview</summary>
+	<autor>Alvaro Artavia</autor>
+</member><member name="M:UI.UCtrlAsignarCursos.uCtrlAsignarCursos_MouseMove(System.Object,System.Windows.Forms.MouseEventArgs)">
+	<summary>Posiciona la ventana mientras el usuario da click al compomente</summary>
+	<autor>Alvaro Artavia</autor>
+</member><member name="M:UI.UCtrlAsignarCursos.uCtrlAsignarCursos_MouseUp(System.Object,System.Windows.Forms.MouseEventArgs)">
+	<summary>Situa el componente en la posicion final</summary>
+	<autor>Alvaro Artavia</autor>
+</member><member name="M:UI.UCtrlAsignarCursos.uCtrlAsignarCursos_MouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
+	<summary>Indica si el usuario da click al componente para moverlo</summary>
 	<autor>Alvaro Artavia</autor>
 </member><member name="M:UI.uCtrlMantenimientoCrearRequisito.uCtrlCrearRequisito_MouseUp(System.Object,System.Windows.Forms.MouseEventArgs)">
 	<summary>Situa el componente en la posicion final</summary>

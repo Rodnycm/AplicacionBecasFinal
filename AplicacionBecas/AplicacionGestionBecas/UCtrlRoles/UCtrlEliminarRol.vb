@@ -54,6 +54,20 @@ Public Class uCtrlEliminarRol
         Me.Dispose()
     End Sub
 
+    Private Function ValidarELiminarROl()
+        Dim plistaUsuarios As List(Of Usuario)
+
+
+
+        Return plistaUsuarios
+    End Function
+
+    ''' <summary>
+    ''' Este metodo Cierra la ventada de eliminar Rol
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
         Me.Dispose()
     End Sub

@@ -34,7 +34,7 @@ Partial Public Class frmPrincipal
     End Sub
 
     Private Sub InicioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InicioToolStripMenuItem.Click
-
+        ValidarPermisos()
         uCtrlUserProfile.Dispose()
         ucMenuMant.Hide()
         ocultarComponentes()

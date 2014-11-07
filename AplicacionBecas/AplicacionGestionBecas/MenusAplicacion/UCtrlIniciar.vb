@@ -8,8 +8,8 @@ Public Class UCtrlIniciar
 
         'Dim nombreUsuario As String = txtNombreUsuario.Text
         'Dim contraseña As String = txtContraseña.Text
-        Dim nombreUsuario As String = "adim@admin"
-        Dim contraseña As String = "12345"
+        Dim nombreUsuario As String = "backi-g@hotmail.com"
+        Dim contraseña As String = "1234"
         Dim listaUsuarios As List(Of Usuario)
 
         Try

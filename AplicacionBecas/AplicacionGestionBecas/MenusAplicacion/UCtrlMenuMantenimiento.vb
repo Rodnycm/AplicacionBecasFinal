@@ -23,23 +23,48 @@ Public Class uCtrlMenuMantenimiento
     End Sub
 
     Public Sub ListasDePermisos(ByVal plistaPermisos As List(Of Permiso))
-        For i As Integer = 0 To plistaPermisos.Count - 1
-            If plistaPermisos.Item(i).Nombre = "Usuarios" Then
-                btnUsuarios.Visible = True
-            ElseIf (plistaPermisos.Item(i).Nombre = "Roles") Then
-                btnRoles.Visible = True
-            ElseIf (plistaPermisos.Item(i).Nombre = "Becas") Then
-                btnBecas.Visible = True
-            ElseIf (plistaPermisos.Item(i).Nombre = "Requsitos") Then
-                btnRequisitos.Visible = True
-            ElseIf (plistaPermisos.Item(i).Nombre = "Beneficio") Then
-                btnBeneficios.Visible = True
-            ElseIf (plistaPermisos.Item(i).Nombre = "Cursos") Then
-                btnCarreras.Visible = True
-            ElseIf (plistaPermisos.Item(i).Nombre = "Carreras") Then
-            End If
 
-        Next
+        ClearPermisos()
+        Try
+            For i As Integer = 0 To plistaPermisos.Count - 1
+                If plistaPermisos.Item(i).Nombre = "Usuarios" Then
+                    btnUsuarios.Visible = True
+                ElseIf (plistaPermisos.Item(i).Nombre = "Roles") Then
+                    btnRoles.Visible = True
+                ElseIf (plistaPermisos.Item(i).Nombre = "Becas") Then
+                    btnBecas.Visible = True
+                ElseIf (plistaPermisos.Item(i).Nombre = "Requisitos") Then
+                    btnRequisitos.Visible = True
+                ElseIf (plistaPermisos.Item(i).Nombre = "Beneficios") Then
+                    btnBeneficios.Visible = True
+                ElseIf (plistaPermisos.Item(i).Nombre = "Cursos") Then
+                    btnCursos.Visible = True
+                ElseIf (plistaPermisos.Item(i).Nombre = "Carreras") Then
+                    btnCarreras.Visible = True
+                End If
+
+            Next
+
+        Catch ex As Exception
+            Dim uctrlAlerta As UctrlAlerta = New UctrlAlerta()
+            Me.Controls.Add(uctrlAlerta)
+            uctrlAlerta.Location = New Point(300, 100)
+            uctrlAlerta.BringToFront()
+            uctrlAlerta.lblAlerta.Text = "No Tiene ningun Permiso"
+            uctrlAlerta.Show()
+        End Try
+
+
+    End Sub
+
+    Public Sub ClearPermisos()
+        btnUsuarios.Visible = False
+        btnRoles.Visible = False
+        btnBecas.Visible = False
+        btnRequisitos.Visible = False
+        btnBeneficios.Visible = False
+        btnCursos.Visible = False
+        btnCarreras.Visible = False
 
     End Sub
 

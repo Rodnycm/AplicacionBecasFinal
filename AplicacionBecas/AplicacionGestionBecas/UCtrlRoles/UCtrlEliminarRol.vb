@@ -31,6 +31,14 @@ Public Class uCtrlEliminarRol
     '''<summary>Elimina El rol seleccionado </summary>
     '''<author>Rodny Castro Mathews </author> 
     Private Sub btnAñadir_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+        ValidarELiminarROl()
+
+        listarRoles.DGVRol.Rows.Clear()
+        listarRoles.ListarRoles()
+        Me.Dispose()
+    End Sub
+
+    Private Sub EliminarRol()
         Try
             objGestorRol.eliminarRol(nombre, IdROl)
             objGestorRol.guardarCambios()
@@ -51,18 +59,24 @@ Public Class uCtrlEliminarRol
             UCtrl.Show()
         End Try
 
-        listarRoles.DGVRol.Rows.Clear()
-        listarRoles.ListarRoles()
-        Me.Dispose()
     End Sub
 
-    Private Function ValidarELiminarROl()
-        Dim plistaUsuarios As List(Of Usuario)
+    Private Sub ValidarELiminarROl()
+
+        If objGestorUsuario.buscarUsuariosPorRol(IdROl) Is Nothing Then
+            EliminarRol()
+        Else
+            Dim UCtrl As UctrlAlerta = New UctrlAlerta()
+
+            FrmIniciarSesion.principal.Controls.Add(UCtrl)
+            UCtrl.lblAlerta.Text = "Este rol no se puede eliminar"
+            UCtrl.Location = New Point(300, 100)
+            UCtrl.BringToFront()
+            UCtrl.Show()
+        End If
 
 
-
-        Return plistaUsuarios
-    End Function
+    End Sub
 
     ''' <summary>
     ''' Este metodo Cierra la ventada de eliminar Rol

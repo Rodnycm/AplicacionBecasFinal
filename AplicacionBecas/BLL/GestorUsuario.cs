@@ -508,6 +508,11 @@ namespace BLL
             }
         }
 
+        public IEnumerable<Usuario> buscarUsuariosPorRol(int pIdrol)
+        {
+            return UsuarioRepository.Instance.buscarUsuariosPorRol(pIdrol);
+        } 
+
 
         public void cerrarSesion(){
             Globals.usuario=null;

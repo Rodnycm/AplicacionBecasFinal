@@ -13,8 +13,6 @@ namespace BLL
     public class GestorRol 
 
     {
-        public string actividad;
-
         public void agregarRol(string pnombre)
         {
             try
@@ -23,8 +21,6 @@ namespace BLL
                 if (objRol.IsValid)
                 {
                     RolRepository.Instance.Insert(objRol);
-                    actividad = "Se ha creado un Rol";
-                    registrarAccion(actividad);
                 }
                 else
                 {
@@ -38,7 +34,7 @@ namespace BLL
             }
             catch (Exception ex)
             {
-                string message = ex.ToString();
+                throw ex;
                 
             }
         }
@@ -57,8 +53,6 @@ namespace BLL
                 if (objRol.IsValid)
                 {
                     RolRepository.Instance.Update(objRol);
-                    actividad = "Se ha modificado un Rol";
-                    registrarAccion(actividad);
                 }
                 else
                 {
@@ -72,7 +66,7 @@ namespace BLL
             }
             catch (Exception ex)
             {
-                string message = ex.ToString();
+                throw ex;
                 
             }
         }
@@ -85,23 +79,40 @@ namespace BLL
         /// <param name="pidRol"></param>
         public void asignarPermisoAUnRol(int pidPermiso, int pidRol)
         {
-            PermisoRepository.Instance.InsertPermisoAUnRol(pidPermiso, pidRol);
-            actividad = "Se ha Asignado un permiso al Rol" + pidRol;
-            registrarAccion(actividad);
+            try
+            {
+                PermisoRepository.Instance.InsertPermisoAUnRol(pidPermiso, pidRol);
+            }
+            catch (Exception ex) {
+
+                throw ex;
+            }
 
         }
 
         public IEnumerable<int> ConsultarIdPermisoROl(int pidPermiso, int pidRol)
         {
 
+            try
+            {
+                return PermisoRepository.Instance.GetIdRolesPermisos(pidPermiso, pidRol);
+            }
+            catch (Exception ex) {
 
-            return PermisoRepository.Instance.GetIdRolesPermisos(pidPermiso, pidRol);
-
+                throw ex;
+            }
         }
 
         public void eliminarPermisoAUnRol(int pIdPermiso, int pIdROl)
         {
-            PermisoRepository.Instance.EliminarPermisoAUnRol(pIdPermiso, pIdROl);
+            try
+            {
+                PermisoRepository.Instance.EliminarPermisoAUnRol(pIdPermiso, pIdROl);
+            }
+            catch (Exception ex) {
+
+                throw ex;
+            }
         }
        /// <summary>
        /// Elimina un rol
@@ -110,10 +121,15 @@ namespace BLL
        /// <param name="pidRol">Id del Rol</param>
         public void eliminarRol(String pnombre, int pidRol)
         {
-            Rol objRol = ContenedorMantenimiento.Instance.crearObjetoRol(pidRol,pnombre);
-            RolRepository.Instance.Delete(objRol);
-            actividad = "Se ha Eliminado un Rol";
-            registrarAccion(actividad);
+            try
+            {
+                Rol objRol = ContenedorMantenimiento.Instance.crearObjetoRol(pidRol, pnombre);
+                RolRepository.Instance.Delete(objRol);
+            }
+            catch (Exception ex) {
+
+                throw ex;
+            }
         }
 
         /// <summary>
@@ -122,7 +138,14 @@ namespace BLL
         /// <returns>Retorna una lista de roles</returns>
         public IEnumerable<Rol> consultarRoles()
         {
-            return RolRepository.Instance.GetAll();
+            try
+            {
+                return RolRepository.Instance.GetAll();
+            }
+            catch(Exception ex){
+
+                throw ex;
+            }
         }
 
         /// <summary>
@@ -131,12 +154,26 @@ namespace BLL
         /// <returns>Retorna una lista de permisos</returns>
         public IEnumerable<Permiso> consultarPermisos()
         {
-            return PermisoRepository.Instance.GetAll();
+            try
+            {
+                return PermisoRepository.Instance.GetAll();
+            }
+            catch (Exception ex) {
+
+                throw ex;
+            }
         }
 
         public IEnumerable<Permiso> consultarPermisosPorRol(int pidRol)
         {
-            return PermisoRepository.Instance.GetPermisosPorRol(pidRol);
+            try
+            {
+                return PermisoRepository.Instance.GetPermisosPorRol(pidRol);
+            }
+            catch (Exception ex) {
+
+                throw ex;
+            }
         }
 
         /// <summary>
@@ -146,7 +183,14 @@ namespace BLL
         /// <returns>El rol digitado</returns>
         public Rol consultarRolPorNombre(String pnombre)
         {
-            return RolRepository.Instance.GetByNombre(pnombre);
+            try
+            {
+                return RolRepository.Instance.GetByNombre(pnombre);
+            }
+            catch (Exception ex) {
+
+                throw ex;
+            }
         }
 
 
@@ -169,24 +213,5 @@ namespace BLL
             //        throw new BusinessLogicException("Ha ocurrido un error al eliminar un usuario", ex);
             //    }
         }
-
-        public void registrarAccion(string pactividad) {
-
-            RegistroAccion objRegistro;
-            DateTime fecha = DateTime.Today;
-            string nombreUsuario;
-            string nombreRol = "Decano";
-            string descripcion = pactividad;
-            //nombreUsuario = Globals.userName;
-            nombreUsuario = "Pedro";
-
-
-            objRegistro = new RegistroAccion(nombreUsuario, nombreRol, descripcion, fecha);
-
-            RegistroAccionRepository objRegistroRep = new RegistroAccionRepository();
-
-            objRegistroRep.InsertAccion(objRegistro);
-        }
-
     }
 }

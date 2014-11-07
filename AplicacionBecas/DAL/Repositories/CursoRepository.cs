@@ -81,7 +81,6 @@ namespace DAL{
         //<returns>Retorna una lista con todos los cursos registrados en el sistema.</returns> 
         public IEnumerable<Curso> GetAll()
         {
-
             List<Curso> pCurso = null;
             SqlCommand cmd = new SqlCommand();
             DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_buscarCursos");
@@ -93,7 +92,6 @@ namespace DAL{
                 {
                     pCurso.Add(new Curso
                     {
-
                         codigo = dr["Codigo"].ToString(),
                         nombre = dr["Nombre"].ToString(),
                         cuatrimestre = dr["Cuatrimestre"].ToString(),
@@ -114,34 +112,9 @@ namespace DAL{
         //<returns>Retorna el curso deseado</returns> 
         public Curso GetById(int Id)
         {
-
             Curso objCurso = null;
-            //var sqlQuery = "SELECT Id, Nombre, Precio FROM Producto WHERE id = @idProducto";
-            //SqlCommand cmd = new SqlCommand(sqlQuery);
-            //cmd.Parameters.AddWithValue("@idProducto", Id);
-
-            ////var ds = DBAccess.ExecuteQuery(cmd);
-            //DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_buscarUnCurso");
-
-            //if (ds.Tables[0].Rows.Count > 0)
-            //{
-
-            //    var dr = ds.Tables[0].Rows[0];
-            //    objCurso = new Curso
-            //    {
-
-            //        nombre = dr["Nombre"].ToString(),
-            //        codigo = dr["Codigo"].ToString(),
-            //        cuatrimestre = dr["Cuatrimestre"].ToString(),
-            //        creditos = Convert.ToInt32(dr["Creditos"]),
-            //        precio = Convert.ToDouble(dr["Precio"]),
-            //        Id = Convert.ToInt32(dr["IdCurso"]),
-            //    };
-            //}
-
             return objCurso;
         }
-
 
         public IEnumerable<Curso> getCursoPorCuatrimestre(String pcuatri) {
 
@@ -183,7 +156,6 @@ namespace DAL{
         public Array consultarCursosPorCuatrimestre()
         {
             try {
-
 
             int i = 0;
             String cuatrimestre;
@@ -412,8 +384,8 @@ namespace DAL{
 
             RegistroAccion objRegistro;
             DateTime fecha = DateTime.Today;
-            string nombreUsuario = Globals.userName;
-            string nombreRol = Globals.userRol.Nombre;
+            string nombreUsuario = Globals.usuario.primerNombre + " " + Globals.usuario.primerApellido;
+            string nombreRol = Globals.usuario.rol.Nombre;
             string descripcion = pactividad;
 
 

@@ -507,9 +507,7 @@ namespace BLL
 
 
         public void cerrarSesion(){
-            Globals.userName = null;
-            Globals.userRol = null;
-
+            Globals.usuario=null;
         }
     }
 }

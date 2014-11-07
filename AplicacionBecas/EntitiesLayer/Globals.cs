@@ -8,8 +8,7 @@ namespace EntitiesLayer
 {
     public static class Globals
     {
-
-        public static String userName { get; set; }
-        public static Rol userRol { get; set; }
+        public static Usuario usuario { get; set; }
+       
     }
 }

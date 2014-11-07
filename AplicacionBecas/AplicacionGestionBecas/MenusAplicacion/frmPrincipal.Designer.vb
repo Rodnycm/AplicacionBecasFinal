@@ -49,10 +49,10 @@ Partial Class frmPrincipal
         Me.MenuLateral.Dock = System.Windows.Forms.DockStyle.Left
         Me.MenuLateral.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MenuLateral.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InicioToolStripMenuItem, Me.MantenimientoToolStripMenuItem, Me.AcadémicoToolStripMenuItem, Me.BecasToolStripMenuItem, Me.ReportesToolStripMenuItem})
-        Me.MenuLateral.Location = New System.Drawing.Point(0, 28)
+        Me.MenuLateral.Location = New System.Drawing.Point(0, 24)
         Me.MenuLateral.Name = "MenuLateral"
         Me.MenuLateral.Padding = New System.Windows.Forms.Padding(3, 1, 0, 1)
-        Me.MenuLateral.Size = New System.Drawing.Size(131, 633)
+        Me.MenuLateral.Size = New System.Drawing.Size(131, 637)
         Me.MenuLateral.TabIndex = 0
         Me.MenuLateral.Text = "MenuStrip1"
         '
@@ -107,7 +107,7 @@ Partial Class frmPrincipal
         Me.btnsMenus.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.39516!))
         Me.btnsMenus.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.60484!))
         Me.btnsMenus.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 244.0!))
-        Me.btnsMenus.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 263.0!))
+        Me.btnsMenus.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 264.0!))
         Me.btnsMenus.Controls.Add(Me.btnReportes, 3, 0)
         Me.btnsMenus.Controls.Add(Me.btnAcademico, 1, 0)
         Me.btnsMenus.Controls.Add(Me.btnBecas, 2, 0)
@@ -125,7 +125,7 @@ Partial Class frmPrincipal
         Me.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnReportes.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnReportes.ForeColor = System.Drawing.Color.White
-        Me.btnReportes.Location = New System.Drawing.Point(714, 3)
+        Me.btnReportes.Location = New System.Drawing.Point(713, 3)
         Me.btnReportes.Name = "btnReportes"
         Me.btnReportes.Size = New System.Drawing.Size(225, 79)
         Me.btnReportes.TabIndex = 6
@@ -139,7 +139,7 @@ Partial Class frmPrincipal
         Me.btnAcademico.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAcademico.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAcademico.ForeColor = System.Drawing.Color.White
-        Me.btnAcademico.Location = New System.Drawing.Point(234, 3)
+        Me.btnAcademico.Location = New System.Drawing.Point(233, 3)
         Me.btnAcademico.Name = "btnAcademico"
         Me.btnAcademico.Size = New System.Drawing.Size(222, 79)
         Me.btnAcademico.TabIndex = 5
@@ -153,7 +153,7 @@ Partial Class frmPrincipal
         Me.btnBecas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBecas.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBecas.ForeColor = System.Drawing.Color.White
-        Me.btnBecas.Location = New System.Drawing.Point(470, 3)
+        Me.btnBecas.Location = New System.Drawing.Point(469, 3)
         Me.btnBecas.Name = "btnBecas"
         Me.btnBecas.Size = New System.Drawing.Size(225, 79)
         Me.btnBecas.TabIndex = 7
@@ -183,7 +183,7 @@ Partial Class frmPrincipal
         Me.MenuHorizontal.Location = New System.Drawing.Point(0, 0)
         Me.MenuHorizontal.Name = "MenuHorizontal"
         Me.MenuHorizontal.Padding = New System.Windows.Forms.Padding(1000, 2, 0, 2)
-        Me.MenuHorizontal.Size = New System.Drawing.Size(1184, 28)
+        Me.MenuHorizontal.Size = New System.Drawing.Size(1184, 24)
         Me.MenuHorizontal.TabIndex = 9
         Me.MenuHorizontal.Text = "MenuStrip1"
         '
@@ -193,8 +193,7 @@ Partial Class frmPrincipal
         Me.AlvaroArtaviaToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 11.0!)
         Me.AlvaroArtaviaToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.AlvaroArtaviaToolStripMenuItem.Name = "AlvaroArtaviaToolStripMenuItem"
-        Me.AlvaroArtaviaToolStripMenuItem.Size = New System.Drawing.Size(115, 24)
-        Me.AlvaroArtaviaToolStripMenuItem.Text = "Alvaro Artavia"
+        Me.AlvaroArtaviaToolStripMenuItem.Size = New System.Drawing.Size(12, 20)
         Me.AlvaroArtaviaToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'VerPerfilToolStripMenuItem

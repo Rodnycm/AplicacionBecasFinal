@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EASendMail45">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\EASendMail\EASendMail45.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -42,6 +45,7 @@
     <Compile Include="Beneficio.cs" />
     <Compile Include="Carrera.cs" />
     <Compile Include="Curso.cs" />
+    <Compile Include="Email.cs" />
     <Compile Include="Excepciones.cs" />
     <Compile Include="Globals.cs" />
     <Compile Include="IEntity.cs" />

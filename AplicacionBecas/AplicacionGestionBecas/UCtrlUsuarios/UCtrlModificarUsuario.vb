@@ -52,6 +52,7 @@ Public Class UctrlModificarUsuario
 
 
     Public Sub llenarInfoEditar()
+
         Dim objetoUsuario As Usuario = objGestorUsuario.buscarUnUsuario(parametro)
         txtNombre.Text = objetoUsuario.primerNombre
         txtSegundoNombre.Text = objetoUsuario.segundoNombre
@@ -80,6 +81,7 @@ Public Class UctrlModificarUsuario
     End Sub
 
     Private Sub btnAceptar_Click_1(sender As Object, e As EventArgs) Handles btnAceptar.Click
+
         Dim pNombre As String = txtNombre.Text
         Dim sNombre As String = txtSegundoNombre.Text
         Dim pApellido As String = txtPrimerApellido.Text
@@ -160,7 +162,5 @@ Public Class UctrlModificarUsuario
         mBlnFormDragging = True
 
     End Sub
-
-
 
 End Class

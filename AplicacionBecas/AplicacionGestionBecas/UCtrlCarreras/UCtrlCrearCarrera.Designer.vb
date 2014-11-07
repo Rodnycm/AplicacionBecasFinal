@@ -39,27 +39,27 @@ Partial Class uCtrlCrearCarrera
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI Light", 12.75!)
         Me.Label1.Location = New System.Drawing.Point(16, 68)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(77, 23)
+        Me.Label1.Size = New System.Drawing.Size(75, 23)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Nombre:"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI Light", 12.75!)
         Me.Label2.Location = New System.Drawing.Point(16, 105)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(69, 23)
+        Me.Label2.Size = New System.Drawing.Size(68, 23)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Codigo:"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI Light", 12.75!)
         Me.Label3.Location = New System.Drawing.Point(16, 146)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(55, 23)
@@ -69,10 +69,10 @@ Partial Class uCtrlCrearCarrera
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Font = New System.Drawing.Font("Segoe UI Light", 12.75!)
         Me.Label4.Location = New System.Drawing.Point(16, 187)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(164, 23)
+        Me.Label4.Size = New System.Drawing.Size(158, 23)
         Me.Label4.TabIndex = 3
         Me.Label4.Text = "Director Academico:"
         '

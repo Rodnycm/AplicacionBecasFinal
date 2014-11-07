@@ -101,6 +101,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DB_Proyecto2DataSetConsultarRegistroAcciones.xsd</DependentUpon>
     </Compile>
+    <Compile Include="UCtrlRequisitos\UCtrlModificarRequisito.Designer.vb">
+      <DependentUpon>UCtrlModificarRequisito.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UCtrlRequisitos\UCtrlModificarRequisito.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UCtrlTipoBeca\EliminarTipoBeca.Designer.vb">
       <DependentUpon>EliminarTipoBeca.vb</DependentUpon>
     </Compile>
@@ -420,6 +426,9 @@
     <EmbeddedResource Include="UCtrlCursos\UCtrlCrearCursos.resx">
       <DependentUpon>UCtrlCrearCursos.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UCtrlRequisitos\UCtrlModificarRequisito.resx">
+      <DependentUpon>UCtrlModificarRequisito.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UCtrlTipoBeca\EliminarTipoBeca.resx">
       <DependentUpon>EliminarTipoBeca.vb</DependentUpon>
     </EmbeddedResource>
@@ -644,7 +653,9 @@
   <ItemGroup>
     <None Include="Resources\cerrarMorado.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\tablaFinalMedianaAzul4.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

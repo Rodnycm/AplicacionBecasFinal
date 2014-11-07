@@ -56,7 +56,7 @@ Public Class uCtrlMantenimientoRequisitos
             Dim r As Requisito = objGestorRequisito.buscarRequisito(param)
 
             dgvRequisitos.Rows.Clear()
-            dgvRequisitos.Rows.Add(r.nombre, r.descripcion, "", "")
+            dgvRequisitos.Rows.Add(r.nombre, r.descripcion, "", r.Id)
 
         Catch ex As Exception
 
@@ -81,6 +81,74 @@ Public Class uCtrlMantenimientoRequisitos
         FrmIniciarSesion.principal.Controls.Add(uCtrlCrearRequisito)
         uCtrlCrearRequisito.BringToFront()
         uCtrlCrearRequisito.Show()
+
+    End Sub
+
+    Private Sub dgvRequisitos_EditingControlShowing(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewEditingControlShowingEventArgs) Handles dgvRequisitos.EditingControlShowing
+
+
+
+        ' Only for a DatagridComboBoxColumn at ColumnIndex 1.
+        If dgvRequisitos.CurrentCell.ColumnIndex = 2 Then
+            Dim combo As ComboBox = CType(e.Control, ComboBox)
+            If (combo IsNot Nothing) Then
+                ' Remove an existing event-handler, if present, to avoid 
+                ' adding multiple handlers when the editing control is reused.
+                RemoveHandler combo.SelectionChangeCommitted, New EventHandler(AddressOf ComboBox_SelectionChangeCommitted)
+
+                ' Add the event handler. 
+                AddHandler combo.SelectionChangeCommitted, New EventHandler(AddressOf ComboBox_SelectionChangeCommitted)
+            End If
+        End If
+
+
+    End Sub
+    ''' <summary>Metodo encargado de controlar cuando se da click al combobox se ejecuten las acciones</summary>
+    ''' <autor>Valeria Ramírez Cordero</autor>
+
+
+
+    Private Sub ComboBox_SelectionChangeCommitted(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
+        Dim combo As ComboBox = CType(sender, ComboBox)
+        Dim fila As String = dgvRequisitos.CurrentRow.Cells(0).Value()
+
+        If combo.SelectedItem = "Editar" Then
+
+            modificarRequisito(fila)
+
+
+
+        ElseIf combo.SelectedItem = "Eliminar" Then
+
+            'eliminarCurso(fila)
+
+
+            '
+
+        End If
+    End Sub
+
+    Public Sub modificarRequisito(ByVal pfila As String)
+
+        Dim nombre As String = pfila
+
+        Dim ucntrl As UCtrlModificarRequisito = New UCtrlModificarRequisito()
+
+        ucntrl.recieveData(nombre)
+
+        'imgBuscarCursos.Hide()
+        FrmIniciarSesion.principal.Controls.Add(ucntrl)
+        ucntrl.BringToFront()
+        ucntrl.Show()
+        'ucntrl.setParametro(pparametro)
+        ucntrl.Location = New Point(290, 48)
+        ucntrl.refrecarLista(Me)
+
+    End Sub
+
+
+    Private Sub dgvRequisitos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvRequisitos.CellContentClick
 
     End Sub
 End Class

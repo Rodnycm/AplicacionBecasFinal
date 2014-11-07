@@ -121,10 +121,11 @@ namespace DAL.Repositories
                 {
 
                     nombre = dr["Nombre"].ToString(),
-                    descripcion = dr["Descripcion"].ToString()
+                    descripcion = dr["Descripcion"].ToString(),
+                   Id = Convert.ToInt32(dr["idRequisito"])
                 };
 
-                requisito.Id = Convert.ToInt32(dr["idRequisito"]);
+                
             }
             return requisito;
         }
@@ -242,6 +243,7 @@ namespace DAL.Repositories
                 cmd.Parameters.Add(new SqlParameter("@Nombre", objRequisito.nombre));
                 cmd.Parameters.Add(new SqlParameter("@Descripcion", objRequisito.descripcion));
                 cmd.Parameters.Add(new SqlParameter("@IdRequisito", objRequisito.Id));
+                
 
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_modificarRequisitos");
 

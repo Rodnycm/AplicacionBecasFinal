@@ -125,11 +125,30 @@ Public Class uCtrlBuscarTipoBeca
 
     End Sub
 
-    Private Sub txtBarraBusqueda_TextChanged(sender As Object, e As EventArgs) Handles txtBarraBusqueda.TextChanged
-        Dim parametro As String = txtBarraBusqueda.Text
+    Private Sub txtBarraBusqueda_TextChanged(sender As Object, e As EventArgs) Handles txtBarraBusqueda.MouseClick
 
+        txtBarraBusqueda.Text = ""
+
+    End Sub
+
+    ''' <summary>Cuando el evento se ejecuta al dar presionar la tecla enter llama al metodo eliminar carrera</summary>
+    ''' <autor>Alvaro Artavia</autor>
+
+    Private Sub txtBarraBusqueda_KeyDown(sender As Object, e As System.Windows.Forms.KeyEventArgs) Handles txtBarraBusqueda.KeyDown
+
+        Dim param As String = txtBarraBusqueda.Text
+
+        If e.KeyCode = 13 Then
+
+            buscarTipoBeca(param)
+
+        End If
+
+    End Sub
+
+    Public Sub buscarTipoBeca(ByVal pparam)
         Try
-            Dim tipoBeca As TipoBeca = gestorTipoBeca.buscarUnTipoBeca(parametro)
+            Dim tipoBeca As TipoBeca = gestorTipoBeca.buscarUnTipoBeca(pparam)
             dtaTipoBeca.Rows.Clear()
             dtaTipoBeca.Rows.Add(1)
             dtaTipoBeca.Rows(0).Cells(0).Value = tipoBeca.nombre
@@ -153,4 +172,9 @@ Public Class uCtrlBuscarTipoBeca
         Me.Hide()
     End Sub
 
+    Private Sub txtBarraBusqueda_TextChanged_1(sender As Object, e As EventArgs) Handles txtBarraBusqueda.TextChanged
+        If (txtBarraBusqueda.Text = "") Then
+            listarTiposBeca()
+        End If
+    End Sub
 End Class

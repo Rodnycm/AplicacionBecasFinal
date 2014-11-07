@@ -29,16 +29,16 @@ Partial Class uCntrlBuscarBeneficio
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.ErrorProvider2 = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.dtaBuscarBeneficio = New System.Windows.Forms.DataGridView()
-        Me.dtaId = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dtaNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dtaPorcentaje = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dtaAplicabilidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dtaOpciones = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.ErrorProvider3 = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.btnMantenimiento = New System.Windows.Forms.Button()
         Me.pctbxBeneficios = New System.Windows.Forms.PictureBox()
         Me.btnVolver = New System.Windows.Forms.Button()
+        Me.dtaId = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dtaNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dtaPorcentaje = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dtaAplicabilidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dtaOpciones = New System.Windows.Forms.DataGridViewComboBoxColumn()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ErrorProvider2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dtaBuscarBeneficio, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -56,6 +56,7 @@ Partial Class uCntrlBuscarBeneficio
         '
         'dtaBuscarBeneficio
         '
+        Me.dtaBuscarBeneficio.AllowUserToAddRows = False
         Me.dtaBuscarBeneficio.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dtaBuscarBeneficio.BackgroundColor = System.Drawing.Color.White
         Me.dtaBuscarBeneficio.BorderStyle = System.Windows.Forms.BorderStyle.None
@@ -86,33 +87,6 @@ Partial Class uCntrlBuscarBeneficio
         Me.dtaBuscarBeneficio.RowHeadersVisible = False
         Me.dtaBuscarBeneficio.Size = New System.Drawing.Size(947, 271)
         Me.dtaBuscarBeneficio.TabIndex = 28
-        '
-        'dtaId
-        '
-        Me.dtaId.HeaderText = "Id"
-        Me.dtaId.Name = "dtaId"
-        '
-        'dtaNombre
-        '
-        Me.dtaNombre.HeaderText = "Nombre"
-        Me.dtaNombre.Name = "dtaNombre"
-        '
-        'dtaPorcentaje
-        '
-        Me.dtaPorcentaje.HeaderText = "Porcentaje"
-        Me.dtaPorcentaje.Name = "dtaPorcentaje"
-        '
-        'dtaAplicabilidad
-        '
-        Me.dtaAplicabilidad.HeaderText = "Aplicabilidad"
-        Me.dtaAplicabilidad.Name = "dtaAplicabilidad"
-        '
-        'dtaOpciones
-        '
-        Me.dtaOpciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.dtaOpciones.HeaderText = "Opciones"
-        Me.dtaOpciones.Items.AddRange(New Object() {"Ver", "Editar", "Eliminar"})
-        Me.dtaOpciones.Name = "dtaOpciones"
         '
         'ErrorProvider3
         '
@@ -166,6 +140,33 @@ Partial Class uCntrlBuscarBeneficio
         Me.btnVolver.UseVisualStyleBackColor = True
         Me.btnVolver.Visible = False
         '
+        'dtaId
+        '
+        Me.dtaId.HeaderText = "Id"
+        Me.dtaId.Name = "dtaId"
+        '
+        'dtaNombre
+        '
+        Me.dtaNombre.HeaderText = "Nombre"
+        Me.dtaNombre.Name = "dtaNombre"
+        '
+        'dtaPorcentaje
+        '
+        Me.dtaPorcentaje.HeaderText = "Porcentaje"
+        Me.dtaPorcentaje.Name = "dtaPorcentaje"
+        '
+        'dtaAplicabilidad
+        '
+        Me.dtaAplicabilidad.HeaderText = "Aplicabilidad"
+        Me.dtaAplicabilidad.Name = "dtaAplicabilidad"
+        '
+        'dtaOpciones
+        '
+        Me.dtaOpciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.dtaOpciones.HeaderText = "Opciones"
+        Me.dtaOpciones.Items.AddRange(New Object() {"Editar", "Eliminar"})
+        Me.dtaOpciones.Name = "dtaOpciones"
+        '
         'uCntrlBuscarBeneficio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
@@ -196,11 +197,6 @@ Partial Class uCntrlBuscarBeneficio
     Friend WithEvents ErrorProvider2 As System.Windows.Forms.ErrorProvider
     Friend WithEvents dtaBuscarBeneficio As System.Windows.Forms.DataGridView
 
-    Friend WithEvents dtaId As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents dtaNombre As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents dtaPorcentaje As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents dtaAplicabilidad As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents dtaOpciones As System.Windows.Forms.DataGridViewComboBoxColumn
 
     Friend WithEvents txtBuscar As System.Windows.Forms.TextBox
     Friend WithEvents btnMantenimiento As System.Windows.Forms.Button
@@ -212,4 +208,9 @@ Partial Class uCntrlBuscarBeneficio
     Private Sub uCntrlBuscarBeneficio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
+    Friend WithEvents dtaId As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents dtaNombre As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents dtaPorcentaje As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents dtaAplicabilidad As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents dtaOpciones As System.Windows.Forms.DataGridViewComboBoxColumn
 End Class

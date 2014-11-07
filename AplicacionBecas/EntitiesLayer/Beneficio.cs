@@ -70,7 +70,7 @@ namespace EntitiesLayer
 
         public IEnumerable<RuleViolation> GetRuleViolations()
         {
-
+           
             if (String.IsNullOrEmpty(Nombre))
             {
                 yield return new RuleViolation("Nombre Requerido", "Nombre");

@@ -10,8 +10,8 @@
 
     Public Sub getFrmBuscar(puCntrlBuscarBeneficio As UI.uCntrlBuscarBeneficio)
 
-
         uCntrlBuscarBeneficio = puCntrlBuscarBeneficio
+
     End Sub
 
     ''' <summary>
@@ -43,32 +43,64 @@
     ''' <param name="e"></param>
     Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
 
+        Dim formatoCorrecto As Double
+
         Try
 
-            If (IsNumeric(txtPorcentaje.Text) = True) Then
-                nombre = txtNombre.Text
-                porcentaje = CType(txtPorcentaje.Text, Double)
-                aplicacion = txtAplicabilidad.Text
+            formatoCorrecto = FormatNumber(txtPorcentaje.Text, 0.0)
+
+            If formatoCorrecto <> CType(txtPorcentaje.Text, Double) And formatoCorrecto <= 1 Then
+
+                If (IsNumeric(txtPorcentaje.Text) = True) Then
+
+                    Try
+                        nombre = txtNombre.Text
+                        porcentaje = CType(txtPorcentaje.Text, Double)
+                        aplicacion = txtAplicabilidad.Text
 
 
-                objGestorBeneficio.modificarBeneficio(id, nombre, porcentaje, aplicacion)
-                objGestorBeneficio.guardarCambios()
-                Dim Uctrl As uCtrlConfirmacion = New uCtrlConfirmacion
-                FrmIniciarSesion.principal.Controls.Add(Uctrl)
-                Uctrl.lblConfirmacion.Text = "El rol se modifico correctamente"
-                Uctrl.Location = New Point(300, 100)
-                Uctrl.BringToFront()
-                Uctrl.Show()
+                        objGestorBeneficio.modificarBeneficio(id, nombre, porcentaje, aplicacion)
+                        objGestorBeneficio.guardarCambios()
+
+                        Dim Uctrl As uCtrlConfirmacion = New uCtrlConfirmacion
+                        FrmIniciarSesion.principal.Controls.Add(Uctrl)
+                        Uctrl.lblConfirmacion.Text = "El rol se modifico correctamente"
+                        Uctrl.Location = New Point(300, 100)
+                        Uctrl.BringToFront()
+                        Uctrl.Show()
+
+                    Catch ex As Exception
+
+                        Dim UCtrl As UctrlAlerta = New UctrlAlerta()
+
+                        FrmIniciarSesion.principal.Controls.Add(UCtrl)
+                        UCtrl.lblAlerta.Text = ex.Message
+                        UCtrl.Location = New Point(300, 100)
+                        UCtrl.BringToFront()
+                        UCtrl.Show()
+
+                    End Try
+                Else
+
+                    Dim UCtrl As UctrlAlerta = New UctrlAlerta()
+                    FrmIniciarSesion.principal.Controls.Add(UCtrl)
+                    UCtrl.lblAlerta.Text = "El porcentaje debe ser numerico (0.00)"
+                    UCtrl.Location = New Point(300, 100)
+                    UCtrl.BringToFront()
+                    UCtrl.Show()
+
+
+                End If
 
             Else
 
                 Dim UCtrl As UctrlAlerta = New UctrlAlerta()
+
                 FrmIniciarSesion.principal.Controls.Add(UCtrl)
-                UCtrl.lblAlerta.Text = "El porcentaje debe ser numerico (0.00)"
+                UCtrl.lblAlerta.Text = "Formato del porcentaje Invalido"
                 UCtrl.Location = New Point(300, 100)
                 UCtrl.BringToFront()
                 UCtrl.Show()
-
             End If
 
         Catch ex As Exception
@@ -77,7 +109,7 @@
 
             FrmIniciarSesion.principal.Controls.Add(UCtrl)
             UCtrl.lblAlerta.Text = ex.Message
-            UCtrl.Location = New Point(250, 50)
+            UCtrl.Location = New Point(300, 100)
             UCtrl.BringToFront()
             UCtrl.Show()
 

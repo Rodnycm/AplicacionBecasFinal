@@ -8,5 +8,6 @@ Module ModuloGestor
     Public objGestorUsuario As GestorUsuario = New GestorUsuario()
     Public objGestorBeneficio As New GestorBeneficios()
     Public gestorTipoBeca As New GestorTipoBeca()
+    Public objeGestorEmail As GestorEmail = New GestorEmail()
 
 End Module

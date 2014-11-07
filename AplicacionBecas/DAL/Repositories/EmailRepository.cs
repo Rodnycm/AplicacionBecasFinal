@@ -19,6 +19,7 @@ namespace DAL.Repositories
         private List<IEntity> _deleteItems;
         private List<IEntity> _updateItems;
         private EmailRepository()
+        
         {
             _insertItems = new List<IEntity>();
             _deleteItems = new List<IEntity>();
@@ -66,28 +67,57 @@ namespace DAL.Repositories
         public IEnumerable<Email> GetAll()
         {          
             List<Email> email = null;
+           
+            return email;
+        }
+
+        public Email GetEmail()
+        {
+
+            Email email = new Email();;
             SqlCommand cmd = new SqlCommand();
             DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_consultarEmail");
 
             if (ds.Tables[0].Rows.Count > 0)
             {
-
-                email = new List<Email>();
-                foreach (DataRow dr in ds.Tables[0].Rows)
+                var dr = ds.Tables[0].Rows[0];
+                email = new Email
                 {
-                    email.Add(new Email
-                    {
-                        emisor = dr["Emisor"].ToString(),
-                        asunto = dr["Asunto"].ToString(),
-                        mensaje = dr["Mensaje"].ToString(),
-                        smtpServidor = dr["SmtpServidor"].ToString(),
-                        userName = dr["UserName"].ToString(),
-                        contrasenna = dr["Contraseña"].ToString(),
-                        Id = Convert.ToInt32(dr["idEmail"]),
-                    });
-                }
+                    emisor = dr["Emisor"].ToString(),
+                    asunto = dr["Asunto"].ToString(),
+                    mensaje = dr["Mensaje"].ToString(),
+                    smtpServidor = dr["SmtpServidor"].ToString(),
+                    userName = dr["UserName"].ToString(),
+                    contrasenna = dr["Contraseña"].ToString(),
+                    Id = Convert.ToInt32(dr["idEmail"])
+                };
             }
             return email;
+        }
+
+        ///<summary>Modifica en la base de datos un objeto carrera</summary>
+        ///<param name="objCarrera">Objeto de tipo carrera</param>
+        //<autor>Alvaro Artavia</autor>
+
+        public void UpdateEmail(Email email)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Parameters.Add(new SqlParameter("@Emisor", email.emisor));
+                cmd.Parameters.Add(new SqlParameter("@Asunto", email.asunto));
+                cmd.Parameters.Add(new SqlParameter("@SmtpServidor", email.smtpServidor));
+                cmd.Parameters.Add(new SqlParameter("@UserName", email.userName));
+                cmd.Parameters.Add(new SqlParameter("@Contrasenna", email.contrasenna));
+                cmd.Parameters.Add(new SqlParameter("@Mensaje", email.mensaje));
+                cmd.Parameters.Add(new SqlParameter("@idEmail", email.Id));
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_modificarEmail");
+
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
 
         public Email GetByNombre(String parametro)
@@ -178,31 +208,7 @@ namespace DAL.Repositories
 
         }
 
-        ///<summary>Modifica en la base de datos un objeto carrera</summary>
-        ///<param name="objCarrera">Objeto de tipo carrera</param>
-        //<autor>Alvaro Artavia</autor>
-
-        public void UpdateEmail(Email email)
-        {
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                cmd.Parameters.Add(new SqlParameter("@Receptor", "--"));
-                cmd.Parameters.Add(new SqlParameter("@Emisor", email.emisor));
-                cmd.Parameters.Add(new SqlParameter("@Asunto", email.asunto));
-                cmd.Parameters.Add(new SqlParameter("@SmtpServidor", email.smtpServidor));
-                cmd.Parameters.Add(new SqlParameter("@UserName", email.userName));
-                cmd.Parameters.Add(new SqlParameter("@Contrasenna", email.contrasenna));
-                cmd.Parameters.Add(new SqlParameter("@Mensaje", email.mensaje));
-                cmd.Parameters.Add(new SqlParameter("@idEmail", email.Id));
-                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_modificarEmail");
-
-            }
-            catch (Exception ex)
-            {
-
-            }
-        }
+      
         ///<summary>Elimina en la base de datos un objeto carrera</summary>
         ///<param name="objCarrera">Objeto de tipo carrera</param>
         //<autor>Alvaro Artavia</autor>

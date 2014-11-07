@@ -69,6 +69,7 @@ Partial Class uCtrlMenuMantenimiento
         Me.btnUsuarios.TabIndex = 5
         Me.btnUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnUsuarios.UseVisualStyleBackColor = True
+        Me.btnUsuarios.Visible = False
         '
         'btnCursos
         '
@@ -82,6 +83,7 @@ Partial Class uCtrlMenuMantenimiento
         Me.btnCursos.TabIndex = 10
         Me.btnCursos.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnCursos.UseVisualStyleBackColor = True
+        Me.btnCursos.Visible = False
         '
         'btnBeneficios
         '
@@ -95,6 +97,7 @@ Partial Class uCtrlMenuMantenimiento
         Me.btnBeneficios.TabIndex = 9
         Me.btnBeneficios.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnBeneficios.UseVisualStyleBackColor = True
+        Me.btnBeneficios.Visible = False
         '
         'btnCarreras
         '
@@ -110,6 +113,7 @@ Partial Class uCtrlMenuMantenimiento
         Me.btnCarreras.TabIndex = 8
         Me.btnCarreras.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnCarreras.UseVisualStyleBackColor = True
+        Me.btnCarreras.Visible = False
         '
         'btnRoles
         '
@@ -123,6 +127,7 @@ Partial Class uCtrlMenuMantenimiento
         Me.btnRoles.TabIndex = 6
         Me.btnRoles.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnRoles.UseVisualStyleBackColor = True
+        Me.btnRoles.Visible = False
         '
         'btnBecas
         '
@@ -136,6 +141,7 @@ Partial Class uCtrlMenuMantenimiento
         Me.btnBecas.TabIndex = 7
         Me.btnBecas.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnBecas.UseVisualStyleBackColor = True
+        Me.btnBecas.Visible = False
         '
         'btnRequisitos
         '
@@ -149,6 +155,7 @@ Partial Class uCtrlMenuMantenimiento
         Me.btnRequisitos.TabIndex = 11
         Me.btnRequisitos.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnRequisitos.UseVisualStyleBackColor = True
+        Me.btnRequisitos.Visible = False
         '
         'uCtrlMenuMantenimiento
         '

@@ -10,6 +10,21 @@ Partial Public Class frmPrincipal
     Dim ucMenuBecas As New uCtrlMenuBecas()
     Dim uCtrlUserProfile As New UCtrlUserProfile()
 
+    Public listaPermisos As List(Of Permiso) = New List(Of Permiso)
+
+
+    Private Sub frmPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        AlvaroArtaviaToolStripMenuItem.Text = Globals.usuario.primerNombre & " " & Globals.usuario.primerApellido
+        ValidarPermisos()
+    End Sub
+
+    Public Sub ValidarPermisos()
+
+        listaPermisos = objGestorRol.consultarPermisosPorRol(Globals.usuario.rol.Id)
+
+    End Sub
+
     Public Sub New()
 
         InitializeComponent()
@@ -25,6 +40,8 @@ Partial Public Class frmPrincipal
         ocultarComponentes()
 
     End Sub
+
+
 
     Private Sub MantenimientoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MantenimientoToolStripMenuItem.Click
 
@@ -52,7 +69,7 @@ Partial Public Class frmPrincipal
     End Sub
 
     Private Sub btnMantenimiento_Click(sender As Object, e As EventArgs) Handles btnMantenimiento.Click
-
+        ucMenuMant.ListasDePermisos(listaPermisos)
         btnsMenus.Hide()
         Me.Controls.Add(ucMenuMant)
         ucMenuMant.Show()
@@ -107,11 +124,7 @@ Partial Public Class frmPrincipal
 
     End Sub
 
-    Private Sub frmPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-        AlvaroArtaviaToolStripMenuItem.Text = Globals.usuario.primerNombre & " " & Globals.usuario.primerApellido
-
-    End Sub
+    
 
 End Class
 

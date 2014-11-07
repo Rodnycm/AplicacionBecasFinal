@@ -80,4 +80,7 @@ Public Class uCtrlModificarCurso
 
     End Sub
 
+    Private Sub btnX_Click(sender As Object, e As EventArgs)
+        Me.Dispose()
+    End Sub
 End Class

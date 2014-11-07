@@ -64,7 +64,7 @@
 
                         Dim Uctrl As uCtrlConfirmacion = New uCtrlConfirmacion
                         FrmIniciarSesion.principal.Controls.Add(Uctrl)
-                        Uctrl.lblConfirmacion.Text = "El rol se modifico correctamente"
+                        Uctrl.lblConfirmacion.Text = "El beneficio se modifico correctamente"
                         Uctrl.Location = New Point(300, 100)
                         Uctrl.BringToFront()
                         Uctrl.Show()

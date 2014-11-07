@@ -54,7 +54,7 @@ Partial Class uCtrlCrearCarrera
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(68, 23)
         Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Codigo:"
+        Me.Label2.Text = "Código:"
         '
         'Label3
         '
@@ -74,7 +74,7 @@ Partial Class uCtrlCrearCarrera
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(158, 23)
         Me.Label4.TabIndex = 3
-        Me.Label4.Text = "Director Academico:"
+        Me.Label4.Text = "Director Académico:"
         '
         'txtNombre
         '

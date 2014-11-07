@@ -34,20 +34,20 @@
 
     End Sub
 
-    Private Sub ValidarELiminarRequisito()
+    'Private Sub ValidarELiminarRequisito()
 
-        If objGestorUsuario.buscarUsuariosPorRol() Is Nothing Then
-            ''EliminarRol()
-        Else
-            Dim UCtrl As UctrlAlerta = New UctrlAlerta()
+    '    If objGestorUsuario.buscarUsuariosPorRol() Is Nothing Then
+    '        'EliminarRol()
+    '    Else
+    '        Dim UCtrl As UctrlAlerta = New UctrlAlerta()
 
-            FrmIniciarSesion.principal.Controls.Add(UCtrl)
-            UCtrl.lblAlerta.Text = "Este rol no se puede eliminar"
-            UCtrl.Location = New Point(300, 100)
-            UCtrl.BringToFront()
-            UCtrl.Show()
-        End If
+    '        FrmIniciarSesion.principal.Controls.Add(UCtrl)
+    '        UCtrl.lblAlerta.Text = "Este rol no se puede eliminar"
+    '        UCtrl.Location = New Point(300, 100)
+    '        UCtrl.BringToFront()
+    '        UCtrl.Show()
+    '    End If
 
 
-    End Sub
+    'End Sub
 End Class

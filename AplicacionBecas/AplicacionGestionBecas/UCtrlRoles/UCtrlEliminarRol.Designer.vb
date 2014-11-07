@@ -33,13 +33,13 @@ Partial Class uCtrlEliminarRol
         '
         Me.lblNombre.AutoSize = True
         Me.lblNombre.BackColor = System.Drawing.Color.Transparent
-        Me.lblNombre.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombre.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblNombre.ForeColor = System.Drawing.Color.Black
         Me.lblNombre.Location = New System.Drawing.Point(65, 57)
         Me.lblNombre.Name = "lblNombre"
-        Me.lblNombre.Size = New System.Drawing.Size(332, 25)
+        Me.lblNombre.Size = New System.Drawing.Size(321, 25)
         Me.lblNombre.TabIndex = 9
-        Me.lblNombre.Text = "Esta seguro que desea eliminar este rol?"
+        Me.lblNombre.Text = "¿Está seguro que desea eliminar el rol?"
         '
         'btnCancelar
         '
@@ -66,7 +66,7 @@ Partial Class uCtrlEliminarRol
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(100, 35)
         Me.btnEliminar.TabIndex = 7
-        Me.btnEliminar.Text = "Eliminar"
+        Me.btnEliminar.Text = "Aceptar"
         Me.btnEliminar.UseVisualStyleBackColor = False
         '
         'btnCerrar

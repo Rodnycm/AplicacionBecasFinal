@@ -72,16 +72,17 @@ Public Class uCtrlBuscarTipoBeca
 
     End Sub
     Private Sub verTipoBeca()
-        Dim nombre As String = dtaTipoBeca.CurrentRow.Cells(1).Value
+        Dim nombre As String = dtaTipoBeca.CurrentRow.Cells(0).Value
 
         Dim uCtrlConsultarTipoBeca As New uCtrlConsultarTipoBeca
 
         'uCtrlConsultarTipoBeca.recibirInfo(nombre)
         frmPrincipal.Controls.Add(uCtrlConsultarTipoBeca)
         uCtrlConsultarTipoBeca.BringToFront()
-        uCtrlConsultarTipoBeca.Show()
         uCtrlConsultarTipoBeca.Location = New Point(200, 150)
-        Me.Hide()
+        uCtrlConsultarTipoBeca.Show()
+
+
 
 
     End Sub
@@ -173,10 +174,11 @@ Public Class uCtrlBuscarTipoBeca
     Private Sub btnCrearTipoBeca_Click(sender As Object, e As EventArgs) Handles btnCrearTipoBeca.Click
         crearTipo = New uCtrlCrearTipoBeca()
         FrmIniciarSesion.principal.Controls.Add(crearTipo)
-        crearTipo.Location = New Point(200, 250)
+        crearTipo.Location = New Point(300, 100)
         crearTipo.BringToFront()
         crearTipo.Show()
-        Me.Hide()
+
+
     End Sub
 
     Private Sub txtBarraBusqueda_TextChanged_1(sender As Object, e As EventArgs) Handles txtBarraBusqueda.TextChanged

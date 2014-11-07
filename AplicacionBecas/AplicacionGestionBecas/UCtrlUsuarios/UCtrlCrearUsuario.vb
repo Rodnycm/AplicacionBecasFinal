@@ -39,14 +39,15 @@ Public Class UctrlCrearUsuario
             objGestorUsuario.crearUsuario(pNombre, sNombre, pApellido, sApellido, identificacion, telefono, fechaNacimiento, rol, genero, correoElectronico)
             objGestorUsuario.guardarCambios()
 
-
+            Dim Uctrl As uCtrlConfirmacion = New uCtrlConfirmacion
+            FrmIniciarSesion.principal.Controls.Add(Uctrl)
+            Uctrl.lblConfirmacion.Text = "El usuario se registró correctamente"
+            Uctrl.Location = New Point(300, 100)
+            Uctrl.BringToFront()
+            Uctrl.Show()
             lista.dgUsuarios.Rows.Clear()
             lista.listarUsuarios()
-            confirmacion = New uCtrlConfirmacion()
-            confirmacion.lblConfirmacion.Text = "Usuario creado correctamente"
-            Me.Controls.Add(confirmacion)
-            confirmacion.BringToFront()
-            confirmacion.Show()
+            
 
         Catch ex As Exception
             alerta = New UctrlAlerta()
@@ -56,12 +57,9 @@ Public Class UctrlCrearUsuario
             alerta.BringToFront()
             alerta.Show()
         End Try
-
         lista.dgUsuarios.Rows.Clear()
         lista.listarUsuarios()
-        Me.Dispose()
-
-
+      
     End Sub
 
 

@@ -72,7 +72,7 @@ Partial Class uCtrlModificarRol
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(89, 29)
         Me.btnAceptar.TabIndex = 16
-        Me.btnAceptar.Text = "Aceptar"
+        Me.btnAceptar.Text = "Editar"
         Me.btnAceptar.UseVisualStyleBackColor = False
         '
         'lblNombre

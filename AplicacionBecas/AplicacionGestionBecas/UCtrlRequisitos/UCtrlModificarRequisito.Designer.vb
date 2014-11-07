@@ -22,12 +22,14 @@ Partial Class UCtrlModificarRequisito
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(UCtrlModificarRequisito))
         Me.lblCodigoCurso = New System.Windows.Forms.Label()
         Me.txtNombreRequisito = New System.Windows.Forms.TextBox()
         Me.lblNombreCurso = New System.Windows.Forms.Label()
         Me.btnEditarRequisito = New System.Windows.Forms.Button()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.txtDescripcion = New System.Windows.Forms.TextBox()
+        Me.btnCerrar = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'lblCodigoCurso
@@ -95,11 +97,25 @@ Partial Class UCtrlModificarRequisito
         Me.txtDescripcion.Size = New System.Drawing.Size(144, 96)
         Me.txtDescripcion.TabIndex = 34
         '
+        'btnCerrar
+        '
+        Me.btnCerrar.BackColor = System.Drawing.Color.Transparent
+        Me.btnCerrar.BackgroundImage = Global.UI.My.Resources.Resources.cerrar
+        Me.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCerrar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(248, Byte), Integer))
+        Me.btnCerrar.Location = New System.Drawing.Point(436, 3)
+        Me.btnCerrar.Name = "btnCerrar"
+        Me.btnCerrar.Size = New System.Drawing.Size(20, 21)
+        Me.btnCerrar.TabIndex = 37
+        Me.btnCerrar.UseVisualStyleBackColor = False
+        '
         'UCtrlModificarRequisito
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.UI.My.Resources.Resources.tablaFinalMedianaAzul1
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.btnEditarRequisito)
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.txtDescripcion)
@@ -118,5 +134,6 @@ Partial Class UCtrlModificarRequisito
     Friend WithEvents btnEditarRequisito As System.Windows.Forms.Button
     Friend WithEvents btnCancelar As System.Windows.Forms.Button
     Friend WithEvents txtDescripcion As System.Windows.Forms.TextBox
+    Friend WithEvents btnCerrar As System.Windows.Forms.Button
 
 End Class

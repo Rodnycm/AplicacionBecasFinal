@@ -252,7 +252,6 @@ namespace DAL.Repositories
 
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_crearRequisito");
 
-
                 actividad = "Se ha Registrado un Requisito";
                 registrarAccion(actividad);
 

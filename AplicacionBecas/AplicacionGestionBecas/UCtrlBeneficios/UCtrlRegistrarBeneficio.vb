@@ -28,52 +28,82 @@
         Dim nombre As String
         Dim porcentaje As Double
         Dim asociacion As String
+        Dim formatoCorrecto As Double
 
-        If (IsNumeric(txPorcentaje.Text) = True) Then
+        Try
 
-            nombre = txtNombre.Text
-            porcentaje = CType(txPorcentaje.Text, Double)
-            asociacion = txtAplicacion.Text
+            formatoCorrecto = FormatNumber(txPorcentaje.Text, 0.0)
+
+            If formatoCorrecto <> CType(txPorcentaje.Text, Double) And formatoCorrecto <= 1 Then
+
+                If (IsNumeric(txPorcentaje.Text) = True) Then
+
+                    nombre = txtNombre.Text
+                    porcentaje = CType(txPorcentaje.Text, Double)
+                    asociacion = txtAplicacion.Text
 
 
-            Try
-                objGestorBeneficio.agregarBeneficio(nombre, porcentaje, asociacion)
-                objGestorBeneficio.guardarCambios()
+                    Try
+                        objGestorBeneficio.agregarBeneficio(nombre, porcentaje, asociacion)
+                        objGestorBeneficio.guardarCambios()
 
-                Dim Uctrl As uCtrlConfirmacion = New uCtrlConfirmacion
-                FrmIniciarSesion.principal.Controls.Add(Uctrl)
-                Uctrl.lblConfirmacion.Text = "El beneficio se registro correctamente"
-                Uctrl.Location = New Point(300, 100)
-                Uctrl.BringToFront()
-                Uctrl.Show()
+                        Dim Uctrl As uCtrlConfirmacion = New uCtrlConfirmacion
+                        FrmIniciarSesion.principal.Controls.Add(Uctrl)
+                        Uctrl.lblConfirmacion.Text = "El beneficio se registro correctamente"
+                        Uctrl.Location = New Point(300, 100)
+                        Uctrl.BringToFront()
+                        Uctrl.Show()
 
-            Catch ex As Exception
+                    Catch ex As Exception
 
-                Dim UCtrl As UCtrlAlerta = New UCtrlAlerta()
+                        Dim UCtrl As UctrlAlerta = New UctrlAlerta()
+
+                        FrmIniciarSesion.principal.Controls.Add(UCtrl)
+                        UCtrl.lblAlerta.Text = ex.Message
+                        UCtrl.Location = New Point(300, 100)
+                        UCtrl.BringToFront()
+                        UCtrl.Show()
+
+                    End Try
+
+                Else
+
+                    Dim UCtrl As UctrlAlerta = New UctrlAlerta()
+
+                    FrmIniciarSesion.principal.Controls.Add(UCtrl)
+                    UCtrl.lblAlerta.Text = "El porcentaje debe ser un numero"
+                    UCtrl.Location = New Point(300, 100)
+                    UCtrl.BringToFront()
+                    UCtrl.Show()
+
+
+                End If
+            Else
+
+                Dim UCtrl As UctrlAlerta = New UctrlAlerta()
 
                 FrmIniciarSesion.principal.Controls.Add(UCtrl)
-                UCtrl.lblAlerta.Text = ex.Message
+                UCtrl.lblAlerta.Text = "Formato del porcentaje Invalido"
                 UCtrl.Location = New Point(300, 100)
                 UCtrl.BringToFront()
                 UCtrl.Show()
 
-            End Try
+            End If
 
-        Else
+        Catch ex As Exception
 
-            Dim UCtrl As UCtrlAlerta = New UCtrlAlerta()
+            Dim UCtrl As UctrlAlerta = New UctrlAlerta()
 
             FrmIniciarSesion.principal.Controls.Add(UCtrl)
-            UCtrl.lblAlerta.Text = "El porcentaje debe ser un numero"
+            UCtrl.lblAlerta.Text = ex.Message
             UCtrl.Location = New Point(300, 100)
             UCtrl.BringToFront()
             UCtrl.Show()
 
-
-        End If
-
+        End Try
         uCntrlBuscarBeneficio.dtaBuscarBeneficio.Rows.Clear()
         uCntrlBuscarBeneficio.listarBeneficios()
+
 
         txtNombre.Clear()
         txPorcentaje.Clear()

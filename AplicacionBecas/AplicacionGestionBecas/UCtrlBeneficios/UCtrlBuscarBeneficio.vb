@@ -19,8 +19,6 @@ Public Class uCntrlBuscarBeneficio
 
         Try
 
-
-
             Dim listaBeneficios As New List(Of Beneficio)
             listaBeneficios = objGestorBeneficio.buscarBeneficios()
             dtaBuscarBeneficio.Rows.Clear()
@@ -28,11 +26,10 @@ Public Class uCntrlBuscarBeneficio
             For Each Beneficio In listaBeneficios
 
                 dtaBuscarBeneficio.Rows.Add(Beneficio.Id, Beneficio.Nombre, Beneficio.Porcentaje, Beneficio.Aplicacion)
-                dtaBuscarBeneficio.Columns("dtaAplicabilidad").Visible = False
+                dtaBuscarBeneficio.Columns("dtaAplicabilidad").Visible = True
                 dtaBuscarBeneficio.Columns("dtaId").Visible = False
 
             Next
-
 
         Catch ex As Exception
 
@@ -45,10 +42,8 @@ Public Class uCntrlBuscarBeneficio
             UCtrl.Show()
 
         End Try
-
-
-
     End Sub
+
     Private Sub btnMantenimiento_Click(sender As Object, e As EventArgs) Handles btnMantenimiento.Click
         Dim uCtrlRegistrarBeneficio As New uCtrlRegistrarBeneficio
 
@@ -97,12 +92,7 @@ Public Class uCntrlBuscarBeneficio
 
         Dim combo As ComboBox = CType(sender, ComboBox)
 
-        If combo.SelectedItem = "Ver" Then
-
-
-            verBeneficios()
-
-        ElseIf combo.SelectedItem = "Editar" Then
+        If combo.SelectedItem = "Editar" Then
 
             editarBeneficios()
 
@@ -131,33 +121,33 @@ Public Class uCntrlBuscarBeneficio
     'End Sub
     '//////////////////////////////////////////////////////////////////////////////////////////
 
+    'YA NO SE VA A CONSULTAR UN BENEFICIO PQ TIENE MUY POCA INFORMACION
 
-    Private Sub verBeneficios()
+    'Private Sub verBeneficios()
 
-        btnVolver.Visible = True
-        Dim beneficio As New Beneficio
-        Dim parametro = dtaBuscarBeneficio.CurrentRow.Cells(1).Value
-        Try
-            dtaBuscarBeneficio.Rows.Clear()
+    '    btnVolver.Visible = True
+    '    Dim beneficio As New Beneficio
+    '    Dim parametro = dtaBuscarBeneficio.CurrentRow.Cells(1).Value
+    '    Try
+    '        dtaBuscarBeneficio.Rows.Clear()
 
-            beneficio = objGestorBeneficio.buscarPorNombre(parametro)
-            dtaBuscarBeneficio.Columns("dtaAplicabilidad").Visible = True
-            dtaBuscarBeneficio.Columns("dtaOpciones").Visible = False
+    '        beneficio = objGestorBeneficio.buscarPorNombre(parametro)
+    '        dtaBuscarBeneficio.Columns("dtaAplicabilidad").Visible = True
+    '        dtaBuscarBeneficio.Columns("dtaOpciones").Visible = False
 
-            dtaBuscarBeneficio.Rows.Add(beneficio.Id, beneficio.Nombre, beneficio.Porcentaje, beneficio.Aplicacion)
+    '        dtaBuscarBeneficio.Rows.Add(beneficio.Id, beneficio.Nombre, beneficio.Porcentaje, beneficio.Aplicacion)
 
-        Catch ex As Exception
-            Dim UCtrl As New UctrlAlerta
+    '    Catch ex As Exception
+    '        Dim UCtrl As New UctrlAlerta
 
+    '        Me.Controls.Add(UCtrl)
+    '        UCtrl.lblAlerta.Text = ex.Message
+    '        UCtrl.Location = New Point(100, 100)
+    '        UCtrl.BringToFront()
+    '        UCtrl.Show()
+    '    End Try
 
-            Me.Controls.Add(UCtrl)
-            UCtrl.lblAlerta.Text = ex.Message
-            UCtrl.Location = New Point(300, 100)
-            UCtrl.BringToFront()
-            UCtrl.Show()
-        End Try
-
-    End Sub
+    'End Sub
 
 
     Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.MouseClick
@@ -303,14 +293,15 @@ Public Class uCntrlBuscarBeneficio
     End Sub
 
 
-    Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
+    'Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
 
-        btnVolver.Visible = False
-        dtaBuscarBeneficio.Columns("dtaAplicabilidad").Visible = False
-        dtaBuscarBeneficio.Rows.Clear()
-        listarBeneficios()
+    '    btnVolver.Visible = False
+    '    dtaBuscarBeneficio.Columns("dtaAplicabilidad").Visible = False
+    '    dtaBuscarBeneficio.Columns("dtaOpciones").Visible = True
+    '    dtaBuscarBeneficio.Rows.Clear()
+    '    listarBeneficios()
 
 
-    End Sub
+    'End Sub
 
 End Class

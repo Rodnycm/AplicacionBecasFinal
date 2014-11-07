@@ -83,7 +83,7 @@ namespace DAL.Repositories
 
         public IEnumerable<Requisito> GetAll()
         {
-<<<<<<< HEAD
+
 
             try {
 
@@ -117,27 +117,7 @@ namespace DAL.Repositories
             {
                 throw ex;
             }
-=======
-            List<Requisito> prequisito = null;
 
-            //SqlCommand cmd = new SqlCommand();
-
-            //DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_buscarRequisito");
-
-            //if (ds.Tables[0].Rows.Count > 0)
-            //{
-            //    prequisito = new List<Requisito>();
-            //    foreach (DataRow dr in ds.Tables[0].Rows)
-            //    {
-            //        prequisito.Add(new Requisito
-            //        (
-            //            Convert.ToInt32(dr["idRequisito"]),
-            //            dr["Nombre"].ToString(),
-            //            dr["Descripcion"].ToString()
-            //        ));
-            //    }
-            //}
->>>>>>> origin/MariaV3
 
            
         }

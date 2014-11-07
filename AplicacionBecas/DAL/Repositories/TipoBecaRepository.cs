@@ -145,8 +145,8 @@ namespace DAL.Repositories
                     dr["Estado"].ToString(),
                     dr["Descripcion"].ToString()
               );
-                    objTipoBeca.listaRequisitos = asociarRequisitos(objTipoBeca.id);
-                    objTipoBeca.listaBeneficios = asociarBeneficios(objTipoBeca.id);
+                    objTipoBeca.listaRequisitos = asociarRequisitos(objTipoBeca.Id);
+                    objTipoBeca.listaBeneficios = asociarBeneficios(objTipoBeca.Id);
 
             }
                 return objTipoBeca;

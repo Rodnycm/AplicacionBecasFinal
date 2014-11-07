@@ -151,7 +151,7 @@ namespace BLL
         public Curso crearObjetoCurso(string pcodigo)
         {
 
-            Curso objCurso = new Curso (pcodigo);
+            Curso objCurso = new Curso(pcodigo);
             return objCurso;
         }
 

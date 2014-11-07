@@ -123,9 +123,9 @@ namespace EntitiesLayer
 
             Id = 0;
             nombre = "";
-            codigo  = pcodigo ;
-            cuatrimestre  = "";
-            creditos  = 0;  
+            codigo = pcodigo;
+            cuatrimestre = "";
+            creditos = 0;
             precio = 0;
 
         }

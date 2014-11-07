@@ -1,6 +1,6 @@
 ﻿Imports EntitiesLayer
 Public Class UctrlListarYBuscarUsuario
-    Dim ucntrlUsuario As UctrlCrearUsuario = New UctrlCrearUsuario()
+    Dim ucntrlUsuario As UctrlCrearUsuario
   
     Public Sub UctrlListarYBuscarUsuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         listarUsuarios()
@@ -28,12 +28,12 @@ Public Class UctrlListarYBuscarUsuario
             uctrlAlerta.lblAlerta.Text = "No hay usuarios registrados"
             uctrlAlerta.Show()
 
-
         End Try
            
     End Sub
 
     Public Sub btnCrearUsuario_Click(sender As Object, e As EventArgs) Handles btnCrearUsuario.Click
+        ucntrlUsuario = New UctrlCrearUsuario()
         FrmIniciarSesion.principal.Controls.Add(ucntrlUsuario)
         ucntrlUsuario.setLista(Me)
         ucntrlUsuario.Location = New Point(300, 100)

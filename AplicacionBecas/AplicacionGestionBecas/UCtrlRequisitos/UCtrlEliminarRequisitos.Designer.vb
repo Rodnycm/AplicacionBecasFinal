@@ -72,21 +72,14 @@ Partial Class UCtrlEliminarRequisitos
         Me.lblMensaje.AutoSize = True
         Me.lblMensaje.BackColor = System.Drawing.Color.Transparent
         Me.lblMensaje.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-<<<<<<< HEAD
+
         Me.lblMensaje.Font = New System.Drawing.Font("Segoe UI", 14.0!)
         Me.lblMensaje.Location = New System.Drawing.Point(86, 56)
         Me.lblMensaje.Name = "lblMensaje"
         Me.lblMensaje.Size = New System.Drawing.Size(273, 25)
         Me.lblMensaje.TabIndex = 28
         Me.lblMensaje.Text = "¿Desea eliminar este requisito?"
-=======
-        Me.lblMensaje.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblMensaje.Location = New System.Drawing.Point(45, 55)
-        Me.lblMensaje.Name = "lblMensaje"
-        Me.lblMensaje.Size = New System.Drawing.Size(369, 25)
-        Me.lblMensaje.TabIndex = 28
-        Me.lblMensaje.Text = "¿Está seguro que desea eliminar el requisito?"
->>>>>>> origin/BackiGC
+
         '
         'UCtrlEliminarRequisitos
         '

@@ -34,7 +34,7 @@ Partial Class UCtrlEliminarRequisitos
         Me.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAceptar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAceptar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(248, Byte), Integer))
-        Me.btnAceptar.Location = New System.Drawing.Point(187, 109)
+        Me.btnAceptar.Location = New System.Drawing.Point(350, 117)
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(86, 29)
         Me.btnAceptar.TabIndex = 31
@@ -48,7 +48,7 @@ Partial Class UCtrlEliminarRequisitos
         Me.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCerrar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(133, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.btnCerrar.Location = New System.Drawing.Point(273, -3)
+        Me.btnCerrar.Location = New System.Drawing.Point(438, 3)
         Me.btnCerrar.Name = "btnCerrar"
         Me.btnCerrar.Size = New System.Drawing.Size(18, 18)
         Me.btnCerrar.TabIndex = 30
@@ -60,7 +60,7 @@ Partial Class UCtrlEliminarRequisitos
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCancelar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(248, Byte), Integer))
-        Me.btnCancelar.Location = New System.Drawing.Point(86, 109)
+        Me.btnCancelar.Location = New System.Drawing.Point(249, 117)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(86, 29)
         Me.btnCancelar.TabIndex = 29
@@ -73,7 +73,7 @@ Partial Class UCtrlEliminarRequisitos
         Me.lblMensaje.BackColor = System.Drawing.Color.Transparent
         Me.lblMensaje.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.lblMensaje.Font = New System.Drawing.Font("Segoe UI", 14.0!)
-        Me.lblMensaje.Location = New System.Drawing.Point(-17, 42)
+        Me.lblMensaje.Location = New System.Drawing.Point(146, 50)
         Me.lblMensaje.Name = "lblMensaje"
         Me.lblMensaje.Size = New System.Drawing.Size(155, 25)
         Me.lblMensaje.TabIndex = 28
@@ -83,12 +83,13 @@ Partial Class UCtrlEliminarRequisitos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = Global.UI.My.Resources.Resources.eliminarMorado
         Me.Controls.Add(Me.btnAceptar)
         Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.lblMensaje)
         Me.Name = "UCtrlEliminarRequisitos"
-        Me.Size = New System.Drawing.Size(329, 150)
+        Me.Size = New System.Drawing.Size(459, 160)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

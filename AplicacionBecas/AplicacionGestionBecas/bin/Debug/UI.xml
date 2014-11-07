@@ -2519,6 +2519,9 @@ TableAdapterManager is used to coordinate TableAdapters in the dataset to enable
 </member><member name="M:UI.uCtrlListarRol.btnCrearRoles_Click(System.Object,System.EventArgs)">
 	<summary>Este metodo llama al usuario de control de crear rol </summary>
 	<author>Rodny Castro Mathews </author>
+</member><member name="M:UI.UctrlListarYBuscarUsuario.txtBuscar_KeyDown(System.Object,System.Windows.Forms.KeyEventArgs)">
+	<summary>Cuando el evento se ejecuta al dar presionar la tecla enter llama al metodo eliminar carrera</summary>
+	<autor>Alvaro Artavia</autor>
 </member><member name="M:UI.uCtrlModificarBeneficio.recieveData(System.Int32,System.String,System.Double,System.String)">
 	<summary>
  Este método se encarga de 'Setear' los textbox con los parametros recibidos

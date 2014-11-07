@@ -93,11 +93,12 @@ Public Class uCtrlModificarRol
     Private Sub btnAceptar_Click_1(sender As Object, e As EventArgs) Handles btnAceptar.Click
 
         
-        asignarPermisosAUnRol()
+
 
 
         Try
             EditarRol()
+            ValidarPermisos()
             Dim Uctrl As uCtrlConfirmacion = New uCtrlConfirmacion
             FrmIniciarSesion.principal.Controls.Add(Uctrl)
             Uctrl.lblConfirmacion.Text = "El rol se modifico correctamente"
@@ -126,32 +127,6 @@ Public Class uCtrlModificarRol
         objGestorRol.guardarCambios()
     End Sub
 
-    Sub asignarPermisosAUnRol()
-
-        Dim listaPermisosSeleccionados As New List(Of Permiso)
-        Dim ListaPermisosQuitar As New List(Of Permiso)
-        Dim listaIdROlesPermisos As New List(Of Integer)
-
-        listaPermisosSeleccionados = PermisosSeleccionados()
-        ListaPermisosQuitar = PermisosNoSeleccionados(listaPermisosSeleccionados)
-        listaPermisosSeleccionados = ValidarPermisos(listaPermisosSeleccionados, ListaPermisosQuitar)
-
-        If ListaPermisosQuitar.Count <> Nothing Then
-
-            For i As Integer = 0 To ListaPermisosQuitar.Count - 1
-                objGestorRol.eliminarPermisoAUnRol(ListaPermisosQuitar.Item(i).Id, idRol)
-            Next
-
-        End If
-
-        If listaPermisosSeleccionados.Count <> Nothing Then
-            For i As Integer = 0 To listaPermisosSeleccionados.Count - 1
-                objGestorRol.asignarPermisoAUnRol(listaPermisosSeleccionados.Item(i).Id(), idRol)
-
-            Next
-        End If
-    End Sub
-
     Public Function PermisosSeleccionados()
         Dim indexSeleccionado As Integer = 0
         Dim listaPermisosSeleccionados As New List(Of Permiso)
@@ -163,55 +138,32 @@ Public Class uCtrlModificarRol
 
             Next indexSeleccionado
 
-
-
-
         Catch
         End Try
 
         Return listaPermisosSeleccionados
     End Function
 
-    Public Function PermisosNoSeleccionados(ByVal plistaPermisosSeleccionados As List(Of Permiso))
 
-        Dim ListaPermisosQuitar As New List(Of Permiso)
-        ListaPermisosQuitar = listaPermisos
-        Try
+    Public Sub ValidarPermisos()
 
-            For j As Integer = 0 To plistaPermisosSeleccionados.Count - 1
-                Dim result As Boolean = False
-                For i As Integer = 0 To listaPermisos.Count - 1 And result = True
+        Dim listaPermisosSeleccionados As New List(Of Permiso)
 
-                    If (plistaPermisosSeleccionados.Item(j).Id = listaPermisos.Item(i).Id) Then
-                        ListaPermisosQuitar.RemoveAt(i)
-                        result = True
-                    End If
+        listaPermisosSeleccionados = PermisosSeleccionados()
 
-                Next
-            Next
+        For i As Integer = 0 To listaPermisosRol.Count - 1
 
+            objGestorRol.eliminarPermisoAUnRol(listaPermisosRol.Item(i).Id, idRol)
 
-        Catch ex As Exception
-
-        End Try
-
-        Return ListaPermisosQuitar
-
-    End Function
-
-    Public Function ValidarPermisos(ByVal plistaPermisos As List(Of Permiso), ByVal plistaQuitar As List(Of Permiso))
-        Dim listaPermisos As List(Of Permiso) = Nothing
-        For j As Integer = 0 To plistaPermisos.Count - 1
-            For i As Integer = 0 To plistaQuitar.Count - 1
-                If (plistaPermisos.Item(j).Id = plistaQuitar(i).Id) Then
-                    listaPermisos.Add(plistaPermisos.Item(i))
-                End If
-
-            Next
         Next
 
-        Return listaPermisos
-    End Function
+        For i As Integer = 0 To listaPermisosSeleccionados.Count - 1
+
+            objGestorRol.asignarPermisoAUnRol(listaPermisosSeleccionados.Item(i).Id(), idRol)
+
+        Next
+
+    End Sub
 
 
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click

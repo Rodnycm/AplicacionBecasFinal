@@ -78,9 +78,10 @@ Partial Class UctrlCrearUsuario
         '
         'txtCorreoElectronico
         '
+        Me.txtCorreoElectronico.Font = New System.Drawing.Font("Segoe UI Light", 9.0!)
         Me.txtCorreoElectronico.Location = New System.Drawing.Point(542, 329)
         Me.txtCorreoElectronico.Name = "txtCorreoElectronico"
-        Me.txtCorreoElectronico.Size = New System.Drawing.Size(144, 20)
+        Me.txtCorreoElectronico.Size = New System.Drawing.Size(144, 23)
         Me.txtCorreoElectronico.TabIndex = 60
         '
         'Label10
@@ -96,10 +97,11 @@ Partial Class UctrlCrearUsuario
         '
         'cmbRoles
         '
+        Me.cmbRoles.Font = New System.Drawing.Font("Segoe UI Light", 9.0!)
         Me.cmbRoles.FormattingEnabled = True
         Me.cmbRoles.Location = New System.Drawing.Point(542, 264)
         Me.cmbRoles.Name = "cmbRoles"
-        Me.cmbRoles.Size = New System.Drawing.Size(140, 21)
+        Me.cmbRoles.Size = New System.Drawing.Size(140, 23)
         Me.cmbRoles.TabIndex = 58
         '
         'Label9
@@ -166,9 +168,10 @@ Partial Class UctrlCrearUsuario
         'DtpFechaNacimiento
         '
         Me.DtpFechaNacimiento.CalendarFont = New System.Drawing.Font("Segoe UI Light", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DtpFechaNacimiento.Font = New System.Drawing.Font("Segoe UI Light", 9.0!)
         Me.DtpFechaNacimiento.Location = New System.Drawing.Point(542, 152)
         Me.DtpFechaNacimiento.Name = "DtpFechaNacimiento"
-        Me.DtpFechaNacimiento.Size = New System.Drawing.Size(144, 20)
+        Me.DtpFechaNacimiento.Size = New System.Drawing.Size(144, 23)
         Me.DtpFechaNacimiento.TabIndex = 52
         '
         'Label7
@@ -184,9 +187,10 @@ Partial Class UctrlCrearUsuario
         '
         'txtTelefono
         '
+        Me.txtTelefono.Font = New System.Drawing.Font("Segoe UI Light", 9.0!)
         Me.txtTelefono.Location = New System.Drawing.Point(542, 88)
         Me.txtTelefono.Name = "txtTelefono"
-        Me.txtTelefono.Size = New System.Drawing.Size(144, 20)
+        Me.txtTelefono.Size = New System.Drawing.Size(144, 23)
         Me.txtTelefono.TabIndex = 50
         '
         'Label6
@@ -202,9 +206,10 @@ Partial Class UctrlCrearUsuario
         '
         'txtIdentificacion
         '
+        Me.txtIdentificacion.Font = New System.Drawing.Font("Segoe UI Light", 9.0!)
         Me.txtIdentificacion.Location = New System.Drawing.Point(168, 328)
         Me.txtIdentificacion.Name = "txtIdentificacion"
-        Me.txtIdentificacion.Size = New System.Drawing.Size(144, 20)
+        Me.txtIdentificacion.Size = New System.Drawing.Size(144, 23)
         Me.txtIdentificacion.TabIndex = 48
         '
         'Label5
@@ -220,9 +225,10 @@ Partial Class UctrlCrearUsuario
         '
         'txtSegundoApellido
         '
+        Me.txtSegundoApellido.Font = New System.Drawing.Font("Segoe UI Light", 9.0!)
         Me.txtSegundoApellido.Location = New System.Drawing.Point(167, 263)
         Me.txtSegundoApellido.Name = "txtSegundoApellido"
-        Me.txtSegundoApellido.Size = New System.Drawing.Size(144, 20)
+        Me.txtSegundoApellido.Size = New System.Drawing.Size(144, 23)
         Me.txtSegundoApellido.TabIndex = 46
         '
         'Label4
@@ -238,9 +244,10 @@ Partial Class UctrlCrearUsuario
         '
         'txtPrimerApellido
         '
+        Me.txtPrimerApellido.Font = New System.Drawing.Font("Segoe UI Light", 9.0!)
         Me.txtPrimerApellido.Location = New System.Drawing.Point(167, 209)
         Me.txtPrimerApellido.Name = "txtPrimerApellido"
-        Me.txtPrimerApellido.Size = New System.Drawing.Size(144, 20)
+        Me.txtPrimerApellido.Size = New System.Drawing.Size(144, 23)
         Me.txtPrimerApellido.TabIndex = 44
         '
         'Label3
@@ -256,9 +263,10 @@ Partial Class UctrlCrearUsuario
         '
         'txtSegundoNombre
         '
+        Me.txtSegundoNombre.Font = New System.Drawing.Font("Segoe UI Light", 9.0!)
         Me.txtSegundoNombre.Location = New System.Drawing.Point(168, 150)
         Me.txtSegundoNombre.Name = "txtSegundoNombre"
-        Me.txtSegundoNombre.Size = New System.Drawing.Size(144, 20)
+        Me.txtSegundoNombre.Size = New System.Drawing.Size(144, 23)
         Me.txtSegundoNombre.TabIndex = 42
         '
         'Label2
@@ -274,9 +282,10 @@ Partial Class UctrlCrearUsuario
         '
         'txtNombre
         '
+        Me.txtNombre.Font = New System.Drawing.Font("Segoe UI Light", 9.0!)
         Me.txtNombre.Location = New System.Drawing.Point(168, 87)
         Me.txtNombre.Name = "txtNombre"
-        Me.txtNombre.Size = New System.Drawing.Size(144, 20)
+        Me.txtNombre.Size = New System.Drawing.Size(144, 23)
         Me.txtNombre.TabIndex = 40
         '
         'btnAceptar

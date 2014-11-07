@@ -5,6 +5,7 @@ Public Class uCtrlMantenimientoCarreras
     Implements IDisposable
 
     Public Property uCtrlCarrera As uCtrlCrearCarrera
+    Public Property uCtrlAsignarCursos As UCtrlAsignarCursos
 
     ''' <summary>Metodo que se ejecuta cuando el usuario da click al boton crear carrera, muestra 
     ''' al usuario los datos para crear una carrera</summary>
@@ -181,7 +182,8 @@ Public Class uCtrlMantenimientoCarreras
     Public Sub asignarCursosACarrera()
 
         Dim listaCursos As New List(Of Curso)
-        'listaCursos = objGestorCurso.listarCursos
+
+        listaCursos = objGestorCurso.consultarCursos
 
     End Sub
 
@@ -191,6 +193,11 @@ Public Class uCtrlMantenimientoCarreras
     Private Sub dgvCarreras_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvCarreras.CellContentClick
 
         If dgvCarreras.Columns(e.ColumnIndex).Name = "Cursos" Then
+
+            uCtrlAsignarCursos = New UCtrlAsignarCursos()
+            FrmIniciarSesion.principal.Controls.Add(uCtrlAsignarCursos)
+            uCtrlAsignarCursos.BringToFront()
+            uCtrlAsignarCursos.Show()
 
         End If
 

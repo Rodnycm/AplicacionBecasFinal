@@ -363,8 +363,8 @@ namespace DAL.Repositories
 
             RegistroAccion objRegistro;
             DateTime fecha = DateTime.Today;
-            string nombreUsuario = Globals.userName;
-            string nombreRol = Globals.userRol.Nombre;
+            string nombreUsuario = Globals.usuario.primerNombre + " " + Globals.usuario.primerApellido;
+            string nombreRol = Globals.usuario.rol.Nombre;
             string descripcion = pactividad;
 
 

@@ -54,6 +54,7 @@
     <Compile Include="IRepository.cs" />
     <Compile Include="Repositories\CarreraRepository.cs" />
     <Compile Include="Repositories\CursoRepository.cs" />
+    <Compile Include="Repositories\EmailRepository.cs" />
     <Compile Include="Repositories\PermisoRepository.cs" />
     <Compile Include="Repositories\RegistroAccionRepository.cs" />
     <Compile Include="Repositories\RequisitoRepository.cs" />

@@ -13,6 +13,7 @@ C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBec
 C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecas\DAL\bin\Debug\DAL.pdb
 C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecas\DAL\bin\Debug\EntitiesLayer.dll
 C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecas\DAL\bin\Debug\TIL.dll
+C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecas\DAL\bin\Debug\EASendMail45.dll
 C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecas\DAL\bin\Debug\EntitiesLayer.pdb
 C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecas\DAL\bin\Debug\TIL.pdb
 C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecas\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache

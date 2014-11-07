@@ -80,4 +80,5 @@ Class uCntrlConsultarRol
         listarRoles.ListarRoles()
         Me.Dispose()
     End Sub
+
 End Class

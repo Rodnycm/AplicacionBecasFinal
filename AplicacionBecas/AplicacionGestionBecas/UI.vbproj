@@ -74,6 +74,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UCtrlCarreras\UCtrlAsignarCursos.Designer.vb">
+      <DependentUpon>UCtrlAsignarCursos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UCtrlCarreras\UCtrlAsignarCursos.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="uCtrlConsultarPlanDeEstudio.Designer.vb">
       <DependentUpon>uCtrlConsultarPlanDeEstudio.vb</DependentUpon>
     </Compile>
@@ -414,6 +420,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="UCtrlCarreras\UCtrlAsignarCursos.resx">
+      <DependentUpon>UCtrlAsignarCursos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="uCtrlConsultarPlanDeEstudio.resx">
       <DependentUpon>uCtrlConsultarPlanDeEstudio.vb</DependentUpon>
     </EmbeddedResource>

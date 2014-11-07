@@ -16,6 +16,7 @@ C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBec
 C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecas\BLL\bin\Debug\DAL.dll
 C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecas\BLL\bin\Debug\EntitiesLayer.dll
 C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecas\BLL\bin\Debug\TIL.dll
+C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecas\BLL\bin\Debug\EASendMail45.dll
 C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecas\BLL\bin\Debug\DAL.pdb
 C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecas\BLL\bin\Debug\EntitiesLayer.pdb
 C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecas\BLL\bin\Debug\TIL.pdb

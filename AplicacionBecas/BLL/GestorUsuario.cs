@@ -508,15 +508,15 @@ namespace BLL
             }
         }
 
-<<<<<<< HEAD
+
         public IEnumerable<Usuario> buscarUsuariosPorRol(int pIdrol)
         {
             return UsuarioRepository.Instance.buscarUsuariosPorRol(pIdrol);
         } 
 
-=======
+
         public void notificarUsuario(String correo, String contrasenna){
->>>>>>> origin/prophet94
+
 
         Email email = new Email();
         email = EmailRepository.Instance.GetEmail();

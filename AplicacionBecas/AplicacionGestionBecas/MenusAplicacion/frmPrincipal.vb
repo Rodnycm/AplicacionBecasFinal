@@ -134,11 +134,6 @@ Partial Public Class frmPrincipal
 
     End Sub
 
-    Private Sub frmPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-        AlvaroArtaviaToolStripMenuItem.Text = Globals.usuario.primerNombre & " " & Globals.usuario.primerApellido
-
-
     Public Sub mostrarConfirmacion(ByVal mensaje As String)
 
         confirmacion = New uCtrlConfirmacion()

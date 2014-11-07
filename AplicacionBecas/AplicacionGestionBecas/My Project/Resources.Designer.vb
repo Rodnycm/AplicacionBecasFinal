@@ -107,10 +107,11 @@ Namespace My.Resources
             Get
                 Dim obj As Object = ResourceManager.GetObject("tablaEmail", resourceCulture)
                 Return CType(obj, System.Drawing.Bitmap)
-                Dim obj As Object = ResourceManager.GetObject("tablaFinalGrandeAzul", resourceCulture)
-                Return CType(obj, System.Drawing.Bitmap)
+                
             End Get
         End Property
+
+
 
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.

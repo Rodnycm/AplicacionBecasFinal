@@ -22,6 +22,7 @@ Partial Class uCtrlConsultarTipoBeca
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+<<<<<<< HEAD
         Dim DataGridViewCellStyle25 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle26 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle27 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -30,6 +31,16 @@ Partial Class uCtrlConsultarTipoBeca
         Dim DataGridViewCellStyle30 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle31 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle32 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+=======
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+>>>>>>> origin/BackiGC
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(uCtrlConsultarTipoBeca))
         Me.dataGridVTipoBeca = New System.Windows.Forms.DataGridView()
         Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -40,7 +51,10 @@ Partial Class uCtrlConsultarTipoBeca
         Me.Beneficios = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.mantenimiento = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+<<<<<<< HEAD
         Me.btnVolver = New System.Windows.Forms.Button()
+=======
+>>>>>>> origin/BackiGC
         CType(Me.dataGridVTipoBeca, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -61,7 +75,11 @@ Partial Class uCtrlConsultarTipoBeca
         Me.dataGridVTipoBeca.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dataGridVTipoBeca.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Nombre, Me.FechaCreacion, Me.Estado, Me.Descripcion, Me.Requisitos, Me.Beneficios, Me.mantenimiento})
         Me.dataGridVTipoBeca.GridColor = System.Drawing.Color.White
+<<<<<<< HEAD
         Me.dataGridVTipoBeca.Location = New System.Drawing.Point(90, 244)
+=======
+        Me.dataGridVTipoBeca.Location = New System.Drawing.Point(155, 174)
+>>>>>>> origin/BackiGC
         Me.dataGridVTipoBeca.Name = "dataGridVTipoBeca"
         Me.dataGridVTipoBeca.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         Me.dataGridVTipoBeca.RowHeadersVisible = False
@@ -141,6 +159,7 @@ Partial Class uCtrlConsultarTipoBeca
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+<<<<<<< HEAD
         Me.PictureBox1.Location = New System.Drawing.Point(90, 215)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(866, 238)
@@ -159,6 +178,14 @@ Partial Class uCtrlConsultarTipoBeca
         Me.btnVolver.Text = "Volver"
         Me.btnVolver.UseVisualStyleBackColor = True
         '
+=======
+        Me.PictureBox1.Location = New System.Drawing.Point(138, 138)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(757, 321)
+        Me.PictureBox1.TabIndex = 12
+        Me.PictureBox1.TabStop = False
+        '
+>>>>>>> origin/BackiGC
         'uCtrlConsultarTipoBeca
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)

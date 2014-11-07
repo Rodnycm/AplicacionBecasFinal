@@ -23,18 +23,27 @@ Partial Class uCtrlBuscarTipoBeca
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(uCtrlBuscarTipoBeca))
-        Me.dtaTipoBeca = New System.Windows.Forms.DataGridView()
-        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.mantenimiento = New System.Windows.Forms.DataGridViewComboBoxColumn()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.txtBarraBusqueda = New System.Windows.Forms.TextBox()
+        Me.dtaTipoBeca = New System.Windows.Forms.DataGridView()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnCrearTipoBeca = New System.Windows.Forms.Button()
+        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.opciones = New System.Windows.Forms.DataGridViewComboBoxColumn()
         CType(Me.dtaTipoBeca, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'txtBarraBusqueda
+        '
+        Me.txtBarraBusqueda.Font = New System.Drawing.Font("Segoe UI", 11.25!)
+        Me.txtBarraBusqueda.Location = New System.Drawing.Point(32, 134)
+        Me.txtBarraBusqueda.Name = "txtBarraBusqueda"
+        Me.txtBarraBusqueda.Size = New System.Drawing.Size(746, 27)
+        Me.txtBarraBusqueda.TabIndex = 22
+        Me.txtBarraBusqueda.Text = "Buscar:"
         '
         'dtaTipoBeca
         '
@@ -51,8 +60,9 @@ Partial Class uCtrlBuscarTipoBeca
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dtaTipoBeca.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dtaTipoBeca.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dtaTipoBeca.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Nombre, Me.Estado, Me.mantenimiento})
+        Me.dtaTipoBeca.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Nombre, Me.Estado, Me.opciones})
         Me.dtaTipoBeca.GridColor = System.Drawing.Color.White
+<<<<<<< HEAD
         Me.dtaTipoBeca.Location = New System.Drawing.Point(42, 233)
         Me.dtaTipoBeca.Name = "dtaTipoBeca"
         Me.dtaTipoBeca.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
@@ -86,14 +96,22 @@ Partial Class uCtrlBuscarTipoBeca
         Me.txtBarraBusqueda.Size = New System.Drawing.Size(746, 20)
         Me.txtBarraBusqueda.TabIndex = 18
         Me.txtBarraBusqueda.Text = "Buscar:"
+=======
+        Me.dtaTipoBeca.Location = New System.Drawing.Point(41, 209)
+        Me.dtaTipoBeca.Name = "dtaTipoBeca"
+        Me.dtaTipoBeca.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.dtaTipoBeca.RowHeadersVisible = False
+        Me.dtaTipoBeca.Size = New System.Drawing.Size(947, 271)
+        Me.dtaTipoBeca.TabIndex = 21
+>>>>>>> origin/BackiGC
         '
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(30, 202)
+        Me.PictureBox1.Location = New System.Drawing.Point(31, 176)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(975, 321)
-        Me.PictureBox1.TabIndex = 16
+        Me.PictureBox1.TabIndex = 20
         Me.PictureBox1.TabStop = False
         '
         'btnCrearTipoBeca
@@ -102,13 +120,32 @@ Partial Class uCtrlBuscarTipoBeca
         Me.btnCrearTipoBeca.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCrearTipoBeca.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCrearTipoBeca.ForeColor = System.Drawing.Color.White
-        Me.btnCrearTipoBeca.Location = New System.Drawing.Point(783, 108)
+        Me.btnCrearTipoBeca.Location = New System.Drawing.Point(784, 82)
         Me.btnCrearTipoBeca.Name = "btnCrearTipoBeca"
         Me.btnCrearTipoBeca.Size = New System.Drawing.Size(222, 79)
-        Me.btnCrearTipoBeca.TabIndex = 15
+        Me.btnCrearTipoBeca.TabIndex = 19
         Me.btnCrearTipoBeca.Text = "Crear Tipo de Beca"
         Me.btnCrearTipoBeca.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnCrearTipoBeca.UseVisualStyleBackColor = True
+        '
+        'Nombre
+        '
+        Me.Nombre.HeaderText = "Nombre"
+        Me.Nombre.Name = "Nombre"
+        '
+        'Estado
+        '
+        Me.Estado.HeaderText = "Estado"
+        Me.Estado.Name = "Estado"
+        '
+        'opciones
+        '
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
+        Me.opciones.DefaultCellStyle = DataGridViewCellStyle2
+        Me.opciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.opciones.HeaderText = "Opciones"
+        Me.opciones.Items.AddRange(New Object() {"Ver", "Editar", "Eliminar"})
+        Me.opciones.Name = "opciones"
         '
         'uCtrlBuscarTipoBeca
         '
@@ -128,12 +165,12 @@ Partial Class uCtrlBuscarTipoBeca
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents btnCrearTipoBeca As System.Windows.Forms.Button
-    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
-    Friend WithEvents dtaTipoBeca As System.Windows.Forms.DataGridView
     Friend WithEvents txtBarraBusqueda As System.Windows.Forms.TextBox
+    Friend WithEvents dtaTipoBeca As System.Windows.Forms.DataGridView
     Friend WithEvents Nombre As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Estado As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents mantenimiento As System.Windows.Forms.DataGridViewComboBoxColumn
+    Friend WithEvents opciones As System.Windows.Forms.DataGridViewComboBoxColumn
+    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
+    Friend WithEvents btnCrearTipoBeca As System.Windows.Forms.Button
 
 End Class

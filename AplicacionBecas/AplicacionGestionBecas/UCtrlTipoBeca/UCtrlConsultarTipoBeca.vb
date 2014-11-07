@@ -4,21 +4,21 @@ Public Class uCtrlConsultarTipoBeca
     Dim listaBeneficios As New List(Of Beneficio)
     Dim listaRequisitos As New List(Of Requisito)
     Public tipoBecas As List(Of TipoBeca)
-    Public Sub listarTiposBeca()
+    Dim nombreTipo As String
+    Dim tipoBecaConsulta As TipoBeca
+    Public Sub consultarTipoBeca()
 
-        tipoBecas = gestorTipoBeca.consultarTipoBeca()
+        tipoBecaConsulta = gestorTipoBeca.buscarUnTipoBeca(nombreTipo)
 
-        For Each tipos As TipoBeca In tipoBecas
+        dataGridVTipoBeca.Rows.Add(tipoBecaConsulta.nombre, tipoBecaConsulta.objD, tipoBecaConsulta.estado, tipoBecaConsulta.descripcion)
 
-            dataGridVTipoBeca.Rows.Add(tipos.nombre, tipos.objD, tipos.estado, tipos.descripcion)
 
-        Next
 
     End Sub
    
-    Private Sub ListarTipoBeca_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        listarTiposBeca()
-       
+    Private Sub uCtrlConsultarTipoBeca_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        consultarTipoBeca()
+
 
     End Sub
     Private Sub dataGridVTipoBeca_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dataGridVTipoBeca.CellContentClick
@@ -76,96 +76,13 @@ Public Class uCtrlConsultarTipoBeca
            
         End Try
     End Sub
-    Private Sub dataGridVTipoBeca_EditingControlShowing(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewEditingControlShowingEventArgs) Handles dataGridVTipoBeca.EditingControlShowing
-        ' Only for a DatagridComboBoxColumn at ColumnIndex 1.
-        If dataGridVTipoBeca.CurrentCell.ColumnIndex = 2 Then
-            Dim combo As ComboBox = CType(e.Control, ComboBox)
 
-            If (combo IsNot Nothing) Then
-                ' Remove an existing event-handler, if present, to avoid 
-                ' adding multiple handlers when the editing control is reused.
-                RemoveHandler combo.SelectionChangeCommitted, New EventHandler(AddressOf ComboBox_SelectionChangeCommitted)
-
-                ' Add the event handler. 
-                AddHandler combo.SelectionChangeCommitted, New EventHandler(AddressOf ComboBox_SelectionChangeCommitted)
-            End If
-        End If
-    End Sub
-    Private Sub ComboBox_SelectionChangeCommitted(ByVal sender As System.Object, ByVal e As System.EventArgs)
-
-        Dim combo As ComboBox = CType(sender, ComboBox)
-
-
-
-        If combo.SelectedItem = "Editar" Then
-
-            editarTipoBeca()
-
-        ElseIf combo.SelectedItem = "Eliminar" Then
-
-            eliminarTipoBeca()
-
-        End If
+  
+    Public Sub enviarInfo(ByVal pnombre As String)
+        nombreTipo = pnombre
 
     End Sub
-    'Private Sub verTipoBeca()
-    '    Dim nombre As String = dataGridVTipoBeca.CurrentRow.Cells(1).Value
-
-    '    Dim uCtrlConsultarTipoBeca As New uCtrlConsultarTipoBeca
-
-    '    'uCtrlConsultarTipoBeca.recibirInfo(nombre)
-    '    frmPrincipal.Controls.Add(uCtrlConsultarTipoBeca)
-    '    uCtrlConsultarTipoBeca.BringToFront()
-    '    uCtrlConsultarTipoBeca.Show()
-    '    uCtrlConsultarTipoBeca.Location = New Point(200, 150)
-    '    Me.Hide()
-
-
-    'End Sub
-    Private Sub editarTipoBeca()
-
-
-        Dim nombre As String = dataGridVTipoBeca.CurrentRow.Cells(0).Value
-        Dim estado As String = dataGridVTipoBeca.CurrentRow.Cells(1).Value
-        Dim descripcion As String = dataGridVTipoBeca.CurrentRow.Cells(2).Value
-
-
-
-        Dim uCtrlModificarTB As New uCtrlModificarTipoBeca
-
-
-        frmPrincipal.Controls.Add(uCtrlModificarTB)
-        'uCtrlModificarTB.getFrmBuscar(Me)
-        uCtrlModificarTB.recibirDatos(nombre, estado, descripcion)
-        uCtrlModificarTB.BringToFront()
-        uCtrlModificarTB.Show()
-        uCtrlModificarTB.Location = New Point(290, 48)
-
-    End Sub
-
-    Private Sub eliminarTipoBeca()
-
-
-
-        Dim id As Integer = dataGridVTipoBeca.CurrentRow.Cells(0).Value
-        Dim nombre As String = dataGridVTipoBeca.CurrentRow.Cells(1).Value
-        Dim objD As Date = dataGridVTipoBeca.CurrentRow.Cells(2).Value
-        Dim estado As String = dataGridVTipoBeca.CurrentRow.Cells(3).Value
-        Dim descripcion As String = dataGridVTipoBeca.CurrentRow.Cells(4).Value
-
-        Dim eliminarTipoBeca As New EliminarTipoBeca
-
-        frmPrincipal.Controls.Add(eliminarTipoBeca)
-        'eliminarTipoBeca.getUCtrlInstance(Me)
-        'eliminarTipoBeca.recibirInfo(id, nombre, objD, estado, descripcion)
-        'eliminarTipoBeca.BringToFront()
-        'eliminarTipoBeca.Show()
-        'eliminarTipoBeca.Location = New Point(290, 48)
-
-        'eliminarTipoBeca.Rows.Clear()
-        'listarTiposBeca()
-
-    End Sub
+<<<<<<< HEAD
 
     Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
         Dim ucntrl As uCtrlBuscarTipoBeca = New uCtrlBuscarTipoBeca()
@@ -174,4 +91,7 @@ Public Class uCtrlConsultarTipoBeca
         ucntrl.Location = New Point(120, 0)
         ucntrl.Show()
     End Sub
+=======
+   
+>>>>>>> origin/BackiGC
 End Class

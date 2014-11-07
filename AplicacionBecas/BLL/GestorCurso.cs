@@ -41,8 +41,6 @@ namespace BLL{
             }
         }
 
-
-
         //<summary> Método que se encarga de buscar todos los cursos que existen en el sistema</summary>
         //<author> Valeria Ramírez Cordero </author> 
         //<param > No recibe parámetros  </param>
@@ -50,8 +48,6 @@ namespace BLL{
         public IEnumerable<Curso> consultarCursos(){
             return CursoRepository.Instance.GetAll();
         }
-
-
 
         //<summary> Método que se encarga de buscar un curso en específico</summary>
         //<author>Valeria Ramírez Cordero</author> 
@@ -66,7 +62,6 @@ namespace BLL{
             
         }
 
-
         //<summary> Método que se encarga de modificar un Curso</summary>
         //<author> Valeria Ramírez Cordero</author> 
         //<param name = "nombre"> variable de tipo String que almacena nombre del curso</param>
@@ -74,8 +69,7 @@ namespace BLL{
         //<param name = "cuatrimestre"> variable de tipo String que almacena el cuatrimestre en el que se encuentra el curso  </param>
         //<param name = " creditos"> variable de tipo int que almacena los créditos del curso</param>
         //<param name = "precio"> variable de tipo String que almacena el precio del curso</param>
-        //<returns> No retorna valor.</returns> 
-
+        //<returns> No retorna valor.</returns>
         public void modificarCurso(String pcodigo, String pnombre, String pcuatrimestre, int pcreditos, double pprecio, int pidCurso){
             try{
                 int creditos = Convert.ToInt32(pcreditos);
@@ -101,9 +95,10 @@ namespace BLL{
             }
         }
 
-
-
-
+        //<summary> Método que se encarga de eliminar un curso</summary>
+        //<author> Valeria Ramírez Cordero</author> 
+        //<param name = "pcodigo">variable de tipo String que almacena el codigo del usuario</param>
+        //<returns> Retorna el curso buscado</returns>
         public void eliminarCurso(String pcodigo){
             try{
                 Curso objCurso = ContenedorMantenimiento.Instance.crearObjetoCurso(pcodigo);
@@ -113,10 +108,12 @@ namespace BLL{
             }catch (Exception ex){
                 throw ex;
             }
-
-           
         }
 
+        //<summary> Método que se encarga de guardar los cambios de un curso</summary>
+        //<author>Valeria Ramírez Cordero</author> 
+        //<param> No recibe parametros  </param>
+        //<returns> No retorna valor </returns>
         public void guardarCambios(){
             try{
                 CursoRepository.Instance.Save();
@@ -126,9 +123,6 @@ namespace BLL{
             catch (Exception ex){
                 throw ex;
             }
-
-            
-
         }
 
         public IEnumerable<Curso> getCursoPorCuatrimestre(String pcuatri) {

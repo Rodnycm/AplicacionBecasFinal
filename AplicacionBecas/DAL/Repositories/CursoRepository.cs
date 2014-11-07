@@ -14,8 +14,7 @@ using EntitiesLayer;
 
 namespace DAL{
 
-    public class CursoRepository : IRepository<Curso>
-    {
+    public class CursoRepository : IRepository<Curso>{
         private String actividad;
         private static CursoRepository instance;
         private List<IEntity> _insertItems;
@@ -26,9 +25,7 @@ namespace DAL{
         private static string mensaje;
 
 
-
-        private CursoRepository()
-        {
+        private CursoRepository(){
             _insertItems = new List<IEntity>();
             _deleteItems = new List<IEntity>();
             _updateItems = new List<IEntity>();
@@ -38,13 +35,9 @@ namespace DAL{
         //<author> Valeria Ramírez Cordero </author> 
         //<param> No recibe valor  </param>
         //<returns> Retorna una instancia de la clase CursoRepository.</returns> 
-        public static CursoRepository Instance
-        {
-
-            get
-            {
-                if (instance == null)
-                {
+        public static CursoRepository Instance{
+            get{
+                if (instance == null){
                     instance = new CursoRepository() { };
                 }
                 return instance;
@@ -55,18 +48,15 @@ namespace DAL{
         //<author> Valeria Ramírez Cordero </author> 
         //<param name "entity">  variable de tipo Curso que contiene el objeto Curso que se desea insertar  </param>
         //<returns> No retorna valor.</returns> 
-        public void Insert(Curso entity)
-        {
+        public void Insert(Curso entity){
             _insertItems.Add(entity);
         }
-
 
         //<summary> Método que se encarga de agregar un curso a la lista de cursos que se desean eliminar</summary>
         //<author>  Valeria Ramírez Cordero  </author> 
         //<param name "entity">  variable de tipo Curso que contiene el objeto Curso que se desea eliminar  </param>
         //<returns> No retorna valor.</returns> 
-        public void Delete(Curso entity)
-        {
+        public void Delete(Curso entity){
             _deleteItems.Add(entity);
         }
 
@@ -74,31 +64,24 @@ namespace DAL{
         //<author> Valeria Ramírez Cordero </author> 
         //<param name "entity">  variable de tipo Curso que contiene el objeto Curso que se desea modificar  </param>
         //<returns> No retorna valor.</returns> 
-        public void Update(Curso entity)
-        {
+        public void Update(Curso entity){
             _updateItems.Add(entity);
         }
-
 
         //<summary> Método que se encarga de traer de la base de datos todos los cursos registrados </summary>
         //<author>Valeria Ramírez Cordero</author> 
         //<param> no recibe parametros </param>
         //<returns>Retorna una lista con todos los cursos registrados en el sistema.</returns> 
-        public IEnumerable<Curso> GetAll()
-        {
-            try
-            {
+        public IEnumerable<Curso> GetAll(){
+            try{
                 List<Curso> pCurso = null;
                 SqlCommand cmd = new SqlCommand();
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_buscarCursos");
 
-                if (ds.Tables[0].Rows.Count > 0)
-                {
+                if (ds.Tables[0].Rows.Count > 0){
                     pCurso = new List<Curso>();
-                    foreach (DataRow dr in ds.Tables[0].Rows)
-                    {
-                        pCurso.Add(new Curso
-                        {
+                    foreach (DataRow dr in ds.Tables[0].Rows){
+                        pCurso.Add(new Curso{
                             codigo = dr["Codigo"].ToString(),
                             nombre = dr["Nombre"].ToString(),
                             cuatrimestre = dr["Cuatrimestre"].ToString(),
@@ -111,28 +94,20 @@ namespace DAL{
 
                 return pCurso;
             }
-            catch (SqlException ex)
-            {
+            catch (SqlException ex){
                 numero = ex.Number;
                 mensaje = exceptions.validarExcepcion(numero);
                 throw new CustomExceptions.DataAccessException(mensaje, ex);
-
             }
-            catch (Exception ex)
-            {
-
+            catch (Exception ex){
                 throw ex;
-
             }
         }
-
 
         //<summary> Método que se encarga de traer de la base de datos un curso en específico </summary>
         //<author>Valeria Ramírez Cordero</author> 
         //<param name "id"> parámetro de tipo int que contiene el Id del curso que se desea traer </param>
         //<returns>Retorna el curso deseado</returns> 
-       
-        
         public Curso GetById(int Id){
             try{
                 Curso objCurso = null;
@@ -144,11 +119,8 @@ namespace DAL{
             }
             catch (Exception ex){
                 throw ex;
-            }
-       
+            }       
         }
-
-
 
 
         public IEnumerable<Curso> getCursoPorCuatrimestre(String pcuatri) {
@@ -160,11 +132,9 @@ namespace DAL{
             cmd.Parameters.AddWithValue("@Cuatrimestre", pcuatri);
             DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_buscarCursoPorCuatrimestre");
 
-            if (ds.Tables[0].Rows.Count > 0)
-            {
+            if (ds.Tables[0].Rows.Count > 0){
                 listaCursos = new List<Curso>();
-                foreach (DataRow dr in ds.Tables[0].Rows)
-                {
+                foreach (DataRow dr in ds.Tables[0].Rows){
                     listaCursos.Add(new Curso{
                         codigo = dr["Codigo"].ToString(),
                         nombre = dr["Nombre"].ToString(),
@@ -206,8 +176,7 @@ namespace DAL{
             }
             return listaCursos;
             }
-            catch (Exception ex)
-            {
+            catch (Exception ex){
                 throw ex;
             }
 
@@ -253,7 +222,6 @@ namespace DAL{
         //<param> No recibe parámetros </param>
         //<returns>No retorna valor</returns> 
         public void Save(){
-
             using (TransactionScope scope = new TransactionScope()){
                 try{
                     if (_insertItems.Count > 0){
@@ -293,7 +261,6 @@ namespace DAL{
         //<author> Valeria Ramírez Cordero </author> 
         //<param> No recibe parámetros </param>
         //<returns>No retorna valor </returns> 
-
         public void Clear(){
             _insertItems.Clear();
             _deleteItems.Clear();
@@ -401,14 +368,10 @@ namespace DAL{
             //    mensaje = exceptions.validarExcepcion(numero);
             //    throw new CustomExceptions.DataAccessException(mensaje, ex);
             //}
-            catch (Exception e)
-            {
+            catch (Exception e){
 
                 throw e;
             }
-
-
         }
     }
-    
 }

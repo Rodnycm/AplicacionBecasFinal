@@ -36,7 +36,11 @@ Partial Public Class frmPrincipal
     End Sub
 
     Private Sub InicioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InicioToolStripMenuItem.Click
+<<<<<<< HEAD
         ValidarPermisos()
+=======
+        ucMenuAcad.Hide()
+>>>>>>> origin/Ramirez
         uCtrlUserProfile.Dispose()
         ucMenuMant.Hide()
         ocultarComponentes()
@@ -46,7 +50,7 @@ Partial Public Class frmPrincipal
 
 
     Private Sub MantenimientoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MantenimientoToolStripMenuItem.Click
-
+        ucMenuAcad.Hide()
         uCtrlUserProfile.Dispose()
         ocultarComponentes()
 
@@ -79,8 +83,10 @@ Partial Public Class frmPrincipal
     End Sub
 
     Private Sub btnAcademico_Click(sender As Object, e As EventArgs) Handles btnAcademico.Click
-
-        ocultarComponentes()
+        btnsMenus.Hide()
+        Me.Controls.Add(ucMenuAcad)
+        ucMenuAcad.Show()
+        'ocultarComponentes()
 
     End Sub
 
@@ -109,9 +115,20 @@ Partial Public Class frmPrincipal
 
         Dim UcntrlIniciar As UCtrlIniciar = New UCtrlIniciar()
         objGestorUsuario.cerrarSesion()
+
         Me.Hide()
+        ocultarComponentes()
+
+
         FrmIniciarSesion.Show()
         FrmIniciarSesion.Controls.Add(UcntrlIniciar)
+        UcntrlIniciar.Location = New Point(135, 125)
+
+
+
+     
+
+
 
     End Sub
 

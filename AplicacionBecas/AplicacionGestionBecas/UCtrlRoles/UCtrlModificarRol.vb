@@ -46,6 +46,7 @@ Public Class uCtrlModificarRol
 
         Catch ex As Exception
 
+<<<<<<< HEAD
             Dim UCtrl As UctrlAlerta = New UctrlAlerta()
 
             FrmIniciarSesion.principal.Controls.Add(UCtrl)
@@ -54,8 +55,10 @@ Public Class uCtrlModificarRol
             UCtrl.BringToFront()
             UCtrl.Show()
 
+=======
+>>>>>>> origin/Ramirez
         End Try
-        
+
     End Sub
 
 
@@ -85,6 +88,7 @@ Public Class uCtrlModificarRol
 
                 Next
             Next
+<<<<<<< HEAD
 
         Catch ex As Exception
             Dim UCtrl As UctrlAlerta = New UctrlAlerta()
@@ -95,6 +99,9 @@ Public Class uCtrlModificarRol
             UCtrl.BringToFront()
             UCtrl.Show()
         End Try
+=======
+        Next
+>>>>>>> origin/Ramirez
 
     End Sub
 
@@ -114,6 +121,13 @@ Public Class uCtrlModificarRol
     '''<name> Parámetros que recibe el método </name>  
     Private Sub btnAceptar_Click_1(sender As Object, e As EventArgs) Handles btnAceptar.Click
 
+<<<<<<< HEAD
+=======
+
+
+
+
+>>>>>>> origin/Ramirez
         Try
             EditarRol()
             ValidarPermisos()

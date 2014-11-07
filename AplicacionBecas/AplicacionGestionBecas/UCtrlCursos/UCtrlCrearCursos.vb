@@ -1,14 +1,9 @@
-﻿
-
-Imports BLL
+﻿Imports BLL
 Imports EntitiesLayer
-
-
 Public Class CrearCursos
 
     Dim alerta As uCtrlAlerta
     Dim ucBuscarCursos As New uCtrlBuscarCursos
-
 
     Private Sub btnAgregarCurso_Click(sender As Object, e As EventArgs) Handles btnAgregarCurso.Click
         Dim nombre As String = txtNombreCurso.Text
@@ -32,35 +27,19 @@ Public Class CrearCursos
             alerta.Location = New Point(290, 48)
             alerta.Show()
 
-         
         End Try
 
 
     End Sub
-
+    ''' <summary>Método que se encarga de limpiar y cargar la lista de cursos una vez creado el curso</summary>
+    ''' <param name="puctrl">control de usuario de buscar cursos</param>
+    ''' <autor>Valeria Ramírez</autor>
+    ''' 
     Public Sub refrecarLista(ByVal puctrl As uCtrlBuscarCursos)
         ucBuscarCursos = puctrl
     End Sub
     Private Sub btnCancelarAgregarCurso_Click(sender As Object, e As EventArgs) Handles btnCancelarAgregarCurso.Click
-
-
         Me.Hide()
-        'dtaListarCursos.Clear()
-
-
-
-    End Sub
-
-
-    Private Sub imgCrearCurso_Click(sender As Object, e As EventArgs) Handles imgCrearCurso.Click
-
-    End Sub
-
-    Private Sub MaskedTextBox1_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs)
-
-    End Sub
-
-    Private Sub txtCreditosCurso_TextChanged(sender As Object, e As EventArgs) Handles txtCreditosCurso.TextChanged
 
     End Sub
 End Class

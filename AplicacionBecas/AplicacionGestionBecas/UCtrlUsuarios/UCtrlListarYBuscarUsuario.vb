@@ -188,6 +188,10 @@ Public Class UctrlListarYBuscarUsuario
             listarUsuarios()
         End If
     End Sub
+
+    Private Sub dgUsuarios_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgUsuarios.CellContentClick
+
+    End Sub
 End Class
 
 

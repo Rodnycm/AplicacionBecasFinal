@@ -60,7 +60,6 @@ namespace BLL
             return new Requisito(pnombre, pdescripcion,pid);
         }
 
-
          //<summary> Método que se encarga de crear instancias de la clase Usuario</summary>
         //<author> Gabriela Gutiérrez Corrales </author> 
         //<param name = "ppNombre"> variable de tipo String que almacena el primer nombre del usuario  </param>
@@ -76,8 +75,7 @@ namespace BLL
         //<param name = "pcontraseña"> variable de tipo String que almacena la contraseña del usuario  </param>
         //<returns> Retorna un objeto de tipo Usuario</returns> 
 
-         public Usuario crearUsuario (string ppNombre,String psNombre,String ppApellido , String psApellido , String pidentificacion ,String ptelefono , DateTime pfechaNacimiento, Rol prol, int pgenero, String pcorreoElectronico, String pcontraseña)
-        {
+         public Usuario crearUsuario (string ppNombre,String psNombre,String ppApellido , String psApellido , String pidentificacion ,String ptelefono , DateTime pfechaNacimiento, Rol prol, int pgenero, String pcorreoElectronico, String pcontraseña){
             Usuario objUsuario = new Usuario( ppNombre, psNombre, ppApellido , psApellido ,  pidentificacion , ptelefono ,pfechaNacimiento, prol,  pgenero, pcorreoElectronico,  pcontraseña);
             return objUsuario;
 
@@ -134,9 +132,7 @@ namespace BLL
         //<param name= "precio" > variable de tipo String que almacena el precio del curso </param>
         //<param name= "id" > variable de tipo int que almacena el id del curso </param>
         //<returns>Retorna un objeto de tipo Curso</returns> 
-        public Curso crearObjetoCurso(string pnombre, string pcodigo, string pcuatrimestre, int pcreditos, double pprecio, int pid)
-        {
-
+        public Curso crearObjetoCurso(string pnombre, string pcodigo, string pcuatrimestre, int pcreditos, double pprecio, int pid){
             Curso curso = new Curso(pnombre, pcodigo, pcuatrimestre, pcreditos, pprecio, pid);
             curso.Id = pid;
             return curso;
@@ -144,13 +140,9 @@ namespace BLL
 
         //<summary> Método que se encarga de crear instancias de la clase Curso</summary>
         //<author> Valeria Ramírez Cordero </author> 
-        //<param name = "nombre"> variable de tipo String que almacena el nombre del curso  </param>
         //<param name= "codigo" > variable de tipo String que almacena el código de curso  </param>
-        //<param name= "id" > variable de tipo int que almacena el id del curso  </param>
         //<returns>Retorna un objeto de tipo Curso</returns> 
-        public Curso crearObjetoCurso(string pcodigo)
-        {
-
+        public Curso crearObjetoCurso(string pcodigo){
             Curso objCurso = new Curso(pcodigo);
             return objCurso;
         }
@@ -163,13 +155,11 @@ namespace BLL
         //<param name= "creditos" > variable de tipo String que almacena los créditos del curso  </param>
         //<param name= "precio" > variable de tipo String que almacena el precio del curso </param>
         //<returns>Retorna un objeto de tipo Curso</returns> 
-        public Curso crearObjetoCurso(string pnombre, string pcodigo, string pcuatrimestre, int pcreditos, double pprecio)
-        {
-
+        public Curso crearObjetoCurso(string pnombre, string pcodigo, string pcuatrimestre, int pcreditos, double pprecio){
             Curso curso = new Curso(pnombre, pcodigo, pcuatrimestre, pcreditos, pprecio);
-
             return curso;
         }
+
         public TipoBeca crearTipoBeca(string nombre, string estado, string direccion)
         {
             return new TipoBeca(nombre, estado, direccion);

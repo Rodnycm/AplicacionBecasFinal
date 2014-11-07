@@ -104,10 +104,8 @@
         uCntrlBuscarBeneficio.dtaBuscarBeneficio.Rows.Clear()
         uCntrlBuscarBeneficio.listarBeneficios()
 
-
-        txtNombre.Clear()
-        txPorcentaje.Clear()
-        txtAplicacion.Clear()
+        Me.Hide()
+        Me.Dispose()
 
     End Sub
 

@@ -51,7 +51,6 @@ C:\Users\Mathias\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\Aplicacio
 C:\Users\Mathias\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\UI.UctrlListarYBuscarUsuario.resources
 C:\Users\Mathias\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\UI.uCtrlMantenimientoCarreras.resources
 C:\Users\Mathias\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\UI.uCtrlMantenimientoCrearRequisito.resources
-C:\Users\Mathias\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\UI.uCtrlMantenimientoCursos.resources
 C:\Users\Mathias\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\UI.uCtrlMantenimientoRequisitos.resources
 C:\Users\Mathias\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\UI.uCtrlMenuAcademico.resources
 C:\Users\Mathias\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\UI.uCtrlMenuBecas.resources

@@ -11,8 +11,6 @@ Public Class uCtrlBuscarTipoBeca
 
         listarTiposBeca()
 
-
-
     End Sub
     Public Sub listarTiposBeca()
         Try

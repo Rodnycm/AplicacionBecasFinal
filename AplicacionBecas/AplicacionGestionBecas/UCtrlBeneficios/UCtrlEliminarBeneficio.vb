@@ -1,4 +1,6 @@
-﻿Public Class uCtrlEliminarBeneficio
+﻿Imports EntitiesLayer
+
+Public Class uCtrlEliminarBeneficio
 
     Dim id As Integer
     Dim nombre As String
@@ -57,26 +59,40 @@
 
         Try
 
-            objGestorBeneficio.eliminarBeneficio(id, nombre, porcentaje, aplicabilidad)
-            objGestorBeneficio.guardarCambios()
-            Dim Uctrl As uCtrlConfirmacion = New uCtrlConfirmacion
-            FrmIniciarSesion.principal.Controls.Add(Uctrl)
-            Uctrl.lblConfirmacion.Text = "El beneficio se eliminó correctamente"
-            Uctrl.Location = New Point(300, 100)
-            Uctrl.BringToFront()
-            Uctrl.Show()
+            Dim listaTiposBeca As IList(Of TipoBeca)
+            listaTiposBeca = objGestorBeneficio.buscarBeneficiosAsociados(id)
 
+            If listaTiposBeca Is Nothing Then
+
+                objGestorBeneficio.eliminarBeneficio(id, nombre, porcentaje, aplicabilidad)
+                objGestorBeneficio.guardarCambios()
+                Dim Uctrl As uCtrlConfirmacion = New uCtrlConfirmacion
+                FrmIniciarSesion.principal.Controls.Add(Uctrl)
+                Uctrl.lblConfirmacion.Text = "El beneficio se eliminó correctamente"
+                Uctrl.Location = New Point(300, 100)
+                Uctrl.BringToFront()
+                Uctrl.Show()
+            Else
+
+                Dim UCtrl As UctrlAlerta = New UctrlAlerta()
+
+                FrmIniciarSesion.principal.Controls.Add(UCtrl)
+                UCtrl.lblAlerta.Text = "No se puede Eliminar, se encuentra asociado a un tipo de beca."
+                UCtrl.Location = New Point(250, 50)
+                UCtrl.BringToFront()
+                UCtrl.Show()
+
+            End If
 
         Catch ex As Exception
 
-            Dim UCtrl As UCtrlAlerta = New UCtrlAlerta()
+            Dim UCtrl As UctrlAlerta = New UctrlAlerta()
 
             FrmIniciarSesion.principal.Controls.Add(UCtrl)
             UCtrl.lblAlerta.Text = ex.Message
             UCtrl.Location = New Point(250, 50)
             UCtrl.BringToFront()
             UCtrl.Show()
-
 
 
         End Try

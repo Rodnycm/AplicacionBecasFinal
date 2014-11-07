@@ -74,6 +74,11 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="UCtrlCarreras\UCtrlAsignarCursos.Designer.vb">
       <DependentUpon>UCtrlAsignarCursos.vb</DependentUpon>
     </Compile>
@@ -131,11 +136,6 @@
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
-    </Compile>
-    <Compile Include="My Project\Resources.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="My Project\Settings.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -440,9 +440,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Report1.rdlc" />
     <EmbeddedResource Include="Report2.rdlc" />
@@ -655,6 +655,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\tablaEmail.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerrarRojo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\confirmacion.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eliminarMoradoVFinal.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moradoTablaFinal.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

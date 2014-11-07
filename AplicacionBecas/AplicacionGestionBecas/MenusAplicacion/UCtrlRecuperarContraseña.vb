@@ -6,7 +6,7 @@
             objGestorUsuario.recuperarContraseña(usuario)
             Me.Hide()
         Catch ex As Exception
-            alerta.LblAlerta.Text = ex.Message
+            alerta.txtAlerta.Text = ex.Message
             FrmIniciarSesion.principal.Controls.Add(alerta)
             alerta.BringToFront()
             alerta.Show()

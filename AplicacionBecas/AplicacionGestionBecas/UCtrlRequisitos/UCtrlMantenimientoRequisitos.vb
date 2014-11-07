@@ -24,7 +24,7 @@ Public Class uCtrlMantenimientoRequisitos
             Me.Controls.Add(uctrlAlerta)
             uctrlAlerta.Location = New Point(300, 100)
             uctrlAlerta.BringToFront()
-            uctrlAlerta.lblAlerta.Text = "No hay requisitos registrados"
+            uctrlAlerta.txtAlerta.Text = "No hay requisitos registrados"
             uctrlAlerta.Show()
 
         End Try

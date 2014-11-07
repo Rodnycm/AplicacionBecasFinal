@@ -22,20 +22,10 @@ Partial Class uCtrlConfirmacion
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.lblConfirmacion = New System.Windows.Forms.Label()
         Me.btnAceptar = New System.Windows.Forms.Button()
         Me.btnCerrar = New System.Windows.Forms.Button()
+        Me.txtConfirmacion = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
-        '
-        'lblConfirmacion
-        '
-        Me.lblConfirmacion.AutoSize = True
-        Me.lblConfirmacion.Font = New System.Drawing.Font("Segoe UI", 14.0!)
-        Me.lblConfirmacion.Location = New System.Drawing.Point(28, 38)
-        Me.lblConfirmacion.Name = "lblConfirmacion"
-        Me.lblConfirmacion.Size = New System.Drawing.Size(53, 25)
-        Me.lblConfirmacion.TabIndex = 3
-        Me.lblConfirmacion.Text = "label"
         '
         'btnAceptar
         '
@@ -43,7 +33,7 @@ Partial Class uCtrlConfirmacion
         Me.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAceptar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAceptar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(248, Byte), Integer))
-        Me.btnAceptar.Location = New System.Drawing.Point(359, 116)
+        Me.btnAceptar.Location = New System.Drawing.Point(359, 117)
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(86, 29)
         Me.btnAceptar.TabIndex = 28
@@ -63,25 +53,39 @@ Partial Class uCtrlConfirmacion
         Me.btnCerrar.TabIndex = 29
         Me.btnCerrar.UseVisualStyleBackColor = False
         '
+        'txtConfirmacion
+        '
+        Me.txtConfirmacion.BackColor = System.Drawing.Color.White
+        Me.txtConfirmacion.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtConfirmacion.Enabled = False
+        Me.txtConfirmacion.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtConfirmacion.ForeColor = System.Drawing.Color.Black
+        Me.txtConfirmacion.Location = New System.Drawing.Point(14, 24)
+        Me.txtConfirmacion.Multiline = True
+        Me.txtConfirmacion.Name = "txtConfirmacion"
+        Me.txtConfirmacion.ReadOnly = True
+        Me.txtConfirmacion.Size = New System.Drawing.Size(431, 76)
+        Me.txtConfirmacion.TabIndex = 30
+        '
         'uCtrlConfirmacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Transparent
-        Me.BackgroundImage = Global.UI.My.Resources.Resources.eliminarMorado
+        Me.BackgroundImage = Global.UI.My.Resources.Resources.moradoTablaFinal
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Controls.Add(Me.txtConfirmacion)
         Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.btnAceptar)
-        Me.Controls.Add(Me.lblConfirmacion)
         Me.Location = New System.Drawing.Point(300, 100)
         Me.Name = "uCtrlConfirmacion"
-        Me.Size = New System.Drawing.Size(459, 160)
+        Me.Size = New System.Drawing.Size(458, 160)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents lblConfirmacion As System.Windows.Forms.Label
     Friend WithEvents btnAceptar As System.Windows.Forms.Button
     Friend WithEvents btnCerrar As System.Windows.Forms.Button
+    Friend WithEvents txtConfirmacion As System.Windows.Forms.TextBox
 
 End Class

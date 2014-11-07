@@ -507,13 +507,30 @@ namespace BLL
 
         public void notificarUsuario(String correo, String contrasenna){
 
-        Email email = new Email();
-        email = EmailRepository.Instance.GetEmail();
-        email.mensaje += " Su contraseña es: " + contrasenna;
-        email.notificarUsuario(correo);
-
+            Email email = new Email();
+            email = EmailRepository.Instance.GetEmail();
+            try
+            {
+                if (email.IsValid)
+                {
+                    email.mensaje += " Su contraseña es: " + contrasenna;
+                    email.notificarUsuario(correo);
+                }
+                else
+                {
+                    StringBuilder sb = new StringBuilder();
+                    foreach (RuleViolation rv in email.GetRuleViolations())
+                    {
+                        sb.Append(rv.ErrorMessage + "\n");
+                    }
+                    throw new ApplicationException(sb.ToString());
+                }
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
         }
-         
         public void cerrarSesion(){
             Globals.usuario=null;
         }

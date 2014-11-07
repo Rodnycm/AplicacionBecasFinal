@@ -240,11 +240,10 @@ namespace EntitiesLayer
 
             }
 
-            //if (!(Regex.IsMatch(correoElectronico, "^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(( [a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$")))
-            //{
-            //    yield return new RuleViolation("ERROR", "Correo electrónico incorrecto");
-            //}
-
+            if (!(Regex.IsMatch(correoElectronico, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase)))
+            {
+                yield return new RuleViolation("ERROR", "Correo electrónico incorrecto");
+            }
 
             yield break;
         }

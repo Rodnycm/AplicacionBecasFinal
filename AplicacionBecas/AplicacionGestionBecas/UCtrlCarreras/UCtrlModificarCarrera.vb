@@ -76,10 +76,11 @@ Public Class uCtrlModificarCarrera
             objGestorCarrera.modificarCarrera(nombre, codigo, color, idCarrera, idDirector)
             objGestorCarrera.guardarCambios()
             mantenimientoCarreras.listarCarreras()
+            FrmIniciarSesion.principal.mostrarConfirmacion("Carrera modificada con éxito")
 
         Catch ex As Exception
 
-            alerta.lblAlerta.Text = ex.Message
+            alerta.txtAlerta.Text = ex.Message
             FrmIniciarSesion.principal.Controls.Add(alerta)
             alerta.BringToFront()
             alerta.Show()
@@ -106,7 +107,7 @@ Public Class uCtrlModificarCarrera
 
         Catch ex As Exception
 
-            alerta.lblAlerta.Text = ex.Message
+            alerta.txtAlerta.Text = ex.Message
             FrmIniciarSesion.principal.Controls.Add(alerta)
             alerta.BringToFront()
             alerta.Show()

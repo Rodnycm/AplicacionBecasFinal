@@ -83,9 +83,39 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property eliminarMorado() As System.Drawing.Bitmap
+        Friend ReadOnly Property cerrarRojo() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("eliminarMorado", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("cerrarRojo", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property confirmacion() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("confirmacion", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property eliminarMoradoVFinal() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("eliminarMoradoVFinal", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property moradoTablaFinal() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("moradoTablaFinal", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

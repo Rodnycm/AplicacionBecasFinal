@@ -127,7 +127,7 @@ Partial Public Class frmPrincipal
 
         confirmacion = New uCtrlConfirmacion()
         Me.Controls.Add(confirmacion)
-        confirmacion.lblConfirmacion.Text = mensaje
+        confirmacion.txtConfirmacion.Text = mensaje
         confirmacion.BringToFront()
         confirmacion.Show()
 

@@ -34,7 +34,7 @@ Public Class uCtrlEliminarRol
             objGestorRol.guardarCambios()
             Dim Uctrl As uCtrlConfirmacion = New uCtrlConfirmacion
             FrmIniciarSesion.principal.Controls.Add(Uctrl)
-            Uctrl.lblConfirmacion.Text = "El rol se eliminó correctamente"
+            Uctrl.txtConfirmacion.Text = "El rol se eliminó correctamente"
             Uctrl.Location = New Point(300, 100)
             Uctrl.BringToFront()
             Uctrl.Show()
@@ -43,7 +43,7 @@ Public Class uCtrlEliminarRol
             Dim UCtrl As UctrlAlerta = New UctrlAlerta()
 
             FrmIniciarSesion.principal.Controls.Add(UCtrl)
-            UCtrl.lblAlerta.Text = ex.Message
+            UCtrl.txtAlerta.Text = ex.Message
             UCtrl.Location = New Point(300, 100)
             UCtrl.BringToFront()
             UCtrl.Show()

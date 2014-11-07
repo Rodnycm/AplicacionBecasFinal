@@ -42,7 +42,7 @@
 
                 Dim Uctrl As uCtrlConfirmacion = New uCtrlConfirmacion
                 FrmIniciarSesion.principal.Controls.Add(Uctrl)
-                Uctrl.lblConfirmacion.Text = "El beneficio se registro correctamente"
+                Uctrl.txtConfirmacion.Text = "El beneficio se registro correctamente"
                 Uctrl.Location = New Point(300, 100)
                 Uctrl.BringToFront()
                 Uctrl.Show()
@@ -52,7 +52,7 @@
                 Dim UCtrl As UCtrlAlerta = New UCtrlAlerta()
 
                 FrmIniciarSesion.principal.Controls.Add(UCtrl)
-                UCtrl.lblAlerta.Text = ex.Message
+                UCtrl.txtAlerta.Text = ex.Message
                 UCtrl.Location = New Point(300, 100)
                 UCtrl.BringToFront()
                 UCtrl.Show()
@@ -64,7 +64,7 @@
             Dim UCtrl As UCtrlAlerta = New UCtrlAlerta()
 
             FrmIniciarSesion.principal.Controls.Add(UCtrl)
-            UCtrl.lblAlerta.Text = "El porcentaje debe ser un numero"
+            UCtrl.txtAlerta.Text = "El porcentaje debe ser un numero"
             UCtrl.Location = New Point(300, 100)
             UCtrl.BringToFront()
             UCtrl.Show()

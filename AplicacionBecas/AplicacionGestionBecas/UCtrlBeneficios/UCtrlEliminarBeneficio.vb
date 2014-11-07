@@ -61,7 +61,7 @@
             objGestorBeneficio.guardarCambios()
             Dim Uctrl As uCtrlConfirmacion = New uCtrlConfirmacion
             FrmIniciarSesion.principal.Controls.Add(Uctrl)
-            Uctrl.lblConfirmacion.Text = "El beneficio se eliminó correctamente"
+            Uctrl.txtConfirmacion.Text = "El beneficio se eliminó correctamente"
             Uctrl.Location = New Point(300, 100)
             Uctrl.BringToFront()
             Uctrl.Show()
@@ -72,7 +72,7 @@
             Dim UCtrl As UCtrlAlerta = New UCtrlAlerta()
 
             FrmIniciarSesion.principal.Controls.Add(UCtrl)
-            UCtrl.lblAlerta.Text = ex.Message
+            UCtrl.txtAlerta.Text = ex.Message
             UCtrl.Location = New Point(250, 50)
             UCtrl.BringToFront()
             UCtrl.Show()

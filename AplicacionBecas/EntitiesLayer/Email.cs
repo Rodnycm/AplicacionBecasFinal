@@ -1,8 +1,4 @@
-﻿// The following example codes demonstrate sending email message using Gmail SMTP server
-// To get full sample projects, please download and install EASendMail on your machine.
-// To run it correctly, please change SMTP server, user, password, sender, recipient value to yours
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -61,50 +57,84 @@ namespace EntitiesLayer
         }
     
         public void notificarUsuario(String correo){
-            
+
+            try
+            {
             // Your gmail email address
-            //oMail.From = "gmailid@gmail.com";
             oMail.From = emisor;
 
-            // Set recipient email address
-            //oMail.To = "support@emailarchitect.net";
+            // Set recipient email ad   dress
             oMail.To = correo;
 
             // Set email subject
-            //oMail.Subject = "test email from gmail account";
             oMail.Subject = asunto;
 
             // Set email body
-            //oMail.TextBody = "this is a test email sent from c# project with gmail.";
             oMail.TextBody = mensaje;
 
             // Gmail SMTP server address
-            //SmtpServer oServer = new SmtpServer("smtp.gmail.com");
             SmtpServer oServer = new SmtpServer(smtpServidor);
 
-            // If you want to use direct SSL 465 port,
-            // please add this line, otherwise TLS will be used.
             // oServer.Port = 465;
 
             // detect SSL/TLS automatically
             oServer.ConnectType = SmtpConnectType.ConnectSSLAuto;
 
             // Gmail user authentication
-            // For example: your email is "gmailid@gmail.com", then the user should be the same
             oServer.User = userName;
             oServer.Password = contrasenna;
-
-            try
-            {
-                Console.WriteLine("start to send email over SSL ...");
-                oSmtp.SendMail(oServer, oMail);
-                Console.WriteLine("email was sent successfully!");
+            oSmtp.SendMail(oServer, oMail);
+                
             }
             catch (Exception ep)
             {
-                Console.WriteLine("failed to send email with the following error:");
-                Console.WriteLine(ep.Message);
+                throw ep;
             }
+        }
+
+        //<summary> Método que se encarga de determinar si los datos ingresados del requisito son validos</summary>
+        //<author> Gabriela Gutiérrez Corrales </author> 
+        //<param > No recibe parámetros </param>
+        //<returns> Variable booleana </returns> 
+
+        public bool IsValid
+        {
+            get { return (GetRuleViolations().Count() == 0); }
+        }
+
+
+        //<summary> Método que se encarga de validar que los diferentes atributos del requisito esten correctos</summary>
+        //<author> Gabriela Gutiérrez Corrales </author> 
+        //<param > No recibe parámetros </param>
+        //<returns> Retorna una lista de objetos RuleViolation </returns> 
+
+        public IEnumerable<RuleViolation> GetRuleViolations()
+        {
+            if (String.IsNullOrEmpty(asunto))
+            {
+                yield return new RuleViolation("Asunto requerido", "asunto");
+            }
+            if (String.IsNullOrEmpty(mensaje))
+            {
+                yield return new RuleViolation("Mensaje Requerido", "mensaje");
+            }
+            if (String.IsNullOrEmpty(emisor))
+            {
+                yield return new RuleViolation("Se requiere un correo electronico para notificar", "emisor");
+            }
+            if (String.IsNullOrEmpty(userName))
+            {
+                yield return new RuleViolation("Se requiere un correo electronico para notificar", "emisor");
+            }
+            if (String.IsNullOrEmpty(contrasenna))
+            {
+                yield return new RuleViolation("Se requiere la contraseña del email", "contrasenna");
+            }
+            if (!(Regex.IsMatch(emisor, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase)))
+            {
+                yield return new RuleViolation("ERROR", "Correo electrónico incorrecto");
+            }
+            yield break;
         }
     }
 }

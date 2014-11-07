@@ -39,7 +39,7 @@ Public Class UCtrlUserProfile
             objGestorUsuario.modificarUsuario(pNombre, sNombre, pApellido, sApellido, identificacion, telefono, fechaNacimiento, rol, genero, correoElectronico, contraseña, confirmacion, Globals.usuario.Id)
             objGestorUsuario.guardarCambios()
             confirmacionPopUp = New uCtrlConfirmacion()
-            confirmacionPopUp.lblConfirmacion.Text = "Datos modificados con éxito"
+            confirmacionPopUp.txtConfirmacion.Text = "Datos modificados con éxito"
             Me.Controls.Add(confirmacionPopUp)
             confirmacionPopUp.BringToFront()
             confirmacionPopUp.Show()
@@ -47,7 +47,7 @@ Public Class UCtrlUserProfile
         Catch ex As Exception
 
             alerta = New UctrlAlerta()
-            alerta.lblAlerta.Text = ex.Message
+            alerta.txtAlerta.Text = ex.Message
             FrmIniciarSesion.principal.Controls.Add(alerta)
             alerta.Location = New Point(300, 200)
             alerta.BringToFront()
@@ -79,7 +79,7 @@ Public Class UCtrlUserProfile
         Catch ex As Exception
 
             alerta = New UctrlAlerta
-            alerta.lblAlerta.Text = ex.Message
+            alerta.txtAlerta.Text = ex.Message
             FrmIniciarSesion.principal.Controls.Add(alerta)
             alerta.BringToFront()
             alerta.Show()

@@ -20,7 +20,7 @@ Public Class uCtrlCurso
             objGestorCurso.guardarCambios()
         Catch ex As Exception
             alerta = New UctrlAlerta()
-            alerta.lblAlerta.Text = ex.Message
+            alerta.txtAlerta.Text = ex.Message
             frmPrincipal.Controls.Add(alerta)
             alerta.BringToFront()
             alerta.Location = New Point(290, 48)

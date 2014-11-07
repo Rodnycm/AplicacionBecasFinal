@@ -118,6 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="cerrarRojo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cerrarRojo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="tablaFinalMedianaAzul" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tablaFinalMedianaAzul.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -126,6 +129,15 @@
   </data>
   <data name="Sin título-5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Sin título-5.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="eliminarMoradoVFinal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\eliminarMoradoVFinal.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tablaEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tablaEmail.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="confirmacion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\confirmacion.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="tablaFinalMedianaAzul3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tablaFinalMedianaAzul3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -136,10 +148,7 @@
   <data name="cerrarMorado" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cerrarMorado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="eliminarMorado" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\eliminarMorado.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="tablaEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tablaEmail.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="moradoTablaFinal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\moradoTablaFinal.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

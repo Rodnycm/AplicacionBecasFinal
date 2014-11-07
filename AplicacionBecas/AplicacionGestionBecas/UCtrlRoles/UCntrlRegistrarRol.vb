@@ -20,7 +20,7 @@ Public Class UCntrlRegistrarRol
 
             Dim Uctrl As uCtrlConfirmacion = New uCtrlConfirmacion
             FrmIniciarSesion.principal.Controls.Add(Uctrl)
-            Uctrl.lblConfirmacion.Text = "El rol se creo correctamente"
+            Uctrl.txtConfirmacion.Text = "El rol se creo correctamente"
             Uctrl.Location = New Point(300, 100)
             Uctrl.BringToFront()
             Uctrl.Show()
@@ -30,7 +30,7 @@ Public Class UCntrlRegistrarRol
             Dim UCtrl As UctrlAlerta = New UctrlAlerta()
 
             FrmIniciarSesion.principal.Controls.Add(UCtrl)
-            UCtrl.lblAlerta.Text = ex.Message
+            UCtrl.txtAlerta.Text = ex.Message
             UCtrl.Location = New Point(300, 100)
             UCtrl.BringToFront()
             UCtrl.Show()
@@ -96,7 +96,7 @@ Public Class UCntrlRegistrarRol
             Dim UCtrl As UctrlAlerta = New UctrlAlerta()
 
             Me.Controls.Add(UCtrl)
-            UCtrl.lblAlerta.Text = ex.Message
+            UCtrl.txtAlerta.Text = ex.Message
             UCtrl.Location = New Point(300, 100)
             UCtrl.BringToFront()
             UCtrl.Show()
@@ -125,7 +125,7 @@ Public Class UCntrlRegistrarRol
             Dim UCtrl As UctrlAlerta = New UctrlAlerta()
 
             Me.Controls.Add(UCtrl)
-            UCtrl.lblAlerta.Text = ex.Message
+            UCtrl.txtAlerta.Text = ex.Message
             UCtrl.Location = New Point(300, 100)
             UCtrl.BringToFront()
             UCtrl.Show()
@@ -147,7 +147,7 @@ Public Class UCntrlRegistrarRol
 
             Dim UCtrl As UctrlAlerta = New UctrlAlerta()
             Me.Controls.Add(UCtrl)
-            UCtrl.lblAlerta.Text = ex.Message
+            UCtrl.txtAlerta.Text = ex.Message
             UCtrl.Location = New Point(300, 100)
             UCtrl.BringToFront()
             UCtrl.Show()

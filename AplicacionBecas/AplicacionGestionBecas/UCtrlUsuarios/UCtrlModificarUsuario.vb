@@ -41,7 +41,7 @@ Public Class UctrlModificarUsuario
 
             alerta = New UctrlAlerta
 
-            alerta.lblAlerta.Text = ex.Message
+            alerta.txtAlerta.Text = ex.Message
             FrmIniciarSesion.principal.Controls.Add(alerta)
             alerta.BringToFront()
             alerta.Show()
@@ -111,7 +111,7 @@ Public Class UctrlModificarUsuario
             ucntrl.dgUsuarios.Rows.Clear()
             ucntrl.listarUsuarios()
             confirmacionPopUp = New uCtrlConfirmacion()
-            confirmacionPopUp.lblConfirmacion.Text = "Datos modificados con éxito"
+            confirmacionPopUp.txtConfirmacion.Text = "Datos modificados con éxito"
             Me.Controls.Add(confirmacionPopUp)
             confirmacionPopUp.Location = New Point(200, 200)
             confirmacionPopUp.BringToFront()
@@ -120,7 +120,7 @@ Public Class UctrlModificarUsuario
 
         Catch ex As Exception
             alerta = New UctrlAlerta()
-            alerta.lblAlerta.Text = ex.Message
+            alerta.txtAlerta.Text = ex.Message
             FrmIniciarSesion.principal.Controls.Add(alerta)
             alerta.BringToFront()
             alerta.Show()

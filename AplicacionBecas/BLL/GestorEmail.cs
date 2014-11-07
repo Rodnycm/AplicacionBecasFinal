@@ -19,7 +19,27 @@ namespace BLL
         public void modificarEmail(String pemisor, String pasunto, String pmensaje, String psmtpServidor, String puserName, String pcontrasenna, int id)
         {
             Email email = ContenedorMantenimiento.Instance.crearObjetoEmail(pemisor, pasunto, pmensaje, psmtpServidor, puserName, pcontrasenna,id);
-            EmailRepository.Instance.UpdateEmail(email);
+
+            try
+            {
+                if (email.IsValid)
+                {
+                    EmailRepository.Instance.UpdateEmail(email);
+                }
+                else
+                {
+                    StringBuilder sb = new StringBuilder();
+                    foreach (RuleViolation rv in email.GetRuleViolations())
+                    {
+                        sb.AppendLine(rv.ErrorMessage);
+                    }
+                    throw new ApplicationException(sb.ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }        
         }
     }
 }

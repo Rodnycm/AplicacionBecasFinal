@@ -35,7 +35,7 @@ Public Class uCtrlConsultarPlanDeEstudio
             Dim UCtrl As New UctrlAlerta
 
             Me.Controls.Add(UCtrl)
-            UCtrl.lblAlerta.Text = ex.Message
+            UCtrl.txtAlerta.Text = ex.Message
             UCtrl.Location = New Point(300, 100)
             UCtrl.BringToFront()
             UCtrl.Show()
@@ -60,7 +60,7 @@ Public Class uCtrlConsultarPlanDeEstudio
             Dim UCtrl As New UctrlAlerta
 
             Me.Controls.Add(UCtrl)
-            UCtrl.lblAlerta.Text = ex.Message
+            UCtrl.txtAlerta.Text = ex.Message
             UCtrl.Location = New Point(300, 100)
             UCtrl.BringToFront()
             UCtrl.Show()
@@ -92,11 +92,9 @@ Public Class uCtrlConsultarPlanDeEstudio
 
         Catch ex As Exception
 
-
             Dim UCtrl As New UctrlAlerta
-
             Me.Controls.Add(UCtrl)
-            UCtrl.lblAlerta.Text = ex.Message
+            UCtrl.txtAlerta.Text = ex.Message
             UCtrl.Location = New Point(300, 100)
             UCtrl.BringToFront()
             UCtrl.Show()

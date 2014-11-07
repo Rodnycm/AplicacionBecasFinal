@@ -29,7 +29,7 @@ Public Class UCtrlIniciar
 
             Else
                 alerta = New UctrlAlerta()
-                alerta.lblAlerta.Text = "Nombre de usuario o contraseña incorrectos"
+                alerta.txtAlerta.Text = "Nombre de usuario o contraseña incorrectos"
                 Me.Controls.Add(alerta)
                 alerta.BringToFront()
                 alerta.Location = New Point(100, 150)
@@ -39,7 +39,7 @@ Public Class UCtrlIniciar
         Catch ex As Exception
 
             alerta = New UctrlAlerta()
-            alerta.lblAlerta.Text = ex.Message
+            alerta.txtAlerta.Text = ex.Message
             FrmIniciarSesion.principal.Controls.Add(alerta)
             alerta.BringToFront()
             alerta.Show()

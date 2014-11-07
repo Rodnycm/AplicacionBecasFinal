@@ -72,7 +72,7 @@ Public Class uCtrlCrearCarrera
 
         Catch ex As Exception
 
-            alerta.lblAlerta.Text = ex.Message
+            alerta.txtAlerta.Text = ex.Message
             FrmIniciarSesion.principal.Controls.Add(alerta)
             alerta.BringToFront()
             alerta.Show()
@@ -115,7 +115,7 @@ Public Class uCtrlCrearCarrera
 
         Catch ex As Exception
 
-            alerta.lblAlerta.Text = ex.Message
+            alerta.txtAlerta.Text = ex.Message
             FrmIniciarSesion.principal.Controls.Add(alerta)
             alerta.BringToFront()
             alerta.Show()

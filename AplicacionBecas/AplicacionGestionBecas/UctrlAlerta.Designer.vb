@@ -24,7 +24,8 @@ Partial Class UctrlAlerta
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(UctrlAlerta))
         Me.btnAceptar = New System.Windows.Forms.Button()
-        Me.lblAlerta = New System.Windows.Forms.Label()
+        Me.btnCerrar = New System.Windows.Forms.Button()
+        Me.txtAlerta = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'btnAceptar
@@ -34,25 +35,39 @@ Partial Class UctrlAlerta
         Me.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAceptar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAceptar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(248, Byte), Integer))
-        Me.btnAceptar.Location = New System.Drawing.Point(240, 120)
+        Me.btnAceptar.Location = New System.Drawing.Point(472, 122)
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(89, 29)
         Me.btnAceptar.TabIndex = 13
         Me.btnAceptar.Text = "Aceptar"
         Me.btnAceptar.UseVisualStyleBackColor = False
         '
-        'lblAlerta
+        'btnCerrar
         '
-        Me.lblAlerta.AutoEllipsis = True
-        Me.lblAlerta.AutoSize = True
-        Me.lblAlerta.BackColor = System.Drawing.Color.Transparent
-        Me.lblAlerta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.lblAlerta.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblAlerta.Location = New System.Drawing.Point(15, 32)
-        Me.lblAlerta.Name = "lblAlerta"
-        Me.lblAlerta.Size = New System.Drawing.Size(42, 17)
-        Me.lblAlerta.TabIndex = 12
-        Me.lblAlerta.Text = "Label1"
+        Me.btnCerrar.BackColor = System.Drawing.Color.Transparent
+        Me.btnCerrar.BackgroundImage = Global.UI.My.Resources.Resources.cerrarRojo
+        Me.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCerrar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.btnCerrar.Location = New System.Drawing.Point(550, 3)
+        Me.btnCerrar.Name = "btnCerrar"
+        Me.btnCerrar.Size = New System.Drawing.Size(20, 18)
+        Me.btnCerrar.TabIndex = 20
+        Me.btnCerrar.UseVisualStyleBackColor = False
+        '
+        'txtAlerta
+        '
+        Me.txtAlerta.BackColor = System.Drawing.Color.White
+        Me.txtAlerta.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtAlerta.Enabled = False
+        Me.txtAlerta.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtAlerta.ForeColor = System.Drawing.Color.Black
+        Me.txtAlerta.Location = New System.Drawing.Point(15, 38)
+        Me.txtAlerta.Multiline = True
+        Me.txtAlerta.Name = "txtAlerta"
+        Me.txtAlerta.ReadOnly = True
+        Me.txtAlerta.Size = New System.Drawing.Size(546, 78)
+        Me.txtAlerta.TabIndex = 21
         '
         'UctrlAlerta
         '
@@ -60,8 +75,10 @@ Partial Class UctrlAlerta
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Controls.Add(Me.txtAlerta)
+        Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.btnAceptar)
-        Me.Controls.Add(Me.lblAlerta)
+        Me.ForeColor = System.Drawing.Color.White
         Me.Name = "UctrlAlerta"
         Me.Size = New System.Drawing.Size(573, 166)
         Me.ResumeLayout(False)
@@ -69,6 +86,7 @@ Partial Class UctrlAlerta
 
     End Sub
     Friend WithEvents btnAceptar As System.Windows.Forms.Button
-    Friend WithEvents lblAlerta As System.Windows.Forms.Label
+    Friend WithEvents btnCerrar As System.Windows.Forms.Button
+    Friend WithEvents txtAlerta As System.Windows.Forms.TextBox
 
 End Class

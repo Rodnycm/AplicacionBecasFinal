@@ -134,6 +134,7 @@ Partial Class UctrlEmailConfiguration
         'txtServidor
         '
         Me.txtServidor.BackColor = System.Drawing.Color.White
+        Me.txtServidor.Enabled = False
         Me.txtServidor.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtServidor.Location = New System.Drawing.Point(175, 108)
         Me.txtServidor.Name = "txtServidor"

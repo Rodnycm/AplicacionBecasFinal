@@ -21,7 +21,7 @@ Public Class CrearCursos
             Me.Dispose()
         Catch ex As Exception
             alerta = New uCtrlAlerta()
-            alerta.lblAlerta.Text = ex.Message
+            alerta.txtAlerta.Text = ex.Message
             FrmIniciarSesion.principal.Controls.Add(alerta)
             alerta.BringToFront()
             alerta.Location = New Point(290, 48)

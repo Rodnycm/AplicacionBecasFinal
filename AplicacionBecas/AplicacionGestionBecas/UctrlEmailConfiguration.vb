@@ -3,6 +3,7 @@ Public Class UctrlEmailConfiguration
 
     Dim idEmail As Integer
     Dim mBlnFormDragging As Boolean
+    Dim alerta As UctrlAlerta = New UctrlAlerta()
     Dim confirmacion As uCtrlConfirmacion
 
     ''' <summary>Posiciona la ventana mientras el usuario da click al compomente</summary>
@@ -66,22 +67,26 @@ Public Class UctrlEmailConfiguration
 
     Private Sub modificarEmail()
 
-        Try
+        Dim asunto As String = txtAsunto.Text
+        Dim emisor As String = txtEmisor.Text
+        Dim contrasenna As String = txtContrasenna.Text
+        Dim servidor As String = txtServidor.Text
+        Dim mensaje As String = txtMensaje.Text
+        Dim userName As String = txtUserName.Text
 
-            Dim asunto As String = txtAsunto.Text
-            Dim emisor As String = txtEmisor.Text
-            Dim contrasenna As String = txtContrasenna.Text
-            Dim servidor As String = txtServidor.Text
-            Dim mensaje As String = txtMensaje.Text
-            Dim userName As String = txtUserName.Text
+        Try
             objeGestorEmail.modificarEmail(emisor, asunto, mensaje, servidor, userName, contrasenna, idEmail)
             Dim mensajeConfirmacion As String = "Configuración de notificaciones modificado con exito"
             FrmIniciarSesion.principal.mostrarConfirmacion(mensajeConfirmacion)
-
         Catch ex As Exception
 
+            alerta = New UctrlAlerta()
+            alerta.txtAlerta.Text = ex.Message
+            FrmIniciarSesion.principal.Controls.Add(alerta)
+            alerta.BringToFront()
+            alerta.Show()
+
         End Try
-        
 
     End Sub
 

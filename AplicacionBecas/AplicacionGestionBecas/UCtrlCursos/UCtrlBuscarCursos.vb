@@ -64,7 +64,7 @@ Public Class uCtrlBuscarCursos
     ''' 
     Public Sub eliminarCurso(ByVal pfila As String)
 
-        Dim codigo As String = pfil
+        Dim codigo As String = pfila
         Dim ucntrl As uCtrlEliminarCurso = New uCtrlEliminarCurso()
         ucntrl.recieveData(codigo)
         FrmIniciarSesion.principal.Controls.Add(ucntrl)

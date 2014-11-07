@@ -179,5 +179,15 @@ namespace BLL
             TipoBeca objTipoBeca = new TipoBeca(pnombre);
             return objTipoBeca;
         }
+        public Email crearObjetoEmail(String pemisor, String pasunto, String pmensaje, String psmtpServidor, String puserName, String pcontrasenna)
+        {
+            return new Email(pemisor, pasunto, pmensaje, psmtpServidor, puserName, pcontrasenna);
+        }
+
+        public Email crearObjetoEmail(String pemisor, String pasunto, String pmensaje, String psmtpServidor, String puserName, String pcontrasenna, int id)
+        {
+            return new Email(pemisor, pasunto, pmensaje, psmtpServidor, puserName, pcontrasenna,id);
+        }
+
     }
 }

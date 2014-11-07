@@ -9,6 +9,8 @@ Partial Public Class frmPrincipal
     Dim ucMenuRep As New uCtrlMenuReportes()
     Dim ucMenuBecas As New uCtrlMenuBecas()
     Dim uCtrlUserProfile As New UCtrlUserProfile()
+    Public Property uCtrlEmail As UctrlEmailConfiguration = New UctrlEmailConfiguration()
+    Public Property confirmacion As uCtrlConfirmacion = New uCtrlConfirmacion()
 
     Public listaPermisos As List(Of Permiso) = New List(Of Permiso)
 
@@ -124,7 +126,23 @@ Partial Public Class frmPrincipal
 
     End Sub
 
-    
+    Public Sub instanciaUctrlEmail()
+
+        uCtrlEmail = New UctrlEmailConfiguration()
+        Me.Controls.Add(uCtrlEmail)
+        uCtrlEmail.Hide()
+
+    End Sub
+
+    Public Sub mostrarConfirmacion(ByVal mensaje As String)
+
+        confirmacion = New uCtrlConfirmacion()
+        Me.Controls.Add(confirmacion)
+        confirmacion.lblConfirmacion.Text = mensaje
+        confirmacion.BringToFront()
+        confirmacion.Show()
+
+    End Sub
 
 End Class
 

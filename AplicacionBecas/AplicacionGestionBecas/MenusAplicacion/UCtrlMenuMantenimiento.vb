@@ -125,4 +125,12 @@ Public Class uCtrlMenuMantenimiento
 
     End Sub
 
+    Private Sub btnEmail_Click(sender As Object, e As EventArgs) Handles btnEmail.Click
+
+        FrmIniciarSesion.principal.instanciaUctrlEmail()
+        FrmIniciarSesion.principal.uCtrlEmail.Show()
+        FrmIniciarSesion.principal.uCtrlEmail.BringToFront()
+
+    End Sub
+
 End Class

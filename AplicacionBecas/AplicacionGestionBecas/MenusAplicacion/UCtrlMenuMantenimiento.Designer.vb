@@ -23,7 +23,7 @@ Partial Class uCtrlMenuMantenimiento
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(uCtrlMenuMantenimiento))
-        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.layoutMenuMant = New System.Windows.Forms.TableLayoutPanel()
         Me.btnUsuarios = New System.Windows.Forms.Button()
         Me.btnCursos = New System.Windows.Forms.Button()
         Me.btnBeneficios = New System.Windows.Forms.Button()
@@ -31,31 +31,33 @@ Partial Class uCtrlMenuMantenimiento
         Me.btnRoles = New System.Windows.Forms.Button()
         Me.btnBecas = New System.Windows.Forms.Button()
         Me.btnRequisitos = New System.Windows.Forms.Button()
-        Me.TableLayoutPanel1.SuspendLayout()
+        Me.btnEmail = New System.Windows.Forms.Button()
+        Me.layoutMenuMant.SuspendLayout()
         Me.SuspendLayout()
         '
-        'TableLayoutPanel1
+        'layoutMenuMant
         '
-        Me.TableLayoutPanel1.ColumnCount = 5
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 168.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 162.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 190.0!))
-        Me.TableLayoutPanel1.Controls.Add(Me.btnUsuarios, 0, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.btnCursos, 1, 1)
-        Me.TableLayoutPanel1.Controls.Add(Me.btnBeneficios, 4, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.btnCarreras, 0, 1)
-        Me.TableLayoutPanel1.Controls.Add(Me.btnRoles, 1, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.btnBecas, 2, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.btnRequisitos, 3, 0)
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(175, 134)
-        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
-        Me.TableLayoutPanel1.RowCount = 2
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52.40174!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.59826!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(850, 229)
-        Me.TableLayoutPanel1.TabIndex = 13
+        Me.layoutMenuMant.ColumnCount = 5
+        Me.layoutMenuMant.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.layoutMenuMant.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.layoutMenuMant.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 168.0!))
+        Me.layoutMenuMant.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 162.0!))
+        Me.layoutMenuMant.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 190.0!))
+        Me.layoutMenuMant.Controls.Add(Me.btnEmail, 2, 1)
+        Me.layoutMenuMant.Controls.Add(Me.btnUsuarios, 0, 0)
+        Me.layoutMenuMant.Controls.Add(Me.btnCursos, 1, 1)
+        Me.layoutMenuMant.Controls.Add(Me.btnCarreras, 0, 1)
+        Me.layoutMenuMant.Controls.Add(Me.btnRoles, 1, 0)
+        Me.layoutMenuMant.Controls.Add(Me.btnBecas, 2, 0)
+        Me.layoutMenuMant.Controls.Add(Me.btnRequisitos, 3, 0)
+        Me.layoutMenuMant.Controls.Add(Me.btnBeneficios, 4, 0)
+        Me.layoutMenuMant.Location = New System.Drawing.Point(175, 134)
+        Me.layoutMenuMant.Name = "layoutMenuMant"
+        Me.layoutMenuMant.RowCount = 2
+        Me.layoutMenuMant.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52.40174!))
+        Me.layoutMenuMant.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.59826!))
+        Me.layoutMenuMant.Size = New System.Drawing.Size(850, 229)
+        Me.layoutMenuMant.TabIndex = 13
         '
         'btnUsuarios
         '
@@ -157,19 +159,32 @@ Partial Class uCtrlMenuMantenimiento
         Me.btnRequisitos.UseVisualStyleBackColor = True
         Me.btnRequisitos.Visible = False
         '
+        'btnEmail
+        '
+        Me.btnEmail.BackgroundImage = CType(resources.GetObject("btnEmail.BackgroundImage"), System.Drawing.Image)
+        Me.btnEmail.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEmail.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEmail.ForeColor = System.Drawing.Color.White
+        Me.btnEmail.Location = New System.Drawing.Point(333, 122)
+        Me.btnEmail.Name = "btnEmail"
+        Me.btnEmail.Size = New System.Drawing.Size(128, 99)
+        Me.btnEmail.TabIndex = 14
+        Me.btnEmail.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnEmail.UseVisualStyleBackColor = True
+        '
         'uCtrlMenuMantenimiento
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.Controls.Add(Me.TableLayoutPanel1)
+        Me.Controls.Add(Me.layoutMenuMant)
         Me.Name = "uCtrlMenuMantenimiento"
         Me.Size = New System.Drawing.Size(1030, 640)
-        Me.TableLayoutPanel1.ResumeLayout(False)
+        Me.layoutMenuMant.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents TableLayoutPanel1 As System.Windows.Forms.TableLayoutPanel
+    Friend WithEvents layoutMenuMant As System.Windows.Forms.TableLayoutPanel
     Friend WithEvents btnUsuarios As System.Windows.Forms.Button
     Friend WithEvents btnCursos As System.Windows.Forms.Button
     Friend WithEvents btnBeneficios As System.Windows.Forms.Button
@@ -177,5 +192,6 @@ Partial Class uCtrlMenuMantenimiento
     Friend WithEvents btnRoles As System.Windows.Forms.Button
     Friend WithEvents btnBecas As System.Windows.Forms.Button
     Friend WithEvents btnRequisitos As System.Windows.Forms.Button
+    Friend WithEvents btnEmail As System.Windows.Forms.Button
 
 End Class

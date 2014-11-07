@@ -18,7 +18,6 @@ namespace DAL.Repositories
         private List<IEntity> _insertItems;
         private List<IEntity> _deleteItems;
         private List<IEntity> _updateItems;
-
         private CarreraRepository()
         {
             _insertItems = new List<IEntity>();

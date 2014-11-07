@@ -435,6 +435,9 @@
     <EmbeddedResource Include="UCtrlCursos\UCtrlCrearCursos.resx">
       <DependentUpon>UCtrlCrearCursos.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UCtrlRequisitos\UCtrlEliminarRequisitos.resx">
+      <DependentUpon>UCtrlEliminarRequisitos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UCtrlRequisitos\UCtrlModificarRequisito.resx">
       <DependentUpon>UCtrlModificarRequisito.vb</DependentUpon>
     </EmbeddedResource>

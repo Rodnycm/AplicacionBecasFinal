@@ -3,7 +3,7 @@
 
 Public Class uCtrlBuscarTipoBeca
 
-    Dim crearTipo As uCtrlCrearTipoBeca = New uCtrlCrearTipoBeca()
+    Dim crearTipo As uCtrlCrearTipoBeca
     Dim uCtrlConsultarTB As uCtrlConsultarTipoBeca = New uCtrlConsultarTipoBeca()
 
     
@@ -25,7 +25,13 @@ Public Class uCtrlBuscarTipoBeca
 
             Next
         Catch
-            MsgBox("No se encontró un tipo de beca, ingrese uno")
+            Dim uctrlAlerta As UctrlAlerta = New UctrlAlerta()
+            Me.Controls.Add(uctrlAlerta)
+            uctrlAlerta.Location = New Point(300, 100)
+            uctrlAlerta.BringToFront()
+            Me.SendToBack()
+            uctrlAlerta.lblAlerta.Text = "Noy hay tipos de beca registrados"
+            uctrlAlerta.Show()
         End Try
 
     End Sub
@@ -165,9 +171,10 @@ Public Class uCtrlBuscarTipoBeca
     End Sub
 
     Private Sub btnCrearTipoBeca_Click(sender As Object, e As EventArgs) Handles btnCrearTipoBeca.Click
+        crearTipo = New uCtrlCrearTipoBeca()
+        FrmIniciarSesion.principal.Controls.Add(crearTipo)
         crearTipo.Location = New Point(200, 250)
         crearTipo.BringToFront()
-        FrmIniciarSesion.principal.Controls.Add(crearTipo)
         crearTipo.Show()
         Me.Hide()
     End Sub

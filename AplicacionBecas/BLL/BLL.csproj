@@ -46,6 +46,7 @@
     <Compile Include="GestorBeneficios.cs" />
     <Compile Include="GestorCarrera.cs" />
     <Compile Include="GestorCurso.cs" />
+    <Compile Include="GestorEmail.cs" />
     <Compile Include="GestorRequisito.cs" />
     <Compile Include="GestorRol.cs" />
     <Compile Include="GestorTipoBeca.cs" />

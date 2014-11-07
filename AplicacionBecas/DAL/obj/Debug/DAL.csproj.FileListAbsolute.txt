@@ -13,6 +13,7 @@ C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\DAL\
 C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\DAL\bin\Debug\DAL.pdb
 C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\DAL\bin\Debug\EntitiesLayer.dll
 C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\DAL\bin\Debug\TIL.dll
+C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\DAL\bin\Debug\EASendMail45.dll
 C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\DAL\bin\Debug\EntitiesLayer.pdb
 C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\DAL\bin\Debug\TIL.pdb
 C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache

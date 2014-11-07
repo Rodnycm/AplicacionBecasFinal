@@ -74,6 +74,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UCtrlCarreras\UCtrlAsignarCursos.Designer.vb">
+      <DependentUpon>UCtrlAsignarCursos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UCtrlCarreras\UCtrlAsignarCursos.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="uCtrlConsultarPlanDeEstudio.Designer.vb">
       <DependentUpon>uCtrlConsultarPlanDeEstudio.vb</DependentUpon>
     </Compile>
@@ -100,6 +106,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DB_Proyecto2DataSetConsultarRegistroAcciones.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UCtrlRequisitos\UCtrlModificarRequisito.Designer.vb">
+      <DependentUpon>UCtrlModificarRequisito.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UCtrlRequisitos\UCtrlModificarRequisito.vb">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UCtrlTipoBeca\EliminarTipoBeca.Designer.vb">
       <DependentUpon>EliminarTipoBeca.vb</DependentUpon>
@@ -414,11 +426,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="UCtrlCarreras\UCtrlAsignarCursos.resx">
+      <DependentUpon>UCtrlAsignarCursos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="uCtrlConsultarPlanDeEstudio.resx">
       <DependentUpon>uCtrlConsultarPlanDeEstudio.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCtrlCursos\UCtrlCrearCursos.resx">
       <DependentUpon>UCtrlCrearCursos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCtrlRequisitos\UCtrlModificarRequisito.resx">
+      <DependentUpon>UCtrlModificarRequisito.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCtrlTipoBeca\EliminarTipoBeca.resx">
       <DependentUpon>EliminarTipoBeca.vb</DependentUpon>
@@ -620,7 +638,9 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.csproj">

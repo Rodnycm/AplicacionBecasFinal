@@ -37,11 +37,10 @@ Public Class uCtrlBuscarTipoBeca
     End Sub
 
 
-    Private Sub dtaTipoBeca_EditingControlShowing(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewEditingControlShowingEventArgs) Handles dtaTipoBeca.EditingControlShowing
+    Public Sub dtaTipoBeca_EditingControlShowing(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewEditingControlShowingEventArgs) Handles dtaTipoBeca.EditingControlShowing
         ' Only for a DatagridComboBoxColumn at ColumnIndex 1.
         If dtaTipoBeca.CurrentCell.ColumnIndex = 2 Then
             Dim combo As ComboBox = CType(e.Control, ComboBox)
-
             If (combo IsNot Nothing) Then
                 ' Remove an existing event-handler, if present, to avoid 
                 ' adding multiple handlers when the editing control is reused.
@@ -52,32 +51,28 @@ Public Class uCtrlBuscarTipoBeca
             End If
         End If
     End Sub
+   
     Private Sub ComboBox_SelectionChangeCommitted(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
         Dim combo As ComboBox = CType(sender, ComboBox)
 
         If combo.SelectedItem = "Ver" Then
-
-            verTipoBeca()
-
+            Dim param = dtaTipoBeca.CurrentRow.Cells(0).Value
+            verTipoBeca(param)
         ElseIf combo.SelectedItem = "Editar" Then
 
             editarTipoBeca()
-
         ElseIf combo.SelectedItem = "Eliminar" Then
 
             eliminarTipoBeca()
-
         End If
-
     End Sub
-    Private Sub verTipoBeca()
-        Dim nombre As String = dtaTipoBeca.CurrentRow.Cells(0).Value
 
-        Dim uCtrlConsultarTipoBeca As New uCtrlConsultarTipoBeca
-
-        'uCtrlConsultarTipoBeca.recibirInfo(nombre)
+    Private Sub verTipoBeca(ByVal pparam As String)
+        Dim nombre As String = pparam
+        Dim uCtrlConsultarTipoBeca As New uCtrlConsultarTipoBeca()
         frmPrincipal.Controls.Add(uCtrlConsultarTipoBeca)
+        uCtrlConsultarTipoBeca.enviarInfo(nombre)
         uCtrlConsultarTipoBeca.BringToFront()
         uCtrlConsultarTipoBeca.Location = New Point(200, 150)
         uCtrlConsultarTipoBeca.Show()
@@ -91,8 +86,8 @@ Public Class uCtrlBuscarTipoBeca
 
         Dim nombre As String = dtaTipoBeca.CurrentRow.Cells(0).Value
         'Dim objD As Date = dtaTipoBeca.CurrentRow.Cells(1).Value
-        Dim estado As String = dtaTipoBeca.CurrentRow.Cells(2).Value
-        Dim descripcion As String = dtaTipoBeca.CurrentRow.Cells(3).Value
+        Dim estado As String = dtaTipoBeca.CurrentRow.Cells(1).Value
+        Dim descripcion As String = dtaTipoBeca.CurrentRow.Cells(2).Value
 
 
         Dim objTipoBeca As TipoBeca = gestorTipoBeca.buscarUnTipoBeca(nombre)
@@ -141,7 +136,7 @@ Public Class uCtrlBuscarTipoBeca
     ''' <summary>Cuando el evento se ejecuta al dar presionar la tecla enter llama al metodo eliminar carrera</summary>
     ''' <autor>Alvaro Artavia</autor>
 
-    Private Sub txtBarraBusqueda_KeyDown(sender As Object, e As System.Windows.Forms.KeyEventArgs) Handles txtBarraBusqueda.KeyDown
+    Private Sub txtBarraBusqueda_KeyDown(sender As Object, e As System.Windows.Forms.KeyEventArgs)
 
         Dim param As String = txtBarraBusqueda.Text
 
@@ -171,7 +166,7 @@ Public Class uCtrlBuscarTipoBeca
         listarTiposBeca()
     End Sub
 
-    Private Sub btnCrearTipoBeca_Click(sender As Object, e As EventArgs) Handles btnCrearTipoBeca.Click
+    Private Sub btnCrearTipoBeca_Click(sender As Object, e As EventArgs)
         crearTipo = New uCtrlCrearTipoBeca()
         FrmIniciarSesion.principal.Controls.Add(crearTipo)
         crearTipo.Location = New Point(300, 100)
@@ -181,9 +176,13 @@ Public Class uCtrlBuscarTipoBeca
 
     End Sub
 
-    Private Sub txtBarraBusqueda_TextChanged_1(sender As Object, e As EventArgs) Handles txtBarraBusqueda.TextChanged
+    Private Sub txtBarraBusqueda_TextChanged_1(sender As Object, e As EventArgs)
         If (txtBarraBusqueda.Text = "") Then
             listarTiposBeca()
         End If
+    End Sub
+
+    Private Sub txtBarraBusqueda_TextChanged(sender As Object, e As MouseEventArgs)
+
     End Sub
 End Class

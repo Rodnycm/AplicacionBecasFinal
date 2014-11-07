@@ -23,7 +23,6 @@ Partial Class uCtrlConsultarTipoBeca
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(uCtrlConsultarTipoBeca))
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -31,8 +30,8 @@ Partial Class uCtrlConsultarTipoBeca
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(uCtrlConsultarTipoBeca))
         Me.dataGridVTipoBeca = New System.Windows.Forms.DataGridView()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FechaCreacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -40,6 +39,7 @@ Partial Class uCtrlConsultarTipoBeca
         Me.Requisitos = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Beneficios = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.mantenimiento = New System.Windows.Forms.DataGridViewComboBoxColumn()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.dataGridVTipoBeca, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -60,21 +60,12 @@ Partial Class uCtrlConsultarTipoBeca
         Me.dataGridVTipoBeca.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dataGridVTipoBeca.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Nombre, Me.FechaCreacion, Me.Estado, Me.Descripcion, Me.Requisitos, Me.Beneficios, Me.mantenimiento})
         Me.dataGridVTipoBeca.GridColor = System.Drawing.Color.White
-        Me.dataGridVTipoBeca.Location = New System.Drawing.Point(56, 223)
+        Me.dataGridVTipoBeca.Location = New System.Drawing.Point(155, 174)
         Me.dataGridVTipoBeca.Name = "dataGridVTipoBeca"
         Me.dataGridVTipoBeca.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         Me.dataGridVTipoBeca.RowHeadersVisible = False
         Me.dataGridVTipoBeca.Size = New System.Drawing.Size(730, 266)
         Me.dataGridVTipoBeca.TabIndex = 11
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(46, 184)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(757, 321)
-        Me.PictureBox1.TabIndex = 12
-        Me.PictureBox1.TabStop = False
         '
         'Nombre
         '
@@ -145,6 +136,15 @@ Partial Class uCtrlConsultarTipoBeca
         Me.mantenimiento.HeaderText = "Opciones"
         Me.mantenimiento.Items.AddRange(New Object() {"Ver", "Editar", "Eliminar"})
         Me.mantenimiento.Name = "mantenimiento"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(138, 138)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(757, 321)
+        Me.PictureBox1.TabIndex = 12
+        Me.PictureBox1.TabStop = False
         '
         'uCtrlConsultarTipoBeca
         '

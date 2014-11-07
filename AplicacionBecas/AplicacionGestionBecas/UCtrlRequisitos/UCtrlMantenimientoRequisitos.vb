@@ -31,11 +31,6 @@ Public Class uCtrlMantenimientoRequisitos
 
     End Sub
 
-    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.MouseClick
-
-        txtBuscar.Text = ""
-
-    End Sub
 
     Private Sub txtBuscar_KeyDown(sender As Object, e As System.Windows.Forms.KeyEventArgs) Handles txtBuscar.KeyDown
 
@@ -111,7 +106,7 @@ Public Class uCtrlMantenimientoRequisitos
     Private Sub ComboBox_SelectionChangeCommitted(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
         Dim combo As ComboBox = CType(sender, ComboBox)
-        Dim fila As String = dgvRequisitos.CurrentRow.Cells(0).Value()
+        Dim fila As Integer = dgvRequisitos.CurrentCell.RowIndex
 
         If combo.SelectedItem = "Editar" Then
 
@@ -121,7 +116,7 @@ Public Class uCtrlMantenimientoRequisitos
 
         ElseIf combo.SelectedItem = "Eliminar" Then
 
-            'eliminarCurso(fila)
+            eliminarRequisito(fila)
 
 
             '
@@ -144,6 +139,27 @@ Public Class uCtrlMantenimientoRequisitos
         'ucntrl.setParametro(pparametro)
         ucntrl.Location = New Point(290, 48)
         ucntrl.refrecarLista(Me)
+
+    End Sub
+
+    Private Sub eliminarRequisito(numfila As Integer)
+        Try
+            Dim nombre As String = dgvRequisitos.Rows(numfila).Cells(1).Value
+            Dim descripcion As String = dgvRequisitos.Rows(numfila).Cells(0).Value
+            Dim idRequisito As Integer = dgvRequisitos.Rows(numfila).Cells(3).Value
+            Dim uCtrlElirequsito As New UCtrlEliminarRequisitos()
+            uCtrlElirequsito.recieveData(nombre, descripcion, idRequisito)
+            uCtrlElirequsito.getFrmBuscar(Me)
+
+            FrmIniciarSesion.principal.Controls.Add(uCtrlElirequsito)
+
+            uCtrlElirequsito.Show()
+            uCtrlElirequsito.Location = New Point(256, 226)
+            uCtrlElirequsito.BringToFront()
+        Catch ex As Exception
+
+        End Try
+
 
     End Sub
 

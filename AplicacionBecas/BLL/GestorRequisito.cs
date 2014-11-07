@@ -84,6 +84,21 @@ namespace BLL
             }
         }
 
+        public void eliminarRequisito(String pnombre, String pdescripcion, int pid)
+        {
+
+            try
+            {
+                Requisito objRequisito = ContenedorMantenimiento.Instance.crearRequisito(pnombre, pdescripcion, pid);
+                RequisitoRepository.Instance.Delete(objRequisito);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
 
         //<summary> Método que se encarga de guardar los cambios de un requisito</summary>
         //<author> Gabriela Gutiérrez Corrales </author> 

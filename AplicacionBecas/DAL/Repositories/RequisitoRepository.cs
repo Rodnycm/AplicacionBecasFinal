@@ -194,6 +194,45 @@ namespace DAL.Repositories
         }
 
 
+        public IEnumerable<TipoBeca> GetLista(Requisito objRequisito)
+        {
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+
+
+            List<TipoBeca> ptipoBeca = null;
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.Parameters.Add(new SqlParameter("@idRequisito   ", objRequisito.Id));
+
+            DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_buscarRequisitosAUnTipoBeca");
+
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                ptipoBeca = new List<TipoBeca>();
+                foreach (DataRow dr in ds.Tables[0].Rows)
+                {
+                    ptipoBeca.Add(new TipoBeca(
+                      Convert.ToInt32(dr["idTipoDeBeca"]),
+                      dr["Nombre"].ToString(),
+                      Convert.ToDateTime(dr["FechaCreacion"]),
+                      dr["Estado"].ToString(),
+                      dr["Descripcion"].ToString()));
+                }
+            }
+
+            return ptipoBeca;
+        }
+        
+
+
 
         //<summary> Método que se encarga de guardar en la base de datos los cambios realizados </summary>
         //<author> Gabriela Gutiérrez Corrales </author> 
@@ -338,9 +377,9 @@ namespace DAL.Repositories
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                cmd.Parameters.Add(new SqlParameter("@", objRequisito.Id));
+                cmd.Parameters.Add(new SqlParameter("@IdRequisito", objRequisito.Id));
 
-                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "");
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_eliminarRequisito");
 
                 actividad = "Se ha Eliminado un Requisito";
                 registrarAccion(actividad);

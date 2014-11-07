@@ -56,7 +56,7 @@ Partial Class UCtrlAsignarCursos
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.BackgroundImage = Global.UI.My.Resources.Resources.tablaFinalMedianaAzul
+        Me.BackgroundImage = Global.UI.My.Resources.Resources.tablaFinalGrandeAzul
         Me.Controls.Add(Me.listBoxCursos)
         Me.Controls.Add(Me.btnCerrar)
         Me.Location = New System.Drawing.Point(300, 100)

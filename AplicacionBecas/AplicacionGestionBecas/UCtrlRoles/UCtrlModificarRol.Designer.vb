@@ -103,7 +103,7 @@ Partial Class uCtrlModificarRol
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.UI.My.Resources.Resources.tablaFinalMedianaAzul
+        Me.BackgroundImage = Global.UI.My.Resources.Resources.tablaFinalGrandeAzul
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.CLBPermisos)

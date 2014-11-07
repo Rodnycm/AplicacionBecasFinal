@@ -784,11 +784,11 @@ TableAdapterManager is used to coordinate TableAdapters in the dataset to enable
 	<summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
-</member><member name="P:UI.My.Resources.Resources.tablaFinalGrandeAzul">
+</member><member name="P:UI.My.Resources.Resources.tablaEmail">
 	<summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
-</member><member name="P:UI.My.Resources.Resources.tablaFinalMedianaAzul">
+</member><member name="P:UI.My.Resources.Resources.tablaFinalGrandeAzul">
 	<summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
@@ -890,6 +890,15 @@ TableAdapterManager is used to coordinate TableAdapters in the dataset to enable
 	<summary>Situa el componente en la posicion final</summary>
 	<autor>Alvaro Artavia</autor>
 </member><member name="M:UI.uCtrlMantenimientoCrearRequisito.uCtrlCrearRequisito_MouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
+	<summary>Indica si el usuario da click al componente para moverlo</summary>
+	<autor>Alvaro Artavia</autor>
+</member><member name="M:UI.UctrlEmailConfiguration.uCtrlEmailConfiguration_MouseMove(System.Object,System.Windows.Forms.MouseEventArgs)">
+	<summary>Posiciona la ventana mientras el usuario da click al compomente</summary>
+	<autor>Alvaro Artavia</autor>
+</member><member name="M:UI.UctrlEmailConfiguration.uCtrlEmailConfiguration_MouseUp(System.Object,System.Windows.Forms.MouseEventArgs)">
+	<summary>Situa el componente en la posicion final</summary>
+	<autor>Alvaro Artavia</autor>
+</member><member name="M:UI.UctrlEmailConfiguration.uCtrlEmailConfiguration_MouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
 	<summary>Indica si el usuario da click al componente para moverlo</summary>
 	<autor>Alvaro Artavia</autor>
 </member><member name="M:UI.uCtrlEliminarCarrera.btnCancelar_Click(System.Object,System.EventArgs)">
@@ -1721,6 +1730,15 @@ Used to sort self-referenced table's rows
 	<summary>
 TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
 </summary>
+</member><member name="M:UI.uCtrlConfirmacion.uCtrlConfirmacion_MouseMove(System.Object,System.Windows.Forms.MouseEventArgs)">
+	<summary>Posiciona la ventana mientras el usuario da click al compomente</summary>
+	<autor>Alvaro Artavia</autor>
+</member><member name="M:UI.uCtrlConfirmacion.uCtrlConfirmacion_MouseUp(System.Object,System.Windows.Forms.MouseEventArgs)">
+	<summary>Situa el componente en la posicion final</summary>
+	<autor>Alvaro Artavia</autor>
+</member><member name="M:UI.uCtrlConfirmacion.uCtrlConfirmacion_MouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
+	<summary>Indica si el usuario da click al componente para moverlo</summary>
+	<autor>Alvaro Artavia</autor>
 </member><member name="M:UI.uCtrlMantenimientoRequisitos.ComboBox_SelectionChangeCommitted(System.Object,System.EventArgs)">
 	<summary>Metodo encargado de controlar cuando se da click al combobox se ejecuten las acciones</summary>
 	<autor>Valeria Ramírez Cordero</autor>

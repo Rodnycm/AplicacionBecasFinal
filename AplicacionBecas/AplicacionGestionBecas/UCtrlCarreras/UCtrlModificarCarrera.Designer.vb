@@ -155,7 +155,7 @@ Partial Class uCtrlModificarCarrera
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.BackgroundImage = Global.UI.My.Resources.Resources.tablaFinalMedianaAzul
+        Me.BackgroundImage = Global.UI.My.Resources.Resources.tablaFinalGrandeAzul
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.btnModificar)
         Me.Controls.Add(Me.btnCerrar)

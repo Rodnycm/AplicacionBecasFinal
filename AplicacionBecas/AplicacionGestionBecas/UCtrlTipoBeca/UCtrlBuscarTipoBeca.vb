@@ -104,12 +104,12 @@ Public Class uCtrlBuscarTipoBeca
     Private Sub eliminarTipoBeca()
 
 
-
-        Dim id As Integer = dtaTipoBeca.CurrentRow.Cells(0).Value
-        Dim nombre As String = dtaTipoBeca.CurrentRow.Cells(1).Value
-        Dim objD As Date = dtaTipoBeca.CurrentRow.Cells(2).Value
-        Dim estado As String = dtaTipoBeca.CurrentRow.Cells(3).Value
-        Dim descripcion As String = dtaTipoBeca.CurrentRow.Cells(4).Value
+        'Dim id As Integer = dtaTipoBeca.CurrentRow.Cells(0).Value
+        Dim nombre As String = dtaTipoBeca.CurrentRow.Cells(0).Value
+        Dim id As Integer = gestorTipoBeca.idTipoBeca(nombre)
+        ' Dim objD As Date = dtaTipoBeca.CurrentRow.Cells(1).Value
+        Dim estado As String = dtaTipoBeca.CurrentRow.Cells(1).Value
+        Dim descripcion As String = dtaTipoBeca.CurrentRow.Cells(2).Value
 
         Dim eliminarTipoBeca As New EliminarTipoBeca
 
@@ -120,7 +120,7 @@ Public Class uCtrlBuscarTipoBeca
         eliminarTipoBeca.Show()
         eliminarTipoBeca.Location = New Point(290, 48)
 
-        'eliminarTipoBeca.Rows.Clear()
+
         listarTiposBeca()
 
     End Sub

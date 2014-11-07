@@ -23,6 +23,26 @@ Public Class uCtrlModificarTipoBeca
         txtDescripcion.Text = pdescripcion
 
     End Sub
+    'Private Sub RequisitosRelacionados()
+    '    For Each valor As Integer In objTipo.listaRequisitos
+    '        For Each row As CheckedListBox In chkRequisitos
+    '            Dim valorColumna = row.Cells("nombre").Value
+    '            If valorColumna = valor Then
+    '                row.Cells("Seleccionar").Value = True
+    '            End If
+    '        Next
+    '    Next
+    'End Sub
+    'Private Sub BeneficiosRelacionados()
+    '    For Each valores As Integer In objTipo.listas
+    '        For Each row As CheckedListBox In chkBeneficios
+    '            Dim valorColumna = row.Cells("nombre").Value
+    '            If valorColumna = valores Then
+    '                row.Cells("Seleccionar").Value = True
+    '            End If
+    '        Next
+    '    Next
+    'End Sub
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
         Try
             Dim nombre As String = txtNombre.Text

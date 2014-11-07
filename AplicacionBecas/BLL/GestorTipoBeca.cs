@@ -68,6 +68,11 @@ namespace BLL
         {
             return TipoBecaRepository.Instance.GetByNombre(pnombre);
         }
+        public int idTipoBeca(string pnombre)
+        {
+            TipoBeca tmpTipo = buscarUnTipoBeca(pnombre);
+            return tmpTipo.Id;
+        }
         /// <summary>
         /// Llama al método Save del repository
         ///</summary>

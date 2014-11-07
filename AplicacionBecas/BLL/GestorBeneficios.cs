@@ -170,8 +170,6 @@ namespace BLL
             {
                 throw e;
             }
-
-
         }
         /// <summary>
         /// Llama al método GetByNombre() del repositorio y recibe una instancia de un beneficio.
@@ -186,6 +184,24 @@ namespace BLL
         public IEnumerable<Beneficio> mostrarBeneficioTB(TipoBeca ptipoBeca)
         {
             return BeneficioRepository.Instance.GetLista(ptipoBeca);
+        }
+
+        /// <summary>
+        /// Llama al metodo getBeneficiosAsociados del repositorios y recibe una lista de beneficios asociados a un tipo de beca.
+        /// </summary>
+        /// <param name="pid"></param>
+        /// <returns></returns>
+        public IEnumerable<TipoBeca> buscarBeneficiosAsociados(int pid) {
+
+            try
+            {
+                return BeneficioRepository.Instance.getBeneficiosAsociados(pid);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        
         }
 
     }

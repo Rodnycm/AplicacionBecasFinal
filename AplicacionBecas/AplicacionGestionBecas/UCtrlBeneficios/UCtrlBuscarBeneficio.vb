@@ -278,7 +278,6 @@ Public Class uCntrlBuscarBeneficio
             dtaBuscarBeneficio.Rows(0).Cells(1).Value = beneficio.Nombre
             dtaBuscarBeneficio.Rows(0).Cells(2).Value = beneficio.Porcentaje
             dtaBuscarBeneficio.Rows(0).Cells(3).Value = beneficio.Aplicacion
-            dtaBuscarBeneficio.Columns("dtaAplicabilidad").Visible = False
             dtaBuscarBeneficio.Columns("dtaId").Visible = False
 
 
@@ -304,4 +303,9 @@ Public Class uCntrlBuscarBeneficio
 
     'End Sub
 
+    Private Sub txtBuscar_TextChanged_1(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
+        If txtBuscar.Text = "" Then
+            listarBeneficios()
+        End If
+    End Sub
 End Class

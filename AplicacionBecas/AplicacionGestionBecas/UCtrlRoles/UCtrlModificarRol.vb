@@ -117,8 +117,8 @@ Public Class uCtrlModificarRol
         Try
             EditarRol()
             ValidarPermisos()
-            Dim Uctrl As uCtrlConfirmacion = New uCtrlConfirmacion
-            Me.Controls.Add(Uctrl)
+            Dim Uctrl As uCtrlConfirmacion = New uCtrlConfirmacion()
+            FrmIniciarSesion.principal.Controls.Add(Uctrl)
             Uctrl.lblConfirmacion.Text = "El rol se modifico correctamente"
             Uctrl.Location = New Point(300, 100)
             Uctrl.BringToFront()

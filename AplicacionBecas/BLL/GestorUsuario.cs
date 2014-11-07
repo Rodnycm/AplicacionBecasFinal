@@ -508,17 +508,12 @@ namespace BLL
                //Alerts.Show("El usuario ingresado es incorrecto");
             }
         }
-<<<<<<< HEAD
 
-
-=======
->>>>>>> origin/GGCV2
         public IEnumerable<Usuario> buscarUsuariosPorRol(int pIdrol)
         {
             return UsuarioRepository.Instance.buscarUsuariosPorRol(pIdrol);
         } 
 
-<<<<<<< HEAD
 
         public void notificarUsuario(String correo, String contrasenna){
 
@@ -530,8 +525,7 @@ namespace BLL
 
         }
          
-=======
->>>>>>> origin/GGCV2
+
         public void cerrarSesion(){
             Globals.usuario=null;
         }

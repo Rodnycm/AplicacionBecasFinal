@@ -8,7 +8,7 @@ using System.Transactions;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Data;
-
+using TIL;
 namespace DAL.Repositories
 {
     public class RequisitoRepository : IRepository<Requisito>
@@ -20,6 +20,10 @@ namespace DAL.Repositories
         private List<IEntity> _insertItems;
         private List<IEntity> _deleteItems;
         private List<IEntity> _updateItems;
+        private int numero;
+        private String mensaje;
+        private Excepciones exceptions;
+        public static TipoBeca objTipoBeca { get; set; }
 
         public RequisitoRepository()
         {
@@ -72,93 +76,92 @@ namespace DAL.Repositories
             _updateItems.Add(entity);
         }
 
-
-
         //<summary> Método que se encarga de traer de la base de datos todos los requisitos registrados </summary>
         //<author> Gabriela Gutiérrez Corrales </author> 
         //<param> no recibe parametros </param>
         //<returns>Retorna una lista con todos los requisitos registrados en el sistema.</returns> 
+
         public IEnumerable<Requisito> GetAll()
         {
-            List<Requisito> prequisito = null;
-            /*var sqlQuery = "SELECT Id, Nombre, Precio FROM Producto";
-            SqlCommand cmd = new SqlCommand(sqlQuery);
 
-            var ds = DBAccess.ExecuteQuery(cmd);
+            try {
 
-            if (ds.Tables[0].Rows.Count > 0)
-            {
-                pmusculo = new List<Musculo>();
-                foreach (DataRow dr in ds.Tables[0].Rows)
+                List<Requisito> pRequisito = null;
+                SqlCommand cmd = new SqlCommand();
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_consultarRequisitos");
+
+                if (ds.Tables[0].Rows.Count > 0)
                 {
-                    pmusculo.Add(new Musculo
+                    pRequisito = new List<Requisito>();
+                    foreach (DataRow dr in ds.Tables[0].Rows)
                     {
-                        Id = Convert.ToInt32(dr["Id"]),
-                        nombre = dr["nombre"].ToString(),
-                       ubicacion = dr["ubicacion"].ToString(),
-                        origen = dr["Origen"].ToString(),
-                        insercion = dr["insercion"].ToString()
-                    });
+                        pRequisito.Add(new Requisito
+                        {
+                            Id = Convert.ToInt32(dr["idRequisito"]),
+                            nombre = dr["Nombre"].ToString(),
+                            descripcion = dr["Descripcion"].ToString(),
+                        });
+                    }
                 }
-            }*/
+                return pRequisito;
+            }
 
-            return prequisito;
+            catch (SqlException ex)
+            {
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+           
         }
 
         //<summary> Método que se encarga de traer de la base de datos un requisito específico </summary>
         //<author> Gabriela Gutiérrez Corrales </author> 
         //<param name "id"> parámetro de tipo int que contiene el Id del requisito que se desea traer </param>
         //<returns>Retorna el requisito deseado</returns> 
-        public Requisito GetById(int id)
+
+        public Requisito GetByNombre(String parametro)
         {
-            Requisito objRequisito = null;
-            /*var sqlQuery = "SELECT Id, Nombre, Precio FROM Producto WHERE id = @idProducto";
-            SqlCommand cmd = new SqlCommand(sqlQuery);
-            cmd.Parameters.AddWithValue("@idProducto", id);
 
-            var ds = DBAccess.ExecuteQuery(cmd);
+            try {
+                Requisito requisito = new Requisito();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Parameters.AddWithValue("@parametro", parametro);
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_buscarRequisito");
 
-            if (ds.Tables[0].Rows.Count > 0)
-            {
-                var dr = ds.Tables[0].Rows[0];
-
-                objMusculo = new Musculo
+                if (ds.Tables[0].Rows.Count > 0)
                 {
-                    Id = Convert.ToInt32(dr["Id"]),
-                    nombre = dr["nombre"].ToString(),
-                    ubicacion = dr["ubicacion"].ToString(),
-                    origen = dr["Origen"].ToString(),
-                    insercion = dr["insercion"].ToString()
-                };
-            }*/
+                    var dr = ds.Tables[0].Rows[0];
 
-            return objRequisito;
-        }
+                    requisito = new Requisito
+                    {
 
-        public Requisito GetByNombre(String pnombre)
-        {
-            Requisito objRequisito = null;
-            /*var sqlQuery = "SELECT Id, Nombre, Precio FROM Producto WHERE id = @idProducto";
-            SqlCommand cmd = new SqlCommand(sqlQuery);
-            cmd.Parameters.AddWithValue("@idProducto", id);
+                        nombre = dr["Nombre"].ToString(),
+                        descripcion = dr["Descripcion"].ToString()
+                    };
 
-            var ds = DBAccess.ExecuteQuery(cmd);
+                    requisito.Id = Convert.ToInt32(dr["idRequisito"]);
+                }
+                return requisito;
+            }
 
-            if (ds.Tables[0].Rows.Count > 0)
+            catch (SqlException ex)
             {
-                var dr = ds.Tables[0].Rows[0];
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
 
-                objMusculo = new Musculo
-                {
-                    Id = Convert.ToInt32(dr["Id"]),
-                    nombre = dr["nombre"].ToString(),
-                    ubicacion = dr["ubicacion"].ToString(),
-                    origen = dr["Origen"].ToString(),
-                    insercion = dr["insercion"].ToString()
-                };
-            }*/
-
-            return objRequisito;
+            }
+           
         }
 
 
@@ -215,6 +218,14 @@ namespace DAL.Repositories
             }
         }
 
+        public Requisito GetById(int id)
+        {
+            Requisito objRequisito = null;
+
+
+            return objRequisito;
+        }
+
 
         //<summary> Método que se encarga limpiar todas las listas </summary>
         //<author> Gabriela Gutiérrez Corrales </author> 
@@ -242,14 +253,19 @@ namespace DAL.Repositories
 
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_crearRequisito");
 
-
                 actividad = "Se ha Registrado un Requisito";
                 registrarAccion(actividad);
 
             }
+            catch (SqlException ex)
+            {
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
+            }
             catch (Exception ex)
             {
-
+                throw ex;
             }
         }
 
@@ -263,19 +279,23 @@ namespace DAL.Repositories
             {
                 SqlCommand cmd = new SqlCommand();
 
-                cmd.Parameters.Add(new SqlParameter("@nombre", objRequisito.nombre));
-                cmd.Parameters.Add(new SqlParameter("@ubicacion", objRequisito.descripcion));
+                cmd.Parameters.Add(new SqlParameter("@Nombre", objRequisito.nombre));
+                cmd.Parameters.Add(new SqlParameter("@Descripcion", objRequisito.descripcion));
+                cmd.Parameters.Add(new SqlParameter("@IdRequisito", objRequisito.Id));
+                
 
-                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "");
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_modificarRequisitos");
 
-                actividad = "Se ha Editado un Requisito";
-                registrarAccion(actividad);
-
-
+            }
+            catch (SqlException ex)
+            {
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
             }
             catch (Exception ex)
             {
-
+                throw ex;
             }
         }
 
@@ -299,14 +319,13 @@ namespace DAL.Repositories
             }
             catch (SqlException ex)
             {
-                //logear la excepcion a la bd con un Exception
-                //throw new DataAccessException("Ha ocurrido un error al eliminar un usuario", ex);
-
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
             }
             catch (Exception ex)
             {
-                //logear la excepcion a la bd con un Exception
-                //throw new DataAccessException("Ha ocurrido un error al eliminar un usuario", ex);
+                throw ex;
             }
         }
 
@@ -315,8 +334,8 @@ namespace DAL.Repositories
 
             RegistroAccion objRegistro;
             DateTime fecha = DateTime.Today;
-            string nombreUsuario = Globals.userName;
-            string nombreRol = Globals.userRol.Nombre;
+            string nombreUsuario = Globals.usuario.primerNombre + " " + Globals.usuario.primerApellido;
+            string nombreRol = Globals.usuario.rol.Nombre;
             string descripcion = pactividad;
 
 
@@ -328,14 +347,73 @@ namespace DAL.Repositories
                 RegistroAccionRepository objRegistroRep = new RegistroAccionRepository();
                 objRegistroRep.InsertAccion(objRegistro);
             }
-            catch (Exception e)
+            catch (SqlException ex)
             {
-
-                throw e;
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
             }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public void asignarRequisitoTipoBeca(Requisito objRequisito)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
 
+                cmd.Parameters.Add(new SqlParameter("@idRequisito", objRequisito.Id));
+                cmd.Parameters.Add(new SqlParameter("@Nombre", objTipoBeca.nombre));
+
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_insertarRequisitoTipoBeca");
+
+            }
+            catch (SqlException ex)
+            {
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
+        public void asignarRequisito()
+        {
+            using (TransactionScope scope = new TransactionScope())
+            {
+                try
+                {
+                    if (_insertItems.Count > 0)
+                    {
+                        foreach (Requisito objRequisito in _insertItems)
+                        {
+                            asignarRequisitoTipoBeca(objRequisito);
+
+                        }
+                    }
+
+                    scope.Complete();
+        }
+                catch (TransactionAbortedException ex)
+                {
+
+                }
+                catch (ApplicationException ex)
+                {
+
+                }
+                finally
+                {
+                    Clear();
+                }
 
     }
 }
+    }
+}
+        

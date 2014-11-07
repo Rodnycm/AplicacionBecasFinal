@@ -82,6 +82,13 @@ namespace EntitiesLayer
             {
                 yield return new RuleViolation("Error en el nombre", "Nombre incorrecto");
             }
+
+            if (directorAcademico == null)
+            {
+                yield return new RuleViolation("Director académico requerido", "directorAcademico");
+
+            }
+
             if (String.IsNullOrEmpty(nombre))
             {
                 yield return new RuleViolation("Nombre Requerido", "nombre");

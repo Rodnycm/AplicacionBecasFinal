@@ -6,8 +6,7 @@ using EntitiesLayer;
 using DAL;
 
 
-namespace BLL
-{
+namespace BLL{
 
     public class GestorCurso
     {
@@ -59,7 +58,7 @@ namespace BLL
         //<author> Valeria Ramírez Cordero </author> 
         //<param > No recibe parámetros  </param>
         //<returns> Retorna una lista con los cursos registrados</returns> 
-        public IEnumerable<Curso> listarCursos()
+        public IEnumerable<Curso> consultarCursos()
         {
             return CursoRepository.Instance.GetAll();
         }
@@ -101,7 +100,25 @@ namespace BLL
 
             try
             {
-                Curso objetoCurso = ContenedorMantenimiento.Instance.crearObjetoCurso(pcodigo, pnombre, pcuatrimestre, pcreditos, pprecio, pidCurso);
+                int creditos = Convert.ToInt32(pcreditos);
+                double precio = Convert.ToDouble(pprecio);
+                Curso objetoCurso = ContenedorMantenimiento.Instance.crearObjetoCurso(pnombre, pcodigo, pcuatrimestre, pcreditos, pprecio, pidCurso);
+                CursoRepository.Instance.Update(objetoCurso);
+
+                 if (objetoCurso.IsValid)
+                {
+                    CursoRepository.Instance.Update(objetoCurso);
+                }
+                else
+                {
+                    StringBuilder sb = new StringBuilder();
+                    foreach (RuleViolation rv in objetoCurso.GetRuleViolations())
+                    {
+                        sb.AppendLine(rv.ErrorMessage + "\n");
+                    }
+                    throw new ApplicationException(sb.ToString());
+                }
+            
             }
             catch (Exception ex)
             {
@@ -110,9 +127,12 @@ namespace BLL
             }
         }
 
-        public void eliminarCurso(int pidCurso, String pcodigo, String pnombre)
+
+
+
+        public void eliminarCurso(String pcodigo)
         {
-            Curso objCurso = ContenedorMantenimiento.Instance.crearObjetoCurso(pcodigo, pnombre, pidCurso);
+            Curso objCurso = ContenedorMantenimiento.Instance.crearObjetoCurso(pcodigo);
             CursoRepository.Instance.Delete(objCurso);
 
         }
@@ -136,6 +156,37 @@ namespace BLL
             //    }
         }
 
+        public IEnumerable<Curso> getCursoPorCuatrimestre(String pcuatri) {
 
+            try{
+
+            return CursoRepository.Instance.getCursoPorCuatrimestre(pcuatri);
+
+            }
+            catch (Exception ex){
+
+                throw ex;
+
+            }
+        }
+
+        public Array consultarCursosPorCuatrimestre()
+        {
+
+            try
+            {
+
+                return CursoRepository.Instance.consultarCursosPorCuatrimestre();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+
+            }
+        }
     }
+
+  
 }

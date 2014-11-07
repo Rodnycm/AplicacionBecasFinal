@@ -3,8 +3,22 @@
     
     Private Sub uCtrlReporteRegistroAcciones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        Me.Tb_BitacoraAccionTableAdapter.Fill(Me.DB_Proyecto2DataSetConsultarRegistroAcciones.Tb_BitacoraAccion)
+        Try
 
-        Me.ReportViewer1.RefreshReport()
+            Me.Tb_BitacoraAccionTableAdapter.Fill(Me.DB_Proyecto2DataSetConsultarRegistroAcciones.Tb_BitacoraAccion)
+
+            Me.ReportViewer1.RefreshReport()
+
+        Catch ex As Exception
+
+            Dim UCtrl As New UctrlAlerta
+
+            Me.Controls.Add(UCtrl)
+            UCtrl.lblAlerta.Text = ex.Message
+            UCtrl.Location = New Point(300, 100)
+            UCtrl.BringToFront()
+            UCtrl.Show()
+
+        End Try
     End Sub
 End Class

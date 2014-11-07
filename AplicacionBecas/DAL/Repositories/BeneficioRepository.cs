@@ -7,7 +7,6 @@ using System.Collections;
 using System.Transactions;
 using System.Data.SqlClient;
 using System.Data;
-
 using TIL;
 using DAL.Repositories;
 
@@ -18,11 +17,14 @@ namespace DAL
     {
 
         private string actividad;
-
+        public static TipoBeca objTipoBeca { get; set; }
         private static BeneficioRepository instance;
         private List<IEntity> _insertItems;
         private List<IEntity> _deleteItems;
         private List<IEntity> _updateItems;
+        private static Excepciones exceptions = new Excepciones();
+        private static int numero;
+        private static string mensaje;
 
         /// <summary>
         /// Es el constructor del repositorio.
@@ -86,6 +88,33 @@ namespace DAL
         /// </summary>
         /// <author>Mathias Muller</author>
         /// <returns>Una lista de beneficios</returns>
+        public IEnumerable<Beneficio> GetLista(TipoBeca objTipoBeca)
+        {
+
+            List<Beneficio> pbeneficio = null;
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.Parameters.Add(new SqlParameter("@Nombre", objTipoBeca.nombre));
+
+            DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_consultarTipoBecaBeneficios");
+
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                pbeneficio = new List<Beneficio>();
+                foreach (DataRow dr in ds.Tables[0].Rows)
+                {
+                    pbeneficio.Add(new Beneficio
+                    {
+                        Id = Convert.ToInt32(dr["idBeneficio"]),
+                        Nombre = dr["Nombre"].ToString(),
+                        Porcentaje = Convert.ToDouble(dr["Porcentaje"]),
+                        Aplicacion = dr["Aplicabilidad"].ToString()
+                    });
+                }
+            }
+
+            return pbeneficio;
+        }
 
         public IEnumerable<Beneficio> GetAll()
         {
@@ -119,11 +148,10 @@ namespace DAL
             }
             catch (SqlException ex)
             {
-
-                throw new CustomExceptions.DataAccessException("Ha ocurrido un error al Consultar todos los beneficios", ex);
-
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
             }
-            
             catch (Exception e) {
 
                 throw e;
@@ -179,9 +207,9 @@ namespace DAL
             }
             catch (SqlException ex)
             {
-
-                throw new CustomExceptions.DataAccessException("Ha ocurrido un error al buscar un beneficio por nombre", ex);
-
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
             }
             catch (Exception e)
             {
@@ -285,11 +313,10 @@ namespace DAL
             }
             catch (SqlException ex)
             {
-
-                throw new CustomExceptions.DataAccessException("Ha ocurrido un error al crear un beneficio", ex);
-
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
             }
-
             catch (Exception ex)
             {
 
@@ -328,11 +355,10 @@ namespace DAL
             }
             catch (SqlException ex)
             {
-
-                throw new CustomExceptions.DataAccessException("Ha ocurrido un error al editar un beneficio", ex);
-
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
             }
-
             catch (Exception ex){
 
                 throw ex;
@@ -361,9 +387,9 @@ namespace DAL
 
             catch (SqlException ex)
             {
-
-                throw new CustomExceptions.DataAccessException("Ha ocurrido un error al eliminar un beneficio", ex);
-
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
             }
 
             catch (Exception e)
@@ -377,8 +403,8 @@ namespace DAL
 
             RegistroAccion objRegistro;
             DateTime fecha = DateTime.Today;
-            string nombreUsuario = Globals.userName;
-            string nombreRol = Globals.userRol.Nombre;
+            string nombreUsuario = Globals.usuario.primerNombre + " " + Globals.usuario.primerApellido;
+            string nombreRol = Globals.usuario.rol.Nombre;
             string descripcion = pactividad;
 
 
@@ -392,17 +418,67 @@ namespace DAL
             }
             catch (SqlException ex)
             {
-
-                throw new CustomExceptions.DataAccessException("Ha ocurrido un error al registrar una accion", ex);
-
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
             }
             catch (Exception e)
             {
 
                 throw e;
             }
+        }
+        public void asignarBeneficioTipoBeca(Beneficio objBeneficio)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+
+                cmd.Parameters.Add(new SqlParameter("@idBeneficio", objBeneficio.Id));
+                cmd.Parameters.Add(new SqlParameter("@Nombre", objTipoBeca.nombre));
+
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_insertarTipoBecaCompleto");
+
+            }
+            catch (Exception ex)
+            {
 
 
+            }
+        }
+        public void asignarBeneficio()
+        {
+            using (TransactionScope scope = new TransactionScope())
+            {
+                try
+                {
+                    if (_insertItems.Count > 0)
+                    {
+                        foreach (Beneficio objBeneficio in _insertItems)
+                        {
+                            asignarBeneficioTipoBeca(objBeneficio);
+
+                        }
+                    }
+
+
+
+                    scope.Complete();
+                }
+                catch (TransactionAbortedException ex)
+                {
+
+                }
+                catch (ApplicationException ex)
+                {
+
+                }
+                finally
+                {
+                    Clear();
+                }
+
+            }
         }
 
     }

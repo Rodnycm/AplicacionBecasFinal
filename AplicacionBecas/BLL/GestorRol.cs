@@ -33,13 +33,13 @@ namespace BLL
                     {
                         sb.Append(rv.ErrorMessage + "\n");
                     }
-                    Alerts.Show(sb.ToString());
+                   
                 }
             }
             catch (Exception ex)
             {
                 string message = ex.ToString();
-                Alerts.Show(message);
+                
             }
         }
 
@@ -67,13 +67,13 @@ namespace BLL
                     {
                         sb.Append(rv.ErrorMessage + "\n");
                     }
-                    Alerts.Show(sb.ToString());
+                    
                 }
             }
             catch (Exception ex)
             {
                 string message = ex.ToString();
-                Alerts.Show(message);
+                
             }
         }
 

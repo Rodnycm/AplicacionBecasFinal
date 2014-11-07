@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using EntitiesLayer;
-using System.Collections;
+using System.Configuration;
 using System.Transactions;
 using System.Data.SqlClient;
 using System.Data;
+using System.Windows.Forms;
+using TIL;
 
 
 namespace DAL.Repositories
@@ -15,7 +18,9 @@ namespace DAL.Repositories
     {
 
         private string actividad;
-
+        private static int numero;
+        private static string mensaje;
+        private static Excepciones exceptions = new Excepciones();
         private static RolRepository instance;
         private List<IEntity> _insertItems;
         private List<IEntity> _deleteItems;
@@ -77,53 +82,80 @@ namespace DAL.Repositories
         /// <returns>una lista de roles</returns>
         public IEnumerable<Rol> GetAll()
         {
+            
 
-
-            List<Rol> pRol = null;
-
-            SqlCommand cmd = new SqlCommand();
-
-            DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_listarRol");
-
-
-            if (ds.Tables[0].Rows.Count > 0)
+            try
             {
-                pRol = new List<Rol>();
-                foreach (DataRow dr in ds.Tables[0].Rows)
+                List<Rol> pRol = null;
+                SqlCommand cmd = new SqlCommand();
+
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_listarRol");
+
+
+                if (ds.Tables[0].Rows.Count > 0)
                 {
-                    pRol.Add(new Rol
+                    pRol = new List<Rol>();
+                    foreach (DataRow dr in ds.Tables[0].Rows)
                     {
+                        pRol.Add(new Rol
+                        {
 
-                        Id = Convert.ToInt32(dr["IdRol"]),
-                        Nombre = dr["Nombre"].ToString()
-                    });
+                            Id = Convert.ToInt32(dr["IdRol"]),
+                            Nombre = dr["Nombre"].ToString()
+                        });
+                    }
                 }
-            }
 
-            return pRol;
+                return pRol;
+
+            }
+            catch (SqlException ex)
+            {
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            
         }
 
         public Rol GetById(int id)
         {
-            Rol objRol = null;
-            SqlCommand cmd = new SqlCommand();
-            cmd.Parameters.AddWithValue("@id", id);
-
-            DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_buscarRolPorId");
-
-            if (ds.Tables[0].Rows.Count > 0)
+            
+            try
             {
-                var dr = ds.Tables[0].Rows[0];
+                Rol objRol = null;
+                SqlCommand cmd = new SqlCommand();
+                cmd.Parameters.AddWithValue("@id", id);
 
-                objRol = new Rol
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_buscarRolPorId");
+
+                if (ds.Tables[0].Rows.Count > 0)
                 {
-                    Id = Convert.ToInt32(dr["IdRol"]),
-                    Nombre = dr["Nombre"].ToString(),
-                };
+                    var dr = ds.Tables[0].Rows[0];
+
+                    objRol = new Rol
+                    {
+                        Id = Convert.ToInt32(dr["IdRol"]),
+                        Nombre = dr["Nombre"].ToString(),
+                    };
+                }
+                return objRol;
             }
-
-
-            return objRol;
+            catch (SqlException ex)
+            {
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+          
         }
         /// <summary>
         /// consulta por nombre el rol
@@ -135,10 +167,10 @@ namespace DAL.Repositories
         public Rol GetByNombre(String pnombre)
         {
 
-            Rol objRol = null;
+            
             try
             {
-
+                Rol objRol = null;
                 SqlCommand cmd = new SqlCommand();
                 cmd.Parameters.Add(new SqlParameter("@Nombre", pnombre));
 
@@ -154,17 +186,22 @@ namespace DAL.Repositories
                         Nombre = dr["Nombre"].ToString()
                     };
                 }
-
+              return objRol;
             }
 
+            catch (SqlException ex)
+            {
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
+            }
             catch (Exception ex)
             {
                 throw ex;
-          
             }
 
 
-            return objRol;
+            
         }
 
         /// <summary>
@@ -249,6 +286,12 @@ namespace DAL.Repositories
                 registrarAccion(actividad);
 
             }
+            catch (SqlException ex)
+            {
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
+            }
             catch (Exception ex)
             {
                 throw ex;
@@ -276,6 +319,12 @@ namespace DAL.Repositories
                 registrarAccion(actividad);
 
             }
+            catch (SqlException ex)
+            {
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
+            }
             catch (Exception ex)
             {
                 throw ex;
@@ -302,16 +351,13 @@ namespace DAL.Repositories
             }
             catch (SqlException ex)
             {
-                throw ex;
-                //logear la excepcion a la bd con un Exception
-                //throw new DataAccessException("Ha ocurrido un error al eliminar un usuario", ex);
-
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
             }
             catch (Exception ex)
             {
                 throw ex;
-                //logear la excepcion a la bd con un Exception
-                //throw new DataAccessException("Ha ocurrido un error al eliminar un usuario", ex);
             }
         }
 
@@ -321,8 +367,8 @@ namespace DAL.Repositories
 
             RegistroAccion objRegistro;
             DateTime fecha = DateTime.Today;
-            string nombreUsuario = Globals.userName;
-            string nombreRol = Globals.userRol.Nombre;
+            string nombreUsuario = Globals.usuario.primerNombre + " " + Globals.usuario.primerApellido;
+            string nombreRol = Globals.usuario.rol.Nombre;
             string descripcion = pactividad;
 
 
@@ -334,10 +380,15 @@ namespace DAL.Repositories
                 RegistroAccionRepository objRegistroRep = new RegistroAccionRepository();
                 objRegistroRep.InsertAccion(objRegistro);
             }
-            catch (Exception e)
+            catch (SqlException ex)
             {
-
-                throw e;
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
 
         }

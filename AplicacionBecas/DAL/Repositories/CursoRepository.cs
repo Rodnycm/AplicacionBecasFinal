@@ -7,14 +7,14 @@ using System.Collections;
 using System.Transactions;
 using System.Data.SqlClient;
 using System.Data;
+using DAL.Repositories;
 
 
-namespace DAL
-{
+namespace DAL{
 
     public class CursoRepository : IRepository<Curso>
     {
-
+        private String actividad;
         private static CursoRepository instance;
         private List<IEntity> _insertItems;
         private List<IEntity> _deleteItems;
@@ -28,9 +28,6 @@ namespace DAL
             _deleteItems = new List<IEntity>();
             _updateItems = new List<IEntity>();
         }
-
-
-
 
         //<summary> Método que se encarga de instanciar un CursoRepository</summary>
         //<author> Valeria Ramírez Cordero </author> 
@@ -48,7 +45,6 @@ namespace DAL
                 return instance;
             }
         }
-
 
         //<summary> Método que se encarga de agregar un curso a la lista de cursos que se desean insertar</summary>
         //<author> Valeria Ramírez Cordero </author> 
@@ -85,7 +81,6 @@ namespace DAL
         //<returns>Retorna una lista con todos los cursos registrados en el sistema.</returns> 
         public IEnumerable<Curso> GetAll()
         {
-
             List<Curso> pCurso = null;
             SqlCommand cmd = new SqlCommand();
             DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_buscarCursos");
@@ -97,7 +92,6 @@ namespace DAL
                 {
                     pCurso.Add(new Curso
                     {
-
                         codigo = dr["Codigo"].ToString(),
                         nombre = dr["Nombre"].ToString(),
                         cuatrimestre = dr["Cuatrimestre"].ToString(),
@@ -118,35 +112,78 @@ namespace DAL
         //<returns>Retorna el curso deseado</returns> 
         public Curso GetById(int Id)
         {
-
             Curso objCurso = null;
-            var sqlQuery = "SELECT Id, Nombre, Precio FROM Producto WHERE id = @idProducto";
-            SqlCommand cmd = new SqlCommand(sqlQuery);
-            cmd.Parameters.AddWithValue("@idProducto", Id);
-
-            //var ds = DBAccess.ExecuteQuery(cmd);
-            DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_buscarUnCurso");
-
-            if (ds.Tables[0].Rows.Count > 0)
-            {
-
-                var dr = ds.Tables[0].Rows[0];
-                objCurso = new Curso
-                {
-
-                    nombre = dr["Nombre"].ToString(),
-                    codigo = dr["Codigo"].ToString(),
-                    cuatrimestre = dr["Cuatrimestre"].ToString(),
-                    creditos = Convert.ToInt32(dr["Creditos"]),
-                    precio = Convert.ToDouble(dr["Precio"]),
-                    Id = Convert.ToInt32(dr["IdCurso"]),
-                };
-            }
-
             return objCurso;
         }
 
+        public IEnumerable<Curso> getCursoPorCuatrimestre(String pcuatri) {
 
+             try {
+
+            List<Curso> listaCursos = null;
+            SqlCommand cmd = new SqlCommand();
+            cmd.Parameters.AddWithValue("@Cuatrimestre", pcuatri);
+            DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_buscarCursoPorCuatrimestre");
+
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                listaCursos = new List<Curso>();
+                foreach (DataRow dr in ds.Tables[0].Rows)
+                {
+                    listaCursos.Add(new Curso
+                    {
+
+                        codigo = dr["Codigo"].ToString(),
+                        nombre = dr["Nombre"].ToString(),
+                        cuatrimestre = dr["Cuatrimestre"].ToString(),
+                        creditos = Convert.ToInt32(dr["Creditos"]),
+                        precio = Convert.ToDouble(dr["Precio"]),
+                        //Id = Convert.ToInt32(dr["IdCurso"])
+                    });
+                }
+            }
+
+            return listaCursos;
+
+             }
+             catch (Exception ex)
+             {
+                 throw ex;
+             }
+
+        }
+
+        public Array consultarCursosPorCuatrimestre()
+        {
+            try {
+
+            int i = 0;
+            String cuatrimestre;
+            String[] listaCursos = null;
+            SqlCommand cmd = new SqlCommand();
+            DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_consultarCursosPorCuatrimestre");
+
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                listaCursos = new String[ds.Tables[0].Rows.Count];
+
+                foreach (DataRow dr in ds.Tables[0].Rows)
+                {    
+                   cuatrimestre = dr["Cuatrimestre"].ToString();
+                
+                   listaCursos[i] = cuatrimestre;
+                    i = i + 1;
+                }
+            }
+
+            return listaCursos;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
 
         //<summary> Método que se encarga de traer de la base de datos un curso específico </summary>
         //<author> Valeria Ramírez Cordero</author> 
@@ -227,7 +264,7 @@ namespace DAL
                 }
                 catch (ApplicationException ex)
                 {
-
+                    throw ex;
                 }
                 finally
                 {
@@ -270,6 +307,8 @@ namespace DAL
 
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_crearCurso ");
 
+                actividad = "Se ha creado un Curso";
+                registrarAccion(actividad);
             }
             catch (Exception ex)
             {
@@ -289,14 +328,17 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
 
-                cmd.Parameters.Add(new SqlParameter("@Código", objCurso.codigo));
+                cmd.Parameters.Add(new SqlParameter("@Codigo", objCurso.codigo));
                 cmd.Parameters.Add(new SqlParameter("@Nombre", objCurso.nombre));
                 cmd.Parameters.Add(new SqlParameter("@Cuatrimestre", objCurso.cuatrimestre));
-                cmd.Parameters.Add(new SqlParameter("@Creditos", objCurso.cuatrimestre));
+                cmd.Parameters.Add(new SqlParameter("@Creditos", objCurso.creditos));
                 cmd.Parameters.Add(new SqlParameter("@Precio", objCurso.precio));
-                cmd.Parameters.Add(new SqlParameter("@idCurso", objCurso.Id));
+                cmd.Parameters.Add(new SqlParameter("@IdCurso", objCurso.Id));
 
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_modificarCursos");
+
+                actividad = "Se ha modificado un Curso";
+                registrarAccion(actividad);
 
             }
             catch (Exception ex)
@@ -315,8 +357,11 @@ namespace DAL
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                cmd.Parameters.Add(new SqlParameter("@IdCurso", objCurso.Id));
+                cmd.Parameters.Add(new SqlParameter("@Codigo", objCurso.codigo));
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_eliminarCurso");
+
+                actividad = "Se ha eliminado un Curso";
+                registrarAccion(actividad);
 
             }
             catch (SqlException ex)
@@ -333,5 +378,39 @@ namespace DAL
                 //throw new DataAccessException("Ha ocurrido un error al eliminar un usuario", ex);
             }
         }
+
+        public void registrarAccion(string pactividad)
+        {
+
+            RegistroAccion objRegistro;
+            DateTime fecha = DateTime.Today;
+            string nombreUsuario = Globals.usuario.primerNombre + " " + Globals.usuario.primerApellido;
+            string nombreRol = Globals.usuario.rol.Nombre;
+            string descripcion = pactividad;
+
+
+            objRegistro = new RegistroAccion(nombreUsuario, nombreRol, descripcion, fecha);
+
+            try
+            {
+
+                RegistroAccionRepository objRegistroRep = new RegistroAccionRepository();
+                objRegistroRep.InsertAccion(objRegistro);
+            }
+            //catch (SqlException ex)
+            //{
+            //    numero = ex.Number;
+            //    mensaje = exceptions.validarExcepcion(numero);
+            //    throw new CustomExceptions.DataAccessException(mensaje, ex);
+            //}
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+
+
+        }
     }
+    
 }

@@ -4,16 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using EntitiesLayer;
+using DAL;
 using DAL.Repositories;
 
 namespace BLL
 {
-    public class GestorTipoBeca:IGestor
+    public class GestorTipoBeca
     {
-        //ESTA VARIABLE ES LA ACTIVIDAD QUE SE REGISTRA PARA LA BITACORA DE ACCIONES, NO BORRAR
-        public string actividad;
-
-    
         ///<sumary>
         ///El metodo agregarTipoBeca recibe los parámetros necesarios para poder crear la instancia tipo beca
         ///Este envía los parámetros para poder crear un tipo de beca y recibe una instancia
@@ -25,18 +22,19 @@ namespace BLL
         ///<param name="descripcion">Esta es la descripción del tipo de beca</param>
         ///<param name="estado">Este es el estado en el que se encuentra el tipo de beca</param>
         ///<param name="nombre"> Este es el nombre del tipo de beca</param>
-        public void agregarTipoBeca(string nombre, string estado, string descripcion)
+
+        public TipoBeca agregarTipoBeca(string nombre, string estado, string descripcion)
         {
             TipoBeca objTipoBeca = new TipoBeca(nombre, estado, descripcion);
+
 
             try
             {
                 if (objTipoBeca.IsValid)
                 {
                     TipoBecaRepository.Instance.Insert(objTipoBeca);
-                    //Setea la actividad, llama al metodo registrar accion
-                     actividad = "Se ha registrado un Tipo De Beca";
-                    registrarAccion(actividad);
+                    return objTipoBeca;
+
                 }
                 else
                 {
@@ -47,11 +45,13 @@ namespace BLL
                     }
                     throw new ApplicationException(sb.ToString());
                 }
+
+
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                throw ex;
             }
         }
         /// <summary>
@@ -64,6 +64,10 @@ namespace BLL
             return TipoBecaRepository.Instance.GetAll();
         }
 
+        public TipoBeca buscarUnTipoBeca(string pnombre)
+        {
+            return TipoBecaRepository.Instance.GetByNombre(pnombre);
+        }
         /// <summary>
         /// Llama al método Save del repository
         ///</summary>
@@ -73,24 +77,74 @@ namespace BLL
 
             TipoBecaRepository.Instance.Save();
         }
+        public void asignarBeneficioTipoBeca(List<Beneficio> listaBeneficios, TipoBeca objTipoBeca)
+        {
+            BeneficioRepository.objTipoBeca = objTipoBeca;
+            foreach (Beneficio objBeneficio in listaBeneficios)
+            {
 
-        public void registrarAccion(String pactividad) {
+                BeneficioRepository.Instance.Insert(objBeneficio);
 
-            RegistroAccion objRegistro;
-            DateTime fecha = DateTime.Today;
-            string nombreUsuario;
-            string nombreRol = "Decano";
-            string descripcion = pactividad;
-            //nombreUsuario = Globals.userName;
-            nombreUsuario = "Pedro";
+            }
+            BeneficioRepository.Instance.asignarBeneficio();
+
+        }
+
+        public void asignarRequisitoTipoBeca(List<Requisito> listaRequisitos, TipoBeca objTipoBeca)
+        {
+            RequisitoRepository.objTipoBeca = objTipoBeca;
+            foreach (Requisito objRequisito in listaRequisitos)
+            {
+                RequisitoRepository.Instance.Insert(objRequisito);
+            }
+            RequisitoRepository.Instance.asignarRequisito();
+        }
+
+        public void modificarTipoBeca(string pnombre, string pestado, string pdescripcion)
+        {
+            TipoBeca objTipoBeca = ContenedorMantenimiento.Instance.crearTipoBeca(pnombre, pestado, pdescripcion);
+            try
+            {
+                if (objTipoBeca.IsValid)
+                {
+                    TipoBecaRepository.Instance.Update(objTipoBeca);
+
+                }
+                else
+                {
+                    StringBuilder sb = new StringBuilder();
+                    foreach (RuleViolation rv in objTipoBeca.GetRuleViolations())
+                    {
+                        sb.AppendLine(rv.ErrorMessage);
+                    }
+                    throw new ApplicationException(sb.ToString());
+                }
 
 
-            objRegistro = new RegistroAccion(nombreUsuario, nombreRol, descripcion, fecha);
+            }
+            catch (Exception)
+            {
 
-            RegistroAccionRepository objRegistroRep = new RegistroAccionRepository();
+                throw;
+            }
 
-            objRegistroRep.InsertAccion(objRegistro);
+        }
+
+        public void eliminarTipoBeca(String pnombre)
+        {
+            try
+            {
+                TipoBeca objTipoBeca = ContenedorMantenimiento.Instance.crearTipoBeca(pnombre);
+                TipoBecaRepository.Instance.Delete(objTipoBeca);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
 
         }
     }
 }
+
+
+

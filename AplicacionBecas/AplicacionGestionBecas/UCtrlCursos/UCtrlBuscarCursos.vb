@@ -102,7 +102,7 @@ Public Class uCtrlBuscarCursos
             uctrlAlerta.Location = New Point(300, 100)
             uctrlAlerta.BringToFront()
             Me.SendToBack()
-            uctrlAlerta.lblAlerta.Text = "No hay usuarios registrados"
+            uctrlAlerta.txtAlerta.Text = "No hay usuarios registrados"
             uctrlAlerta.Show()
 
         End Try

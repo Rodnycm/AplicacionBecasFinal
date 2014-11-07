@@ -28,7 +28,7 @@ Public Class uCtrlBuscarTipoBeca
             uctrlAlerta.Location = New Point(300, 100)
             uctrlAlerta.BringToFront()
             Me.SendToBack()
-            uctrlAlerta.lblAlerta.Text = "Noy hay tipos de beca registrados"
+            uctrlAlerta.txtAlerta.Text = "Noy hay tipos de beca registrados"
             uctrlAlerta.Show()
         End Try
 

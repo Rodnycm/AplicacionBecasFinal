@@ -50,7 +50,7 @@ Public Class uCtrlMenuMantenimiento
             Me.Controls.Add(uctrlAlerta)
             uctrlAlerta.Location = New Point(300, 100)
             uctrlAlerta.BringToFront()
-            uctrlAlerta.lblAlerta.Text = "No Tiene ningun Permiso"
+            uctrlAlerta.txtAlerta.Text = "No Tiene ningun Permiso"
             uctrlAlerta.Show()
         End Try
 

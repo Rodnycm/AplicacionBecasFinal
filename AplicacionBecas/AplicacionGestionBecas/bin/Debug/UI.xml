@@ -785,11 +785,11 @@ TableAdapterManager is used to coordinate TableAdapters in the dataset to enable
 	<summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
-</member><member name="P:UI.My.Resources.Resources.tablaFinalMedianaAzul3">
+</member><member name="P:UI.My.Resources.Resources.tablaFinalMedianaAzul1">
 	<summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
-</member><member name="P:UI.My.Resources.Resources.tablecrearUsuario">
+</member><member name="P:UI.My.Resources.Resources.tablaFinalMedianaAzul3">
 	<summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
@@ -1705,6 +1705,9 @@ Used to sort self-referenced table's rows
 	<summary>
 TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
 </summary>
+</member><member name="M:UI.uCtrlMantenimientoRequisitos.ComboBox_SelectionChangeCommitted(System.Object,System.EventArgs)">
+	<summary>Metodo encargado de controlar cuando se da click al combobox se ejecuten las acciones</summary>
+	<autor>Valeria Ramírez Cordero</autor>
 </member><member name="T:UI.DB_Proyecto2DataSet.Tb_BecasDataTable">
 	<summary>
 Represents the strongly named DataTable class.

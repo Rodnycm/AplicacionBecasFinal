@@ -138,7 +138,6 @@ namespace DAL.Repositories
                 {
                     var dr = ds.Tables[0].Rows[0];
 
-<<<<<<< HEAD
                     requisito = new Requisito
                     {
 
@@ -160,14 +159,7 @@ namespace DAL.Repositories
             catch (Exception ex)
             {
                 throw ex;
-=======
-                    nombre = dr["Nombre"].ToString(),
-                    descripcion = dr["Descripcion"].ToString(),
-                   Id = Convert.ToInt32(dr["idRequisito"])
-                };
 
-                
->>>>>>> origin/ValeriaV2
             }
            
         }

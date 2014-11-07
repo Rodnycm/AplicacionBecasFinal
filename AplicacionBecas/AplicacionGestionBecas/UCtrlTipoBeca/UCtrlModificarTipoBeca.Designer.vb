@@ -59,7 +59,7 @@ Partial Class uCtrlModificarTipoBeca
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(92, 33)
         Me.btnModificar.TabIndex = 73
-        Me.btnModificar.Text = "Modificar"
+        Me.btnModificar.Text = "Editar"
         Me.btnModificar.UseVisualStyleBackColor = False
         '
         'btnCancelar

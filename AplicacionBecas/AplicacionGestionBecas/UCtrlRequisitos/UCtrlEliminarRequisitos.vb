@@ -48,8 +48,9 @@
         descripcion = pdescripcion
     End Sub
 
-    Private Sub ValidarELiminarRequisito()
+    'Private Sub ValidarELiminarRequisito()
 
+<<<<<<< HEAD
         If objGestorUsuario.buscarUsuariosPorRol(idRequisito) Is Nothing Then
             objGestorRequisito.eliminarRequisito(nombre, descripcion, idRequisito)
         Else
@@ -61,7 +62,20 @@
             UCtrl.BringToFront()
             UCtrl.Show()
         End If
+=======
+    '    If objGestorUsuario.buscarUsuariosPorRol() Is Nothing Then
+    '        'EliminarRol()
+    '    Else
+    '        Dim UCtrl As UctrlAlerta = New UctrlAlerta()
+
+    '        FrmIniciarSesion.principal.Controls.Add(UCtrl)
+    '        UCtrl.lblAlerta.Text = "Este rol no se puede eliminar"
+    '        UCtrl.Location = New Point(300, 100)
+    '        UCtrl.BringToFront()
+    '        UCtrl.Show()
+    '    End If
+>>>>>>> origin/BackiGC
 
 
-    End Sub
+    'End Sub
 End Class

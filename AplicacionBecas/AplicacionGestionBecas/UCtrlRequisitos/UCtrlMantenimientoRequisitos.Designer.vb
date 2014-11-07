@@ -102,14 +102,14 @@ Partial Class uCtrlMantenimientoRequisitos
         '
         'descripcion
         '
-        Me.descripcion.HeaderText = "Descripcion"
+        Me.descripcion.HeaderText = "Descripción"
         Me.descripcion.Name = "descripcion"
         Me.descripcion.Width = 570
         '
         'Modificarcmb
         '
         Me.Modificarcmb.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Modificarcmb.HeaderText = "Modificar"
+        Me.Modificarcmb.HeaderText = "Opciones"
         Me.Modificarcmb.Items.AddRange(New Object() {"Editar", "Eliminar"})
         Me.Modificarcmb.Name = "Modificarcmb"
         Me.Modificarcmb.Width = 190

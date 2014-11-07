@@ -30,10 +30,10 @@ Partial Class uCtrlConfirmacion
         'lblConfirmacion
         '
         Me.lblConfirmacion.AutoSize = True
-        Me.lblConfirmacion.Font = New System.Drawing.Font("Segoe UI", 14.0!)
+        Me.lblConfirmacion.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblConfirmacion.Location = New System.Drawing.Point(28, 38)
         Me.lblConfirmacion.Name = "lblConfirmacion"
-        Me.lblConfirmacion.Size = New System.Drawing.Size(53, 25)
+        Me.lblConfirmacion.Size = New System.Drawing.Size(50, 25)
         Me.lblConfirmacion.TabIndex = 3
         Me.lblConfirmacion.Text = "label"
         '

@@ -299,7 +299,7 @@ Partial Class UctrlCrearUsuario
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(89, 29)
         Me.btnAceptar.TabIndex = 39
-        Me.btnAceptar.Text = "Aceptar"
+        Me.btnAceptar.Text = "Añadir"
         Me.btnAceptar.UseVisualStyleBackColor = False
         '
         'btnCancelar

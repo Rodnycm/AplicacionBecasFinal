@@ -48,6 +48,7 @@ Partial Class UctrlModificarUsuario
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.lblNombre = New System.Windows.Forms.Label()
+        Me.btnX = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
@@ -73,7 +74,7 @@ Partial Class UctrlModificarUsuario
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(89, 29)
         Me.btnAceptar.TabIndex = 92
-        Me.btnAceptar.Text = "Aceptar"
+        Me.btnAceptar.Text = "Editar"
         Me.btnAceptar.UseVisualStyleBackColor = False
         '
         'btnCancelar
@@ -101,29 +102,30 @@ Partial Class UctrlModificarUsuario
         '
         Me.Label10.AutoSize = True
         Me.Label10.BackColor = System.Drawing.Color.Transparent
-        Me.Label10.Font = New System.Drawing.Font("Segoe UI Light", 13.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Font = New System.Drawing.Font("Segoe UI Light", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.Location = New System.Drawing.Point(360, 235)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(143, 25)
+        Me.Label10.Size = New System.Drawing.Size(147, 23)
         Me.Label10.TabIndex = 85
         Me.Label10.Text = "Correo electrónico"
         '
         'cmbRoles
         '
+        Me.cmbRoles.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbRoles.FormattingEnabled = True
         Me.cmbRoles.Location = New System.Drawing.Point(552, 186)
         Me.cmbRoles.Name = "cmbRoles"
-        Me.cmbRoles.Size = New System.Drawing.Size(140, 21)
+        Me.cmbRoles.Size = New System.Drawing.Size(140, 25)
         Me.cmbRoles.TabIndex = 84
         '
         'Label9
         '
         Me.Label9.AutoSize = True
         Me.Label9.BackColor = System.Drawing.Color.Transparent
-        Me.Label9.Font = New System.Drawing.Font("Segoe UI Light", 13.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Font = New System.Drawing.Font("Segoe UI Light", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.Location = New System.Drawing.Point(360, 182)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(35, 25)
+        Me.Label9.Size = New System.Drawing.Size(32, 23)
         Me.Label9.TabIndex = 83
         Me.Label9.Text = "Rol"
         '
@@ -131,9 +133,10 @@ Partial Class UctrlModificarUsuario
         '
         Me.rbtOtro.AutoSize = True
         Me.rbtOtro.BackColor = System.Drawing.Color.Transparent
-        Me.rbtOtro.Location = New System.Drawing.Point(673, 149)
+        Me.rbtOtro.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbtOtro.Location = New System.Drawing.Point(665, 149)
         Me.rbtOtro.Name = "rbtOtro"
-        Me.rbtOtro.Size = New System.Drawing.Size(45, 17)
+        Me.rbtOtro.Size = New System.Drawing.Size(51, 21)
         Me.rbtOtro.TabIndex = 82
         Me.rbtOtro.TabStop = True
         Me.rbtOtro.Text = "Otro"
@@ -143,9 +146,10 @@ Partial Class UctrlModificarUsuario
         '
         Me.rbtFemenino.AutoSize = True
         Me.rbtFemenino.BackColor = System.Drawing.Color.Transparent
+        Me.rbtFemenino.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rbtFemenino.Location = New System.Drawing.Point(587, 149)
         Me.rbtFemenino.Name = "rbtFemenino"
-        Me.rbtFemenino.Size = New System.Drawing.Size(31, 17)
+        Me.rbtFemenino.Size = New System.Drawing.Size(32, 21)
         Me.rbtFemenino.TabIndex = 81
         Me.rbtFemenino.TabStop = True
         Me.rbtFemenino.Text = "F"
@@ -155,9 +159,10 @@ Partial Class UctrlModificarUsuario
         '
         Me.rbtMasculino.AutoSize = True
         Me.rbtMasculino.BackColor = System.Drawing.Color.Transparent
+        Me.rbtMasculino.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rbtMasculino.Location = New System.Drawing.Point(491, 151)
         Me.rbtMasculino.Name = "rbtMasculino"
-        Me.rbtMasculino.Size = New System.Drawing.Size(34, 17)
+        Me.rbtMasculino.Size = New System.Drawing.Size(37, 21)
         Me.rbtMasculino.TabIndex = 80
         Me.rbtMasculino.TabStop = True
         Me.rbtMasculino.Text = "M"
@@ -167,10 +172,10 @@ Partial Class UctrlModificarUsuario
         '
         Me.Label8.AutoSize = True
         Me.Label8.BackColor = System.Drawing.Color.Transparent
-        Me.Label8.Font = New System.Drawing.Font("Segoe UI Light", 13.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Font = New System.Drawing.Font("Segoe UI Light", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.Location = New System.Drawing.Point(360, 141)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(65, 25)
+        Me.Label8.Size = New System.Drawing.Size(64, 23)
         Me.Label8.TabIndex = 79
         Me.Label8.Text = "Género"
         '
@@ -185,10 +190,10 @@ Partial Class UctrlModificarUsuario
         '
         Me.Label7.AutoSize = True
         Me.Label7.BackColor = System.Drawing.Color.Transparent
-        Me.Label7.Font = New System.Drawing.Font("Segoe UI Light", 13.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Font = New System.Drawing.Font("Segoe UI Light", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.Location = New System.Drawing.Point(360, 94)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(162, 25)
+        Me.Label7.Size = New System.Drawing.Size(159, 23)
         Me.Label7.TabIndex = 77
         Me.Label7.Text = "Fecha de nacimiento"
         '
@@ -203,10 +208,10 @@ Partial Class UctrlModificarUsuario
         '
         Me.Label6.AutoSize = True
         Me.Label6.BackColor = System.Drawing.Color.Transparent
-        Me.Label6.Font = New System.Drawing.Font("Segoe UI Light", 13.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Font = New System.Drawing.Font("Segoe UI Light", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.Location = New System.Drawing.Point(360, 47)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(74, 25)
+        Me.Label6.Size = New System.Drawing.Size(71, 23)
         Me.Label6.TabIndex = 75
         Me.Label6.Text = "Teléfono"
         '
@@ -221,10 +226,10 @@ Partial Class UctrlModificarUsuario
         '
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Font = New System.Drawing.Font("Segoe UI Light", 13.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI Light", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.Location = New System.Drawing.Point(19, 231)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(107, 25)
+        Me.Label5.Size = New System.Drawing.Size(104, 23)
         Me.Label5.TabIndex = 73
         Me.Label5.Text = "Identificación"
         '
@@ -239,10 +244,10 @@ Partial Class UctrlModificarUsuario
         '
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Font = New System.Drawing.Font("Segoe UI Light", 13.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Font = New System.Drawing.Font("Segoe UI Light", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(19, 181)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(137, 25)
+        Me.Label4.Size = New System.Drawing.Size(136, 23)
         Me.Label4.TabIndex = 71
         Me.Label4.Text = "Segundo apellido"
         '
@@ -257,10 +262,10 @@ Partial Class UctrlModificarUsuario
         '
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Segoe UI Light", 13.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI Light", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(18, 136)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(122, 25)
+        Me.Label3.Size = New System.Drawing.Size(118, 23)
         Me.Label3.TabIndex = 69
         Me.Label3.Text = "Primer apellido"
         '
@@ -275,10 +280,10 @@ Partial Class UctrlModificarUsuario
         '
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI Light", 13.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI Light", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(18, 90)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(138, 25)
+        Me.Label2.Size = New System.Drawing.Size(138, 23)
         Me.Label2.TabIndex = 67
         Me.Label2.Text = "Segundo nombre"
         '
@@ -293,12 +298,25 @@ Partial Class UctrlModificarUsuario
         '
         Me.lblNombre.AutoSize = True
         Me.lblNombre.BackColor = System.Drawing.Color.Transparent
-        Me.lblNombre.Font = New System.Drawing.Font("Segoe UI Light", 13.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombre.Font = New System.Drawing.Font("Segoe UI Light", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblNombre.Location = New System.Drawing.Point(18, 42)
         Me.lblNombre.Name = "lblNombre"
-        Me.lblNombre.Size = New System.Drawing.Size(123, 25)
+        Me.lblNombre.Size = New System.Drawing.Size(120, 23)
         Me.lblNombre.TabIndex = 65
         Me.lblNombre.Text = "Primer nombre"
+        '
+        'btnX
+        '
+        Me.btnX.BackColor = System.Drawing.Color.Transparent
+        Me.btnX.BackgroundImage = CType(resources.GetObject("btnX.BackgroundImage"), System.Drawing.Image)
+        Me.btnX.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnX.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnX.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(248, Byte), Integer))
+        Me.btnX.Location = New System.Drawing.Point(696, 3)
+        Me.btnX.Name = "btnX"
+        Me.btnX.Size = New System.Drawing.Size(20, 21)
+        Me.btnX.TabIndex = 93
+        Me.btnX.UseVisualStyleBackColor = False
         '
         'UctrlModificarUsuario
         '
@@ -306,6 +324,7 @@ Partial Class UctrlModificarUsuario
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Controls.Add(Me.btnX)
         Me.Controls.Add(Me.btnAceptar)
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.txtCorreoElectronico)
@@ -362,5 +381,6 @@ Partial Class UctrlModificarUsuario
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents txtNombre As System.Windows.Forms.TextBox
     Friend WithEvents lblNombre As System.Windows.Forms.Label
+    Friend WithEvents btnX As System.Windows.Forms.Button
 
 End Class

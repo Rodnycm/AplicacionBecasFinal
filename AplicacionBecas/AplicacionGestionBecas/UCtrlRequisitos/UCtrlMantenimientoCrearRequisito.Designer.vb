@@ -56,7 +56,7 @@ Partial Class uCtrlMantenimientoCrearRequisito
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(89, 29)
         Me.btnAceptar.TabIndex = 18
-        Me.btnAceptar.Text = "Aceptar"
+        Me.btnAceptar.Text = "Añadir"
         Me.btnAceptar.UseVisualStyleBackColor = False
         '
         'btnCancelar

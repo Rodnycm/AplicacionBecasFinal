@@ -116,7 +116,7 @@ Partial Class uCtrlMantenimientoCarreras
         '
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 9.75!)
         Me.dtaCodigo.DefaultCellStyle = DataGridViewCellStyle3
-        Me.dtaCodigo.HeaderText = "Codigo"
+        Me.dtaCodigo.HeaderText = "Código"
         Me.dtaCodigo.Name = "dtaCodigo"
         Me.dtaCodigo.ReadOnly = True
         '
@@ -132,7 +132,7 @@ Partial Class uCtrlMantenimientoCarreras
         '
         DataGridViewCellStyle5.Font = New System.Drawing.Font("Segoe UI", 9.75!)
         Me.dtaDirector.DefaultCellStyle = DataGridViewCellStyle5
-        Me.dtaDirector.HeaderText = "Director Academico"
+        Me.dtaDirector.HeaderText = "Director Académico"
         Me.dtaDirector.Name = "dtaDirector"
         Me.dtaDirector.ReadOnly = True
         '

@@ -22,6 +22,7 @@ Partial Class uCtrlModificarCurso
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(uCtrlModificarCurso))
         Me.btnAceptarModificarCurso = New System.Windows.Forms.Button()
         Me.btnCancelarAgregarCurso = New System.Windows.Forms.Button()
         Me.txtPrecioCurso = New System.Windows.Forms.TextBox()
@@ -167,7 +168,8 @@ Partial Class uCtrlModificarCurso
         '
         'PictureBox1
         '
-        '' Me.PictureBox1.Image = Global.UI.My.Resources.Resources.tablaFinalMedianaAzul1
+        Me.PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox1.ErrorImage = CType(resources.GetObject("PictureBox1.ErrorImage"), System.Drawing.Image)
         Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(462, 273)

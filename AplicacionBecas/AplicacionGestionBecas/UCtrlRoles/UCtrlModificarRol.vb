@@ -1,9 +1,8 @@
-﻿
-Imports EntitiesLayer
-
+﻿Imports EntitiesLayer
 
 Public Class uCtrlModificarRol
 
+    Dim mBlnFormDragging As Boolean
     Dim nombre As String
     Dim idRol As Integer
     Dim listarRoles As uCtrlListarRol
@@ -44,8 +43,17 @@ Public Class uCtrlModificarRol
             Next
 
             CompararPermisos()
+
         Catch ex As Exception
-            
+
+            Dim UCtrl As UctrlAlerta = New UctrlAlerta()
+
+            FrmIniciarSesion.principal.Controls.Add(UCtrl)
+            UCtrl.lblAlerta.Text = ex.Message
+            UCtrl.Location = New Point(300, 100)
+            UCtrl.BringToFront()
+            UCtrl.Show()
+
         End Try
         
     End Sub
@@ -64,18 +72,30 @@ Public Class uCtrlModificarRol
     ''' </summary>
     ''' <remarks></remarks>
     Private Sub CompararPermisos()
-        listaPermisosRol = objGestorRol.consultarPermisosPorRol(idRol)
 
-        For j As Integer = 0 To listaPermisosRol.Count - 1
-            For i As Integer = 0 To listaPermisos.Count - 1
-                If (listaPermisosRol.Item(j).Id = listaPermisos.Item(i).Id) Then
+        Try
+            listaPermisosRol = objGestorRol.consultarPermisosPorRol(idRol)
 
-                    CLBPermisos.SetItemChecked(i, True)
-                End If
+            For j As Integer = 0 To listaPermisosRol.Count - 1
+                For i As Integer = 0 To listaPermisos.Count - 1
+                    If (listaPermisosRol.Item(j).Id = listaPermisos.Item(i).Id) Then
 
+                        CLBPermisos.SetItemChecked(i, True)
+                    End If
+
+                Next
             Next
-        Next
-        
+
+        Catch ex As Exception
+            Dim UCtrl As UctrlAlerta = New UctrlAlerta()
+
+            Me.Controls.Add(UCtrl)
+            UCtrl.lblAlerta.Text = ex.Message
+            UCtrl.Location = New Point(300, 100)
+            UCtrl.BringToFront()
+            UCtrl.Show()
+        End Try
+
     End Sub
 
     ''' <summary>
@@ -85,6 +105,8 @@ Public Class uCtrlModificarRol
     ''' <param name="e"></param>
     ''' <remarks></remarks>
     Private Sub btnCancelar_Click_1(sender As Object, e As EventArgs) Handles btnCancelar.Click
+        listarRoles.DGVRol.Rows.Clear()
+        listarRoles.ListarRoles()
         Me.Dispose()
     End Sub
     '''<summary> Descripción del método o clase</summary>
@@ -92,23 +114,20 @@ Public Class uCtrlModificarRol
     '''<name> Parámetros que recibe el método </name>  
     Private Sub btnAceptar_Click_1(sender As Object, e As EventArgs) Handles btnAceptar.Click
 
-        
-
-
-
         Try
             EditarRol()
             ValidarPermisos()
             Dim Uctrl As uCtrlConfirmacion = New uCtrlConfirmacion
-            FrmIniciarSesion.principal.Controls.Add(Uctrl)
+            Me.Controls.Add(Uctrl)
             Uctrl.lblConfirmacion.Text = "El rol se modifico correctamente"
             Uctrl.Location = New Point(300, 100)
             Uctrl.BringToFront()
             Uctrl.Show()
+
         Catch ex As Exception
             Dim UCtrl As UctrlAlerta = New UctrlAlerta()
 
-            FrmIniciarSesion.principal.Controls.Add(UCtrl)
+            Me.Controls.Add(UCtrl)
             UCtrl.lblAlerta.Text = ex.Message
             UCtrl.Location = New Point(300, 100)
             UCtrl.BringToFront()
@@ -117,17 +136,35 @@ Public Class uCtrlModificarRol
 
         listarRoles.DGVRol.Rows.Clear()
         listarRoles.ListarRoles()
+
         Me.Dispose()
     End Sub
 
     Sub EditarRol()
-        nombre = txtNombre.Text
 
-        objGestorRol.modificarRol(nombre, idRol)
-        objGestorRol.guardarCambios()
+        Try
+
+            nombre = txtNombre.Text
+
+            objGestorRol.modificarRol(nombre, idRol)
+            objGestorRol.guardarCambios()
+
+        Catch ex As Exception
+
+            Dim UCtrl As UctrlAlerta = New UctrlAlerta()
+
+            Me.Controls.Add(UCtrl)
+            UCtrl.lblAlerta.Text = ex.Message
+            UCtrl.Location = New Point(300, 100)
+            UCtrl.BringToFront()
+            UCtrl.Show()
+
+        End Try
+
     End Sub
 
     Public Function PermisosSeleccionados()
+
         Dim indexSeleccionado As Integer = 0
         Dim listaPermisosSeleccionados As New List(Of Permiso)
         Try
@@ -138,8 +175,20 @@ Public Class uCtrlModificarRol
 
             Next indexSeleccionado
 
-        Catch
+
+        Catch ex As Exception
+
+            Dim UCtrl As UctrlAlerta = New UctrlAlerta()
+
+            FrmIniciarSesion.principal.Controls.Add(UCtrl)
+            UCtrl.lblAlerta.Text = ex.Message
+            UCtrl.Location = New Point(300, 100)
+            UCtrl.BringToFront()
+            UCtrl.Show()
+
         End Try
+
+
 
         Return listaPermisosSeleccionados
     End Function
@@ -147,26 +196,65 @@ Public Class uCtrlModificarRol
 
     Public Sub ValidarPermisos()
 
-        Dim listaPermisosSeleccionados As New List(Of Permiso)
+        Try
 
-        listaPermisosSeleccionados = PermisosSeleccionados()
+            Dim listaPermisosSeleccionados As New List(Of Permiso)
 
-        For i As Integer = 0 To listaPermisosRol.Count - 1
+            listaPermisosSeleccionados = PermisosSeleccionados()
 
-            objGestorRol.eliminarPermisoAUnRol(listaPermisosRol.Item(i).Id, idRol)
+            For i As Integer = 0 To listaPermisosRol.Count - 1
 
-        Next
+                objGestorRol.eliminarPermisoAUnRol(listaPermisosRol.Item(i).Id, idRol)
 
-        For i As Integer = 0 To listaPermisosSeleccionados.Count - 1
+            Next
 
-            objGestorRol.asignarPermisoAUnRol(listaPermisosSeleccionados.Item(i).Id(), idRol)
+            For i As Integer = 0 To listaPermisosSeleccionados.Count - 1
 
-        Next
+                objGestorRol.asignarPermisoAUnRol(listaPermisosSeleccionados.Item(i).Id(), idRol)
 
+            Next
+
+        Catch ex As Exception
+
+            Dim UCtrl As UctrlAlerta = New UctrlAlerta()
+
+            Me.Controls.Add(UCtrl)
+            UCtrl.lblAlerta.Text = ex.Message
+            UCtrl.Location = New Point(300, 100)
+            UCtrl.BringToFront()
+            UCtrl.Show()
+
+        End Try
     End Sub
 
 
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
         Me.Dispose()
     End Sub
+
+    Private Sub uCtrlModificarRol_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Me.MouseMove
+
+        If mBlnFormDragging = True Then
+
+            Dim position As Point = frmPrincipal.PointToClient(MousePosition)
+            Me.Location = New Point(position)
+
+        End If
+
+    End Sub
+
+    Private Sub uCtrlModificarRol_MouseUp(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Me.MouseUp
+
+        mBlnFormDragging = False
+        Dim position As Point = frmPrincipal.PointToClient(MousePosition)
+        Location = New Point(position)
+
+    End Sub
+
+    Public Sub uCtrlModificarRol_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Me.MouseDown
+
+        mBlnFormDragging = True
+
+    End Sub
+
 End Class

@@ -10,6 +10,8 @@ Public Class uCtrlEliminarRol
     '''<summary> Este Metodo esconde el usuario de control de eliminar Rol</summary>
     '''<author>Rodny Castro Mathews </author> 
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
+        listarRoles.DGVRol.Rows.Clear()
+        listarRoles.ListarRoles()
         Me.Dispose()
     End Sub
 

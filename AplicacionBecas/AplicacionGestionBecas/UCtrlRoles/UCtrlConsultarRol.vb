@@ -10,7 +10,11 @@ Class uCntrlConsultarRol
     '''<summary>Este metodo oculta la ventana de consultar rol </summary>
     '''<author>Rodny Castro Mathews </author> 
     Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
+
+        listarRoles.DGVRol.Rows.Clear()
+        listarRoles.ListarRoles()
         Me.Dispose()
+
     End Sub
 
     '''<summary>Este metodo enseña los valores del Rol </summary>
@@ -67,6 +71,8 @@ Class uCntrlConsultarRol
     '''<summary>Este metodo hace que apenas se abra el usuario de control se listen los permisos </summary>
     '''<author>Rodny Castro Mathews </author> 
     Private Sub uCntrlConsultarRol_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        listarRoles.DGVRol.Rows.Clear()
+        listarRoles.ListarRoles()
         listarPermisos()
     End Sub
     ''' <summary>

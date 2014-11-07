@@ -26,13 +26,13 @@ Public Class uCtrlListarRol
                 DGVRol.Rows.Add(rol.Id, rol.Nombre)
             Next
 
-        Catch
+        Catch ex As Exception
 
             Dim uctrlAlerta As UctrlAlerta = New UctrlAlerta()
             Me.Controls.Add(uctrlAlerta)
             uctrlAlerta.Location = New Point(300, 100)
             uctrlAlerta.BringToFront()
-            uctrlAlerta.lblAlerta.Text = "No hay roles registrados"
+            uctrlAlerta.lblAlerta.Text = ex.Message
             uctrlAlerta.Show()
 
         End Try
@@ -60,10 +60,18 @@ Public Class uCtrlListarRol
             'frmPrincipal.Controls.Add(uCtrlModRol)
             frmIniciarSesion.principal.Controls.Add(uCtrlModRol)
 
-            uCtrlModRol.Show()
             uCtrlModRol.BringToFront()
             uCtrlModRol.Location = New Point(250, 170)
+            uCtrlModRol.Show()
+           
         Catch ex As Exception
+
+            Dim uctrlAlerta As UctrlAlerta = New UctrlAlerta()
+            Me.Controls.Add(uctrlAlerta)
+            uctrlAlerta.Location = New Point(300, 100)
+            uctrlAlerta.BringToFront()
+            uctrlAlerta.lblAlerta.Text = ex.Message
+            uctrlAlerta.Show()
 
         End Try
 
@@ -142,11 +150,11 @@ Public Class uCtrlListarRol
         Dim combo As ComboBox = CType(sender, ComboBox)
         Dim fila As Integer = DGVRol.CurrentCell.RowIndex
         If combo.SelectedItem = "Editar" Then
-            MsgBox(fila)
+
             modificarRol(fila)
 
         ElseIf combo.SelectedItem = "Eliminar" Then
-            MsgBox(fila)
+
             eliminarRol(fila)
 
         ElseIf combo.SelectedItem = "Ver" Then
@@ -158,21 +166,7 @@ Public Class uCtrlListarRol
 
     End Sub
 
-    '''<summary>Este metodo llama al usuario de control de crear rol </summary>
-    '''<author>Rodny Castro Mathews </author> 
-    Private Sub btnCrearRoles_Click(sender As Object, e As EventArgs) Handles btnCrearRoles.Click
-        uCtrlRol = New UCntrlRegistrarRol()
-        uCtrlRol.getFrmBuscar(Me)
-
-        frmIniciarSesion.principal.Controls.Add(uCtrlRol)
-
-        uCtrlRol.BringToFront()
-        uCtrlRol.Show()
-        uCtrlRol.Location = New Point(250, 170)
-    End Sub
-
-
-    Private Sub txtBuscarRol_TextChanged(sender As Object, e As EventArgs) Handles txtBuscarRol.TextChanged
+    Private Sub txtBuscarRol_TextChanged(sender As Object, e As EventArgs)
         Dim parametro As String = txtBuscarRol.Text
 
         Try
@@ -187,7 +181,35 @@ Public Class uCtrlListarRol
             ListarRoles()
         End Try
 
-        
+
     End Sub
 
+    Private Sub btnCrearRoles_Click_1(sender As Object, e As EventArgs) Handles btnCrearRoles.Click
+
+        Try
+
+            uCtrlRol = New UCntrlRegistrarRol()
+            uCtrlRol.getFrmBuscar(Me)
+
+            FrmIniciarSesion.principal.Controls.Add(uCtrlRol)
+
+            uCtrlRol.BringToFront()
+            uCtrlRol.Location = New Point(250, 170)
+            uCtrlRol.Show()
+
+        Catch ex As Exception
+
+            Dim uctrlAlerta As UctrlAlerta = New UctrlAlerta()
+            Me.Controls.Add(uctrlAlerta)
+
+            uctrlAlerta.lblAlerta.Text = ex.Message
+            uctrlAlerta.BringToFront()
+            uctrlAlerta.Location = New Point(300, 100)
+            uctrlAlerta.Show()
+
+
+        End Try
+
+
+    End Sub
 End Class

@@ -1,6 +1,7 @@
 ﻿Imports EntitiesLayer
 Public Class UCntrlRegistrarRol
 
+    Dim mBlnFormDragging As Boolean
     Dim listarRoles As uCtrlListarRol
     Dim listaPermisos As New List(Of Permiso)
     Dim listaPermisosSeleccionados As New List(Of Permiso)
@@ -16,6 +17,7 @@ Public Class UCntrlRegistrarRol
             objGestorRol.guardarCambios()
             idRol = objGestorRol.consultarRolPorNombre(nombre).Id
             asignarPermisosAUnRol()
+
             Dim Uctrl As uCtrlConfirmacion = New uCtrlConfirmacion
             FrmIniciarSesion.principal.Controls.Add(Uctrl)
             Uctrl.lblConfirmacion.Text = "El rol se creo correctamente"
@@ -24,6 +26,7 @@ Public Class UCntrlRegistrarRol
             Uctrl.Show()
 
         Catch ex As Exception
+
             Dim UCtrl As UctrlAlerta = New UctrlAlerta()
 
             FrmIniciarSesion.principal.Controls.Add(UCtrl)
@@ -31,6 +34,7 @@ Public Class UCntrlRegistrarRol
             UCtrl.Location = New Point(300, 100)
             UCtrl.BringToFront()
             UCtrl.Show()
+
         End Try
 
 
@@ -53,7 +57,8 @@ Public Class UCntrlRegistrarRol
     '''<summary>Este metodo oculta el usuario de control de registrar Rol </summary>
     '''<author>Rodny Castro Mathews </author> 
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
-        MostrarMenuMant()
+        listarRoles.DGVRol.Rows.Clear()
+        listarRoles.ListarRoles()
         Me.Dispose()
 
     End Sub
@@ -72,6 +77,8 @@ Public Class UCntrlRegistrarRol
     ''' <param name="e"></param>
     ''' <remarks></remarks>
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
+        listarRoles.DGVRol.Rows.Clear()
+        listarRoles.ListarRoles()
         Me.Dispose()
     End Sub
 
@@ -85,7 +92,15 @@ Public Class UCntrlRegistrarRol
 
             'CompararPermisos()
         Catch ex As Exception
-            
+
+            Dim UCtrl As UctrlAlerta = New UctrlAlerta()
+
+            Me.Controls.Add(UCtrl)
+            UCtrl.lblAlerta.Text = ex.Message
+            UCtrl.Location = New Point(300, 100)
+            UCtrl.BringToFront()
+            UCtrl.Show()
+
         End Try
 
     End Sub
@@ -96,6 +111,7 @@ Public Class UCntrlRegistrarRol
         Dim ListaPermisosQuitar As New List(Of Permiso)
         Dim listaIdROlesPermisos As New List(Of Integer)
 
+        Try
         listaPermisosSeleccionados = PermisosSeleccionados()
 
         If listaPermisosSeleccionados.Count <> Nothing Then
@@ -103,7 +119,17 @@ Public Class UCntrlRegistrarRol
                 objGestorRol.asignarPermisoAUnRol(listaPermisosSeleccionados.Item(i).Id(), idRol)
 
             Next
-        End If
+            End If
+
+        Catch ex As Exception
+            Dim UCtrl As UctrlAlerta = New UctrlAlerta()
+
+            Me.Controls.Add(UCtrl)
+            UCtrl.lblAlerta.Text = ex.Message
+            UCtrl.Location = New Point(300, 100)
+            UCtrl.BringToFront()
+            UCtrl.Show()
+        End Try
     End Sub
 
     Public Function PermisosSeleccionados()
@@ -117,16 +143,48 @@ Public Class UCntrlRegistrarRol
 
             Next indexSeleccionado
 
+        Catch ex As Exception
 
+            Dim UCtrl As UctrlAlerta = New UctrlAlerta()
+            Me.Controls.Add(UCtrl)
+            UCtrl.lblAlerta.Text = ex.Message
+            UCtrl.Location = New Point(300, 100)
+            UCtrl.BringToFront()
+            UCtrl.Show()
 
-
-        Catch
         End Try
 
         Return listaPermisosSeleccionados
+
     End Function
 
     Private Sub UCntrlRegistrarRol_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         listarPermisos()
     End Sub
+
+    Private Sub CntrlRegistrarRol_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Me.MouseMove
+
+        If mBlnFormDragging = True Then
+
+            Dim position As Point = frmPrincipal.PointToClient(MousePosition)
+            Me.Location = New Point(position)
+
+        End If
+
+    End Sub
+
+    Private Sub CntrlRegistrarRol_MouseUp(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Me.MouseUp
+
+        mBlnFormDragging = False
+        Dim position As Point = frmPrincipal.PointToClient(MousePosition)
+        Location = New Point(position)
+
+    End Sub
+
+    Public Sub CntrlRegistrarRol_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Me.MouseDown
+
+        mBlnFormDragging = True
+
+    End Sub
+
 End Class

@@ -2,19 +2,23 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using EntitiesLayer;
-using System.Collections;
-using System.Data.SqlClient;
 using System.Configuration;
-using System.Data;
-using DAL.Repositories;
 using System.Transactions;
+using System.Data.SqlClient;
+using System.Data;
+using System.Windows.Forms;
+using TIL;
 
 namespace DAL.Repositories
 {
     public class TipoBecaRepository : IRepository<TipoBeca>
     {
         private string actividad;
+        private static int numero;
+        private static string mensaje;
+        private static Excepciones exceptions = new Excepciones();
         private static TipoBecaRepository instance;
         private List<IEntity> _insertItems;
         private List<IEntity> _deleteItems;

@@ -6,7 +6,15 @@ UI
 </name>
 </assembly>
 <members>
-<member name="M:UI.uCtrlEliminarBeneficio.getUCtrlInstance(UI.uCntrlBuscarBeneficio)">
+<member name="M:UI.uCtrlEliminarCurso.recieveData(System.String)">
+	<summary>Método que se encarga de recivir el parámetro por medio del cual se hará una instancia del objetoCurso</summary>
+	<param name="pcodigo">Código el cual corresponde al curso que se desea eliminar</param>
+	<autor>Valeria Ramírez</autor>
+</member><member name="M:UI.uCtrlEliminarCurso.refrecarLista(UI.uCtrlBuscarCursos)">
+	<summary>Método que se encarga limpiar y listar los cursos una vez que han sido eliminados</summary>
+	<param name="puctrl">Control de usuario de Buscar Cursos</param>
+	<autor>Valeria Ramírez</autor>
+</member><member name="M:UI.uCtrlEliminarBeneficio.getUCtrlInstance(UI.uCntrlBuscarBeneficio)">
 	<summary>
  Recibe una instancia del userControlBuscarBeneficio y la setea.
  </summary>
@@ -877,6 +885,18 @@ TableAdapterManager is used to coordinate TableAdapters in the dataset to enable
 </member><member name="M:UI.uCtrlMantenimientoCarreras.dgvCarreras_CellContentClick(System.Object,System.Windows.Forms.DataGridViewCellEventArgs)">
 	<summary>Evento que se ejecuta cuando el usuario da click al boton cursos del datagridview</summary>
 	<autor>Alvaro Artavia</autor>
+</member><member name="M:UI.uCtrlModificarCurso.recieveData(System.String)">
+	<summary>Método que se encarga de recivir el parámetro por el cual se puede hacer una instancia del objeto curso</summary>
+	<param name="pcodigo">Código el cual corresponde al curso que se desea modificar</param>
+	<autor>Valeria Ramírez</autor>
+</member><member name="M:UI.uCtrlModificarCurso.llenarInfoModificar(EntitiesLayer.Curso)">
+	<summary>Método que se encarga de llenar los texBox con la información que se desea modificar correspondiente al objetoCurso</summary>
+	<param name="pobjCurso">Objeto Curso</param>
+	<autor>Valeria Ramírez</autor>
+</member><member name="M:UI.uCtrlModificarCurso.refrecarLista(UI.uCtrlBuscarCursos)">
+	<summary>Método que se encarga de limpiar y volver a listar los cursos una vez que han sido modificados</summary>
+	<param name="puctrl">Control de usuario de Buscar Cursos</param>
+	<autor>Valeria Ramírez</autor>
 </member><member name="M:UI.UCtrlAsignarCursos.uCtrlAsignarCursos_MouseMove(System.Object,System.Windows.Forms.MouseEventArgs)">
 	<summary>Posiciona la ventana mientras el usuario da click al compomente</summary>
 	<autor>Alvaro Artavia</autor>
@@ -1742,6 +1762,10 @@ TableAdapterManager is used to coordinate TableAdapters in the dataset to enable
 </member><member name="M:UI.uCtrlMantenimientoRequisitos.ComboBox_SelectionChangeCommitted(System.Object,System.EventArgs)">
 	<summary>Metodo encargado de controlar cuando se da click al combobox se ejecuten las acciones</summary>
 	<autor>Valeria Ramírez Cordero</autor>
+</member><member name="M:UI.CrearCursos.refrecarLista(UI.uCtrlBuscarCursos)">
+	<summary>Método que se encarga de limpiar y cargar la lista de cursos una vez creado el curso</summary>
+	<param name="puctrl">control de usuario de buscar cursos</param>
+	<autor>Valeria Ramírez</autor>
 </member><member name="T:UI.DB_Proyecto2DataSet.Tb_BecasDataTable">
 	<summary>
 Represents the strongly named DataTable class.
@@ -2531,6 +2555,21 @@ TableAdapterManager is used to coordinate TableAdapters in the dataset to enable
 </member><member name="M:UI.uCtrlBuscarCursos.ComboBox_SelectionChangeCommitted(System.Object,System.EventArgs)">
 	<summary>Metodo encargado de controlar cuando se da click al combobox se ejecuten las acciones</summary>
 	<autor>Valeria Ramírez Cordero</autor>
+</member><member name="M:UI.uCtrlBuscarCursos.modificarCurso(System.String)">
+	<summary>Método que se encarga de modificar un curso por medio de la fila en que se encuentra</summary>
+	<param name="pfila">Código el cual corresponde al curso que se desea modificar</param>
+	<autor>Valeria Ramírez</autor>
+</member><member name="M:UI.uCtrlBuscarCursos.eliminarCurso(System.String)">
+	<summary>Método que se encarga de eliminar un curso por medio de la fila en que se encuentra</summary>
+	<param name="pfila">Código el cual corresponde al curso que se desea modificar</param>
+	<autor>Valeria Ramírez</autor>
+</member><member name="M:UI.uCtrlBuscarCursos.listarCursos">
+	<summary>Método que se encarga de listar en el data grid los cursos que existen en el sistema</summary>
+	<autor>Valeria Ramírez</autor>
+</member><member name="M:UI.uCtrlBuscarCursos.buscarCursos(System.String)">
+	<summary>Método que se encarga de buscar un curso en específico</summary>
+	<param name="parametro">Nombre o código mediante el cual se filtra la búsqueda</param>
+	<autor>Valeria Ramírez</autor>
 </member><member name="M:UI.uCtrlListarRol.ListarRoles">
 	<summary> Este metodo lista los roles</summary>
 	<author>Rodny Castro Mathews </author>

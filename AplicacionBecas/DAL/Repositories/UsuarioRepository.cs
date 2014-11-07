@@ -209,27 +209,17 @@ namespace DAL.Repositories
                
         }
 
-<<<<<<< HEAD
+
         public IEnumerable<Usuario> buscarUsuariosPorRol(int pidrol)
-=======
-        //<summary> Método que se encarga de traer de la base de datos una lista con los roles estudiante</summary>
-        //<author> Valeria Ramírez Cordero </author> 
-        //<param> </param>
-        //<returns>Retorna el usuario deseado</returns> 
-        public IEnumerable<Usuario> GetAllRolesEstudiante()
->>>>>>> origin/Ramirez
+
         {
             try
             {
                 List<Usuario> pusuario = null;
                 SqlCommand cmd = new SqlCommand();
-<<<<<<< HEAD
 
                 cmd.Parameters.AddWithValue("@idRol", pidrol);
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_buscarUsuariosPorRol");
-=======
-                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_buscarRoles");
->>>>>>> origin/Ramirez
                 Rol rolUsuario = null;
 
                 if (ds.Tables[0].Rows.Count > 0)
@@ -257,10 +247,7 @@ namespace DAL.Repositories
                         };
                         objUsuario.Id = Convert.ToInt32(dr["id"]);
                         pusuario.Add(objUsuario);
-<<<<<<< HEAD
-=======
-                        pusuario.Add(objUsuario);
->>>>>>> origin/Ramirez
+
                     }
                 }
                 return pusuario;
@@ -276,16 +263,9 @@ namespace DAL.Repositories
             {
                 throw ex;
             }
-<<<<<<< HEAD
-
         }
 
 
-         
-=======
-              
-        }
->>>>>>> origin/Ramirez
         //<summary> Método que se encarga de guardar en la base de datos los cambios realizados </summary>
         //<author> Gabriela Gutiérrez Corrales </author> 
         //<param> No recibe parámetros </param>

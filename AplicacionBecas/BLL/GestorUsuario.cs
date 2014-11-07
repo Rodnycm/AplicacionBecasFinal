@@ -380,15 +380,15 @@ namespace BLL
         //<param > No recibe parámetros  </param>
         //<returns> Retorna una lista con los roles estudiantes registrados</returns> 
 
-        public IEnumerable<Usuario> buscarRolesEstudiantes(){
-            try{
-                return UsuarioRepository.Instance.GetAllRolesEstudiante();
-            }
-            catch (Exception ex){
-                throw ex;
-            }
+        //public IEnumerable<Usuario> buscarRolesEstudiantes(){
+        //    try{
+        //        return UsuarioRepository.Instance.GetAllRolesEstudiante();
+        //    }
+        //    catch (Exception ex){
+        //        throw ex;
+        //    }
            
-        }
+        //}
 
         //<summary> Método que se encarga de buscar un usuario determinado</summary>
         //<author> Gabriela Gutiérrez Corrales </author> 

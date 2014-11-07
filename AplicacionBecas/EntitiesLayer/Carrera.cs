@@ -22,6 +22,8 @@ namespace EntitiesLayer
         public String color { get; set; }
         public Usuario directorAcademico { get; set; }
 
+        public List<Curso> listaCursos { get; set; }
+
         public Carrera()
         {
             nombre = "";

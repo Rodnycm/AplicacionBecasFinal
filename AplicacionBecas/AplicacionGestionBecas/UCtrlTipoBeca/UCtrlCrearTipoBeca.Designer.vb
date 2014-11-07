@@ -34,6 +34,8 @@ Partial Class uCtrlCrearTipoBeca
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.btnAñadir = New System.Windows.Forms.Button()
         Me.btnCerrar = New System.Windows.Forms.Button()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.btnX = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
@@ -144,7 +146,6 @@ Partial Class uCtrlCrearTipoBeca
         '
         'btnCerrar
         '
-
         Me.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCerrar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(248, Byte), Integer))
@@ -154,6 +155,31 @@ Partial Class uCtrlCrearTipoBeca
         Me.btnCerrar.TabIndex = 10
         Me.btnCerrar.UseVisualStyleBackColor = True
         '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.BackColor = System.Drawing.Color.Transparent
+        Me.Label13.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.ForeColor = System.Drawing.Color.White
+        Me.Label13.Location = New System.Drawing.Point(3, 4)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(58, 25)
+        Me.Label13.TabIndex = 37
+        Me.Label13.Text = "Crear"
+        '
+        'btnX
+        '
+        Me.btnX.BackColor = System.Drawing.Color.Transparent
+        Me.btnX.BackgroundImage = CType(resources.GetObject("btnX.BackgroundImage"), System.Drawing.Image)
+        Me.btnX.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnX.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnX.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(248, Byte), Integer))
+        Me.btnX.Location = New System.Drawing.Point(451, 4)
+        Me.btnX.Name = "btnX"
+        Me.btnX.Size = New System.Drawing.Size(20, 21)
+        Me.btnX.TabIndex = 62
+        Me.btnX.UseVisualStyleBackColor = False
+        '
         'uCtrlCrearTipoBeca
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -161,6 +187,8 @@ Partial Class uCtrlCrearTipoBeca
         Me.BackColor = System.Drawing.Color.Transparent
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Controls.Add(Me.btnX)
+        Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.btnAñadir)
         Me.Controls.Add(Me.btnCancelar)
@@ -189,5 +217,7 @@ Partial Class uCtrlCrearTipoBeca
     Friend WithEvents btnCancelar As System.Windows.Forms.Button
     Friend WithEvents btnAñadir As System.Windows.Forms.Button
     Friend WithEvents btnCerrar As System.Windows.Forms.Button
+    Friend WithEvents Label13 As System.Windows.Forms.Label
+    Friend WithEvents btnX As System.Windows.Forms.Button
 
 End Class

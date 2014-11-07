@@ -68,7 +68,11 @@ namespace EntitiesLayer
             nombre = pnombre;
             descripcion = pdescripcion;
         }
+        public Requisito(int id)
+        {
+            this.Id = id;
 
+        }
         //<summary> Método que se encarga de determinar si los datos ingresados del requisito son validos</summary>
         //<author> Gabriela Gutiérrez Corrales </author> 
         //<param > No recibe parámetros </param>

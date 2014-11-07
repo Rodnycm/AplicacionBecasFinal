@@ -65,7 +65,6 @@ Partial Class uCtrlAsignarRequisitos
         '
         'btnCerrar
         '
-
         Me.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnCerrar.Location = New System.Drawing.Point(383, 20)
         Me.btnCerrar.Name = "btnCerrar"

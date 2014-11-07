@@ -83,23 +83,24 @@ namespace DAL.Repositories
         {
             List<Requisito> prequisito = null;
 
-            //SqlCommand cmd = new SqlCommand();
+            SqlCommand cmd = new SqlCommand();
 
-            //DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_buscarRequisito");
+            DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_buscarRequisito");
 
-            //if (ds.Tables[0].Rows.Count > 0)
-            //{
-            //    prequisito = new List<Requisito>();
-            //    foreach (DataRow dr in ds.Tables[0].Rows)
-            //    {
-            //        prequisito.Add(new Requisito
-            //        (
-            //            Convert.ToInt32(dr["idRequisito"]),
-            //            dr["Nombre"].ToString(),
-            //            dr["Descripcion"].ToString()
-            //        ));
-            //    }
-            //}
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                prequisito = new List<Requisito>();
+                foreach (DataRow dr in ds.Tables[0].Rows)
+                {
+                    prequisito.Add(new Requisito
+                    (
+                        
+                        dr["Nombre"].ToString(),
+                        dr["Descripcion"].ToString(),
+                        Convert.ToInt32(dr["idRequisito"])
+                    ));
+                }
+            }
 
             return prequisito;
         }
@@ -373,6 +374,25 @@ namespace DAL.Repositories
 
             }
         }
+        public void asignarRequisitoTipoBeca(Requisito objRequisito, TipoBeca objTipoBeca)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+
+                cmd.Parameters.Add(new SqlParameter("@idRequisito", objRequisito.Id));
+                cmd.Parameters.Add(new SqlParameter("@idTipoBeca", objTipoBeca.Id));
+
+
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_insertarRequisitoTB");
+
+            }
+            catch (Exception ex)
+            {
+
+
+            }
+        }
 
         public void asignarRequisito()
         {
@@ -390,7 +410,7 @@ namespace DAL.Repositories
                     }
 
                     scope.Complete();
-        }
+                    }
                 catch (TransactionAbortedException ex)
                 {
 
@@ -404,8 +424,42 @@ namespace DAL.Repositories
                     Clear();
                 }
 
+              }
+            }
+        public void asignarRequisito(TipoBeca objTipoBeca)
+        {
+            using (TransactionScope scope = new TransactionScope())
+            {
+                try
+                {
+                    if (_insertItems.Count > 0)
+                    {
+                        foreach (Requisito objRequisito in _insertItems)
+                        {
+                            asignarRequisitoTipoBeca(objRequisito, objTipoBeca);
+
+                        }
+                    }
+
+
+
+                    scope.Complete();
+                }
+                catch (TransactionAbortedException ex)
+                {
+
+                }
+                catch (ApplicationException ex)
+                {
+
+                }
+                finally
+                {
+                    Clear();
+                }
+
+            }
+        }
+      }
     }
-}
-    }
-}
         

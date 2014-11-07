@@ -171,7 +171,23 @@ namespace DAL
 
         public Beneficio GetById(int id)
         {
-            Beneficio objBeneficio = new Beneficio();
+            Beneficio objBeneficio = null;
+            SqlCommand cmd = new SqlCommand();
+            cmd.Parameters.AddWithValue("@idProducto", id);
+
+            var ds = DBAccess.ExecuteQuery(cmd);
+
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                var dr = ds.Tables[0].Rows[0];
+
+                objBeneficio = new Beneficio
+                {
+                    Nombre = dr["Nombre"].ToString(),
+                    Porcentaje = Convert.ToDouble(dr["Porcentaje"]),
+                    Aplicacion = dr["Aplicabilidad"].ToString()
+                };
+            }
 
             return objBeneficio;
         }
@@ -463,6 +479,58 @@ namespace DAL
                         }
                     }
 
+
+
+                    scope.Complete();
+                }
+                catch (TransactionAbortedException ex)
+                {
+
+                }
+                catch (ApplicationException ex)
+                {
+
+                }
+                finally
+                {
+                    Clear();
+                }
+
+            }
+        }
+        public void asignarBeneficioTipoBeca(Beneficio objBeneficio, TipoBeca objTipoBeca)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+
+                cmd.Parameters.Add(new SqlParameter("@idBeneficio", objBeneficio.Id));
+                cmd.Parameters.Add(new SqlParameter("@idTipoBeca", objTipoBeca.Id));
+
+
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_insertarBeneficiosTiposBeca");
+
+            }
+            catch (Exception ex)
+            {
+
+
+            }
+        }
+        public void asignarBeneficio(TipoBeca objTipoBeca)
+        {
+            using (TransactionScope scope = new TransactionScope())
+            {
+                try
+                {
+                    if (_insertItems.Count > 0)
+                    {
+                        foreach (Beneficio objBeneficio in _insertItems)
+                        {
+                            asignarBeneficioTipoBeca(objBeneficio, objTipoBeca);
+
+                        }
+                    }
 
 
                     scope.Complete();

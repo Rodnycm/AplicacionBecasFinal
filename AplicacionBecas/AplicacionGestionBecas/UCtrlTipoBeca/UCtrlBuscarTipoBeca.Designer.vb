@@ -52,11 +52,11 @@ Partial Class uCtrlBuscarTipoBeca
         Me.dtaTipoBeca.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtaTipoBeca.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Nombre, Me.Estado, Me.mantenimiento})
         Me.dtaTipoBeca.GridColor = System.Drawing.Color.White
-        Me.dtaTipoBeca.Location = New System.Drawing.Point(46, 222)
+        Me.dtaTipoBeca.Location = New System.Drawing.Point(42, 233)
         Me.dtaTipoBeca.Name = "dtaTipoBeca"
         Me.dtaTipoBeca.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         Me.dtaTipoBeca.RowHeadersVisible = False
-        Me.dtaTipoBeca.Size = New System.Drawing.Size(828, 222)
+        Me.dtaTipoBeca.Size = New System.Drawing.Size(803, 222)
         Me.dtaTipoBeca.TabIndex = 17
         '
         'Nombre
@@ -80,17 +80,17 @@ Partial Class uCtrlBuscarTipoBeca
         '
         'txtBarraBusqueda
         '
-        Me.txtBarraBusqueda.Location = New System.Drawing.Point(46, 105)
+        Me.txtBarraBusqueda.Location = New System.Drawing.Point(30, 158)
         Me.txtBarraBusqueda.Name = "txtBarraBusqueda"
-        Me.txtBarraBusqueda.Size = New System.Drawing.Size(504, 20)
+        Me.txtBarraBusqueda.Size = New System.Drawing.Size(746, 20)
         Me.txtBarraBusqueda.TabIndex = 18
         '
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(46, 184)
+        Me.PictureBox1.Location = New System.Drawing.Point(30, 202)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(828, 260)
+        Me.PictureBox1.Size = New System.Drawing.Size(975, 321)
         Me.PictureBox1.TabIndex = 16
         Me.PictureBox1.TabStop = False
         '
@@ -100,9 +100,9 @@ Partial Class uCtrlBuscarTipoBeca
         Me.btnCrearTipoBeca.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCrearTipoBeca.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCrearTipoBeca.ForeColor = System.Drawing.Color.White
-        Me.btnCrearTipoBeca.Location = New System.Drawing.Point(652, 73)
+        Me.btnCrearTipoBeca.Location = New System.Drawing.Point(783, 108)
         Me.btnCrearTipoBeca.Name = "btnCrearTipoBeca"
-        Me.btnCrearTipoBeca.Size = New System.Drawing.Size(222, 75)
+        Me.btnCrearTipoBeca.Size = New System.Drawing.Size(222, 79)
         Me.btnCrearTipoBeca.TabIndex = 15
         Me.btnCrearTipoBeca.Text = "Crear Tipo "
         Me.btnCrearTipoBeca.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -116,9 +116,9 @@ Partial Class uCtrlBuscarTipoBeca
         Me.Controls.Add(Me.dtaTipoBeca)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.btnCrearTipoBeca)
-        Me.Location = New System.Drawing.Point(300, 100)
+        Me.Location = New System.Drawing.Point(783, 108)
         Me.Name = "uCtrlBuscarTipoBeca"
-        Me.Size = New System.Drawing.Size(1183, 681)
+        Me.Size = New System.Drawing.Size(1037, 578)
         CType(Me.dtaTipoBeca, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

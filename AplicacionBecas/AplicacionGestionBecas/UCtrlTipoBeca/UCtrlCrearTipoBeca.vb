@@ -58,9 +58,8 @@ Public Class uCtrlCrearTipoBeca
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
         Me.Hide()
-        'uCtrlBuscarTB.dtaTipoBeca.Rows.Clear()
-        'uCtrlBuscarTB.listarTiposBeca()
-
+        uCtrlBuscarTB.dtaTipoBeca.Rows.Clear()
+        uCtrlBuscarTB.listarTiposBeca()
     End Sub
 
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click

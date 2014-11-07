@@ -82,7 +82,7 @@ Public Class uCtrlConsultarTipoBeca
         nombreTipo = pnombre
 
     End Sub
-<<<<<<< HEAD
+
 
     Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
         Dim ucntrl As uCtrlBuscarTipoBeca = New uCtrlBuscarTipoBeca()
@@ -91,7 +91,5 @@ Public Class uCtrlConsultarTipoBeca
         ucntrl.Location = New Point(120, 0)
         ucntrl.Show()
     End Sub
-=======
-   
->>>>>>> origin/BackiGC
+
 End Class

@@ -62,48 +62,48 @@ Partial Class uCtrlBuscarTipoBeca
         Me.dtaTipoBeca.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtaTipoBeca.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Nombre, Me.Estado, Me.opciones})
         Me.dtaTipoBeca.GridColor = System.Drawing.Color.White
-<<<<<<< HEAD
-        Me.dtaTipoBeca.Location = New System.Drawing.Point(42, 233)
-        Me.dtaTipoBeca.Name = "dtaTipoBeca"
-        Me.dtaTipoBeca.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        Me.dtaTipoBeca.RowHeadersVisible = False
-        Me.dtaTipoBeca.Size = New System.Drawing.Size(803, 222)
-        Me.dtaTipoBeca.TabIndex = 17
-        '
+        '<<<<<<< HEAD
+        'Me.dtaTipoBeca.Location = New System.Drawing.Point(42, 233)
+        'Me.dtaTipoBeca.Name = "dtaTipoBeca"
+        'Me.dtaTipoBeca.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        'Me.dtaTipoBeca.RowHeadersVisible = False
+        'Me.dtaTipoBeca.Size = New System.Drawing.Size(803, 222)
+        'Me.dtaTipoBeca.TabIndex = 17
+
         'Nombre
-        '
-        Me.Nombre.HeaderText = "Nombre"
-        Me.Nombre.Name = "Nombre"
-        '
+
+        'Me.Nombre.HeaderText = "Nombre"
+        'Me.Nombre.Name = "Nombre"
+
         'Estado
-        '
-        Me.Estado.HeaderText = "Estado"
-        Me.Estado.Name = "Estado"
-        '
+
+        'Me.Estado.HeaderText = "Estado"
+        'Me.Estado.Name = "Estado"
+
         'mantenimiento
-        '
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
-        Me.mantenimiento.DefaultCellStyle = DataGridViewCellStyle2
-        Me.mantenimiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.mantenimiento.HeaderText = "Opciones"
-        Me.mantenimiento.Items.AddRange(New Object() {"Ver", "Editar", "Eliminar"})
-        Me.mantenimiento.Name = "mantenimiento"
-        '
+
+        'DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
+        'Me.mantenimiento.DefaultCellStyle = DataGridViewCellStyle2
+        'Me.mantenimiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        'Me.mantenimiento.HeaderText = "Opciones"
+        'Me.mantenimiento.Items.AddRange(New Object() {"Ver", "Editar", "Eliminar"})
+        'Me.mantenimiento.Name = "mantenimiento"
+
         'txtBarraBusqueda
-        '
-        Me.txtBarraBusqueda.Location = New System.Drawing.Point(30, 158)
-        Me.txtBarraBusqueda.Name = "txtBarraBusqueda"
-        Me.txtBarraBusqueda.Size = New System.Drawing.Size(746, 20)
-        Me.txtBarraBusqueda.TabIndex = 18
-        Me.txtBarraBusqueda.Text = "Buscar:"
-=======
+
+        'Me.txtBarraBusqueda.Location = New System.Drawing.Point(30, 158)
+        'Me.txtBarraBusqueda.Name = "txtBarraBusqueda"
+        'Me.txtBarraBusqueda.Size = New System.Drawing.Size(746, 20)
+        'Me.txtBarraBusqueda.TabIndex = 18
+        'Me.txtBarraBusqueda.Text = "Buscar:"
+        '=======
         Me.dtaTipoBeca.Location = New System.Drawing.Point(41, 209)
         Me.dtaTipoBeca.Name = "dtaTipoBeca"
         Me.dtaTipoBeca.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         Me.dtaTipoBeca.RowHeadersVisible = False
         Me.dtaTipoBeca.Size = New System.Drawing.Size(947, 271)
         Me.dtaTipoBeca.TabIndex = 21
->>>>>>> origin/BackiGC
+        '>>>>>>> origin/BackiGC
         '
         'PictureBox1
         '

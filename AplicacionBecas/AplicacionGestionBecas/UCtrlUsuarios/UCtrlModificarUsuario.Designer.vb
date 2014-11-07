@@ -26,10 +26,6 @@ Partial Class UctrlModificarUsuario
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnAceptar = New System.Windows.Forms.Button()
         Me.btnCancelar = New System.Windows.Forms.Button()
-        Me.txtConfirmacionContraseña = New System.Windows.Forms.TextBox()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.txtContraseña = New System.Windows.Forms.TextBox()
-        Me.Label11 = New System.Windows.Forms.Label()
         Me.txtCorreoElectronico = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.cmbRoles = New System.Windows.Forms.ComboBox()
@@ -73,7 +69,7 @@ Partial Class UctrlModificarUsuario
         Me.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAceptar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAceptar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(248, Byte), Integer))
-        Me.btnAceptar.Location = New System.Drawing.Point(607, 361)
+        Me.btnAceptar.Location = New System.Drawing.Point(607, 302)
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(89, 29)
         Me.btnAceptar.TabIndex = 92
@@ -87,54 +83,16 @@ Partial Class UctrlModificarUsuario
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCancelar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(248, Byte), Integer))
-        Me.btnCancelar.Location = New System.Drawing.Point(498, 361)
+        Me.btnCancelar.Location = New System.Drawing.Point(491, 302)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(89, 29)
         Me.btnCancelar.TabIndex = 91
         Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = False
         '
-        'txtConfirmacionContraseña
-        '
-        Me.txtConfirmacionContraseña.Location = New System.Drawing.Point(556, 304)
-        Me.txtConfirmacionContraseña.Name = "txtConfirmacionContraseña"
-        Me.txtConfirmacionContraseña.Size = New System.Drawing.Size(144, 20)
-        Me.txtConfirmacionContraseña.TabIndex = 90
-        Me.txtConfirmacionContraseña.UseSystemPasswordChar = True
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.BackColor = System.Drawing.Color.Transparent
-        Me.Label12.Font = New System.Drawing.Font("Segoe UI Light", 13.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(376, 300)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(176, 25)
-        Me.Label12.TabIndex = 89
-        Me.Label12.Text = "Confirmar Contraseña"
-        '
-        'txtContraseña
-        '
-        Me.txtContraseña.Location = New System.Drawing.Point(556, 240)
-        Me.txtContraseña.Name = "txtContraseña"
-        Me.txtContraseña.Size = New System.Drawing.Size(144, 20)
-        Me.txtContraseña.TabIndex = 88
-        Me.txtContraseña.UseSystemPasswordChar = True
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.BackColor = System.Drawing.Color.Transparent
-        Me.Label11.Font = New System.Drawing.Font("Segoe UI Light", 13.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(376, 235)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(96, 25)
-        Me.Label11.TabIndex = 87
-        Me.Label11.Text = "Contraseña"
-        '
         'txtCorreoElectronico
         '
-        Me.txtCorreoElectronico.Location = New System.Drawing.Point(556, 187)
+        Me.txtCorreoElectronico.Location = New System.Drawing.Point(552, 240)
         Me.txtCorreoElectronico.Name = "txtCorreoElectronico"
         Me.txtCorreoElectronico.Size = New System.Drawing.Size(144, 20)
         Me.txtCorreoElectronico.TabIndex = 86
@@ -144,7 +102,7 @@ Partial Class UctrlModificarUsuario
         Me.Label10.AutoSize = True
         Me.Label10.BackColor = System.Drawing.Color.Transparent
         Me.Label10.Font = New System.Drawing.Font("Segoe UI Light", 13.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(376, 173)
+        Me.Label10.Location = New System.Drawing.Point(360, 235)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(143, 25)
         Me.Label10.TabIndex = 85
@@ -153,7 +111,7 @@ Partial Class UctrlModificarUsuario
         'cmbRoles
         '
         Me.cmbRoles.FormattingEnabled = True
-        Me.cmbRoles.Location = New System.Drawing.Point(556, 137)
+        Me.cmbRoles.Location = New System.Drawing.Point(552, 186)
         Me.cmbRoles.Name = "cmbRoles"
         Me.cmbRoles.Size = New System.Drawing.Size(140, 21)
         Me.cmbRoles.TabIndex = 84
@@ -163,7 +121,7 @@ Partial Class UctrlModificarUsuario
         Me.Label9.AutoSize = True
         Me.Label9.BackColor = System.Drawing.Color.Transparent
         Me.Label9.Font = New System.Drawing.Font("Segoe UI Light", 13.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(376, 133)
+        Me.Label9.Location = New System.Drawing.Point(360, 182)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(35, 25)
         Me.Label9.TabIndex = 83
@@ -173,7 +131,7 @@ Partial Class UctrlModificarUsuario
         '
         Me.rbtOtro.AutoSize = True
         Me.rbtOtro.BackColor = System.Drawing.Color.Transparent
-        Me.rbtOtro.Location = New System.Drawing.Point(651, 98)
+        Me.rbtOtro.Location = New System.Drawing.Point(673, 149)
         Me.rbtOtro.Name = "rbtOtro"
         Me.rbtOtro.Size = New System.Drawing.Size(45, 17)
         Me.rbtOtro.TabIndex = 82
@@ -185,7 +143,7 @@ Partial Class UctrlModificarUsuario
         '
         Me.rbtFemenino.AutoSize = True
         Me.rbtFemenino.BackColor = System.Drawing.Color.Transparent
-        Me.rbtFemenino.Location = New System.Drawing.Point(565, 98)
+        Me.rbtFemenino.Location = New System.Drawing.Point(587, 149)
         Me.rbtFemenino.Name = "rbtFemenino"
         Me.rbtFemenino.Size = New System.Drawing.Size(31, 17)
         Me.rbtFemenino.TabIndex = 81
@@ -197,7 +155,7 @@ Partial Class UctrlModificarUsuario
         '
         Me.rbtMasculino.AutoSize = True
         Me.rbtMasculino.BackColor = System.Drawing.Color.Transparent
-        Me.rbtMasculino.Location = New System.Drawing.Point(469, 100)
+        Me.rbtMasculino.Location = New System.Drawing.Point(491, 151)
         Me.rbtMasculino.Name = "rbtMasculino"
         Me.rbtMasculino.Size = New System.Drawing.Size(34, 17)
         Me.rbtMasculino.TabIndex = 80
@@ -210,7 +168,7 @@ Partial Class UctrlModificarUsuario
         Me.Label8.AutoSize = True
         Me.Label8.BackColor = System.Drawing.Color.Transparent
         Me.Label8.Font = New System.Drawing.Font("Segoe UI Light", 13.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(376, 93)
+        Me.Label8.Location = New System.Drawing.Point(360, 141)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(65, 25)
         Me.Label8.TabIndex = 79
@@ -218,7 +176,7 @@ Partial Class UctrlModificarUsuario
         '
         'DtpFechaNacimiento
         '
-        Me.DtpFechaNacimiento.Location = New System.Drawing.Point(556, 47)
+        Me.DtpFechaNacimiento.Location = New System.Drawing.Point(552, 95)
         Me.DtpFechaNacimiento.Name = "DtpFechaNacimiento"
         Me.DtpFechaNacimiento.Size = New System.Drawing.Size(144, 20)
         Me.DtpFechaNacimiento.TabIndex = 78
@@ -228,7 +186,7 @@ Partial Class UctrlModificarUsuario
         Me.Label7.AutoSize = True
         Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.Label7.Font = New System.Drawing.Font("Segoe UI Light", 13.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(376, 42)
+        Me.Label7.Location = New System.Drawing.Point(360, 94)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(162, 25)
         Me.Label7.TabIndex = 77
@@ -236,7 +194,7 @@ Partial Class UctrlModificarUsuario
         '
         'txtTelefono
         '
-        Me.txtTelefono.Location = New System.Drawing.Point(162, 283)
+        Me.txtTelefono.Location = New System.Drawing.Point(552, 47)
         Me.txtTelefono.Name = "txtTelefono"
         Me.txtTelefono.Size = New System.Drawing.Size(144, 20)
         Me.txtTelefono.TabIndex = 76
@@ -246,7 +204,7 @@ Partial Class UctrlModificarUsuario
         Me.Label6.AutoSize = True
         Me.Label6.BackColor = System.Drawing.Color.Transparent
         Me.Label6.Font = New System.Drawing.Font("Segoe UI Light", 13.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(19, 283)
+        Me.Label6.Location = New System.Drawing.Point(360, 47)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(74, 25)
         Me.Label6.TabIndex = 75
@@ -350,10 +308,6 @@ Partial Class UctrlModificarUsuario
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Controls.Add(Me.btnAceptar)
         Me.Controls.Add(Me.btnCancelar)
-        Me.Controls.Add(Me.txtConfirmacionContraseña)
-        Me.Controls.Add(Me.Label12)
-        Me.Controls.Add(Me.txtContraseña)
-        Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.txtCorreoElectronico)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.cmbRoles)
@@ -378,7 +332,7 @@ Partial Class UctrlModificarUsuario
         Me.Controls.Add(Me.lblNombre)
         Me.Controls.Add(Me.Label1)
         Me.Name = "UctrlModificarUsuario"
-        Me.Size = New System.Drawing.Size(719, 432)
+        Me.Size = New System.Drawing.Size(719, 374)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -386,10 +340,6 @@ Partial Class UctrlModificarUsuario
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents btnAceptar As System.Windows.Forms.Button
     Friend WithEvents btnCancelar As System.Windows.Forms.Button
-    Friend WithEvents txtConfirmacionContraseña As System.Windows.Forms.TextBox
-    Friend WithEvents Label12 As System.Windows.Forms.Label
-    Friend WithEvents txtContraseña As System.Windows.Forms.TextBox
-    Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents txtCorreoElectronico As System.Windows.Forms.TextBox
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents cmbRoles As System.Windows.Forms.ComboBox

@@ -6,8 +6,8 @@
     Public Property uCntrlMantRol As uCtrlListarRol = New uCtrlListarRol()
     Public Property ucntrlUsuario As UctrlListarYBuscarUsuario = New UctrlListarYBuscarUsuario()
     Public Property uCntrlBuscarBeneficio As uCntrlBuscarBeneficio = New uCntrlBuscarBeneficio()
-    Public Property uCtrlTipoBeca As uCtrlBuscarTipoBeca = New uCtrlBuscarTipoBeca
-    '' Dim ListarRol As New ListarRol()
+    Public Property uCtrlTipoBeca As uCtrlBuscarTipoBeca = New uCtrlBuscarTipoBeca()
+
     Private Sub btnRequisitos_Click(sender As Object, e As EventArgs) Handles btnRequisitos.Click
 
         Me.Hide()
@@ -73,4 +73,13 @@
         uCtrlTipoBeca.Show()
 
     End Sub
+
+    Private Sub btnEmail_Click(sender As Object, e As EventArgs) Handles btnEmail.Click
+
+        FrmIniciarSesion.principal.instanciaUctrlEmail()
+        FrmIniciarSesion.principal.uCtrlEmail.Show()
+        FrmIniciarSesion.principal.uCtrlEmail.BringToFront()
+
+    End Sub
+
 End Class

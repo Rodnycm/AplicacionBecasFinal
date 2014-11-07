@@ -14,11 +14,10 @@ namespace DAL.Repositories
     public class CarreraRepository : IRepository<Carrera>
     {
 
-        private static CarreraRepository instance;
         private List<IEntity> _insertItems;
         private List<IEntity> _deleteItems;
         private List<IEntity> _updateItems;
-
+        private static CarreraRepository instance;
         private CarreraRepository()
         {
             _insertItems = new List<IEntity>();

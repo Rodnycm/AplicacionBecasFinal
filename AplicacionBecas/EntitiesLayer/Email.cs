@@ -33,6 +33,7 @@ namespace EntitiesLayer
         public String userName { get; set; }
         public String contrasenna { get; set; }
 
+
         public Email(String pemisor, String pasunto, String pmensaje, String psmtpServidor, String puserName, String pcontrasenna)
         {
             emisor = pemisor;
@@ -43,12 +44,23 @@ namespace EntitiesLayer
             contrasenna = pcontrasenna;
         }
 
-        public Email()
+        public Email(String pemisor, String pasunto, String pmensaje, String psmtpServidor, String puserName, String pcontrasenna, int pid)
         {
-            
+            emisor = pemisor;
+            asunto = pasunto;
+            mensaje = pmensaje;
+            smtpServidor = psmtpServidor;
+            userName = puserName;
+            contrasenna = pcontrasenna;
+            Id = pid;
         }
 
-        public void envioEmail(){
+        public Email()
+        {
+
+        }
+    
+        public void notificarUsuario(String correo){
             
             // Your gmail email address
             //oMail.From = "gmailid@gmail.com";
@@ -56,7 +68,7 @@ namespace EntitiesLayer
 
             // Set recipient email address
             //oMail.To = "support@emailarchitect.net";
-            oMail.To = receptor;
+            oMail.To = correo;
 
             // Set email subject
             //oMail.Subject = "test email from gmail account";

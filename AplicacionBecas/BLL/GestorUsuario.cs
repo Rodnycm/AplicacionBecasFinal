@@ -48,6 +48,7 @@ namespace BLL
                 String contraseña = Generate(8, 10);
                 String contraseñaEncriptada = encriptar(contraseña);
                 Usuario objetoUsuario = ContenedorMantenimiento.Instance.crearUsuario(ppNombre, psNombre, ppApellido, psApellido, pidentificacion, ptelefono, fecha, objRol, pgenero, pcorreoElectronico, contraseñaEncriptada);
+                notificarUsuario(pcorreoElectronico, contraseña);
                 if (objetoUsuario.IsValid)
                 {
                     UsuarioRepository.Instance.Insert(objetoUsuario);
@@ -461,11 +462,12 @@ namespace BLL
                 Usuario objUsuario;
                 String contraseñaEncriptada = encriptar(pcontraseña);
 
-
                 objUsuario = UsuarioRepository.Instance.iniciarSesion(pnombreUsuario);
+              
                 if (!(objUsuario == null))
                 {
-                    if (objUsuario.contraseña.Equals(contraseñaEncriptada))
+                   
+                    if ((objUsuario.contraseña).Equals(contraseñaEncriptada))
                     {
                         listaUsuarios.Add(objUsuario);
                     }
@@ -477,8 +479,6 @@ namespace BLL
             }
             return listaUsuarios;
         }
-
-
 
         //<summary> Método que se encarga recuperar la contraseña de un usuario</summary>
         //<author> Gabriela Gutiérrez Corrales </author> 
@@ -505,7 +505,15 @@ namespace BLL
             }
         }
 
+        public void notificarUsuario(String correo, String contrasenna){
 
+        Email email = new Email();
+        email = EmailRepository.Instance.GetEmail();
+        email.mensaje += " Su contraseña es: " + contrasenna;
+        email.notificarUsuario(correo);
+
+        }
+         
         public void cerrarSesion(){
             Globals.usuario=null;
         }

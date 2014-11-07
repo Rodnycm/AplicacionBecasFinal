@@ -9,6 +9,8 @@ Partial Public Class frmPrincipal
     Dim ucMenuRep As New uCtrlMenuReportes()
     Dim ucMenuBecas As New uCtrlMenuBecas()
     Dim uCtrlUserProfile As New UCtrlUserProfile()
+    Public Property uCtrlEmail As UctrlEmailConfiguration = New UctrlEmailConfiguration()
+    Public Property confirmacion As uCtrlConfirmacion = New uCtrlConfirmacion()
 
     Public Sub New()
 
@@ -107,9 +109,27 @@ Partial Public Class frmPrincipal
 
     End Sub
 
+    Public Sub instanciaUctrlEmail()
+
+        uCtrlEmail = New UctrlEmailConfiguration()
+        Me.Controls.Add(uCtrlEmail)
+        uCtrlEmail.Hide()
+
+    End Sub
+
     Private Sub frmPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         AlvaroArtaviaToolStripMenuItem.Text = Globals.usuario.primerNombre & " " & Globals.usuario.primerApellido
+
+    End Sub
+
+    Public Sub mostrarConfirmacion(ByVal mensaje As String)
+
+        confirmacion = New uCtrlConfirmacion()
+        Me.Controls.Add(confirmacion)
+        confirmacion.lblConfirmacion.Text = mensaje
+        confirmacion.BringToFront()
+        confirmacion.Show()
 
     End Sub
 

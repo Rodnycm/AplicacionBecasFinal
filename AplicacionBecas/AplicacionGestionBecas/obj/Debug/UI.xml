@@ -6,16 +6,7 @@ UI
 </name>
 </assembly>
 <members>
-<member name="M:UI.UCtrlAsignarCursos.uCtrlAsignarCursos_MouseMove(System.Object,System.Windows.Forms.MouseEventArgs)">
-	<summary>Posiciona la ventana mientras el usuario da click al compomente</summary>
-	<autor>Alvaro Artavia</autor>
-</member><member name="M:UI.UCtrlAsignarCursos.uCtrlAsignarCursos_MouseUp(System.Object,System.Windows.Forms.MouseEventArgs)">
-	<summary>Situa el componente en la posicion final</summary>
-	<autor>Alvaro Artavia</autor>
-</member><member name="M:UI.UCtrlAsignarCursos.uCtrlAsignarCursos_MouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
-	<summary>Indica si el usuario da click al componente para moverlo</summary>
-	<autor>Alvaro Artavia</autor>
-</member><member name="T:UI.DB_Proyecto2DataSet1.Tb_BecasDataTable">
+<member name="T:UI.DB_Proyecto2DataSet1.Tb_BecasDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
@@ -833,6 +824,15 @@ TableAdapterManager is used to coordinate TableAdapters in the dataset to enable
 </member><member name="M:UI.uCtrlEliminarRol.btnAñadir_Click(System.Object,System.EventArgs)">
 	<summary>Elimina El rol seleccionado </summary>
 	<author>Rodny Castro Mathews </author>
+</member><member name="M:UI.UCtrlAsignarCursos.uCtrlAsignarCursos_MouseMove(System.Object,System.Windows.Forms.MouseEventArgs)">
+	<summary>Posiciona la ventana mientras el usuario da click al compomente</summary>
+	<autor>Alvaro Artavia</autor>
+</member><member name="M:UI.UCtrlAsignarCursos.uCtrlAsignarCursos_MouseUp(System.Object,System.Windows.Forms.MouseEventArgs)">
+	<summary>Situa el componente en la posicion final</summary>
+	<autor>Alvaro Artavia</autor>
+</member><member name="M:UI.UCtrlAsignarCursos.uCtrlAsignarCursos_MouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
+	<summary>Indica si el usuario da click al componente para moverlo</summary>
+	<autor>Alvaro Artavia</autor>
 </member><member name="T:UI.DB_Proyecto2DataSet.Tb_BecasDataTable">
 	<summary>
 Represents the strongly named DataTable class.
@@ -2473,6 +2473,10 @@ TableAdapterManager is used to coordinate TableAdapters in the dataset to enable
 	<summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
+</member><member name="P:UI.My.Resources.Resources.tablaEmail">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
 </member><member name="P:UI.My.Resources.Resources.tablaFinalGrandeAzul">
 	<summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
@@ -2482,10 +2486,6 @@ TableAdapterManager is used to coordinate TableAdapters in the dataset to enable
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member><member name="P:UI.My.Resources.Resources.tablaFinalMedianaAzul3">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:UI.My.Resources.Resources.tablecrearUsuario">
 	<summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
@@ -2515,6 +2515,15 @@ TableAdapterManager is used to coordinate TableAdapters in the dataset to enable
 	<param name="sender"></param>
 	<param name="e"></param>
 	<remarks></remarks>
+</member><member name="M:UI.uCtrlConfirmacion.uCtrlConfirmacion_MouseMove(System.Object,System.Windows.Forms.MouseEventArgs)">
+	<summary>Posiciona la ventana mientras el usuario da click al compomente</summary>
+	<autor>Alvaro Artavia</autor>
+</member><member name="M:UI.uCtrlConfirmacion.uCtrlConfirmacion_MouseUp(System.Object,System.Windows.Forms.MouseEventArgs)">
+	<summary>Situa el componente en la posicion final</summary>
+	<autor>Alvaro Artavia</autor>
+</member><member name="M:UI.uCtrlConfirmacion.uCtrlConfirmacion_MouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
+	<summary>Indica si el usuario da click al componente para moverlo</summary>
+	<autor>Alvaro Artavia</autor>
 </member><member name="M:UI.uCtrlRegistrarBeneficio.getFrmBuscar(UI.uCntrlBuscarBeneficio)">
 	<summary>
  Setea una instancia del UsrControlBuscarBeneficio
@@ -2582,6 +2591,15 @@ TableAdapterManager is used to coordinate TableAdapters in the dataset to enable
  </summary>
 	<author>Mathias Muller</author>
 	<remarks></remarks>
+</member><member name="M:UI.UctrlEmailConfiguration.uCtrlEmailConfiguration_MouseMove(System.Object,System.Windows.Forms.MouseEventArgs)">
+	<summary>Posiciona la ventana mientras el usuario da click al compomente</summary>
+	<autor>Alvaro Artavia</autor>
+</member><member name="M:UI.UctrlEmailConfiguration.uCtrlEmailConfiguration_MouseUp(System.Object,System.Windows.Forms.MouseEventArgs)">
+	<summary>Situa el componente en la posicion final</summary>
+	<autor>Alvaro Artavia</autor>
+</member><member name="M:UI.UctrlEmailConfiguration.uCtrlEmailConfiguration_MouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
+	<summary>Indica si el usuario da click al componente para moverlo</summary>
+	<autor>Alvaro Artavia</autor>
 </member><member name="M:UI.uCtrlModificarCarrera.btnColor_Click(System.Object,System.EventArgs)">
 	<summary>Metodo que se ejecuta cuando el usuario da click al boton seleccionar color, este metodo 
  muestra al usuario una paleta de colores</summary>

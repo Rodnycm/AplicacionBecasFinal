@@ -45,7 +45,6 @@ Public Class UctrlCrearUsuario
             confirmacion = New uCtrlConfirmacion()
             confirmacion.lblConfirmacion.Text = "Usuario creado correctamente"
             Me.Controls.Add(confirmacion)
-            confirmacion.Location = New Point(200, 250)
             confirmacion.BringToFront()
             confirmacion.Show()
 

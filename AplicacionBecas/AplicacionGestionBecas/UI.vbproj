@@ -334,12 +334,6 @@
     <Compile Include="UCtrlRequisitos\UCtrlMantenimientoCrearRequisito.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UCtrlCursos\UCtrlMantenimientoCursos.Designer.vb">
-      <DependentUpon>UCtrlMantenimientoCursos.vb</DependentUpon>
-    </Compile>
-    <Compile Include="UCtrlCursos\UCtrlMantenimientoCursos.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Include="UCtrlRequisitos\UCtrlMantenimientoRequisitos.Designer.vb">
       <DependentUpon>UCtrlMantenimientoRequisitos.vb</DependentUpon>
     </Compile>
@@ -548,9 +542,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UCtrlRequisitos\UCtrlMantenimientoCrearRequisito.resx">
       <DependentUpon>UCtrlMantenimientoCrearRequisito.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UCtrlCursos\UCtrlMantenimientoCursos.resx">
-      <DependentUpon>UCtrlMantenimientoCursos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCtrlRequisitos\UCtrlMantenimientoRequisitos.resx">
       <DependentUpon>UCtrlMantenimientoRequisitos.vb</DependentUpon>

@@ -416,9 +416,17 @@ namespace BLL
             {
                 DateTime fecha = pfechaNacimiento.Date;
                 Rol objRol = RolRepository.Instance.GetByNombre(prol);
-                Boolean sonIguales = validarContraseñasIdenticas(pcontraseña, pconfirmacion);
-                if (sonIguales == true)
+
+                if (pconfirmacion != "")
                 {
+                    Boolean sonIguales = validarContraseñasIdenticas(pcontraseña, pconfirmacion);
+
+                    if (sonIguales == false)
+                    {
+                        throw new ApplicationException("Las contraseñas ingresadas no son idénticas");
+                    }
+
+                }
                     String contraseñaEncriptada = encriptar(pcontraseña);
                     Usuario objetoUsuario = ContenedorMantenimiento.Instance.crearUsuario(ppNombre, psNombre, ppApellido, psApellido, pidentificacion, ptelefono, fecha, objRol, pgenero, pcorreoElectronico, contraseñaEncriptada);
                     if (objetoUsuario.IsValid)
@@ -436,11 +444,6 @@ namespace BLL
                         throw new ApplicationException(sb.ToString());
                     }
                 }
-                else
-                {
-                    throw new ApplicationException("Las contraseñas ingresadas no son idénticas");
-                }
-            }
             catch (Exception ex)
             {
                 throw ex;

@@ -51,6 +51,7 @@ Partial Class uCtrlBuscarCursos
         '
         'dtaListarCursos
         '
+        Me.dtaListarCursos.AllowUserToAddRows = False
         Me.dtaListarCursos.BackgroundColor = System.Drawing.Color.White
         Me.dtaListarCursos.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dtaListarCursos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]

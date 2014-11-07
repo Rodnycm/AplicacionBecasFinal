@@ -10,6 +10,7 @@ Public Class UctrlModificarUsuario
     Dim alerta As UctrlAlerta
     Dim mBlnFormDragging As Boolean
     Dim confirmacionPopUp As uCtrlConfirmacion
+    Dim objetoUsuario As Usuario
 
 
     Public Sub setIdUsuario(ByVal pid As Integer)
@@ -53,7 +54,7 @@ Public Class UctrlModificarUsuario
 
     Public Sub llenarInfoEditar()
 
-        Dim objetoUsuario As Usuario = objGestorUsuario.buscarUnUsuario(parametro)
+        objetoUsuario = objGestorUsuario.buscarUnUsuario(parametro)
         txtNombre.Text = objetoUsuario.primerNombre
         txtSegundoNombre.Text = objetoUsuario.segundoNombre
         txtPrimerApellido.Text = objetoUsuario.primerApellido
@@ -70,7 +71,7 @@ Public Class UctrlModificarUsuario
         End If
         cmbRoles.SelectedText = objetoUsuario.rol.Nombre
         txtCorreoElectronico.Text = objetoUsuario.correoElectronico
-        txtContraseña.Text = objetoUsuario.contraseña
+        'txtContraseña.Text = objetoUsuario.contraseña
         setIdUsuario(objetoUsuario.Id)
 
 
@@ -92,8 +93,8 @@ Public Class UctrlModificarUsuario
         Dim rol As String = cmbRoles.Text
         Dim genero As Integer
         Dim correoElectronico As String = txtCorreoElectronico.Text
-        Dim contraseña As String = txtContraseña.Text
-        Dim confirmacion As String = txtConfirmacionContraseña.Text
+        'Dim contraseña As String = txtContraseña.Text
+        'Dim confirmacion As String = txtConfirmacionContraseña.Text
 
         If (rbtMasculino.Checked = True) Then
             genero = 1
@@ -107,17 +108,17 @@ Public Class UctrlModificarUsuario
         End If
 
         Try
-            objGestorUsuario.modificarUsuario(pNombre, sNombre, pApellido, sApellido, identificacion, telefono, fechaNacimiento, rol, genero, correoElectronico, contraseña, confirmacion, Me.idUsuario)
+            objGestorUsuario.modificarUsuario(pNombre, sNombre, pApellido, sApellido, identificacion, telefono, fechaNacimiento, rol, genero, correoElectronico, objetoUsuario.contraseña, "", Me.idUsuario)
             objGestorUsuario.guardarCambios()
             ucntrl.dgUsuarios.Rows.Clear()
             ucntrl.listarUsuarios()
             confirmacionPopUp = New uCtrlConfirmacion()
             confirmacionPopUp.lblConfirmacion.Text = "Datos modificados con éxito"
             Me.Controls.Add(confirmacionPopUp)
-            confirmacionPopUp.Location = New Point(200, 250)
+            confirmacionPopUp.Location = New Point(200, 200)
             confirmacionPopUp.BringToFront()
             confirmacionPopUp.Show()
-            'Me.Dispose()
+
 
         Catch ex As Exception
             alerta = New UctrlAlerta()

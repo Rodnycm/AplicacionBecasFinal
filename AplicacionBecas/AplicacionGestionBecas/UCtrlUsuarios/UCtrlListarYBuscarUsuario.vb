@@ -116,7 +116,7 @@ Public Class UctrlListarYBuscarUsuario
         Me.PbUsuarios.SendToBack()
         Me.btnCrearUsuario.SendToBack()
         Me.txtBuscar.SendToBack()
-        ucntrl.Location = New Point(100, 50)
+        ucntrl.Location = New Point(120, 50)
         ucntrl.Show()
     End Sub
 

@@ -24,6 +24,7 @@ Public Class UCtrlUserProfile
         Dim contraseña As String = txtContraseña.Text
         Dim confirmacion As String = txtConfirmacionContraseña.Text
 
+
         If (rbtMasculino.Checked = True) Then
             genero = 1
 
@@ -48,6 +49,7 @@ Public Class UCtrlUserProfile
             alerta = New UctrlAlerta()
             alerta.lblAlerta.Text = ex.Message
             FrmIniciarSesion.principal.Controls.Add(alerta)
+            alerta.Location = New Point(300, 200)
             alerta.BringToFront()
             alerta.Show()
 
@@ -88,7 +90,7 @@ Public Class UCtrlUserProfile
 
     Private Sub cargarInformacion()
 
-        lblNameUser.Text = Globals.usuario.primerNombre & " " & Globals.usuario.segundoApellido
+        lblNameUser.Text = Globals.usuario.primerNombre & " " & Globals.usuario.primerApellido & " " & Globals.usuario.segundoApellido
         llenarComboRoles()
         cmbRoles.Text = Globals.usuario.rol.Nombre
         txtNombre.Text = Globals.usuario.primerNombre
@@ -99,7 +101,9 @@ Public Class UCtrlUserProfile
         txtTelefono.Text = Globals.usuario.telefono
         DtpFechaNacimiento.Value = Globals.usuario.fechaNacimiento
         txtCorreoElectronico.Text = Globals.usuario.correoElectronico
-        txtContraseña.Text = Globals.usuario.contraseña
+
+        Dim contraseña As String = objGestorUsuario.Desencriptar(Globals.usuario.contraseña)
+        txtContraseña.Text = contraseña
 
         If Globals.usuario.genero = 1 Then
             rbtMasculino.Select()

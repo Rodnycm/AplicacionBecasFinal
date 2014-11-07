@@ -44,7 +44,7 @@ Public Class uCtrlMantenimientoCarreras
             Me.Controls.Add(uctrlAlerta)
             uctrlAlerta.Location = New Point(300, 100)
             uctrlAlerta.BringToFront()
-            uctrlAlerta.lblAlerta.Text = "No hay carreras registradas"
+            uctrlAlerta.lblAlerta.Text = ex.Message
             uctrlAlerta.Show()
 
         End Try

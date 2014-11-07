@@ -107,6 +107,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DB_Proyecto2DataSetConsultarRegistroAcciones.xsd</DependentUpon>
     </Compile>
+    <Compile Include="UCtrlRequisitos\UCtrlEliminarRequisitos.Designer.vb">
+      <DependentUpon>UCtrlEliminarRequisitos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UCtrlRequisitos\UCtrlEliminarRequisitos.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UCtrlRequisitos\UCtrlModificarRequisito.Designer.vb">
       <DependentUpon>UCtrlModificarRequisito.vb</DependentUpon>
     </Compile>

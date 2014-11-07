@@ -2445,6 +2445,9 @@ TableAdapterManager is used to coordinate TableAdapters in the dataset to enable
 	<summary>Busca el director academico anterior para eliminarlo de la base de datos</summary>
 	<param name="pdirector">Nombre del director academico</param>
 	<autor>Alvaro Artavia</autor>
+</member><member name="M:UI.uCtrlBuscarTipoBeca.txtBarraBusqueda_KeyDown(System.Object,System.Windows.Forms.KeyEventArgs)">
+	<summary>Cuando el evento se ejecuta al dar presionar la tecla enter llama al metodo eliminar carrera</summary>
+	<autor>Alvaro Artavia</autor>
 </member><member name="M:UI.uCtrlConsultarBeneficio.uCtrlConsultarBeneficio_Load(System.Object,System.EventArgs)">
 	<summary>
  Trae del Gestor, una instancia de un beneficio y lo muestra en un datagrid.

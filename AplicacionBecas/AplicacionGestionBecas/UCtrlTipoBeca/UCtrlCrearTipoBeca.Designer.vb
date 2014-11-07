@@ -170,7 +170,7 @@ Partial Class uCtrlCrearTipoBeca
         'btnX
         '
         Me.btnX.BackColor = System.Drawing.Color.Transparent
-        Me.btnX.BackgroundImage = CType(resources.GetObject("btnX.BackgroundImage"), System.Drawing.Image)
+        'Me.btnX.BackgroundImage = CType(Resources.GetObject("btnX.BackgroundImage"), System.Drawing.Image)
         Me.btnX.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnX.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnX.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(248, Byte), Integer))

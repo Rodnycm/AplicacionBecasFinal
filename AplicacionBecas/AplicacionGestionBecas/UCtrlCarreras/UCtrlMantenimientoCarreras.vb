@@ -5,7 +5,7 @@ Public Class uCtrlMantenimientoCarreras
     Implements IDisposable
 
     Public Property uCtrlCarrera As uCtrlCrearCarrera
-    Public Property uCtrlAsignarCursos As UCtrlAsignarCursos
+    Public Property uCtrlAsignarCursosCarrera As uCtrlAsignarCursosCarrera
 
     ''' <summary>Metodo que se ejecuta cuando el usuario da click al boton crear carrera, muestra 
     ''' al usuario los datos para crear una carrera</summary>
@@ -194,10 +194,10 @@ Public Class uCtrlMantenimientoCarreras
 
         If dgvCarreras.Columns(e.ColumnIndex).Name = "Cursos" Then
 
-            uCtrlAsignarCursos = New UCtrlAsignarCursos()
-            FrmIniciarSesion.principal.Controls.Add(uCtrlAsignarCursos)
-            uCtrlAsignarCursos.BringToFront()
-            uCtrlAsignarCursos.Show()
+            uCtrlAsignarCursosCarrera = New uCtrlAsignarCursosCarrera()
+            FrmIniciarSesion.principal.Controls.Add(uCtrlAsignarCursosCarrera)
+            uCtrlAsignarCursosCarrera.BringToFront()
+            uCtrlAsignarCursosCarrera.Show()
 
         End If
 

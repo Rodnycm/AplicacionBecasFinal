@@ -110,10 +110,10 @@ Public Class uCtrlCrearCarrera
         Next
 
         Try
-
-            Dim carrera As Carrera = objGestorCarrera.agregarCarrera(nombre, codigo, color, idDirector)
+            'Dim carrera As Carrera = objGestorCarrera.agregarCarrera(nombre, codigo, color, idDirector)
+            objGestorCarrera.agregarCarrera(nombre, codigo, color, idDirector)
             objGestorCarrera.guardarCambios()
-            objGestorCarrera.asignarCursoCarrera(listasC, carrera)
+            'objGestorCarrera.asignarCursoCarrera(listasC, carrera)
             mantenimientoCarreras.listarCarreras()
 
         Catch ex As Exception

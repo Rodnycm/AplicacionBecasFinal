@@ -1,5 +1,5 @@
 ﻿Public Class uCtrlMenuAcademico
-    Public Property uCtrlAsignarNotas As UCtrlAsignarCursos = New UCtrlAsignarCursos()
+    Public Property uCtrlAsignarNotas As uCtrlAsignarCursosCarrera = New uCtrlAsignarCursosCarrera()
     Dim uCtrlCarreras As uCtrlMantenimientoCarreras = New uCtrlMantenimientoCarreras()
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click

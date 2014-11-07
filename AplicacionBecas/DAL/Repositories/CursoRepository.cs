@@ -418,8 +418,8 @@ namespace DAL{
             {
                 SqlCommand cmd = new SqlCommand();
 
-                cmd.Parameters.Add(new SqlParameter("@idRequisito", objRequisito.id));
-                cmd.Parameters.Add(new SqlParameter("@idTipoBeca", objCarrera.id));
+                //cmd.Parameters.Add(new SqlParameter("@idRequisito", objRequisito.id));
+                //cmd.Parameters.Add(new SqlParameter("@idTipoBeca", objCarrera.id));
 
 
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_insertarRequisitoTB");
@@ -432,73 +432,81 @@ namespace DAL{
             }
         }
 
-        public void asignarRequisito()
+        //public void asignarRequisito()
+        //{
+        //    using (TransactionScope scope = new TransactionScope())
+        //    {
+        //        try
+        //        {
+        //            if (_insertItems.Count > 0)
+        //            {
+        //                foreach (Requisito objRequisito in _insertItems)
+        //                {
+        //                    asignarRequisitoTipoBeca(objRequisito);
+
+        //                }
+        //            }
+
+
+
+        //            scope.Complete();
+        //        }
+        //        catch (TransactionAbortedException ex)
+        //        {
+
+        //        }
+        //        catch (ApplicationException ex)
+        //        {
+
+        //        }
+        //        finally
+        //        {
+        //            Clear();
+        //        }
+
+        //    }
+        //}
+
+
+
+        //public void asignarRequisito(TipoBeca objTipoBeca)
+        //{
+        //    using (TransactionScope scope = new TransactionScope())
+        //    {
+        //        try
+        //        {
+        //            if (_insertItems.Count > 0)
+        //            {
+        //                foreach (Requisito objRequisito in _insertItems)
+        //                {
+        //                    asignarRequisitoTipoBeca(objRequisito, objTipoBeca);
+
+        //                }
+        //            }
+
+
+
+        //            scope.Complete();
+        //        }
+        //        catch (TransactionAbortedException ex)
+        //        {
+
+        //        }
+        //        catch (ApplicationException ex)
+        //        {
+
+        //        }
+        //        finally
+        //        {
+        //            Clear();
+        //        }
+
+        //    }
+        //}
+
+        public void asignarCurso(EntitiesLayer.Carrera objCarrera)
         {
-            using (TransactionScope scope = new TransactionScope())
-            {
-                try
-                {
-                    if (_insertItems.Count > 0)
-                    {
-                        foreach (Requisito objRequisito in _insertItems)
-                        {
-                            asignarRequisitoTipoBeca(objRequisito);
-
-                        }
-                    }
-
-
-
-                    scope.Complete();
-                }
-                catch (TransactionAbortedException ex)
-                {
-
-                }
-                catch (ApplicationException ex)
-                {
-
-                }
-                finally
-                {
-                    Clear();
-                }
-
-            }
-        }
-        public void asignarRequisito(TipoBeca objTipoBeca)
-        {
-            using (TransactionScope scope = new TransactionScope())
-            {
-                try
-                {
-                    if (_insertItems.Count > 0)
-                    {
-                        foreach (Requisito objRequisito in _insertItems)
-                        {
-                            asignarRequisitoTipoBeca(objRequisito, objTipoBeca);
-
-                        }
-                    }
-
-
-
-                    scope.Complete();
-                }
-                catch (TransactionAbortedException ex)
-                {
-
-                }
-                catch (ApplicationException ex)
-                {
-
-                }
-                finally
-                {
-                    Clear();
-                }
-
-            }
+            throw new NotImplementedException();
         }
     }
 }

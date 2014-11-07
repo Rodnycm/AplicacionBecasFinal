@@ -11,7 +11,7 @@ namespace BLL
 
     public class GestorCarrera
     {
-        CarreraRepository objCarrera = new CarreraRepository();
+  
         /// <summary>
         /// Agrega una nueva carrera
         /// </summary>

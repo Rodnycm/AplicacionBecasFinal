@@ -239,6 +239,7 @@ namespace EntitiesLayer
 
             }
 
+
             String expresionEmail = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
             if (!(Regex.IsMatch(correoElectronico, expresionEmail )))
             {

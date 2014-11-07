@@ -32,7 +32,7 @@ Public Class uCtrlListarRol
             Me.Controls.Add(uctrlAlerta)
             uctrlAlerta.Location = New Point(300, 100)
             uctrlAlerta.BringToFront()
-            uctrlAlerta.lblAlerta.Text = ex.Message
+            uctrlAlerta.txtAlerta.Text = "No hay roles registrados"
             uctrlAlerta.Show()
 
         End Try
@@ -63,14 +63,14 @@ Public Class uCtrlListarRol
             uCtrlModRol.BringToFront()
             uCtrlModRol.Location = New Point(250, 170)
             uCtrlModRol.Show()
-           
+
         Catch ex As Exception
 
             Dim uctrlAlerta As UctrlAlerta = New UctrlAlerta()
             Me.Controls.Add(uctrlAlerta)
             uctrlAlerta.Location = New Point(300, 100)
             uctrlAlerta.BringToFront()
-            uctrlAlerta.lblAlerta.Text = ex.Message
+            uctrlAlerta.txtAlerta.Text = ex.Message
             uctrlAlerta.Show()
 
         End Try
@@ -202,7 +202,7 @@ Public Class uCtrlListarRol
             Dim uctrlAlerta As UctrlAlerta = New UctrlAlerta()
             Me.Controls.Add(uctrlAlerta)
 
-            uctrlAlerta.lblAlerta.Text = ex.Message
+            uctrlAlerta.txtAlerta.Text = ex.Message
             uctrlAlerta.BringToFront()
             uctrlAlerta.Location = New Point(300, 100)
             uctrlAlerta.Show()

@@ -36,12 +36,13 @@ Public Class uCntrlBuscarBeneficio
             Dim UCtrl As New UctrlAlerta
 
             Me.Controls.Add(UCtrl)
-            UCtrl.lblAlerta.Text = ex.Message
+            UCtrl.txtAlerta.Text = ex.Message
             UCtrl.Location = New Point(300, 100)
             UCtrl.BringToFront()
             UCtrl.Show()
 
         End Try
+
     End Sub
 
     Private Sub btnMantenimiento_Click(sender As Object, e As EventArgs) Handles btnMantenimiento.Click
@@ -140,12 +141,12 @@ Public Class uCntrlBuscarBeneficio
     '    Catch ex As Exception
     '        Dim UCtrl As New UctrlAlerta
 
-    '        Me.Controls.Add(UCtrl)
-    '        UCtrl.lblAlerta.Text = ex.Message
-    '        UCtrl.Location = New Point(100, 100)
-    '        UCtrl.BringToFront()
-    '        UCtrl.Show()
-    '    End Try
+    '    Me.Controls.Add(UCtrl)
+    '    UCtrl.txtAlerta.Text = ex.Message
+    '    UCtrl.Location = New Point(300, 100)
+    '    UCtrl.BringToFront()
+    '    UCtrl.Show()
+    'End Try
 
     'End Sub
 
@@ -204,7 +205,7 @@ Public Class uCntrlBuscarBeneficio
             Dim UCtrl As New UctrlAlerta
 
             Me.Controls.Add(UCtrl)
-            UCtrl.lblAlerta.Text = ex.Message
+            UCtrl.txtAlerta.Text = ex.Message
             UCtrl.Location = New Point(300, 100)
             UCtrl.BringToFront()
             UCtrl.Show()
@@ -249,7 +250,7 @@ Public Class uCntrlBuscarBeneficio
             Dim UCtrl As New UctrlAlerta
 
             Me.Controls.Add(UCtrl)
-            UCtrl.lblAlerta.Text = ex.Message
+            UCtrl.txtAlerta.Text = ex.Message
             UCtrl.Location = New Point(300, 100)
             UCtrl.BringToFront()
             UCtrl.Show()
@@ -279,8 +280,6 @@ Public Class uCntrlBuscarBeneficio
             dtaBuscarBeneficio.Rows(0).Cells(2).Value = beneficio.Porcentaje
             dtaBuscarBeneficio.Rows(0).Cells(3).Value = beneficio.Aplicacion
             dtaBuscarBeneficio.Columns("dtaId").Visible = False
-
-
 
         Catch
 

@@ -55,9 +55,8 @@ Public Class uCtrlModificarCurso
             ucBuscarCursos.listarCursos()
             Me.Dispose()
         Catch ex As Exception
-
-            alerta = New UctrlAlerta()
-            alerta.lblAlerta.Text = ex.Message
+            alerta = New uCtrlAlerta()
+            alerta.txtAlerta.Text = ex.Message
             FrmIniciarSesion.principal.Controls.Add(alerta)
             alerta.BringToFront()
             alerta.Location = New Point(290, 48)

@@ -435,10 +435,10 @@ namespace BLL
 
                 if (pconfirmacion != "")
                 {
-                    Boolean sonIguales = validarContraseñasIdenticas(pcontraseña, pconfirmacion);
+                Boolean sonIguales = validarContraseñasIdenticas(pcontraseña, pconfirmacion);
 
                     if (sonIguales == false)
-                    {
+                {
                         throw new ApplicationException("Las contraseñas ingresadas no son idénticas");
                     }
 
@@ -522,12 +522,12 @@ namespace BLL
             {
                //Alerts.Show("El usuario ingresado es incorrecto");
             }
-        }
+            }
 
         public IEnumerable<Usuario> buscarUsuariosPorRol(int pIdrol)
         {
             return UsuarioRepository.Instance.buscarUsuariosPorRol(pIdrol);
-        } 
+        }
 
 
         public void notificarUsuario(String correo, String contrasenna){
@@ -535,12 +535,28 @@ namespace BLL
 
         Email email = new Email();
         email = EmailRepository.Instance.GetEmail();
+            try
+            {
+                if (email.IsValid)
+                {
         email.mensaje += " Su contraseña es: " + contrasenna;
         email.notificarUsuario(correo);
-
+                }
+                else
+                {
+                    StringBuilder sb = new StringBuilder();
+                    foreach (RuleViolation rv in email.GetRuleViolations())
+                    {
+                        sb.Append(rv.ErrorMessage + "\n");
+                    }
+                    throw new ApplicationException(sb.ToString());
+                }
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
         }
-         
-
         public void cerrarSesion(){
             Globals.usuario=null;
         }

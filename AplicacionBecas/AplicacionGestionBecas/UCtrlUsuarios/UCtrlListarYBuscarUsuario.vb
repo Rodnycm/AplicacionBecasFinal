@@ -20,12 +20,14 @@ Public Class UctrlListarYBuscarUsuario
                 dgUsuarios.Rows.Add(usuario.identificacion, usuario.primerNombre & " " & usuario.primerApellido & " " & usuario.segundoApellido, usuario.telefono, usuario.fechaNacimiento, "", usuario.rol.Nombre, usuario.correoElectronico)
             Next
         Catch ex As Exception
-            Dim UCtrl As New UctrlAlerta
-            Me.Controls.Add(UCtrl)
-            UCtrl.lblAlerta.Text = ex.Message
-            UCtrl.Location = New Point(300, 100)
-            UCtrl.BringToFront()
-            UCtrl.Show()
+
+            Dim uctrlAlerta As UctrlAlerta = New UctrlAlerta()
+            Me.Controls.Add(uctrlAlerta)
+            uctrlAlerta.Location = New Point(300, 100)
+            uctrlAlerta.BringToFront()
+            uctrlAlerta.txtAlerta.Text = "No hay usuarios registrados"
+            uctrlAlerta.Show()
+
 
         End Try
            

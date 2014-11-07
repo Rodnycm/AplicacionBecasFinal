@@ -90,9 +90,20 @@ Partial Public Class frmPrincipal
 
         Dim UcntrlIniciar As UCtrlIniciar = New UCtrlIniciar()
         objGestorUsuario.cerrarSesion()
+
         Me.Hide()
+        ocultarComponentes()
+
+
         FrmIniciarSesion.Show()
         FrmIniciarSesion.Controls.Add(UcntrlIniciar)
+        UcntrlIniciar.Location = New Point(135, 125)
+
+
+
+     
+
+
 
     End Sub
 

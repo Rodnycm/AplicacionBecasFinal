@@ -8,6 +8,8 @@ using System.Transactions;
 using System.Data.SqlClient;
 using System.Data;
 using DAL.Repositories;
+using TIL;
+using EntitiesLayer;
 
 
 namespace DAL{
@@ -19,6 +21,9 @@ namespace DAL{
         private List<IEntity> _insertItems;
         private List<IEntity> _deleteItems;
         private List<IEntity> _updateItems;
+        private static Excepciones exceptions = new Excepciones();
+        private static int numero;
+        private static string mensaje;
 
 
 
@@ -81,28 +86,44 @@ namespace DAL{
         //<returns>Retorna una lista con todos los cursos registrados en el sistema.</returns> 
         public IEnumerable<Curso> GetAll()
         {
-            List<Curso> pCurso = null;
-            SqlCommand cmd = new SqlCommand();
-            DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_buscarCursos");
-
-            if (ds.Tables[0].Rows.Count > 0)
+            try
             {
-                pCurso = new List<Curso>();
-                foreach (DataRow dr in ds.Tables[0].Rows)
-                {
-                    pCurso.Add(new Curso
-                    {
-                        codigo = dr["Codigo"].ToString(),
-                        nombre = dr["Nombre"].ToString(),
-                        cuatrimestre = dr["Cuatrimestre"].ToString(),
-                        creditos = Convert.ToInt32(dr["Creditos"]),
-                        precio = Convert.ToDouble(dr["Precio"]),
-                        Id = Convert.ToInt32(dr["IdCurso"])
-                    });
-                }
-            }
+                List<Curso> pCurso = null;
+                SqlCommand cmd = new SqlCommand();
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_buscarCursos");
 
-            return pCurso;
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    pCurso = new List<Curso>();
+                    foreach (DataRow dr in ds.Tables[0].Rows)
+                    {
+                        pCurso.Add(new Curso
+                        {
+                            codigo = dr["Codigo"].ToString(),
+                            nombre = dr["Nombre"].ToString(),
+                            cuatrimestre = dr["Cuatrimestre"].ToString(),
+                            creditos = Convert.ToInt32(dr["Creditos"]),
+                            precio = Convert.ToDouble(dr["Precio"]),
+                            Id = Convert.ToInt32(dr["IdCurso"])
+                        });
+                    }
+                }
+
+                return pCurso;
+            }
+            catch (SqlException ex)
+            {
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+
+            }
         }
 
 
@@ -110,11 +131,25 @@ namespace DAL{
         //<author>Valeria Ramírez Cordero</author> 
         //<param name "id"> parámetro de tipo int que contiene el Id del curso que se desea traer </param>
         //<returns>Retorna el curso deseado</returns> 
-        public Curso GetById(int Id)
-        {
-            Curso objCurso = null;
-            return objCurso;
+       
+        
+        public Curso GetById(int Id){
+            try{
+                Curso objCurso = null;
+                return objCurso;
+            }catch (SqlException ex){
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
+            }
+            catch (Exception ex){
+                throw ex;
+            }
+       
         }
+
+
+
 
         public IEnumerable<Curso> getCursoPorCuatrimestre(String pcuatri) {
 
@@ -130,9 +165,7 @@ namespace DAL{
                 listaCursos = new List<Curso>();
                 foreach (DataRow dr in ds.Tables[0].Rows)
                 {
-                    listaCursos.Add(new Curso
-                    {
-
+                    listaCursos.Add(new Curso{
                         codigo = dr["Codigo"].ToString(),
                         nombre = dr["Nombre"].ToString(),
                         cuatrimestre = dr["Cuatrimestre"].ToString(),
@@ -146,15 +179,13 @@ namespace DAL{
             return listaCursos;
 
              }
-             catch (Exception ex)
-             {
+             catch (Exception ex){
                  throw ex;
              }
 
         }
 
-        public Array consultarCursosPorCuatrimestre()
-        {
+        public Array consultarCursosPorCuatrimestre(){
             try {
 
             int i = 0;
@@ -163,19 +194,16 @@ namespace DAL{
             SqlCommand cmd = new SqlCommand();
             DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_consultarCursosPorCuatrimestre");
 
-            if (ds.Tables[0].Rows.Count > 0)
-            {
+            if (ds.Tables[0].Rows.Count > 0){
                 listaCursos = new String[ds.Tables[0].Rows.Count];
-
-                foreach (DataRow dr in ds.Tables[0].Rows)
-                {    
+                
+                foreach (DataRow dr in ds.Tables[0].Rows){    
                    cuatrimestre = dr["Cuatrimestre"].ToString();
                 
                    listaCursos[i] = cuatrimestre;
                     i = i + 1;
                 }
             }
-
             return listaCursos;
             }
             catch (Exception ex)
@@ -189,32 +217,34 @@ namespace DAL{
         //<author> Valeria Ramírez Cordero</author> 
         //<param name "parametro"> parámetro de tipo string que contiene el nombre o código del curso que se desea traer </param>
         //<returns>Retorna el curso deseado</returns> 
-        public Curso GetByNombre(String parametro)
-        {
-            Curso objCurso = null;
-            SqlCommand cmd = new SqlCommand();
-            cmd.Parameters.AddWithValue("@parametro", parametro);
+        public Curso GetByNombre(String pparametro){
+            try{
+                Curso objCurso = null;
+                SqlCommand cmd = new SqlCommand();
+                cmd.Parameters.AddWithValue("@parametro", pparametro);
 
-            DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_buscarUnCurso");
-
-            if (ds.Tables[0].Rows.Count > 0)
-            {
-                var dr = ds.Tables[0].Rows[0];
-                objCurso = new Curso
-                {
-                    codigo = dr["Codigo"].ToString(),
-                    nombre = dr["Nombre"].ToString(),
-                    cuatrimestre = dr["Cuatrimestre"].ToString(),
-                    creditos = Convert.ToInt32(dr["Creditos"]),
-                    precio = Convert.ToDouble(dr["Precio"]),
-                    Id = Convert.ToInt32(dr["IdCurso"])
-
-
-                };
-                //objCurso.Id = Convert.ToInt32(dr["Id"]);
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_buscarUnCurso");
+                if (ds.Tables[0].Rows.Count > 0){
+                    var dr = ds.Tables[0].Rows[0];
+                    objCurso = new Curso{
+                        codigo = dr["Codigo"].ToString(),
+                        nombre = dr["Nombre"].ToString(),
+                        cuatrimestre = dr["Cuatrimestre"].ToString(),
+                        creditos = Convert.ToInt32(dr["Creditos"]),
+                        precio = Convert.ToDouble(dr["Precio"]),
+                        Id = Convert.ToInt32(dr["IdCurso"])
+                    };
+                    //objCurso.Id = Convert.ToInt32(dr["Id"]);
+                }
+                return objCurso;
+            }catch (SqlException ex){
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
             }
-
-            return objCurso;
+            catch (Exception ex){
+                throw ex;
+            }
         }
 
 
@@ -222,52 +252,36 @@ namespace DAL{
         //<author>Valeria Ramírez Cordero</author> 
         //<param> No recibe parámetros </param>
         //<returns>No retorna valor</returns> 
-        public void Save()
-        {
+        public void Save(){
 
-            using (TransactionScope scope = new TransactionScope())
-            {
-
-                try
-                {
-
-                    if (_insertItems.Count > 0)
-                    {
-
-                        foreach (Curso objCurso in _insertItems)
-                        {
+            using (TransactionScope scope = new TransactionScope()){
+                try{
+                    if (_insertItems.Count > 0){
+                        foreach (Curso objCurso in _insertItems){
                             InsertCurso(objCurso);
                         }
                     }
 
-                    if (_updateItems.Count > 0)
-                    {
-                        foreach (Curso p in _updateItems)
-                        {
+                    if (_updateItems.Count > 0){
+                        foreach (Curso p in _updateItems){ 
                             UpdateCurso(p);
                         }
                     }
 
-                    if (_deleteItems.Count > 0)
-                    {
-                        foreach (Curso p in _deleteItems)
-                        {
+                    if (_deleteItems.Count > 0){
+                        foreach (Curso p in _deleteItems){
                             DeleteCurso(p);
                         }
                     }
 
                     scope.Complete();
-                }
-                catch (TransactionAbortedException ex)
-                {
-
-                }
-                catch (ApplicationException ex)
-                {
+                }catch (TransactionAbortedException ex){
                     throw ex;
                 }
-                finally
-                {
+                catch (ApplicationException ex){
+                    throw ex;
+                }
+                finally{ 
                     Clear();
                 }
 
@@ -280,8 +294,7 @@ namespace DAL{
         //<param> No recibe parámetros </param>
         //<returns>No retorna valor </returns> 
 
-        public void Clear()
-        {
+        public void Clear(){
             _insertItems.Clear();
             _deleteItems.Clear();
             _updateItems.Clear();
@@ -291,12 +304,8 @@ namespace DAL{
         //<author>Valeria Ramírez Cordero</author> 
         //<param name "objCurso"> variable de tipo Curso que contiene el objeto curso que se desea insertar en la base de datos </param>
         //<returns> No retorna valor</returns> 
-        private void InsertCurso(Curso objCurso)
-        {
-
-            try
-            {
-
+        private void InsertCurso(Curso objCurso){
+            try{
                 SqlCommand cmd = new SqlCommand();
 
                 cmd.Parameters.Add(new SqlParameter("@Codigo", objCurso.codigo));
@@ -309,11 +318,13 @@ namespace DAL{
 
                 actividad = "Se ha creado un Curso";
                 registrarAccion(actividad);
+            }catch (SqlException ex){
+                numero = ex.Number;
+                mensaje = exceptions.excepciones(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
             }
-            catch (Exception ex)
-            {
+            catch (Exception ex){
                 throw ex;
-
             }
         }
 
@@ -321,11 +332,8 @@ namespace DAL{
         //<author> Valeria Ramírez Cordero </author> 
         //<param name "objCurso"> variable de tipo Curso que contiene el objeto curso que se desea modificar en la base de datos </param>
         //<returns> No retorna valor</returns> 
-        private void UpdateCurso(Curso objCurso)
-        {
-
-            try
-            {
+        private void UpdateCurso(Curso objCurso){
+            try{
                 SqlCommand cmd = new SqlCommand();
 
                 cmd.Parameters.Add(new SqlParameter("@Codigo", objCurso.codigo));
@@ -340,10 +348,12 @@ namespace DAL{
                 actividad = "Se ha modificado un Curso";
                 registrarAccion(actividad);
 
+            }catch (SqlException ex){
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
             }
-            catch (Exception ex)
-            {
-
+            catch (Exception ex){
                 throw ex;
             }
         }
@@ -352,36 +362,24 @@ namespace DAL{
         //<author> Valeria Ramírez Cordero </author> 
         //<param name "objCurso"> variable de tipo Curso que contiene el objeto curso que se desea eliminar de la base de datos </param>
         //<returns> No retorna valor</returns> 
-        private void DeleteCurso(Curso objCurso)
-        {
-            try
-            {
+        private void DeleteCurso(Curso objCurso){
+            try{
                 SqlCommand cmd = new SqlCommand();
                 cmd.Parameters.Add(new SqlParameter("@Codigo", objCurso.codigo));
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_eliminarCurso");
 
                 actividad = "Se ha eliminado un Curso";
                 registrarAccion(actividad);
-
-            }
-            catch (SqlException ex)
-            {
+            }catch (SqlException ex){
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
+            }catch (Exception ex){
                 throw ex;
-                //logear la excepcion a la bd con un Exception
-                //throw new DataAccessException("Ha ocurrido un error al eliminar un usuario", ex);
-
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-                //logear la excepcion a la bd con un Exception
-                //throw new DataAccessException("Ha ocurrido un error al eliminar un usuario", ex);
             }
         }
 
-        public void registrarAccion(string pactividad)
-        {
-
+        public void registrarAccion(string pactividad){
             RegistroAccion objRegistro;
             DateTime fecha = DateTime.Today;
             string nombreUsuario = Globals.usuario.primerNombre + " " + Globals.usuario.primerApellido;

@@ -13,9 +13,8 @@ Public Class uCtrlBuscarCursos
     Dim codigoCurso As String
 
 
+
     Private Sub dtaListarCursos_EditingControlShowing(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewEditingControlShowingEventArgs) Handles dtaListarCursos.EditingControlShowing
-
-
 
         ' Only for a DatagridComboBoxColumn at ColumnIndex 1.
         If dtaListarCursos.CurrentCell.ColumnIndex = 5 Then
@@ -60,7 +59,7 @@ Public Class uCtrlBuscarCursos
 
 
     End Sub
-
+  
     Public Sub modificarCurso(ByVal pfila As String)
 
         Dim codigo As String = pfila
@@ -96,20 +95,33 @@ Public Class uCtrlBuscarCursos
     Public Sub listarCursos()
 
 
+        Try
+            Dim listarCursos As List(Of Curso)
+            listarCursos = objGestorCurso.consultarCursos()
 
-        Dim listarCursos As List(Of Curso)
-        listarCursos = objGestorCurso.consultarCursos()
+            For i As Integer = 0 To listarCursos.Count - 1
 
-        For i As Integer = 0 To listarCursos.Count - 1
+                dtaListarCursos.Rows.Add(1)
+                dtaListarCursos.Rows(i).Cells(1).Value = listarCursos.Item(i).codigo
+                dtaListarCursos.Rows(i).Cells(0).Value = listarCursos.Item(i).nombre
+                dtaListarCursos.Rows(i).Cells(2).Value = listarCursos.Item(i).cuatrimestre
+                dtaListarCursos.Rows(i).Cells(3).Value = listarCursos.Item(i).creditos
+                dtaListarCursos.Rows(i).Cells(4).Value = listarCursos.Item(i).precio
+                dtaListarCursos.Rows(i).Cells(6).Value = listarCursos.Item(i).Id
+            Next
 
-            dtaListarCursos.Rows.Add(1)
-            dtaListarCursos.Rows(i).Cells(1).Value = listarCursos.Item(i).codigo
-            dtaListarCursos.Rows(i).Cells(0).Value = listarCursos.Item(i).nombre
-            dtaListarCursos.Rows(i).Cells(2).Value = listarCursos.Item(i).cuatrimestre
-            dtaListarCursos.Rows(i).Cells(3).Value = listarCursos.Item(i).creditos
-            dtaListarCursos.Rows(i).Cells(4).Value = listarCursos.Item(i).precio
-            dtaListarCursos.Rows(i).Cells(6).Value = listarCursos.Item(i).Id
-        Next
+        Catch ex As Exception
+
+            Dim uctrlAlerta As UctrlAlerta = New UctrlAlerta()
+            Me.Controls.Add(uctrlAlerta)
+            uctrlAlerta.Location = New Point(300, 100)
+            uctrlAlerta.BringToFront()
+            Me.SendToBack()
+            uctrlAlerta.lblAlerta.Text = "No hay usuarios registrados"
+            uctrlAlerta.Show()
+
+        End Try
+        
 
 
 
@@ -123,7 +135,7 @@ Public Class uCtrlBuscarCursos
 
 
     End Sub
-    Public Sub txtBuscarCurso_TextChanged(sender As Object, e As EventArgs) Handles txtBuscarCurso.TextChanged, txtBuscarCurso.VisibleChanged
+    Public Sub txtBuscarCurso_TextChanged(sender As Object, e As EventArgs) Handles txtBuscarCurso.TextChanged
 
 
         Dim parametro As String = txtBuscarCurso.Text
@@ -151,18 +163,6 @@ Public Class uCtrlBuscarCursos
 
 
     End Sub
-    'Private Sub btnCrearCurso_Click(sender As Object, e As EventArgs)
-
-
-    '    ucCrearCurso = New uCtrlCurso()
-    '    frmPrincipal.Controls.Add(ucCrearCurso)
-    '    ucCrearCurso.BringToFront()
-    '    ucCrearCurso.Show()
-    '    ucCrearCurso.Location = New Point(300, 100)
-
-
-
-    'End Sub
     Private Sub uCtrlBuscarCursos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
 
@@ -184,7 +184,5 @@ Public Class uCtrlBuscarCursos
 
     End Sub
 
-    Private Sub dtaListarCursos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtaListarCursos.CellContentClick
 
-    End Sub
 End Class

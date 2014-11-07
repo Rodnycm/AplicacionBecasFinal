@@ -25,6 +25,8 @@ Public Class UCtrlIniciar
 
 
 
+
+
             Else
                 alerta = New UctrlAlerta()
                 alerta.lblAlerta.Text = "Nombre de usuario o contraseña incorrectos"

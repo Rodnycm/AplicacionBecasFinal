@@ -11,6 +11,7 @@ namespace BLL
 {
     public class GestorTipoBeca
     {
+        TipoBecaRepository objTipoBeca = new TipoBecaRepository();
         ///<sumary>
         ///El metodo agregarTipoBeca recibe los parámetros necesarios para poder crear la instancia tipo beca
         ///Este envía los parámetros para poder crear un tipo de beca y recibe una instancia
@@ -91,7 +92,7 @@ namespace BLL
                 BeneficioRepository.Instance.Insert(objBeneficio);
 
             }
-            BeneficioRepository.Instance.asignarBeneficio();
+            BeneficioRepository.Instance.asignarBeneficio(objTipoBeca);
 
         }
 
@@ -102,18 +103,35 @@ namespace BLL
             {
                 RequisitoRepository.Instance.Insert(objRequisito);
             }
-            RequisitoRepository.Instance.asignarRequisito();
+            RequisitoRepository.Instance.asignarRequisito(objTipoBeca);
         }
 
-        public void modificarTipoBeca(string pnombre, string pestado, string pdescripcion)
+        public void modificarTipoBeca(int idTipoBeca, string pnombre, string pestado, string pdescripcion, List<int> plistaBeneficios, List<int> plistaRequisitos)
         {
-            TipoBeca objTipoBeca = ContenedorMantenimiento.Instance.crearTipoBeca(pnombre, pestado, pdescripcion);
+            TipoBeca objTipoBeca = ContenedorMantenimiento.Instance.crearTipoBeca(idTipoBeca, pnombre, pestado, pdescripcion);
+            List<Beneficio> listaBeneficios = new List<Beneficio>();
+            List<Requisito> listaRequisitos = new List<Requisito>();
             try
             {
                 if (objTipoBeca.IsValid)
                 {
                     TipoBecaRepository.Instance.Update(objTipoBeca);
+                    eliminarBeneficiosTipoBeca(idTipoBeca);
+                    eliminarRequisitoTipoBeca(idTipoBeca);
 
+                    foreach (int idBeneficio in plistaBeneficios)
+                    {
+                        Beneficio beneficio = new Beneficio(idBeneficio);
+                        listaBeneficios.Add(beneficio);
+                    }
+
+                    foreach (int idRequisito in plistaRequisitos)
+                    {
+                        Requisito requisito = new Requisito(idRequisito);
+                        listaRequisitos.Add(requisito);
+                    }
+                    asignarBeneficioTipoBeca(listaBeneficios, objTipoBeca);
+                    asignarRequisitoTipoBeca(listaRequisitos, objTipoBeca);
                 }
                 else
                 {
@@ -168,6 +186,25 @@ namespace BLL
                 throw ex;
             }
 
+        }
+        public IEnumerable<Beneficio> buscarBeneficiosRelacionadosTipoBeca(int pid)
+        {
+            return objTipoBeca.buscarBeneficiosRelacionadosTipoBeca(pid);
+        }
+
+        public IEnumerable<Requisito> buscarRequisitosRelacionadosTipoBeca(int pid)
+        {
+            return objTipoBeca.buscarRequisitosRelacionadosTipoBeca(pid);
+        }
+
+        public void eliminarRequisitoTipoBeca(int id)
+        {
+            objTipoBeca.DeleteRequisitoTipoBeca(id);
+        }
+
+        public void eliminarBeneficiosTipoBeca(int id)
+        {
+            objTipoBeca.DeleteBeneficioTipoBeca(id);
         }
     }
 }

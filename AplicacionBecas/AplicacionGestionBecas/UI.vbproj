@@ -74,18 +74,6 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UCtrlCarreras\UCtrlAsignarCursos.Designer.vb">
-      <DependentUpon>UCtrlAsignarCursos.vb</DependentUpon>
-    </Compile>
-    <Compile Include="UCtrlCarreras\UCtrlAsignarCursos.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="uCtrlConsultarPlanDeEstudio.Designer.vb">
-      <DependentUpon>uCtrlConsultarPlanDeEstudio.vb</DependentUpon>
-    </Compile>
-    <Compile Include="uCtrlConsultarPlanDeEstudio.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Include="UCtrlCursos\UCtrlCrearCursos.Designer.vb">
       <DependentUpon>UCtrlCrearCursos.vb</DependentUpon>
     </Compile>
@@ -106,18 +94,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DB_Proyecto2DataSetConsultarRegistroAcciones.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="UCtrlRequisitos\UCtrlEliminarRequisitos.Designer.vb">
-      <DependentUpon>UCtrlEliminarRequisitos.vb</DependentUpon>
-    </Compile>
-    <Compile Include="UCtrlRequisitos\UCtrlEliminarRequisitos.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UCtrlRequisitos\UCtrlModificarRequisito.Designer.vb">
-      <DependentUpon>UCtrlModificarRequisito.vb</DependentUpon>
-    </Compile>
-    <Compile Include="UCtrlRequisitos\UCtrlModificarRequisito.vb">
-      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UCtrlTipoBeca\EliminarTipoBeca.Designer.vb">
       <DependentUpon>EliminarTipoBeca.vb</DependentUpon>
@@ -190,6 +166,12 @@
     <Compile Include="UCtrlAlerta.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="UCtrlRequisitos\UCtrlAsignarRequisitos.Designer.vb">
+      <DependentUpon>UCtrlAsignarRequisitos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UCtrlRequisitos\UCtrlAsignarRequisitos.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UCtrlBitacoraAcciones.Designer.vb">
       <DependentUpon>UCtrlBitacoraAcciones.vb</DependentUpon>
     </Compile>
@@ -200,12 +182,6 @@
       <DependentUpon>UCtrlBuscarCursos.vb</DependentUpon>
     </Compile>
     <Compile Include="UCtrlCursos\UCtrlBuscarCursos.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UCtrlTipoBeca\UCtrlAsignarRequisitos.Designer.vb">
-      <DependentUpon>UCtrlAsignarRequisitos.vb</DependentUpon>
-    </Compile>
-    <Compile Include="UCtrlTipoBeca\UCtrlAsignarRequisitos.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UCtrlTipoBeca\UCtrlBuscarTipoBeca.Designer.vb">
@@ -242,12 +218,6 @@
       <DependentUpon>UCtrlConsultarTipoBeca.vb</DependentUpon>
     </Compile>
     <Compile Include="UCtrlTipoBeca\UCtrlConsultarTipoBeca.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UCtrlUserProfile.Designer.vb">
-      <DependentUpon>UCtrlUserProfile.vb</DependentUpon>
-    </Compile>
-    <Compile Include="UCtrlUserProfile.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UCtrlUsuarios\UCtrlConsultarUsuario.Designer.vb">
@@ -426,20 +396,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="UCtrlCarreras\UCtrlAsignarCursos.resx">
-      <DependentUpon>UCtrlAsignarCursos.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="uCtrlConsultarPlanDeEstudio.resx">
-      <DependentUpon>uCtrlConsultarPlanDeEstudio.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UCtrlCursos\UCtrlCrearCursos.resx">
       <DependentUpon>UCtrlCrearCursos.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UCtrlRequisitos\UCtrlEliminarRequisitos.resx">
-      <DependentUpon>UCtrlEliminarRequisitos.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UCtrlRequisitos\UCtrlModificarRequisito.resx">
-      <DependentUpon>UCtrlModificarRequisito.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCtrlTipoBeca\EliminarTipoBeca.resx">
       <DependentUpon>EliminarTipoBeca.vb</DependentUpon>
@@ -477,14 +435,14 @@
     <EmbeddedResource Include="UCtrlAlerta.resx">
       <DependentUpon>UCtrlAlerta.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UCtrlRequisitos\UCtrlAsignarRequisitos.resx">
+      <DependentUpon>UCtrlAsignarRequisitos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UCtrlBitacoraAcciones.resx">
       <DependentUpon>UCtrlBitacoraAcciones.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCtrlCursos\UCtrlBuscarCursos.resx">
       <DependentUpon>UCtrlBuscarCursos.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UCtrlTipoBeca\UCtrlAsignarRequisitos.resx">
-      <DependentUpon>UCtrlAsignarRequisitos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCtrlTipoBeca\UCtrlBuscarTipoBeca.resx">
       <DependentUpon>UCtrlBuscarTipoBeca.vb</DependentUpon>
@@ -503,9 +461,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UCtrlTipoBeca\UCtrlConsultarTipoBeca.resx">
       <DependentUpon>UCtrlConsultarTipoBeca.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UCtrlUserProfile.resx">
-      <DependentUpon>UCtrlUserProfile.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCtrlUsuarios\UCtrlConsultarUsuario.resx">
       <DependentUpon>UCtrlConsultarUsuario.vb</DependentUpon>
@@ -638,9 +593,7 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.csproj">

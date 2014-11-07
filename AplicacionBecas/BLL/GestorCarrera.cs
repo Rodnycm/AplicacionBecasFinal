@@ -11,7 +11,7 @@ namespace BLL
 
     public class GestorCarrera
     {
-
+        CarreraRepository objCarrera = new CarreraRepository();
         /// <summary>
         /// Agrega una nueva carrera
         /// </summary>
@@ -72,7 +72,15 @@ namespace BLL
         /// <param name="idCarrera">id de la carrera</param>
         /// <param name="idDirector">director de la carrera</param>
         /// <param name="directorAntiguo">antiguo director de la carrera</param>
-
+        public void asignarCursoCarrera(List<Curso> listaCursos, Carrera objCarrera)
+        {
+            CursoRepository.objCarrera = objCarrera;
+            foreach (Curso objCurso in listaCursos)
+            {
+                CursoRepository.Instance.Insert(objCurso);
+            }
+            CursoRepository.Instance.asignarCurso(objCarrera);
+        }
         public void modificarCarrera(string nombre, string codigo, string color, int idCarrera, string idDirector)
         {
             Usuario director = UsuarioRepository.Instance.GetByNombre(idDirector);

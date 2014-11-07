@@ -20,13 +20,13 @@ Public Class EliminarTipoBeca
         descripcion = pdescripcion
 
     End Sub
-    Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
+    Private Sub btnAceptar_Click(sender As Object, e As EventArgs)
         gestorTipoBeca.eliminarTipoBeca(Me.nombre)
         gestorTipoBeca.guardarCambios()
         Me.Dispose()
     End Sub
 
-    Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
+    Private Sub btnCancelar_Click(sender As Object, e As EventArgs)
         Dim buscarTipoBeca As uCtrlBuscarTipoBeca = New uCtrlBuscarTipoBeca()
         Me.Hide()
         frmPrincipal.Controls.Add(buscarTipoBeca)

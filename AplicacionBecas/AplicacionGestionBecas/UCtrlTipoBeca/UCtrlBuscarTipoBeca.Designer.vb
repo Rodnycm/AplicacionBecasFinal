@@ -53,11 +53,11 @@ Partial Class uCtrlBuscarTipoBeca
         Me.dtaTipoBeca.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtaTipoBeca.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Nombre, Me.Estado, Me.mantenimiento})
         Me.dtaTipoBeca.GridColor = System.Drawing.Color.White
-        Me.dtaTipoBeca.Location = New System.Drawing.Point(40, 235)
+        Me.dtaTipoBeca.Location = New System.Drawing.Point(42, 233)
         Me.dtaTipoBeca.Name = "dtaTipoBeca"
         Me.dtaTipoBeca.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         Me.dtaTipoBeca.RowHeadersVisible = False
-        Me.dtaTipoBeca.Size = New System.Drawing.Size(947, 271)
+        Me.dtaTipoBeca.Size = New System.Drawing.Size(803, 222)
         Me.dtaTipoBeca.TabIndex = 17
         '
         'Nombre
@@ -81,10 +81,9 @@ Partial Class uCtrlBuscarTipoBeca
         '
         'txtBarraBusqueda
         '
-        Me.txtBarraBusqueda.Font = New System.Drawing.Font("Segoe UI", 11.25!)
-        Me.txtBarraBusqueda.Location = New System.Drawing.Point(31, 160)
+        Me.txtBarraBusqueda.Location = New System.Drawing.Point(30, 158)
         Me.txtBarraBusqueda.Name = "txtBarraBusqueda"
-        Me.txtBarraBusqueda.Size = New System.Drawing.Size(746, 27)
+        Me.txtBarraBusqueda.Size = New System.Drawing.Size(746, 20)
         Me.txtBarraBusqueda.TabIndex = 18
         Me.txtBarraBusqueda.Text = "Buscar:"
         '
@@ -120,7 +119,7 @@ Partial Class uCtrlBuscarTipoBeca
         Me.Controls.Add(Me.dtaTipoBeca)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.btnCrearTipoBeca)
-        Me.Location = New System.Drawing.Point(145, 50)
+        Me.Location = New System.Drawing.Point(783, 108)
         Me.Name = "uCtrlBuscarTipoBeca"
         Me.Size = New System.Drawing.Size(1037, 578)
         CType(Me.dtaTipoBeca, System.ComponentModel.ISupportInitialize).EndInit()

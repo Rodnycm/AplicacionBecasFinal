@@ -137,14 +137,16 @@ namespace DAL.Repositories
                 var dr = ds.Tables[0].Rows[0];
 
 
-                objTipoBeca = new TipoBeca
-                (
-                    Convert.ToInt32(dr["idTipoDeBeca"]),
-                    dr["Nombre"].ToString(),
-                    Convert.ToDateTime(dr["FechaCreacion"]),
-                    dr["Estado"].ToString(),
-                    dr["Descripcion"].ToString()
-              );
+
+                    objTipoBeca = new TipoBeca
+                    (
+                        Convert.ToInt32(dr["idTipoDeBeca"]),
+                        dr["Nombre"].ToString(),
+                        Convert.ToDateTime(dr["FechaCreacion"]),
+                        dr["Estado"].ToString(),
+                        dr["Descripcion"].ToString()
+                  );
+
                     objTipoBeca.listaRequisitos = asociarRequisitos(objTipoBeca.Id);
                     objTipoBeca.listaBeneficios = asociarBeneficios(objTipoBeca.Id);
 
@@ -406,8 +408,8 @@ namespace DAL.Repositories
                             (
                              Convert.ToInt32(dr["idBeneficio"]),
                              dr["Nombre"].ToString(),
-                             Convert.ToDouble(dr["Porcentaje"]),
-                             dr["Aplicabilidad"].ToString()
+                             Convert.ToDouble(dr["Porcentaje"]), ""
+                            //dr["Aplicabilidad"].ToString()
                             ));
                     }
                 }
@@ -448,9 +450,116 @@ namespace DAL.Repositories
 
                 throw e;
             }
+
+
+
+        }
+
+            public List<Beneficio> buscarBeneficiosRelacionadosTipoBeca(int pid)
+        {
+            try
+            {
+
+
+                List<Beneficio> pbeneficio = new List<Beneficio>();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Parameters.Add(new SqlParameter("@id", pid));
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_obtenerBeneficiosTipoBeca");
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    foreach (DataRow dr in ds.Tables[0].Rows)
+                    {
+                        pbeneficio.Add(new Beneficio
+                            (
+                            id = Convert.ToInt32(dr["Fk_Tb_Beneficios_Tb_BecaBeneficios_idBeneficio"])
+                            
+                            ));
+                    }
+                }
+                return pbeneficio;
+            }
+            catch (SqlException e)
+            {
+                throw e;
+            }
+        }
+
+        public int id { get; set; }
+
+        public List<Requisito> buscarRequisitosRelacionadosTipoBeca(int pid)
+        {
+            try
+            {
+
+
+                List<Requisito> prequisito = new List<Requisito>();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Parameters.Add(new SqlParameter("@id", pid));
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_obtenerRequisitoTipoBeca");
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    foreach (DataRow dr in ds.Tables[0].Rows)
+                    {
+                        prequisito.Add(new Requisito
+                            (
+                            id = Convert.ToInt32(dr["Fk_Tb_Requisitos_Tb_RequisitosTipoBeca_idRequisito"])
+
+                            ));
+                    }
+                }
+                return prequisito;
+            }
+            catch (SqlException e)
+            {
+                throw e;
+            }
+        }
+        public void DeleteRequisitoTipoBeca(int id)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Parameters.Add(new SqlParameter("@id",id));
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_eliminarRequisitosTipoBeca");
+
+            }
+            catch (SqlException ex)
+            {
+
+                //throw new DataAccessException("Ha ocurrido un error al eliminar el tipo de beca", ex);
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        public void DeleteBeneficioTipoBeca(int id)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Parameters.Add(new SqlParameter("@id", id));
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_eliminarBeneficiosTipoBeca");
+            }
+            catch (SqlException ex)
+            {
+
+                //throw new DataAccessException("Ha ocurrido un error al eliminar el tipo de beca", ex);
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+    
+
         }
     }
-}
+   
 
 
 

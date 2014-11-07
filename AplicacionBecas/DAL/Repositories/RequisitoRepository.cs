@@ -84,12 +84,24 @@ namespace DAL.Repositories
         public IEnumerable<Requisito> GetAll()
         {
 
+            SqlCommand cmd = new SqlCommand();
 
-            try {
+            DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_buscarRequisito");
 
-                List<Requisito> pRequisito = null;
-                SqlCommand cmd = new SqlCommand();
-                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_consultarRequisitos");
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                prequisito = new List<Requisito>();
+                foreach (DataRow dr in ds.Tables[0].Rows)
+                {
+                    prequisito.Add(new Requisito
+                    (
+                        
+                        dr["Nombre"].ToString(),
+                        dr["Descripcion"].ToString(),
+                        Convert.ToInt32(dr["idRequisito"])
+                    ));
+                }
+            }
 
                 if (ds.Tables[0].Rows.Count > 0)
                 {
@@ -102,7 +114,7 @@ namespace DAL.Repositories
                             nombre = dr["Nombre"].ToString(),
                             descripcion = dr["Descripcion"].ToString(),
                         });
-                    }
+        }
                 }
                 return pRequisito;
             }
@@ -136,24 +148,24 @@ namespace DAL.Repositories
                 cmd.Parameters.AddWithValue("@parametro", parametro);
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_buscarRequisito");
 
-                if (ds.Tables[0].Rows.Count > 0)
-                {
-                    var dr = ds.Tables[0].Rows[0];
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                var dr = ds.Tables[0].Rows[0];
 
                     requisito = new Requisito
-                    {
+                {
 
                         nombre = dr["Nombre"].ToString(),
                         descripcion = dr["Descripcion"].ToString()
-                    };
+                };
 
                     requisito.Id = Convert.ToInt32(dr["idRequisito"]);
-                }
+        }
                 return requisito;
             }
 
             catch (SqlException ex)
-            {
+        {
                 numero = ex.Number;
                 mensaje = exceptions.validarExcepcion(numero);
                 throw new CustomExceptions.DataAccessException(mensaje, ex);
@@ -163,7 +175,7 @@ namespace DAL.Repositories
                 throw ex;
 
             }
-           
+
         }
         public IEnumerable<Requisito> GetLista(TipoBeca objTipoBeca)
         {
@@ -230,7 +242,7 @@ namespace DAL.Repositories
 
             return ptipoBeca;
         }
-        
+
 
 
 
@@ -351,7 +363,7 @@ namespace DAL.Repositories
                 cmd.Parameters.Add(new SqlParameter("@Nombre", objRequisito.nombre));
                 cmd.Parameters.Add(new SqlParameter("@Descripcion", objRequisito.descripcion));
                 cmd.Parameters.Add(new SqlParameter("@IdRequisito", objRequisito.Id));
-                
+
 
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_modificarRequisitos");
 
@@ -439,6 +451,24 @@ namespace DAL.Repositories
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_insertarRequisitoTipoBeca");
 
             }
+            catch (Exception ex)
+            {
+
+            }
+        }
+        public void asignarRequisitoTipoBeca(Requisito objRequisito, TipoBeca objTipoBeca)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+
+                cmd.Parameters.Add(new SqlParameter("@idRequisito", objRequisito.Id));
+                cmd.Parameters.Add(new SqlParameter("@idTipoBeca", objTipoBeca.Id));
+
+
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_insertarRequisitoTB");
+
+            }
             catch (SqlException ex)
             {
                 numero = ex.Number;
@@ -465,6 +495,40 @@ namespace DAL.Repositories
 
                         }
                     }
+
+                    scope.Complete();
+                    }
+                catch (TransactionAbortedException ex)
+                {
+
+                }
+                catch (ApplicationException ex)
+                {
+
+                }
+                finally
+                {
+                    Clear();
+                }
+
+              }
+            }
+        public void asignarRequisito(TipoBeca objTipoBeca)
+        {
+            using (TransactionScope scope = new TransactionScope())
+            {
+                try
+                {
+                    if (_insertItems.Count > 0)
+                    {
+                        foreach (Requisito objRequisito in _insertItems)
+                        {
+                            asignarRequisitoTipoBeca(objRequisito, objTipoBeca);
+
+                        }
+                    }
+
+
 
                     scope.Complete();
         }

@@ -62,6 +62,11 @@ namespace EntitiesLayer
             Aplicacion = paplicacion;
 
         }
+        public Beneficio(int id)
+        {
+            this.Id = id;
+
+        }
         public bool IsValid
         {
             get { return (GetRuleViolations().Count() == 0); }

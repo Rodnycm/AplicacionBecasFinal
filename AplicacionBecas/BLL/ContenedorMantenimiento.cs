@@ -164,6 +164,10 @@ namespace BLL
         {
             return new TipoBeca(nombre, estado, direccion);
         }
+        public TipoBeca crearTipoBeca(int idTipoBeca, string nombre, string estado, string direccion)
+        {
+            return new TipoBeca(idTipoBeca, nombre, estado, direccion);
+        }
         public TipoBeca crearTipoBeca(string pnombre)
         {
             TipoBeca objTipoBeca = new TipoBeca(pnombre);

@@ -24,6 +24,7 @@ namespace DAL{
         private static int numero;
         private static string mensaje;
 
+        public static Carrera objCarrera { get; set; }
 
         private CursoRepository(){
             _insertItems = new List<IEntity>();
@@ -74,26 +75,26 @@ namespace DAL{
         //<returns>Retorna una lista con todos los cursos registrados en el sistema.</returns> 
         public IEnumerable<Curso> GetAll(){
             try{
-                List<Curso> pCurso = null;
-                SqlCommand cmd = new SqlCommand();
-                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_buscarCursos");
+            List<Curso> pCurso = null;
+            SqlCommand cmd = new SqlCommand();
+            DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_buscarCursos");
 
                 if (ds.Tables[0].Rows.Count > 0){
-                    pCurso = new List<Curso>();
+                pCurso = new List<Curso>();
                     foreach (DataRow dr in ds.Tables[0].Rows){
                         pCurso.Add(new Curso{
-                            codigo = dr["Codigo"].ToString(),
-                            nombre = dr["Nombre"].ToString(),
-                            cuatrimestre = dr["Cuatrimestre"].ToString(),
-                            creditos = Convert.ToInt32(dr["Creditos"]),
-                            precio = Convert.ToDouble(dr["Precio"]),
-                            Id = Convert.ToInt32(dr["IdCurso"])
-                        });
-                    }
+                        codigo = dr["Codigo"].ToString(),
+                        nombre = dr["Nombre"].ToString(),
+                        cuatrimestre = dr["Cuatrimestre"].ToString(),
+                        creditos = Convert.ToInt32(dr["Creditos"]),
+                        precio = Convert.ToDouble(dr["Precio"]),
+                        Id = Convert.ToInt32(dr["IdCurso"])
+                    });
                 }
-
-                return pCurso;
             }
+
+            return pCurso;
+        }
             catch (SqlException ex){
                 numero = ex.Number;
                 mensaje = exceptions.validarExcepcion(numero);
@@ -129,8 +130,8 @@ namespace DAL{
         //<returns>Retorna el curso deseado</returns> 
         public Curso GetById(int Id){
             try{
-                Curso objCurso = null;
-                return objCurso;
+            Curso objCurso = null;
+            return objCurso;
             }catch (SqlException ex){
                 numero = ex.Number;
                 mensaje = exceptions.validarExcepcion(numero);
@@ -197,7 +198,7 @@ namespace DAL{
             }
             catch (Exception ex){
                 throw ex;
-            }
+        }
 
         }
 
@@ -207,29 +208,29 @@ namespace DAL{
         //<returns>Retorna el curso deseado</returns> 
         public Curso GetByNombre(String pparametro){
             try{
-                Curso objCurso = null;
-                SqlCommand cmd = new SqlCommand();
+            Curso objCurso = null;
+            SqlCommand cmd = new SqlCommand();
                 cmd.Parameters.AddWithValue("@parametro", pparametro);
 
-                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_buscarUnCurso");
+            DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_buscarUnCurso");
                 if (ds.Tables[0].Rows.Count > 0){
-                    var dr = ds.Tables[0].Rows[0];
+                var dr = ds.Tables[0].Rows[0];
                     objCurso = new Curso{
-                        codigo = dr["Codigo"].ToString(),
-                        nombre = dr["Nombre"].ToString(),
-                        cuatrimestre = dr["Cuatrimestre"].ToString(),
-                        creditos = Convert.ToInt32(dr["Creditos"]),
-                        precio = Convert.ToDouble(dr["Precio"]),
-                        Id = Convert.ToInt32(dr["IdCurso"])
-                    };
-                    //objCurso.Id = Convert.ToInt32(dr["Id"]);
-                }
-                return objCurso;
+                    codigo = dr["Codigo"].ToString(),
+                    nombre = dr["Nombre"].ToString(),
+                    cuatrimestre = dr["Cuatrimestre"].ToString(),
+                    creditos = Convert.ToInt32(dr["Creditos"]),
+                    precio = Convert.ToDouble(dr["Precio"]),
+                    Id = Convert.ToInt32(dr["IdCurso"])
+                };
+                //objCurso.Id = Convert.ToInt32(dr["Id"]);
+            }
+            return objCurso;
             }catch (SqlException ex){
                 numero = ex.Number;
                 mensaje = exceptions.validarExcepcion(numero);
                 throw new CustomExceptions.DataAccessException(mensaje, ex);
-            }
+        }
             catch (Exception ex){
                 throw ex;
             }
@@ -363,7 +364,7 @@ namespace DAL{
             }catch (Exception ex){
                 throw ex;
             }
-        }
+            }
 
         public void registrarAccion(string pactividad){
             RegistroAccion objRegistro;
@@ -390,6 +391,113 @@ namespace DAL{
             catch (Exception e){
 
                 throw e;
+            }
+        }
+        public void asignarCurso(Curso objCurso)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+
+                cmd.Parameters.Add(new SqlParameter("@idCurso", objCurso.Id));
+                cmd.Parameters.Add(new SqlParameter("@Nombre", objCarrera.nombre));
+
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_insertarCursoCarrera");
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+
+        public void asignarCurso(Curso objCurso, Carrera objCarrera)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+
+                cmd.Parameters.Add(new SqlParameter("@idRequisito", objRequisito.id));
+                cmd.Parameters.Add(new SqlParameter("@idTipoBeca", objCarrera.id));
+
+
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_insertarRequisitoTB");
+
+            }
+            catch (Exception ex)
+            {
+
+
+            }
+        }
+
+        public void asignarRequisito()
+        {
+            using (TransactionScope scope = new TransactionScope())
+            {
+                try
+                {
+                    if (_insertItems.Count > 0)
+                    {
+                        foreach (Requisito objRequisito in _insertItems)
+                        {
+                            asignarRequisitoTipoBeca(objRequisito);
+
+                        }
+                    }
+
+
+
+                    scope.Complete();
+                }
+                catch (TransactionAbortedException ex)
+                {
+
+                }
+                catch (ApplicationException ex)
+                {
+
+                }
+                finally
+                {
+                    Clear();
+                }
+
+            }
+        }
+        public void asignarRequisito(TipoBeca objTipoBeca)
+        {
+            using (TransactionScope scope = new TransactionScope())
+            {
+                try
+                {
+                    if (_insertItems.Count > 0)
+                    {
+                        foreach (Requisito objRequisito in _insertItems)
+                        {
+                            asignarRequisitoTipoBeca(objRequisito, objTipoBeca);
+
+                        }
+                    }
+
+
+
+                    scope.Complete();
+                }
+                catch (TransactionAbortedException ex)
+                {
+
+                }
+                catch (ApplicationException ex)
+                {
+
+                }
+                finally
+                {
+                    Clear();
+                }
+
             }
         }
     }

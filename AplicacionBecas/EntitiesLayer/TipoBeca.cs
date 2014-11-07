@@ -43,6 +43,13 @@ namespace EntitiesLayer
             descripcion = pdescripcion;
             objD = pobjD;
         }
+        public TipoBeca(int pid, String pnombre, String pestado, String pdescripcion)
+        {
+            Id = pid;
+            nombre = pnombre;
+            estado = pestado;
+            descripcion = pdescripcion;
+        }
 
 
         public TipoBeca(String pnombre, String pestado, String pdescripcion)
@@ -53,7 +60,10 @@ namespace EntitiesLayer
         {
             nombre = pnombre;
         }
+        public TipoBeca()
+        {
 
+        }
         /// <summary>
         /// Método que hace un get de lo que retorna el RuleViolationes
         /// </summary>

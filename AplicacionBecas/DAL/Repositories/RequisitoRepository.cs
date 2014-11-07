@@ -83,6 +83,7 @@ namespace DAL.Repositories
 
         public IEnumerable<Requisito> GetAll()
         {
+<<<<<<< HEAD
 
             try {
 
@@ -116,6 +117,27 @@ namespace DAL.Repositories
             {
                 throw ex;
             }
+=======
+            List<Requisito> prequisito = null;
+
+            //SqlCommand cmd = new SqlCommand();
+
+            //DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_buscarRequisito");
+
+            //if (ds.Tables[0].Rows.Count > 0)
+            //{
+            //    prequisito = new List<Requisito>();
+            //    foreach (DataRow dr in ds.Tables[0].Rows)
+            //    {
+            //        prequisito.Add(new Requisito
+            //        (
+            //            Convert.ToInt32(dr["idRequisito"]),
+            //            dr["Nombre"].ToString(),
+            //            dr["Descripcion"].ToString()
+            //        ));
+            //    }
+            //}
+>>>>>>> origin/MariaV3
 
            
         }
@@ -163,6 +185,34 @@ namespace DAL.Repositories
             }
            
         }
+        public IEnumerable<Requisito> GetLista(TipoBeca objTipoBeca)
+        {
+
+            List<Requisito> prequisito = null;
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.Parameters.Add(new SqlParameter("@Nombre", objTipoBeca.nombre));
+
+            DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_consultarTipoBecaRequisito");
+
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                prequisito = new List<Requisito>();
+                foreach (DataRow dr in ds.Tables[0].Rows)
+                {
+                    prequisito.Add(new Requisito
+                    (
+                         
+                        dr["Nombre"].ToString(),
+                        dr["Descripcion"].ToString(),
+                         Convert.ToInt32(dr["idRequisito"])
+                    ));
+                }
+            }
+
+            return prequisito;
+        }
+
 
 
         //<summary> Método que se encarga de guardar en la base de datos los cambios realizados </summary>

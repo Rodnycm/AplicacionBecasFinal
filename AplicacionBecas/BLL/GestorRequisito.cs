@@ -55,7 +55,11 @@ namespace BLL
       {
             return RequisitoRepository.Instance.GetByNombre(param);
         }
+        public IEnumerable<Requisito> mostrarRequisitoTB(TipoBeca ptipoBeca)
+        {
 
+            return RequisitoRepository.Instance.GetLista(ptipoBeca);
+        }
         //public IEnumerable<Requisito> mostrarRequisitoTB(TipoBeca ptipoBeca)
         //{
 

@@ -24,7 +24,7 @@ Partial Class uCtrlModificarTipoBeca
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(uCtrlModificarTipoBeca))
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.btnAñadir = New System.Windows.Forms.Button()
+        Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.btnBeneficios = New System.Windows.Forms.Button()
         Me.btnRequisitos = New System.Windows.Forms.Button()
@@ -48,17 +48,19 @@ Partial Class uCtrlModificarTipoBeca
         Me.Label1.TabIndex = 63
         Me.Label1.Text = "Editar"
         '
-        'btnAñadir
+        'btnModificar
         '
-        Me.btnAñadir.BackColor = System.Drawing.Color.MintCream
-        Me.btnAñadir.Font = New System.Drawing.Font("Segoe UI Light", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAñadir.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.btnAñadir.Location = New System.Drawing.Point(337, 231)
-        Me.btnAñadir.Name = "btnAñadir"
-        Me.btnAñadir.Size = New System.Drawing.Size(92, 33)
-        Me.btnAñadir.TabIndex = 73
-        Me.btnAñadir.Text = "Añadir"
-        Me.btnAñadir.UseVisualStyleBackColor = False
+        Me.btnModificar.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar
+        Me.btnModificar.BackColor = System.Drawing.Color.MintCream
+        Me.btnModificar.Cursor = System.Windows.Forms.Cursors.Default
+        Me.btnModificar.Font = New System.Drawing.Font("Segoe UI Light", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnModificar.ForeColor = System.Drawing.SystemColors.Highlight
+        Me.btnModificar.Location = New System.Drawing.Point(337, 231)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(92, 33)
+        Me.btnModificar.TabIndex = 73
+        Me.btnModificar.Text = "Modificar"
+        Me.btnModificar.UseVisualStyleBackColor = False
         '
         'btnCancelar
         '
@@ -156,7 +158,7 @@ Partial Class uCtrlModificarTipoBeca
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Controls.Add(Me.btnAñadir)
+        Me.Controls.Add(Me.btnModificar)
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.btnBeneficios)
         Me.Controls.Add(Me.btnRequisitos)
@@ -174,7 +176,7 @@ Partial Class uCtrlModificarTipoBeca
 
     End Sub
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents btnAñadir As System.Windows.Forms.Button
+    Friend WithEvents btnModificar As System.Windows.Forms.Button
     Friend WithEvents btnCancelar As System.Windows.Forms.Button
     Friend WithEvents btnBeneficios As System.Windows.Forms.Button
     Friend WithEvents btnRequisitos As System.Windows.Forms.Button

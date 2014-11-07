@@ -128,7 +128,8 @@ namespace DAL.Repositories
 
             SqlCommand cmd = new SqlCommand();
             cmd.Parameters.Add(new SqlParameter("@Nombre", pnombre));
-
+            try
+            {
             var ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_buscarTipoBecaNombre");
 
             if (ds.Tables[0].Rows.Count > 0)
@@ -144,11 +145,18 @@ namespace DAL.Repositories
                     dr["Estado"].ToString(),
                     dr["Descripcion"].ToString()
               );
+                    objTipoBeca.listaRequisitos = asociarRequisitos(objTipoBeca.id);
+                    objTipoBeca.listaBeneficios = asociarBeneficios(objTipoBeca.id);
+
+            }
+                return objTipoBeca;
+            }
+            catch (SqlException e)
+            {
+                throw e;
             }
 
 
-
-            return objTipoBeca;
         }
 
         /// <summary>
@@ -207,24 +215,17 @@ namespace DAL.Repositories
 
                     if (_updateItems.Count > 0)
                     {
-                        foreach (TipoBeca p in _updateItems)
+                        foreach (TipoBeca objTipoBeca in _updateItems)
                         {
-
-
-                            throw new Exception("Changed UpdateTipoBeca to commented code");
-                            //UpdateTipoBeca(p);
+                            UpdateTipoBeca(objTipoBeca);
                         }
                     }
 
                     if (_deleteItems.Count > 0)
                     {
-                        foreach (TipoBeca p in _deleteItems)
+                        foreach (TipoBeca objTipoBeca in _deleteItems)
                         {
-
-
-
-                            throw new Exception("Changed DeleteTipoBecas to commented code");
-                            //DeleteTipoBeca(p);
+                            DeleteTipoBeca(objTipoBeca);
                         }
                     }
 
@@ -232,11 +233,11 @@ namespace DAL.Repositories
                 }
                 catch (TransactionAbortedException ex)
                 {
-
+                    throw new Exception("Changed UpdateTipoBeca to commented code");
                 }
                 catch (ApplicationException ex)
                 {
-
+                    throw new Exception("Changed DeleteTipoBecas to commented code");
                 }
                 finally
                 {
@@ -354,6 +355,68 @@ namespace DAL.Repositories
         public void asignarRequisitosTipoBeca(TipoBeca objTipoBeca, Requisito objRequisito)
         {
 
+        }
+        private List<Requisito> asociarRequisitos(int pid)
+        {
+            try
+            {
+                List<Requisito> prequisito = new List<Requisito>();
+
+                SqlCommand cmd = new SqlCommand();
+                cmd.Parameters.Add(new SqlParameter("@id", pid));
+
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_buscarRequisitosTipoBeca");
+
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    //prequisito = new List<Requisito>();
+                    foreach (DataRow dr in ds.Tables[0].Rows)
+                    {
+                        prequisito.Add(new Requisito
+                        (
+                             dr["Nombre"].ToString(),
+                            dr["Descripcion"].ToString(),
+                            Convert.ToInt32(dr["idRequisito"])
+                        ));
+                    }
+                }
+
+                return prequisito;
+            }
+            catch (SqlException e)
+            {
+                throw e;
+            }
+        }
+        private List<Beneficio> asociarBeneficios(int pid)
+        {
+            try
+            {
+
+
+                List<Beneficio> pbeneficio = new List<Beneficio>();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Parameters.Add(new SqlParameter("@id", pid));
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_buscarBeneficiosTipoBeca");
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    foreach (DataRow dr in ds.Tables[0].Rows)
+                    {
+                        pbeneficio.Add(new Beneficio
+                            (
+                             Convert.ToInt32(dr["idBeneficio"]),
+                             dr["Nombre"].ToString(),
+                             Convert.ToDouble(dr["Porcentaje"]),
+                             dr["Aplicabilidad"].ToString()
+                            ));
+                    }
+                }
+                return pbeneficio;
+            }
+            catch (SqlException e)
+            {
+                throw e;
+            }
         }
 
         public void registrarAccion(string pactividad)

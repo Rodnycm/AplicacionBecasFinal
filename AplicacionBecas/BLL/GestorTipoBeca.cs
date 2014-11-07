@@ -68,6 +68,11 @@ namespace BLL
         {
             return TipoBecaRepository.Instance.GetByNombre(pnombre);
         }
+        public int idTipoBeca(string pnombre)
+        {
+            TipoBeca tmpTipo = buscarUnTipoBeca(pnombre);
+            return tmpTipo.Id;
+        }
         /// <summary>
         /// Llama al método Save del repository
         ///</summary>
@@ -127,6 +132,27 @@ namespace BLL
 
                 throw;
             }
+
+        }
+        public void modificarRequisitos(List<Requisito> listaRequisitos, TipoBeca objTipoBeca)
+        {
+            RequisitoRepository.objTipoBeca = objTipoBeca;
+            foreach (Requisito objRequisito in listaRequisitos)
+            {
+                RequisitoRepository.Instance.Update(objRequisito);
+            }
+            RequisitoRepository.Instance.asignarRequisito();
+        }
+        public void modificarBeneficios(List<Beneficio> listaBeneficios, TipoBeca objTipoBeca)
+        {
+            BeneficioRepository.objTipoBeca = objTipoBeca;
+            foreach (Beneficio objBeneficio in listaBeneficios)
+            {
+
+                BeneficioRepository.Instance.Insert(objBeneficio);
+
+            }
+            BeneficioRepository.Instance.asignarBeneficio();
 
         }
 

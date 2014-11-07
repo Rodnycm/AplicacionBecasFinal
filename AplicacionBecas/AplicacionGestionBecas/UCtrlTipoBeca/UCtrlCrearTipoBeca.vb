@@ -1,6 +1,5 @@
 ﻿Imports EntitiesLayer
 Public Class uCtrlCrearTipoBeca
-
     Dim listas As List(Of Beneficio)
     Dim listasR As List(Of Requisito)
     Dim uCtrlBuscarTB As uCtrlBuscarTipoBeca
@@ -28,14 +27,15 @@ Public Class uCtrlCrearTipoBeca
             gestorTipoBeca.asignarBeneficioTipoBeca(listas, tipo)
             gestorTipoBeca.asignarRequisitoTipoBeca(listasR, tipo)
 
-        Catch ex As Exception
 
+        Catch ex As Exception
+            MsgBox(ex.Message)
         End Try
 
+
     End Sub
-
+    
     Private Sub btnBeneficios_Click(sender As Object, e As EventArgs) Handles btnBeneficios.Click
-
         Dim beneficio As SeleccionarBeneficios = New SeleccionarBeneficios()
         FrmIniciarSesion.principal.Controls.Add(beneficio)
         beneficio.enviarbeneficios(Me)
@@ -43,30 +43,30 @@ Public Class uCtrlCrearTipoBeca
         beneficio.BringToFront()
         beneficio.Show()
 
+
     End Sub
 
     Private Sub btnRequisitos_Click(sender As Object, e As EventArgs) Handles btnRequisitos.Click
-
         Dim requisito As uCtrlAsignarRequisitos = New uCtrlAsignarRequisitos()
         FrmIniciarSesion.principal.Controls.Add(requisito)
         requisito.enviarrequisitos(Me)
         requisito.Location = New Point(150, 250)
         requisito.BringToFront()
         requisito.Show()
-
     End Sub
 
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
-
-        Me.Dispose()
+        Me.Hide()
+        'uCtrlBuscarTB.dtaTipoBeca.Rows.Clear()
+        'uCtrlBuscarTB.listarTiposBeca()
 
     End Sub
 
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
-
         Me.Dispose()
-
+        Me.Hide()
+        uCtrlBuscarTB.dtaTipoBeca.Rows.Clear()
+        uCtrlBuscarTB.listarTiposBeca()
     End Sub
-
 End Class

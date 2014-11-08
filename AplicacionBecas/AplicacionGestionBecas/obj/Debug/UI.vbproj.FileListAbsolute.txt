@@ -223,6 +223,19 @@ C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBec
 C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\UI.exe
 C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\UI.xml
 C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\UI.pdb
+C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\bin\Debug\UI.exe.config
+C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\bin\Debug\UI.exe
+C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\bin\Debug\UI.pdb
+C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\bin\Debug\UI.xml
+C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\bin\Debug\BLL.dll
+C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\bin\Debug\EntitiesLayer.dll
+C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\bin\Debug\DAL.dll
+C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\bin\Debug\TIL.dll
+C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\bin\Debug\EASendMail45.dll
+C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\bin\Debug\BLL.pdb
+C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\bin\Debug\EntitiesLayer.pdb
+C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\bin\Debug\DAL.pdb
+C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\bin\Debug\TIL.pdb
 C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\UI.vbprojResolveAssemblyReference.cache
 C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\UI.UCtrlConfMessage.resources
 C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\UI.UCtrlInstantMessage.resources
@@ -285,3 +298,6 @@ C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\Apli
 C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\UI.vbproj.GenerateResource.Cache
 C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\RdlCompile.cache
 C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\RdlCompile.compiled
+C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\UI.exe
+C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\UI.xml
+C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\UI.pdb

@@ -86,7 +86,6 @@ namespace DAL.Repositories
                     emisor = dr["Emisor"].ToString(),
                     asunto = dr["Asunto"].ToString(),
                     mensaje = dr["Mensaje"].ToString(),
-                    receptor = dr["Receptor"].ToString(),
                     smtpServidor = dr["SmtpServidor"].ToString(),
                     userName = dr["UserName"].ToString(),
                     contrasenna = dr["Contraseña"].ToString(),

@@ -201,6 +201,8 @@ Partial Public Class frmPrincipal
         confirmacion.Show()
 
     End Sub
+
+
 End Class
 
 Public Class MyRenderer

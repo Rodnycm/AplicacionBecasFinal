@@ -37,7 +37,12 @@ Public Class UCtrlEliminarRequisitos
         If objGestorRequisito.consultarBecasPorRequisitos(idRequisito) Is Nothing Then
             objGestorRequisito.eliminarRequisito(nombre, descripcion, idRequisito)
             objGestorRequisito.guardarCambios()
-           
+            Dim Uctrl As uCtrlConfirmacion = New uCtrlConfirmacion
+            FrmIniciarSesion.principal.Controls.Add(Uctrl)
+            Uctrl.txtConfirmacion.Text = "El requisito se elimino correctamente"
+            Uctrl.Location = New Point(450, 250)
+            Uctrl.BringToFront()
+            Uctrl.Show()
         Else
             Dim UCtrl As UctrlAlerta = New UctrlAlerta()
             FrmIniciarSesion.principal.Controls.Add(UCtrl)

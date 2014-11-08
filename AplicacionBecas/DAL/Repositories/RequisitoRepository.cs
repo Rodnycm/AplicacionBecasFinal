@@ -87,10 +87,6 @@ namespace DAL.Repositories
             {
             List<Requisito> prequisito = new List<Requisito>();
             SqlCommand cmd = new SqlCommand();
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/prophet30
             DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_consultarRequisitos");
 
             if (ds.Tables[0].Rows.Count > 0)

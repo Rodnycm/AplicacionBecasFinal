@@ -145,10 +145,10 @@
   <data name="eliminarMoradoVFinal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\eliminarMoradoVFinal.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-<<<<<<< HEAD
+
   <data name="confirmacion" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\confirmacion.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-=======
+  </data>
   <data name="tablaEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tablaEmail.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -175,7 +175,6 @@
   </data>
   <data name="moradoTablaFinal1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\moradoTablaFinal.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
->>>>>>> origin/prophet30
   </data>
   <data name="tablaFinalMedianaAzul3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tablaFinalMedianaAzul3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -183,7 +182,6 @@
   <data name="tablaFinalGrandeAzul" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tablaFinalGrandeAzul.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-<<<<<<< HEAD
   <data name="moradoTablaFinal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\moradoTablaFinal.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -198,12 +196,11 @@
   </data>
   <data name="tablaFinalMedianaAzul41" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tablaFinalMedianaAzul4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-=======
+  </data>
   <data name="confirmacion" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\confirmacion.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="check" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\check.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
->>>>>>> origin/prophet30
   </data>
 </root>

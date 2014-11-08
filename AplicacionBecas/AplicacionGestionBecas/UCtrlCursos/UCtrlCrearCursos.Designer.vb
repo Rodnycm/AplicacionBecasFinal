@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class CrearCursos
+Partial Class UCtrlCrearCursos
     Inherits System.Windows.Forms.UserControl
 
     'UserControl reemplaza a Dispose para limpiar la lista de componentes.
@@ -156,7 +156,6 @@ Partial Class CrearCursos
         '
         'imgCrearCurso
         '
-        Me.imgCrearCurso.BackgroundImage = Global.UI.My.Resources.Resources.tablaFinalMedianaAzul1
         Me.imgCrearCurso.Location = New System.Drawing.Point(0, 0)
         Me.imgCrearCurso.Name = "imgCrearCurso"
         Me.imgCrearCurso.Size = New System.Drawing.Size(458, 252)

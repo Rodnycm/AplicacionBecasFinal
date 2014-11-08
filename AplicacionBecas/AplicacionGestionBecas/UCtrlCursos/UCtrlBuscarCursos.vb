@@ -3,9 +3,9 @@ Imports BLL
 
 
 
-Public Class uCtrlBuscarCursos
+Public Class UCtrlBuscarCursos
 
-    Dim ucCrearCurso As CrearCursos
+    Dim ucCrearCurso As UCtrlCrearCursos
     Dim ucModificarCurso As uCtrlModificarCurso
     Dim ucEliminarCurso As uCtrlEliminarCurso
     Dim idCurso As Integer
@@ -48,7 +48,7 @@ Public Class uCtrlBuscarCursos
     Public Sub modificarCurso(ByVal pfila As String)
 
         Dim codigo As String = pfila
-        Dim ucntrl As uCtrlModificarCurso = New uCtrlModificarCurso()
+        Dim ucntrl As UCtrlModificarCurso = New UCtrlModificarCurso()
         ucntrl.recieveData(codigo)
 
         FrmIniciarSesion.principal.Controls.Add(ucntrl)
@@ -65,7 +65,7 @@ Public Class uCtrlBuscarCursos
     Public Sub eliminarCurso(ByVal pfila As String)
 
         Dim codigo As String = pfila
-        Dim ucntrl As uCtrlEliminarCurso = New uCtrlEliminarCurso()
+        Dim ucntrl As UCtrlEliminarCurso = New UCtrlEliminarCurso()
         ucntrl.recieveData(codigo)
         FrmIniciarSesion.principal.Controls.Add(ucntrl)
         ucntrl.BringToFront()
@@ -106,7 +106,7 @@ Public Class uCtrlBuscarCursos
             uctrlAlerta.Show()
 
         End Try
-        
+
     End Sub
     ''' <summary>Método que se encarga de buscar un curso en específico</summary>
     ''' <param name="parametro">Nombre o código mediante el cual se filtra la búsqueda</param>
@@ -147,7 +147,7 @@ Public Class uCtrlBuscarCursos
     End Sub
     Private Sub btnCrearCurso_Click_1(sender As Object, e As EventArgs) Handles btnCrearCurso.Click
 
-        ucCrearCurso = New CrearCursos()
+        ucCrearCurso = New UCtrlCrearCursos()
         FrmIniciarSesion.principal.Controls.Add(ucCrearCurso)
         ucCrearCurso.Visible = True
         ucCrearCurso.BringToFront()
@@ -156,6 +156,5 @@ Public Class uCtrlBuscarCursos
         ucCrearCurso.refrecarLista(Me)
 
     End Sub
-
 
 End Class

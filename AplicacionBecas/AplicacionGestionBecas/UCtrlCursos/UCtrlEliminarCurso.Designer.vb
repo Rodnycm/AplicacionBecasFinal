@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class uCtrlEliminarCurso
+Partial Class UCtrlEliminarCurso
     Inherits System.Windows.Forms.UserControl
 
     'UserControl reemplaza a Dispose para limpiar la lista de componentes.
@@ -67,14 +67,15 @@ Partial Class uCtrlEliminarCurso
         Me.btnEliminar.Text = "Aceptar"
         Me.btnEliminar.UseVisualStyleBackColor = False
         '
-        'uCtrlEliminarCurso
+        'UCtrlEliminarCurso
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = Global.UI.My.Resources.Resources.confirmacion
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.btnEliminar)
         Me.Controls.Add(Me.lblNombre)
-        Me.Name = "uCtrlEliminarCurso"
+        Me.Name = "UCtrlEliminarCurso"
         Me.Size = New System.Drawing.Size(459, 161)
         Me.ResumeLayout(False)
         Me.PerformLayout()

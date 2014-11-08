@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class uCtrlBuscarCursos
+Partial Class UCtrlBuscarCursos
     Inherits System.Windows.Forms.UserControl
 
     'UserControl reemplaza a Dispose para limpiar la lista de componentes.
@@ -23,7 +23,7 @@ Partial Class uCtrlBuscarCursos
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(uCtrlBuscarCursos))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(UCtrlBuscarCursos))
         Me.txtBuscarCurso = New System.Windows.Forms.TextBox()
         Me.dtaListarCursos = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -160,7 +160,7 @@ Partial Class uCtrlBuscarCursos
         Me.imgBuscarCursos.TabIndex = 26
         Me.imgBuscarCursos.TabStop = False
         '
-        'uCtrlBuscarCursos
+        'UCtrlBuscarCursos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -171,7 +171,7 @@ Partial Class uCtrlBuscarCursos
         Me.Controls.Add(Me.dtaListarCursos)
         Me.Controls.Add(Me.imgBuscarCursos)
         Me.Location = New System.Drawing.Point(145, 50)
-        Me.Name = "uCtrlBuscarCursos"
+        Me.Name = "UCtrlBuscarCursos"
         Me.Size = New System.Drawing.Size(1037, 578)
         CType(Me.dtaListarCursos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.imgBuscarCursos, System.ComponentModel.ISupportInitialize).EndInit()

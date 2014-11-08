@@ -6,16 +6,7 @@ UI
 </name>
 </assembly>
 <members>
-<member name="M:UI.UCtrlConfMessage.uCtrlConfMessage_MouseMove(System.Object,System.Windows.Forms.MouseEventArgs)">
-	<summary>Posiciona la ventana mientras el usuario da click al compomente</summary>
-	<autor>Alvaro Artavia</autor>
-</member><member name="M:UI.UCtrlConfMessage.uCtrlConfMessage_MouseUp(System.Object,System.Windows.Forms.MouseEventArgs)">
-	<summary>Situa el componente en la posicion final</summary>
-	<autor>Alvaro Artavia</autor>
-</member><member name="M:UI.UCtrlConfMessage.uCtrlConfMessage_MouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
-	<summary>Indica si el usuario da click al componente para moverlo</summary>
-	<autor>Alvaro Artavia</autor>
-</member><member name="M:UI.UCtrlEliminarCurso.UCtrlElimininarCarrera_MouseMove(System.Object,System.Windows.Forms.MouseEventArgs)">
+<member name="M:UI.UCtrlEliminarCurso.UCtrlElimininarCarrera_MouseMove(System.Object,System.Windows.Forms.MouseEventArgs)">
 	<summary>Posiciona la ventana mientras el usuario da click al compomente</summary>
 	<autor>Alvaro Artavia</autor>
 </member><member name="M:UI.UCtrlEliminarCurso.UCtrlElimininarCarrera_MouseUp(System.Object,System.Windows.Forms.MouseEventArgs)">
@@ -2519,6 +2510,15 @@ Used to sort self-referenced table's rows
 	<summary>
 TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
 </summary>
+</member><member name="M:UI.UCtrlConfMessage.uCtrlConfMessage_MouseMove(System.Object,System.Windows.Forms.MouseEventArgs)">
+	<summary>Posiciona la ventana mientras el usuario da click al compomente</summary>
+	<autor>Alvaro Artavia</autor>
+</member><member name="M:UI.UCtrlConfMessage.uCtrlConfMessage_MouseUp(System.Object,System.Windows.Forms.MouseEventArgs)">
+	<summary>Situa el componente en la posicion final</summary>
+	<autor>Alvaro Artavia</autor>
+</member><member name="M:UI.UCtrlConfMessage.uCtrlConfMessage_MouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
+	<summary>Indica si el usuario da click al componente para moverlo</summary>
+	<autor>Alvaro Artavia</autor>
 </member><member name="M:UI.uCtrlMenuMantenimiento.btnCursos_Click(System.Object,System.EventArgs)">
 	<summary>Metodo que se ejecuta cuando el usuario da click al boton cursos, muestra 
  al usuario el menu de cursos</summary>

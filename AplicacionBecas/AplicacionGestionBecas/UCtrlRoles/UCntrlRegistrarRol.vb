@@ -20,28 +20,26 @@ Public Class UCntrlRegistrarRol
 
             Dim Uctrl As uCtrlConfirmacion = New uCtrlConfirmacion
             FrmIniciarSesion.principal.Controls.Add(Uctrl)
-            Uctrl.txtConfirmacion.Text = "El rol se creo correctamente"
-            Uctrl.Location = New Point(375, 100)
+            Uctrl.txtConfirmacion.Text = "El rol se creó correctamente"
+            Uctrl.Location = New Point(450, 250)
             Uctrl.BringToFront()
             Uctrl.Show()
 
         Catch ex As Exception
 
-            Dim UCtrl As UctrlAlerta = New UctrlAlerta()
-
-            FrmIniciarSesion.principal.Controls.Add(UCtrl)
-            UCtrl.txtAlerta.Text = ex.Message
-            UCtrl.Location = New Point(375, 100)
-            UCtrl.BringToFront()
-            UCtrl.Show()
-
+            Dim uctrlAlerta As UctrlAlerta = New UctrlAlerta()
+            Me.Controls.Add(uctrlAlerta)
+            uctrlAlerta.Location = New Point(100, 100)
+            uctrlAlerta.BringToFront()
+            uctrlAlerta.txtAlerta.Text = ex.Message
+            uctrlAlerta.Show()
         End Try
 
 
         
         listarRoles.DGVRol.Rows.Clear()
         listarRoles.ListarRoles()
-        Me.Dispose()
+
     End Sub
 
     ''' <summary>

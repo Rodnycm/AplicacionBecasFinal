@@ -91,8 +91,7 @@ Public Class UctrlModificarUsuario
         Dim rol As String = cmbRoles.Text
         Dim genero As Integer
         Dim correoElectronico As String = txtCorreoElectronico.Text
-        'Dim contraseña As String = txtContraseña.Text
-        'Dim confirmacion As String = txtConfirmacionContraseña.Text
+      
 
         If (rbtMasculino.Checked = True) Then
             genero = 1
@@ -113,14 +112,13 @@ Public Class UctrlModificarUsuario
             confirmacionPopUp = New uCtrlConfirmacion()
             confirmacionPopUp.txtConfirmacion.Text = "Datos modificados con éxito"
             Me.Controls.Add(confirmacionPopUp)
-            confirmacionPopUp.Location = New Point(200, 200)
+            confirmacionPopUp.Location = New Point(130, 150)
             confirmacionPopUp.BringToFront()
             confirmacionPopUp.Show()
-
-
         Catch ex As Exception
             alerta = New UctrlAlerta()
             alerta.txtAlerta.Text = ex.Message
+            alerta.Location = New Point(400, 250)
             FrmIniciarSesion.principal.Controls.Add(alerta)
             alerta.BringToFront()
             alerta.Show()

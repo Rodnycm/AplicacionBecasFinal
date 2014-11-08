@@ -35,6 +35,7 @@ Partial Class uCntrlConsultarRol
         '
         Me.CLBPermisos.BackColor = System.Drawing.Color.White
         Me.CLBPermisos.Enabled = False
+        Me.CLBPermisos.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CLBPermisos.FormattingEnabled = True
         Me.CLBPermisos.Location = New System.Drawing.Point(292, 66)
         Me.CLBPermisos.Name = "CLBPermisos"
@@ -80,6 +81,7 @@ Partial Class uCntrlConsultarRol
         Me.btnCerrar.BackgroundImage = CType(resources.GetObject("btnCerrar.BackgroundImage"), System.Drawing.Image)
         Me.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCerrar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(248, Byte), Integer))
         Me.btnCerrar.Location = New System.Drawing.Point(611, 3)
         Me.btnCerrar.Name = "btnCerrar"
         Me.btnCerrar.Size = New System.Drawing.Size(21, 20)
@@ -102,7 +104,7 @@ Partial Class uCntrlConsultarRol
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.UI.My.Resources.Resources.tablaFinalGrandeAzul
+        Me.BackgroundImage = Global.UI.My.Resources.Resources.tablaFinalMedianaAzul4
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnCerrar)

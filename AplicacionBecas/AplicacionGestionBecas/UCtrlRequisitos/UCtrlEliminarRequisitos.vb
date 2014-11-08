@@ -19,7 +19,6 @@ Public Class UCtrlEliminarRequisitos
 
     Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
         ValidarELiminarRequisito()
-
         listarRequisitos.dgvRequisitos.Rows.Clear()
         listarRequisitos.listarRequisitos()
         Me.Dispose()
@@ -38,19 +37,12 @@ Public Class UCtrlEliminarRequisitos
         If objGestorRequisito.consultarBecasPorRequisitos(idRequisito) Is Nothing Then
             objGestorRequisito.eliminarRequisito(nombre, descripcion, idRequisito)
             objGestorRequisito.guardarCambios()
-            Dim Uctrl As uCtrlConfirmacion = New uCtrlConfirmacion
-            FrmIniciarSesion.principal.Controls.Add(Uctrl)
-            Uctrl.txtConfirmacion.Text = "El requisito se eliminó correctamente"
-            Uctrl.Location = New Point(300, 100)
-            Uctrl.BringToFront()
-            Uctrl.Show()
-
+           
         Else
             Dim UCtrl As UctrlAlerta = New UctrlAlerta()
-
             FrmIniciarSesion.principal.Controls.Add(UCtrl)
-            UCtrl.txtAlerta.Text = "Este requisito no se puede eliminar"
-            UCtrl.Location = New Point(300, 100)
+            UCtrl.txtAlerta.Text = "No se puede eliminar el requisito"
+            UCtrl.Location = New Point(400, 250)
             UCtrl.BringToFront()
             UCtrl.Show()
         End If

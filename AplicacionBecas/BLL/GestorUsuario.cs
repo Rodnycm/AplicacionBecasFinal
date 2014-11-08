@@ -48,10 +48,11 @@ namespace BLL
                 String contraseña = Generate(8, 10);
                 String contraseñaEncriptada = encriptar(contraseña);
                 Usuario objetoUsuario = ContenedorMantenimiento.Instance.crearUsuario(ppNombre, psNombre, ppApellido, psApellido, pidentificacion, ptelefono, fecha, objRol, pgenero, pcorreoElectronico, contraseñaEncriptada);
-                notificarUsuario(pcorreoElectronico, contraseña);
+               
                 if (objetoUsuario.IsValid)
                 {
                     UsuarioRepository.Instance.Insert(objetoUsuario);
+                    notificarUsuario(pcorreoElectronico, contraseña);
                 }
                 else
                 {

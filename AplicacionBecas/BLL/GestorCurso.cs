@@ -59,7 +59,6 @@ namespace BLL{
             }catch (Exception ex){
                 throw ex;
             }
-            
         }
 
         //<summary> Método que se encarga de modificar un Curso</summary>

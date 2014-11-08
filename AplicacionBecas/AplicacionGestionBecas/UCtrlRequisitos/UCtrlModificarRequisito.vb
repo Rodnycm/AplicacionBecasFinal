@@ -44,7 +44,7 @@ Public Class UCtrlModificarRequisito
             alerta.txtAlerta.Text = ex.Message
             FrmIniciarSesion.principal.Controls.Add(alerta)
             alerta.BringToFront()
-            alerta.Location = New Point(290, 48)
+            alerta.Location = New Point(375, 100)
             alerta.Show()
         End Try
     End Sub

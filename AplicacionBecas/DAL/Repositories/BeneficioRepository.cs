@@ -204,6 +204,29 @@ namespace DAL
             }
         }
 
+        public Beneficio GetById(int id)
+        {
+            Beneficio objBeneficio = null;
+            //SqlCommand cmd = new SqlCommand();
+            //cmd.Parameters.AddWithValue("@id", id);
+
+            //var ds = DBAccess.ExecuteQuery(cmd);
+
+            //if (ds.Tables[0].Rows.Count > 0)
+            //{
+            //    var dr = ds.Tables[0].Rows[0];
+
+            //    objBeneficio = new Beneficio
+            //    {
+            //        Nombre = dr["Nombre"].ToString(),
+            //        Porcentaje = Convert.ToDouble(dr["Porcentaje"]),
+            //        Aplicacion = dr["Aplicabilidad"].ToString()
+            //    };
+            //}
+
+            return objBeneficio;
+        }
+
         /// <summary>
         /// Trae un DataSet de la base de datos.
         /// Instancia un beneficio, con la información que recibe de la base de datos.
@@ -212,29 +235,6 @@ namespace DAL
         /// <author>Mathias Muller</author>
         /// <param name="pnombre">Es el nombre del beneficio por el cual e va a busca1r en la base de datos</param>
         /// <returns>Un objeto beneficio</returns>
-
-        public Beneficio GetById(int id)
-        {
-            Beneficio objBeneficio = null;
-            SqlCommand cmd = new SqlCommand();
-            cmd.Parameters.AddWithValue("@idProducto", id);
-
-            var ds = DBAccess.ExecuteQuery(cmd);
-
-            if (ds.Tables[0].Rows.Count > 0)
-            {
-                var dr = ds.Tables[0].Rows[0];
-
-                objBeneficio = new Beneficio
-                {
-                    Nombre = dr["Nombre"].ToString(),
-                    Porcentaje = Convert.ToDouble(dr["Porcentaje"]),
-                    Aplicacion = dr["Aplicabilidad"].ToString()
-                };
-            }
-
-            return objBeneficio;
-        }
 
         public Beneficio GetByNombre(String pnombre)
         {

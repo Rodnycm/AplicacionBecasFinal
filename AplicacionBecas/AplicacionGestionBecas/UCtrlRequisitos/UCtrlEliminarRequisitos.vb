@@ -25,7 +25,19 @@ Public Class UCtrlEliminarRequisitos
         Me.Dispose()
     End Sub
 
+<<<<<<< HEAD
     Public Sub recieveData(ByVal pnombre As String, ByVal pdescripcion As String, ByVal pid As Integer)
+=======
+            FrmIniciarSesion.principal.Controls.Add(UCtrl)
+            UCtrl.txtAlerta.Text = ex.Message
+            UCtrl.Location = New Point(375, 100)
+            UCtrl.BringToFront()
+            UCtrl.Show()
+        End Try
+
+    End Sub
+    Public Sub recieveData(ByVal pid As Integer, ByVal pnombre As String, ByVal pdescripcion As String)
+>>>>>>> origin/MMullerFinal2.0
         idRequisito = pid
         nombre = pnombre
         descripcion = pdescripcion

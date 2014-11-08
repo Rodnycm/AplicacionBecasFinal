@@ -5,7 +5,7 @@ Imports BLL
 
 Public Class uCtrlBuscarCursos
 
-    Dim ucCrearCurso As CrearCursos
+    Dim ucCrearCurso As UCtrlCrearCursos
     Dim ucModificarCurso As uCtrlModificarCurso
     Dim ucEliminarCurso As uCtrlEliminarCurso
     Dim idCurso As Integer
@@ -146,8 +146,7 @@ Public Class uCtrlBuscarCursos
 
     End Sub
     Private Sub btnCrearCurso_Click_1(sender As Object, e As EventArgs) Handles btnCrearCurso.Click
-
-        ucCrearCurso = New CrearCursos()
+        ucCrearCurso = New UCtrlCrearCursos()
         FrmIniciarSesion.principal.Controls.Add(ucCrearCurso)
         ucCrearCurso.Visible = True
         ucCrearCurso.BringToFront()

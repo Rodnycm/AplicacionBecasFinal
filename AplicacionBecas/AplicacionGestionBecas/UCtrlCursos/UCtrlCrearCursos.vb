@@ -1,6 +1,6 @@
 ﻿Imports BLL
 Imports EntitiesLayer
-Public Class CrearCursos
+Public Class UCtrlCrearCursos
 
     Dim alerta As uCtrlAlerta
     Dim ucBuscarCursos As New uCtrlBuscarCursos

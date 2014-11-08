@@ -183,7 +183,23 @@ namespace BLL
         }
         public IEnumerable<Beneficio> mostrarBeneficioTB(TipoBeca ptipoBeca)
         {
-            return BeneficioRepository.Instance.GetLista(ptipoBeca);
+            try
+            {
+
+                if (BeneficioRepository.Instance.GetLista(ptipoBeca) == null)
+                {
+
+                    throw new ApplicationException("El tipo de beca seleccionado no tiene beneficios asignados");
+                }
+                else
+                {
+                    return BeneficioRepository.Instance.GetLista(ptipoBeca);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         /// <summary>

@@ -92,24 +92,39 @@ namespace DAL.Repositories
         /// <returns>Retorna una lista de tipo de beca</returns>
         public IEnumerable<TipoBeca> GetAll()
         {
-            List<TipoBeca> ptipoBeca = null;
-            SqlCommand cmd = new SqlCommand();
-            DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_consultaTipoBeca");
-            if (ds.Tables[0].Rows.Count > 0)
-            {
-                ptipoBeca = new List<TipoBeca>();
-                foreach (DataRow dr in ds.Tables[0].Rows)
-                {
-                    ptipoBeca.Add(new TipoBeca(
-                      Convert.ToInt32(dr["idTipoDeBeca"]),
-                      dr["Nombre"].ToString(),
-                      Convert.ToDateTime(dr["FechaCreacion"]),
-                      dr["Estado"].ToString(),
-                      dr["Descripcion"].ToString()));
-                }
-            }
 
-            return ptipoBeca;
+            try {
+                List<TipoBeca> ptipoBeca = null;
+                SqlCommand cmd = new SqlCommand();
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_consultaTipoBeca");
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    ptipoBeca = new List<TipoBeca>();
+                    foreach (DataRow dr in ds.Tables[0].Rows)
+                    {
+                        ptipoBeca.Add(new TipoBeca(
+                          Convert.ToInt32(dr["idTipoDeBeca"]),
+                          dr["Nombre"].ToString(),
+                          Convert.ToDateTime(dr["FechaCreacion"]),
+                          dr["Estado"].ToString(),
+                          dr["Descripcion"].ToString()));
+                    }
+                }
+
+                return ptipoBeca;
+            }
+            catch (SqlException ex)
+            {
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            
+          
         }
 
         /// <summary>
@@ -151,13 +166,16 @@ namespace DAL.Repositories
             }
                 return objTipoBeca;
             }
-            catch (SqlException e)
-            {
-                MessageBox.Show(e.Message);
-                throw e;
-            }
-
-
+          catch (SqlException ex)
+          {
+              numero = ex.Number;
+              mensaje = exceptions.validarExcepcion(numero);
+              throw new CustomExceptions.DataAccessException(mensaje, ex);
+          }
+          catch (Exception ex)
+          {
+              throw ex;
+          }
         }
 
         /// <summary>
@@ -170,29 +188,39 @@ namespace DAL.Repositories
         /// <returns>Retorna un objeto de tipo beca</returns>
         public TipoBeca GetById(int id)
         {
-            TipoBeca objTipoBeca = null;
-            SqlCommand cmd = new SqlCommand();
-            cmd.Parameters.AddWithValue("@idTipoDeBeca", id);
+            try {
+                TipoBeca objTipoBeca = null;
+                SqlCommand cmd = new SqlCommand();
+                cmd.Parameters.AddWithValue("@idTipoDeBeca", id);
 
-            var ds = DBAccess.ExecuteQuery(cmd);
+                var ds = DBAccess.ExecuteQuery(cmd);
 
-            if (ds.Tables[0].Rows.Count > 0)
-            {
-                var dr = ds.Tables[0].Rows[0];
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    var dr = ds.Tables[0].Rows[0];
 
-                objTipoBeca = new TipoBeca
-                (
-                    Convert.ToInt32(dr["idTipoDeBeca"]),
-                    dr["Nombre"].ToString(),
-                    Convert.ToDateTime(dr["FechaCreacion"]),
-                    dr["Estado"].ToString(),
-                    dr["Descripcion"].ToString()
-              );
+                    objTipoBeca = new TipoBeca
+                    (
+                        Convert.ToInt32(dr["idTipoDeBeca"]),
+                        dr["Nombre"].ToString(),
+                        Convert.ToDateTime(dr["FechaCreacion"]),
+                        dr["Estado"].ToString(),
+                        dr["Descripcion"].ToString()
+                  );
+                }
+                return objTipoBeca;
             }
-
-
-
-            return objTipoBeca;
+            catch (SqlException ex)
+            {
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+           
         }
         /// <summary>
         /// Método encargado de validar cada una de las listas de insertar, modificar y eliminar.
@@ -234,11 +262,11 @@ namespace DAL.Repositories
                 }
                 catch (TransactionAbortedException ex)
                 {
-                    throw new Exception("Changed UpdateTipoBeca to commented code");
+                    throw ex;
                 }
                 catch (ApplicationException ex)
                 {
-                    throw new Exception("Changed DeleteTipoBecas to commented code");
+                    throw ex;
                 }
                 finally
                 {
@@ -285,10 +313,14 @@ namespace DAL.Repositories
             }
             catch (SqlException ex)
             {
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
+            }
+            catch (Exception ex)
+            {
                 throw ex;
             }
-
-
         }
 
         /// <summary>
@@ -316,9 +348,14 @@ namespace DAL.Repositories
             }
             catch (SqlException ex)
             {
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
+            }
+            catch (Exception ex)
+            {
                 throw ex;
             }
-
         }
 
         /// <summary>
@@ -339,24 +376,23 @@ namespace DAL.Repositories
             }
             catch (SqlException ex)
             {
-
-                //throw new DataAccessException("Ha ocurrido un error al eliminar el tipo de beca", ex);
-
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
         }
-        public void asignarBeneficiosTipoBeca(TipoBeca objTipoBeca, Beneficio objBeneficio)
-        {
+        //public void asignarBeneficiosTipoBeca(TipoBeca objTipoBeca, Beneficio objBeneficio)
+        //{
 
-        }
-        public void asignarRequisitosTipoBeca(TipoBeca objTipoBeca, Requisito objRequisito)
-        {
+        //}
+        //public void asignarRequisitosTipoBeca(TipoBeca objTipoBeca, Requisito objRequisito)
+        //{
 
-        }
+        //}
         private List<Requisito> asociarRequisitos(int pid)
         {
             try
@@ -384,17 +420,21 @@ namespace DAL.Repositories
 
                 return prequisito;
             }
-            catch (SqlException e)
+            catch (SqlException ex)
             {
-                throw e;
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
         }
         private List<Beneficio> asociarBeneficios(int pid)
         {
             try
             {
-
-
                 List<Beneficio> pbeneficio = new List<Beneficio>();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Parameters.Add(new SqlParameter("@id", pid));
@@ -458,8 +498,6 @@ namespace DAL.Repositories
         {
             try
             {
-
-
                 List<Beneficio> pbeneficio = new List<Beneficio>();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Parameters.Add(new SqlParameter("@id", pid));
@@ -524,13 +562,12 @@ namespace DAL.Repositories
             }
             catch (SqlException ex)
             {
-
-                //throw new DataAccessException("Ha ocurrido un error al eliminar el tipo de beca", ex);
-
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
         }
@@ -544,13 +581,12 @@ namespace DAL.Repositories
             }
             catch (SqlException ex)
             {
-
-                //throw new DataAccessException("Ha ocurrido un error al eliminar el tipo de beca", ex);
-
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
         }

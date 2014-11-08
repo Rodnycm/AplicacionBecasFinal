@@ -1071,7 +1071,7 @@ TableAdapterManager is used to coordinate TableAdapters in the dataset to enable
 	<author>Mathias Muller</author>
 	<param name="sender"></param>
 	<param name="e"></param>
-</member><member name="M:UI.CrearCursos.refrecarLista(UI.uCtrlBuscarCursos)">
+</member><member name="M:UI.UCtrlCrearCursos.refrecarLista(UI.uCtrlBuscarCursos)">
 	<summary>Método que se encarga de limpiar y cargar la lista de cursos una vez creado el curso</summary>
 	<param name="puctrl">control de usuario de buscar cursos</param>
 	<autor>Valeria Ramírez</autor>

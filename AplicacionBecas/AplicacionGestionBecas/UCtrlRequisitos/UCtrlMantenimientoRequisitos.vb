@@ -50,8 +50,13 @@ Public Class uCtrlMantenimientoRequisitos
 
             Dim r As Requisito = objGestorRequisito.buscarRequisito(param)
 
-            dgvRequisitos.Rows.Clear()
-            dgvRequisitos.Rows.Add(r.nombre, r.descripcion, "", r.Id)
+            If r Is Nothing Then
+                dgvRequisitos.Rows.Clear()
+                listarRequisitos()
+            Else
+                dgvRequisitos.Rows.Clear()
+                dgvRequisitos.Rows.Add(r.nombre, r.descripcion, "", r.Id)
+            End If
 
         Catch ex As Exception
 
@@ -158,4 +163,11 @@ Public Class uCtrlMantenimientoRequisitos
 
     End Sub
  
+    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
+        If txtBuscar.Text = "" Then
+            dgvRequisitos.Rows.Clear()
+            listarRequisitos()
+
+        End If
+    End Sub
 End Class

@@ -3,7 +3,7 @@ Imports EntitiesLayer
 Public Class UCtrlIniciar
 
     Dim alerta As UctrlAlerta
-    Dim uctrlMenuMant As uCtrlMenuMantenimiento
+    Dim uctrlMenuMant As New uCtrlMenuMantenimiento
 
     Private Sub btnIniciarSesion_Click(sender As Object, e As EventArgs) Handles btnIniciarSesion.Click
 

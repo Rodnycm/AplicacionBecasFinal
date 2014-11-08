@@ -146,10 +146,7 @@ Public Class UCtrlBuscarCursos
 
     End Sub
     Private Sub btnCrearCurso_Click_1(sender As Object, e As EventArgs) Handles btnCrearCurso.Click
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/master
         ucCrearCurso = New UCtrlCrearCursos()
         FrmIniciarSesion.principal.Controls.Add(ucCrearCurso)
         ucCrearCurso.Visible = True

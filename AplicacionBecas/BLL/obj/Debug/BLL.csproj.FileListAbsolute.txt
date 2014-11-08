@@ -12,20 +12,6 @@ C:\Users\Mathias\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\BLL\obj\D
 C:\Users\Mathias\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\BLL\obj\Debug\BLL.csproj.GenerateResource.Cache
 C:\Users\Mathias\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\BLL\obj\Debug\BLL.dll
 C:\Users\Mathias\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\BLL\obj\Debug\BLL.pdb
-C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\BLL\bin\Debug\BLL.dll
-C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\BLL\bin\Debug\BLL.pdb
-C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\BLL\bin\Debug\DAL.dll
-C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\BLL\bin\Debug\EntitiesLayer.dll
-C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\BLL\bin\Debug\TIL.dll
-C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\BLL\bin\Debug\EASendMail45.dll
-C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\BLL\bin\Debug\DAL.pdb
-C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\BLL\bin\Debug\EntitiesLayer.pdb
-C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\BLL\bin\Debug\TIL.pdb
-C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
-C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\BLL\obj\Debug\BLL.Properties.Resources.resources
-C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\BLL\obj\Debug\BLL.csproj.GenerateResource.Cache
-C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\BLL\obj\Debug\BLL.dll
-C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\BLL\obj\Debug\BLL.pdb
 C:\Users\Valeria\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\BLL\bin\Debug\BLL.dll
 C:\Users\Valeria\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\BLL\bin\Debug\BLL.pdb
 C:\Users\Valeria\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\BLL\bin\Debug\DAL.dll
@@ -40,3 +26,17 @@ C:\Users\Valeria\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\BLL\obj\D
 C:\Users\Valeria\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\BLL\obj\Debug\BLL.csproj.GenerateResource.Cache
 C:\Users\Valeria\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\BLL\obj\Debug\BLL.dll
 C:\Users\Valeria\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\BLL\obj\Debug\BLL.pdb
+C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\BLL\bin\Debug\BLL.dll
+C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\BLL\bin\Debug\BLL.pdb
+C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\BLL\bin\Debug\DAL.dll
+C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\BLL\bin\Debug\EntitiesLayer.dll
+C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\BLL\bin\Debug\TIL.dll
+C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\BLL\bin\Debug\EASendMail45.dll
+C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\BLL\bin\Debug\DAL.pdb
+C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\BLL\bin\Debug\EntitiesLayer.pdb
+C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\BLL\bin\Debug\TIL.pdb
+C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\BLL\obj\Debug\BLL.Properties.Resources.resources
+C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\BLL\obj\Debug\BLL.csproj.GenerateResource.Cache
+C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\BLL\obj\Debug\BLL.dll
+C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\BLL\obj\Debug\BLL.pdb

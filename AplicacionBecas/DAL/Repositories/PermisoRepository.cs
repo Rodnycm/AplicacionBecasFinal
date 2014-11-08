@@ -2,19 +2,24 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using EntitiesLayer;
-using System.Collections;
+using System.Configuration;
 using System.Transactions;
 using System.Data.SqlClient;
 using System.Data;
-//using TIL.CustomExceptions;
+using System.Windows.Forms;
+using TIL;
+
 
 
 namespace DAL
 {
     public class PermisoRepository : IRepository<Permiso>
     {
-
+        private static int numero;
+        private static string mensaje;
+        private static Excepciones exceptions = new Excepciones();
         private List<IEntity> _insertItems;
         private List<IEntity> _deleteItems;
         private List<IEntity> _updateItems;
@@ -126,23 +131,31 @@ namespace DAL
                         });
                     }
                 }
+
+                return pPermiso;
             }
 
-            catch (Exception ex)
+           catch (SqlException ex)
+           {
+               numero = ex.Number;
+               mensaje = exceptions.validarExcepcion(numero);
+               throw new CustomExceptions.DataAccessException(mensaje, ex);
+           }
+           catch (Exception ex)
            {
                throw ex;
-            }
+           }
 
 
-            return pPermiso;
+            
         }
 
         public IEnumerable<Int32> GetIdRolesPermisos(int idPermiso,int idRol)
         {
             List<Int32> plistaIdRolesPermisos = null;
 
-            //  try
-            //  {
+              try
+              {
             SqlCommand cmd = new SqlCommand();
             cmd.Parameters.Add(new SqlParameter("@IdPermiso", idPermiso));
             cmd.Parameters.Add(new SqlParameter("@IdRol", idRol));
@@ -157,12 +170,19 @@ namespace DAL
                     plistaIdRolesPermisos.Add(Convert.ToInt32(dr["IdRolesPermisos"]));    
                 }
             }
-            //}
+            }
 
-            //  catch (Exception ex)
-            // {
-            //      Console.Write(ex);
-            //  }
+
+              catch (SqlException ex)
+              {
+                  numero = ex.Number;
+                  mensaje = exceptions.validarExcepcion(numero);
+                  throw new CustomExceptions.DataAccessException(mensaje, ex);
+              }
+              catch (Exception ex)
+              {
+                  throw ex;
+              }
 
 
             return plistaIdRolesPermisos;
@@ -295,7 +315,12 @@ namespace DAL
                 cmd.Parameters.Add(new SqlParameter("@nomb", objPermiso.Nombre));
 
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_agregarPermiso");
-
+            }
+            catch (SqlException ex)
+            {
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
             }
             catch (Exception ex)
             {
@@ -303,8 +328,7 @@ namespace DAL
             }
 
         }
-
-
+            
         public void InsertPermisoAUnRol(int IdPermiso, int pIdRol)
         {
 
@@ -317,8 +341,14 @@ namespace DAL
                 cmd.Parameters.Add(new SqlParameter("@IdPermiso", IdPermiso));
 
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_AsignarPermisosAUnRol");
-                
 
+            }
+
+            catch (SqlException ex)
+            {
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
             }
             catch (Exception ex)
             {
@@ -339,16 +369,13 @@ namespace DAL
             }
             catch (SqlException ex)
             {
-                throw ex;
-                //logear la excepcion a la bd con un Exception
-                // throw new DataAccessException("Ha ocurrido un error al eliminar un usuario", ex);
-
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
             }
             catch (Exception ex)
             {
                 throw ex;
-                //logear la excepcion a la bd con un Exception
-                // throw new DataAccessException("Ha ocurrido un error al eliminar un usuario", ex);
             }
         }
         /// <summary>
@@ -367,10 +394,15 @@ namespace DAL
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_modificarPermiso");
 
             }
+            catch (SqlException ex)
+            {
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
+            }
             catch (Exception ex)
             {
                 throw ex;
-               // throw new DataAccessException("No se pudó modificar el Permiso", ex);
             }
         }
 
@@ -389,18 +421,14 @@ namespace DAL
 
             }
             catch (SqlException ex)
-
             {
-                throw ex;
-                //logear la excepcion a la bd con un Exception
-               // throw new DataAccessException("Ha ocurrido un error al eliminar un usuario", ex);
-
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
             }
             catch (Exception ex)
             {
                 throw ex;
-                //logear la excepcion a la bd con un Exception
-               // throw new DataAccessException("Ha ocurrido un error al eliminar un usuario", ex);
             }
         }
 

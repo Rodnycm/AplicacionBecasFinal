@@ -156,13 +156,19 @@ Partial Class UCtrlCrearCursos
         '
         'imgCrearCurso
         '
+<<<<<<< HEAD
+=======
+
+        Me.imgCrearCurso.BackgroundImage = Global.UI.My.Resources.Resources.tablaFinalMedianaAzul4
+
+>>>>>>> origin/master
         Me.imgCrearCurso.Location = New System.Drawing.Point(0, 0)
         Me.imgCrearCurso.Name = "imgCrearCurso"
         Me.imgCrearCurso.Size = New System.Drawing.Size(458, 252)
         Me.imgCrearCurso.TabIndex = 14
         Me.imgCrearCurso.TabStop = False
         '
-        'CrearCursos
+        'UCtrlCrearCursos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -180,7 +186,7 @@ Partial Class UCtrlCrearCursos
         Me.Controls.Add(Me.txtNombreCurso)
         Me.Controls.Add(Me.lblNombreCurso)
         Me.Controls.Add(Me.imgCrearCurso)
-        Me.Name = "CrearCursos"
+        Me.Name = "UCtrlCrearCursos"
         Me.Size = New System.Drawing.Size(458, 252)
         CType(Me.imgCrearCurso, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

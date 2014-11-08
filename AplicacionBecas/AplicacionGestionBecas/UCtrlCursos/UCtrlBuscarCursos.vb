@@ -98,11 +98,11 @@ Public Class UCtrlBuscarCursos
         Catch ex As Exception
 
             Dim uctrlAlerta As UctrlAlerta = New UctrlAlerta()
+
+            uctrlAlerta.txtAlerta.Text = ex.Message
             Me.Controls.Add(uctrlAlerta)
-            uctrlAlerta.Location = New Point(300, 100)
+            uctrlAlerta.Location = New Point(360, 220)
             uctrlAlerta.BringToFront()
-            Me.SendToBack()
-            uctrlAlerta.txtAlerta.Text = "No hay usuarios registrados"
             uctrlAlerta.Show()
 
         End Try
@@ -146,7 +146,10 @@ Public Class UCtrlBuscarCursos
 
     End Sub
     Private Sub btnCrearCurso_Click_1(sender As Object, e As EventArgs) Handles btnCrearCurso.Click
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
         ucCrearCurso = New UCtrlCrearCursos()
         FrmIniciarSesion.principal.Controls.Add(ucCrearCurso)
         ucCrearCurso.Visible = True

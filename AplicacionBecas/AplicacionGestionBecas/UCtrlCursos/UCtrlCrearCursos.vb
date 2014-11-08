@@ -2,7 +2,7 @@
 Imports EntitiesLayer
 Public Class UCtrlCrearCursos
 
-    Dim alerta As uCtrlAlerta
+    Dim alerta As New UctrlAlerta
     Dim ucBuscarCursos As New uCtrlBuscarCursos
 
     Private Sub btnAgregarCurso_Click(sender As Object, e As EventArgs) Handles btnAgregarCurso.Click
@@ -18,17 +18,16 @@ Public Class UCtrlCrearCursos
             objGestorCurso.guardarCambios()
             ucBuscarCursos.dtaListarCursos.Rows.Clear()
             ucBuscarCursos.listarCursos()
-            Me.Dispose()
+
         Catch ex As Exception
-            alerta = New uCtrlAlerta()
+           
             alerta.txtAlerta.Text = ex.Message
             FrmIniciarSesion.principal.Controls.Add(alerta)
+            alerta.Location = New Point(375, 100)
             alerta.BringToFront()
-            alerta.Location = New Point(290, 48)
             alerta.Show()
-
         End Try
-
+        Me.Dispose()
 
     End Sub
     ''' <summary>Método que se encarga de limpiar y cargar la lista de cursos una vez creado el curso</summary>

@@ -185,7 +185,15 @@ namespace BLL
         {
             try
             {
-                return RolRepository.Instance.GetByNombre(pnombre);
+               
+                if (RolRepository.Instance.GetByNombre(pnombre) == null)
+                {
+                    throw new ApplicationException("Debe ingresar el nombre del rol");
+                }
+                else {
+                    return RolRepository.Instance.GetByNombre(pnombre);
+                
+                }
             }
             catch (Exception ex) {
 

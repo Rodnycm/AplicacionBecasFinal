@@ -99,7 +99,7 @@ Public Class UctrlListarYBuscarUsuario
         Me.dgUsuarios.SendToBack()
         Me.PbUsuarios.SendToBack()
         ucntrl.BringToFront()
-        ucntrl.Location = New Point(280, 250)
+        ucntrl.Location = New Point(280, 200)
         ucntrl.Show()
     End Sub
 
@@ -117,8 +117,9 @@ Public Class UctrlListarYBuscarUsuario
         Me.PbUsuarios.SendToBack()
         Me.btnCrearUsuario.SendToBack()
         Me.txtBuscar.SendToBack()
-        ucntrl.Location = New Point(120, 50)
+        ucntrl.Location = New Point(155, 50)
         ucntrl.Show()
+
     End Sub
 
 

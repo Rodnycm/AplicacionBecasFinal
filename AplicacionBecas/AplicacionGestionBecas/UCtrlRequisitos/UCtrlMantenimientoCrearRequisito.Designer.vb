@@ -137,7 +137,7 @@ Partial Class uCtrlMantenimientoCrearRequisito
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.lblNombre)
         Me.Controls.Add(Me.Label3)
-        Me.Location = New System.Drawing.Point(300, 100)
+        Me.Location = New System.Drawing.Point(400, 150)
         Me.Name = "uCtrlMantenimientoCrearRequisito"
         Me.Size = New System.Drawing.Size(490, 348)
         Me.ResumeLayout(False)

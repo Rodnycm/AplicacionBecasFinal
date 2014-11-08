@@ -42,23 +42,24 @@ Public Class UctrlCrearUsuario
             Dim Uctrl As uCtrlConfirmacion = New uCtrlConfirmacion
             FrmIniciarSesion.principal.Controls.Add(Uctrl)
             Uctrl.txtConfirmacion.Text = "El usuario se registró correctamente"
-            Uctrl.Location = New Point(375, 100)
+            Uctrl.Location = New Point(430, 250)
             Uctrl.BringToFront()
             Uctrl.Show()
             lista.dgUsuarios.Rows.Clear()
             lista.listarUsuarios()
-            
+            Me.Dispose()
 
         Catch ex As Exception
             alerta = New UctrlAlerta()
             alerta.txtAlerta.Text = ex.Message
             FrmIniciarSesion.principal.Controls.Add(alerta)
-            alerta.Location = New Point(500, 250)
+            alerta.Location = New Point(400, 250)
             alerta.BringToFront()
             alerta.Show()
         End Try
         lista.dgUsuarios.Rows.Clear()
         lista.listarUsuarios()
+
 
     End Sub
 

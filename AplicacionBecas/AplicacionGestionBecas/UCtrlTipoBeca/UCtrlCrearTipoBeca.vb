@@ -29,7 +29,13 @@ Public Class uCtrlCrearTipoBeca
 
 
         Catch ex As Exception
-            MsgBox(ex.Message)
+            Dim UCtrl As UctrlAlerta = New UctrlAlerta()
+            FrmIniciarSesion.principal.Controls.Add(UCtrl)
+            UCtrl.txtAlerta.Text = ex.Message
+            UCtrl.Location = New Point(400, 250)
+            UCtrl.BringToFront()
+            UCtrl.Show()
+
         End Try
 
 
@@ -39,7 +45,7 @@ Public Class uCtrlCrearTipoBeca
         Dim beneficio As SeleccionarBeneficios = New SeleccionarBeneficios()
         FrmIniciarSesion.principal.Controls.Add(beneficio)
         beneficio.enviarbeneficios(Me)
-        beneficio.Location = New Point(150, 250)
+        beneficio.Location = New Point(470, 180)
         beneficio.BringToFront()
         beneficio.Show()
 
@@ -50,7 +56,7 @@ Public Class uCtrlCrearTipoBeca
         Dim requisito As uCtrlAsignarRequisitos = New uCtrlAsignarRequisitos()
         FrmIniciarSesion.principal.Controls.Add(requisito)
         requisito.enviarrequisitos(Me)
-        requisito.Location = New Point(150, 250)
+        requisito.Location = New Point(470, 180)
         requisito.BringToFront()
         requisito.Show()
     End Sub
@@ -58,14 +64,14 @@ Public Class uCtrlCrearTipoBeca
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
         Me.Hide()
-        uCtrlBuscarTB.dtaTipoBeca.Rows.Clear()
-        uCtrlBuscarTB.listarTiposBeca()
+        'uCtrlBuscarTB.dtaTipoBeca.Rows.Clear()
+        'uCtrlBuscarTB.listarTiposBeca()
     End Sub
 
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
         Me.Dispose()
         Me.Hide()
-        uCtrlBuscarTB.dtaTipoBeca.Rows.Clear()
-        uCtrlBuscarTB.listarTiposBeca()
+        'uCtrlBuscarTB.dtaTipoBeca.Rows.Clear()
+        'uCtrlBuscarTB.listarTiposBeca()
     End Sub
 End Class

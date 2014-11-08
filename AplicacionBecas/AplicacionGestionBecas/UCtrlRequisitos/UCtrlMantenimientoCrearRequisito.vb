@@ -42,13 +42,21 @@
     End Sub
 
     Private Sub btnAceptar_Click_1(sender As Object, e As EventArgs) Handles btnAceptar.Click
-
-        Dim nombre As String = txtNombre.Text
-        Dim descripcion As String = txtDescripcion.Text
-
-        objGestorRequisito.crearRequisito(nombre, descripcion)
-        objGestorRequisito.guardarCambios()
-        mantenimientoRequisito.listarRequisitos()
+        Try
+            Dim nombre As String = txtNombre.Text
+            Dim descripcion As String = txtDescripcion.Text
+            objGestorRequisito.crearRequisito(nombre, descripcion)
+            objGestorRequisito.guardarCambios()
+            mantenimientoRequisito.listarRequisitos()
+        Catch ex As Exception
+            Dim uctrlAlerta As UctrlAlerta = New UctrlAlerta()
+            uctrlAlerta.Location = New Point(400, 300)
+            FrmIniciarSesion.principal.Controls.Add(uctrlAlerta)
+            uctrlAlerta.BringToFront()
+            uctrlAlerta.txtAlerta.Text = ex.Message
+            uctrlAlerta.Show()
+        End Try
+           
 
     End Sub
 

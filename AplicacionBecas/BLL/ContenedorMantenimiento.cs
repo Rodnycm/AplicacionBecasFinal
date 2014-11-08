@@ -75,7 +75,7 @@ namespace BLL
         //<param name = "pcontraseña"> variable de tipo String que almacena la contraseña del usuario  </param>
         //<returns> Retorna un objeto de tipo Usuario</returns> 
 
-         public Usuario crearUsuario (string ppNombre,String psNombre,String ppApellido , String psApellido , String pidentificacion ,String ptelefono , DateTime pfechaNacimiento, Rol prol, int pgenero, String pcorreoElectronico, String pcontraseña){
+         public Usuario crearUsuario (string ppNombre,string psNombre,string ppApellido , string psApellido , string pidentificacion ,string ptelefono , DateTime pfechaNacimiento, Rol prol, int pgenero, string pcorreoElectronico, string pcontraseña){
             Usuario objUsuario = new Usuario( ppNombre, psNombre, ppApellido , psApellido ,  pidentificacion , ptelefono ,pfechaNacimiento, prol,  pgenero, pcorreoElectronico,  pcontraseña);
             return objUsuario;
 

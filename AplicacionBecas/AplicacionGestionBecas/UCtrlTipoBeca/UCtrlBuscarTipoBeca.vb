@@ -105,14 +105,14 @@ Public Class uCtrlBuscarTipoBeca
                 Dim requisitos As uCtrlConsultarRequisitos = New uCtrlConsultarRequisitos
                 requisitos.setListaRequisitos(requisitosLista)
                 FrmIniciarSesion.principal.Controls.Add(requisitos)
-                requisitos.Location = New Point(420, 100)
+                requisitos.Location = New Point(470, 180)
                 requisitos.BringToFront()
                 Me.SendToBack()
                 requisitos.Show()
             End If
         Catch ex As Exception
             Dim uctrlAlerta As UctrlAlerta = New UctrlAlerta()
-            uctrlAlerta.Location = New Point(300, 100)
+            uctrlAlerta.Location = New Point(400, 250)
             uctrlAlerta.txtAlerta.Text = "El tipo de beca seleccionado no tiene requisitos asignados"
             FrmIniciarSesion.principal.Controls.Add(uctrlAlerta)
             uctrlAlerta.BringToFront()
@@ -130,17 +130,17 @@ Public Class uCtrlBuscarTipoBeca
                 Dim beneficios As uCtrlConsultarBeneficios = New uCtrlConsultarBeneficios
                 Beneficios.setListaBeneficios(beneficiosLista)
                 FrmIniciarSesion.principal.Controls.Add(Beneficios)
-                Beneficios.Location = New Point(420, 100)
+                beneficios.Location = New Point(470, 200)
                 Beneficios.BringToFront()
                 Me.SendToBack()
                 Beneficios.Show()
             End If
         Catch ex As Exception
             Dim uctrlAlerta As UctrlAlerta = New UctrlAlerta()
-            uctrlAlerta.Location = New Point(300, 100)
+            uctrlAlerta.Location = New Point(400, 200)
             FrmIniciarSesion.principal.Controls.Add(uctrlAlerta)
             uctrlAlerta.BringToFront()
-            uctrlAlerta.txtAlerta.Text = "El tipo de beca seleccionado no tiene requisitos asignados"
+            uctrlAlerta.txtAlerta.Text = "El tipo de beca seleccionado no tiene beneficios asignados"
             uctrlAlerta.Show()
 
 
@@ -237,15 +237,15 @@ Public Class uCtrlBuscarTipoBeca
         listarTiposBeca()
     End Sub
 
-    Private Sub btnCrearTipoBeca_Click(sender As Object, e As EventArgs)
-        crearTipo = New uCtrlCrearTipoBeca()
-        FrmIniciarSesion.principal.Controls.Add(crearTipo)
-        crearTipo.Location = New Point(300, 100)
-        crearTipo.BringToFront()
-        crearTipo.Show()
+    'Private Sub btnCrearTipoBeca_Click(sender As Object, e As EventArgs)
+    '    crearTipo = New uCtrlCrearTipoBeca()
+    '    FrmIniciarSesion.principal.Controls.Add(crearTipo)
+    '    crearTipo.Location = New Point(300, 100)
+    '    crearTipo.BringToFront()
+    '    crearTipo.Show()
 
 
-    End Sub
+    'End Sub
     Private Sub txtBarraBusqueda_TextChanged_2(sender As Object, e As EventArgs) Handles txtBarraBusqueda.TextChanged
         If (txtBarraBusqueda.Text = "") Then
             listarTiposBeca()
@@ -262,5 +262,13 @@ Public Class uCtrlBuscarTipoBeca
         btnVolver.Visible = False
         dtaTipoBeca.Rows.Clear()
         listarTiposBeca()
+    End Sub
+
+    Private Sub btnCrearTipoBeca_Click_1(sender As Object, e As EventArgs) Handles btnCrearTipoBeca.Click
+        crearTipo = New uCtrlCrearTipoBeca()
+        FrmIniciarSesion.principal.Controls.Add(crearTipo)
+        crearTipo.Location = New Point(430, 180)
+        crearTipo.BringToFront()
+        crearTipo.Show()
     End Sub
 End Class

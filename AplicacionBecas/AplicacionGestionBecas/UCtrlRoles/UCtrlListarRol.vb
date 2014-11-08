@@ -56,12 +56,9 @@ Public Class uCtrlListarRol
             uCtrlModRol.recieveData(value1, idROl)
             uCtrlModRol.txtNombre.Text = CType(value1, String)
             uCtrlModRol.getFrmBuscar(Me)
-
-            'frmPrincipal.Controls.Add(uCtrlModRol)
             frmIniciarSesion.principal.Controls.Add(uCtrlModRol)
-
             uCtrlModRol.BringToFront()
-            uCtrlModRol.Location = New Point(250, 170)
+            uCtrlModRol.Location = New Point(350, 170)
             uCtrlModRol.Show()
 
         Catch ex As Exception
@@ -74,8 +71,6 @@ Public Class uCtrlListarRol
             uctrlAlerta.Show()
 
         End Try
-
-
     End Sub
 
     '''<summary>Este metodo elimina el rol seleccionado </summary>
@@ -93,7 +88,7 @@ Public Class uCtrlListarRol
             frmIniciarSesion.principal.Controls.Add(uCtrlEliRol)
 
             uCtrlEliRol.Show()
-            uCtrlEliRol.Location = New Point(256, 226)
+            uCtrlEliRol.Location = New Point(400, 250)
             uCtrlEliRol.BringToFront()
 
         Catch ex As Exception
@@ -126,7 +121,7 @@ Public Class uCtrlListarRol
 
             uCtrlConsulRol.Show()
             uCtrlConsulRol.BringToFront()
-            uCtrlConsulRol.Location = New Point(250, 170)
+            uCtrlConsulRol.Location = New Point(350, 170)
         Catch ex As Exception
 
             Dim uctrlAlerta As UctrlAlerta = New UctrlAlerta()
@@ -189,14 +184,13 @@ Public Class uCtrlListarRol
             FrmIniciarSesion.principal.Controls.Add(uCtrlRol)
 
             uCtrlRol.BringToFront()
-            uCtrlRol.Location = New Point(250, 170)
+            uCtrlRol.Location = New Point(300, 170)
             uCtrlRol.Show()
 
         Catch ex As Exception
-
             Dim uctrlAlerta As UctrlAlerta = New UctrlAlerta()
             Me.Controls.Add(uctrlAlerta)
-            uctrlAlerta.Location = New Point(375, 100)
+            uctrlAlerta.Location = New Point(300, 100)
             uctrlAlerta.BringToFront()
             uctrlAlerta.txtAlerta.Text = ex.Message
             uctrlAlerta.Show()
@@ -223,10 +217,16 @@ Public Class uCtrlListarRol
         Try
             Dim Rol As New Rol
             Rol = objGestorRol.consultarRolPorNombre(txtBuscarRol.Text)
-            DGVRol.Rows.Clear()
-            DGVRol.Rows.Add(1)
-            DGVRol.Rows(0).Cells(1).Value = Rol.Nombre()
 
+            If Rol Is Nothing Then
+                DGVRol.Rows.Clear()
+                ListarRoles()
+            Else
+                DGVRol.Rows.Clear()
+                DGVRol.Rows.Add(1)
+                DGVRol.Rows(0).Cells(1).Value = Rol.Nombre()
+            End If
+           
         Catch ex As Exception
             DGVRol.Rows.Clear()
             ListarRoles()

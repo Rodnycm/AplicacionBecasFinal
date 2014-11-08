@@ -29,11 +29,13 @@ Partial Class uCtrlModificarRol
         Me.btnAceptar = New System.Windows.Forms.Button()
         Me.lblNombre = New System.Windows.Forms.Label()
         Me.btnCerrar = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'CLBPermisos
         '
         Me.CLBPermisos.BackColor = System.Drawing.Color.White
+        Me.CLBPermisos.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CLBPermisos.FormattingEnabled = True
         Me.CLBPermisos.Location = New System.Drawing.Point(298, 45)
         Me.CLBPermisos.Name = "CLBPermisos"
@@ -99,12 +101,25 @@ Partial Class uCtrlModificarRol
         Me.btnCerrar.TabIndex = 20
         Me.btnCerrar.UseVisualStyleBackColor = True
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(3, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(61, 25)
+        Me.Label1.TabIndex = 64
+        Me.Label1.Text = "Editar"
+        '
         'uCtrlModificarRol
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.UI.My.Resources.Resources.tablaFinalGrandeAzul
+        Me.BackgroundImage = Global.UI.My.Resources.Resources.tablaFinalMedianaAzul4
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.CLBPermisos)
         Me.Controls.Add(Me.txtNombre)
@@ -123,5 +138,6 @@ Partial Class uCtrlModificarRol
     Friend WithEvents btnAceptar As System.Windows.Forms.Button
     Friend WithEvents lblNombre As System.Windows.Forms.Label
     Friend WithEvents btnCerrar As System.Windows.Forms.Button
+    Friend WithEvents Label1 As System.Windows.Forms.Label
 
 End Class

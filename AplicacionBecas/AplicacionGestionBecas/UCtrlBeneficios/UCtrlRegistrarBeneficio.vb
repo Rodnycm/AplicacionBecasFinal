@@ -49,8 +49,8 @@
 
                         Dim Uctrl As uCtrlConfirmacion = New uCtrlConfirmacion
                         FrmIniciarSesion.principal.Controls.Add(Uctrl)
-                        Uctrl.txtConfirmacion.Text = "El beneficio se registro correctamente"
-                        Uctrl.Location = New Point(300, 100)
+                        Uctrl.txtConfirmacion.Text = "El beneficio se registró correctamente"
+                        Uctrl.Location = New Point(400, 250)
                         Uctrl.BringToFront()
                         Uctrl.Show()
 
@@ -60,7 +60,7 @@
 
                         FrmIniciarSesion.principal.Controls.Add(UCtrl)
                         UCtrl.txtAlerta.Text = ex.Message
-                        UCtrl.Location = New Point(300, 100)
+                        UCtrl.Location = New Point(300, 250)
                         UCtrl.BringToFront()
                         UCtrl.Show()
 

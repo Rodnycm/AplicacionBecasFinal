@@ -62,7 +62,7 @@ Public Class uCtrlMantenimientoRequisitos
 
             Dim uctrlAlerta As UctrlAlerta = New UctrlAlerta()
             Me.Controls.Add(uctrlAlerta)
-            uctrlAlerta.Location = New Point(375, 100)
+            uctrlAlerta.Location = New Point(350, 250)
             uctrlAlerta.BringToFront()
             uctrlAlerta.txtAlerta.Text = ex.Message
             uctrlAlerta.Show()
@@ -114,7 +114,7 @@ Public Class uCtrlMantenimientoRequisitos
     Private Sub ComboBox_SelectionChangeCommitted(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
         Dim combo As ComboBox = CType(sender, ComboBox)
-        Dim fila As Integer = dgvRequisitos.CurrentCell.RowIndex
+        Dim fila As String = dgvRequisitos.CurrentRow.Cells(0).Value
 
         If combo.SelectedItem = "Editar" Then
 
@@ -145,24 +145,36 @@ Public Class uCtrlMantenimientoRequisitos
         ucntrl.BringToFront()
         ucntrl.Show()
         'ucntrl.setParametro(pparametro)
-        ucntrl.Location = New Point(290, 48)
+        'ucntrl.Location = New Point(290, 48)
         ucntrl.refrecarLista(Me)
 
     End Sub
 
     Private Sub eliminarRequisito(numfila As Integer)
-        Dim nombre As String = dgvRequisitos.Rows(numfila).Cells(1).Value
-        Dim descripcion As String = dgvRequisitos.Rows(numfila).Cells(0).Value
-        Dim idRequisito As Integer = dgvRequisitos.Rows(numfila).Cells(3).Value
-        Dim uCtrlElirequsito As New UCtrlEliminarRequisitos()
-        uCtrlElirequsito.recieveData(nombre, descripcion, idRequisito)
-        uCtrlElirequsito.getFrmBuscar(Me)
 
-        FrmIniciarSesion.principal.Controls.Add(uCtrlElirequsito)
+        Try
+            Dim nombre As String = dgvRequisitos.Rows(numfila).Cells(1).Value
+            Dim descripcion As String = dgvRequisitos.Rows(numfila).Cells(0).Value
+            Dim idRequisito As Integer = dgvRequisitos.Rows(numfila).Cells(3).Value
+            Dim uCtrlElirequsito As New UCtrlEliminarRequisitos()
+            uCtrlElirequsito.recieveData(nombre, descripcion, idRequisito)
+            uCtrlElirequsito.getFrmBuscar(Me)
 
-        uCtrlElirequsito.Show()
-        uCtrlElirequsito.Location = New Point(256, 226)
-        uCtrlElirequsito.BringToFront()
+            FrmIniciarSesion.principal.Controls.Add(uCtrlElirequsito)
+
+            uCtrlElirequsito.Show()
+            uCtrlElirequsito.Location = New Point(400, 250)
+            uCtrlElirequsito.BringToFront()
+        Catch ex As Exception
+            Dim uctrlAlerta As UctrlAlerta = New UctrlAlerta()
+            Me.Controls.Add(uctrlAlerta)
+            uctrlAlerta.Location = New Point(350, 250)
+            uctrlAlerta.BringToFront()
+            uctrlAlerta.txtAlerta.Text = ex.Message
+            uctrlAlerta.Show()
+
+        End Try
+       
 
     End Sub
 

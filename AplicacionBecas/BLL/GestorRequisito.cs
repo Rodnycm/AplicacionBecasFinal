@@ -31,7 +31,7 @@ namespace BLL
                     StringBuilder sb = new StringBuilder();
                     foreach (RuleViolation rv in objRequisito.GetRuleViolations())
                     {
-                        sb.Append(rv.ErrorMessage);
+                        sb.Append(rv.ErrorMessage );
                     }
                     throw new ApplicationException(sb.ToString());
                     

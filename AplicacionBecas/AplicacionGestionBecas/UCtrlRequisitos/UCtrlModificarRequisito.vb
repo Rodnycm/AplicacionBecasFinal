@@ -44,16 +44,17 @@ Public Class UCtrlModificarRequisito
             alerta.txtAlerta.Text = ex.Message
             FrmIniciarSesion.principal.Controls.Add(alerta)
             alerta.BringToFront()
-            alerta.Location = New Point(375, 100)
+            alerta.Location = New Point(375, 300)
             alerta.Show()
         End Try
     End Sub
 
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
-        ucMantRequisito = New uCtrlMantenimientoRequisitos()
-        Me.SendToBack()
-        Me.Controls.Add(ucMantRequisito)
-        ucMantRequisito.Show()
+        'ucMantRequisito = New uCtrlMantenimientoRequisitos()
+        'Me.SendToBack()
+        'Me.Controls.Add(ucMantRequisito)
+        'ucMantRequisito.Show()
+        Me.Dispose()
     End Sub
 
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click

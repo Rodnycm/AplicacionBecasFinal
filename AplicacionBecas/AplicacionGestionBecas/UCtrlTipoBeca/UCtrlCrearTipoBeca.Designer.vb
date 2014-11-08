@@ -34,7 +34,6 @@ Partial Class uCtrlCrearTipoBeca
         Me.btnAñadir = New System.Windows.Forms.Button()
         Me.btnCerrar = New System.Windows.Forms.Button()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.btnX = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
@@ -167,27 +166,13 @@ Partial Class uCtrlCrearTipoBeca
         Me.Label13.TabIndex = 37
         Me.Label13.Text = "Crear"
         '
-        'btnX
-        '
-        Me.btnX.BackColor = System.Drawing.Color.Transparent
-        'Me.btnX.BackgroundImage = CType(Resources.GetObject("btnX.BackgroundImage"), System.Drawing.Image)
-        Me.btnX.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnX.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnX.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(248, Byte), Integer))
-        Me.btnX.Location = New System.Drawing.Point(451, 4)
-        Me.btnX.Name = "btnX"
-        Me.btnX.Size = New System.Drawing.Size(20, 21)
-        Me.btnX.TabIndex = 62
-        Me.btnX.UseVisualStyleBackColor = False
-        '
         'uCtrlCrearTipoBeca
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Transparent
-        Me.BackgroundImage = Global.UI.My.Resources.Resources.tablaFinalGrandeAzul
+        Me.BackgroundImage = Global.UI.My.Resources.Resources.tablaFinalMedianaAzul4
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Controls.Add(Me.btnX)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.btnAñadir)
@@ -219,6 +204,5 @@ Partial Class uCtrlCrearTipoBeca
     Friend WithEvents btnAñadir As System.Windows.Forms.Button
     Friend WithEvents btnCerrar As System.Windows.Forms.Button
     Friend WithEvents Label13 As System.Windows.Forms.Label
-    Friend WithEvents btnX As System.Windows.Forms.Button
 
 End Class

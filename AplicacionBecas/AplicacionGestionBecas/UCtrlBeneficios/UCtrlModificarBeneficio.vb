@@ -64,8 +64,8 @@
 
                         Dim Uctrl As uCtrlConfirmacion = New uCtrlConfirmacion
                         FrmIniciarSesion.principal.Controls.Add(Uctrl)
-                        Uctrl.txtConfirmacion.Text = "El rol se modifico correctamente"
-                        Uctrl.Location = New Point(300, 100)
+                        Uctrl.txtConfirmacion.Text = "El beneficio se modificó correctamente"
+                        Uctrl.Location = New Point(430, 250)
                         Uctrl.BringToFront()
                         Uctrl.Show()
 
@@ -75,7 +75,7 @@
 
                         FrmIniciarSesion.principal.Controls.Add(UCtrl)
                         UCtrl.txtAlerta.Text = ex.Message
-                        UCtrl.Location = New Point(300, 100)
+                        UCtrl.Location = New Point(430, 250)
                         UCtrl.BringToFront()
                         UCtrl.Show()
 
@@ -84,7 +84,7 @@
 
                     Dim UCtrl As UctrlAlerta = New UctrlAlerta()
                     FrmIniciarSesion.principal.Controls.Add(UCtrl)
-                    UCtrl.txtAlerta.Text = "El porcentaje debe ser numerico (0.00)"
+                    UCtrl.txtAlerta.Text = "El porcentaje debe ser numérico (0.00)"
                     UCtrl.Location = New Point(300, 100)
                     UCtrl.BringToFront()
                     UCtrl.Show()

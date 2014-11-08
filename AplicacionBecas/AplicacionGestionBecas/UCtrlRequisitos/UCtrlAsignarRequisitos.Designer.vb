@@ -22,7 +22,6 @@ Partial Class uCtrlAsignarRequisitos
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(uCtrlAsignarRequisitos))
         Me.chkRequisitos = New System.Windows.Forms.CheckedListBox()
         Me.btnAsignar = New System.Windows.Forms.Button()
         Me.btnCancelar = New System.Windows.Forms.Button()
@@ -31,10 +30,12 @@ Partial Class uCtrlAsignarRequisitos
         '
         'chkRequisitos
         '
+        Me.chkRequisitos.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.chkRequisitos.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkRequisitos.FormattingEnabled = True
-        Me.chkRequisitos.Location = New System.Drawing.Point(13, 94)
+        Me.chkRequisitos.Location = New System.Drawing.Point(16, 62)
         Me.chkRequisitos.Name = "chkRequisitos"
-        Me.chkRequisitos.Size = New System.Drawing.Size(380, 214)
+        Me.chkRequisitos.Size = New System.Drawing.Size(380, 200)
         Me.chkRequisitos.TabIndex = 0
         '
         'btnAsignar
@@ -45,7 +46,7 @@ Partial Class uCtrlAsignarRequisitos
         Me.btnAsignar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(248, Byte), Integer))
         Me.btnAsignar.Location = New System.Drawing.Point(292, 314)
         Me.btnAsignar.Name = "btnAsignar"
-        Me.btnAsignar.Size = New System.Drawing.Size(82, 28)
+        Me.btnAsignar.Size = New System.Drawing.Size(86, 29)
         Me.btnAsignar.TabIndex = 1
         Me.btnAsignar.Text = "Asignar"
         Me.btnAsignar.UseVisualStyleBackColor = False
@@ -56,27 +57,30 @@ Partial Class uCtrlAsignarRequisitos
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCancelar.Font = New System.Drawing.Font("Segoe UI Light", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(248, Byte), Integer))
-        Me.btnCancelar.Location = New System.Drawing.Point(211, 314)
+        Me.btnCancelar.Location = New System.Drawing.Point(200, 314)
         Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(75, 28)
+        Me.btnCancelar.Size = New System.Drawing.Size(86, 29)
         Me.btnCancelar.TabIndex = 2
         Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = False
         '
         'btnCerrar
         '
+        Me.btnCerrar.BackgroundImage = Global.UI.My.Resources.Resources.cerrar
         Me.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnCerrar.Location = New System.Drawing.Point(383, 20)
+        Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCerrar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(248, Byte), Integer))
+        Me.btnCerrar.Location = New System.Drawing.Point(386, 3)
         Me.btnCerrar.Name = "btnCerrar"
-        Me.btnCerrar.Size = New System.Drawing.Size(23, 21)
-        Me.btnCerrar.TabIndex = 3
+        Me.btnCerrar.Size = New System.Drawing.Size(20, 21)
+        Me.btnCerrar.TabIndex = 13
         Me.btnCerrar.UseVisualStyleBackColor = True
         '
         'uCtrlAsignarRequisitos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.BackgroundImage = Global.UI.My.Resources.Resources.tablaFinalMedianaAzul4
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.btnCancelar)

@@ -37,7 +37,7 @@ Public Class uCntrlBuscarBeneficio
 
             Me.Controls.Add(UCtrl)
             UCtrl.txtAlerta.Text = ex.Message
-            UCtrl.Location = New Point(375, 100)
+            UCtrl.Location = New Point(420, 150)
             UCtrl.BringToFront()
             UCtrl.Show()
 
@@ -51,7 +51,7 @@ Public Class uCntrlBuscarBeneficio
         FrmIniciarSesion.principal.Controls.Add(uCtrlRegistrarBeneficio)
 
         uCtrlRegistrarBeneficio.getFrmBuscar(Me)
-        uCtrlRegistrarBeneficio.Location = New Point(375, 100)
+        uCtrlRegistrarBeneficio.Location = New Point(420, 150)
         uCtrlRegistrarBeneficio.BringToFront()
         uCtrlRegistrarBeneficio.Show()
 
@@ -199,14 +199,14 @@ Public Class uCntrlBuscarBeneficio
             uCtrlModificarBeneficio.recieveData(id, nombre, porcentaje, aplicacion)
             uCtrlModificarBeneficio.BringToFront()
             uCtrlModificarBeneficio.Show()
-            uCtrlModificarBeneficio.Location = New Point(375, 100)
+            uCtrlModificarBeneficio.Location = New Point(420, 150)
 
         Catch ex As Exception
             Dim UCtrl As New UctrlAlerta
 
             Me.Controls.Add(UCtrl)
             UCtrl.txtAlerta.Text = ex.Message
-            UCtrl.Location = New Point(375, 100)
+            UCtrl.Location = New Point(420, 150)
             UCtrl.BringToFront()
             UCtrl.Show()
         End Try
@@ -240,7 +240,7 @@ Public Class uCntrlBuscarBeneficio
             uCtrlEliminarBeneficio.recibirInfo(id, nombre, porcentaje, aplicacion)
             uCtrlEliminarBeneficio.BringToFront()
             uCtrlEliminarBeneficio.Show()
-            uCtrlEliminarBeneficio.Location = New Point(375, 100)
+            uCtrlEliminarBeneficio.Location = New Point(450, 200)
 
             dtaBuscarBeneficio.Rows.Clear()
             listarBeneficios()

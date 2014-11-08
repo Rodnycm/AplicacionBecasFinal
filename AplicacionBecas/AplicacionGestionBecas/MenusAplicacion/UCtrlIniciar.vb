@@ -24,10 +24,6 @@ Public Class UCtrlIniciar
                 FrmIniciarSesion.Hide()
                 FrmIniciarSesion.principal.Show()
 
-
-
-
-
             Else
                 alerta = New UctrlAlerta()
                 alerta.txtAlerta.Text = "Nombre de usuario o contraseña incorrectos"

@@ -30,7 +30,7 @@ Public Class uCtrlListarRol
 
             Dim uctrlAlerta As UctrlAlerta = New UctrlAlerta()
             Me.Controls.Add(uctrlAlerta)
-            uctrlAlerta.Location = New Point(300, 100)
+            uctrlAlerta.Location = New Point(375, 100)
             uctrlAlerta.BringToFront()
             uctrlAlerta.txtAlerta.Text = "No hay roles registrados"
             uctrlAlerta.Show()
@@ -68,7 +68,7 @@ Public Class uCtrlListarRol
 
             Dim uctrlAlerta As UctrlAlerta = New UctrlAlerta()
             Me.Controls.Add(uctrlAlerta)
-            uctrlAlerta.Location = New Point(300, 100)
+            uctrlAlerta.Location = New Point(375, 100)
             uctrlAlerta.BringToFront()
             uctrlAlerta.txtAlerta.Text = ex.Message
             uctrlAlerta.Show()
@@ -95,11 +95,16 @@ Public Class uCtrlListarRol
             uCtrlEliRol.Show()
             uCtrlEliRol.Location = New Point(256, 226)
             uCtrlEliRol.BringToFront()
+
         Catch ex As Exception
 
+            Dim uctrlAlerta As UctrlAlerta = New UctrlAlerta()
+            Me.Controls.Add(uctrlAlerta)
+            uctrlAlerta.Location = New Point(375, 100)
+            uctrlAlerta.BringToFront()
+            uctrlAlerta.txtAlerta.Text = ex.Message
+            uctrlAlerta.Show()
         End Try
-
-
     End Sub
 
     '''<summary>Este metodo consulta el rol seleccionado </summary>
@@ -123,6 +128,13 @@ Public Class uCtrlListarRol
             uCtrlConsulRol.BringToFront()
             uCtrlConsulRol.Location = New Point(250, 170)
         Catch ex As Exception
+
+            Dim uctrlAlerta As UctrlAlerta = New UctrlAlerta()
+            Me.Controls.Add(uctrlAlerta)
+            uctrlAlerta.Location = New Point(375, 100)
+            uctrlAlerta.BringToFront()
+            uctrlAlerta.txtAlerta.Text = ex.Message
+            uctrlAlerta.Show()
         End Try
 
     End Sub
@@ -166,23 +178,6 @@ Public Class uCtrlListarRol
 
     End Sub
 
-    Private Sub txtBuscarRol_TextChanged(sender As Object, e As EventArgs)
-        Dim parametro As String = txtBuscarRol.Text
-
-        Try
-            Dim Rol As New Rol
-            Rol = objGestorRol.consultarRolPorNombre(txtBuscarRol.Text)
-            DGVRol.Rows.Clear()
-            DGVRol.Rows.Add(1)
-            DGVRol.Rows(0).Cells(1).Value = Rol.Nombre()
-
-        Catch ex As Exception
-            DGVRol.Rows.Clear()
-            ListarRoles()
-        End Try
-
-
-    End Sub
 
     Private Sub btnCrearRoles_Click_1(sender As Object, e As EventArgs) Handles btnCrearRoles.Click
 
@@ -201,10 +196,9 @@ Public Class uCtrlListarRol
 
             Dim uctrlAlerta As UctrlAlerta = New UctrlAlerta()
             Me.Controls.Add(uctrlAlerta)
-
-            uctrlAlerta.txtAlerta.Text = ex.Message
+            uctrlAlerta.Location = New Point(375, 100)
             uctrlAlerta.BringToFront()
-            uctrlAlerta.Location = New Point(300, 100)
+            uctrlAlerta.txtAlerta.Text = ex.Message
             uctrlAlerta.Show()
 
 
@@ -212,4 +206,42 @@ Public Class uCtrlListarRol
 
 
     End Sub
+
+    Private Sub txtBuscarRol_TextChanged_1(sender As Object, e As EventArgs) Handles txtBuscarRol.TextChanged
+        If txtBuscar.Text = "" Then
+            ListarRoles()
+        End If
+
+    End Sub
+
+
+
+    Public Sub buscarRol(ByVal param As String)
+
+        Dim parametro As String = txtBuscarRol.Text
+
+        Try
+            Dim Rol As New Rol
+            Rol = objGestorRol.consultarRolPorNombre(txtBuscarRol.Text)
+            DGVRol.Rows.Clear()
+            DGVRol.Rows.Add(1)
+            DGVRol.Rows(0).Cells(1).Value = Rol.Nombre()
+
+        Catch ex As Exception
+            DGVRol.Rows.Clear()
+            ListarRoles()
+        End Try
+
+    End Sub
+
+    Private Sub txtBuscarRol_KeyDown(sender As Object, e As KeyEventArgs) Handles txtBuscarRol.KeyDown
+        Dim param As String = txtBuscar.Text
+
+        If e.KeyCode = 13 Then
+
+            buscarRol(param)
+
+        End If
+    End Sub
+
 End Class

@@ -36,14 +36,23 @@ Class uCntrlConsultarRol
         Try
 
             listaPermisos = objGestorRol.consultarPermisosPorRol(idRol)
+            If listaPermisos IsNot Nothing Then
+                For i As Integer = 0 To listaPermisos.Count - 1
+                    CLBPermisos.Items.Add(listaPermisos.Item(i).Nombre)
 
-            For i As Integer = 0 To listaPermisos.Count - 1
-                CLBPermisos.Items.Add(listaPermisos.Item(i).Nombre)
+                Next
+                CompararPermisos()
+            End If
 
-            Next
-            CompararPermisos()
+            
         Catch ex As Exception
+            Dim UCtrl As UctrlAlerta = New UctrlAlerta()
 
+            FrmIniciarSesion.principal.Controls.Add(UCtrl)
+            UCtrl.txtAlerta.Text = ex.Message
+            UCtrl.Location = New Point(375, 100)
+            UCtrl.BringToFront()
+            UCtrl.Show()
         End Try
 
     End Sub

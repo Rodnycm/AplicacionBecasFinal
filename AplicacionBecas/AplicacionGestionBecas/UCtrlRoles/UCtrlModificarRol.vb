@@ -42,7 +42,7 @@ Public Class uCtrlModificarRol
 
             Next
 
-            CompararPermisos()
+            'CompararPermisos()
 
         Catch ex As Exception
 
@@ -54,6 +54,19 @@ Public Class uCtrlModificarRol
             UCtrl.BringToFront()
             UCtrl.Show()
 
+        End Try
+
+        Try
+
+            CompararPermisos()
+        Catch ex As Exception
+            Dim UCtrl As UctrlAlerta = New UctrlAlerta()
+
+            Me.Controls.Add(UCtrl)
+            UCtrl.txtAlerta.Text = ex.Message
+            UCtrl.Location = New Point(300, 100)
+            UCtrl.BringToFront()
+            UCtrl.Show()
         End Try
 
     End Sub
@@ -75,17 +88,19 @@ Public Class uCtrlModificarRol
 
         Try
             listaPermisosRol = objGestorRol.consultarPermisosPorRol(idRol)
+            If listaPermisosRol IsNot Nothing Then
 
-            For j As Integer = 0 To listaPermisosRol.Count - 1
-                For i As Integer = 0 To listaPermisos.Count - 1
-                    If (listaPermisosRol.Item(j).Id = listaPermisos.Item(i).Id) Then
+                For j As Integer = 0 To listaPermisosRol.Count - 1
+                    For i As Integer = 0 To listaPermisos.Count - 1
+                        If (listaPermisosRol.Item(j).Id = listaPermisos.Item(i).Id) Then
 
-                        CLBPermisos.SetItemChecked(i, True)
-                    End If
+                            CLBPermisos.SetItemChecked(i, True)
+                        End If
 
+                    Next
                 Next
-            Next
 
+            End If
         Catch ex As Exception
             Dim UCtrl As UctrlAlerta = New UctrlAlerta()
 
@@ -204,12 +219,15 @@ Public Class uCtrlModificarRol
 
             listaPermisosSeleccionados = PermisosSeleccionados()
 
-            For i As Integer = 0 To listaPermisosRol.Count - 1
 
-                objGestorRol.eliminarPermisoAUnRol(listaPermisosRol.Item(i).Id, idRol)
+            If listaPermisosRol IsNot Nothing Then
+                For i As Integer = 0 To listaPermisosRol.Count - 1
 
-            Next
+                    objGestorRol.eliminarPermisoAUnRol(listaPermisosRol.Item(i).Id, idRol)
 
+                Next
+            End If
+            
             For i As Integer = 0 To listaPermisosSeleccionados.Count - 1
 
                 objGestorRol.asignarPermisoAUnRol(listaPermisosSeleccionados.Item(i).Id(), idRol)

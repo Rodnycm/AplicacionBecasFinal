@@ -5,7 +5,7 @@ Public Class UCtrlEliminarCurso
     Dim nombreCurso As String
     Dim codigoCurso As String
     Dim ucBuscarCursos As uCtrlBuscarCursos
-    Dim alerta As UctrlAlerta
+    Dim alerta As New UctrlAlerta
     Dim objCurso As Curso
     Dim mBlnFormDragging As Boolean
 
@@ -73,11 +73,11 @@ Public Class UCtrlEliminarCurso
             Me.Dispose()
 
         Catch ex As Exception
-            alerta = New uCtrlAlerta()
+
             alerta.txtAlerta.Text = ex.Message
-            frmPrincipal.Controls.Add(alerta)
+            FrmIniciarSesion.principal.Controls.Add(alerta)
+            alerta.Location = New Point(375, 100)
             alerta.BringToFront()
-            alerta.Location = New Point(290, 48)
             alerta.Show()
         End Try
         Me.Dispose()

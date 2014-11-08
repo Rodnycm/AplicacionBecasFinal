@@ -233,7 +233,8 @@ namespace EntitiesLayer
             }
 
 
-            if (!(Regex.IsMatch(telefono, "^[0-9-()+]{3,20}")))
+            string expresionTelefono = "^0[1-6]{1}(([0-9]{2}){4})|(([0-9]{2}){4})|((-[0-9]{2}){4})$";
+            if (!(Regex.IsMatch(telefono, expresionTelefono)))
             {
                 yield return new RuleViolation("Error en el teléfono", "Teléfono incorrecto");
 

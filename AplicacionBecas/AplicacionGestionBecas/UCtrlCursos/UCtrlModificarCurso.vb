@@ -53,16 +53,16 @@ Public Class UCtrlModificarCurso
             objGestorCurso.guardarCambios()
             ucBuscarCursos.dtaListarCursos.Rows.Clear()
             ucBuscarCursos.listarCursos()
-            Me.Dispose()
+
         Catch ex As Exception
             alerta = New uCtrlAlerta()
             alerta.txtAlerta.Text = ex.Message
             FrmIniciarSesion.principal.Controls.Add(alerta)
+            alerta.Location = New Point(375, 100)
             alerta.BringToFront()
-            alerta.Location = New Point(290, 48)
             alerta.Show()
         End Try
-
+        Me.Dispose()
     End Sub
     Private Sub btnCancelarAgregarCurso_Click(sender As Object, e As EventArgs) Handles btnCancelarAgregarCurso.Click
         ucBuscarCursos = New uCtrlBuscarCursos()

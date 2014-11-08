@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using EntitiesLayer;
 using DAL.Repositories;
+using TIL;
 
 namespace BLL
 {
@@ -32,38 +33,76 @@ namespace BLL
                     {
                         sb.Append(rv.ErrorMessage);
                     }
-                    new ApplicationException(sb.ToString());
+                    throw new ApplicationException(sb.ToString());
                     
                 }
             }
 
             catch (Exception ex)
             {
-                
+                throw ex;
             }
         }
 
 
         public IEnumerable<Requisito> consultarRequisitos()
         {
+            try {
+                return RequisitoRepository.Instance.GetAll();
+            }
+            catch (Exception ex) {
+                throw ex;
+            }
+        }
 
-            return RequisitoRepository.Instance.GetAll();
+        public IEnumerable<TipoBeca> consultarBecasPorRequisitos(int pidrol)
+        {
+            try {
+                return RequisitoRepository.Instance.buscarRequisitosAUnTipoBeca(pidrol);
+            }
+            catch (Exception ex)
+            {
 
+                throw ex;
+            }
         }
 
         public Requisito buscarRequisito(String param)
-      {
-            return RequisitoRepository.Instance.GetByNombre(param);
+        {
+          try {
+              return RequisitoRepository.Instance.GetByNombre(param);
+          }
+          catch (Exception ex) {
+              throw ex;
+          }
         }
         public IEnumerable<Requisito> buscarRequisito()
         {
-            return RequisitoRepository.Instance.GetAll();
+            try {
+                return RequisitoRepository.Instance.GetAll();
+            }
+            catch (Exception ex){
+                throw ex;
+            }
         }
 
         public IEnumerable<Requisito> mostrarRequisitoTB(TipoBeca ptipoBeca)
         {
+            try {
+               
+                if (RequisitoRepository.Instance.GetLista(ptipoBeca)  == null){
 
-            return RequisitoRepository.Instance.GetLista(ptipoBeca);
+                    throw new ApplicationException("El tipo de beca seleccionado no tiene requisitos asignados");
+                }
+                else
+                {
+                    return RequisitoRepository.Instance.GetLista(ptipoBeca);
+                }
+            }
+            catch (Exception ex){
+                throw ex;
+            }
+           
         }
         //public IEnumerable<Requisito> mostrarRequisitoTB(TipoBeca ptipoBeca)
         //{
@@ -111,8 +150,20 @@ namespace BLL
         //<returns> No retorna valor </returns> 
         public void guardarCambios()
         {
-            RequisitoRepository.Instance.Save();
+            try
+            {
+                RequisitoRepository.Instance.Save();
+            }
+            catch (CustomExceptions.DataAccessException ex)
+            {
 
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
     }
 }

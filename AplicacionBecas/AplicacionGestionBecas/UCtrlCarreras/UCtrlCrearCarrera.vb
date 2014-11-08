@@ -76,6 +76,7 @@ Public Class uCtrlCrearCarrera
 
             alerta.txtAlerta.Text = ex.Message
             FrmIniciarSesion.principal.Controls.Add(alerta)
+            alerta.Location = New Point(375, 100)
             alerta.BringToFront()
             alerta.Show()
 
@@ -120,6 +121,7 @@ Public Class uCtrlCrearCarrera
 
             alerta.txtAlerta.Text = ex.Message
             FrmIniciarSesion.principal.Controls.Add(alerta)
+            alerta.Location = New Point(375, 100)
             alerta.BringToFront()
             alerta.Show()
             Me.Dispose()

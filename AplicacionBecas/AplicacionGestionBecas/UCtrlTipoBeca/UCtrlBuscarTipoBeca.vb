@@ -35,11 +35,10 @@ Public Class uCtrlBuscarTipoBeca
     End Sub
 
 
-    Private Sub dtaTipoBeca_EditingControlShowing(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewEditingControlShowingEventArgs) Handles dtaTipoBeca.EditingControlShowing
+    Public Sub dtaTipoBeca_EditingControlShowing(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewEditingControlShowingEventArgs) Handles dtaTipoBeca.EditingControlShowing
         ' Only for a DatagridComboBoxColumn at ColumnIndex 1.
-        If dtaTipoBeca.CurrentCell.ColumnIndex = 2 Then
+        If dtaTipoBeca.CurrentCell.ColumnIndex = 6 Then
             Dim combo As ComboBox = CType(e.Control, ComboBox)
-
             If (combo IsNot Nothing) Then
                 ' Remove an existing event-handler, if present, to avoid 
                 ' adding multiple handlers when the editing control is reused.
@@ -50,47 +49,110 @@ Public Class uCtrlBuscarTipoBeca
             End If
         End If
     End Sub
+   
     Private Sub ComboBox_SelectionChangeCommitted(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
         Dim combo As ComboBox = CType(sender, ComboBox)
 
         If combo.SelectedItem = "Ver" Then
-
-            verTipoBeca()
-
+            Dim param = dtaTipoBeca.CurrentRow.Cells(0).Value
+            verTipoBeca(param)
         ElseIf combo.SelectedItem = "Editar" Then
 
             editarTipoBeca()
-
         ElseIf combo.SelectedItem = "Eliminar" Then
 
             eliminarTipoBeca()
+        End If
+    End Sub
+
+    Public Sub verTipoBeca(ByVal pparam As String)
+        Dim nombre As String = pparam
+        Dim tipoBecaConsulta As TipoBeca = gestorTipoBeca.buscarUnTipoBeca(nombre)
+        dtaTipoBeca.Rows.Clear()
+        dtaTipoBeca.Columns("Fecha").Visible = True
+        dtaTipoBeca.Columns("Descripcion").Visible = True
+        dtaTipoBeca.Columns("Requisitos").Visible = True
+        dtaTipoBeca.Columns("Beneficios").Visible = True
+        dtaTipoBeca.Columns("opciones").Visible = False
+        btnVolver.Visible = True
+        dtaTipoBeca.Rows.Add(tipoBecaConsulta.nombre, tipoBecaConsulta.objD.ToShortDateString, tipoBecaConsulta.estado, tipoBecaConsulta.descripcion, "", "", "")
+
+    End Sub
+    Private Sub dtaTipoBeca_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtaTipoBeca.CellContentClick
+
+        Dim senderGrid = DirectCast(sender, DataGridView)
+
+        If dtaTipoBeca.Columns(e.ColumnIndex).Name = "Requisitos" Then
+            Dim nombre As String = dtaTipoBeca.CurrentRow.Cells(0).Value
+            requisitosConsultados(nombre)
 
         End If
 
+        If dtaTipoBeca.Columns(e.ColumnIndex).Name = "Beneficios" Then
+            Dim nombre As String = dtaTipoBeca.CurrentRow.Cells(0).Value
+            beneficiosConsultados(nombre)
+        End If
     End Sub
-    Private Sub verTipoBeca()
-        Dim nombre As String = dtaTipoBeca.CurrentRow.Cells(0).Value
-
-        Dim uCtrlConsultarTipoBeca As New uCtrlConsultarTipoBeca
-
-        'uCtrlConsultarTipoBeca.recibirInfo(nombre)
-        frmPrincipal.Controls.Add(uCtrlConsultarTipoBeca)
-        uCtrlConsultarTipoBeca.BringToFront()
-        uCtrlConsultarTipoBeca.Location = New Point(200, 150)
-        uCtrlConsultarTipoBeca.Show()
 
 
+    Public Sub requisitosConsultados(ByVal pnombre As String)
+        Try
+            Dim nombreTipo As String = pnombre
+            Dim tipoBeca As TipoBeca = gestorTipoBeca.buscarUnTipoBeca(nombreTipo)
+            Dim requisitosLista As List(Of Requisito) = objGestorRequisito.mostrarRequisitoTB(tipoBeca)
+            If requisitosLista.Count > 0 Then
+                Dim requisitos As uCtrlConsultarRequisitos = New uCtrlConsultarRequisitos
+                requisitos.setListaRequisitos(requisitosLista)
+                FrmIniciarSesion.principal.Controls.Add(requisitos)
+                requisitos.Location = New Point(420, 100)
+                requisitos.BringToFront()
+                Me.SendToBack()
+                requisitos.Show()
+            End If
+        Catch ex As Exception
+            Dim uctrlAlerta As UctrlAlerta = New UctrlAlerta()
+            uctrlAlerta.Location = New Point(300, 100)
+            uctrlAlerta.txtAlerta.Text = "El tipo de beca seleccionado no tiene requisitos asignados"
+            FrmIniciarSesion.principal.Controls.Add(uctrlAlerta)
+            uctrlAlerta.BringToFront()
+            uctrlAlerta.Show()
+        End Try
+    End Sub
+
+    Public Sub beneficiosConsultados(ByVal pnombre)
+        Try
+
+            Dim nombre As String = pnombre
+            Dim tipoBeca As TipoBeca = gestorTipoBeca.buscarUnTipoBeca(nombre)
+            Dim beneficiosLista As List(Of Beneficio) = objGestorBeneficio.mostrarBeneficioTB(tipoBeca)
+            If beneficiosLista.Count > 0 Then
+                Dim beneficios As uCtrlConsultarBeneficios = New uCtrlConsultarBeneficios
+                Beneficios.setListaBeneficios(beneficiosLista)
+                FrmIniciarSesion.principal.Controls.Add(Beneficios)
+                Beneficios.Location = New Point(420, 100)
+                Beneficios.BringToFront()
+                Me.SendToBack()
+                Beneficios.Show()
+            End If
+        Catch ex As Exception
+            Dim uctrlAlerta As UctrlAlerta = New UctrlAlerta()
+            uctrlAlerta.Location = New Point(300, 100)
+            FrmIniciarSesion.principal.Controls.Add(uctrlAlerta)
+            uctrlAlerta.BringToFront()
+            uctrlAlerta.txtAlerta.Text = "El tipo de beca seleccionado no tiene requisitos asignados"
+            uctrlAlerta.Show()
 
 
+        End Try
     End Sub
     Private Sub editarTipoBeca()
 
 
         Dim nombre As String = dtaTipoBeca.CurrentRow.Cells(0).Value
         'Dim objD As Date = dtaTipoBeca.CurrentRow.Cells(1).Value
-        Dim estado As String = dtaTipoBeca.CurrentRow.Cells(2).Value
-        Dim descripcion As String = dtaTipoBeca.CurrentRow.Cells(3).Value
+        Dim estado As String = dtaTipoBeca.CurrentRow.Cells(1).Value
+        Dim descripcion As String = dtaTipoBeca.CurrentRow.Cells(2).Value
 
 
         Dim objTipoBeca As TipoBeca = gestorTipoBeca.buscarUnTipoBeca(nombre)
@@ -136,8 +198,7 @@ Public Class uCtrlBuscarTipoBeca
 
     End Sub
 
-    ''' <summary>Cuando el evento se ejecuta al dar presionar la tecla enter llama al metodo eliminar carrera</summary>
-    ''' <autor>Alvaro Artavia</autor>
+  
 
     Private Sub txtBarraBusqueda_KeyDown(sender As Object, e As System.Windows.Forms.KeyEventArgs) Handles txtBarraBusqueda.KeyDown
 
@@ -154,10 +215,17 @@ Public Class uCtrlBuscarTipoBeca
     Public Sub buscarTipoBeca(ByVal pparam)
         Try
             Dim tipoBeca As TipoBeca = gestorTipoBeca.buscarUnTipoBeca(pparam)
-            dtaTipoBeca.Rows.Clear()
-            dtaTipoBeca.Rows.Add(1)
-            dtaTipoBeca.Rows(0).Cells(0).Value = tipoBeca.nombre
-            dtaTipoBeca.Rows(0).Cells(1).Value = tipoBeca.estado
+
+            If tipoBeca Is Nothing Then
+                dtaTipoBeca.Rows.Clear()
+                listarTiposBeca()
+            Else
+                dtaTipoBeca.Rows.Clear()
+                dtaTipoBeca.Rows.Add(1)
+                dtaTipoBeca.Rows(0).Cells(0).Value = tipoBeca.nombre
+                dtaTipoBeca.Rows(0).Cells(1).Value = tipoBeca.estado
+            End If
+           
         Catch ex As Exception
             dtaTipoBeca.Rows.Clear()
             listarTiposBeca()
@@ -169,7 +237,7 @@ Public Class uCtrlBuscarTipoBeca
         listarTiposBeca()
     End Sub
 
-    Private Sub btnCrearTipoBeca_Click(sender As Object, e As EventArgs) Handles btnCrearTipoBeca.Click
+    Private Sub btnCrearTipoBeca_Click(sender As Object, e As EventArgs)
         crearTipo = New uCtrlCrearTipoBeca()
         FrmIniciarSesion.principal.Controls.Add(crearTipo)
         crearTipo.Location = New Point(300, 100)
@@ -178,10 +246,21 @@ Public Class uCtrlBuscarTipoBeca
 
 
     End Sub
-
-    Private Sub txtBarraBusqueda_TextChanged_1(sender As Object, e As EventArgs) Handles txtBarraBusqueda.TextChanged
+    Private Sub txtBarraBusqueda_TextChanged_2(sender As Object, e As EventArgs) Handles txtBarraBusqueda.TextChanged
         If (txtBarraBusqueda.Text = "") Then
             listarTiposBeca()
         End If
+    End Sub
+
+    Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
+        dtaTipoBeca.Rows.Clear()
+        dtaTipoBeca.Columns("Fecha").Visible = False
+        dtaTipoBeca.Columns("Descripcion").Visible = False
+        dtaTipoBeca.Columns("Requisitos").Visible = False
+        dtaTipoBeca.Columns("Beneficios").Visible = False
+        dtaTipoBeca.Columns("opciones").Visible = True
+        btnVolver.Visible = False
+        dtaTipoBeca.Rows.Clear()
+        listarTiposBeca()
     End Sub
 End Class

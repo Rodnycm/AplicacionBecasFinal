@@ -12,9 +12,9 @@ Public Class uCtrlMantenimientoRequisitos
             Dim listaRequisitos As New List(Of Requisito)
             listaRequisitos = objGestorRequisito.consultarRequisitos
 
-            For Each requisito As Requisito In listaRequisitos
+            For Each Requisito In listaRequisitos
 
-                dgvRequisitos.Rows.Add(requisito.nombre, requisito.descripcion, "", requisito.Id)
+                dgvRequisitos.Rows.Add(Requisito.nombre, Requisito.descripcion, "", Requisito.Id)
 
             Next
 
@@ -22,9 +22,9 @@ Public Class uCtrlMantenimientoRequisitos
 
             Dim uctrlAlerta As UctrlAlerta = New UctrlAlerta()
             Me.Controls.Add(uctrlAlerta)
-            uctrlAlerta.Location = New Point(300, 100)
+            uctrlAlerta.Location = New Point(375, 100)
             uctrlAlerta.BringToFront()
-            uctrlAlerta.txtAlerta.Text = "No hay requisitos registrados"
+            uctrlAlerta.txtAlerta.Text = ex.Message
             uctrlAlerta.Show()
 
         End Try
@@ -50,17 +50,25 @@ Public Class uCtrlMantenimientoRequisitos
 
             Dim r As Requisito = objGestorRequisito.buscarRequisito(param)
 
-            dgvRequisitos.Rows.Clear()
-            dgvRequisitos.Rows.Add(r.nombre, r.descripcion, "", r.Id)
+            If r Is Nothing Then
+                dgvRequisitos.Rows.Clear()
+                listarRequisitos()
+            Else
+                dgvRequisitos.Rows.Clear()
+                dgvRequisitos.Rows.Add(r.nombre, r.descripcion, "", r.Id)
+            End If
 
         Catch ex As Exception
 
-
-            dgvRequisitos.Rows.Clear()
-            listarRequisitos()
+            Dim uctrlAlerta As UctrlAlerta = New UctrlAlerta()
+            Me.Controls.Add(uctrlAlerta)
+            uctrlAlerta.Location = New Point(375, 100)
+            uctrlAlerta.BringToFront()
+            uctrlAlerta.txtAlerta.Text = ex.Message
+            uctrlAlerta.Show()
 
         End Try
-       
+
     End Sub
 
     Private Sub uCtrlMantenimientoRequisitos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -143,28 +151,26 @@ Public Class uCtrlMantenimientoRequisitos
     End Sub
 
     Private Sub eliminarRequisito(numfila As Integer)
-        Try
-            Dim nombre As String = dgvRequisitos.Rows(numfila).Cells(1).Value
-            Dim descripcion As String = dgvRequisitos.Rows(numfila).Cells(0).Value
-            Dim idRequisito As Integer = dgvRequisitos.Rows(numfila).Cells(3).Value
-            Dim uCtrlElirequsito As New UCtrlEliminarRequisitos()
-            uCtrlElirequsito.recieveData(nombre, descripcion, idRequisito)
-            uCtrlElirequsito.getFrmBuscar(Me)
+        Dim nombre As String = dgvRequisitos.Rows(numfila).Cells(1).Value
+        Dim descripcion As String = dgvRequisitos.Rows(numfila).Cells(0).Value
+        Dim idRequisito As Integer = dgvRequisitos.Rows(numfila).Cells(3).Value
+        Dim uCtrlElirequsito As New UCtrlEliminarRequisitos()
+        uCtrlElirequsito.recieveData(nombre, descripcion, idRequisito)
+        uCtrlElirequsito.getFrmBuscar(Me)
 
-            FrmIniciarSesion.principal.Controls.Add(uCtrlElirequsito)
+        FrmIniciarSesion.principal.Controls.Add(uCtrlElirequsito)
 
-            uCtrlElirequsito.Show()
-            uCtrlElirequsito.Location = New Point(256, 226)
-            uCtrlElirequsito.BringToFront()
-        Catch ex As Exception
-
-        End Try
-
+        uCtrlElirequsito.Show()
+        uCtrlElirequsito.Location = New Point(256, 226)
+        uCtrlElirequsito.BringToFront()
 
     End Sub
 
+    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
+        If txtBuscar.Text = "" Then
+            dgvRequisitos.Rows.Clear()
+            listarRequisitos()
 
-    Private Sub dgvRequisitos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvRequisitos.CellContentClick
-
+        End If
     End Sub
 End Class

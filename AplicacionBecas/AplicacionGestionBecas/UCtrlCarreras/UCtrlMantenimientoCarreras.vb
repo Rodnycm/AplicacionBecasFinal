@@ -42,7 +42,7 @@ Public Class uCtrlMantenimientoCarreras
 
             Dim uctrlAlerta As UctrlAlerta = New UctrlAlerta()
             Me.Controls.Add(uctrlAlerta)
-            uctrlAlerta.Location = New Point(300, 100)
+            uctrlAlerta.Location = New Point(375, 100)
             uctrlAlerta.BringToFront()
             uctrlAlerta.txtAlerta.Text = "No hay carreras registradas"
             uctrlAlerta.Show()
@@ -168,9 +168,15 @@ Public Class uCtrlMantenimientoCarreras
         Try
 
             Dim c As Carrera = objGestorCarrera.buscarCarrera(param)
-            dgvCarreras.Rows.Clear()
-            dgvCarreras.Rows.Add(c.codigo, c.nombre, c.directorAcademico.primerNombre & " " & c.directorAcademico.primerApellido & " " & c.directorAcademico.segundoApellido, "", "", c.Id, c.color)
 
+            If c Is Nothing Then
+                dgvCarreras.Rows.Clear()
+                listarCarreras()
+            Else
+                dgvCarreras.Rows.Clear()
+                dgvCarreras.Rows.Add(c.codigo, c.nombre, c.directorAcademico.primerNombre & " " & c.directorAcademico.primerApellido & " " & c.directorAcademico.segundoApellido, "", "", c.Id, c.color)
+            End If
+            
         Catch ex As Exception
 
             listarCarreras()
@@ -203,4 +209,10 @@ Public Class uCtrlMantenimientoCarreras
 
     End Sub
 
+    Private Sub txtBuscar_TextChanged_1(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
+        If txtBuscar.Text = "" Then
+            dgvCarreras.Rows.Clear()
+            listarCarreras()
+        End If
+    End Sub
 End Class

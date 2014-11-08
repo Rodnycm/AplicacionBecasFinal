@@ -165,8 +165,15 @@ Public Class UctrlListarYBuscarUsuario
     Public Sub buscarUsuario(ByVal pparametro As String)
         Try
             Dim objUsuario As Usuario = objGestorUsuario.buscarUnUsuario(txtBuscar.Text)
-            dgUsuarios.Rows.Clear()
-            dgUsuarios.Rows.Add(objUsuario.identificacion, objUsuario.primerNombre & " " & objUsuario.primerApellido & " " & objUsuario.segundoApellido, objUsuario.telefono, objUsuario.fechaNacimiento, "", objUsuario.rol.Nombre, objUsuario.correoElectronico)
+
+            If objUsuario Is Nothing Then
+                dgUsuarios.Rows.Clear()
+                listarUsuarios()
+            Else
+                dgUsuarios.Rows.Clear()
+                dgUsuarios.Rows.Add(objUsuario.identificacion, objUsuario.primerNombre & " " & objUsuario.primerApellido & " " & objUsuario.segundoApellido, objUsuario.telefono, objUsuario.fechaNacimiento, "", objUsuario.rol.Nombre, objUsuario.correoElectronico)
+            End If
+           
         Catch ex As Exception
             dgUsuarios.Rows.Clear()
             listarUsuarios()
@@ -191,9 +198,6 @@ Public Class UctrlListarYBuscarUsuario
         End If
     End Sub
 
-    Private Sub dgUsuarios_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgUsuarios.CellContentClick
-
-    End Sub
 End Class
 
 

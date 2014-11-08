@@ -3,8 +3,8 @@
     Dim mBlnFormDragging As Boolean
 
     Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
-        Me.Hide()
         Me.Dispose()
+        Me.Hide()
     End Sub
 
     Private Sub UctrlAlerta_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Me.MouseMove

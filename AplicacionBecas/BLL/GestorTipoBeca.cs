@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using EntitiesLayer;
 using DAL;
 using DAL.Repositories;
+using TIL;
 
 namespace BLL
 {
@@ -62,17 +63,40 @@ namespace BLL
         /// <returns>Retorna una lista de los tipos de beca</returns>
         public IEnumerable<TipoBeca> consultarTipoBeca()
         {
-            return TipoBecaRepository.Instance.GetAll();
+            try {
+                return TipoBecaRepository.Instance.GetAll();
+            
+            }
+            catch (Exception ex) {
+
+                throw ex ;
+            }
+            
         }
 
         public TipoBeca buscarUnTipoBeca(string pnombre)
         {
-            return TipoBecaRepository.Instance.GetByNombre(pnombre);
+
+            try {
+                return TipoBecaRepository.Instance.GetByNombre(pnombre);
+            }
+            catch(Exception ex){
+                throw ex;
+            }
+            
         }
         public int idTipoBeca(string pnombre)
         {
-            TipoBeca tmpTipo = buscarUnTipoBeca(pnombre);
-            return tmpTipo.Id;
+            try
+            {
+                TipoBeca tmpTipo = buscarUnTipoBeca(pnombre);
+                return tmpTipo.Id;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            
         }
         /// <summary>
         /// Llama al método Save del repository
@@ -80,39 +104,61 @@ namespace BLL
         ///<author>María Jesús Gutiérrez</author>
         public void guardarCambios()
         {
+            try
+            {
+                TipoBecaRepository.Instance.Save();
+            }
+            catch (CustomExceptions.DataAccessException ex)
+            {
 
-            TipoBecaRepository.Instance.Save();
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
         public void asignarBeneficioTipoBeca(List<Beneficio> listaBeneficios, TipoBeca objTipoBeca)
         {
-            BeneficioRepository.objTipoBeca = objTipoBeca;
-            foreach (Beneficio objBeneficio in listaBeneficios)
-            {
 
-                BeneficioRepository.Instance.Insert(objBeneficio);
-
+            try {
+                BeneficioRepository.objTipoBeca = objTipoBeca;
+                foreach (Beneficio objBeneficio in listaBeneficios)
+                {
+                  BeneficioRepository.Instance.Insert(objBeneficio);
+                }
+                BeneficioRepository.Instance.asignarBeneficio(objTipoBeca);
             }
-            BeneficioRepository.Instance.asignarBeneficio(objTipoBeca);
-
+            catch(Exception ex){
+                throw ex;
+            }
         }
 
         public void asignarRequisitoTipoBeca(List<Requisito> listaRequisitos, TipoBeca objTipoBeca)
         {
-            RequisitoRepository.objTipoBeca = objTipoBeca;
-            foreach (Requisito objRequisito in listaRequisitos)
-            {
-                RequisitoRepository.Instance.Insert(objRequisito);
+            try {
+                RequisitoRepository.objTipoBeca = objTipoBeca;
+                foreach (Requisito objRequisito in listaRequisitos)
+                {
+                    RequisitoRepository.Instance.Insert(objRequisito);
+                }
+                RequisitoRepository.Instance.asignarRequisito(objTipoBeca);
             }
-            RequisitoRepository.Instance.asignarRequisito(objTipoBeca);
+            catch(Exception ex){
+                throw ex;
+            }
+            
         }
 
         public void modificarTipoBeca(int idTipoBeca, string pnombre, string pestado, string pdescripcion, List<int> plistaBeneficios, List<int> plistaRequisitos)
         {
-            TipoBeca objTipoBeca = ContenedorMantenimiento.Instance.crearTipoBeca(idTipoBeca, pnombre, pestado, pdescripcion);
-            List<Beneficio> listaBeneficios = new List<Beneficio>();
-            List<Requisito> listaRequisitos = new List<Requisito>();
+           
             try
             {
+                TipoBeca objTipoBeca = ContenedorMantenimiento.Instance.crearTipoBeca(idTipoBeca, pnombre, pestado, pdescripcion);
+                List<Beneficio> listaBeneficios = new List<Beneficio>();
+                List<Requisito> listaRequisitos = new List<Requisito>();
                 if (objTipoBeca.IsValid)
                 {
                     TipoBecaRepository.Instance.Update(objTipoBeca);
@@ -142,36 +188,39 @@ namespace BLL
                     }
                     throw new ApplicationException(sb.ToString());
                 }
-
-
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                throw ex;
             }
-
         }
         public void modificarRequisitos(List<Requisito> listaRequisitos, TipoBeca objTipoBeca)
         {
-            RequisitoRepository.objTipoBeca = objTipoBeca;
-            foreach (Requisito objRequisito in listaRequisitos)
-            {
-                RequisitoRepository.Instance.Update(objRequisito);
+            try {
+                RequisitoRepository.objTipoBeca = objTipoBeca;
+                foreach (Requisito objRequisito in listaRequisitos)
+                {
+                    RequisitoRepository.Instance.Update(objRequisito);
+                }
+                RequisitoRepository.Instance.asignarRequisito();
             }
-            RequisitoRepository.Instance.asignarRequisito();
+            catch (Exception ex){
+                throw ex;
+            }
         }
         public void modificarBeneficios(List<Beneficio> listaBeneficios, TipoBeca objTipoBeca)
         {
-            BeneficioRepository.objTipoBeca = objTipoBeca;
-            foreach (Beneficio objBeneficio in listaBeneficios)
-            {
-
-                BeneficioRepository.Instance.Insert(objBeneficio);
-
+            try {
+                BeneficioRepository.objTipoBeca = objTipoBeca;
+                foreach (Beneficio objBeneficio in listaBeneficios)
+                {
+                    BeneficioRepository.Instance.Insert(objBeneficio);
+                }
+                BeneficioRepository.Instance.asignarBeneficio();
             }
-            BeneficioRepository.Instance.asignarBeneficio();
-
+            catch (Exception ex){
+                throw ex;
+            }
         }
 
         public void eliminarTipoBeca(String pnombre)
@@ -189,22 +238,45 @@ namespace BLL
         }
         public IEnumerable<Beneficio> buscarBeneficiosRelacionadosTipoBeca(int pid)
         {
-            return objTipoBeca.buscarBeneficiosRelacionadosTipoBeca(pid);
+            try {
+                return objTipoBeca.buscarBeneficiosRelacionadosTipoBeca(pid);
+            }
+            catch(Exception ex){
+                throw ex;
+            }
         }
 
         public IEnumerable<Requisito> buscarRequisitosRelacionadosTipoBeca(int pid)
         {
-            return objTipoBeca.buscarRequisitosRelacionadosTipoBeca(pid);
+            try {
+                return objTipoBeca.buscarRequisitosRelacionadosTipoBeca(pid);
+            }
+            catch (Exception ex) {
+                throw ex;
+            }
+           
         }
-
         public void eliminarRequisitoTipoBeca(int id)
         {
-            objTipoBeca.DeleteRequisitoTipoBeca(id);
+            try {
+                objTipoBeca.DeleteRequisitoTipoBeca(id);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            
         }
 
         public void eliminarBeneficiosTipoBeca(int id)
         {
-            objTipoBeca.DeleteBeneficioTipoBeca(id);
+            try {
+                objTipoBeca.DeleteBeneficioTipoBeca(id);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

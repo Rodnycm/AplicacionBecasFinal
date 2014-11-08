@@ -79,9 +79,6 @@ Public Class uCtrlBuscarTipoBeca
         dtaTipoBeca.Rows.Add(tipoBecaConsulta.nombre, tipoBecaConsulta.objD.ToShortDateString, tipoBecaConsulta.estado, tipoBecaConsulta.descripcion, "", "", "")
 
     End Sub
-
-
-
     Private Sub dtaTipoBeca_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtaTipoBeca.CellContentClick
 
         Dim senderGrid = DirectCast(sender, DataGridView)
@@ -114,8 +111,12 @@ Public Class uCtrlBuscarTipoBeca
                 requisitos.Show()
             End If
         Catch ex As Exception
-            MsgBox("El tipo de beca seleccionado no tiene requisitos asignados")
-
+            Dim uctrlAlerta As UctrlAlerta = New UctrlAlerta()
+            uctrlAlerta.Location = New Point(300, 100)
+            uctrlAlerta.txtAlerta.Text = "El tipo de beca seleccionado no tiene requisitos asignados"
+            FrmIniciarSesion.principal.Controls.Add(uctrlAlerta)
+            uctrlAlerta.BringToFront()
+            uctrlAlerta.Show()
         End Try
     End Sub
 
@@ -135,7 +136,13 @@ Public Class uCtrlBuscarTipoBeca
                 Beneficios.Show()
             End If
         Catch ex As Exception
-            MsgBox("El tipo de beca seleccionado no tiene beneficios asignados")
+            Dim uctrlAlerta As UctrlAlerta = New UctrlAlerta()
+            uctrlAlerta.Location = New Point(300, 100)
+            FrmIniciarSesion.principal.Controls.Add(uctrlAlerta)
+            uctrlAlerta.BringToFront()
+            uctrlAlerta.txtAlerta.Text = "El tipo de beca seleccionado no tiene requisitos asignados"
+            uctrlAlerta.Show()
+
 
         End Try
     End Sub
@@ -208,10 +215,17 @@ Public Class uCtrlBuscarTipoBeca
     Public Sub buscarTipoBeca(ByVal pparam)
         Try
             Dim tipoBeca As TipoBeca = gestorTipoBeca.buscarUnTipoBeca(pparam)
-            dtaTipoBeca.Rows.Clear()
-            dtaTipoBeca.Rows.Add(1)
-            dtaTipoBeca.Rows(0).Cells(0).Value = tipoBeca.nombre
-            dtaTipoBeca.Rows(0).Cells(1).Value = tipoBeca.estado
+
+            If tipoBeca Is Nothing Then
+                dtaTipoBeca.Rows.Clear()
+                listarTiposBeca()
+            Else
+                dtaTipoBeca.Rows.Clear()
+                dtaTipoBeca.Rows.Add(1)
+                dtaTipoBeca.Rows(0).Cells(0).Value = tipoBeca.nombre
+                dtaTipoBeca.Rows(0).Cells(1).Value = tipoBeca.estado
+            End If
+           
         Catch ex As Exception
             dtaTipoBeca.Rows.Clear()
             listarTiposBeca()

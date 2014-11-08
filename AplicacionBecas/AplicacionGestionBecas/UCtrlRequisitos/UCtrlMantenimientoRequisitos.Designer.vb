@@ -25,13 +25,13 @@ Partial Class uCtrlMantenimientoRequisitos
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(uCtrlMantenimientoRequisitos))
         Me.dgvRequisitos = New System.Windows.Forms.DataGridView()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.btnCrearRequisito = New System.Windows.Forms.Button()
-        Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.dtaNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Modificarcmb = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.colmId = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.btnCrearRequisito = New System.Windows.Forms.Button()
+        Me.txtBuscar = New System.Windows.Forms.TextBox()
         CType(Me.dgvRequisitos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -59,6 +59,33 @@ Partial Class uCtrlMantenimientoRequisitos
         Me.dgvRequisitos.ShowEditingIcon = False
         Me.dgvRequisitos.Size = New System.Drawing.Size(952, 271)
         Me.dgvRequisitos.TabIndex = 15
+        '
+        'dtaNombre
+        '
+        Me.dtaNombre.HeaderText = "Nombre"
+        Me.dtaNombre.Name = "dtaNombre"
+        Me.dtaNombre.ReadOnly = True
+        Me.dtaNombre.Width = 160
+        '
+        'descripcion
+        '
+        Me.descripcion.HeaderText = "Descripción"
+        Me.descripcion.Name = "descripcion"
+        Me.descripcion.Width = 570
+        '
+        'Modificarcmb
+        '
+        Me.Modificarcmb.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Modificarcmb.HeaderText = "Opciones"
+        Me.Modificarcmb.Items.AddRange(New Object() {"Editar", "Eliminar"})
+        Me.Modificarcmb.Name = "Modificarcmb"
+        Me.Modificarcmb.Width = 190
+        '
+        'colmId
+        '
+        Me.colmId.HeaderText = ""
+        Me.colmId.Name = "colmId"
+        Me.colmId.Visible = False
         '
         'PictureBox1
         '
@@ -92,33 +119,6 @@ Partial Class uCtrlMantenimientoRequisitos
         Me.txtBuscar.Size = New System.Drawing.Size(746, 27)
         Me.txtBuscar.TabIndex = 16
         Me.txtBuscar.Text = "Buscar:"
-        '
-        'dtaNombre
-        '
-        Me.dtaNombre.HeaderText = "Nombre"
-        Me.dtaNombre.Name = "dtaNombre"
-        Me.dtaNombre.ReadOnly = True
-        Me.dtaNombre.Width = 160
-        '
-        'descripcion
-        '
-        Me.descripcion.HeaderText = "Descripción"
-        Me.descripcion.Name = "descripcion"
-        Me.descripcion.Width = 570
-        '
-        'Modificarcmb
-        '
-        Me.Modificarcmb.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Modificarcmb.HeaderText = "Opciones"
-        Me.Modificarcmb.Items.AddRange(New Object() {"Editar", "Eliminar"})
-        Me.Modificarcmb.Name = "Modificarcmb"
-        Me.Modificarcmb.Width = 190
-        '
-        'colmId
-        '
-        Me.colmId.HeaderText = ""
-        Me.colmId.Name = "colmId"
-        Me.colmId.Visible = False
         '
         'uCtrlMantenimientoRequisitos
         '

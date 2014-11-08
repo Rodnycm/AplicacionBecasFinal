@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class CrearCursos
+Partial Class UCtrlCrearCursos
     Inherits System.Windows.Forms.UserControl
 
     'UserControl reemplaza a Dispose para limpiar la lista de componentes.
@@ -165,7 +165,7 @@ Partial Class CrearCursos
         Me.imgCrearCurso.TabIndex = 14
         Me.imgCrearCurso.TabStop = False
         '
-        'CrearCursos
+        'UCtrlCrearCursos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -183,7 +183,7 @@ Partial Class CrearCursos
         Me.Controls.Add(Me.txtNombreCurso)
         Me.Controls.Add(Me.lblNombreCurso)
         Me.Controls.Add(Me.imgCrearCurso)
-        Me.Name = "CrearCursos"
+        Me.Name = "UCtrlCrearCursos"
         Me.Size = New System.Drawing.Size(458, 252)
         CType(Me.imgCrearCurso, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

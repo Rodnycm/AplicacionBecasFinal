@@ -123,13 +123,11 @@ namespace DAL.Repositories
         public TipoBeca GetByNombre(string pnombre)
         {
 
+          try
+            {
             TipoBeca objTipoBeca = null;
-
-
             SqlCommand cmd = new SqlCommand();
             cmd.Parameters.Add(new SqlParameter("@Nombre", pnombre));
-            try
-            {
             var ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_buscarTipoBecaNombre");
 
             if (ds.Tables[0].Rows.Count > 0)
@@ -155,6 +153,7 @@ namespace DAL.Repositories
             }
             catch (SqlException e)
             {
+                MessageBox.Show(e.Message);
                 throw e;
             }
 

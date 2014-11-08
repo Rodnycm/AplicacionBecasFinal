@@ -9,9 +9,9 @@ Public Class UCtrlBuscarCursos
     Dim nombreCurso As String
     Dim codigoCurso As String
 
-    Public Sub dtaListarCursos_EditingControlShowing(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewEditingControlShowingEventArgs)
+    Public Sub dtaListarCursos_EditingControlShowing(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewEditingControlShowingEventArgs) Handles dtaListarCursos.EditingControlShowing
         ' Only for a DatagridComboBoxColumn at ColumnIndex 1.
-        If dtaListarCursos.CurrentCell.ColumnIndex = 5 Then
+        If dtaListarCursos.CurrentCell.ColumnIndex = 7 Then
             Dim combo As ComboBox = CType(e.Control, ComboBox)
             If (combo IsNot Nothing) Then
                 ' Remove an existing event-handler, if present, to avoid 

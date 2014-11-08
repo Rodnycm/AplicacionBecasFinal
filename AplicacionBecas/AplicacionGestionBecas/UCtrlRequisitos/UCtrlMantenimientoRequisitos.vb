@@ -114,7 +114,7 @@ Public Class uCtrlMantenimientoRequisitos
     Private Sub ComboBox_SelectionChangeCommitted(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
         Dim combo As ComboBox = CType(sender, ComboBox)
-        Dim fila As String = dgvRequisitos.CurrentRow.Cells(0).Value
+        Dim fila As String = dgvRequisitos.CurrentCell.RowIndex
 
         If combo.SelectedItem = "Editar" Then
 

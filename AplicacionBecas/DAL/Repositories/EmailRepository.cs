@@ -89,6 +89,7 @@ namespace DAL.Repositories
                     smtpServidor = dr["SmtpServidor"].ToString(),
                     userName = dr["UserName"].ToString(),
                     contrasenna = dr["Contraseña"].ToString(),
+                    receptor = dr["Receptor"].ToString(),
                     Id = Convert.ToInt32(dr["idEmail"])
                 };
             }

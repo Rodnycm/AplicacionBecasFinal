@@ -130,19 +130,19 @@ namespace DAL
                             Descripción = dr["Descripcion"].ToString()
                         });
                     }
-                }
+                }                                
 
                 return pPermiso;
             }
-
-           catch (SqlException ex)
-           {
-               numero = ex.Number;
-               mensaje = exceptions.validarExcepcion(numero);
-               throw new CustomExceptions.DataAccessException(mensaje, ex);
-           }
-           catch (Exception ex)
-           {
+                                        
+           catch (SqlException ex)          
+           {                                                                    
+               numero = ex.Number;                                                
+               mensaje = exceptions.validarExcepcion(numero);                                         
+               throw new CustomExceptions.DataAccessException(mensaje, ex);                   
+           }                                                                   
+           catch (Exception ex)                                            
+           {                          
                throw ex;
            }
 

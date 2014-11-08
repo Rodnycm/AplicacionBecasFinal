@@ -812,11 +812,19 @@ TableAdapterManager is used to coordinate TableAdapters in the dataset to enable
 	<summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
-</member><member name="P:UI.My.Resources.Resources.tablaFinalMedianaAzul1">
+</member><member name="P:UI.My.Resources.Resources.tablaFinalMedianaAzul">
 	<summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member><member name="P:UI.My.Resources.Resources.tablaFinalMedianaAzul3">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:UI.My.Resources.Resources.tablaFinalMedianaAzul4">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:UI.My.Resources.Resources.tablaFinalMedianaAzul41">
 	<summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
@@ -2489,9 +2497,6 @@ TableAdapterManager is used to coordinate TableAdapters in the dataset to enable
 </member><member name="M:UI.uCtrlModificarCarrera.buscarDirector(System.String)">
 	<summary>Busca el director academico anterior para eliminarlo de la base de datos</summary>
 	<param name="pdirector">Nombre del director academico</param>
-	<autor>Alvaro Artavia</autor>
-</member><member name="M:UI.uCtrlBuscarTipoBeca.txtBarraBusqueda_KeyDown(System.Object,System.Windows.Forms.KeyEventArgs)">
-	<summary>Cuando el evento se ejecuta al dar presionar la tecla enter llama al metodo eliminar carrera</summary>
 	<autor>Alvaro Artavia</autor>
 </member><member name="M:UI.uCtrlConsultarBeneficio.uCtrlConsultarBeneficio_Load(System.Object,System.EventArgs)">
 	<summary>

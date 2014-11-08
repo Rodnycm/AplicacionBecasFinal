@@ -1773,7 +1773,7 @@ TableAdapterManager is used to coordinate TableAdapters in the dataset to enable
 </member><member name="M:UI.uCtrlMantenimientoRequisitos.ComboBox_SelectionChangeCommitted(System.Object,System.EventArgs)">
 	<summary>Metodo encargado de controlar cuando se da click al combobox se ejecuten las acciones</summary>
 	<autor>Valeria Ramírez Cordero</autor>
-</member><member name="M:UI.CrearCursos.refrecarLista(UI.uCtrlBuscarCursos)">
+</member><member name="M:UI.UCtrlCrearCursos.refrecarLista(UI.uCtrlBuscarCursos)">
 	<summary>Método que se encarga de limpiar y cargar la lista de cursos una vez creado el curso</summary>
 	<param name="puctrl">control de usuario de buscar cursos</param>
 	<autor>Valeria Ramírez</autor>

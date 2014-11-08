@@ -88,7 +88,7 @@ C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\Apli
 C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\UI.vbprojResolveAssemblyReference.cache
 C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\UI.uCtrlConsultarPlanDeEstudio.resources
 C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\UI.uCtrlAsignarCursosCarrera.resources
-C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\UI.CrearCursos.resources
+C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\UI.UCtrlCrearCursos.resources
 C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\UI.UCtrlEliminarRequisitos.resources
 C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\UI.UCtrlModificarRequisito.resources
 C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\UI.EliminarTipoBeca.resources
@@ -111,6 +111,7 @@ C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\Apli
 C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\UI.uCtrlConsultarRequisitos.resources
 C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\UI.uCtrlConsultarTipoBeca.resources
 C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\UI.UCtrlUserProfile.resources
+C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\UI.UCtrlAsignarNotasCurso.resources
 C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\UI.UCtrlConsultarUsuario.resources
 C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\UI.uCtrlCrearCarrera.resources
 C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\UI.uCtrlCrearTipoBeca.resources
@@ -146,4 +147,3 @@ C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\Apli
 C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\UI.exe
 C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\UI.xml
 C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\UI.pdb
-C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\UI.UCtrlAsignarNotasCurso.resources

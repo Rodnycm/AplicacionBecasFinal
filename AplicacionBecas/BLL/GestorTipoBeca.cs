@@ -27,11 +27,12 @@ namespace BLL
 
         public TipoBeca agregarTipoBeca(string nombre, string estado, string descripcion)
         {
-            TipoBeca objTipoBeca = new TipoBeca(nombre, estado, descripcion);
-
+          
 
             try
             {
+                TipoBeca objTipoBeca = new TipoBeca(nombre, estado, descripcion);
+
                 if (objTipoBeca.IsValid)
                 {
                     TipoBecaRepository.Instance.Insert(objTipoBeca);

@@ -301,7 +301,7 @@ namespace DAL.Repositories
                 SqlCommand cmd = new SqlCommand();
 
                 cmd.Parameters.Add(new SqlParameter("@nombre", objTipoBeca.nombre));
-                cmd.Parameters.Add(new SqlParameter("@fechaCreacion", objTipoBeca.objD));
+                cmd.Parameters.Add(new SqlParameter("@fechaCreacion", objTipoBeca.objD ));
                 cmd.Parameters.Add(new SqlParameter("@estado", objTipoBeca.estado));
                 cmd.Parameters.Add(new SqlParameter("@descripcion", objTipoBeca.descripcion));
 
@@ -447,7 +447,7 @@ namespace DAL.Repositories
                             (
                              Convert.ToInt32(dr["idBeneficio"]),
                              dr["Nombre"].ToString(),
-                             Convert.ToDouble(dr["Porcentaje"]), ""
+                             Convert.ToDouble(dr["Porcentaje"]),""
                             //dr["Aplicabilidad"].ToString()
                             ));
                     }

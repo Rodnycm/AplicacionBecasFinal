@@ -140,7 +140,11 @@ Public Class uCtrlMantenimientoCarreras
 
     Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.MouseClick
 
-        txtBuscar.Text = ""
+        If txtBuscar.Text = "" Then
+            dgvCarreras.Rows.Clear()
+            listarCarreras()
+        End If
+
 
     End Sub
 
@@ -164,19 +168,20 @@ Public Class uCtrlMantenimientoCarreras
     ''' <autor>Alvaro Artavia</autor>
 
     Private Sub buscarCarrera(ByVal param As String)
+        Dim c As Carrera = objGestorCarrera.buscarCarrera(param)
 
         Try
 
-            Dim c As Carrera = objGestorCarrera.buscarCarrera(param)
 
             If c Is Nothing Then
                 dgvCarreras.Rows.Clear()
                 listarCarreras()
             Else
+
                 dgvCarreras.Rows.Clear()
                 dgvCarreras.Rows.Add(c.codigo, c.nombre, c.directorAcademico.primerNombre & " " & c.directorAcademico.primerApellido & " " & c.directorAcademico.segundoApellido, "", "", c.Id, c.color)
             End If
-            
+
         Catch ex As Exception
 
             listarCarreras()

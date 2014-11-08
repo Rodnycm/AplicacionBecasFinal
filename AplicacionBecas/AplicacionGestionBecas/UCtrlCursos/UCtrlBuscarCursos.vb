@@ -9,7 +9,7 @@ Public Class UCtrlBuscarCursos
     Dim nombreCurso As String
     Dim codigoCurso As String
 
-    Public Sub dtaListarCursos_EditingControlShowing(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewEditingControlShowingEventArgs)
+    Public Sub dtaListarCursos_EditingControlShowing(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewEditingControlShowingEventArgs) Handles dtaListarCursos.EditingControlShowing
         ' Only for a DatagridComboBoxColumn at ColumnIndex 1.
         If dtaListarCursos.CurrentCell.ColumnIndex = 5 Then
             Dim combo As ComboBox = CType(e.Control, ComboBox)
@@ -111,7 +111,7 @@ Public Class UCtrlBuscarCursos
                 listarCursos()
             Else
                 dtaListarCursos.Rows.Clear()
-                dtaListarCursos.Rows.Add(objCurso.nombre, objCurso.codigo, objCurso.cuatrimestre, objCurso.creditos, objCurso.precio)
+                dtaListarCursos.Rows.Add(objCurso.nombre, objCurso.codigo, objCurso.cuatrimestre, objCurso.creditos, objCurso.precio, "", objCurso.Id )
             End If
 
         Catch ex As Exception

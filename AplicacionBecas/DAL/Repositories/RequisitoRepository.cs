@@ -194,14 +194,14 @@ namespace DAL.Repositories
         }
 
 
-        public IEnumerable<TipoBeca> buscarRequisitosAUnTipoBeca(Requisito objRequisito)
+        public IEnumerable<TipoBeca> buscarRequisitosAUnTipoBeca(int idRequisito)
         {
             try
             {
                 List<TipoBeca> ptipoBeca = null;
 
                 SqlCommand cmd = new SqlCommand();
-                cmd.Parameters.Add(new SqlParameter("@idRequisito   ", objRequisito.Id));
+                cmd.Parameters.Add(new SqlParameter("@idRequisito   ", idRequisito));
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_buscarRequisitosAUnTipoBeca");
 
                 if (ds.Tables[0].Rows.Count > 0)

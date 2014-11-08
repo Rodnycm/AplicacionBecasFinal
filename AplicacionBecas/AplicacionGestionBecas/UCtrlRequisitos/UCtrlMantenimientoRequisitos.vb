@@ -143,28 +143,19 @@ Public Class uCtrlMantenimientoRequisitos
     End Sub
 
     Private Sub eliminarRequisito(numfila As Integer)
-        Try
             Dim nombre As String = dgvRequisitos.Rows(numfila).Cells(1).Value
             Dim descripcion As String = dgvRequisitos.Rows(numfila).Cells(0).Value
             Dim idRequisito As Integer = dgvRequisitos.Rows(numfila).Cells(3).Value
             Dim uCtrlElirequsito As New UCtrlEliminarRequisitos()
             uCtrlElirequsito.recieveData(nombre, descripcion, idRequisito)
-            uCtrlElirequsito.getFrmBuscar(Me)
+        uCtrlElirequsito.getFrmBuscar(Me)
 
             FrmIniciarSesion.principal.Controls.Add(uCtrlElirequsito)
 
             uCtrlElirequsito.Show()
             uCtrlElirequsito.Location = New Point(256, 226)
             uCtrlElirequsito.BringToFront()
-        Catch ex As Exception
-
-        End Try
-
 
     End Sub
-
-
-    Private Sub dgvRequisitos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvRequisitos.CellContentClick
-
-    End Sub
+ 
 End Class

@@ -42,7 +42,7 @@ Public Class uCtrlModificarRol
 
             Next
 
-            CompararPermisos()
+            'CompararPermisos()
 
         Catch ex As Exception
 
@@ -54,6 +54,19 @@ Public Class uCtrlModificarRol
             UCtrl.BringToFront()
             UCtrl.Show()
 
+        End Try
+
+        Try
+
+            CompararPermisos()
+        Catch ex As Exception
+            Dim UCtrl As UctrlAlerta = New UctrlAlerta()
+
+            Me.Controls.Add(UCtrl)
+            UCtrl.txtAlerta.Text = ex.Message
+            UCtrl.Location = New Point(300, 100)
+            UCtrl.BringToFront()
+            UCtrl.Show()
         End Try
 
     End Sub
@@ -75,7 +88,6 @@ Public Class uCtrlModificarRol
 
         Try
             listaPermisosRol = objGestorRol.consultarPermisosPorRol(idRol)
-
             For j As Integer = 0 To listaPermisosRol.Count - 1
                 For i As Integer = 0 To listaPermisos.Count - 1
                     If (listaPermisosRol.Item(j).Id = listaPermisos.Item(i).Id) Then

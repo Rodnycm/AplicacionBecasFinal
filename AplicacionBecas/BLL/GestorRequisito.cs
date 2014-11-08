@@ -51,6 +51,13 @@ namespace BLL
 
         }
 
+        public IEnumerable<TipoBeca> consultarBecasPorRequisitos(int pidrol)
+        {
+
+            return RequisitoRepository.Instance.buscarRequisitosAUnTipoBeca(pidrol);
+
+        }
+
         public Requisito buscarRequisito(String param)
       {
             return RequisitoRepository.Instance.GetByNombre(param);

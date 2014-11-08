@@ -166,23 +166,6 @@ Public Class uCtrlListarRol
 
     End Sub
 
-    Private Sub txtBuscarRol_TextChanged(sender As Object, e As EventArgs)
-        Dim parametro As String = txtBuscarRol.Text
-
-        Try
-            Dim Rol As New Rol
-            Rol = objGestorRol.consultarRolPorNombre(txtBuscarRol.Text)
-            DGVRol.Rows.Clear()
-            DGVRol.Rows.Add(1)
-            DGVRol.Rows(0).Cells(1).Value = Rol.Nombre()
-
-        Catch ex As Exception
-            DGVRol.Rows.Clear()
-            ListarRoles()
-        End Try
-
-
-    End Sub
 
     Private Sub btnCrearRoles_Click_1(sender As Object, e As EventArgs) Handles btnCrearRoles.Click
 
@@ -212,4 +195,41 @@ Public Class uCtrlListarRol
 
 
     End Sub
+
+    Private Sub txtBuscarRol_TextChanged_1(sender As Object, e As EventArgs) Handles txtBuscarRol.TextChanged
+        If txtBuscar.Text = "" Then
+            ListarRoles()
+        End If
+
+    End Sub
+
+
+    Public Sub buscarRol(ByVal param As String)
+
+        Dim parametro As String = txtBuscarRol.Text
+
+        Try
+            Dim Rol As New Rol
+            Rol = objGestorRol.consultarRolPorNombre(txtBuscarRol.Text)
+            DGVRol.Rows.Clear()
+            DGVRol.Rows.Add(1)
+            DGVRol.Rows(0).Cells(1).Value = Rol.Nombre()
+
+        Catch ex As Exception
+            DGVRol.Rows.Clear()
+            ListarRoles()
+        End Try
+
+    End Sub
+
+    Private Sub txtBuscarRol_KeyDown(sender As Object, e As KeyEventArgs) Handles txtBuscarRol.KeyDown
+        Dim param As String = txtBuscar.Text
+
+        If e.KeyCode = 13 Then
+
+            buscarRol(param)
+
+        End If
+    End Sub
+
 End Class

@@ -1,4 +1,8 @@
-﻿Public Class UCtrlEliminarRequisitos
+﻿
+Imports EntitiesLayer
+Imports BLL
+
+Public Class UCtrlEliminarRequisitos
     Dim listarRequisitos As uCtrlMantenimientoRequisitos
     Dim idRequisito As Integer
     Dim nombre As String
@@ -20,8 +24,16 @@
         listarRequisitos.listarRequisitos()
         Me.Dispose()
     End Sub
-    Private Sub EliminarRequisito()
-        Try
+
+    Public Sub recieveData(ByVal pnombre As String, ByVal pdescripcion As String, ByVal pid As Integer)
+        idRequisito = pid
+        nombre = pnombre
+        descripcion = pdescripcion
+    End Sub
+
+    Private Sub ValidarELiminarRequisito()
+
+        If objGestorRequisito.consultarBecasPorRequisitos(idRequisito) Is Nothing Then
             objGestorRequisito.eliminarRequisito(nombre, descripcion, idRequisito)
             objGestorRequisito.guardarCambios()
             Dim Uctrl As uCtrlConfirmacion = New uCtrlConfirmacion
@@ -31,27 +43,6 @@
             Uctrl.BringToFront()
             Uctrl.Show()
 
-        Catch ex As Exception
-            Dim UCtrl As UctrlAlerta = New UctrlAlerta()
-
-            FrmIniciarSesion.principal.Controls.Add(UCtrl)
-            UCtrl.txtAlerta.Text = ex.Message
-            UCtrl.Location = New Point(300, 100)
-            UCtrl.BringToFront()
-            UCtrl.Show()
-        End Try
-
-    End Sub
-    Public Sub recieveData(ByVal pid As Integer, ByVal pnombre As String, ByVal pdescripcion As String)
-        idRequisito = pid
-        nombre = pnombre
-        descripcion = pdescripcion
-    End Sub
-
-    Private Sub ValidarELiminarRequisito()
-
-        If objGestorUsuario.buscarUsuariosPorRol(idRequisito) Is Nothing Then
-            objGestorRequisito.eliminarRequisito(nombre, descripcion, idRequisito)
         Else
             Dim UCtrl As UctrlAlerta = New UctrlAlerta()
 
@@ -61,8 +52,6 @@
             UCtrl.BringToFront()
             UCtrl.Show()
         End If
-
-
 
     End Sub
 End Class

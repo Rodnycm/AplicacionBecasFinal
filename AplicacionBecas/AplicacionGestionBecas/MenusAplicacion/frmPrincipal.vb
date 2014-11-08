@@ -138,6 +138,8 @@ Partial Public Class frmPrincipal
         ucMenuMant.uCntrlMantRol.Hide()
         ucMenuMant.ucntrlUsuario.Hide()
         ucMenuMant.uCtrlTipoBeca.Hide()
+        ucMenuRep.uctrlReportesBitcoraAcciones.Hide()
+        ucMenuRep.uctrlPlanEstudio.Hide()
         ucMenuMant.uCntrlBuscarBeneficio.Hide()
         mensajeInstaneo.Show()
         btnsMenus.Show()

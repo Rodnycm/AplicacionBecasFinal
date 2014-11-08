@@ -24,15 +24,17 @@ Partial Class uCtrlReporteRegistroAcciones
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(uCtrlReporteRegistroAcciones))
         Me.Tb_BitacoraAccionBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DB_Proyecto2DataSetConsultarRegistroAcciones = New UI.DB_Proyecto2DataSetConsultarRegistroAcciones()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.Tb_BitacoraAccionTableAdapter = New UI.DB_Proyecto2DataSetConsultarRegistroAccionesTableAdapters.Tb_BitacoraAccionTableAdapter()
         Me.DB_Proyecto2DataSet1 = New UI.DB_Proyecto2DataSet1()
+        Me.lblTituloMenuAcademico = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.Tb_BitacoraAccionBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DB_Proyecto2DataSetConsultarRegistroAcciones, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DB_Proyecto2DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Tb_BitacoraAccionBindingSource
@@ -51,9 +53,9 @@ Partial Class uCtrlReporteRegistroAcciones
         ReportDataSource1.Value = Me.Tb_BitacoraAccionBindingSource
         Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
         Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "UI.Report3.rdlc"
-        Me.ReportViewer1.Location = New System.Drawing.Point(13, 43)
+        Me.ReportViewer1.Location = New System.Drawing.Point(15, 126)
         Me.ReportViewer1.Name = "ReportViewer1"
-        Me.ReportViewer1.Size = New System.Drawing.Size(947, 400)
+        Me.ReportViewer1.Size = New System.Drawing.Size(966, 397)
         Me.ReportViewer1.TabIndex = 0
         '
         'Tb_BitacoraAccionTableAdapter
@@ -65,20 +67,45 @@ Partial Class uCtrlReporteRegistroAcciones
         Me.DB_Proyecto2DataSet1.DataSetName = "DB_Proyecto2DataSet1"
         Me.DB_Proyecto2DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
+        'lblTituloMenuAcademico
+        '
+        Me.lblTituloMenuAcademico.AutoSize = True
+        Me.lblTituloMenuAcademico.Font = New System.Drawing.Font("Segoe UI Semilight", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTituloMenuAcademico.ForeColor = System.Drawing.Color.Black
+        Me.lblTituloMenuAcademico.Location = New System.Drawing.Point(-5, 13)
+        Me.lblTituloMenuAcademico.Name = "lblTituloMenuAcademico"
+        Me.lblTituloMenuAcademico.Size = New System.Drawing.Size(259, 45)
+        Me.lblTituloMenuAcademico.TabIndex = 31
+        Me.lblTituloMenuAcademico.Text = "Bitácora Acciones"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackgroundImage = Global.UI.My.Resources.Resources.tablaFinalGrandeMorada
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox1.Location = New System.Drawing.Point(3, 85)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(992, 451)
+        Me.PictureBox1.TabIndex = 32
+        Me.PictureBox1.TabStop = False
+        '
         'uCtrlReporteRegistroAcciones
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Controls.Add(Me.lblTituloMenuAcademico)
         Me.Controls.Add(Me.ReportViewer1)
+        Me.Controls.Add(Me.PictureBox1)
+        Me.Location = New System.Drawing.Point(170, 80)
         Me.Name = "uCtrlReporteRegistroAcciones"
-        Me.Size = New System.Drawing.Size(975, 456)
+        Me.Size = New System.Drawing.Size(1015, 550)
         CType(Me.Tb_BitacoraAccionBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DB_Proyecto2DataSetConsultarRegistroAcciones, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DB_Proyecto2DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
@@ -87,6 +114,8 @@ Partial Class uCtrlReporteRegistroAcciones
     Friend WithEvents Tb_BitacoraAccionTableAdapter As UI.DB_Proyecto2DataSetConsultarRegistroAccionesTableAdapters.Tb_BitacoraAccionTableAdapter
 
     Friend WithEvents DB_Proyecto2DataSet1 As UI.DB_Proyecto2DataSet1
+    Friend WithEvents lblTituloMenuAcademico As System.Windows.Forms.Label
+    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
 
 
 End Class

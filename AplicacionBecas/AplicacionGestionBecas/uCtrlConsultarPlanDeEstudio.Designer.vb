@@ -22,9 +22,9 @@ Partial Class uCtrlConsultarPlanDeEstudio
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(uCtrlConsultarPlanDeEstudio))
         Me.lblNombreCarrera = New System.Windows.Forms.Label()
         Me.dtaConsultarPlanEstudio = New System.Windows.Forms.DataGridView()
@@ -58,38 +58,38 @@ Partial Class uCtrlConsultarPlanDeEstudio
         Me.dtaConsultarPlanEstudio.BackgroundColor = System.Drawing.Color.White
         Me.dtaConsultarPlanEstudio.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dtaConsultarPlanEstudio.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Transparent
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI Light", 9.75!)
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dtaConsultarPlanEstudio.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.Transparent
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Segoe UI Light", 9.75!)
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dtaConsultarPlanEstudio.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.dtaConsultarPlanEstudio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtaConsultarPlanEstudio.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dtaNombre, Me.dtaCreditoos, Me.dtaPrecio})
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dtaConsultarPlanEstudio.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dtaConsultarPlanEstudio.DefaultCellStyle = DataGridViewCellStyle5
         Me.dtaConsultarPlanEstudio.Enabled = False
         Me.dtaConsultarPlanEstudio.GridColor = System.Drawing.Color.White
         Me.dtaConsultarPlanEstudio.Location = New System.Drawing.Point(28, 186)
         Me.dtaConsultarPlanEstudio.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.dtaConsultarPlanEstudio.Name = "dtaConsultarPlanEstudio"
         Me.dtaConsultarPlanEstudio.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI Light", 9.75!)
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dtaConsultarPlanEstudio.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Segoe UI Light", 9.75!)
+        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dtaConsultarPlanEstudio.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
         Me.dtaConsultarPlanEstudio.RowHeadersVisible = False
         Me.dtaConsultarPlanEstudio.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.dtaConsultarPlanEstudio.Size = New System.Drawing.Size(947, 271)
@@ -136,7 +136,7 @@ Partial Class uCtrlConsultarPlanDeEstudio
         '
         Me.lblPrecio.AutoSize = True
         Me.lblPrecio.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPrecio.Location = New System.Drawing.Point(705, 520)
+        Me.lblPrecio.Location = New System.Drawing.Point(705, 496)
         Me.lblPrecio.Name = "lblPrecio"
         Me.lblPrecio.Size = New System.Drawing.Size(71, 17)
         Me.lblPrecio.TabIndex = 36
@@ -146,7 +146,7 @@ Partial Class uCtrlConsultarPlanDeEstudio
         '
         Me.lblCreditos.AutoSize = True
         Me.lblCreditos.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCreditos.Location = New System.Drawing.Point(362, 520)
+        Me.lblCreditos.Location = New System.Drawing.Point(362, 496)
         Me.lblCreditos.Name = "lblCreditos"
         Me.lblCreditos.Size = New System.Drawing.Size(82, 17)
         Me.lblCreditos.TabIndex = 37
@@ -156,7 +156,7 @@ Partial Class uCtrlConsultarPlanDeEstudio
         '
         Me.lblSumaCreditos.AutoSize = True
         Me.lblSumaCreditos.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSumaCreditos.Location = New System.Drawing.Point(441, 520)
+        Me.lblSumaCreditos.Location = New System.Drawing.Point(441, 496)
         Me.lblSumaCreditos.Name = "lblSumaCreditos"
         Me.lblSumaCreditos.Size = New System.Drawing.Size(0, 17)
         Me.lblSumaCreditos.TabIndex = 38
@@ -165,7 +165,7 @@ Partial Class uCtrlConsultarPlanDeEstudio
         '
         Me.lblSumaPrecio.AutoSize = True
         Me.lblSumaPrecio.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSumaPrecio.Location = New System.Drawing.Point(775, 520)
+        Me.lblSumaPrecio.Location = New System.Drawing.Point(775, 496)
         Me.lblSumaPrecio.Name = "lblSumaPrecio"
         Me.lblSumaPrecio.Size = New System.Drawing.Size(0, 17)
         Me.lblSumaPrecio.TabIndex = 39

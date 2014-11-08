@@ -81,19 +81,19 @@ Public Class UCtrlBuscarCursos
 
 
         Try
-            'Dim listarCursos As List(Of Curso)
-            'listarCursos = objGestorCurso.consultarCursos()
+            Dim listarCursos As List(Of Curso)
+            listarCursos = objGestorCurso.consultarCursos()
 
-            'For i As Integer = 0 To listarCursos.Count - 1
+            For i As Integer = 0 To listarCursos.Count - 1
 
-            '    dtaListarCursos.Rows.Add(1)
-            '    dtaListarCursos.Rows(i).Cells(1).Value = listarCursos.Item(i).codigo
-            '    dtaListarCursos.Rows(i).Cells(0).Value = listarCursos.Item(i).nombre
-            '    dtaListarCursos.Rows(i).Cells(2).Value = listarCursos.Item(i).cuatrimestre
-            '    dtaListarCursos.Rows(i).Cells(3).Value = listarCursos.Item(i).creditos
-            '    dtaListarCursos.Rows(i).Cells(4).Value = listarCursos.Item(i).precio
-            '    dtaListarCursos.Rows(i).Cells(6).Value = listarCursos.Item(i).Id
-            ' Next
+                dtaListarCursos.Rows.Add(1)
+                dtaListarCursos.Rows(i).Cells(1).Value = listarCursos.Item(i).codigo
+                dtaListarCursos.Rows(i).Cells(0).Value = listarCursos.Item(i).nombre
+                dtaListarCursos.Rows(i).Cells(2).Value = listarCursos.Item(i).cuatrimestre
+                dtaListarCursos.Rows(i).Cells(3).Value = listarCursos.Item(i).creditos
+                dtaListarCursos.Rows(i).Cells(4).Value = listarCursos.Item(i).precio
+                dtaListarCursos.Rows(i).Cells(6).Value = listarCursos.Item(i).Id
+            Next
 
         Catch ex As Exception
 

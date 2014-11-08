@@ -41,6 +41,8 @@ Partial Class uCtrlMantenimientoCarreras
         Me.btnMantenimiento = New System.Windows.Forms.Button()
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
+
+        Me.lblTituloCarreras = New System.Windows.Forms.Label()
         CType(Me.dgvCarreras, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -169,12 +171,24 @@ Partial Class uCtrlMantenimientoCarreras
         Me.txtBuscar.TabIndex = 15
         Me.txtBuscar.Text = "Buscar:"
         '
+        'lblTituloCarreras
+        '
+        Me.lblTituloCarreras.AutoSize = True
+        Me.lblTituloCarreras.Font = New System.Drawing.Font("Segoe UI Semilight", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTituloCarreras.ForeColor = System.Drawing.Color.Black
+        Me.lblTituloCarreras.Location = New System.Drawing.Point(26, 17)
+        Me.lblTituloCarreras.Name = "lblTituloCarreras"
+        Me.lblTituloCarreras.Size = New System.Drawing.Size(134, 45)
+        Me.lblTituloCarreras.TabIndex = 31
+        Me.lblTituloCarreras.Text = "Carreras"
+        '
         'uCtrlMantenimientoCarreras
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Controls.Add(Me.lblTituloCarreras)
         Me.Controls.Add(Me.txtBuscar)
         Me.Controls.Add(Me.dgvCarreras)
         Me.Controls.Add(Me.PictureBox1)
@@ -200,5 +214,6 @@ Partial Class uCtrlMantenimientoCarreras
     Friend WithEvents Modificarcmb As System.Windows.Forms.DataGridViewComboBoxColumn
     Friend WithEvents id As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents color As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents lblTituloCarreras As System.Windows.Forms.Label
 
 End Class

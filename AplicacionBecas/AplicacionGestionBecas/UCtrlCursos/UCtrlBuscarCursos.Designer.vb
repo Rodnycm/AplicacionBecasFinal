@@ -1,4 +1,6 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿Imports System.Windows.Forms.VisualStyles.VisualStyleElement
+
+<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
 Partial Class UCtrlBuscarCursos
     Inherits System.Windows.Forms.UserControl
 
@@ -22,7 +24,7 @@ Partial Class UCtrlBuscarCursos
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(UCtrlBuscarCursos))
         Me.txtBuscarCurso = New System.Windows.Forms.TextBox()
         Me.dtaListarCursos = New System.Windows.Forms.DataGridView()
@@ -36,6 +38,7 @@ Partial Class UCtrlBuscarCursos
         Me.lblBuscar = New System.Windows.Forms.Label()
         Me.btnCrearCurso = New System.Windows.Forms.Button()
         Me.imgBuscarCursos = New System.Windows.Forms.PictureBox()
+        Me.lblTituloCursos = New System.Windows.Forms.Label()
         CType(Me.dtaListarCursos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.imgBuscarCursos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -56,14 +59,14 @@ Partial Class UCtrlBuscarCursos
         Me.dtaListarCursos.BackgroundColor = System.Drawing.Color.White
         Me.dtaListarCursos.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dtaListarCursos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Maroon
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dtaListarCursos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.Maroon
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dtaListarCursos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dtaListarCursos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtaListarCursos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.columCuatrimestre, Me.columCreditos, Me.columPrecio, Me.ComboBox, Me.id})
         Me.dtaListarCursos.GridColor = System.Drawing.Color.White
@@ -161,11 +164,23 @@ Partial Class UCtrlBuscarCursos
         Me.imgBuscarCursos.TabIndex = 26
         Me.imgBuscarCursos.TabStop = False
         '
-        'UCtrlBuscarCursos
+        'lblTituloCursos
+        '
+        Me.lblTituloCursos.AutoSize = True
+        Me.lblTituloCursos.Font = New System.Drawing.Font("Segoe UI Semilight", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTituloCursos.ForeColor = System.Drawing.Color.Black
+        Me.lblTituloCursos.Location = New System.Drawing.Point(26, 17)
+        Me.lblTituloCursos.Name = "lblTituloCursos"
+        Me.lblTituloCursos.Size = New System.Drawing.Size(113, 45)
+        Me.lblTituloCursos.TabIndex = 32
+        Me.lblTituloCursos.Text = "Cursos"
+        '
+        'uCtrlBuscarCursos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
+        Me.Controls.Add(Me.lblTituloCursos)
         Me.Controls.Add(Me.btnCrearCurso)
         Me.Controls.Add(Me.lblBuscar)
         Me.Controls.Add(Me.txtBuscarCurso)
@@ -185,12 +200,13 @@ Partial Class UCtrlBuscarCursos
     Friend WithEvents imgBuscarCursos As System.Windows.Forms.PictureBox
     Friend WithEvents lblBuscar As System.Windows.Forms.Label
     Friend WithEvents btnCrearCurso As System.Windows.Forms.Button
-    Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn1 As Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents columCuatrimestre As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents columCreditos As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents columPrecio As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ComboBox As System.Windows.Forms.DataGridViewComboBoxColumn
     Friend WithEvents id As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents lblTituloCursos As System.Windows.Forms.Label
 
 End Class

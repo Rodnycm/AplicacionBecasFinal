@@ -9,5 +9,6 @@ C:\Users\Valeria\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\TIL\obj\D
 C:\Users\Valeria\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\TIL\obj\Debug\TIL.pdb
 C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\TIL\bin\Debug\TIL.dll
 C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\TIL\bin\Debug\TIL.pdb
+C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\TIL\obj\Debug\TIL.csprojResolveAssemblyReference.cache
 C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\TIL\obj\Debug\TIL.dll
 C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\TIL\obj\Debug\TIL.pdb

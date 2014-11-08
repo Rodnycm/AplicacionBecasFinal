@@ -27,6 +27,7 @@ Partial Class uCtrlMenuReportes
         Me.btnConsultarBitacoraAcciones = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.btnPlanDeEstudio = New System.Windows.Forms.Button()
+        Me.lblTituloMenuAcademico = New System.Windows.Forms.Label()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -37,11 +38,11 @@ Partial Class uCtrlMenuReportes
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 168.0!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 162.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 189.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 190.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.btnConsultarBitacoraAcciones, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Button5, 1, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.btnPlanDeEstudio, 2, 0)
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(250, 134)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(250, 170)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 2
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52.40174!))
@@ -90,21 +91,35 @@ Partial Class uCtrlMenuReportes
         Me.btnPlanDeEstudio.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnPlanDeEstudio.UseVisualStyleBackColor = True
         '
+        'lblTituloMenuAcademico
+        '
+        Me.lblTituloMenuAcademico.AutoSize = True
+        Me.lblTituloMenuAcademico.Font = New System.Drawing.Font("Segoe UI Semilight", 28.0!)
+        Me.lblTituloMenuAcademico.ForeColor = System.Drawing.Color.Black
+        Me.lblTituloMenuAcademico.Location = New System.Drawing.Point(241, 65)
+        Me.lblTituloMenuAcademico.Name = "lblTituloMenuAcademico"
+        Me.lblTituloMenuAcademico.Size = New System.Drawing.Size(168, 51)
+        Me.lblTituloMenuAcademico.TabIndex = 16
+        Me.lblTituloMenuAcademico.Text = "Reportes"
+        '
         'uCtrlMenuReportes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
+        Me.Controls.Add(Me.lblTituloMenuAcademico)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Name = "uCtrlMenuReportes"
-        Me.Size = New System.Drawing.Size(1070, 388)
+        Me.Size = New System.Drawing.Size(1070, 551)
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents TableLayoutPanel1 As System.Windows.Forms.TableLayoutPanel
     Friend WithEvents btnConsultarBitacoraAcciones As System.Windows.Forms.Button
     Friend WithEvents Button5 As System.Windows.Forms.Button
     Friend WithEvents btnPlanDeEstudio As System.Windows.Forms.Button
+    Friend WithEvents lblTituloMenuAcademico As System.Windows.Forms.Label
 
 End Class

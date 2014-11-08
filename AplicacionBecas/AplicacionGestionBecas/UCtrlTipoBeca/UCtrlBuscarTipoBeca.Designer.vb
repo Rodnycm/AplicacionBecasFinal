@@ -42,6 +42,7 @@ Partial Class uCtrlBuscarTipoBeca
         Me.btnVolver = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnCrearTipoBeca = New System.Windows.Forms.Button()
+        Me.lblTituloTiposDeBeca = New System.Windows.Forms.Label()
         CType(Me.dtaTipoBeca, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -199,11 +200,23 @@ Partial Class uCtrlBuscarTipoBeca
         Me.btnCrearTipoBeca.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnCrearTipoBeca.UseVisualStyleBackColor = True
         '
+        'lblTituloTiposDeBeca
+        '
+        Me.lblTituloTiposDeBeca.AutoSize = True
+        Me.lblTituloTiposDeBeca.Font = New System.Drawing.Font("Segoe UI Semilight", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTituloTiposDeBeca.ForeColor = System.Drawing.Color.Black
+        Me.lblTituloTiposDeBeca.Location = New System.Drawing.Point(26, 17)
+        Me.lblTituloTiposDeBeca.Name = "lblTituloTiposDeBeca"
+        Me.lblTituloTiposDeBeca.Size = New System.Drawing.Size(209, 45)
+        Me.lblTituloTiposDeBeca.TabIndex = 67
+        Me.lblTituloTiposDeBeca.Text = "Tipos de Beca"
+        '
         'uCtrlBuscarTipoBeca
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
+        Me.Controls.Add(Me.lblTituloTiposDeBeca)
         Me.Controls.Add(Me.btnVolver)
         Me.Controls.Add(Me.txtBarraBusqueda)
         Me.Controls.Add(Me.btnCrearTipoBeca)
@@ -230,5 +243,6 @@ Partial Class uCtrlBuscarTipoBeca
     Friend WithEvents Requisitos As System.Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents Beneficios As System.Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents opciones As System.Windows.Forms.DataGridViewComboBoxColumn
+    Friend WithEvents lblTituloTiposDeBeca As System.Windows.Forms.Label
 
 End Class

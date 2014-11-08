@@ -23,8 +23,8 @@ Partial Class uCntrlBuscarBeneficio
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(uCntrlBuscarBeneficio))
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.ErrorProvider2 = New System.Windows.Forms.ErrorProvider(Me.components)
@@ -38,6 +38,7 @@ Partial Class uCntrlBuscarBeneficio
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.btnMantenimiento = New System.Windows.Forms.Button()
         Me.pctbxBeneficios = New System.Windows.Forms.PictureBox()
+        Me.lblTituloMenuAcademico = New System.Windows.Forms.Label()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ErrorProvider2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dtaBuscarBeneficio, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -60,14 +61,14 @@ Partial Class uCntrlBuscarBeneficio
         Me.dtaBuscarBeneficio.BackgroundColor = System.Drawing.Color.White
         Me.dtaBuscarBeneficio.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dtaBuscarBeneficio.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
-        DataGridViewCellStyle11.BackColor = System.Drawing.Color.Transparent
-        DataGridViewCellStyle11.Font = New System.Drawing.Font("Segoe UI Light", 9.75!)
-        DataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dtaBuscarBeneficio.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
+        DataGridViewCellStyle9.BackColor = System.Drawing.Color.Transparent
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Segoe UI Light", 9.75!)
+        DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dtaBuscarBeneficio.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle9
         Me.dtaBuscarBeneficio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtaBuscarBeneficio.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dtaId, Me.dtaNombre, Me.dtaPorcentaje, Me.dtaAplicabilidad, Me.dtaOpciones})
         Me.dtaBuscarBeneficio.GridColor = System.Drawing.Color.White
@@ -75,14 +76,14 @@ Partial Class uCntrlBuscarBeneficio
         Me.dtaBuscarBeneficio.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.dtaBuscarBeneficio.Name = "dtaBuscarBeneficio"
         Me.dtaBuscarBeneficio.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle12.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle12.Font = New System.Drawing.Font("Segoe UI Light", 9.75!)
-        DataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dtaBuscarBeneficio.RowHeadersDefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle10.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Segoe UI Light", 9.75!)
+        DataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dtaBuscarBeneficio.RowHeadersDefaultCellStyle = DataGridViewCellStyle10
         Me.dtaBuscarBeneficio.RowHeadersVisible = False
         Me.dtaBuscarBeneficio.Size = New System.Drawing.Size(947, 271)
         Me.dtaBuscarBeneficio.TabIndex = 28
@@ -154,11 +155,23 @@ Partial Class uCntrlBuscarBeneficio
         Me.pctbxBeneficios.TabIndex = 26
         Me.pctbxBeneficios.TabStop = False
         '
+        'lblTituloMenuAcademico
+        '
+        Me.lblTituloMenuAcademico.AutoSize = True
+        Me.lblTituloMenuAcademico.Font = New System.Drawing.Font("Segoe UI Semilight", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTituloMenuAcademico.ForeColor = System.Drawing.Color.Black
+        Me.lblTituloMenuAcademico.Location = New System.Drawing.Point(26, 17)
+        Me.lblTituloMenuAcademico.Name = "lblTituloMenuAcademico"
+        Me.lblTituloMenuAcademico.Size = New System.Drawing.Size(156, 45)
+        Me.lblTituloMenuAcademico.TabIndex = 30
+        Me.lblTituloMenuAcademico.Text = "Beneficios"
+        '
         'uCntrlBuscarBeneficio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
+        Me.Controls.Add(Me.lblTituloMenuAcademico)
         Me.Controls.Add(Me.dtaBuscarBeneficio)
         Me.Controls.Add(Me.txtBuscar)
         Me.Controls.Add(Me.btnMantenimiento)
@@ -198,4 +211,5 @@ Partial Class uCntrlBuscarBeneficio
     Friend WithEvents dtaPorcentaje As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents dtaAplicabilidad As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents dtaOpciones As System.Windows.Forms.DataGridViewComboBoxColumn
+    Friend WithEvents lblTituloMenuAcademico As System.Windows.Forms.Label
 End Class

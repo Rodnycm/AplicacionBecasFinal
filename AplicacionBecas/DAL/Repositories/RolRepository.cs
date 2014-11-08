@@ -172,7 +172,7 @@ namespace DAL.Repositories
             {
                 Rol objRol = null;
                 SqlCommand cmd = new SqlCommand();
-                cmd.Parameters.Add(new SqlParameter("@Nombre", pnombre));
+                cmd.Parameters.Add(new SqlParameter("@nombre", pnombre));
 
                 var ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_buscarRol");
 

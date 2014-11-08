@@ -41,6 +41,7 @@ Partial Class uCtrlListarRol
         Me.PbUsuarios = New System.Windows.Forms.PictureBox()
         Me.txtBuscarRol = New System.Windows.Forms.TextBox()
         Me.btnCrearRoles = New System.Windows.Forms.Button()
+        Me.lblTituloRoles = New System.Windows.Forms.Label()
         CType(Me.dgvRoles, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PbRoles, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DGVRol, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -227,11 +228,23 @@ Partial Class uCtrlListarRol
         Me.btnCrearRoles.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnCrearRoles.UseVisualStyleBackColor = True
         '
+        'lblTituloRoles
+        '
+        Me.lblTituloRoles.AutoSize = True
+        Me.lblTituloRoles.Font = New System.Drawing.Font("Segoe UI Semilight", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTituloRoles.ForeColor = System.Drawing.Color.Black
+        Me.lblTituloRoles.Location = New System.Drawing.Point(26, 17)
+        Me.lblTituloRoles.Name = "lblTituloRoles"
+        Me.lblTituloRoles.Size = New System.Drawing.Size(91, 45)
+        Me.lblTituloRoles.TabIndex = 33
+        Me.lblTituloRoles.Text = "Roles"
+        '
         'uCtrlListarRol
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
+        Me.Controls.Add(Me.lblTituloRoles)
         Me.Controls.Add(Me.DGVRol)
         Me.Controls.Add(Me.PbUsuarios)
         Me.Controls.Add(Me.txtBuscarRol)
@@ -264,5 +277,6 @@ Partial Class uCtrlListarRol
     Friend WithEvents dtaId As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents dtNombre As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents dtaOpciones As System.Windows.Forms.DataGridViewComboBoxColumn
+    Friend WithEvents lblTituloRoles As System.Windows.Forms.Label
 
 End Class

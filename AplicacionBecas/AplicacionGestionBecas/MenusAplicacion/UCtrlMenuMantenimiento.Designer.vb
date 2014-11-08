@@ -24,14 +24,15 @@ Partial Class uCtrlMenuMantenimiento
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(uCtrlMenuMantenimiento))
         Me.layoutMenuMant = New System.Windows.Forms.TableLayoutPanel()
+        Me.btnEmail = New System.Windows.Forms.Button()
         Me.btnUsuarios = New System.Windows.Forms.Button()
         Me.btnCursos = New System.Windows.Forms.Button()
-        Me.btnBeneficios = New System.Windows.Forms.Button()
         Me.btnCarreras = New System.Windows.Forms.Button()
         Me.btnRoles = New System.Windows.Forms.Button()
         Me.btnBecas = New System.Windows.Forms.Button()
         Me.btnRequisitos = New System.Windows.Forms.Button()
-        Me.btnEmail = New System.Windows.Forms.Button()
+        Me.btnBeneficios = New System.Windows.Forms.Button()
+        Me.lblTituloMenuAcademico = New System.Windows.Forms.Label()
         Me.layoutMenuMant.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -51,13 +52,26 @@ Partial Class uCtrlMenuMantenimiento
         Me.layoutMenuMant.Controls.Add(Me.btnBecas, 2, 0)
         Me.layoutMenuMant.Controls.Add(Me.btnRequisitos, 3, 0)
         Me.layoutMenuMant.Controls.Add(Me.btnBeneficios, 4, 0)
-        Me.layoutMenuMant.Location = New System.Drawing.Point(175, 134)
+        Me.layoutMenuMant.Location = New System.Drawing.Point(175, 170)
         Me.layoutMenuMant.Name = "layoutMenuMant"
         Me.layoutMenuMant.RowCount = 2
         Me.layoutMenuMant.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52.40174!))
         Me.layoutMenuMant.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.59826!))
         Me.layoutMenuMant.Size = New System.Drawing.Size(850, 229)
         Me.layoutMenuMant.TabIndex = 13
+        '
+        'btnEmail
+        '
+        Me.btnEmail.BackgroundImage = CType(resources.GetObject("btnEmail.BackgroundImage"), System.Drawing.Image)
+        Me.btnEmail.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEmail.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEmail.ForeColor = System.Drawing.Color.White
+        Me.btnEmail.Location = New System.Drawing.Point(333, 122)
+        Me.btnEmail.Name = "btnEmail"
+        Me.btnEmail.Size = New System.Drawing.Size(128, 99)
+        Me.btnEmail.TabIndex = 14
+        Me.btnEmail.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnEmail.UseVisualStyleBackColor = True
         '
         'btnUsuarios
         '
@@ -86,20 +100,6 @@ Partial Class uCtrlMenuMantenimiento
         Me.btnCursos.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnCursos.UseVisualStyleBackColor = True
         Me.btnCursos.Visible = False
-        '
-        'btnBeneficios
-        '
-        Me.btnBeneficios.BackgroundImage = CType(resources.GetObject("btnBeneficios.BackgroundImage"), System.Drawing.Image)
-        Me.btnBeneficios.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBeneficios.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBeneficios.ForeColor = System.Drawing.Color.White
-        Me.btnBeneficios.Location = New System.Drawing.Point(663, 3)
-        Me.btnBeneficios.Name = "btnBeneficios"
-        Me.btnBeneficios.Size = New System.Drawing.Size(128, 99)
-        Me.btnBeneficios.TabIndex = 9
-        Me.btnBeneficios.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnBeneficios.UseVisualStyleBackColor = True
-        Me.btnBeneficios.Visible = False
         '
         'btnCarreras
         '
@@ -159,29 +159,43 @@ Partial Class uCtrlMenuMantenimiento
         Me.btnRequisitos.UseVisualStyleBackColor = True
         Me.btnRequisitos.Visible = False
         '
-        'btnEmail
+        'btnBeneficios
         '
-        Me.btnEmail.BackgroundImage = CType(resources.GetObject("btnEmail.BackgroundImage"), System.Drawing.Image)
-        Me.btnEmail.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnEmail.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEmail.ForeColor = System.Drawing.Color.White
-        Me.btnEmail.Location = New System.Drawing.Point(333, 122)
-        Me.btnEmail.Name = "btnEmail"
-        Me.btnEmail.Size = New System.Drawing.Size(128, 99)
-        Me.btnEmail.TabIndex = 14
-        Me.btnEmail.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnEmail.UseVisualStyleBackColor = True
+        Me.btnBeneficios.BackgroundImage = CType(resources.GetObject("btnBeneficios.BackgroundImage"), System.Drawing.Image)
+        Me.btnBeneficios.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBeneficios.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBeneficios.ForeColor = System.Drawing.Color.White
+        Me.btnBeneficios.Location = New System.Drawing.Point(663, 3)
+        Me.btnBeneficios.Name = "btnBeneficios"
+        Me.btnBeneficios.Size = New System.Drawing.Size(128, 99)
+        Me.btnBeneficios.TabIndex = 9
+        Me.btnBeneficios.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnBeneficios.UseVisualStyleBackColor = True
+        Me.btnBeneficios.Visible = False
+        '
+        'lblTituloMenuAcademico
+        '
+        Me.lblTituloMenuAcademico.AutoSize = True
+        Me.lblTituloMenuAcademico.Font = New System.Drawing.Font("Segoe UI Semilight", 28.0!)
+        Me.lblTituloMenuAcademico.ForeColor = System.Drawing.Color.Black
+        Me.lblTituloMenuAcademico.Location = New System.Drawing.Point(166, 55)
+        Me.lblTituloMenuAcademico.Name = "lblTituloMenuAcademico"
+        Me.lblTituloMenuAcademico.Size = New System.Drawing.Size(271, 51)
+        Me.lblTituloMenuAcademico.TabIndex = 15
+        Me.lblTituloMenuAcademico.Text = "Mantenimiento"
         '
         'uCtrlMenuMantenimiento
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
+        Me.Controls.Add(Me.lblTituloMenuAcademico)
         Me.Controls.Add(Me.layoutMenuMant)
         Me.Name = "uCtrlMenuMantenimiento"
         Me.Size = New System.Drawing.Size(1030, 640)
         Me.layoutMenuMant.ResumeLayout(False)
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents layoutMenuMant As System.Windows.Forms.TableLayoutPanel
@@ -193,5 +207,6 @@ Partial Class uCtrlMenuMantenimiento
     Friend WithEvents btnBecas As System.Windows.Forms.Button
     Friend WithEvents btnRequisitos As System.Windows.Forms.Button
     Friend WithEvents btnEmail As System.Windows.Forms.Button
+    Friend WithEvents lblTituloMenuAcademico As System.Windows.Forms.Label
 
 End Class

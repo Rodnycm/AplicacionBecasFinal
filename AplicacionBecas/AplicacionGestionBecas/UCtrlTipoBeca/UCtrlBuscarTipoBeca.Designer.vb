@@ -32,7 +32,6 @@ Partial Class uCtrlBuscarTipoBeca
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(uCtrlBuscarTipoBeca))
         Me.txtBarraBusqueda = New System.Windows.Forms.TextBox()
         Me.dtaTipoBeca = New System.Windows.Forms.DataGridView()
-        Me.btnVolver = New System.Windows.Forms.Button()
         Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -40,8 +39,10 @@ Partial Class uCtrlBuscarTipoBeca
         Me.Requisitos = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Beneficios = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.opciones = New System.Windows.Forms.DataGridViewComboBoxColumn()
+        Me.btnVolver = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnCrearTipoBeca = New System.Windows.Forms.Button()
+        Me.lblTituloTiposDeBeca = New System.Windows.Forms.Label()
         CType(Me.dtaTipoBeca, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -97,21 +98,6 @@ Partial Class uCtrlBuscarTipoBeca
         Me.dtaTipoBeca.RowHeadersVisible = False
         Me.dtaTipoBeca.Size = New System.Drawing.Size(947, 271)
         Me.dtaTipoBeca.TabIndex = 21
-        '
-        'btnVolver
-        '
-        Me.btnVolver.BackColor = System.Drawing.Color.White
-        Me.btnVolver.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(248, Byte), Integer))
-        Me.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnVolver.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnVolver.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(248, Byte), Integer))
-        Me.btnVolver.Location = New System.Drawing.Point(917, 521)
-        Me.btnVolver.Name = "btnVolver"
-        Me.btnVolver.Size = New System.Drawing.Size(89, 29)
-        Me.btnVolver.TabIndex = 66
-        Me.btnVolver.Text = "Volver"
-        Me.btnVolver.UseVisualStyleBackColor = False
-        Me.btnVolver.Visible = False
         '
         'Nombre
         '
@@ -176,6 +162,21 @@ Partial Class uCtrlBuscarTipoBeca
         Me.opciones.Items.AddRange(New Object() {"Ver", "Editar", "Eliminar"})
         Me.opciones.Name = "opciones"
         '
+        'btnVolver
+        '
+        Me.btnVolver.BackColor = System.Drawing.Color.White
+        Me.btnVolver.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(248, Byte), Integer))
+        Me.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnVolver.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnVolver.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(248, Byte), Integer))
+        Me.btnVolver.Location = New System.Drawing.Point(917, 521)
+        Me.btnVolver.Name = "btnVolver"
+        Me.btnVolver.Size = New System.Drawing.Size(89, 29)
+        Me.btnVolver.TabIndex = 66
+        Me.btnVolver.Text = "Volver"
+        Me.btnVolver.UseVisualStyleBackColor = False
+        Me.btnVolver.Visible = False
+        '
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
@@ -199,11 +200,23 @@ Partial Class uCtrlBuscarTipoBeca
         Me.btnCrearTipoBeca.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnCrearTipoBeca.UseVisualStyleBackColor = True
         '
+        'lblTituloTiposDeBeca
+        '
+        Me.lblTituloTiposDeBeca.AutoSize = True
+        Me.lblTituloTiposDeBeca.Font = New System.Drawing.Font("Segoe UI Semilight", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTituloTiposDeBeca.ForeColor = System.Drawing.Color.Black
+        Me.lblTituloTiposDeBeca.Location = New System.Drawing.Point(26, 17)
+        Me.lblTituloTiposDeBeca.Name = "lblTituloTiposDeBeca"
+        Me.lblTituloTiposDeBeca.Size = New System.Drawing.Size(209, 45)
+        Me.lblTituloTiposDeBeca.TabIndex = 67
+        Me.lblTituloTiposDeBeca.Text = "Tipos de Beca"
+        '
         'uCtrlBuscarTipoBeca
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
+        Me.Controls.Add(Me.lblTituloTiposDeBeca)
         Me.Controls.Add(Me.btnVolver)
         Me.Controls.Add(Me.txtBarraBusqueda)
         Me.Controls.Add(Me.dtaTipoBeca)
@@ -230,5 +243,6 @@ Partial Class uCtrlBuscarTipoBeca
     Friend WithEvents Requisitos As System.Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents Beneficios As System.Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents opciones As System.Windows.Forms.DataGridViewComboBoxColumn
+    Friend WithEvents lblTituloTiposDeBeca As System.Windows.Forms.Label
 
 End Class

@@ -273,14 +273,21 @@ Public Class uCntrlBuscarBeneficio
 
             Dim beneficio As Beneficio = objGestorBeneficio.buscarPorNombre(param)
 
-            dtaBuscarBeneficio.Rows.Clear()
-            dtaBuscarBeneficio.Rows.Add(1)
-            dtaBuscarBeneficio.Rows(0).Cells(0).Value = beneficio.Id
-            dtaBuscarBeneficio.Rows(0).Cells(1).Value = beneficio.Nombre
-            dtaBuscarBeneficio.Rows(0).Cells(2).Value = beneficio.Porcentaje
-            dtaBuscarBeneficio.Rows(0).Cells(3).Value = beneficio.Aplicacion
-            dtaBuscarBeneficio.Columns("dtaId").Visible = False
+            If beneficio Is Nothing Then
 
+                dtaBuscarBeneficio.Rows.Clear()
+                listarBeneficios()
+
+            Else
+                dtaBuscarBeneficio.Rows.Clear()
+                dtaBuscarBeneficio.Rows.Add(1)
+
+                dtaBuscarBeneficio.Rows(0).Cells(0).Value = beneficio.Id
+                dtaBuscarBeneficio.Rows(0).Cells(1).Value = beneficio.Nombre
+                dtaBuscarBeneficio.Rows(0).Cells(2).Value = beneficio.Porcentaje
+                dtaBuscarBeneficio.Rows(0).Cells(3).Value = beneficio.Aplicacion
+                dtaBuscarBeneficio.Columns("dtaId").Visible = False
+            End If
         Catch
 
             dtaBuscarBeneficio.Rows.Clear()

@@ -22,16 +22,17 @@ Partial Class uCtrlMantenimientoRequisitos
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(uCtrlMantenimientoRequisitos))
         Me.dgvRequisitos = New System.Windows.Forms.DataGridView()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.btnCrearRequisito = New System.Windows.Forms.Button()
-        Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.dtaNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Modificarcmb = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.colmId = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.btnCrearRequisito = New System.Windows.Forms.Button()
+        Me.txtBuscar = New System.Windows.Forms.TextBox()
+        Me.lblTituloCursos = New System.Windows.Forms.Label()
         CType(Me.dgvRequisitos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -41,14 +42,14 @@ Partial Class uCtrlMantenimientoRequisitos
         Me.dgvRequisitos.BackgroundColor = System.Drawing.Color.White
         Me.dgvRequisitos.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvRequisitos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Maroon
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvRequisitos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.Maroon
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvRequisitos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvRequisitos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvRequisitos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dtaNombre, Me.descripcion, Me.Modificarcmb, Me.colmId})
         Me.dgvRequisitos.GridColor = System.Drawing.Color.White
@@ -59,6 +60,33 @@ Partial Class uCtrlMantenimientoRequisitos
         Me.dgvRequisitos.ShowEditingIcon = False
         Me.dgvRequisitos.Size = New System.Drawing.Size(952, 271)
         Me.dgvRequisitos.TabIndex = 15
+        '
+        'dtaNombre
+        '
+        Me.dtaNombre.HeaderText = "Nombre"
+        Me.dtaNombre.Name = "dtaNombre"
+        Me.dtaNombre.ReadOnly = True
+        Me.dtaNombre.Width = 160
+        '
+        'descripcion
+        '
+        Me.descripcion.HeaderText = "Descripción"
+        Me.descripcion.Name = "descripcion"
+        Me.descripcion.Width = 570
+        '
+        'Modificarcmb
+        '
+        Me.Modificarcmb.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Modificarcmb.HeaderText = "Opciones"
+        Me.Modificarcmb.Items.AddRange(New Object() {"Editar", "Eliminar"})
+        Me.Modificarcmb.Name = "Modificarcmb"
+        Me.Modificarcmb.Width = 190
+        '
+        'colmId
+        '
+        Me.colmId.HeaderText = ""
+        Me.colmId.Name = "colmId"
+        Me.colmId.Visible = False
         '
         'PictureBox1
         '
@@ -93,38 +121,23 @@ Partial Class uCtrlMantenimientoRequisitos
         Me.txtBuscar.TabIndex = 16
         Me.txtBuscar.Text = "Buscar:"
         '
-        'dtaNombre
+        'lblTituloCursos
         '
-        Me.dtaNombre.HeaderText = "Nombre"
-        Me.dtaNombre.Name = "dtaNombre"
-        Me.dtaNombre.ReadOnly = True
-        Me.dtaNombre.Width = 160
-        '
-        'descripcion
-        '
-        Me.descripcion.HeaderText = "Descripción"
-        Me.descripcion.Name = "descripcion"
-        Me.descripcion.Width = 570
-        '
-        'Modificarcmb
-        '
-        Me.Modificarcmb.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Modificarcmb.HeaderText = "Opciones"
-        Me.Modificarcmb.Items.AddRange(New Object() {"Editar", "Eliminar"})
-        Me.Modificarcmb.Name = "Modificarcmb"
-        Me.Modificarcmb.Width = 190
-        '
-        'colmId
-        '
-        Me.colmId.HeaderText = ""
-        Me.colmId.Name = "colmId"
-        Me.colmId.Visible = False
+        Me.lblTituloCursos.AutoSize = True
+        Me.lblTituloCursos.Font = New System.Drawing.Font("Segoe UI Semilight", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTituloCursos.ForeColor = System.Drawing.Color.Black
+        Me.lblTituloCursos.Location = New System.Drawing.Point(26, 17)
+        Me.lblTituloCursos.Name = "lblTituloCursos"
+        Me.lblTituloCursos.Size = New System.Drawing.Size(157, 45)
+        Me.lblTituloCursos.TabIndex = 33
+        Me.lblTituloCursos.Text = "Requisitos"
         '
         'uCtrlMantenimientoRequisitos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
+        Me.Controls.Add(Me.lblTituloCursos)
         Me.Controls.Add(Me.txtBuscar)
         Me.Controls.Add(Me.dgvRequisitos)
         Me.Controls.Add(Me.PictureBox1)
@@ -146,5 +159,6 @@ Partial Class uCtrlMantenimientoRequisitos
     Friend WithEvents descripcion As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Modificarcmb As System.Windows.Forms.DataGridViewComboBoxColumn
     Friend WithEvents colmId As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents lblTituloCursos As System.Windows.Forms.Label
 
 End Class

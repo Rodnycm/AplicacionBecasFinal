@@ -116,6 +116,11 @@ namespace DAL
             return pbeneficio;
         }
 
+        /// <summary>
+        /// Trae un DataSet de la base de datos.
+        /// Por cada DataRow en el DataSet, instancia un beneficio.
+        /// </summary>
+        /// <author>Mathias Muller</author>
         public IEnumerable<Beneficio> GetAll()
         {
 

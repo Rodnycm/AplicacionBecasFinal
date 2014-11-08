@@ -44,6 +44,14 @@ Class uCntrlConsultarRol
             CompararPermisos()
         Catch ex As Exception
 
+
+            Dim uctrlAlerta As UctrlAlerta = New UctrlAlerta()
+
+            uctrlAlerta.txtAlerta.Text = ex.Message
+            Me.Controls.Add(uctrlAlerta)
+            uctrlAlerta.Location = New Point(360, 220)
+            uctrlAlerta.BringToFront()
+            uctrlAlerta.Show()
         End Try
 
     End Sub

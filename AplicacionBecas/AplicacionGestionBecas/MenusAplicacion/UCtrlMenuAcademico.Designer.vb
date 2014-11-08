@@ -27,6 +27,7 @@ Partial Class uCtrlMenuAcademico
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
+        Me.lblTituloMenuAcademico = New System.Windows.Forms.Label()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -90,22 +91,36 @@ Partial Class uCtrlMenuAcademico
         Me.Button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Button4.UseVisualStyleBackColor = True
         '
+        'lblTituloMenuAcademico
+        '
+        Me.lblTituloMenuAcademico.AutoSize = True
+        Me.lblTituloMenuAcademico.Font = New System.Drawing.Font("Segoe UI Light", 16.0!)
+        Me.lblTituloMenuAcademico.ForeColor = System.Drawing.Color.Black
+        Me.lblTituloMenuAcademico.Location = New System.Drawing.Point(300, 16)
+        Me.lblTituloMenuAcademico.Name = "lblTituloMenuAcademico"
+        Me.lblTituloMenuAcademico.Size = New System.Drawing.Size(116, 30)
+        Me.lblTituloMenuAcademico.TabIndex = 14
+        Me.lblTituloMenuAcademico.Text = "Academico"
+        '
         'uCtrlMenuAcademico
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
+        Me.Controls.Add(Me.lblTituloMenuAcademico)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.ForeColor = System.Drawing.Color.White
         Me.Name = "uCtrlMenuAcademico"
         Me.Size = New System.Drawing.Size(1070, 388)
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents TableLayoutPanel1 As System.Windows.Forms.TableLayoutPanel
     Friend WithEvents Button5 As System.Windows.Forms.Button
     Friend WithEvents Button4 As System.Windows.Forms.Button
     Friend WithEvents Button3 As System.Windows.Forms.Button
+    Friend WithEvents lblTituloMenuAcademico As System.Windows.Forms.Label
 
 End Class

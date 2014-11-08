@@ -24,16 +24,12 @@ Partial Class uCtrlMantenimientoCarreras
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(uCtrlMantenimientoCarreras))
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(uCtrlMantenimientoCarreras))
         Me.dgvCarreras = New System.Windows.Forms.DataGridView()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.btnMantenimiento = New System.Windows.Forms.Button()
-        Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.dtaCodigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dtaNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dtaDirector = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -41,6 +37,11 @@ Partial Class uCtrlMantenimientoCarreras
         Me.Modificarcmb = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.color = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.btnMantenimiento = New System.Windows.Forms.Button()
+        Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.txtBuscar = New System.Windows.Forms.TextBox()
+        Me.lblTituloCarreras = New System.Windows.Forms.Label()
         CType(Me.dgvCarreras, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -72,45 +73,6 @@ Partial Class uCtrlMantenimientoCarreras
         Me.dgvCarreras.ShowEditingIcon = False
         Me.dgvCarreras.Size = New System.Drawing.Size(947, 271)
         Me.dgvCarreras.TabIndex = 12
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(30, 202)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(975, 321)
-        Me.PictureBox1.TabIndex = 6
-        Me.PictureBox1.TabStop = False
-        '
-        'btnMantenimiento
-        '
-        Me.btnMantenimiento.BackgroundImage = CType(resources.GetObject("btnMantenimiento.BackgroundImage"), System.Drawing.Image)
-        Me.btnMantenimiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnMantenimiento.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnMantenimiento.ForeColor = System.Drawing.Color.White
-        Me.btnMantenimiento.Location = New System.Drawing.Point(783, 108)
-        Me.btnMantenimiento.Name = "btnMantenimiento"
-        Me.btnMantenimiento.Size = New System.Drawing.Size(222, 79)
-        Me.btnMantenimiento.TabIndex = 5
-        Me.btnMantenimiento.Text = "Crear Carrera"
-        Me.btnMantenimiento.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnMantenimiento.UseVisualStyleBackColor = True
-        '
-        'DataGridViewImageColumn1
-        '
-        Me.DataGridViewImageColumn1.HeaderText = "Editar"
-        Me.DataGridViewImageColumn1.Image = CType(resources.GetObject("DataGridViewImageColumn1.Image"), System.Drawing.Image)
-        Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
-        '
-        'txtBuscar
-        '
-        Me.txtBuscar.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBuscar.ForeColor = System.Drawing.Color.Black
-        Me.txtBuscar.Location = New System.Drawing.Point(31, 160)
-        Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(746, 27)
-        Me.txtBuscar.TabIndex = 15
-        Me.txtBuscar.Text = "Buscar:"
         '
         'dtaCodigo
         '
@@ -169,12 +131,63 @@ Partial Class uCtrlMantenimientoCarreras
         Me.color.Name = "color"
         Me.color.Visible = False
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(30, 202)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(975, 321)
+        Me.PictureBox1.TabIndex = 6
+        Me.PictureBox1.TabStop = False
+        '
+        'btnMantenimiento
+        '
+        Me.btnMantenimiento.BackgroundImage = CType(resources.GetObject("btnMantenimiento.BackgroundImage"), System.Drawing.Image)
+        Me.btnMantenimiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnMantenimiento.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnMantenimiento.ForeColor = System.Drawing.Color.White
+        Me.btnMantenimiento.Location = New System.Drawing.Point(783, 108)
+        Me.btnMantenimiento.Name = "btnMantenimiento"
+        Me.btnMantenimiento.Size = New System.Drawing.Size(222, 79)
+        Me.btnMantenimiento.TabIndex = 5
+        Me.btnMantenimiento.Text = "Crear Carrera"
+        Me.btnMantenimiento.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnMantenimiento.UseVisualStyleBackColor = True
+        '
+        'DataGridViewImageColumn1
+        '
+        Me.DataGridViewImageColumn1.HeaderText = "Editar"
+        Me.DataGridViewImageColumn1.Image = CType(resources.GetObject("DataGridViewImageColumn1.Image"), System.Drawing.Image)
+        Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
+        '
+        'txtBuscar
+        '
+        Me.txtBuscar.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBuscar.ForeColor = System.Drawing.Color.Black
+        Me.txtBuscar.Location = New System.Drawing.Point(31, 160)
+        Me.txtBuscar.Name = "txtBuscar"
+        Me.txtBuscar.Size = New System.Drawing.Size(746, 27)
+        Me.txtBuscar.TabIndex = 15
+        Me.txtBuscar.Text = "Buscar:"
+        '
+        'lblTituloCarreras
+        '
+        Me.lblTituloCarreras.AutoSize = True
+        Me.lblTituloCarreras.Font = New System.Drawing.Font("Segoe UI Semilight", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTituloCarreras.ForeColor = System.Drawing.Color.Black
+        Me.lblTituloCarreras.Location = New System.Drawing.Point(26, 17)
+        Me.lblTituloCarreras.Name = "lblTituloCarreras"
+        Me.lblTituloCarreras.Size = New System.Drawing.Size(134, 45)
+        Me.lblTituloCarreras.TabIndex = 31
+        Me.lblTituloCarreras.Text = "Carreras"
+        '
         'uCtrlMantenimientoCarreras
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Controls.Add(Me.lblTituloCarreras)
         Me.Controls.Add(Me.txtBuscar)
         Me.Controls.Add(Me.dgvCarreras)
         Me.Controls.Add(Me.PictureBox1)
@@ -200,5 +213,6 @@ Partial Class uCtrlMantenimientoCarreras
     Friend WithEvents Modificarcmb As System.Windows.Forms.DataGridViewComboBoxColumn
     Friend WithEvents id As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents color As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents lblTituloCarreras As System.Windows.Forms.Label
 
 End Class

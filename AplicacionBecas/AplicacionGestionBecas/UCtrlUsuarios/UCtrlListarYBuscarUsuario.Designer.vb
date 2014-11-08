@@ -43,6 +43,7 @@ Partial Class UctrlListarYBuscarUsuario
         Me.btnCrearUsuario = New System.Windows.Forms.Button()
         Me.PbUsuarios = New System.Windows.Forms.PictureBox()
         Me.btnVolver = New System.Windows.Forms.Button()
+        Me.lblTituloCursos = New System.Windows.Forms.Label()
         CType(Me.dgUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PbUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -197,11 +198,23 @@ Partial Class UctrlListarYBuscarUsuario
         Me.btnVolver.UseVisualStyleBackColor = False
         Me.btnVolver.Visible = False
         '
+        'lblTituloCursos
+        '
+        Me.lblTituloCursos.AutoSize = True
+        Me.lblTituloCursos.Font = New System.Drawing.Font("Segoe UI Semilight", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTituloCursos.ForeColor = System.Drawing.Color.Black
+        Me.lblTituloCursos.Location = New System.Drawing.Point(26, 17)
+        Me.lblTituloCursos.Name = "lblTituloCursos"
+        Me.lblTituloCursos.Size = New System.Drawing.Size(137, 45)
+        Me.lblTituloCursos.TabIndex = 66
+        Me.lblTituloCursos.Text = "Usuarios"
+        '
         'UctrlListarYBuscarUsuario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
+        Me.Controls.Add(Me.lblTituloCursos)
         Me.Controls.Add(Me.btnVolver)
         Me.Controls.Add(Me.dgUsuarios)
         Me.Controls.Add(Me.btnCrearUsuario)
@@ -229,5 +242,6 @@ Partial Class UctrlListarYBuscarUsuario
     Friend WithEvents CorreoElect As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents opciones As System.Windows.Forms.DataGridViewComboBoxColumn
     Friend WithEvents btnVolver As System.Windows.Forms.Button
+    Friend WithEvents lblTituloCursos As System.Windows.Forms.Label
 
 End Class

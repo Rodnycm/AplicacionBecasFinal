@@ -156,7 +156,11 @@ Partial Class UCtrlCrearCursos
         '
         'imgCrearCurso
         '
+<<<<<<< HEAD
 
+=======
+        Me.imgCrearCurso.BackgroundImage = Global.UI.My.Resources.Resources.tablaFinalMedianaAzul
+>>>>>>> origin/prophet30
         Me.imgCrearCurso.Location = New System.Drawing.Point(0, 0)
         Me.imgCrearCurso.Name = "imgCrearCurso"
         Me.imgCrearCurso.Size = New System.Drawing.Size(458, 252)

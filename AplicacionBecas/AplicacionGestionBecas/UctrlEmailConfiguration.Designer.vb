@@ -168,6 +168,7 @@ Partial Class UctrlEmailConfiguration
         Me.txtContrasenna.Name = "txtContrasenna"
         Me.txtContrasenna.Size = New System.Drawing.Size(151, 25)
         Me.txtContrasenna.TabIndex = 32
+        Me.txtContrasenna.UseSystemPasswordChar = True
         '
         'btnCancelar
         '

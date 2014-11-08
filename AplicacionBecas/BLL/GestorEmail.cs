@@ -41,5 +41,30 @@ namespace BLL
                 throw ex;
             }        
         }
+        public void enviarMensajeInstantaneo(String emisor, String receptor, String asunto, String mensaje, String smtpserver, String userName, String contrasenna)
+        {
+            Email email = ContenedorMantenimiento.Instance.crearObjetoEmail(receptor, emisor, asunto, mensaje, smtpserver, userName, contrasenna);
+
+            try
+            {
+                if (email.IsValid)
+                {
+                    email.notificarUsuario();
+                }
+                else
+                {
+                    StringBuilder sb = new StringBuilder();
+                    foreach (RuleViolation rv in email.GetRuleViolations())
+                    {
+                        sb.AppendLine(rv.ErrorMessage);
+                    }
+                    throw new ApplicationException(sb.ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

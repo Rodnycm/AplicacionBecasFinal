@@ -9,8 +9,13 @@ Public Class UCtrlIniciar
 
         'Dim nombreUsuario As String = txtNombreUsuario.Text
         'Dim contraseña As String = txtContraseña.Text
+<<<<<<< HEAD
         Dim nombreUsuario As String = "backi-g@hotmail.com"
         Dim contraseña As String = "1234"
+=======
+        Dim nombreUsuario As String = "admin@admin"
+        Dim contraseña As String = "1111"
+>>>>>>> origin/prophet30
         Dim listaUsuarios As List(Of Usuario)
 
         Try

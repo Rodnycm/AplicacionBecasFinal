@@ -9,16 +9,24 @@ Partial Public Class frmPrincipal
     Dim ucMenuRep As New uCtrlMenuReportes()
     Dim ucMenuBecas As New uCtrlMenuBecas()
     Dim uCtrlUserProfile As New UCtrlUserProfile()
+    Public Property mensajeInstaneo As New UCtrlInstantMessage()
     Public Property uCtrlEmail As UctrlEmailConfiguration = New UctrlEmailConfiguration()
     Public Property confirmacion As uCtrlConfirmacion = New uCtrlConfirmacion()
-
+    Public Property uctrlConfMessage As UCtrlConfMessage = New UCtrlConfMessage()
     Public listaPermisos As List(Of Permiso) = New List(Of Permiso)
-
+    Public Property uctrlBitacora As UCtrlUltimasActividades = New UCtrlUltimasActividades()
 
     Private Sub frmPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         AlvaroArtaviaToolStripMenuItem.Text = Globals.usuario.primerNombre & " " & Globals.usuario.primerApellido
         ValidarPermisos()
+        FrmIniciarSesion.principal.Controls.Add(mensajeInstaneo)
+        mensajeInstaneo.BringToFront()
+        mensajeInstaneo.Show()
+        FrmIniciarSesion.principal.Controls.Add(uctrlBitacora)
+        uctrlBitacora.BringToFront()
+        uctrlBitacora.Show()
+
     End Sub
 
     Public Sub ValidarPermisos()
@@ -41,15 +49,24 @@ Partial Public Class frmPrincipal
         uCtrlUserProfile.Dispose()
         ucMenuMant.Hide()
         ocultarComponentes()
+        btnsMenus().Show()
+        ucMenuRep.Hide()
 
     End Sub
 
-
-
     Private Sub MantenimientoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MantenimientoToolStripMenuItem.Click
+
         ucMenuAcad.Hide()
+        Me.Controls.Add(ucMenuMant)
+        ucMenuMant.ListasDePermisos(listaPermisos)
         uCtrlUserProfile.Dispose()
         ocultarComponentes()
+        ValidarPermisos()
+        btnsMenus.Hide()
+        mensajeInstaneo.Hide()
+        uctrlBitacora.Hide()
+        ucMenuRep.Hide()
+        ucMenuMant.Show()
 
     End Sub
 
@@ -59,6 +76,10 @@ Partial Public Class frmPrincipal
         uCtrlUserProfile.Dispose()
         ucMenuMant.Hide()
         ocultarComponentes()
+        ValidarPermisos()
+        mensajeInstaneo.Hide()
+        uctrlBitacora.Hide()
+        ucMenuRep.Hide()
 
     End Sub
 
@@ -68,28 +89,42 @@ Partial Public Class frmPrincipal
         uCtrlUserProfile.Dispose()
         ucMenuMant.Hide()
         ocultarComponentes()
+        ValidarPermisos()
+        mensajeInstaneo.Hide()
+        btnsMenus.Hide()
+        mensajeInstaneo.Hide()
+        uctrlBitacora.Hide()
+        Me.Controls.Add(ucMenuRep)
+        ucMenuRep.Show()
 
     End Sub
 
     Private Sub btnMantenimiento_Click(sender As Object, e As EventArgs) Handles btnMantenimiento.Click
+
         ucMenuMant.ListasDePermisos(listaPermisos)
         btnsMenus.Hide()
+        mensajeInstaneo.Hide()
+        uctrlBitacora.Hide()
         Me.Controls.Add(ucMenuMant)
         ucMenuMant.Show()
 
     End Sub
 
     Private Sub btnAcademico_Click(sender As Object, e As EventArgs) Handles btnAcademico.Click
-        btnsMenus.Hide()
-        Me.Controls.Add(ucMenuAcad)
-        ucMenuAcad.Show()
-        'ocultarComponentes()
+
+        'btnsMenus.Hide()
+        'mensajeInstaneo.Hide()
+        'Me.Controls.Add(ucMenuAcad)
+        'ucMenuAcad.Show()
+        ''ocultarComponentes()
 
     End Sub
 
     Private Sub btnReportes_Click(sender As Object, e As EventArgs) Handles btnReportes.Click
 
         btnsMenus.Hide()
+        mensajeInstaneo.Hide()
+        uctrlBitacora.Hide()
         Me.Controls.Add(ucMenuRep)
         ucMenuRep.Show()
 
@@ -104,7 +139,9 @@ Partial Public Class frmPrincipal
         ucMenuMant.ucntrlUsuario.Hide()
         ucMenuMant.uCtrlTipoBeca.Hide()
         ucMenuMant.uCntrlBuscarBeneficio.Hide()
+        mensajeInstaneo.Show()
         btnsMenus.Show()
+        uctrlBitacora.Show()
 
     End Sub
 
@@ -112,26 +149,19 @@ Partial Public Class frmPrincipal
 
         Dim UcntrlIniciar As UCtrlIniciar = New UCtrlIniciar()
         objGestorUsuario.cerrarSesion()
-
         Me.Hide()
         ocultarComponentes()
-
-
         FrmIniciarSesion.Show()
         FrmIniciarSesion.Controls.Add(UcntrlIniciar)
         UcntrlIniciar.Location = New Point(135, 125)
-
-
-
-     
-
-
 
     End Sub
 
     Private Sub VerPerfilToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VerPerfilToolStripMenuItem.Click
 
         ocultarComponentes()
+        mensajeInstaneo.Hide()
+        uctrlBitacora.Hide()
         btnsMenus.Hide()
         uCtrlUserProfile = New UCtrlUserProfile()
         FrmIniciarSesion.principal.Controls.Add(uCtrlUserProfile)
@@ -145,6 +175,15 @@ Partial Public Class frmPrincipal
         uCtrlEmail = New UctrlEmailConfiguration()
         Me.Controls.Add(uCtrlEmail)
         uCtrlEmail.Hide()
+
+    End Sub
+
+    Public Sub instanciaUctrlConfMessage()
+
+        uctrlConfMessage = New UCtrlConfMessage()
+        Me.Controls.Add(uctrlConfMessage)
+        uctrlConfMessage.BringToFront()
+        uctrlConfMessage.Show()
 
     End Sub
 

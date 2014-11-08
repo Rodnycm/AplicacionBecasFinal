@@ -474,9 +474,7 @@ namespace DAL.Repositories
 
             try
             {
-
-                RegistroAccionRepository objRegistroRep = new RegistroAccionRepository();
-                objRegistroRep.InsertAccion(objRegistro);
+                RegistroAccionRepository.Instance.InsertAccion(objRegistro);
             }
             catch (SqlException ex)
             {

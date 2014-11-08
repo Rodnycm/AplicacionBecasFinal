@@ -37,12 +37,19 @@ Partial Class uCtrlMantenimientoCarreras
         Me.Modificarcmb = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.color = New System.Windows.Forms.DataGridViewTextBoxColumn()
+<<<<<<< HEAD
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnMantenimiento = New System.Windows.Forms.Button()
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
 
         Me.lblTituloCarreras = New System.Windows.Forms.Label()
+=======
+        Me.txtBuscar = New System.Windows.Forms.TextBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.btnMantenimiento = New System.Windows.Forms.Button()
+        Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
+>>>>>>> origin/prophet30
         CType(Me.dgvCarreras, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -71,7 +78,6 @@ Partial Class uCtrlMantenimientoCarreras
         Me.dgvCarreras.Name = "dgvCarreras"
         Me.dgvCarreras.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         Me.dgvCarreras.RowHeadersVisible = False
-        Me.dgvCarreras.ShowEditingIcon = False
         Me.dgvCarreras.Size = New System.Drawing.Size(947, 271)
         Me.dgvCarreras.TabIndex = 12
         '
@@ -132,6 +138,19 @@ Partial Class uCtrlMantenimientoCarreras
         Me.color.Name = "color"
         Me.color.Visible = False
         '
+<<<<<<< HEAD
+=======
+        'txtBuscar
+        '
+        Me.txtBuscar.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBuscar.ForeColor = System.Drawing.Color.Black
+        Me.txtBuscar.Location = New System.Drawing.Point(31, 160)
+        Me.txtBuscar.Name = "txtBuscar"
+        Me.txtBuscar.Size = New System.Drawing.Size(746, 27)
+        Me.txtBuscar.TabIndex = 15
+        Me.txtBuscar.Text = "Buscar:"
+        '
+>>>>>>> origin/prophet30
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
@@ -161,6 +180,7 @@ Partial Class uCtrlMantenimientoCarreras
         Me.DataGridViewImageColumn1.Image = CType(resources.GetObject("DataGridViewImageColumn1.Image"), System.Drawing.Image)
         Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
         '
+<<<<<<< HEAD
         'txtBuscar
         '
         Me.txtBuscar.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -182,6 +202,8 @@ Partial Class uCtrlMantenimientoCarreras
         Me.lblTituloCarreras.TabIndex = 31
         Me.lblTituloCarreras.Text = "Carreras"
         '
+=======
+>>>>>>> origin/prophet30
         'uCtrlMantenimientoCarreras
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)

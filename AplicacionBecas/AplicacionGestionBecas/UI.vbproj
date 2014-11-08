@@ -250,6 +250,12 @@
     <Compile Include="UCtrlUserProfile.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="UCtrlUsuarios\UCtrlAsignarNotasCurso.Designer.vb">
+      <DependentUpon>UCtrlAsignarNotasCurso.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UCtrlUsuarios\UCtrlAsignarNotasCurso.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UCtrlUsuarios\UCtrlConsultarUsuario.Designer.vb">
       <DependentUpon>UCtrlConsultarUsuario.vb</DependentUpon>
     </Compile>
@@ -506,6 +512,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UCtrlUserProfile.resx">
       <DependentUpon>UCtrlUserProfile.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCtrlUsuarios\UCtrlAsignarNotasCurso.resx">
+      <DependentUpon>UCtrlAsignarNotasCurso.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCtrlUsuarios\UCtrlConsultarUsuario.resx">
       <DependentUpon>UCtrlConsultarUsuario.vb</DependentUpon>

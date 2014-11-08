@@ -73,6 +73,7 @@ Partial Class uCtrlEliminarRol
         '
         Me.btnCerrar.BackgroundImage = CType(resources.GetObject("btnCerrar.BackgroundImage"), System.Drawing.Image)
         Me.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnCerrar.FlatAppearance.BorderSize = 0
         Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnCerrar.Location = New System.Drawing.Point(436, 0)
         Me.btnCerrar.Name = "btnCerrar"

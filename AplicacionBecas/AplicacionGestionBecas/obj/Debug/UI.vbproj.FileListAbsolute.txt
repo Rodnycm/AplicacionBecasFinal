@@ -146,3 +146,4 @@ C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\Apli
 C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\UI.exe
 C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\UI.xml
 C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\UI.pdb
+C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\obj\Debug\UI.UCtrlAsignarNotasCurso.resources

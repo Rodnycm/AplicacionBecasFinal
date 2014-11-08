@@ -107,7 +107,7 @@ Partial Class frmPrincipal
         Me.btnsMenus.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.39516!))
         Me.btnsMenus.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.60484!))
         Me.btnsMenus.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 244.0!))
-        Me.btnsMenus.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 265.0!))
+        Me.btnsMenus.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 266.0!))
         Me.btnsMenus.Controls.Add(Me.btnReportes, 3, 0)
         Me.btnsMenus.Controls.Add(Me.btnAcademico, 1, 0)
         Me.btnsMenus.Controls.Add(Me.btnBecas, 2, 0)
@@ -125,7 +125,7 @@ Partial Class frmPrincipal
         Me.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnReportes.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnReportes.ForeColor = System.Drawing.Color.White
-        Me.btnReportes.Location = New System.Drawing.Point(712, 3)
+        Me.btnReportes.Location = New System.Drawing.Point(711, 3)
         Me.btnReportes.Name = "btnReportes"
         Me.btnReportes.Size = New System.Drawing.Size(225, 79)
         Me.btnReportes.TabIndex = 6
@@ -139,7 +139,7 @@ Partial Class frmPrincipal
         Me.btnAcademico.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAcademico.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAcademico.ForeColor = System.Drawing.Color.White
-        Me.btnAcademico.Location = New System.Drawing.Point(233, 3)
+        Me.btnAcademico.Location = New System.Drawing.Point(232, 3)
         Me.btnAcademico.Name = "btnAcademico"
         Me.btnAcademico.Size = New System.Drawing.Size(222, 79)
         Me.btnAcademico.TabIndex = 5
@@ -153,7 +153,7 @@ Partial Class frmPrincipal
         Me.btnBecas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBecas.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBecas.ForeColor = System.Drawing.Color.White
-        Me.btnBecas.Location = New System.Drawing.Point(468, 3)
+        Me.btnBecas.Location = New System.Drawing.Point(467, 3)
         Me.btnBecas.Name = "btnBecas"
         Me.btnBecas.Size = New System.Drawing.Size(225, 79)
         Me.btnBecas.TabIndex = 7
@@ -202,7 +202,7 @@ Partial Class frmPrincipal
         Me.VerPerfilToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.VerPerfilToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(72, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(67, Byte), Integer))
         Me.VerPerfilToolStripMenuItem.Name = "VerPerfilToolStripMenuItem"
-        Me.VerPerfilToolStripMenuItem.Size = New System.Drawing.Size(145, 22)
+        Me.VerPerfilToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.VerPerfilToolStripMenuItem.Text = "Ver Perfil"
         '
         'CerrarSesiónToolStripMenuItem
@@ -210,7 +210,7 @@ Partial Class frmPrincipal
         Me.CerrarSesiónToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CerrarSesiónToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(72, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(67, Byte), Integer))
         Me.CerrarSesiónToolStripMenuItem.Name = "CerrarSesiónToolStripMenuItem"
-        Me.CerrarSesiónToolStripMenuItem.Size = New System.Drawing.Size(145, 22)
+        Me.CerrarSesiónToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.CerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión"
         '
         'frmPrincipal

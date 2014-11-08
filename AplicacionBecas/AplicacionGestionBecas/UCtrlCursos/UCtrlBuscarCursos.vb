@@ -11,7 +11,11 @@ Public Class UCtrlBuscarCursos
 
     Public Sub dtaListarCursos_EditingControlShowing(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewEditingControlShowingEventArgs) Handles dtaListarCursos.EditingControlShowing
         ' Only for a DatagridComboBoxColumn at ColumnIndex 1.
+<<<<<<< HEAD
         If dtaListarCursos.CurrentCell.ColumnIndex = 7 Then
+=======
+        If dtaListarCursos.CurrentCell.ColumnIndex = 6 Then
+>>>>>>> origin/prophet1430
             Dim combo As ComboBox = CType(e.Control, ComboBox)
             If (combo IsNot Nothing) Then
                 ' Remove an existing event-handler, if present, to avoid 
@@ -29,11 +33,13 @@ Public Class UCtrlBuscarCursos
     Private Sub ComboBox_SelectionChangeCommitted(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Dim combo As ComboBox = CType(sender, ComboBox)
 
+        Dim fila As Integer = dtaListarCursos.CurrentCell.RowIndex
+
         If combo.SelectedItem = "Editar" Then
-            Dim fila = dtaListarCursos.CurrentRow.Cells(0).Value
+
             modificarCurso(fila)
         ElseIf combo.SelectedItem = "Eliminar" Then
-            Dim fila = dtaListarCursos.CurrentRow.Cells(0).Value
+
             eliminarCurso(fila)
         End If
 
@@ -47,11 +53,10 @@ Public Class UCtrlBuscarCursos
         Dim codigo As String = pfila
         Dim ucntrl As UCtrlModificarCurso = New UCtrlModificarCurso()
         ucntrl.recieveData(codigo)
-
         FrmIniciarSesion.principal.Controls.Add(ucntrl)
-        ucntrl.BringToFront()
         ucntrl.Show()
-        ucntrl.Location = New Point(290, 48)
+        ucntrl.BringToFront()
+        'ucntrl.Location = New Point(290, 48)
         ucntrl.refrecarLista(Me)
 
     End Sub
@@ -83,7 +88,7 @@ Public Class UCtrlBuscarCursos
             listarCursos = objGestorCurso.consultarCursos()
 
             For Each curso As Curso In listarCursos
-                dtaListarCursos.Rows.Add(curso.nombre, curso.codigo, curso.cuatrimestre, curso.creditos, curso.precio, "", curso.Id)
+                dtaListarCursos.Rows.Add(curso.nombre, curso.codigo, curso.cuatrimestre, curso.creditos, curso.precio, curso.Id, "")
             Next
         Catch ex As Exception
 
@@ -111,7 +116,7 @@ Public Class UCtrlBuscarCursos
                 listarCursos()
             Else
                 dtaListarCursos.Rows.Clear()
-                dtaListarCursos.Rows.Add(objCurso.nombre, objCurso.codigo, objCurso.cuatrimestre, objCurso.creditos, objCurso.precio)
+                dtaListarCursos.Rows.Add(objCurso.nombre, objCurso.codigo, objCurso.cuatrimestre, objCurso.creditos, objCurso.precio, objCurso.Id, "")
             End If
 
         Catch ex As Exception
@@ -136,18 +141,23 @@ Public Class UCtrlBuscarCursos
         End If
 
     End Sub
+
     Private Sub uCtrlBuscarCursos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         listarCursos()
 
     End Sub
+
     Private Sub txtBuscarCurso_TextChanged_2(sender As Object, e As EventArgs) Handles txtBuscarCurso.TextChanged
+
         If txtBuscarCurso.Text = "" Then
             listarCursos()
         End If
+
     End Sub
 
     Private Sub btnCrearCurso_Click(sender As Object, e As EventArgs) Handles btnCrearCurso.Click
+
         ucCrearCurso = New UCtrlCrearCursos()
         FrmIniciarSesion.principal.Controls.Add(ucCrearCurso)
         ucCrearCurso.Visible = True
@@ -155,5 +165,7 @@ Public Class UCtrlBuscarCursos
         ucCrearCurso.Show()
         ucCrearCurso.Location = New Point(290, 48)
         ucCrearCurso.refrecarLista(Me)
+
     End Sub
+
 End Class

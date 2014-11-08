@@ -28,17 +28,17 @@ Partial Class UCtrlBuscarCursos
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(UCtrlBuscarCursos))
         Me.lblBuscar = New System.Windows.Forms.Label()
         Me.dtaListarCursos = New System.Windows.Forms.DataGridView()
+        Me.lblTituloCursos = New System.Windows.Forms.Label()
+        Me.btnCrearCurso = New System.Windows.Forms.Button()
+        Me.txtBuscarCurso = New System.Windows.Forms.TextBox()
+        Me.imgBuscarCursos = New System.Windows.Forms.PictureBox()
         Me.columnNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Cuatrimestre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Créditos = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.columId = New System.Windows.Forms.DataGridViewComboBoxColumn()
-        Me.lblTituloCursos = New System.Windows.Forms.Label()
-        Me.btnCrearCurso = New System.Windows.Forms.Button()
-        Me.txtBuscarCurso = New System.Windows.Forms.TextBox()
-        Me.imgBuscarCursos = New System.Windows.Forms.PictureBox()
+        Me.Column2 = New System.Windows.Forms.DataGridViewComboBoxColumn()
         CType(Me.dtaListarCursos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.imgBuscarCursos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -68,63 +68,13 @@ Partial Class UCtrlBuscarCursos
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dtaListarCursos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dtaListarCursos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dtaListarCursos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.columnNombre, Me.Column1, Me.Cuatrimestre, Me.Créditos, Me.Precio, Me.Column2, Me.columId})
+        Me.dtaListarCursos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.columnNombre, Me.Column1, Me.Cuatrimestre, Me.Créditos, Me.Precio, Me.columId, Me.Column2})
         Me.dtaListarCursos.GridColor = System.Drawing.Color.White
         Me.dtaListarCursos.Location = New System.Drawing.Point(37, 255)
         Me.dtaListarCursos.Name = "dtaListarCursos"
         Me.dtaListarCursos.RowHeadersVisible = False
         Me.dtaListarCursos.Size = New System.Drawing.Size(951, 271)
         Me.dtaListarCursos.TabIndex = 38
-        '
-        'columnNombre
-        '
-        Me.columnNombre.HeaderText = "Nombre"
-        Me.columnNombre.Name = "columnNombre"
-        Me.columnNombre.ReadOnly = True
-        Me.columnNombre.Width = 160
-        '
-        'Column1
-        '
-        Me.Column1.HeaderText = "Código"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Width = 160
-        '
-        'Cuatrimestre
-        '
-        Me.Cuatrimestre.HeaderText = "Cuatrimestre"
-        Me.Cuatrimestre.Name = "Cuatrimestre"
-        Me.Cuatrimestre.ReadOnly = True
-        Me.Cuatrimestre.Width = 160
-        '
-        'Créditos
-        '
-        Me.Créditos.HeaderText = "Créditos"
-        Me.Créditos.Name = "Créditos"
-        Me.Créditos.ReadOnly = True
-        Me.Créditos.Width = 160
-        '
-        'Precio
-        '
-        Me.Precio.HeaderText = "Precio"
-        Me.Precio.Name = "Precio"
-        Me.Precio.ReadOnly = True
-        Me.Precio.Width = 160
-        '
-        'Column2
-        '
-        Me.Column2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Column2.HeaderText = "Opciones"
-        Me.Column2.Items.AddRange(New Object() {"Editar", "Eliminar"})
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        Me.Column2.Width = 145
-        '
-        'columId
-        '
-        Me.columId.HeaderText = ""
-        Me.columId.Name = "columId"
-        Me.columId.Visible = False
         '
         'lblTituloCursos
         '
@@ -171,6 +121,55 @@ Partial Class UCtrlBuscarCursos
         Me.imgBuscarCursos.TabIndex = 34
         Me.imgBuscarCursos.TabStop = False
         '
+        'columnNombre
+        '
+        Me.columnNombre.HeaderText = "Nombre"
+        Me.columnNombre.Name = "columnNombre"
+        Me.columnNombre.Width = 160
+        '
+        'Column1
+        '
+        Me.Column1.HeaderText = "Código"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Width = 160
+        '
+        'Cuatrimestre
+        '
+        Me.Cuatrimestre.HeaderText = "Cuatrimestre"
+        Me.Cuatrimestre.Name = "Cuatrimestre"
+        Me.Cuatrimestre.ReadOnly = True
+        Me.Cuatrimestre.Width = 160
+        '
+        'Créditos
+        '
+        Me.Créditos.HeaderText = "Créditos"
+        Me.Créditos.Name = "Créditos"
+        Me.Créditos.ReadOnly = True
+        Me.Créditos.Width = 160
+        '
+        'Precio
+        '
+        Me.Precio.HeaderText = "Precio"
+        Me.Precio.Name = "Precio"
+        Me.Precio.ReadOnly = True
+        Me.Precio.Width = 160
+        '
+        'columId
+        '
+        Me.columId.HeaderText = ""
+        Me.columId.Name = "columId"
+        Me.columId.Visible = False
+        '
+        'Column2
+        '
+        Me.Column2.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox
+        Me.Column2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Column2.HeaderText = "Opciones"
+        Me.Column2.Items.AddRange(New Object() {"Editar", "Eliminar"})
+        Me.Column2.Name = "Column2"
+        Me.Column2.Width = 145
+        '
         'UCtrlBuscarCursos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -193,16 +192,16 @@ Partial Class UCtrlBuscarCursos
     End Sub
     Friend WithEvents lblBuscar As System.Windows.Forms.Label
     Friend WithEvents dtaListarCursos As System.Windows.Forms.DataGridView
+    Friend WithEvents lblTituloCursos As System.Windows.Forms.Label
+    Friend WithEvents btnCrearCurso As System.Windows.Forms.Button
+    Friend WithEvents txtBuscarCurso As System.Windows.Forms.TextBox
+    Friend WithEvents imgBuscarCursos As System.Windows.Forms.PictureBox
     Friend WithEvents columnNombre As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Cuatrimestre As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Créditos As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Precio As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As System.Windows.Forms.DataGridViewComboBoxColumn
     Friend WithEvents columId As System.Windows.Forms.DataGridViewComboBoxColumn
-    Friend WithEvents lblTituloCursos As System.Windows.Forms.Label
-    Friend WithEvents btnCrearCurso As System.Windows.Forms.Button
-    Friend WithEvents txtBuscarCurso As System.Windows.Forms.TextBox
-    Friend WithEvents imgBuscarCursos As System.Windows.Forms.PictureBox
+    Friend WithEvents Column2 As System.Windows.Forms.DataGridViewComboBoxColumn
 
 End Class

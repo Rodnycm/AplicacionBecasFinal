@@ -534,7 +534,7 @@ namespace BLL
         public void notificarUsuario(String correo, String contrasenna){
 
 
-        Email email = new Email();
+        Email email = null;
         email = EmailRepository.Instance.GetEmail();
             try
             {

@@ -74,7 +74,7 @@ namespace DAL.Repositories
         public Email GetEmail()
         {
 
-            Email email = new Email();;
+            Email email = null;
             SqlCommand cmd = new SqlCommand();
             DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_consultarEmail");
 
@@ -86,6 +86,7 @@ namespace DAL.Repositories
                     emisor = dr["Emisor"].ToString(),
                     asunto = dr["Asunto"].ToString(),
                     mensaje = dr["Mensaje"].ToString(),
+                    receptor = dr["Receptor"].ToString(),
                     smtpServidor = dr["SmtpServidor"].ToString(),
                     userName = dr["UserName"].ToString(),
                     contrasenna = dr["Contraseña"].ToString(),

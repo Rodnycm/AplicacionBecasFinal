@@ -172,11 +172,11 @@ Partial Class UCtrlModificarCurso
         Me.PictureBox1.ErrorImage = CType(resources.GetObject("PictureBox1.ErrorImage"), System.Drawing.Image)
         Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(462, 273)
+        Me.PictureBox1.Size = New System.Drawing.Size(462, 276)
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
-        'uCtrlModificarCurso
+        'UCtrlModificarCurso
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -194,14 +194,14 @@ Partial Class UCtrlModificarCurso
         Me.Controls.Add(Me.txtNombreCurso)
         Me.Controls.Add(Me.lblNombreCurso)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Name = "uCtrlModificarCurso"
+        Me.Location = New System.Drawing.Point(300, 100)
+        Me.Name = "UCtrlModificarCurso"
         Me.Size = New System.Drawing.Size(462, 276)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents btnAceptarModificarCurso As System.Windows.Forms.Button
     Friend WithEvents btnCancelarAgregarCurso As System.Windows.Forms.Button
     Friend WithEvents txtPrecioCurso As System.Windows.Forms.TextBox
@@ -215,5 +215,6 @@ Partial Class UCtrlModificarCurso
     Friend WithEvents lblNombreCurso As System.Windows.Forms.Label
     Friend WithEvents cmbCuatrimestreCurso As System.Windows.Forms.ComboBox
     Friend WithEvents txtId As System.Windows.Forms.TextBox
+    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
 
 End Class

@@ -74,6 +74,24 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MenusAplicacion\UCtrlConfMessage.Designer.vb">
+      <DependentUpon>UCtrlConfMessage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MenusAplicacion\UCtrlConfMessage.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MenusAplicacion\UCtrlInstantMessage.Designer.vb">
+      <DependentUpon>UCtrlInstantMessage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MenusAplicacion\UCtrlInstantMessage.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MenusAplicacion\UCtrlUltimasActividades.Designer.vb">
+      <DependentUpon>UCtrlUltimasActividades.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MenusAplicacion\UCtrlUltimasActividades.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="uCtrlConsultarPlanDeEstudio.Designer.vb">
       <DependentUpon>uCtrlConsultarPlanDeEstudio.vb</DependentUpon>
     </Compile>
@@ -432,6 +450,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="MenusAplicacion\UCtrlConfMessage.resx">
+      <DependentUpon>UCtrlConfMessage.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenusAplicacion\UCtrlInstantMessage.resx">
+      <DependentUpon>UCtrlInstantMessage.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenusAplicacion\UCtrlUltimasActividades.resx">
+      <DependentUpon>UCtrlUltimasActividades.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="uCtrlConsultarPlanDeEstudio.resx">
       <DependentUpon>uCtrlConsultarPlanDeEstudio.vb</DependentUpon>
     </EmbeddedResource>

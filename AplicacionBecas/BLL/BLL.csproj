@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="ContenedorMantenimiento.cs" />
     <Compile Include="GestorBeneficios.cs" />
+    <Compile Include="GestorBitacoraAccion.cs" />
     <Compile Include="GestorCarrera.cs" />
     <Compile Include="GestorCurso.cs" />
     <Compile Include="GestorEmail.cs" />

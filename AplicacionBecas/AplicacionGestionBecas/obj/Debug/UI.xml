@@ -6,7 +6,16 @@ UI
 </name>
 </assembly>
 <members>
-<member name="M:UI.UCtrlEliminarCurso.UCtrlElimininarCarrera_MouseMove(System.Object,System.Windows.Forms.MouseEventArgs)">
+<member name="M:UI.UCtrlConfMessage.uCtrlConfMessage_MouseMove(System.Object,System.Windows.Forms.MouseEventArgs)">
+	<summary>Posiciona la ventana mientras el usuario da click al compomente</summary>
+	<autor>Alvaro Artavia</autor>
+</member><member name="M:UI.UCtrlConfMessage.uCtrlConfMessage_MouseUp(System.Object,System.Windows.Forms.MouseEventArgs)">
+	<summary>Situa el componente en la posicion final</summary>
+	<autor>Alvaro Artavia</autor>
+</member><member name="M:UI.UCtrlConfMessage.uCtrlConfMessage_MouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
+	<summary>Indica si el usuario da click al componente para moverlo</summary>
+	<autor>Alvaro Artavia</autor>
+</member><member name="M:UI.UCtrlEliminarCurso.UCtrlElimininarCarrera_MouseMove(System.Object,System.Windows.Forms.MouseEventArgs)">
 	<summary>Posiciona la ventana mientras el usuario da click al compomente</summary>
 	<autor>Alvaro Artavia</autor>
 </member><member name="M:UI.UCtrlEliminarCurso.UCtrlElimininarCarrera_MouseUp(System.Object,System.Windows.Forms.MouseEventArgs)">
@@ -785,6 +794,10 @@ TableAdapterManager is used to coordinate TableAdapters in the dataset to enable
   Reemplaza la propiedad CurrentUICulture del subproceso actual para todas las
   búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
 </summary>
+</member><member name="P:UI.My.Resources.Resources.bordeAzul">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
 </member><member name="P:UI.My.Resources.Resources.cerrar">
 	<summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
@@ -797,6 +810,14 @@ TableAdapterManager is used to coordinate TableAdapters in the dataset to enable
 	<summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
+</member><member name="P:UI.My.Resources.Resources.cerrarVerde">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:UI.My.Resources.Resources.check">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
 </member><member name="P:UI.My.Resources.Resources.confirmacion">
 	<summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
@@ -805,11 +826,23 @@ TableAdapterManager is used to coordinate TableAdapters in the dataset to enable
 	<summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
+</member><member name="P:UI.My.Resources.Resources.iconBell">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
 </member><member name="P:UI.My.Resources.Resources.moradoTablaFinal">
 	<summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
+</member><member name="P:UI.My.Resources.Resources.moradoTablaFinal1">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
 </member><member name="P:UI.My.Resources.Resources.Sin_título_5">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:UI.My.Resources.Resources.tablaAzul">
 	<summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
@@ -825,6 +858,10 @@ TableAdapterManager is used to coordinate TableAdapters in the dataset to enable
 	<summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
+</member><member name="P:UI.My.Resources.Resources.tablaFinalMedianaAzul1">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
 </member><member name="P:UI.My.Resources.Resources.tablaFinalMedianaAzul3">
 	<summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
@@ -834,6 +871,22 @@ TableAdapterManager is used to coordinate TableAdapters in the dataset to enable
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member><member name="P:UI.My.Resources.Resources.tablaFinalMedianaAzul41">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:UI.My.Resources.Resources.tablaVerde">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:UI.My.Resources.Resources.TableMensajeInstantaneo">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:UI.My.Resources.Resources.userGris">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:UI.My.Resources.Resources.userIcon">
 	<summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>

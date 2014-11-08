@@ -146,12 +146,15 @@ Partial Public Class frmPrincipal
     End Sub
 
     Private Sub CerrarSesiónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CerrarSesiónToolStripMenuItem.Click
+        cerrarSesionUsuario()
+    End Sub
 
-        Dim UcntrlIniciar As UCtrlIniciar = New UCtrlIniciar()
+    Public Sub cerrarSesionUsuario()
         objGestorUsuario.cerrarSesion()
         Me.Hide()
         ocultarComponentes()
         FrmIniciarSesion.Show()
+        Dim UcntrlIniciar As UCtrlIniciar = New UCtrlIniciar()
         FrmIniciarSesion.Controls.Add(UcntrlIniciar)
         UcntrlIniciar.Location = New Point(135, 125)
 
@@ -196,7 +199,6 @@ Partial Public Class frmPrincipal
         confirmacion.Show()
 
     End Sub
-
 End Class
 
 Public Class MyRenderer

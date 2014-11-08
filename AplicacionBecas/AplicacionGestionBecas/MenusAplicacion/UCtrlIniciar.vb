@@ -5,6 +5,7 @@ Public Class UCtrlIniciar
     Dim alerta As UctrlAlerta
     Dim uctrlMenuMant As New uCtrlMenuMantenimiento
 
+
     Private Sub btnIniciarSesion_Click(sender As Object, e As EventArgs) Handles btnIniciarSesion.Click
 
         'Dim nombreUsuario As String = txtNombreUsuario.Text
@@ -16,6 +17,7 @@ Public Class UCtrlIniciar
         Dim listaUsuarios As List(Of Usuario)
 
         Try
+
             uctrlMenuMant.ClearPermisos()
             listaUsuarios = objGestorUsuario.iniciarSesion(nombreUsuario, contraseña)
 

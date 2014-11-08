@@ -84,7 +84,7 @@ Public Class uCtrlConsultarTipoBeca
     End Sub
 
 
-    Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
+    Private Sub btnVolver_Click(sender As Object, e As EventArgs)
         Dim ucntrl As uCtrlBuscarTipoBeca = New uCtrlBuscarTipoBeca()
         Me.Hide()
         FrmIniciarSesion.principal.Controls.Add(ucntrl)

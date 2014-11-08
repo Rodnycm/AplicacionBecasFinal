@@ -9,6 +9,7 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Data;
 using TIL;
+using System.Windows.Forms;
 namespace DAL.Repositories
 {
     public class RequisitoRepository : IRepository<Requisito>
@@ -168,29 +169,37 @@ namespace DAL.Repositories
         public IEnumerable<Requisito> GetLista(TipoBeca objTipoBeca)
         {
 
-            List<Requisito> prequisito = null;
+            try {
+                List<Requisito> prequisito = null;
 
-            SqlCommand cmd = new SqlCommand();
-            cmd.Parameters.Add(new SqlParameter("@Nombre", objTipoBeca.nombre));
+                SqlCommand cmd = new SqlCommand();
+                cmd.Parameters.Add(new SqlParameter("@Nombre", objTipoBeca.nombre));
 
-            DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_consultarTipoBecaRequisito");
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_consultarTipoBecaRequisito");
 
-            if (ds.Tables[0].Rows.Count > 0)
-            {
-                prequisito = new List<Requisito>();
-                foreach (DataRow dr in ds.Tables[0].Rows)
+                if (ds.Tables[0].Rows.Count > 0)
                 {
-                    prequisito.Add(new Requisito
-                    (
-                         
-                        dr["Nombre"].ToString(),
-                        dr["Descripcion"].ToString(),
-                         Convert.ToInt32(dr["idRequisito"])
-                    ));
-                }
-            }
+                    prequisito = new List<Requisito>();
+                    foreach (DataRow dr in ds.Tables[0].Rows)
+                    {
+                        prequisito.Add(new Requisito
+                        (
 
-            return prequisito;
+                            dr["Nombre"].ToString(),
+                            dr["Descripcion"].ToString(),
+                             Convert.ToInt32(dr["idRequisito"])
+                        ));
+                    }
+                }
+
+                return prequisito;
+            }
+            catch (SqlException ex) {
+                MessageBox.Show(ex.Message );
+                throw ex;
+            
+            }
+           
         }
 
 

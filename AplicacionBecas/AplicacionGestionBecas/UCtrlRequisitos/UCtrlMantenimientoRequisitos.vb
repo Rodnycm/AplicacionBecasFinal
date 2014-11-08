@@ -114,21 +114,18 @@ Public Class uCtrlMantenimientoRequisitos
     Private Sub ComboBox_SelectionChangeCommitted(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
         Dim combo As ComboBox = CType(sender, ComboBox)
-<<<<<<< HEAD
+
         Dim fila As String = dgvRequisitos.CurrentCell.RowIndex
 
-=======
-      
->>>>>>> origin/BACKIVERSION1000
         If combo.SelectedItem = "Editar" Then
-            Dim fila As String = dgvRequisitos.CurrentRow.Cells(0).Value
+            'Dim fila As String = dgvRequisitos.CurrentRow.Cells(0).Value
 
             modificarRequisito(fila)
 
 
 
         ElseIf combo.SelectedItem = "Eliminar" Then
-            Dim fila As Integer = dgvRequisitos.CurrentRow.Cells(0).RowIndex
+            'Dim fila As Integer = dgvRequisitos.CurrentRow.Cells(0).RowIndex
 
             eliminarRequisito(fila)
 

@@ -1,12 +1,47 @@
 ﻿Imports EntitiesLayer
 Imports BLL
-Public Class uCtrlEliminarCurso
+Public Class UCtrlEliminarCurso
     Dim id As Integer
     Dim nombreCurso As String
     Dim codigoCurso As String
     Dim ucBuscarCursos As uCtrlBuscarCursos
     Dim alerta As New UctrlAlerta
     Dim objCurso As Curso
+    Dim mBlnFormDragging As Boolean
+
+    ''' <summary>Posiciona la ventana mientras el usuario da click al compomente</summary>
+    ''' <autor>Alvaro Artavia</autor>
+
+    Private Sub UCtrlElimininarCarrera_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Me.MouseMove
+
+        If mBlnFormDragging = True Then
+
+            Dim position As Point = frmPrincipal.PointToClient(MousePosition)
+            Me.Location = New Point(position)
+
+        End If
+
+    End Sub
+
+    ''' <summary>Situa el componente en la posicion final</summary>
+    ''' <autor>Alvaro Artavia</autor>
+
+    Private Sub UCtrlElimininarCarrera_MouseUp(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Me.MouseUp
+
+        mBlnFormDragging = False
+        Dim position As Point = frmPrincipal.PointToClient(MousePosition)
+        Location = New Point(position)
+
+    End Sub
+
+    ''' <summary>Indica si el usuario da click al componente para moverlo</summary>
+    ''' <autor>Alvaro Artavia</autor>
+
+    Public Sub UCtrlElimininarCarrera_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Me.MouseDown
+
+        mBlnFormDragging = True
+
+    End Sub
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
         Me.Hide()
         Me.Dispose()

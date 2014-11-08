@@ -92,8 +92,6 @@ Partial Public Class frmPrincipal
         btnsMenus.Hide()
         Me.Controls.Add(ucMenuRep)
         ucMenuRep.Show()
-      
-
 
     End Sub
 
@@ -122,6 +120,12 @@ Partial Public Class frmPrincipal
         FrmIniciarSesion.Show()
         FrmIniciarSesion.Controls.Add(UcntrlIniciar)
         UcntrlIniciar.Location = New Point(135, 125)
+
+
+
+     
+
+
 
     End Sub
 

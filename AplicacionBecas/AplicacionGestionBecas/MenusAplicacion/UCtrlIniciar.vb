@@ -3,6 +3,7 @@ Imports EntitiesLayer
 Public Class UCtrlIniciar
 
     Dim alerta As UctrlAlerta
+    Dim uctrlMenuMant As uCtrlMenuMantenimiento
 
     Private Sub btnIniciarSesion_Click(sender As Object, e As EventArgs) Handles btnIniciarSesion.Click
 
@@ -13,7 +14,7 @@ Public Class UCtrlIniciar
         Dim listaUsuarios As List(Of Usuario)
 
         Try
-
+            uctrlMenuMant.ClearPermisos()
             listaUsuarios = objGestorUsuario.iniciarSesion(nombreUsuario, contraseña)
 
             If listaUsuarios.Count > 0 Then

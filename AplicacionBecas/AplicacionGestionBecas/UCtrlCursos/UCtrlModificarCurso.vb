@@ -1,6 +1,6 @@
 ﻿Imports EntitiesLayer
 Imports BLL
-Public Class uCtrlModificarCurso
+Public Class UCtrlModificarCurso
 
     Dim ucBuscarCursos As uCtrlBuscarCursos
     Dim Id As Integer

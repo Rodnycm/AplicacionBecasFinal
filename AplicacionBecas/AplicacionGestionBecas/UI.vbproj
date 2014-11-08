@@ -74,6 +74,16 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DB_Proyecto2DataSet2.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DB_Proyecto2DataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DB_Proyecto2DataSet3.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DB_Proyecto2DataSet3.xsd</DependentUpon>
+    </Compile>
     <Compile Include="MenusAplicacion\UCtrlConfMessage.Designer.vb">
       <DependentUpon>UCtrlConfMessage.vb</DependentUpon>
     </Compile>
@@ -459,6 +469,8 @@
     <EmbeddedResource Include="MenusAplicacion\UCtrlUltimasActividades.resx">
       <DependentUpon>UCtrlUltimasActividades.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report4.rdlc" />
+    <EmbeddedResource Include="Report5.rdlc" />
     <EmbeddedResource Include="uCtrlConsultarPlanDeEstudio.resx">
       <DependentUpon>uCtrlConsultarPlanDeEstudio.vb</DependentUpon>
     </EmbeddedResource>
@@ -653,6 +665,28 @@
     </None>
     <None Include="DB_Proyecto2DataSet1.xss">
       <DependentUpon>DB_Proyecto2DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DB_Proyecto2DataSet2.xsc">
+      <DependentUpon>DB_Proyecto2DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DB_Proyecto2DataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DB_Proyecto2DataSet2.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DB_Proyecto2DataSet2.xss">
+      <DependentUpon>DB_Proyecto2DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DB_Proyecto2DataSet3.xsc">
+      <DependentUpon>DB_Proyecto2DataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="DB_Proyecto2DataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DB_Proyecto2DataSet3.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DB_Proyecto2DataSet3.xss">
+      <DependentUpon>DB_Proyecto2DataSet3.xsd</DependentUpon>
     </None>
     <None Include="DB_Proyecto2DataSetConsultarRegistroAcciones.xsc">
       <DependentUpon>DB_Proyecto2DataSetConsultarRegistroAcciones.xsd</DependentUpon>

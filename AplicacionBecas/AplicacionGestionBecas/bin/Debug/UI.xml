@@ -6,7 +6,2231 @@ UI
 </name>
 </assembly>
 <members>
-<member name="M:UI.UCtrlEliminarCurso.UCtrlElimininarCarrera_MouseMove(System.Object,System.Windows.Forms.MouseEventArgs)">
+<member name="T:UI.DB_Proyecto2DataSet3.Tb_BecasDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_BeneficiosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_BitacoraAccionDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_BitacoraErrorDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_CantonDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_CarreraCursosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_CarrerasDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_CursosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_DatosFamiliaresDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_DistritoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_DocumentosAdjuntosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_EmailDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_FlujoDeAprobacionDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_FormulariosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_HistorialCursoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_HistorialesAcademicosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_PermisosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_PersonasDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_PlanesDeEstudioDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_PostulantesDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_ProvinciaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_RequisitosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_RequisitosTipoBecaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_RolesDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_RolesPermisosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_SolicitudesDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_TipoBecaBeneficioDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_TiposDeBecaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_UsuariosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_buscarBeneficioPorNombreDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_buscarBeneficiosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_buscarBeneficiosPorTipoDeBecaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_buscarBeneficiosTipoBecaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_buscarCarreraDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_buscarCuatrimestreDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_buscarCursoPorCuatrimestreDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_buscarCursosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_buscarDirectoresAcademicosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_buscarRequisitoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_buscarRequisitosAUnTipoBecaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_buscarRequisitosTipoBecaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_buscarRolDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_buscarRolEstudianteDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_buscarRolPorIdDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_buscarTipoBecaNombreDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_buscarUnCursoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_buscarUnUsuarioDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_buscarUsuariosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_buscarUsuariosPorRolDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_consultarBeneficioDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_consultarBitacoraFechaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_consultarCarrerasDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_consultarCursosPorCuatrimestreDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_consultarEmailDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_consultarPermisosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_consultarPermisosPorRolDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_consultarRequisitosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_consultarRolDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_consultarRolesDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_consultarRolesPermisosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_consultarTipoBecaBeneficiosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_consultarTipoBecaRequisitoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_consultaTipoBecaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_iniciarSesionDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_listarRolDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_obtenerBeneficiosTipoBecaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_obtenerRequisitoTipoBecaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_BecasRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_BeneficiosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_BitacoraAccionRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_BitacoraErrorRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_CantonRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_CarreraCursosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_CarrerasRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_CursosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_DatosFamiliaresRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_DistritoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_DocumentosAdjuntosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_EmailRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_FlujoDeAprobacionRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_FormulariosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_HistorialCursoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_HistorialesAcademicosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_PermisosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_PersonasRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_PlanesDeEstudioRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_PostulantesRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_ProvinciaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_RequisitosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_RequisitosTipoBecaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_RolesRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_RolesPermisosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_SolicitudesRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_TipoBecaBeneficioRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_TiposDeBecaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_UsuariosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_buscarBeneficioPorNombreRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_buscarBeneficiosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_buscarBeneficiosPorTipoDeBecaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_buscarBeneficiosTipoBecaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_buscarCarreraRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_buscarCuatrimestreRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_buscarCursoPorCuatrimestreRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_buscarCursosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_buscarDirectoresAcademicosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_buscarRequisitoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_buscarRequisitosAUnTipoBecaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_buscarRequisitosTipoBecaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_buscarRolRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_buscarRolEstudianteRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_buscarRolPorIdRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_buscarTipoBecaNombreRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_buscarUnCursoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_buscarUnUsuarioRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_buscarUsuariosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_buscarUsuariosPorRolRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_consultarBeneficioRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_consultarBitacoraFechaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_consultarCarrerasRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_consultarCursosPorCuatrimestreRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_consultarEmailRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_consultarPermisosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_consultarPermisosPorRolRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_consultarRequisitosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_consultarRolRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_consultarRolesRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_consultarRolesPermisosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_consultarTipoBecaBeneficiosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_consultarTipoBecaRequisitoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_consultaTipoBecaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_iniciarSesionRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_listarRolRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_obtenerBeneficiosTipoBecaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_obtenerRequisitoTipoBecaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_BecasRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_BeneficiosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_BitacoraAccionRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_BitacoraErrorRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_CantonRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_CarreraCursosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_CarrerasRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_CursosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_DatosFamiliaresRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_DistritoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_DocumentosAdjuntosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_EmailRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_FlujoDeAprobacionRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_FormulariosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_HistorialCursoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_HistorialesAcademicosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_PermisosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_PersonasRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_PlanesDeEstudioRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_PostulantesRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_ProvinciaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_RequisitosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_RequisitosTipoBecaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_RolesRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_RolesPermisosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_SolicitudesRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_TipoBecaBeneficioRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_TiposDeBecaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Tb_UsuariosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_buscarBeneficioPorNombreRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_buscarBeneficiosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_buscarBeneficiosPorTipoDeBecaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_buscarBeneficiosTipoBecaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_buscarCarreraRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_buscarCuatrimestreRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_buscarCursoPorCuatrimestreRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_buscarCursosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_buscarDirectoresAcademicosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_buscarRequisitoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_buscarRequisitosAUnTipoBecaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_buscarRequisitosTipoBecaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_buscarRolRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_buscarRolEstudianteRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_buscarRolPorIdRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_buscarTipoBecaNombreRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_buscarUnCursoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_buscarUnUsuarioRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_buscarUsuariosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_buscarUsuariosPorRolRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_consultarBeneficioRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_consultarBitacoraFechaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_consultarCarrerasRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_consultarCursosPorCuatrimestreRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_consultarEmailRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_consultarPermisosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_consultarPermisosPorRolRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_consultarRequisitosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_consultarRolRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_consultarRolesRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_consultarRolesPermisosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_consultarTipoBecaBeneficiosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_consultarTipoBecaRequisitoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_consultaTipoBecaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_iniciarSesionRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_listarRolRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_obtenerBeneficiosTipoBecaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3.Sp_obtenerRequisitoTipoBecaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Tb_BecasTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Tb_BeneficiosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Tb_BitacoraAccionTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Tb_BitacoraErrorTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Tb_CantonTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Tb_CarreraCursosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Tb_CarrerasTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Tb_CursosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Tb_DatosFamiliaresTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Tb_DistritoTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Tb_DocumentosAdjuntosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Tb_EmailTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Tb_FlujoDeAprobacionTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Tb_FormulariosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Tb_HistorialCursoTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Tb_HistorialesAcademicosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Tb_PermisosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Tb_PersonasTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Tb_PlanesDeEstudioTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Tb_PostulantesTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Tb_ProvinciaTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Tb_RequisitosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Tb_RequisitosTipoBecaTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Tb_RolesTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Tb_RolesPermisosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Tb_SolicitudesTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Tb_TipoBecaBeneficioTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Tb_TiposDeBecaTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Tb_UsuariosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Sp_buscarBeneficioPorNombreTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Sp_buscarBeneficiosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Sp_buscarBeneficiosPorTipoDeBecaTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Sp_buscarBeneficiosTipoBecaTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Sp_buscarCarreraTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Sp_buscarCuatrimestreTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Sp_buscarCursoPorCuatrimestreTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Sp_buscarCursosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Sp_buscarDirectoresAcademicosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Sp_buscarRequisitoTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Sp_buscarRequisitosAUnTipoBecaTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Sp_buscarRequisitosTipoBecaTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Sp_buscarRolTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Sp_buscarRolEstudianteTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Sp_buscarRolPorIdTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Sp_buscarTipoBecaNombreTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Sp_buscarUnCursoTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Sp_buscarUnUsuarioTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Sp_buscarUsuariosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Sp_buscarUsuariosPorRolTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Sp_consultarBeneficioTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Sp_consultarBitacoraFechaTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Sp_consultarCarrerasTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Sp_consultarCursosPorCuatrimestreTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Sp_consultarEmailTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Sp_consultarPermisosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Sp_consultarPermisosPorRolTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Sp_consultarRequisitosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Sp_consultarRolTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Sp_consultarRolesTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Sp_consultarRolesPermisosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Sp_consultarTipoBecaBeneficiosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Sp_consultarTipoBecaRequisitoTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Sp_consultaTipoBecaTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Sp_iniciarSesionTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Sp_listarRolTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Sp_obtenerBeneficiosTipoBecaTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.Sp_obtenerRequisitoTipoBecaTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.QueriesTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="M:UI.DB_Proyecto2DataSet3TableAdapters.TableAdapterManager.UpdateUpdatedRows(UI.DB_Proyecto2DataSet3,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Update rows in top-down order.
+</summary>
+</member><member name="M:UI.DB_Proyecto2DataSet3TableAdapters.TableAdapterManager.UpdateInsertedRows(UI.DB_Proyecto2DataSet3,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Insert rows in top-down order.
+</summary>
+</member><member name="M:UI.DB_Proyecto2DataSet3TableAdapters.TableAdapterManager.UpdateDeletedRows(UI.DB_Proyecto2DataSet3,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Delete rows in bottom-up order.
+</summary>
+</member><member name="M:UI.DB_Proyecto2DataSet3TableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member><member name="M:UI.DB_Proyecto2DataSet3TableAdapters.TableAdapterManager.UpdateAll(UI.DB_Proyecto2DataSet3)">
+	<summary>
+Update all changes to the dataset.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.TableAdapterManager.UpdateOrderOption">
+	<summary>
+Update Order Option
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.TableAdapterManager.SelfReferenceComparer">
+	<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet3TableAdapters.TableAdapterManager">
+	<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_BecasDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_BeneficiosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_BitacoraAccionDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_BitacoraErrorDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_CantonDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_CarreraCursosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_CarrerasDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_CursosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_DatosFamiliaresDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_DistritoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_DocumentosAdjuntosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_EmailDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_FlujoDeAprobacionDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_FormulariosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_HistorialCursoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_HistorialesAcademicosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_PermisosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_PersonasDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_PlanesDeEstudioDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_PostulantesDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_ProvinciaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_RequisitosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_RequisitosTipoBecaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_RolesDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_RolesPermisosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_SolicitudesDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_TipoBecaBeneficioDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_TiposDeBecaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_UsuariosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_buscarBeneficioPorNombreDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_buscarBeneficiosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_buscarBeneficiosPorTipoDeBecaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_buscarBeneficiosTipoBecaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_buscarCarreraDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_buscarCuatrimestreDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_buscarCursoPorCuatrimestreDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_buscarCursosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_buscarDirectoresAcademicosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_buscarRequisitoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_buscarRequisitosAUnTipoBecaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_buscarRequisitosTipoBecaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_buscarRolDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_buscarRolEstudianteDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_buscarRolPorIdDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_buscarTipoBecaNombreDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_buscarUnCursoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_buscarUnUsuarioDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_buscarUsuariosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_buscarUsuariosPorRolDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_consultarBeneficioDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_consultarBitacoraFechaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_consultarCarrerasDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_consultarCursosPorCuatrimestreDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_consultarEmailDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_consultarPermisosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_consultarPermisosPorRolDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_consultarRequisitosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_consultarRolDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_consultarRolesDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_consultarRolesPermisosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_consultarTipoBecaBeneficiosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_consultarTipoBecaRequisitoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_consultaTipoBecaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_iniciarSesionDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_listarRolDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_obtenerBeneficiosTipoBecaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_obtenerRequisitoTipoBecaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_BecasRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_BeneficiosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_BitacoraAccionRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_BitacoraErrorRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_CantonRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_CarreraCursosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_CarrerasRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_CursosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_DatosFamiliaresRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_DistritoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_DocumentosAdjuntosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_EmailRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_FlujoDeAprobacionRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_FormulariosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_HistorialCursoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_HistorialesAcademicosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_PermisosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_PersonasRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_PlanesDeEstudioRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_PostulantesRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_ProvinciaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_RequisitosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_RequisitosTipoBecaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_RolesRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_RolesPermisosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_SolicitudesRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_TipoBecaBeneficioRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_TiposDeBecaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_UsuariosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_buscarBeneficioPorNombreRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_buscarBeneficiosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_buscarBeneficiosPorTipoDeBecaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_buscarBeneficiosTipoBecaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_buscarCarreraRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_buscarCuatrimestreRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_buscarCursoPorCuatrimestreRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_buscarCursosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_buscarDirectoresAcademicosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_buscarRequisitoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_buscarRequisitosAUnTipoBecaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_buscarRequisitosTipoBecaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_buscarRolRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_buscarRolEstudianteRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_buscarRolPorIdRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_buscarTipoBecaNombreRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_buscarUnCursoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_buscarUnUsuarioRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_buscarUsuariosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_buscarUsuariosPorRolRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_consultarBeneficioRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_consultarBitacoraFechaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_consultarCarrerasRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_consultarCursosPorCuatrimestreRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_consultarEmailRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_consultarPermisosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_consultarPermisosPorRolRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_consultarRequisitosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_consultarRolRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_consultarRolesRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_consultarRolesPermisosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_consultarTipoBecaBeneficiosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_consultarTipoBecaRequisitoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_consultaTipoBecaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_iniciarSesionRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_listarRolRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_obtenerBeneficiosTipoBecaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_obtenerRequisitoTipoBecaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_BecasRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_BeneficiosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_BitacoraAccionRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_BitacoraErrorRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_CantonRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_CarreraCursosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_CarrerasRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_CursosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_DatosFamiliaresRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_DistritoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_DocumentosAdjuntosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_EmailRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_FlujoDeAprobacionRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_FormulariosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_HistorialCursoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_HistorialesAcademicosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_PermisosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_PersonasRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_PlanesDeEstudioRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_PostulantesRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_ProvinciaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_RequisitosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_RequisitosTipoBecaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_RolesRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_RolesPermisosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_SolicitudesRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_TipoBecaBeneficioRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_TiposDeBecaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Tb_UsuariosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_buscarBeneficioPorNombreRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_buscarBeneficiosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_buscarBeneficiosPorTipoDeBecaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_buscarBeneficiosTipoBecaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_buscarCarreraRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_buscarCuatrimestreRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_buscarCursoPorCuatrimestreRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_buscarCursosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_buscarDirectoresAcademicosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_buscarRequisitoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_buscarRequisitosAUnTipoBecaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_buscarRequisitosTipoBecaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_buscarRolRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_buscarRolEstudianteRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_buscarRolPorIdRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_buscarTipoBecaNombreRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_buscarUnCursoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_buscarUnUsuarioRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_buscarUsuariosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_buscarUsuariosPorRolRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_consultarBeneficioRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_consultarBitacoraFechaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_consultarCarrerasRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_consultarCursosPorCuatrimestreRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_consultarEmailRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_consultarPermisosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_consultarPermisosPorRolRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_consultarRequisitosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_consultarRolRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_consultarRolesRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_consultarRolesPermisosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_consultarTipoBecaBeneficiosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_consultarTipoBecaRequisitoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_consultaTipoBecaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_iniciarSesionRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_listarRolRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_obtenerBeneficiosTipoBecaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2.Sp_obtenerRequisitoTipoBecaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Tb_BecasTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Tb_BeneficiosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Tb_BitacoraAccionTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Tb_BitacoraErrorTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Tb_CantonTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Tb_CarreraCursosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Tb_CarrerasTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Tb_CursosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Tb_DatosFamiliaresTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Tb_DistritoTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Tb_DocumentosAdjuntosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Tb_EmailTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Tb_FlujoDeAprobacionTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Tb_FormulariosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Tb_HistorialCursoTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Tb_HistorialesAcademicosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Tb_PermisosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Tb_PersonasTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Tb_PlanesDeEstudioTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Tb_PostulantesTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Tb_ProvinciaTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Tb_RequisitosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Tb_RequisitosTipoBecaTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Tb_RolesTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Tb_RolesPermisosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Tb_SolicitudesTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Tb_TipoBecaBeneficioTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Tb_TiposDeBecaTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Tb_UsuariosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Sp_buscarBeneficioPorNombreTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Sp_buscarBeneficiosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Sp_buscarBeneficiosPorTipoDeBecaTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Sp_buscarBeneficiosTipoBecaTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Sp_buscarCarreraTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Sp_buscarCuatrimestreTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Sp_buscarCursoPorCuatrimestreTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Sp_buscarCursosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Sp_buscarDirectoresAcademicosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Sp_buscarRequisitoTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Sp_buscarRequisitosAUnTipoBecaTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Sp_buscarRequisitosTipoBecaTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Sp_buscarRolTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Sp_buscarRolEstudianteTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Sp_buscarRolPorIdTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Sp_buscarTipoBecaNombreTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Sp_buscarUnCursoTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Sp_buscarUnUsuarioTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Sp_buscarUsuariosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Sp_buscarUsuariosPorRolTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Sp_consultarBeneficioTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Sp_consultarBitacoraFechaTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Sp_consultarCarrerasTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Sp_consultarCursosPorCuatrimestreTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Sp_consultarEmailTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Sp_consultarPermisosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Sp_consultarPermisosPorRolTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Sp_consultarRequisitosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Sp_consultarRolTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Sp_consultarRolesTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Sp_consultarRolesPermisosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Sp_consultarTipoBecaBeneficiosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Sp_consultarTipoBecaRequisitoTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Sp_consultaTipoBecaTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Sp_iniciarSesionTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Sp_listarRolTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Sp_obtenerBeneficiosTipoBecaTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.Sp_obtenerRequisitoTipoBecaTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.QueriesTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="M:UI.DB_Proyecto2DataSet2TableAdapters.TableAdapterManager.UpdateUpdatedRows(UI.DB_Proyecto2DataSet2,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Update rows in top-down order.
+</summary>
+</member><member name="M:UI.DB_Proyecto2DataSet2TableAdapters.TableAdapterManager.UpdateInsertedRows(UI.DB_Proyecto2DataSet2,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Insert rows in top-down order.
+</summary>
+</member><member name="M:UI.DB_Proyecto2DataSet2TableAdapters.TableAdapterManager.UpdateDeletedRows(UI.DB_Proyecto2DataSet2,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Delete rows in bottom-up order.
+</summary>
+</member><member name="M:UI.DB_Proyecto2DataSet2TableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member><member name="M:UI.DB_Proyecto2DataSet2TableAdapters.TableAdapterManager.UpdateAll(UI.DB_Proyecto2DataSet2)">
+	<summary>
+Update all changes to the dataset.
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.TableAdapterManager.UpdateOrderOption">
+	<summary>
+Update Order Option
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.TableAdapterManager.SelfReferenceComparer">
+	<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member><member name="T:UI.DB_Proyecto2DataSet2TableAdapters.TableAdapterManager">
+	<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member><member name="M:UI.UCtrlEliminarCurso.UCtrlElimininarCarrera_MouseMove(System.Object,System.Windows.Forms.MouseEventArgs)">
 	<summary>Posiciona la ventana mientras el usuario da click al compomente</summary>
 	<autor>Alvaro Artavia</autor>
 </member><member name="M:UI.UCtrlEliminarCurso.UCtrlElimininarCarrera_MouseUp(System.Object,System.Windows.Forms.MouseEventArgs)">

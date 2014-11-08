@@ -1,30 +1,28 @@
 ﻿Public Class uCtrlMenuReportes
 
+
+    Public Property uctrlReportesBitcoraAcciones As New uCtrlReporteRegistroAcciones()
+    Public Property uctrlPlanEstudio As New uCtrlConsultarPlanDeEstudio()
+
     Private Sub btnConsultarBitacoraAcciones_Click(sender As Object, e As EventArgs) Handles btnConsultarBitacoraAcciones.Click
 
-        Dim uCtrl As New uCtrlReporteRegistroAcciones()
-
-
-        FrmIniciarSesion.principal.Controls.Add(uCtrl)
-        uCtrl.Show()
-        uCtrl.BringToFront()
-        uCtrl.Location = New Point(170, 150)
 
         Me.Hide()
+        uctrlReportesBitcoraAcciones = New uCtrlReporteRegistroAcciones()
+        FrmIniciarSesion.principal.Controls.Add(uctrlReportesBitcoraAcciones)
+        uctrlReportesBitcoraAcciones.Show()
+
 
     End Sub
 
 
     Private Sub btnPlanDeEstudio_Click(sender As Object, e As EventArgs) Handles btnPlanDeEstudio.Click
 
-        Dim uctrl As New uCtrlConsultarPlanDeEstudio
-
-        FrmIniciarSesion.principal.Controls.Add(uctrl)
-        uctrl.Show()
-        uctrl.BringToFront()
-        uctrl.Location = New Point(170, 40)
-
-        Me.Hide()
+         Me.Hide()
+        uctrlPlanEstudio = New uCtrlConsultarPlanDeEstudio()
+        FrmIniciarSesion.principal.Controls.Add(uctrlPlanEstudio)
+        uctrlPlanEstudio.Show()
+        uctrlPlanEstudio.Location = New Point(170, 120)
 
     End Sub
 End Class

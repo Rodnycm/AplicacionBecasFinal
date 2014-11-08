@@ -30,14 +30,14 @@ Partial Class frmPrincipal
         Me.BecasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.btnsMenus = New System.Windows.Forms.TableLayoutPanel()
-        Me.btnReportes = New System.Windows.Forms.Button()
-        Me.btnAcademico = New System.Windows.Forms.Button()
-        Me.btnBecas = New System.Windows.Forms.Button()
-        Me.btnMantenimiento = New System.Windows.Forms.Button()
         Me.MenuHorizontal = New System.Windows.Forms.MenuStrip()
         Me.AlvaroArtaviaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VerPerfilToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CerrarSesiónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btnReportes = New System.Windows.Forms.Button()
+        Me.btnBecas = New System.Windows.Forms.Button()
+        Me.btnMantenimiento = New System.Windows.Forms.Button()
+        Me.btnAcademico = New System.Windows.Forms.Button()
         Me.MenuLateral.SuspendLayout()
         Me.btnsMenus.SuspendLayout()
         Me.MenuHorizontal.SuspendLayout()
@@ -104,76 +104,20 @@ Partial Class frmPrincipal
         'btnsMenus
         '
         Me.btnsMenus.ColumnCount = 4
-        Me.btnsMenus.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.39516!))
-        Me.btnsMenus.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.60484!))
+        Me.btnsMenus.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.10183!))
+        Me.btnsMenus.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.89817!))
         Me.btnsMenus.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 244.0!))
-        Me.btnsMenus.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 265.0!))
+        Me.btnsMenus.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 266.0!))
         Me.btnsMenus.Controls.Add(Me.btnReportes, 3, 0)
-        Me.btnsMenus.Controls.Add(Me.btnAcademico, 1, 0)
         Me.btnsMenus.Controls.Add(Me.btnBecas, 2, 0)
         Me.btnsMenus.Controls.Add(Me.btnMantenimiento, 0, 0)
-        Me.btnsMenus.Location = New System.Drawing.Point(175, 134)
+        Me.btnsMenus.Controls.Add(Me.btnAcademico, 1, 0)
+        Me.btnsMenus.Location = New System.Drawing.Point(175, 150)
         Me.btnsMenus.Name = "btnsMenus"
         Me.btnsMenus.RowCount = 1
         Me.btnsMenus.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.btnsMenus.Size = New System.Drawing.Size(975, 87)
+        Me.btnsMenus.Size = New System.Drawing.Size(997, 87)
         Me.btnsMenus.TabIndex = 8
-        '
-        'btnReportes
-        '
-        Me.btnReportes.BackgroundImage = CType(resources.GetObject("btnReportes.BackgroundImage"), System.Drawing.Image)
-        Me.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnReportes.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnReportes.ForeColor = System.Drawing.Color.White
-        Me.btnReportes.Location = New System.Drawing.Point(712, 3)
-        Me.btnReportes.Name = "btnReportes"
-        Me.btnReportes.Size = New System.Drawing.Size(225, 79)
-        Me.btnReportes.TabIndex = 6
-        Me.btnReportes.Text = "Reportes"
-        Me.btnReportes.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnReportes.UseVisualStyleBackColor = True
-        '
-        'btnAcademico
-        '
-        Me.btnAcademico.BackgroundImage = CType(resources.GetObject("btnAcademico.BackgroundImage"), System.Drawing.Image)
-        Me.btnAcademico.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAcademico.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAcademico.ForeColor = System.Drawing.Color.White
-        Me.btnAcademico.Location = New System.Drawing.Point(233, 3)
-        Me.btnAcademico.Name = "btnAcademico"
-        Me.btnAcademico.Size = New System.Drawing.Size(222, 79)
-        Me.btnAcademico.TabIndex = 5
-        Me.btnAcademico.Text = "Académico"
-        Me.btnAcademico.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnAcademico.UseVisualStyleBackColor = True
-        '
-        'btnBecas
-        '
-        Me.btnBecas.BackgroundImage = CType(resources.GetObject("btnBecas.BackgroundImage"), System.Drawing.Image)
-        Me.btnBecas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBecas.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBecas.ForeColor = System.Drawing.Color.White
-        Me.btnBecas.Location = New System.Drawing.Point(468, 3)
-        Me.btnBecas.Name = "btnBecas"
-        Me.btnBecas.Size = New System.Drawing.Size(225, 79)
-        Me.btnBecas.TabIndex = 7
-        Me.btnBecas.Text = "Becas"
-        Me.btnBecas.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnBecas.UseVisualStyleBackColor = True
-        '
-        'btnMantenimiento
-        '
-        Me.btnMantenimiento.BackgroundImage = CType(resources.GetObject("btnMantenimiento.BackgroundImage"), System.Drawing.Image)
-        Me.btnMantenimiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnMantenimiento.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnMantenimiento.ForeColor = System.Drawing.Color.White
-        Me.btnMantenimiento.Location = New System.Drawing.Point(3, 3)
-        Me.btnMantenimiento.Name = "btnMantenimiento"
-        Me.btnMantenimiento.Size = New System.Drawing.Size(222, 79)
-        Me.btnMantenimiento.TabIndex = 4
-        Me.btnMantenimiento.Text = "Mantenimiento"
-        Me.btnMantenimiento.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnMantenimiento.UseVisualStyleBackColor = True
         '
         'MenuHorizontal
         '
@@ -213,6 +157,62 @@ Partial Class frmPrincipal
         Me.CerrarSesiónToolStripMenuItem.Size = New System.Drawing.Size(145, 22)
         Me.CerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión"
         '
+        'btnReportes
+        '
+        Me.btnReportes.BackgroundImage = CType(resources.GetObject("btnReportes.BackgroundImage"), System.Drawing.Image)
+        Me.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnReportes.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnReportes.ForeColor = System.Drawing.Color.White
+        Me.btnReportes.Location = New System.Drawing.Point(733, 3)
+        Me.btnReportes.Name = "btnReportes"
+        Me.btnReportes.Size = New System.Drawing.Size(226, 79)
+        Me.btnReportes.TabIndex = 6
+        Me.btnReportes.Text = "Reportes"
+        Me.btnReportes.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnReportes.UseVisualStyleBackColor = True
+        '
+        'btnBecas
+        '
+        Me.btnBecas.BackgroundImage = CType(resources.GetObject("btnBecas.BackgroundImage"), System.Drawing.Image)
+        Me.btnBecas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBecas.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBecas.ForeColor = System.Drawing.Color.White
+        Me.btnBecas.Location = New System.Drawing.Point(489, 3)
+        Me.btnBecas.Name = "btnBecas"
+        Me.btnBecas.Size = New System.Drawing.Size(226, 79)
+        Me.btnBecas.TabIndex = 7
+        Me.btnBecas.Text = "Becas"
+        Me.btnBecas.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnBecas.UseVisualStyleBackColor = True
+        '
+        'btnMantenimiento
+        '
+        Me.btnMantenimiento.BackgroundImage = CType(resources.GetObject("btnMantenimiento.BackgroundImage"), System.Drawing.Image)
+        Me.btnMantenimiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnMantenimiento.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnMantenimiento.ForeColor = System.Drawing.Color.White
+        Me.btnMantenimiento.Location = New System.Drawing.Point(3, 3)
+        Me.btnMantenimiento.Name = "btnMantenimiento"
+        Me.btnMantenimiento.Size = New System.Drawing.Size(226, 79)
+        Me.btnMantenimiento.TabIndex = 4
+        Me.btnMantenimiento.Text = "Mantenimiento"
+        Me.btnMantenimiento.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnMantenimiento.UseVisualStyleBackColor = True
+        '
+        'btnAcademico
+        '
+        Me.btnAcademico.BackgroundImage = CType(resources.GetObject("btnAcademico.BackgroundImage"), System.Drawing.Image)
+        Me.btnAcademico.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAcademico.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAcademico.ForeColor = System.Drawing.Color.White
+        Me.btnAcademico.Location = New System.Drawing.Point(246, 3)
+        Me.btnAcademico.Name = "btnAcademico"
+        Me.btnAcademico.Size = New System.Drawing.Size(226, 79)
+        Me.btnAcademico.TabIndex = 5
+        Me.btnAcademico.Text = "Académico"
+        Me.btnAcademico.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnAcademico.UseVisualStyleBackColor = True
+        '
         'frmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -223,6 +223,8 @@ Partial Class frmPrincipal
         Me.Controls.Add(Me.MenuLateral)
         Me.Controls.Add(Me.MenuHorizontal)
         Me.MainMenuStrip = Me.MenuHorizontal
+        Me.MaximumSize = New System.Drawing.Size(1200, 700)
+        Me.MinimumSize = New System.Drawing.Size(1200, 700)
         Me.Name = "frmPrincipal"
         Me.Text = "Gestión de Becas"
         Me.MenuLateral.ResumeLayout(False)

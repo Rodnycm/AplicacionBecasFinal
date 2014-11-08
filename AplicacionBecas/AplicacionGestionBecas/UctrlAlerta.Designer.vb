@@ -79,6 +79,7 @@ Partial Class UctrlAlerta
         Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.btnAceptar)
         Me.ForeColor = System.Drawing.Color.White
+        Me.Location = New System.Drawing.Point(300, 100)
         Me.Name = "UctrlAlerta"
         Me.Size = New System.Drawing.Size(573, 166)
         Me.ResumeLayout(False)

@@ -8,9 +8,8 @@ using System.Transactions;
 using System.Data.SqlClient;
 using System.Data;
 using DAL.Repositories;
+using DAL;
 using TIL;
-using EntitiesLayer;
-
 
 namespace DAL{
 
@@ -378,9 +377,7 @@ namespace DAL{
 
             try
             {
-
-                RegistroAccionRepository objRegistroRep = new RegistroAccionRepository();
-                objRegistroRep.InsertAccion(objRegistro);
+                RegistroAccionRepository.Instance.InsertAccion(objRegistro);
             }
             //catch (SqlException ex)
             //{

@@ -183,5 +183,10 @@ namespace BLL
             return new Email(pemisor, pasunto, pmensaje, psmtpServidor, puserName, pcontrasenna,id);
         }
 
+        public Email crearObjetoEmail(String preceptor, String pemisor, String pasunto, String pmensaje, String psmtpServidor, String puserName, String pcontrasenna)
+        {
+            return new Email(preceptor, pemisor, pasunto, pmensaje, psmtpServidor, puserName, pcontrasenna);
+        }
+
     }
 }

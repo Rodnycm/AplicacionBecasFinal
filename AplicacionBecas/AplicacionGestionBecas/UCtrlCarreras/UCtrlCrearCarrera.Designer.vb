@@ -22,7 +22,6 @@ Partial Class uCtrlCrearCarrera
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(uCtrlCrearCarrera))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -158,7 +157,7 @@ Partial Class uCtrlCrearCarrera
         Me.btnCursos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCursos.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCursos.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(248, Byte), Integer))
-        Me.btnCursos.Location = New System.Drawing.Point(70, 268)
+        Me.btnCursos.Location = New System.Drawing.Point(20, 268)
         Me.btnCursos.Name = "btnCursos"
         Me.btnCursos.Size = New System.Drawing.Size(86, 29)
         Me.btnCursos.TabIndex = 21
@@ -170,7 +169,8 @@ Partial Class uCtrlCrearCarrera
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.BackgroundImage = Global.UI.My.Resources.Resources.tablaFinalMedianaAzul1
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Controls.Add(Me.btnCursos)
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.btnCerrar)

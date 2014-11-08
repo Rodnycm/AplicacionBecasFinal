@@ -12,6 +12,26 @@ namespace DAL.Repositories
 {
    public class RegistroAccionRepository
     {
+       private static RegistroAccionRepository instance;
+       private RegistroAccionRepository()
+        {
+
+        }
+
+        ///<summary>Patron singleton, encargado de obtener una unica instancia de esta clase</summary>
+        //<autor>Alvaro Artavia</autor>
+       public static RegistroAccionRepository Instance
+        {
+
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new RegistroAccionRepository() { };
+                }
+                return instance;
+            }
+        }
         public IEnumerable<RegistroAccion> getAll()
         {
             List<RegistroAccion> listaAcciones = null;
@@ -32,11 +52,34 @@ namespace DAL.Repositories
                         nombreUsuario = dr["Usuario"].ToString(),
                         nombreRol = dr["Rol"].ToString(),
                         idRegistro = Convert.ToInt32(dr["IdBitacoraAccion"])
-
                     });
                 }
             }
+            return listaAcciones;
+        }
 
+        public IEnumerable<RegistroAccion> getByDate()
+        {
+            List<RegistroAccion> listaAcciones = null;
+            var sqlQuery = "Sp_consultarBitacoraFecha";
+            SqlCommand cmd = new SqlCommand(sqlQuery);
+            var ds = DBAccess.ExecuteQuery(cmd);
+
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                listaAcciones = new List<RegistroAccion>();
+                foreach (DataRow dr in ds.Tables[0].Rows)
+                {
+                    listaAcciones.Add(new RegistroAccion
+                    {
+                        fechaAccion = Convert.ToDateTime(dr["FechaAccion"]),
+                        descripcion = dr["Accion"].ToString(),
+                        nombreUsuario = dr["Usuario"].ToString(),
+                        nombreRol = dr["Rol"].ToString(),
+                        idRegistro = Convert.ToInt32(dr["IdBitacoraAccion"])
+                    });
+                }
+            }
             return listaAcciones;
         }
 

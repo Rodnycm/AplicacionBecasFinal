@@ -156,7 +156,7 @@ Partial Class CrearCursos
         '
         'imgCrearCurso
         '
-        Me.imgCrearCurso.BackgroundImage = Global.UI.My.Resources.Resources.tablaFinalMedianaAzul1
+        Me.imgCrearCurso.BackgroundImage = Global.UI.My.Resources.Resources.tablaFinalMedianaAzul
         Me.imgCrearCurso.Location = New System.Drawing.Point(0, 0)
         Me.imgCrearCurso.Name = "imgCrearCurso"
         Me.imgCrearCurso.Size = New System.Drawing.Size(458, 252)

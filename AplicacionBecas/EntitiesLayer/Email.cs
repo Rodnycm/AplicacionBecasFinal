@@ -55,6 +55,17 @@ namespace EntitiesLayer
         {
 
         }
+
+        public Email(string preceptor, string pemisor, string pasunto, string pmensaje, string psmtpServidor, string puserName, string pcontrasenna)
+        {
+            this.receptor = preceptor;
+            this.emisor = pemisor;
+            this.asunto = pasunto;
+            this.mensaje = pmensaje;
+            this.smtpServidor = psmtpServidor;
+            this.userName = puserName;
+            this.contrasenna = pcontrasenna;
+        }
     
         public void notificarUsuario(String correo){
 
@@ -92,8 +103,45 @@ namespace EntitiesLayer
             }
         }
 
-        //<summary> Método que se encarga de determinar si los datos ingresados del requisito son validos</summary>
-        //<author> Gabriela Gutiérrez Corrales </author> 
+        public void notificarUsuario()
+        {
+
+            try
+            {
+                // Your gmail email address
+                oMail.From = emisor;
+
+                // Set recipient email ad   dress
+                oMail.To = receptor;
+
+                // Set email subject
+                oMail.Subject = asunto;
+
+                // Set email body
+                oMail.TextBody = mensaje;
+
+                // Gmail SMTP server address
+                SmtpServer oServer = new SmtpServer(smtpServidor);
+
+                // oServer.Port = 465;
+
+                // detect SSL/TLS automatically
+                oServer.ConnectType = SmtpConnectType.ConnectSSLAuto;
+
+                // Gmail user authentication
+                oServer.User = userName;
+                oServer.Password = contrasenna;
+                oSmtp.SendMail(oServer, oMail);
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        //<summary> Método que se encarga de determinar si los datos ingresados del email son validos</summary>
+        //<author> Alvaro Artavia </author> 
         //<param > No recibe parámetros </param>
         //<returns> Variable booleana </returns> 
 
@@ -103,8 +151,8 @@ namespace EntitiesLayer
         }
 
 
-        //<summary> Método que se encarga de validar que los diferentes atributos del requisito esten correctos</summary>
-        //<author> Gabriela Gutiérrez Corrales </author> 
+        //<summary> Método que se encarga de validar que los diferentes atributos del email esten correctos</summary>
+        //<author> Alvaro Artavia </author> 
         //<param > No recibe parámetros </param>
         //<returns> Retorna una lista de objetos RuleViolation </returns> 
 
@@ -122,9 +170,13 @@ namespace EntitiesLayer
             {
                 yield return new RuleViolation("Se requiere un correo electronico para notificar", "emisor");
             }
+            if (String.IsNullOrEmpty(receptor))
+            {
+                yield return new RuleViolation("Se requiere un correo electronico para notificar", "receptor");
+            }
             if (String.IsNullOrEmpty(userName))
             {
-                yield return new RuleViolation("Se requiere un correo electronico para notificar", "emisor");
+                yield return new RuleViolation("Se requiere un correo electronico para notificar", "userName");
             }
             if (String.IsNullOrEmpty(contrasenna))
             {
@@ -132,7 +184,11 @@ namespace EntitiesLayer
             }
             if (!(Regex.IsMatch(emisor, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase)))
             {
-                yield return new RuleViolation("ERROR", "Correo electrónico incorrecto");
+                yield return new RuleViolation("", "Correo electrónico incorrecto");
+            }
+            if (!(Regex.IsMatch(receptor, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase)))
+            {
+                yield return new RuleViolation("", "Correo electrónico incorrecto");
             }
             yield break;
         }

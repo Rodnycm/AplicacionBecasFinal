@@ -74,6 +74,24 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MenusAplicacion\UCtrlConfMessage.Designer.vb">
+      <DependentUpon>UCtrlConfMessage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MenusAplicacion\UCtrlConfMessage.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MenusAplicacion\UCtrlInstantMessage.Designer.vb">
+      <DependentUpon>UCtrlInstantMessage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MenusAplicacion\UCtrlInstantMessage.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MenusAplicacion\UCtrlUltimasActividades.Designer.vb">
+      <DependentUpon>UCtrlUltimasActividades.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MenusAplicacion\UCtrlUltimasActividades.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="uCtrlConsultarPlanDeEstudio.Designer.vb">
       <DependentUpon>uCtrlConsultarPlanDeEstudio.vb</DependentUpon>
     </Compile>
@@ -426,6 +444,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="MenusAplicacion\UCtrlConfMessage.resx">
+      <DependentUpon>UCtrlConfMessage.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenusAplicacion\UCtrlInstantMessage.resx">
+      <DependentUpon>UCtrlInstantMessage.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenusAplicacion\UCtrlUltimasActividades.resx">
+      <DependentUpon>UCtrlUltimasActividades.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="uCtrlConsultarPlanDeEstudio.resx">
       <DependentUpon>uCtrlConsultarPlanDeEstudio.vb</DependentUpon>
     </EmbeddedResource>
@@ -662,7 +689,36 @@
   <ItemGroup>
     <None Include="Resources\cerrarMorado.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\TableMensajeInstantaneo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconBell.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerrarVerde.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moradoTablaFinal.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tablaVerde.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tablaAzul.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\userIcon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\userGris.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bordeAzul.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

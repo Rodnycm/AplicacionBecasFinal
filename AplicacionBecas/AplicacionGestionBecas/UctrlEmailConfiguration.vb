@@ -54,7 +54,7 @@ Public Class UctrlEmailConfiguration
 
     Private Sub cargarInformacion()
 
-        Dim email As Email = objeGestorEmail.getEmail()
+        Dim email As Email = objGestorEmail.getEmail()
         txtAsunto.Text = email.asunto
         txtEmisor.Text = email.emisor
         txtContrasenna.Text = email.contrasenna
@@ -75,7 +75,7 @@ Public Class UctrlEmailConfiguration
         Dim userName As String = txtUserName.Text
 
         Try
-            objeGestorEmail.modificarEmail(emisor, asunto, mensaje, servidor, userName, contrasenna, idEmail)
+            objGestorEmail.modificarEmail(emisor, asunto, mensaje, servidor, userName, contrasenna, idEmail)
             Dim mensajeConfirmacion As String = "Configuración de notificaciones modificado con exito"
             FrmIniciarSesion.principal.mostrarConfirmacion(mensajeConfirmacion)
         Catch ex As Exception

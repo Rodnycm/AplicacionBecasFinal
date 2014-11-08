@@ -15,7 +15,6 @@ namespace DAL.Repositories
     {
 
         public string actividad;
-
         private static RequisitoRepository instance;
         private List<IEntity> _insertItems;
         private List<IEntity> _deleteItems;
@@ -87,8 +86,7 @@ namespace DAL.Repositories
             {
             List<Requisito> prequisito = new List<Requisito>();
             SqlCommand cmd = new SqlCommand();
-
-            DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_buscarRequisito");
+            DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_consultarRequisitos");
 
             if (ds.Tables[0].Rows.Count > 0)
             {
@@ -96,8 +94,7 @@ namespace DAL.Repositories
                 foreach (DataRow dr in ds.Tables[0].Rows)
                 {
                     prequisito.Add(new Requisito
-                    (
-                        
+                    (                     
                         dr["Nombre"].ToString(),
                         dr["Descripcion"].ToString(),
                         Convert.ToInt32(dr["idRequisito"])
@@ -117,10 +114,7 @@ namespace DAL.Repositories
             {
                 throw ex;
             }
-            }
-
-            
-
+        }
 
         //<summary> Método que se encarga de traer de la base de datos un requisito específico </summary>
         //<author> Gabriela Gutiérrez Corrales </author> 
@@ -412,9 +406,7 @@ namespace DAL.Repositories
 
             try
             {
-
-                RegistroAccionRepository objRegistroRep = new RegistroAccionRepository();
-                objRegistroRep.InsertAccion(objRegistro);
+                RegistroAccionRepository.Instance.InsertAccion(objRegistro);
             }
             catch (SqlException ex)
             {

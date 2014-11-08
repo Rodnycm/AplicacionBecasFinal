@@ -212,13 +212,13 @@ Public Class uCtrlListarRol
 
     Public Sub buscarRol(ByVal param As String)
 
-        Dim objRol As Rol = objGestorRol.consultarRolPorNombre(txtBuscar.Text)
+        ' Dim objRol As Rol = objGestorRol.consultarRolPorNombre(txtBuscar.Text)
 
         Try
             Dim Rol As New Rol
             Rol = objGestorRol.consultarRolPorNombre(txtBuscarRol.Text)
 
-            If Rol Is Nothing Then
+            If Rol.Nombre = "" Then
                 DGVRol.Rows.Clear()
                 ListarRoles()
             Else

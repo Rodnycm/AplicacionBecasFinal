@@ -22,7 +22,7 @@ namespace DAL.Repositories
         private List<IEntity> _updateItems;
         private int numero;
         private String mensaje;
-        private Excepciones exceptions;
+        private Excepciones exceptions = new Excepciones ();
         public static TipoBeca objTipoBeca { get; set; }
 
         public RequisitoRepository()
@@ -479,10 +479,10 @@ namespace DAL.Repositories
                 SqlCommand cmd = new SqlCommand();
 
                 cmd.Parameters.Add(new SqlParameter("@idRequisito", objRequisito.Id));
-                cmd.Parameters.Add(new SqlParameter("@idTipoBeca", objTipoBeca.Id));
+                cmd.Parameters.Add(new SqlParameter("@Nombre", objTipoBeca.nombre));
 
 
-                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_insertarRequisitoTB");
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_insertarRequisitoTipoBeca");
 
             }
             catch (SqlException ex)

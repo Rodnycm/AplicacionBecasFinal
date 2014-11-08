@@ -113,7 +113,11 @@ Public Class UCtrlBuscarCursos
                 listarCursos()
             Else
                 dtaListarCursos.Rows.Clear()
+<<<<<<< HEAD
                 dtaListarCursos.Rows.Add(objCurso.nombre, objCurso.codigo, objCurso.cuatrimestre, objCurso.creditos, objCurso.precio, objCurso.Id, "")
+=======
+                dtaListarCursos.Rows.Add(objCurso.nombre, objCurso.codigo, objCurso.cuatrimestre, objCurso.creditos, objCurso.precio, "", objCurso.Id )
+>>>>>>> origin/BACKIVERSION1000
             End If
 
         Catch ex As Exception

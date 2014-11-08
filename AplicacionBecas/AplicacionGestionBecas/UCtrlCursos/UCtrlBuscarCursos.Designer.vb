@@ -37,8 +37,8 @@ Partial Class UCtrlBuscarCursos
         Me.Cuatrimestre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Créditos = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.columId = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewComboBoxColumn()
+        Me.columId = New System.Windows.Forms.DataGridViewComboBoxColumn()
         CType(Me.dtaListarCursos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.imgBuscarCursos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -68,7 +68,7 @@ Partial Class UCtrlBuscarCursos
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dtaListarCursos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dtaListarCursos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dtaListarCursos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.columnNombre, Me.Column1, Me.Cuatrimestre, Me.Créditos, Me.Precio, Me.columId, Me.Column2})
+        Me.dtaListarCursos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.columnNombre, Me.Column1, Me.Cuatrimestre, Me.Créditos, Me.Precio, Me.Column2, Me.columId})
         Me.dtaListarCursos.GridColor = System.Drawing.Color.White
         Me.dtaListarCursos.Location = New System.Drawing.Point(37, 255)
         Me.dtaListarCursos.Name = "dtaListarCursos"
@@ -125,6 +125,7 @@ Partial Class UCtrlBuscarCursos
         '
         Me.columnNombre.HeaderText = "Nombre"
         Me.columnNombre.Name = "columnNombre"
+        Me.columnNombre.ReadOnly = True
         Me.columnNombre.Width = 160
         '
         'Column1
@@ -155,20 +156,19 @@ Partial Class UCtrlBuscarCursos
         Me.Precio.ReadOnly = True
         Me.Precio.Width = 160
         '
-        'columId
-        '
-        Me.columId.HeaderText = ""
-        Me.columId.Name = "columId"
-        Me.columId.Visible = False
-        '
         'Column2
         '
-        Me.Column2.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox
         Me.Column2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Column2.HeaderText = "Opciones"
         Me.Column2.Items.AddRange(New Object() {"Editar", "Eliminar"})
         Me.Column2.Name = "Column2"
         Me.Column2.Width = 145
+        '
+        'columId
+        '
+        Me.columId.HeaderText = ""
+        Me.columId.Name = "columId"
+        Me.columId.Visible = False
         '
         'UCtrlBuscarCursos
         '
@@ -201,7 +201,7 @@ Partial Class UCtrlBuscarCursos
     Friend WithEvents Cuatrimestre As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Créditos As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Precio As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents columId As System.Windows.Forms.DataGridViewComboBoxColumn
     Friend WithEvents Column2 As System.Windows.Forms.DataGridViewComboBoxColumn
+    Friend WithEvents columId As System.Windows.Forms.DataGridViewComboBoxColumn
 
 End Class

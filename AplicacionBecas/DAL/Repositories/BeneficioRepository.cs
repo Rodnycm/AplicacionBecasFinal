@@ -9,6 +9,7 @@ using System.Data.SqlClient;
 using System.Data;
 using TIL;
 using DAL.Repositories;
+using System.Windows.Forms;
 
 namespace DAL
 {
@@ -197,12 +198,12 @@ namespace DAL
                 return listaBecas;
             }
 
-                 //catch (SqlException ex)
-            //{
-            //    numero = ex.Number;
-            //    mensaje = exceptions.validarExcepcion(numero);
-            //    throw new CustomExceptions.DataAccessException(mensaje, ex);
-            //}
+            catch (SqlException ex)
+            {
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
+            }
             catch (Exception e)
             {
 
@@ -504,7 +505,8 @@ namespace DAL
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
+                throw ex;
 
             }
         }
@@ -529,11 +531,11 @@ namespace DAL
                 }
                 catch (TransactionAbortedException ex)
                 {
-
+                    throw ex;
                 }
                 catch (ApplicationException ex)
                 {
-
+                    throw ex;
                 }
                 finally
                 {
@@ -549,7 +551,7 @@ namespace DAL
                 SqlCommand cmd = new SqlCommand();
 
                 cmd.Parameters.Add(new SqlParameter("@idBeneficio", objBeneficio.Id));
-                cmd.Parameters.Add(new SqlParameter("@idTipoBeca", objTipoBeca.Id));
+                cmd.Parameters.Add(new SqlParameter("@idTipoBeca", objTipoBeca.nombre ));
 
 
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_insertarBeneficiosTiposBeca");
@@ -558,7 +560,8 @@ namespace DAL
             catch (Exception ex)
             {
 
-
+                MessageBox.Show(ex.Message);
+                throw ex;
             }
         }
         public void asignarBeneficio(TipoBeca objTipoBeca)
@@ -581,11 +584,11 @@ namespace DAL
                 }
                 catch (TransactionAbortedException ex)
                 {
-
+                    throw ex;
                 }
                 catch (ApplicationException ex)
                 {
-
+                    throw ex;
                 }
                 finally
                 {

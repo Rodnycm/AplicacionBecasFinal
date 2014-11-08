@@ -212,7 +212,11 @@ Public Class uCtrlListarRol
 
     Public Sub buscarRol(ByVal param As String)
 
+<<<<<<< HEAD
         ' Dim objRol As Rol = objGestorRol.consultarRolPorNombre(txtBuscar.Text)
+=======
+
+>>>>>>> origin/BACKIVERSION1000
 
         Try
             Dim Rol As New Rol

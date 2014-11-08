@@ -195,14 +195,14 @@ Public Class uCtrlListarRol
             uctrlAlerta.txtAlerta.Text = ex.Message
             uctrlAlerta.Show()
 
-
         End Try
-
 
     End Sub
 
     Private Sub txtBuscarRol_TextChanged_1(sender As Object, e As EventArgs) Handles txtBuscarRol.TextChanged
-        If txtBuscar.Text = "" Then
+
+        txtBuscarRol.Text = ""
+        If txtBuscarRol.Text = "" Then
             ListarRoles()
         End If
 

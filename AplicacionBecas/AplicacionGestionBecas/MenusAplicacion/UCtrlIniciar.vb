@@ -10,7 +10,6 @@ Public Class UCtrlIniciar
 
         'Dim nombreUsuario As String = txtNombreUsuario.Text
         'Dim contraseña As String = txtContraseña.Text
-
         Dim nombreUsuario As String = "backi-g@hotmail.com"
         Dim contraseña As String = "1234"
 
@@ -27,6 +26,9 @@ Public Class UCtrlIniciar
                 Globals.usuario = listaUsuarios(0)
                 FrmIniciarSesion.Hide()
                 FrmIniciarSesion.principal.Show()
+                FrmIniciarSesion.principal.nombreMenuHorizontal()
+                FrmIniciarSesion.principal.ValidarPermisos()
+                FrmIniciarSesion.principal.ucMenuMant.ListasDePermisos(FrmIniciarSesion.principal.listaPermisos)
 
             Else
                 alerta = New UctrlAlerta()

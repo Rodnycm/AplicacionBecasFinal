@@ -4,21 +4,21 @@ Partial Public Class frmPrincipal
 
     Inherits Form
 
-    Dim ucMenuMant As New uCtrlMenuMantenimiento()
-    Dim ucMenuAcad As New uCtrlMenuAcademico()
-    Dim ucMenuRep As New uCtrlMenuReportes()
-    Dim ucMenuBecas As New uCtrlMenuBecas()
-    Dim uCtrlUserProfile As New UCtrlUserProfile()
+    Public Property ucMenuMant As New uCtrlMenuMantenimiento()
+    Public Property ucMenuAcad As New uCtrlMenuAcademico()
+    Public Property ucMenuRep As New uCtrlMenuReportes()
+    Public Property ucMenuBecas As New uCtrlMenuBecas()
+    Public Property uCtrlUserProfile As New UCtrlUserProfile()
     Public Property mensajeInstaneo As New UCtrlInstantMessage()
     Public Property uCtrlEmail As UctrlEmailConfiguration = New UctrlEmailConfiguration()
     Public Property confirmacion As uCtrlConfirmacion = New uCtrlConfirmacion()
     Public Property uctrlConfMessage As UCtrlConfMessage = New UCtrlConfMessage()
-    Public listaPermisos As List(Of Permiso) = New List(Of Permiso)
+    Public Property listaPermisos As List(Of Permiso) = New List(Of Permiso)
     Public Property uctrlBitacora As UCtrlUltimasActividades = New UCtrlUltimasActividades()
 
     Private Sub frmPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        AlvaroArtaviaToolStripMenuItem.Text = Globals.usuario.primerNombre & " " & Globals.usuario.primerApellido
+        nombreMenuHorizontal()
         ValidarPermisos()
         FrmIniciarSesion.principal.Controls.Add(mensajeInstaneo)
         mensajeInstaneo.BringToFront()
@@ -26,6 +26,17 @@ Partial Public Class frmPrincipal
         FrmIniciarSesion.principal.Controls.Add(uctrlBitacora)
         uctrlBitacora.BringToFront()
         uctrlBitacora.Show()
+
+    End Sub
+
+    Public Sub nombreMenuHorizontal()
+
+        Dim nombre As String = ""
+        Dim apellido As String = ""
+        AlvaroArtaviaToolStripMenuItem.Text = ""
+        nombre = Globals.usuario.primerNombre
+        apellido = Globals.usuario.primerApellido
+        AlvaroArtaviaToolStripMenuItem.Text = nombre & " " & apellido
 
     End Sub
 
@@ -49,6 +60,9 @@ Partial Public Class frmPrincipal
         uCtrlUserProfile.Dispose()
         ucMenuMant.Hide()
         ocultarComponentes()
+        ucMenuMant.ListasDePermisos(listaPermisos)
+        uCtrlUserProfile.Dispose()
+        ocultarComponentes()
         btnsMenus().Show()
         ucMenuRep.Hide()
 
@@ -58,10 +72,10 @@ Partial Public Class frmPrincipal
 
         ucMenuAcad.Hide()
         Me.Controls.Add(ucMenuMant)
+        ValidarPermisos()
         ucMenuMant.ListasDePermisos(listaPermisos)
         uCtrlUserProfile.Dispose()
         ocultarComponentes()
-        ValidarPermisos()
         btnsMenus.Hide()
         mensajeInstaneo.Hide()
         uctrlBitacora.Hide()
@@ -77,6 +91,7 @@ Partial Public Class frmPrincipal
         ucMenuMant.Hide()
         ocultarComponentes()
         ValidarPermisos()
+        ucMenuMant.ListasDePermisos(listaPermisos)
         mensajeInstaneo.Hide()
         uctrlBitacora.Hide()
         ucMenuRep.Hide()
@@ -90,6 +105,7 @@ Partial Public Class frmPrincipal
         ucMenuMant.Hide()
         ocultarComponentes()
         ValidarPermisos()
+        ucMenuMant.ListasDePermisos(listaPermisos)
         mensajeInstaneo.Hide()
         btnsMenus.Hide()
         mensajeInstaneo.Hide()
@@ -101,6 +117,7 @@ Partial Public Class frmPrincipal
 
     Private Sub btnMantenimiento_Click(sender As Object, e As EventArgs) Handles btnMantenimiento.Click
 
+        ValidarPermisos()
         ucMenuMant.ListasDePermisos(listaPermisos)
         btnsMenus.Hide()
         mensajeInstaneo.Hide()
@@ -146,10 +163,13 @@ Partial Public Class frmPrincipal
     End Sub
 
     Private Sub CerrarSesiónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CerrarSesiónToolStripMenuItem.Click
+
         cerrarSesionUsuario()
+
     End Sub
 
     Public Sub cerrarSesionUsuario()
+
         objGestorUsuario.cerrarSesion()
         Me.Hide()
         ocultarComponentes()
@@ -157,6 +177,7 @@ Partial Public Class frmPrincipal
         Dim UcntrlIniciar As UCtrlIniciar = New UCtrlIniciar()
         FrmIniciarSesion.Controls.Add(UcntrlIniciar)
         UcntrlIniciar.Location = New Point(135, 125)
+        Globals.clear()
 
     End Sub
 

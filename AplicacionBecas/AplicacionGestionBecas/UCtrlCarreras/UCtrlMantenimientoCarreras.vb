@@ -169,7 +169,7 @@ Public Class uCtrlMantenimientoCarreras
 
             Dim c As Carrera = objGestorCarrera.buscarCarrera(param)
 
-            If c Is Nothing Then
+            If c.codigo = "" Then
                 dgvCarreras.Rows.Clear()
                 listarCarreras()
             Else

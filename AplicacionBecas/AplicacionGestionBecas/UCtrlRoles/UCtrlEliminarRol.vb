@@ -54,7 +54,7 @@ Public Class uCtrlEliminarRol
 
             FrmIniciarSesion.principal.Controls.Add(UCtrl)
             UCtrl.txtAlerta.Text = ex.Message
-            UCtrl.Location = New Point(300, 100)
+            UCtrl.Location = New Point(375, 100)
             UCtrl.BringToFront()
             UCtrl.Show()
         End Try

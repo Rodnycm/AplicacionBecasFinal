@@ -3,7 +3,7 @@ Imports EntitiesLayer
 
 Public Class uCtrlCurso
 
-    Dim alerta As UctrlAlerta
+    Dim alerta As New UctrlAlerta
     Dim ucBuscarCursos As New uCtrlBuscarCursos
 
 
@@ -19,13 +19,12 @@ Public Class uCtrlCurso
             objGestorCurso.agregarCurso(nombre, codigo, cuatrimestre, creditos, precio)
             objGestorCurso.guardarCambios()
         Catch ex As Exception
-            alerta = New UctrlAlerta()
+            
             alerta.txtAlerta.Text = ex.Message
-            frmPrincipal.Controls.Add(alerta)
+            FrmIniciarSesion.principal.Controls.Add(alerta)
+            alerta.Location = New Point(375, 100)
             alerta.BringToFront()
-            alerta.Location = New Point(290, 48)
             alerta.Show()
-
 
 
 

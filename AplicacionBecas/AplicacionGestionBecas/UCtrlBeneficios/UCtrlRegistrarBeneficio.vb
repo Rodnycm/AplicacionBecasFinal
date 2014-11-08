@@ -72,7 +72,7 @@
 
                     FrmIniciarSesion.principal.Controls.Add(UCtrl)
                     UCtrl.txtAlerta.Text = "El porcentaje debe ser un numero"
-                    UCtrl.Location = New Point(300, 100)
+                    UCtrl.Location = New Point(375, 100)
                     UCtrl.BringToFront()
                     UCtrl.Show()
 
@@ -84,7 +84,7 @@
 
                 FrmIniciarSesion.principal.Controls.Add(UCtrl)
                 UCtrl.txtAlerta.Text = "Formato del porcentaje Invalido"
-                UCtrl.Location = New Point(300, 100)
+                UCtrl.Location = New Point(375, 100)
                 UCtrl.BringToFront()
                 UCtrl.Show()
 
@@ -96,7 +96,7 @@
 
             FrmIniciarSesion.principal.Controls.Add(UCtrl)
             UCtrl.txtAlerta.Text = ex.Message
-            UCtrl.Location = New Point(300, 100)
+            UCtrl.Location = New Point(375, 100)
             UCtrl.BringToFront()
             UCtrl.Show()
 

@@ -123,7 +123,6 @@
   <metadata name="DB_Proyecto2DataSetConsultarRegistroAcciones.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-
   <metadata name="Tb_BitacoraAccionTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>562, 17</value>
   </metadata>
@@ -354,5 +353,4 @@
         Ha4MNJhruDwPHMDnP1w9DtcGGkw13B4HjmBzn64eh2uDDSYa7g8DxzA5z9cPQ7XY7//Z
 </value>
   </data>
-
 </root>

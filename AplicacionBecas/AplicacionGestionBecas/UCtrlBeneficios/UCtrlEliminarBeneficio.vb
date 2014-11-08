@@ -69,7 +69,7 @@ Public Class uCtrlEliminarBeneficio
                 Dim Uctrl As uCtrlConfirmacion = New uCtrlConfirmacion
                 FrmIniciarSesion.principal.Controls.Add(Uctrl)
                 Uctrl.txtConfirmacion.Text = "El beneficio se eliminó correctamente"
-                Uctrl.Location = New Point(300, 100)
+                Uctrl.Location = New Point(375, 100)
                 Uctrl.BringToFront()
                 Uctrl.Show()
             Else
@@ -78,7 +78,7 @@ Public Class uCtrlEliminarBeneficio
 
                 FrmIniciarSesion.principal.Controls.Add(UCtrl)
                 UCtrl.txtAlerta.Text = "No se puede Eliminar, se encuentra asociado a un tipo de beca."
-                UCtrl.Location = New Point(250, 50)
+                UCtrl.Location = New Point(375, 100)
                 UCtrl.BringToFront()
                 UCtrl.Show()
 

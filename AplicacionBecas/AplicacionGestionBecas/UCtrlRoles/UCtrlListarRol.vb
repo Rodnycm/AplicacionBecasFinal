@@ -30,7 +30,7 @@ Public Class uCtrlListarRol
 
             Dim uctrlAlerta As UctrlAlerta = New UctrlAlerta()
             Me.Controls.Add(uctrlAlerta)
-            uctrlAlerta.Location = New Point(300, 100)
+            uctrlAlerta.Location = New Point(375, 100)
             uctrlAlerta.BringToFront()
             uctrlAlerta.txtAlerta.Text = "No hay roles registrados"
             uctrlAlerta.Show()
@@ -68,7 +68,7 @@ Public Class uCtrlListarRol
 
             Dim uctrlAlerta As UctrlAlerta = New UctrlAlerta()
             Me.Controls.Add(uctrlAlerta)
-            uctrlAlerta.Location = New Point(300, 100)
+            uctrlAlerta.Location = New Point(375, 100)
             uctrlAlerta.BringToFront()
             uctrlAlerta.txtAlerta.Text = ex.Message
             uctrlAlerta.Show()
@@ -95,11 +95,16 @@ Public Class uCtrlListarRol
             uCtrlEliRol.Show()
             uCtrlEliRol.Location = New Point(256, 226)
             uCtrlEliRol.BringToFront()
+
         Catch ex As Exception
 
+            Dim uctrlAlerta As UctrlAlerta = New UctrlAlerta()
+            Me.Controls.Add(uctrlAlerta)
+            uctrlAlerta.Location = New Point(375, 100)
+            uctrlAlerta.BringToFront()
+            uctrlAlerta.txtAlerta.Text = ex.Message
+            uctrlAlerta.Show()
         End Try
-
-
     End Sub
 
     '''<summary>Este metodo consulta el rol seleccionado </summary>
@@ -123,6 +128,13 @@ Public Class uCtrlListarRol
             uCtrlConsulRol.BringToFront()
             uCtrlConsulRol.Location = New Point(250, 170)
         Catch ex As Exception
+
+            Dim uctrlAlerta As UctrlAlerta = New UctrlAlerta()
+            Me.Controls.Add(uctrlAlerta)
+            uctrlAlerta.Location = New Point(375, 100)
+            uctrlAlerta.BringToFront()
+            uctrlAlerta.txtAlerta.Text = ex.Message
+            uctrlAlerta.Show()
         End Try
 
     End Sub
@@ -201,10 +213,9 @@ Public Class uCtrlListarRol
 
             Dim uctrlAlerta As UctrlAlerta = New UctrlAlerta()
             Me.Controls.Add(uctrlAlerta)
-
-            uctrlAlerta.txtAlerta.Text = ex.Message
+            uctrlAlerta.Location = New Point(375, 100)
             uctrlAlerta.BringToFront()
-            uctrlAlerta.Location = New Point(300, 100)
+            uctrlAlerta.txtAlerta.Text = ex.Message
             uctrlAlerta.Show()
 
 

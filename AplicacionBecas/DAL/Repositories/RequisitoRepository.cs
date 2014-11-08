@@ -88,7 +88,7 @@ namespace DAL.Repositories
             List<Requisito> prequisito = new List<Requisito>();
             SqlCommand cmd = new SqlCommand();
 
-            DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_buscarRequisito");
+            DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_consultarRequisitos");
 
             if (ds.Tables[0].Rows.Count > 0)
             {

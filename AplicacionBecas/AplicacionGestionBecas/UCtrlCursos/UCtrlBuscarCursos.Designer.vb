@@ -48,6 +48,7 @@ Partial Class uCtrlBuscarCursos
         Me.txtBuscarCurso.Name = "txtBuscarCurso"
         Me.txtBuscarCurso.Size = New System.Drawing.Size(746, 27)
         Me.txtBuscarCurso.TabIndex = 28
+        Me.txtBuscarCurso.Text = "Buscar:"
         '
         'dtaListarCursos
         '

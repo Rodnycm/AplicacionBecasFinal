@@ -42,7 +42,7 @@ Public Class UctrlCrearUsuario
             Dim Uctrl As uCtrlConfirmacion = New uCtrlConfirmacion
             FrmIniciarSesion.principal.Controls.Add(Uctrl)
             Uctrl.txtConfirmacion.Text = "El usuario se registró correctamente"
-            Uctrl.Location = New Point(300, 100)
+            Uctrl.Location = New Point(375, 100)
             Uctrl.BringToFront()
             Uctrl.Show()
             lista.dgUsuarios.Rows.Clear()

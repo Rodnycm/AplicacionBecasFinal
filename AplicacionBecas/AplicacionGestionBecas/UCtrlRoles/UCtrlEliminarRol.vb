@@ -42,12 +42,6 @@ Public Class uCtrlEliminarRol
         Try
             objGestorRol.eliminarRol(nombre, IdROl)
             objGestorRol.guardarCambios()
-            Dim Uctrl As uCtrlConfirmacion = New uCtrlConfirmacion
-            FrmIniciarSesion.principal.Controls.Add(Uctrl)
-            Uctrl.txtConfirmacion.Text = "El rol se elimino correctamente"
-            Uctrl.Location = New Point(450, 250)
-            Uctrl.BringToFront()
-            Uctrl.Show()
         Catch ex As Exception
             Dim UCtrl As UctrlAlerta = New UctrlAlerta()
 

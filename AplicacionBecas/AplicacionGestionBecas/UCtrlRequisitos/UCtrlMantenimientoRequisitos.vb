@@ -73,7 +73,10 @@ Public Class uCtrlMantenimientoRequisitos
 
     Private Sub uCtrlMantenimientoRequisitos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        listarRequisitos()
+        If txtBuscar.Text = "" Then
+            listarRequisitos()
+
+        End If
 
     End Sub
 
@@ -110,7 +113,6 @@ Public Class uCtrlMantenimientoRequisitos
     ''' <autor>Valeria Ramírez Cordero</autor>
 
 
-
     Private Sub ComboBox_SelectionChangeCommitted(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
         Dim combo As ComboBox = CType(sender, ComboBox)
@@ -122,15 +124,10 @@ Public Class uCtrlMantenimientoRequisitos
 
             modificarRequisito(fila)
 
-
-
         ElseIf combo.SelectedItem = "Eliminar" Then
             'Dim fila As Integer = dgvRequisitos.CurrentRow.Cells(0).RowIndex
 
             eliminarRequisito(fila)
-
-
-            '
 
         End If
     End Sub
@@ -182,8 +179,8 @@ Public Class uCtrlMantenimientoRequisitos
     End Sub
 
     Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
+
         If txtBuscar.Text = "" Then
-            dgvRequisitos.Rows.Clear()
             listarRequisitos()
 
         End If

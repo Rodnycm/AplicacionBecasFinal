@@ -11,7 +11,7 @@ Public Class UCtrlBuscarCursos
 
     Public Sub dtaListarCursos_EditingControlShowing(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewEditingControlShowingEventArgs) Handles dtaListarCursos.EditingControlShowing
         ' Only for a DatagridComboBoxColumn at ColumnIndex 1.
-        If dtaListarCursos.CurrentCell.ColumnIndex = 7 Then
+        If dtaListarCursos.CurrentCell.ColumnIndex = 5 Then
 
             Dim combo As ComboBox = CType(e.Control, ComboBox)
             If (combo IsNot Nothing) Then
@@ -47,7 +47,7 @@ Public Class UCtrlBuscarCursos
     ''' 
     Public Sub modificarCurso(ByVal pfila As String)
 
-        Dim codigo As String = pfila
+        Dim codigo As String = dtaListarCursos.CurrentRow.Cells(0).Value
         Dim ucntrl As UCtrlModificarCurso = New UCtrlModificarCurso()
         ucntrl.recieveData(codigo)
         FrmIniciarSesion.principal.Controls.Add(ucntrl)
@@ -63,14 +63,14 @@ Public Class UCtrlBuscarCursos
     ''' 
     Public Sub eliminarCurso(ByVal pfila As String)
 
-        Dim codigo As String = pfila
+        Dim codigo As String = dtaListarCursos.CurrentRow.Cells(1).Value
         Dim ucntrl As UCtrlEliminarCurso = New UCtrlEliminarCurso()
         ucntrl.recieveData(codigo)
         FrmIniciarSesion.principal.Controls.Add(ucntrl)
         ucntrl.BringToFront()
-        ucntrl.Show()
-        ucntrl.Location = New Point(280, 48)
         ucntrl.refrecarLista(Me)
+        ucntrl.Location = New Point(450, 250)
+        ucntrl.Show()
 
     End Sub
     ''' <summary>Método que se encarga de listar en el data grid los cursos que existen en el sistema</summary>
@@ -85,7 +85,7 @@ Public Class UCtrlBuscarCursos
             listarCursos = objGestorCurso.consultarCursos()
 
             For Each curso As Curso In listarCursos
-                dtaListarCursos.Rows.Add(curso.nombre, curso.codigo, curso.cuatrimestre, curso.creditos, curso.precio, curso.Id, "")
+                dtaListarCursos.Rows.Add(curso.nombre, curso.codigo, curso.cuatrimestre, curso.creditos, curso.precio, "", curso.Id)
             Next
         Catch ex As Exception
 
@@ -113,11 +113,8 @@ Public Class UCtrlBuscarCursos
                 listarCursos()
             Else
                 dtaListarCursos.Rows.Clear()
-                '<<<<<<< HEAD
-                dtaListarCursos.Rows.Add(objCurso.nombre, objCurso.codigo, objCurso.cuatrimestre, objCurso.creditos, objCurso.precio, objCurso.Id, "")
-                '=======
-                '                dtaListarCursos.Rows.Add(objCurso.nombre, objCurso.codigo, objCurso.cuatrimestre, objCurso.creditos, objCurso.precio, "", objCurso.Id )
-                '>>>>>>> origin/BACKIVERSION1000
+                dtaListarCursos.Rows.Add(objCurso.nombre, objCurso.codigo, objCurso.cuatrimestre, objCurso.creditos, objCurso.precio, "", objCurso.Id)
+
             End If
 
         Catch ex As Exception

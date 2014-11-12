@@ -7,12 +7,12 @@ Public Class uCtrlCrearCarrera
     Dim listaDirectores As List(Of Usuario)
     Dim alerta As UctrlAlerta = New UctrlAlerta()
     Dim c As ColorDialog = New ColorDialog()
-    Dim listasC As List(Of Curso)
+    Dim listaC As List(Of Curso)
     ''' <summary>Metodo que se ejecuta cuando el usuario da click al boton seleccionar color, este metodo 
     ''' muestra al usuario una paleta de colores</summary>
     ''' <autor>Alvaro Artavia</autor>
     Public Sub setListasC(ByVal plistasC As List(Of Curso))
-        listasC = plistasC
+        listaC = plistasC
     End Sub
     Private Sub btnColor_Click(sender As Object, e As EventArgs) Handles btnColor.Click
 
@@ -111,10 +111,10 @@ Public Class uCtrlCrearCarrera
         Next
 
         Try
-            'Dim carrera As Carrera = objGestorCarrera.agregarCarrera(nombre, codigo, color, idDirector)
-            objGestorCarrera.agregarCarrera(nombre, codigo, color, idDirector)
+
+            objGestorCarrera.agregarCarrera(nombre, codigo, color, idDirector, listaC)
             objGestorCarrera.guardarCambios()
-            'objGestorCarrera.asignarCursoCarrera(listasC, carrera)
+
             mantenimientoCarreras.listarCarreras()
 
         Catch ex As Exception

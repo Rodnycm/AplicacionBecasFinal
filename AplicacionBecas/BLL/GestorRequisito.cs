@@ -55,10 +55,10 @@ namespace BLL
             }
         }
 
-        public IEnumerable<TipoBeca> consultarBecasPorRequisitos(int pidrol)
+        public IEnumerable<TipoBeca> consultarBecasPorRequisitos(int pidrequisito)
         {
             try {
-                return RequisitoRepository.Instance.buscarRequisitosAUnTipoBeca(pidrol);
+                return RequisitoRepository.Instance.buscarRequisitosAUnTipoBeca(pidrequisito);
             }
             catch (Exception ex)
             {

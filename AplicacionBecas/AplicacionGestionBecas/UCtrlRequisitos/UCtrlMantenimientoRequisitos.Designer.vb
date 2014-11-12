@@ -148,7 +148,6 @@ Partial Class uCtrlMantenimientoRequisitos
         Me.txtBuscar.Name = "txtBuscar"
         Me.txtBuscar.Size = New System.Drawing.Size(746, 27)
         Me.txtBuscar.TabIndex = 16
-        Me.txtBuscar.Text = "Buscar:"
         '
         'lblTituloCursos
         '

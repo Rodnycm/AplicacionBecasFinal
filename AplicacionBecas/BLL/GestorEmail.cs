@@ -16,9 +16,9 @@ namespace BLL
             return EmailRepository.Instance.GetEmail();
         }
 
-        public void modificarEmail(String pemisor, String pasunto, String pmensaje, String psmtpServidor, String puserName, String pcontrasenna, int id)
+        public void modificarEmail(String pemisor,String preceptor, String pasunto, String pmensaje, String psmtpServidor, String puserName, String pcontrasenna, int id)
         {
-            Email email = ContenedorMantenimiento.Instance.crearObjetoEmail(pemisor, pasunto, pmensaje, psmtpServidor, puserName, pcontrasenna,id);
+            Email email = ContenedorMantenimiento.Instance.crearObjetoEmail(pemisor,preceptor, pasunto, pmensaje, psmtpServidor, puserName, pcontrasenna,id);
 
             try
             {

@@ -73,11 +73,13 @@ Public Class UctrlEmailConfiguration
         Dim servidor As String = txtServidor.Text
         Dim mensaje As String = txtMensaje.Text
         Dim userName As String = txtUserName.Text
-
+        Dim receptor As String = "alvartabe777@gmail.com"
         Try
-            objGestorEmail.modificarEmail(emisor, asunto, mensaje, servidor, userName, contrasenna, idEmail)
+
+            objGestorEmail.modificarEmail(emisor, receptor, asunto, mensaje, servidor, userName, contrasenna, idEmail)
             Dim mensajeConfirmacion As String = "Configuración de notificaciones modificado con exito"
             FrmIniciarSesion.principal.mostrarConfirmacion(mensajeConfirmacion)
+
         Catch ex As Exception
 
             alerta = New UctrlAlerta()

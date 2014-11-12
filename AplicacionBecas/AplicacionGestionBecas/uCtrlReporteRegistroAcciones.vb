@@ -5,7 +5,7 @@
 
         Try
 
-            Me.Tb_BitacoraAccionTableAdapter.Fill(Me.DB_Proyecto2DataSetConsultarRegistroAcciones.Tb_BitacoraAccion)
+            'Me.Tb_BitacoraAccionTableAdapter.Fill(Me.DB_Proyecto2DataSet2.Tb_BitacoraAccionDataTable)
 
             Me.ReportViewer1.RefreshReport()
 
@@ -20,5 +20,9 @@
             UCtrl.Show()
 
         End Try
+    End Sub
+
+    Private Sub ReportViewer1_Load(sender As Object, e As EventArgs) Handles ReportViewer1.Load
+
     End Sub
 End Class

@@ -201,7 +201,6 @@ Public Class uCtrlListarRol
 
     Private Sub txtBuscarRol_TextChanged_1(sender As Object, e As EventArgs) Handles txtBuscarRol.TextChanged
 
-        txtBuscarRol.Text = ""
         If txtBuscarRol.Text = "" Then
             ListarRoles()
         End If

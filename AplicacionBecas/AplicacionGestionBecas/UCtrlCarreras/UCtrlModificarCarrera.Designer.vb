@@ -34,6 +34,7 @@ Partial Class uCtrlModificarCarrera
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.btnCursos = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnColor
@@ -162,6 +163,19 @@ Partial Class uCtrlModificarCarrera
         Me.Label5.TabIndex = 64
         Me.Label5.Text = "Editar"
         '
+        'btnCursos
+        '
+        Me.btnCursos.BackColor = System.Drawing.Color.White
+        Me.btnCursos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCursos.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCursos.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(248, Byte), Integer))
+        Me.btnCursos.Location = New System.Drawing.Point(103, 262)
+        Me.btnCursos.Name = "btnCursos"
+        Me.btnCursos.Size = New System.Drawing.Size(86, 29)
+        Me.btnCursos.TabIndex = 65
+        Me.btnCursos.Text = "Cursos"
+        Me.btnCursos.UseVisualStyleBackColor = False
+        '
         'uCtrlModificarCarrera
         '
         Me.AllowDrop = True
@@ -169,6 +183,7 @@ Partial Class uCtrlModificarCarrera
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImage = Global.UI.My.Resources.Resources.tablaFinalGrandeAzul
+        Me.Controls.Add(Me.btnCursos)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.btnModificar)
@@ -200,5 +215,6 @@ Partial Class uCtrlModificarCarrera
     Friend WithEvents btnCancelar As System.Windows.Forms.Button
     Friend WithEvents btnModificar As System.Windows.Forms.Button
     Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents btnCursos As System.Windows.Forms.Button
 
 End Class

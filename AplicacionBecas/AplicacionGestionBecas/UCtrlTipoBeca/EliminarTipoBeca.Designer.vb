@@ -32,11 +32,11 @@ Partial Class EliminarTipoBeca
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(43, 39)
+        Me.Label1.Location = New System.Drawing.Point(58, 58)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(355, 25)
+        Me.Label1.Size = New System.Drawing.Size(369, 25)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "¿Seguro que desea eliminar el Tipo de Beca?"
         '
@@ -46,7 +46,7 @@ Partial Class EliminarTipoBeca
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(248, Byte), Integer))
-        Me.Button1.Location = New System.Drawing.Point(212, 87)
+        Me.Button1.Location = New System.Drawing.Point(226, 103)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(100, 35)
         Me.Button1.TabIndex = 4
@@ -59,7 +59,7 @@ Partial Class EliminarTipoBeca
         Me.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAceptar.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAceptar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(248, Byte), Integer))
-        Me.btnAceptar.Location = New System.Drawing.Point(318, 87)
+        Me.btnAceptar.Location = New System.Drawing.Point(332, 103)
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(100, 35)
         Me.btnAceptar.TabIndex = 5

@@ -58,11 +58,12 @@ Public Class uCtrlBuscarTipoBeca
             Dim param = dtaTipoBeca.CurrentRow.Cells(0).Value
             verTipoBeca(param)
         ElseIf combo.SelectedItem = "Editar" Then
+            Dim param = dtaTipoBeca.CurrentRow.Cells(0).Value
+            editarTipoBeca(param)
 
-            editarTipoBeca()
         ElseIf combo.SelectedItem = "Eliminar" Then
-
-            eliminarTipoBeca()
+            Dim param = dtaTipoBeca.CurrentRow.Cells(0).Value
+            eliminarTipoBeca(param)
         End If
     End Sub
 
@@ -146,8 +147,8 @@ Public Class uCtrlBuscarTipoBeca
 
         End Try
     End Sub
-    Private Sub editarTipoBeca()
-
+    Private Sub editarTipoBeca(ByVal parametro As String)
+        Dim uCtrlModificarTB As New uCtrlModificarTipoBeca
 
         Dim nombre As String = dtaTipoBeca.CurrentRow.Cells(0).Value
         'Dim objD As Date = dtaTipoBeca.CurrentRow.Cells(1).Value
@@ -156,20 +157,28 @@ Public Class uCtrlBuscarTipoBeca
 
 
         Dim objTipoBeca As TipoBeca = gestorTipoBeca.buscarUnTipoBeca(nombre)
-        Dim uCtrlModificarTB As New uCtrlModificarTipoBeca
+
         uCtrlModificarTB.objTipo = objTipoBeca
 
-        frmPrincipal.Controls.Add(uCtrlModificarTB)
+        'frmPrincipal.Controls.Add(uCtrlModificarTB)
         uCtrlModificarTB.getFrmBuscar(Me)
-        'uCtrlModificarTB.recieveData(id, nombre, objD, estado, descripcion)
-        uCtrlModificarTB.BringToFront()
+        Me.Controls.Add(uCtrlModificarTB)
+        uCtrlModificarTB.refrecarLista(Me)
+        Me.dtaTipoBeca.SendToBack()
+        Me.PbTipoBeca.SendToBack()
+        Me.btnCrearTipoBeca.SendToBack()
+        Me.txtBarraBusqueda.SendToBack()
+        uCtrlModificarTB.Location = New Point(155, 50)
         uCtrlModificarTB.Show()
-        uCtrlModificarTB.Location = New Point(290, 48)
+        'uCtrlModificarTB.recieveData(nombre, estado, descripcion)
+        uCtrlModificarTB.BringToFront()
+        'uCtrlModificarTB.Show()
+        'uCtrlModificarTB.Location = New Point(290, 48)
 
     End Sub
 
-    Private Sub eliminarTipoBeca()
-
+    Private Sub eliminarTipoBeca(ByVal pparametro As String)
+        Dim eliminarTipoBeca As EliminarTipoBeca = New EliminarTipoBeca()
 
         'Dim id As Integer = dtaTipoBeca.CurrentRow.Cells(0).Value
         Dim nombre As String = dtaTipoBeca.CurrentRow.Cells(0).Value
@@ -178,14 +187,21 @@ Public Class uCtrlBuscarTipoBeca
         Dim estado As String = dtaTipoBeca.CurrentRow.Cells(1).Value
         Dim descripcion As String = dtaTipoBeca.CurrentRow.Cells(2).Value
 
-        Dim eliminarTipoBeca As New EliminarTipoBeca
+        'eliminarTipoBeca.setParametro(parametro)
+        eliminarTipoBeca.refrescarLista(Me)
+        'FrmIniciarSesion.principal.Controls.Add(ctrlUsuario)
+        Me.Controls.Add(eliminarTipoBeca)
+        Me.dtaTipoBeca.SendToBack()
+        eliminarTipoBeca.BringToFront()
+        eliminarTipoBeca.Location = New Point(280, 200)
+        eliminarTipoBeca.Show()
 
-        frmPrincipal.Controls.Add(eliminarTipoBeca)
+        'frmPrincipal.Controls.Add(eliminarTipoBeca)
         eliminarTipoBeca.getUCtrBuscar(Me)
         eliminarTipoBeca.recibirDatos(id, nombre, estado, descripcion)
-        eliminarTipoBeca.BringToFront()
-        eliminarTipoBeca.Show()
-        eliminarTipoBeca.Location = New Point(290, 48)
+        'eliminarTipoBeca.BringToFront()
+        'eliminarTipoBeca.Show()
+        'eliminarTipoBeca.Location = New Point(290, 48)
 
 
         listarTiposBeca()

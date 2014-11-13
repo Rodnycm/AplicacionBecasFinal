@@ -37,11 +37,11 @@ Partial Class uCtrlModificarTipoBeca
         Me.chkListaRequisitos = New System.Windows.Forms.CheckedListBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.txtEstado = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.btnCerrar = New System.Windows.Forms.Button()
+        Me.cmbEstado = New System.Windows.Forms.ComboBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -125,7 +125,7 @@ Partial Class uCtrlModificarTipoBeca
         '
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TabControl1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TabControl1.Location = New System.Drawing.Point(15, 152)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
@@ -145,7 +145,7 @@ Partial Class uCtrlModificarTipoBeca
         '
         'ChkListaBeneficios
         '
-        Me.ChkListaBeneficios.Font = New System.Drawing.Font("Segoe UI Light", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkListaBeneficios.Font = New System.Drawing.Font("Segoe UI Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ChkListaBeneficios.FormattingEnabled = True
         Me.ChkListaBeneficios.Location = New System.Drawing.Point(8, 7)
         Me.ChkListaBeneficios.Name = "ChkListaBeneficios"
@@ -182,28 +182,21 @@ Partial Class uCtrlModificarTipoBeca
         '
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI Light", 12.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI Light", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(245, 74)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(92, 23)
+        Me.Label2.Size = New System.Drawing.Size(94, 23)
         Me.Label2.TabIndex = 88
         Me.Label2.Text = "Descripción"
-        '
-        'txtEstado
-        '
-        Me.txtEstado.Location = New System.Drawing.Point(103, 110)
-        Me.txtEstado.Name = "txtEstado"
-        Me.txtEstado.Size = New System.Drawing.Size(132, 20)
-        Me.txtEstado.TabIndex = 87
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Font = New System.Drawing.Font("Segoe UI Light", 12.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI Light", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.Location = New System.Drawing.Point(22, 110)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(57, 23)
+        Me.Label5.Size = New System.Drawing.Size(59, 23)
         Me.Label5.TabIndex = 86
         Me.Label5.Text = "Estado"
         '
@@ -218,10 +211,10 @@ Partial Class uCtrlModificarTipoBeca
         '
         Me.Label6.AutoSize = True
         Me.Label6.BackColor = System.Drawing.Color.Transparent
-        Me.Label6.Font = New System.Drawing.Font("Segoe UI Light", 12.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Font = New System.Drawing.Font("Segoe UI Light", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.Location = New System.Drawing.Point(22, 74)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(68, 23)
+        Me.Label6.Size = New System.Drawing.Size(71, 23)
         Me.Label6.TabIndex = 84
         Me.Label6.Text = "Nombre"
         '
@@ -232,11 +225,19 @@ Partial Class uCtrlModificarTipoBeca
         Me.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCerrar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(248, Byte), Integer))
-        Me.btnCerrar.Location = New System.Drawing.Point(559, 23)
+        Me.btnCerrar.Location = New System.Drawing.Point(559, 14)
         Me.btnCerrar.Name = "btnCerrar"
         Me.btnCerrar.Size = New System.Drawing.Size(20, 21)
         Me.btnCerrar.TabIndex = 91
         Me.btnCerrar.UseVisualStyleBackColor = False
+        '
+        'cmbEstado
+        '
+        Me.cmbEstado.FormattingEnabled = True
+        Me.cmbEstado.Location = New System.Drawing.Point(103, 111)
+        Me.cmbEstado.Name = "cmbEstado"
+        Me.cmbEstado.Size = New System.Drawing.Size(132, 21)
+        Me.cmbEstado.TabIndex = 92
         '
         'uCtrlModificarTipoBeca
         '
@@ -244,11 +245,11 @@ Partial Class uCtrlModificarTipoBeca
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Controls.Add(Me.cmbEstado)
         Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.txtEstado)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.Label6)
@@ -282,10 +283,10 @@ Partial Class uCtrlModificarTipoBeca
     Friend WithEvents chkListaRequisitos As System.Windows.Forms.CheckedListBox
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents txtEstado As System.Windows.Forms.TextBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents btnCerrar As System.Windows.Forms.Button
+    Friend WithEvents cmbEstado As System.Windows.Forms.ComboBox
 
 End Class

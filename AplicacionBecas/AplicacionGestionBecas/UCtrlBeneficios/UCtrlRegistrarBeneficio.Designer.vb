@@ -22,7 +22,6 @@ Partial Class uCtrlRegistrarBeneficio
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(uCtrlRegistrarBeneficio))
         Me.btnCerrar = New System.Windows.Forms.Button()
         Me.lblCrear = New System.Windows.Forms.Label()
@@ -89,37 +88,31 @@ Partial Class uCtrlRegistrarBeneficio
         Me.btnAñadir.Text = "Añadir"
         Me.btnAñadir.UseVisualStyleBackColor = False
         '
-
         'txtAplicacion
         '
         Me.txtAplicacion.Font = New System.Drawing.Font("Segoe UI Light", 9.75!)
         Me.txtAplicacion.ForeColor = System.Drawing.Color.Black
-
         Me.txtAplicacion.Location = New System.Drawing.Point(193, 201)
         Me.txtAplicacion.Margin = New System.Windows.Forms.Padding(4)
         Me.txtAplicacion.Name = "txtAplicacion"
         Me.txtAplicacion.Size = New System.Drawing.Size(121, 25)
         Me.txtAplicacion.TabIndex = 29
-
         '
         'txPorcentaje
         '
         Me.txPorcentaje.Font = New System.Drawing.Font("Segoe UI Light", 9.75!)
         Me.txPorcentaje.ForeColor = System.Drawing.Color.Black
-
         Me.txPorcentaje.Location = New System.Drawing.Point(193, 140)
         Me.txPorcentaje.Margin = New System.Windows.Forms.Padding(4)
         Me.txPorcentaje.Name = "txPorcentaje"
         Me.txPorcentaje.Size = New System.Drawing.Size(121, 25)
         Me.txPorcentaje.TabIndex = 28
-
         '
         'lblAplicacion
         '
         Me.lblAplicacion.AutoSize = True
         Me.lblAplicacion.BackColor = System.Drawing.Color.Transparent
         Me.lblAplicacion.Font = New System.Drawing.Font("Segoe UI Light", 12.75!)
-
         Me.lblAplicacion.Location = New System.Drawing.Point(32, 199)
         Me.lblAplicacion.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblAplicacion.Name = "lblAplicacion"
@@ -127,19 +120,16 @@ Partial Class uCtrlRegistrarBeneficio
         Me.lblAplicacion.TabIndex = 27
         Me.lblAplicacion.Text = "A que se aplica"
         '
-
         'lblPorcentaje
         '
         Me.lblPorcentaje.AutoSize = True
         Me.lblPorcentaje.BackColor = System.Drawing.Color.Transparent
         Me.lblPorcentaje.Font = New System.Drawing.Font("Segoe UI Light", 12.75!)
-
         Me.lblPorcentaje.Location = New System.Drawing.Point(31, 140)
         Me.lblPorcentaje.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblPorcentaje.Name = "lblPorcentaje"
         Me.lblPorcentaje.Size = New System.Drawing.Size(131, 23)
         Me.lblPorcentaje.TabIndex = 26
-
         Me.lblPorcentaje.Text = "Porcentaje (0.00)"
         '
         'txtNombre
@@ -147,20 +137,17 @@ Partial Class uCtrlRegistrarBeneficio
         Me.txtNombre.BackColor = System.Drawing.Color.White
         Me.txtNombre.Font = New System.Drawing.Font("Segoe UI Light", 9.75!)
         Me.txtNombre.ForeColor = System.Drawing.Color.Black
-
         Me.txtNombre.Location = New System.Drawing.Point(193, 86)
         Me.txtNombre.Margin = New System.Windows.Forms.Padding(4)
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(121, 25)
         Me.txtNombre.TabIndex = 25
-
         '
         'lblNombre
         '
         Me.lblNombre.AutoSize = True
         Me.lblNombre.BackColor = System.Drawing.Color.Transparent
         Me.lblNombre.Font = New System.Drawing.Font("Segoe UI Light", 12.75!)
-
         Me.lblNombre.Location = New System.Drawing.Point(31, 86)
         Me.lblNombre.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblNombre.Name = "lblNombre"
@@ -168,15 +155,12 @@ Partial Class uCtrlRegistrarBeneficio
         Me.lblNombre.TabIndex = 24
         Me.lblNombre.Text = "Nombre"
         '
-
         'uCtrlRegistrarBeneficio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 23.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.lblCrear)
@@ -184,9 +168,7 @@ Partial Class uCtrlRegistrarBeneficio
         Me.Controls.Add(Me.btnAñadir)
         Me.Controls.Add(Me.txtAplicacion)
         Me.Controls.Add(Me.txPorcentaje)
-
         Me.Controls.Add(Me.lblAplicacion)
-
         Me.Controls.Add(Me.lblPorcentaje)
         Me.Controls.Add(Me.txtNombre)
         Me.Controls.Add(Me.lblNombre)

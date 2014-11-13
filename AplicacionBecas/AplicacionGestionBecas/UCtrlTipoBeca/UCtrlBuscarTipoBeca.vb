@@ -158,7 +158,8 @@ Public Class uCtrlBuscarTipoBeca
         Dim objTipoBeca As TipoBeca = gestorTipoBeca.buscarUnTipoBeca(nombre)
         Dim uCtrlModificarTB As New uCtrlModificarTipoBeca
         uCtrlModificarTB.objTipo = objTipoBeca
-        FrmIniciarSesion.principal.Controls.Add(uCtrlModificarTB)
+
+        frmPrincipal.Controls.Add(uCtrlModificarTB)
         uCtrlModificarTB.getFrmBuscar(Me)
         'uCtrlModificarTB.recieveData(id, nombre, objD, estado, descripcion)
         uCtrlModificarTB.BringToFront()

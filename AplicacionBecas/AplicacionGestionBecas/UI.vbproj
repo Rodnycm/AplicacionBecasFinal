@@ -107,6 +107,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DB_Proyecto2DataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DB_Proyecto2DataSet2.vb">
+      <DependentUpon>DB_Proyecto2DataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DB_Proyecto2DataSet3.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -498,7 +501,9 @@
       <DependentUpon>UCtrlUltimasActividades.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report4.rdlc" />
-    <EmbeddedResource Include="Report5.rdlc" />
+    <EmbeddedResource Include="ReporteRoles.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="uCtrlConsultarPlanDeEstudio.resx">
       <DependentUpon>uCtrlConsultarPlanDeEstudio.vb</DependentUpon>
     </EmbeddedResource>
@@ -531,7 +536,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Report1.rdlc" />
     <EmbeddedResource Include="Report2.rdlc" />
-    <EmbeddedResource Include="Report3.rdlc" />
+    <EmbeddedResource Include="Report3.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="UCtrlTipoBeca\SeleccionarBeneficios.resx">
       <DependentUpon>SeleccionarBeneficios.vb</DependentUpon>
     </EmbeddedResource>

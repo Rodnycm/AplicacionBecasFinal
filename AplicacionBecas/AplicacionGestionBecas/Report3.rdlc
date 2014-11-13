@@ -386,7 +386,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DB_Proyecto2DataSet1</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Mathias\Documents\GitHub\AplicacionBecas\AplicacionBecas\AplicacionGestionBecas\DB_Proyecto2DataSet1.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\AplicacionGestionBecas\DB_Proyecto2DataSet1.xsd</rd:SchemaPath>
         <rd:TableName>Tb_BitacoraAccion</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>

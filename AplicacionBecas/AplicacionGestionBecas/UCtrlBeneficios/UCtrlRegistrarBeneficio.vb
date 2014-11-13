@@ -31,59 +31,72 @@
         Dim formatoCorrecto As Double
 
         Try
-
             formatoCorrecto = FormatNumber(txPorcentaje.Text, 0.0)
 
-            If formatoCorrecto <> CType(txPorcentaje.Text, Double) And formatoCorrecto <= 1 Then
+            If txtNombre.Text.Length <= 50 And txtAplicacion.Text.Length <= 50 Then
 
-                If (IsNumeric(txPorcentaje.Text) = True) Then
+                If formatoCorrecto <> CType(txPorcentaje.Text, Double) And formatoCorrecto <= 1 Then
 
-                    nombre = txtNombre.Text
-                    porcentaje = CType(txPorcentaje.Text, Double)
-                    asociacion = txtAplicacion.Text
+                    If (IsNumeric(txPorcentaje.Text) = True) Then
+
+                        nombre = txtNombre.Text
+                        porcentaje = CType(txPorcentaje.Text, Double)
+                        asociacion = txtAplicacion.Text
 
 
-                    Try
-                        objGestorBeneficio.agregarBeneficio(nombre, porcentaje, asociacion)
-                        objGestorBeneficio.guardarCambios()
+                        Try
+                            objGestorBeneficio.agregarBeneficio(nombre, porcentaje, asociacion)
+                            objGestorBeneficio.guardarCambios()
 
-                        Dim Uctrl As uCtrlConfirmacion = New uCtrlConfirmacion
-                        FrmIniciarSesion.principal.Controls.Add(Uctrl)
-                        Uctrl.txtConfirmacion.Text = "El beneficio se registró correctamente"
-                        Uctrl.Location = New Point(400, 250)
-                        Uctrl.BringToFront()
-                        Uctrl.Show()
+                            Dim Uctrl As uCtrlConfirmacion = New uCtrlConfirmacion
+                            FrmIniciarSesion.principal.Controls.Add(Uctrl)
+                            Uctrl.txtConfirmacion.Text = "El beneficio se registró correctamente"
+                            Uctrl.Location = New Point(400, 250)
+                            Uctrl.BringToFront()
+                            Uctrl.Show()
 
-                    Catch ex As Exception
+                        Catch ex As Exception
+
+                            Dim UCtrl As UctrlAlerta = New UctrlAlerta()
+
+                            FrmIniciarSesion.principal.Controls.Add(UCtrl)
+                            UCtrl.txtAlerta.Text = ex.Message
+                            UCtrl.Location = New Point(300, 250)
+                            UCtrl.BringToFront()
+                            UCtrl.Show()
+
+                        End Try
+
+                    Else
 
                         Dim UCtrl As UctrlAlerta = New UctrlAlerta()
 
                         FrmIniciarSesion.principal.Controls.Add(UCtrl)
-                        UCtrl.txtAlerta.Text = ex.Message
-                        UCtrl.Location = New Point(300, 250)
+                        UCtrl.txtAlerta.Text = "El porcentaje debe ser un numero"
+                        UCtrl.Location = New Point(300, 100)
                         UCtrl.BringToFront()
                         UCtrl.Show()
 
-                    End Try
 
+                    End If
                 Else
 
                     Dim UCtrl As UctrlAlerta = New UctrlAlerta()
 
                     FrmIniciarSesion.principal.Controls.Add(UCtrl)
-                    UCtrl.txtAlerta.Text = "El porcentaje debe ser un numero"
+                    UCtrl.txtAlerta.Text = "Formato del porcentaje Invalido"
                     UCtrl.Location = New Point(300, 100)
                     UCtrl.BringToFront()
                     UCtrl.Show()
 
-
                 End If
+                'aqui
             Else
 
                 Dim UCtrl As UctrlAlerta = New UctrlAlerta()
 
                 FrmIniciarSesion.principal.Controls.Add(UCtrl)
-                UCtrl.txtAlerta.Text = "Formato del porcentaje Invalido"
+                UCtrl.txtAlerta.Text = "No se aceptan textos tan largos"
                 UCtrl.Location = New Point(300, 100)
                 UCtrl.BringToFront()
                 UCtrl.Show()
@@ -101,6 +114,7 @@
             UCtrl.Show()
 
         End Try
+
         uCntrlBuscarBeneficio.dtaBuscarBeneficio.Rows.Clear()
         uCntrlBuscarBeneficio.listarBeneficios()
 

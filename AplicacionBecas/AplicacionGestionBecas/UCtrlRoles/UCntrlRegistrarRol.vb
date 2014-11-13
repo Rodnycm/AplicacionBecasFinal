@@ -12,31 +12,40 @@ Public Class UCntrlRegistrarRol
         Dim nombre As String = txtNombre.Text
 
 
-        Try
-            objGestorRol.agregarRol(nombre)
-            objGestorRol.guardarCambios()
-            idRol = objGestorRol.consultarRolPorNombre(nombre).Id
-            asignarPermisosAUnRol()
+        If txtNombre.Text.Length <= 50 Then
 
-            Dim Uctrl As uCtrlConfirmacion = New uCtrlConfirmacion
-            FrmIniciarSesion.principal.Controls.Add(Uctrl)
-            Uctrl.txtConfirmacion.Text = "El rol se creó correctamente"
-            Uctrl.Location = New Point(450, 250)
-            Uctrl.BringToFront()
-            Uctrl.Show()
+            Try
+                objGestorRol.agregarRol(nombre)
+                objGestorRol.guardarCambios()
+                idRol = objGestorRol.consultarRolPorNombre(nombre).Id
+                asignarPermisosAUnRol()
 
-        Catch ex As Exception
+                Dim Uctrl As uCtrlConfirmacion = New uCtrlConfirmacion
+                FrmIniciarSesion.principal.Controls.Add(Uctrl)
+                Uctrl.txtConfirmacion.Text = "El rol se creó correctamente"
+                Uctrl.Location = New Point(450, 250)
+                Uctrl.BringToFront()
+                Uctrl.Show()
 
+            Catch ex As Exception
+
+                Dim uctrlAlerta As UctrlAlerta = New UctrlAlerta()
+                Me.Controls.Add(uctrlAlerta)
+                uctrlAlerta.Location = New Point(100, 100)
+                uctrlAlerta.BringToFront()
+                uctrlAlerta.txtAlerta.Text = ex.Message
+                uctrlAlerta.Show()
+            End Try
+        Else
             Dim uctrlAlerta As UctrlAlerta = New UctrlAlerta()
             Me.Controls.Add(uctrlAlerta)
             uctrlAlerta.Location = New Point(100, 100)
             uctrlAlerta.BringToFront()
-            uctrlAlerta.txtAlerta.Text = ex.Message
+            uctrlAlerta.txtAlerta.Text = "No se aceptan textos tan largos"
             uctrlAlerta.Show()
-        End Try
 
+        End If
 
-        
         listarRoles.DGVRol.Rows.Clear()
         listarRoles.ListarRoles()
 

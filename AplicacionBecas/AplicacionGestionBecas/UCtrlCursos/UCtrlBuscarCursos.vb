@@ -26,20 +26,15 @@ Public Class UCtrlBuscarCursos
     End Sub
     ''' <summary>Metodo encargado de controlar cuando se da click al combobox se ejecuten las acciones</summary>
     ''' <autor>Valeria Ramírez Cordero</autor>
-
     Private Sub ComboBox_SelectionChangeCommitted(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Dim combo As ComboBox = CType(sender, ComboBox)
-
-        Dim fila As Integer = dtaListarCursos.CurrentCell.RowIndex
-
         If combo.SelectedItem = "Editar" Then
-
+            Dim fila = dtaListarCursos.CurrentRow.Cells(1).Value
             modificarCurso(fila)
         ElseIf combo.SelectedItem = "Eliminar" Then
-
+            Dim fila = dtaListarCursos.CurrentRow.Cells(1).Value
             eliminarCurso(fila)
         End If
-
     End Sub
     ''' <summary>Método que se encarga de modificar un curso por medio de la fila en que se encuentra</summary>
     ''' <param name="pfila">Código el cual corresponde al curso que se desea modificar</param>

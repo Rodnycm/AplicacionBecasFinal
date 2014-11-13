@@ -103,6 +103,15 @@ namespace EntitiesLayer
             {
                 yield return new RuleViolation("Nombre del registro incorrecto", "Nombre incorrecto");
             }
+
+            if (nombre.Length > 50)
+            {
+                yield return new RuleViolation("El nombre ingresado sobrepasa el tamaño permitido", "Error en el nombre");
+            }
+            if (descripcion.Length > 50)
+            {
+                yield return new RuleViolation("La descripción ingresada sobrepasa el tamaño permitido", "Error en la descripción");
+            }
             yield break;
         }
     }

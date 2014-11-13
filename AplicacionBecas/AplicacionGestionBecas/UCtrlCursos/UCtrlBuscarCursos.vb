@@ -11,7 +11,7 @@ Public Class UCtrlBuscarCursos
 
     Public Sub dtaListarCursos_EditingControlShowing(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewEditingControlShowingEventArgs) Handles dtaListarCursos.EditingControlShowing
         ' Only for a DatagridComboBoxColumn at ColumnIndex 1.
-        If dtaListarCursos.CurrentCell.ColumnIndex = 7 Then
+        If dtaListarCursos.CurrentCell.ColumnIndex = 5 Then
 
             Dim combo As ComboBox = CType(e.Control, ComboBox)
             If (combo IsNot Nothing) Then
@@ -85,7 +85,7 @@ Public Class UCtrlBuscarCursos
             listarCursos = objGestorCurso.consultarCursos()
 
             For Each curso As Curso In listarCursos
-                dtaListarCursos.Rows.Add(curso.nombre, curso.codigo, curso.cuatrimestre, curso.creditos, curso.precio, curso.Id, "")
+                dtaListarCursos.Rows.Add(curso.nombre, curso.codigo, curso.cuatrimestre, curso.creditos, curso.precio, "", curso.Id)
             Next
         Catch ex As Exception
 
@@ -109,15 +109,15 @@ Public Class UCtrlBuscarCursos
             Dim objCurso As Curso = objGestorCurso.BuscarCurso(parametro)
 
             If objCurso Is Nothing Then
-                dtaListarCursos.Rows.Clear()
+
                 listarCursos()
             Else
                 dtaListarCursos.Rows.Clear()
-                '<<<<<<< HEAD
-                dtaListarCursos.Rows.Add(objCurso.nombre, objCurso.codigo, objCurso.cuatrimestre, objCurso.creditos, objCurso.precio, objCurso.Id, "")
-                '=======
-                '                dtaListarCursos.Rows.Add(objCurso.nombre, objCurso.codigo, objCurso.cuatrimestre, objCurso.creditos, objCurso.precio, "", objCurso.Id )
-                '>>>>>>> origin/BACKIVERSION1000
+                ''<<<<<<< HEAD
+                'dtaListarCursos.Rows.Add(objCurso.nombre, objCurso.codigo, objCurso.cuatrimestre, objCurso.creditos, objCurso.precio, objCurso.Id, "")
+                ''=======
+                dtaListarCursos.Rows.Add(objCurso.nombre, objCurso.codigo, objCurso.cuatrimestre, objCurso.creditos, objCurso.precio, "", objCurso.Id)
+
             End If
 
         Catch ex As Exception
@@ -125,9 +125,14 @@ Public Class UCtrlBuscarCursos
             listarCursos()
         End Try
     End Sub
-    Public Sub txtBuscarCurso_TextChanged(sender As Object, e As EventArgs) Handles txtBuscarCurso.MouseClick
-        txtBuscarCurso.Text = ""
-    End Sub
+    'Public Sub txtBuscarCurso_TextChanged(sender As Object, e As EventArgs) Handles txtBuscarCurso.MouseClick
+    '    If txtBuscarCurso.Text = "" Then
+    '        dtaListarCursos.Rows.Clear()
+    '        listarCursos()
+
+    '    End If
+
+    'End Sub
     ''' summary>Cuando el evento se ejecuta al dar presionar la tecla enter llama al metodo buscar curso</summary>
     ''' <autor>Alvaro Artavia</autor>
     ''' 

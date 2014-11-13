@@ -178,9 +178,9 @@ namespace BLL
             return new Email(pemisor, pasunto, pmensaje, psmtpServidor, puserName, pcontrasenna);
         }
 
-        public Email crearObjetoEmail(String pemisor, String pasunto, String pmensaje, String psmtpServidor, String puserName, String pcontrasenna, int id)
+        public Email crearObjetoEmail(String pemisor,String preceptor, String pasunto, String pmensaje, String psmtpServidor, String puserName, String pcontrasenna, int id)
         {
-            return new Email(pemisor, pasunto, pmensaje, psmtpServidor, puserName, pcontrasenna,id);
+            return new Email(pemisor, preceptor, pasunto, pmensaje, psmtpServidor, puserName, pcontrasenna,id);
         }
 
         public Email crearObjetoEmail(String preceptor, String pemisor, String pasunto, String pmensaje, String psmtpServidor, String puserName, String pcontrasenna)

@@ -40,9 +40,10 @@ namespace EntitiesLayer
             contrasenna = pcontrasenna;
         }
 
-        public Email(String pemisor, String pasunto, String pmensaje, String psmtpServidor, String puserName, String pcontrasenna, int pid)
+        public Email(String pemisor,String preceptor, String pasunto, String pmensaje, String psmtpServidor, String puserName, String pcontrasenna, int pid)
         {
             emisor = pemisor;
+            receptor = preceptor;
             asunto = pasunto;
             mensaje = pmensaje;
             smtpServidor = psmtpServidor;

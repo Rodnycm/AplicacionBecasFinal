@@ -359,9 +359,9 @@ namespace DAL
                 actividad = "Se ha creado un Curso";
                 registrarAccion(actividad);
 
-
             }catch (SqlException ex){
 
+            
                 numero = ex.Number;
                 mensaje = exceptions.excepciones(numero);
                 throw new CustomExceptions.DataAccessException(mensaje, ex);
@@ -421,10 +421,9 @@ namespace DAL
 
                 actividad = "Se ha eliminado un Curso";
                 registrarAccion(actividad);
-
-
-            }catch (SqlException ex){
-
+            }
+            catch (SqlException ex)
+            {
                 numero = ex.Number;
                 mensaje = exceptions.validarExcepcion(numero);
                 throw new CustomExceptions.DataAccessException(mensaje, ex);
@@ -434,7 +433,6 @@ namespace DAL
                 throw ex;
             }
         }
-
         public void registrarAccion(string pactividad)
         {
             RegistroAccion objRegistro;
@@ -456,9 +454,8 @@ namespace DAL
                 mensaje = exceptions.validarExcepcion(numero);
                 throw new CustomExceptions.DataAccessException(mensaje, ex);
             }
-
-            catch (Exception e){
-
+            catch (Exception e)
+            {
 
                 throw e;
             }

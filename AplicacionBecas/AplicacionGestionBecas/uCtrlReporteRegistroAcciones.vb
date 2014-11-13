@@ -5,7 +5,7 @@
 
         Try
 
-            'Me.Tb_BitacoraAccionTableAdapter.Fill(Me.DB_Proyecto2DataSet2.Tb_BitacoraAccionDataTable)
+            Me.Tb_BitacoraAccionTableAdapter.Fill(Me.DB_Proyecto2DataSetConsultarRegistroAcciones.Tb_BitacoraAccion)
 
             Me.ReportViewer1.RefreshReport()
 

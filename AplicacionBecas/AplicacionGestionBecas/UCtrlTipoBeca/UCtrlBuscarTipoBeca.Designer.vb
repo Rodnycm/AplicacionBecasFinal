@@ -40,11 +40,11 @@ Partial Class uCtrlBuscarTipoBeca
         Me.Beneficios = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.opciones = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.btnVolver = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PbTipoBeca = New System.Windows.Forms.PictureBox()
         Me.btnCrearTipoBeca = New System.Windows.Forms.Button()
         Me.lblTituloTiposDeBeca = New System.Windows.Forms.Label()
         CType(Me.dtaTipoBeca, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PbTipoBeca, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'txtBarraBusqueda
@@ -177,14 +177,14 @@ Partial Class uCtrlBuscarTipoBeca
         Me.btnVolver.UseVisualStyleBackColor = False
         Me.btnVolver.Visible = False
         '
-        'PictureBox1
+        'PbTipoBeca
         '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(31, 176)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(975, 321)
-        Me.PictureBox1.TabIndex = 20
-        Me.PictureBox1.TabStop = False
+        Me.PbTipoBeca.Image = CType(resources.GetObject("PbTipoBeca.Image"), System.Drawing.Image)
+        Me.PbTipoBeca.Location = New System.Drawing.Point(31, 176)
+        Me.PbTipoBeca.Name = "PbTipoBeca"
+        Me.PbTipoBeca.Size = New System.Drawing.Size(975, 321)
+        Me.PbTipoBeca.TabIndex = 20
+        Me.PbTipoBeca.TabStop = False
         '
         'btnCrearTipoBeca
         '
@@ -221,19 +221,19 @@ Partial Class uCtrlBuscarTipoBeca
         Me.Controls.Add(Me.txtBarraBusqueda)
         Me.Controls.Add(Me.btnCrearTipoBeca)
         Me.Controls.Add(Me.dtaTipoBeca)
-        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.PbTipoBeca)
         Me.Location = New System.Drawing.Point(145, 50)
         Me.Name = "uCtrlBuscarTipoBeca"
         Me.Size = New System.Drawing.Size(1037, 578)
         CType(Me.dtaTipoBeca, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PbTipoBeca, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents txtBarraBusqueda As System.Windows.Forms.TextBox
     Friend WithEvents dtaTipoBeca As System.Windows.Forms.DataGridView
-    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
+    Friend WithEvents PbTipoBeca As System.Windows.Forms.PictureBox
     Friend WithEvents btnCrearTipoBeca As System.Windows.Forms.Button
     Friend WithEvents btnVolver As System.Windows.Forms.Button
     Friend WithEvents Nombre As System.Windows.Forms.DataGridViewTextBoxColumn

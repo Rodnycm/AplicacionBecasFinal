@@ -68,3 +68,17 @@ C:\Users\backi_000\Documents\GitHub\AplicacionBecasFinal\AplicacionBecasFinal\Ap
 C:\Users\backi_000\Documents\GitHub\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecas\BLL\obj\Debug\BLL.csproj.GenerateResource.Cache
 C:\Users\backi_000\Documents\GitHub\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecas\BLL\obj\Debug\BLL.dll
 C:\Users\backi_000\Documents\GitHub\AplicacionBecasFinal\AplicacionBecasFinal\AplicacionBecas\BLL\obj\Debug\BLL.pdb
+C:\Users\María\Desktop\AplicacionBecasFinal\AplicacionBecas\BLL\bin\Debug\BLL.dll
+C:\Users\María\Desktop\AplicacionBecasFinal\AplicacionBecas\BLL\bin\Debug\BLL.pdb
+C:\Users\María\Desktop\AplicacionBecasFinal\AplicacionBecas\BLL\bin\Debug\DAL.dll
+C:\Users\María\Desktop\AplicacionBecasFinal\AplicacionBecas\BLL\bin\Debug\EntitiesLayer.dll
+C:\Users\María\Desktop\AplicacionBecasFinal\AplicacionBecas\BLL\bin\Debug\TIL.dll
+C:\Users\María\Desktop\AplicacionBecasFinal\AplicacionBecas\BLL\bin\Debug\EASendMail45.dll
+C:\Users\María\Desktop\AplicacionBecasFinal\AplicacionBecas\BLL\bin\Debug\DAL.pdb
+C:\Users\María\Desktop\AplicacionBecasFinal\AplicacionBecas\BLL\bin\Debug\EntitiesLayer.pdb
+C:\Users\María\Desktop\AplicacionBecasFinal\AplicacionBecas\BLL\bin\Debug\TIL.pdb
+C:\Users\María\Desktop\AplicacionBecasFinal\AplicacionBecas\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\María\Desktop\AplicacionBecasFinal\AplicacionBecas\BLL\obj\Debug\BLL.Properties.Resources.resources
+C:\Users\María\Desktop\AplicacionBecasFinal\AplicacionBecas\BLL\obj\Debug\BLL.csproj.GenerateResource.Cache
+C:\Users\María\Desktop\AplicacionBecasFinal\AplicacionBecas\BLL\obj\Debug\BLL.dll
+C:\Users\María\Desktop\AplicacionBecasFinal\AplicacionBecas\BLL\obj\Debug\BLL.pdb

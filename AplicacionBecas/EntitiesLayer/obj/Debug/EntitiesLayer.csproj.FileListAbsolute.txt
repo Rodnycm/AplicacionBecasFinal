@@ -14,3 +14,8 @@ C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecas\EntitiesLayer\bin\
 C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecas\EntitiesLayer\bin\Debug\EASendMail45.dll
 C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecas\EntitiesLayer\obj\Debug\EntitiesLayer.dll
 C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecas\EntitiesLayer\obj\Debug\EntitiesLayer.pdb
+C:\Users\María\Desktop\AplicacionBecasFinal\AplicacionBecas\EntitiesLayer\bin\Debug\EntitiesLayer.dll
+C:\Users\María\Desktop\AplicacionBecasFinal\AplicacionBecas\EntitiesLayer\bin\Debug\EntitiesLayer.pdb
+C:\Users\María\Desktop\AplicacionBecasFinal\AplicacionBecas\EntitiesLayer\bin\Debug\EASendMail45.dll
+C:\Users\María\Desktop\AplicacionBecasFinal\AplicacionBecas\EntitiesLayer\obj\Debug\EntitiesLayer.dll
+C:\Users\María\Desktop\AplicacionBecasFinal\AplicacionBecas\EntitiesLayer\obj\Debug\EntitiesLayer.pdb

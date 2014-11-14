@@ -74,7 +74,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>p5C/yQZOR4kKzkkw8dxQndDP5qWyv3Ajo08hgVlcDbw=</dsig:DigestValue>
+        <dsig:DigestValue>LP4IE0jB7jqOnKaQjjIs/I8eNoqJccjx0/G2+AEWfO8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -86,7 +86,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>g7sI/zWBQuv5Fxdgf5+IpEZaxeyqZfk/bb1OJi3itOQ=</dsig:DigestValue>
+        <dsig:DigestValue>t7RmxmwBk4/Sk7azCmiVMmCn3NIrS5KNLdR++Mx9eOs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -110,7 +110,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>+9wd5LlAlawjKZc7U92Xb2wK0lllaNN1+DOsEvN+/f0=</dsig:DigestValue>
+        <dsig:DigestValue>bYQm+IzabMLA7qSi/Tkwmt92vHqMz1y2UApmnyzZsqE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -134,19 +134,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>QNKpyc6jmd+/dGUeS2nZ0vvHe+8HeGNbti+DD5r4JqM=</dsig:DigestValue>
+        <dsig:DigestValue>5voj9iwiX6bbQd88nbtcZ6Q6Y8NhkTB53RoLAZX6q5M=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="UI.exe" size="5776896">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="UI.exe" size="5780992">
       <assemblyIdentity name="UI" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>TEKiy/lqJyR9eZL9NQkBsC5WL/EdMeNDE6R6wMTH3ks=</dsig:DigestValue>
+        <dsig:DigestValue>5Y86jq+GyyIb0k2YyNWoPz5XQ+b1EyHVnId8EvPpkRI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

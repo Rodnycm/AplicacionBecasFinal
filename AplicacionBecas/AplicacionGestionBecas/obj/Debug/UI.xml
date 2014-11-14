@@ -2086,6 +2086,41 @@ TableAdapterManager is used to coordinate TableAdapters in the dataset to enable
 	<summary>Método que se encarga de limpiar y volver a listar los cursos una vez que han sido modificados</summary>
 	<param name="puctrl">Control de usuario de Buscar Cursos</param>
 	<autor>Valeria Ramírez</autor>
+</member><member name="M:UI.EliminarTipoBeca.recibirDatos(System.Int32,System.String,System.String,System.String)">
+	<summary>
+ Método que recibe datos del tipo de beca
+ </summary>
+	<author>María Jesús Gutiérrez Calvo</author>
+	<param name="pid">id del tipo de beca</param>
+	<param name="pnombre">nombre del tipo de beca</param>
+	<param name="pestado">estado del tipo de beca</param>
+	<param name="pdescripcion">descripción del tipo de beca</param>
+	<remarks></remarks>
+</member><member name="M:UI.EliminarTipoBeca.btnAceptar_Click(System.Object,System.EventArgs)">
+	<summary>
+ Método que programa el botón aceptar 
+ elimina el tipo de beca y guarda los cambios y lista de nuevo los tipo de beca
+ </summary>
+	<author>María Jesús Gutiérrez Calvo</author>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:UI.EliminarTipoBeca.btnCancelar_Click(System.Object,System.EventArgs)">
+	<summary>
+ Método que programa el botón cancelar 
+ cancela la acción que se iba a realizar y muestra la lista de tipo de becas
+ </summary>
+	<author>María Jesús Gutiérrez Calvo</author>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:UI.EliminarTipoBeca.refrescarLista(UI.uCtrlBuscarTipoBeca)">
+	<summary>
+ Método que refresca la lista del buscar tipo de beca, luego de haber realizado una acción
+ </summary>
+	<author>María Jesús Gutiérrez Calvo</author>
+	<param name="pbuscar"></param>
+	<remarks></remarks>
 </member><member name="M:UI.uCtrlMantenimientoCrearRequisito.uCtrlCrearRequisito_MouseUp(System.Object,System.Windows.Forms.MouseEventArgs)">
 	<summary>Situa el componente en la posicion final</summary>
 	<autor>Alvaro Artavia</autor>
@@ -3738,6 +3773,155 @@ TableAdapterManager is used to coordinate TableAdapters in the dataset to enable
  </summary>
 	<author>Mathias Muller</author>
 	<remarks></remarks>
+</member><member name="F:UI.uCtrlModificarTipoBeca.listas">
+	<summary>
+ Declaración de la lista de los beneficios seleccionados a un tipo de beca
+ </summary>
+	<author>María Jesús Gutiérrez Calvo</author>
+	<remarks></remarks>
+</member><member name="F:UI.uCtrlModificarTipoBeca.listasR">
+	<summary>
+ Declaración de la lista de los requisitos seleccionados a un tipo de beca
+ </summary>
+	<author>María Jesús Gutiérrez Calvo</author>
+	<remarks></remarks>
+</member><member name="F:UI.uCtrlModificarTipoBeca.listaRequisito">
+	<summary>
+ Declaración de la lista de todos los requisitos disponibles para asignar a un tipo de beca
+ </summary>
+	<author>María Jesús Gutiérrez Calvo</author>
+	<remarks></remarks>
+</member><member name="F:UI.uCtrlModificarTipoBeca.listaBeneficio">
+	<summary>
+ Declaración dela lista de todos los beneficios disponibles para asignar a un tipo de beca
+ </summary>
+	<author>María Jesús Gutiérrez Calvo</author>
+	<remarks></remarks>
+</member><member name="F:UI.uCtrlModificarTipoBeca.listaIdBeneficios">
+	<summary>
+ Declaración de la lista de los beneficios que traen solo el id de los beneficios
+ </summary>
+	<author>María Jesús Gutiérrez Calvo</author>
+	<remarks></remarks>
+</member><member name="F:UI.uCtrlModificarTipoBeca.listaIdRequisitos">
+	<summary>
+ Declaración de la lista de los requisitos que traen el id de los requisitos
+ </summary>
+	<author>María Jesús Gutiérrez Calvo</author>
+	<remarks></remarks>
+</member><member name="M:UI.uCtrlModificarTipoBeca.setListas(System.Collections.Generic.List{EntitiesLayer.Beneficio})">
+	<summary>
+ Método que seta la lista de los beneficios seleccionados a un tipo de beca
+ </summary>
+	<author>María Jesús Gutiérrez Calvo</author>
+	<param name="plista"></param>
+	<remarks></remarks>
+</member><member name="M:UI.uCtrlModificarTipoBeca.setListasR(System.Collections.Generic.List{EntitiesLayer.Requisito})">
+	<summary>
+ Método que setea la lista de los requisitos seleccionados a un tipo de beca
+ </summary>
+	<author>María Jesús Gutiérrez Calvo</author>
+	<param name="plistaR"></param>
+	<remarks></remarks>
+</member><member name="M:UI.uCtrlModificarTipoBeca.RequisitosRelacionados">
+	<summary>
+ Método que trae los requisitos relacionado a un tipo de beca
+ busca los requisitos que están asociados a un tipo de beca por medio de su id
+ los agrega a una lista de requisitos asociados
+ </summary>
+	<author>María Jesús Gutiérrez Calvo</author>
+	<remarks></remarks>
+</member><member name="M:UI.uCtrlModificarTipoBeca.BeneficiosRelacionados">
+	<summary>
+ Método que trae los beneficios relacionados a un tipo  de beca
+ busca los beneficios que están asociados a un tipo de beca por medio de su id
+ agrega esos beneficios a una lista
+ </summary>
+	<author>María Jesús Gutiérrez Calvo</author>
+	<remarks></remarks>
+</member><member name="M:UI.uCtrlModificarTipoBeca.btnModificar_Click(System.Object,System.EventArgs)">
+	<summary>
+ Método que programa el botón de modificar del formulario Modifica tipo de beca
+ modifica los datos del tipo de beca y envía la lista con los id de los beneficios seleccionados  y otra lista con los id de los requisitos
+ seleccionados a un tipo de beca, guarda los cambios y muestra la lista de tipos de beca.
+ </summary>
+	<author>María Jesús Gutiérrez Calvo</author>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:UI.uCtrlModificarTipoBeca.obtenerBeneficiosSeleccionados">
+	<summary>
+ Método que obtiene los beneficios seleccionados a un tipo de beca
+ recorre el checklist de beneficios por medio de un for para poder obtener los beneficios que fueron seleccionados
+ y los agrega a una lista de beneficios seleccionados.
+ </summary>
+	<author>María Jesús Gutiérrez Calvo</author>
+	<returns>retorna una lista de beneficios seleccionados</returns>
+	<remarks></remarks>
+</member><member name="M:UI.uCtrlModificarTipoBeca.obtenerRequisitosSeleccionados">
+	<summary>
+ Método que obtiene los requisitos seleccionados de un tipo de beca
+ recorre el checklist de requisitos por medio de un for para poder obtener los requisitos seleccionados que fueron seleccionados
+ y los agrega a una lista de requisitos seleccionados.
+ </summary>
+	<author>María Jesús Gutiérrez Calvo</author>
+	<returns>retorna una lista de requisitos seleccionados</returns>
+	<remarks></remarks>
+</member><member name="M:UI.uCtrlModificarTipoBeca.btnCancelar_Click(System.Object,System.EventArgs)">
+	<summary>
+ Método que programa el botón de "Cancelar" del formulario de modificar tipo de beca
+ </summary>
+	<author>María Jesús Gutiérrez Calvo</author>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:UI.uCtrlModificarTipoBeca.editar_load(System.Object,System.EventArgs)">
+	<summary>
+ Método que carga los checklist de beneficios y requisitos con los que fueron seleccionados en el momento de crear el tipo de beca
+ para que puedan ser modificados.
+ Además trae lleno el campo del nombre, estado y descripción del repectivo tipo de beca.
+ </summary>
+	<author>María Jesús Gutiérrez Calvo</author>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:UI.uCtrlModificarTipoBeca.asociarBeneficios">
+	<summary>
+ Método que asocia los beneficios a un tipo de beca,
+ recorre el checklist por medio de un for para poder ver cuales fueron marcados y traerlos marcados por medio de true en el 
+ momento de modificar un tipo de beca
+ </summary>
+	<author>María Jesús Gutiérrez Calvo</author>
+	<remarks></remarks>
+</member><member name="M:UI.uCtrlModificarTipoBeca.asociarRequisitos">
+	<summary>
+ Método que asocia los requisitos a un tipo de beca
+ recorre el checklist pormedio de un for para ver cuales requisitos fueron marcados y ponerlos en true
+ para en el momento de modificar un tipo de beca estos vengan marcados en el formulario.
+ </summary>
+	<author>María Jesús Gutiérrez Calvo</author>
+	<remarks></remarks>
+</member><member name="M:UI.uCtrlModificarTipoBeca.obtenerRequisitos">
+	<summary>
+ Método que obtiene los requisitos marcados en el checklist de requisitos y los agrega a una lista de requisitos que mantiene solo 
+ los id de estos.
+ </summary>
+	<author>María Jesús Gutiérrez Calvo</author>
+	<remarks></remarks>
+</member><member name="M:UI.uCtrlModificarTipoBeca.obtenerBeneficios">
+	<summary>
+ Método que obtiene los beneficios marcados en un checklist de beneficios y los agrega a una lista de beneficios que mantiene solo 
+ los id de los beneficios.
+ </summary>
+	<author>María Jesús Gutiérrez Calvo</author>
+	<remarks></remarks>
+</member><member name="M:UI.uCtrlModificarTipoBeca.refrecarLista(UI.uCtrlBuscarTipoBeca)">
+	<summary>
+ Método que refresca la lista de los tipos de beca en la pantalla de buscar tipo de beca.
+ </summary>
+	<author>María Jesús Gutiérrez Calvo</author>
+	<param name="puctrl"></param>
+	<remarks></remarks>
 </member><member name="T:UI.DB_Proyecto2DataSet3.Tb_BecasDataTable">
 	<summary>
 Represents the strongly named DataTable class.
@@ -4868,6 +5052,48 @@ TableAdapterManager is used to coordinate TableAdapters in the dataset to enable
 	<summary>Método que se encarga de buscar un curso en específico</summary>
 	<param name="parametro">Nombre o código mediante el cual se filtra la búsqueda</param>
 	<autor>Valeria Ramírez</autor>
+</member><member name="M:UI.uCtrlCrearTipoBeca.setListas(System.Collections.Generic.List{EntitiesLayer.Beneficio})">
+	<summary>
+ Método que setea las listad de los beneficios
+ </summary>
+	<author>María Jesús Gutiérrez Calvo</author>
+	<param name="plista">lista de beneficios</param>
+	<remarks></remarks>
+</member><member name="M:UI.uCtrlCrearTipoBeca.setListasR(System.Collections.Generic.List{EntitiesLayer.Requisito})">
+	<summary>
+ Método que setea la lista de requisitos
+ </summary>
+	<author>María Jesús Gutiérrez Calvo</author>
+	<param name="plistaR">lista de requisitos</param>
+	<remarks></remarks>
+</member><member name="M:UI.uCtrlCrearTipoBeca.btnAñadir_Click(System.Object,System.EventArgs)">
+	<summary>
+ Método que programa el botón "Añadir" del formulario Crear tipo de beca
+ agrega los datos del tipo de beca por medio del gestor tipo de beca
+ guarda los cambios y asigna los benficios y requisitos a el tipo de beca creado.
+ </summary>
+	<author>María Jesús Gutiérrez Calvo</author>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:UI.uCtrlCrearTipoBeca.btnBeneficios_Click(System.Object,System.EventArgs)">
+	<summary>
+ Método que programa el botón de beneficios, este abre la pantalla de los beneficios disponibles que se pueden seleccionar 
+ para el tipo de beca que se va a crear.
+ </summary>
+	<author>María Jesús Gutiérrez Calvo</author>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:UI.uCtrlCrearTipoBeca.btnRequisitos_Click(System.Object,System.EventArgs)">
+	<summary>
+ Método que programa el botón de requisitos, este abre la pantalla de los requisitos disponibles para asignarle a ese tipo de beca
+ a crear.
+ </summary>
+	<author>María Jesús Gutiérrez Calvo</author>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
 </member><member name="M:UI.uCtrlListarRol.ListarRoles">
 	<summary> Este metodo lista los roles</summary>
 	<author>Rodny Castro Mathews </author>

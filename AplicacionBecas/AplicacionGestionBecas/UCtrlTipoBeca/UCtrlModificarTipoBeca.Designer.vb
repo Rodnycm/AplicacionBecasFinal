@@ -99,7 +99,7 @@ Partial Class uCtrlModificarTipoBeca
         Me.Label3.Font = New System.Drawing.Font("Segoe UI Light", 12.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(198, -35)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(92, 23)
+        Me.Label3.Size = New System.Drawing.Size(94, 23)
         Me.Label3.TabIndex = 80
         Me.Label3.Text = "Descripción"
         '
@@ -117,7 +117,7 @@ Partial Class uCtrlModificarTipoBeca
         Me.Label4.Font = New System.Drawing.Font("Segoe UI Light", 12.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(-25, -35)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(68, 23)
+        Me.Label4.Size = New System.Drawing.Size(71, 23)
         Me.Label4.TabIndex = 76
         Me.Label4.Text = "Nombre"
         '

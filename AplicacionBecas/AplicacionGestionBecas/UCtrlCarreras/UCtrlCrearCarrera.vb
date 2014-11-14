@@ -67,10 +67,14 @@ Public Class uCtrlCrearCarrera
 
             listaDirectores = objGestorCarrera.consultarDirectoresAcademicos()
 
-            For i As Integer = 0 To listaDirectores.Count - 1
+            If listaDirectores Is Nothing Then
 
-                cmbAcademico.Items.Add(listaDirectores(i).primerNombre & " " & listaDirectores(i).primerApellido & " " & listaDirectores(i).segundoApellido)
-            Next
+            Else
+                For i As Integer = 0 To listaDirectores.Count - 1
+
+                    cmbAcademico.Items.Add(listaDirectores(i).primerNombre & " " & listaDirectores(i).primerApellido & " " & listaDirectores(i).segundoApellido)
+                Next
+            End If
 
         Catch ex As Exception
 

@@ -110,9 +110,9 @@ Public Class uCtrlModificarTipoBeca
     ''' <remarks></remarks>
     Private Sub btnModificar_Click(sender As Object, e As EventArgs)
         Try
-            Dim nombre As String = txtNombre.Text
+            Dim nombre As String = TextBox2.Text
             Dim estado As String = cmbEstado.Text
-            Dim descripcion As String = txtDescripcion.Text
+            Dim descripcion As String = TextBox1.Text
 
             Dim listaIdBeneficiosSeleccionados As List(Of Integer) = obtenerBeneficiosSeleccionados()
             Dim listaIdRequisitosSeleccionados As List(Of Integer) = obtenerRequisitosSeleccionados()
@@ -199,9 +199,9 @@ Public Class uCtrlModificarTipoBeca
         RequisitosRelacionados()
         BeneficiosRelacionados()
 
-        txtNombre.Text = objTipo.nombre
+        TextBox2.Text = objTipo.nombre
         cmbEstado.SelectedText = objTipo.estado
-        txtDescripcion.Text = objTipo.descripcion
+        TextBox1.Text = objTipo.descripcion
 
         asociarBeneficios()
         asociarRequisitos()
@@ -297,6 +297,10 @@ Public Class uCtrlModificarTipoBeca
 
     End Sub
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
+        Me.Dispose()
+    End Sub
+
+    Private Sub btnCancelar_Click_1(sender As Object, e As EventArgs) Handles btnCancelar.Click
         Me.Dispose()
     End Sub
 End Class

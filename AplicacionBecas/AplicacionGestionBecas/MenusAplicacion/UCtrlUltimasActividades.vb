@@ -2,30 +2,37 @@
 
 Public Class UCtrlUltimasActividades
 
-    'Public Sub listarRegistros()
+    Public Sub listarRegistros()
 
-    '    Try
+        Try
 
-    '        dgvBitacora.Rows.Clear()
-    '        Dim listaAcciones As List(Of RegistroAccion) = objGestorBitacora.consultarBitacoraAccionesFecha()
+            dgvBitacora.Rows.Clear()
+            Dim listaAcciones As List(Of RegistroAccion) = objGestorBitacora.consultarBitacoraAccionesFecha()
 
-    '        For k As Integer = 0 To listaAcciones.Count - 1
+            If listaAcciones Is Nothing Then
 
-    '            dgvBitacora.Rows.Add(1)
-    '            dgvBitacora.Rows(k).Cells(1).Value = listaAcciones.Item(k).nombreUsuario
-    '            dgvBitacora.Rows(k).Cells(2).Value = listaAcciones.Item(k).descripcion
+            Else
 
-    '        Next
+                For k As Integer = 0 To listaAcciones.Count - 1
 
-    '    Catch ex As Exception
+                    dgvBitacora.Rows.Add(1)
+                    dgvBitacora.Rows(k).Cells(1).Value = listaAcciones.Item(k).nombreUsuario
+                    dgvBitacora.Rows(k).Cells(2).Value = listaAcciones.Item(k).descripcion
 
-    '       dgvBitacora.Rows.Clear()
+                Next
 
-    '    End Try
+            End If
 
-    'End Sub
+        Catch ex As Exception
+
+            dgvBitacora.Rows.Clear()
+
+        End Try
+
+    End Sub
 
     Private Sub UCtrlUltimasActividades_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'listarRegistros()
+        listarRegistros()
     End Sub
+
 End Class

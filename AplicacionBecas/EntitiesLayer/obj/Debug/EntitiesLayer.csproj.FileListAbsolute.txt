@@ -1,29 +1,5 @@
-C:\Users\Valeria\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\EntitiesLayer\bin\Debug\EntitiesLayer.dll
-C:\Users\Valeria\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\EntitiesLayer\bin\Debug\EntitiesLayer.pdb
-C:\Users\Valeria\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\EntitiesLayer\bin\Debug\EASendMail45.dll
-C:\Users\Valeria\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\EntitiesLayer\obj\Debug\EntitiesLayer.csprojResolveAssemblyReference.cache
-C:\Users\Valeria\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\EntitiesLayer\obj\Debug\EntitiesLayer.dll
-C:\Users\Valeria\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\EntitiesLayer\obj\Debug\EntitiesLayer.pdb
 C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\EntitiesLayer\bin\Debug\EntitiesLayer.dll
 C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\EntitiesLayer\bin\Debug\EntitiesLayer.pdb
 C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\EntitiesLayer\bin\Debug\EASendMail45.dll
 C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\EntitiesLayer\obj\Debug\EntitiesLayer.dll
 C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\EntitiesLayer\obj\Debug\EntitiesLayer.pdb
-C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecas\EntitiesLayer\bin\Debug\EntitiesLayer.dll
-C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecas\EntitiesLayer\bin\Debug\EntitiesLayer.pdb
-C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecas\EntitiesLayer\bin\Debug\EASendMail45.dll
-C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecas\EntitiesLayer\obj\Debug\EntitiesLayer.dll
-C:\Users\Prophet\Desktop\AplicacionBecasFinal\AplicacionBecas\EntitiesLayer\obj\Debug\EntitiesLayer.pdb
-C:\Users\Mathias\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\EntitiesLayer\bin\Debug\EntitiesLayer.dll
-C:\Users\Mathias\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\EntitiesLayer\bin\Debug\EntitiesLayer.pdb
-C:\Users\Mathias\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\EntitiesLayer\bin\Debug\EASendMail45.dll
-C:\Users\Mathias\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\EntitiesLayer\obj\Debug\EntitiesLayer.csprojResolveAssemblyReference.cache
-C:\Users\Mathias\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\EntitiesLayer\obj\Debug\EntitiesLayer.dll
-C:\Users\Mathias\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\EntitiesLayer\obj\Debug\EntitiesLayer.pdb
-C:\Users\Rodny Castro\Desktop\AplicacionBecasFinal\AplicacionBecas\EntitiesLayer\bin\Debug\EntitiesLayer.dll
-C:\Users\Rodny Castro\Desktop\AplicacionBecasFinal\AplicacionBecas\EntitiesLayer\bin\Debug\EntitiesLayer.pdb
-C:\Users\Rodny Castro\Desktop\AplicacionBecasFinal\AplicacionBecas\EntitiesLayer\bin\Debug\EASendMail45.dll
-C:\Users\Rodny Castro\Desktop\AplicacionBecasFinal\AplicacionBecas\EntitiesLayer\obj\Debug\EntitiesLayer.csprojResolveAssemblyReference.cache
-C:\Users\Rodny Castro\Desktop\AplicacionBecasFinal\AplicacionBecas\EntitiesLayer\obj\Debug\EntitiesLayer.dll
-C:\Users\Rodny Castro\Desktop\AplicacionBecasFinal\AplicacionBecas\EntitiesLayer\obj\Debug\EntitiesLayer.pdb
-C:\Users\Rodny Castro\Documents\GitHub\AplicacionBecasFinal\AplicacionBecas\EntitiesLayer\obj\Debug\EntitiesLayer.csprojResolveAssemblyReference.cache

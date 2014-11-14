@@ -3,6 +3,7 @@ Public Class uCtrlAsignarCursosCarrera
     Dim listaCursos As New List(Of Curso)
     Dim listaCursosSeleccionados As New List(Of Curso)
     Dim pantallaCurso As uCtrlCrearCarrera
+    Dim alerta As UctrlAlerta
 
     Private Sub btnAsignar_Click(sender As Object, e As EventArgs) Handles btnAsignar.Click
         Dim indexSeleccionado As Integer = 0
@@ -16,8 +17,14 @@ Public Class uCtrlAsignarCursosCarrera
 
 
             Next indexSeleccionado
-        Catch
-            MsgBox("Debe escoger almenos un curso")
+        Catch ex As Exception
+            alerta = New UctrlAlerta()
+            alerta.txtAlerta.Text = ex.Message
+            alerta.Location = New Point(400, 250)
+            FrmIniciarSesion.principal.Controls.Add(alerta)
+            alerta.BringToFront()
+            alerta.Show()
+            'MsgBox("Debe escoger almenos una opcion")
         End Try
 
        

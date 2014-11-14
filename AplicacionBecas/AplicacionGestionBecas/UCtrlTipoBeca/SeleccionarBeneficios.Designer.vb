@@ -43,7 +43,7 @@ Partial Class SeleccionarBeneficios
         '
         Me.btnAñadir.BackColor = System.Drawing.Color.Transparent
         Me.btnAñadir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAñadir.Font = New System.Drawing.Font("Segoe UI Light", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAñadir.Font = New System.Drawing.Font("Segoe UI Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAñadir.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(248, Byte), Integer))
         Me.btnAñadir.Location = New System.Drawing.Point(307, 266)
         Me.btnAñadir.Name = "btnAñadir"
@@ -56,7 +56,7 @@ Partial Class SeleccionarBeneficios
         '
         Me.btnCancelar.BackColor = System.Drawing.Color.Transparent
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCancelar.Font = New System.Drawing.Font("Segoe UI Light", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCancelar.Font = New System.Drawing.Font("Segoe UI Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(248, Byte), Integer))
         Me.btnCancelar.Location = New System.Drawing.Point(215, 266)
         Me.btnCancelar.Name = "btnCancelar"

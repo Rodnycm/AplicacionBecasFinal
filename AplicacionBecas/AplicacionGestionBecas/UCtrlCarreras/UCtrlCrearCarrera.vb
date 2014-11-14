@@ -115,6 +115,7 @@ Public Class uCtrlCrearCarrera
             objGestorCarrera.agregarCarrera(nombre, codigo, color, idDirector, listaC)
             objGestorCarrera.guardarCambios()
 
+
             mantenimientoCarreras.listarCarreras()
 
         Catch ex As Exception

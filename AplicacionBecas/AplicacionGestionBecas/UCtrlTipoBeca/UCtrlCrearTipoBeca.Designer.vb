@@ -25,7 +25,6 @@ Partial Class uCtrlCrearTipoBeca
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.txtEstado = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtDescripcion = New System.Windows.Forms.TextBox()
         Me.btnRequisitos = New System.Windows.Forms.Button()
@@ -34,16 +33,17 @@ Partial Class uCtrlCrearTipoBeca
         Me.btnAñadir = New System.Windows.Forms.Button()
         Me.btnCerrar = New System.Windows.Forms.Button()
         Me.Label13 = New System.Windows.Forms.Label()
+        Me.cmbEstado = New System.Windows.Forms.ComboBox()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI Light", 12.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI Light", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(31, 88)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(68, 23)
+        Me.Label1.Size = New System.Drawing.Size(71, 23)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Nombre"
         '
@@ -58,28 +58,21 @@ Partial Class uCtrlCrearTipoBeca
         '
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI Light", 12.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI Light", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(31, 125)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(57, 23)
+        Me.Label2.Size = New System.Drawing.Size(59, 23)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Estado"
-        '
-        'txtEstado
-        '
-        Me.txtEstado.Location = New System.Drawing.Point(137, 129)
-        Me.txtEstado.Name = "txtEstado"
-        Me.txtEstado.Size = New System.Drawing.Size(132, 20)
-        Me.txtEstado.TabIndex = 3
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Segoe UI Light", 12.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI Light", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(31, 169)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(92, 23)
+        Me.Label3.Size = New System.Drawing.Size(94, 23)
         Me.Label3.TabIndex = 4
         Me.Label3.Text = "Descripción"
         '
@@ -94,7 +87,7 @@ Partial Class uCtrlCrearTipoBeca
         '
         Me.btnRequisitos.BackColor = System.Drawing.Color.White
         Me.btnRequisitos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnRequisitos.Font = New System.Drawing.Font("Segoe UI Light", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRequisitos.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnRequisitos.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(248, Byte), Integer))
         Me.btnRequisitos.Location = New System.Drawing.Point(14, 265)
         Me.btnRequisitos.Name = "btnRequisitos"
@@ -107,7 +100,7 @@ Partial Class uCtrlCrearTipoBeca
         '
         Me.btnBeneficios.BackColor = System.Drawing.Color.White
         Me.btnBeneficios.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBeneficios.Font = New System.Drawing.Font("Segoe UI Light", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBeneficios.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBeneficios.ForeColor = System.Drawing.SystemColors.Highlight
         Me.btnBeneficios.Location = New System.Drawing.Point(105, 265)
         Me.btnBeneficios.Name = "btnBeneficios"
@@ -120,7 +113,7 @@ Partial Class uCtrlCrearTipoBeca
         '
         Me.btnCancelar.BackColor = System.Drawing.Color.White
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCancelar.Font = New System.Drawing.Font("Segoe UI Light", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCancelar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(248, Byte), Integer))
         Me.btnCancelar.Location = New System.Drawing.Point(227, 265)
         Me.btnCancelar.Name = "btnCancelar"
@@ -133,7 +126,7 @@ Partial Class uCtrlCrearTipoBeca
         '
         Me.btnAñadir.BackColor = System.Drawing.Color.White
         Me.btnAñadir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAñadir.Font = New System.Drawing.Font("Segoe UI Light", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAñadir.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAñadir.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(248, Byte), Integer))
         Me.btnAñadir.Location = New System.Drawing.Point(330, 265)
         Me.btnAñadir.Name = "btnAñadir"
@@ -166,6 +159,15 @@ Partial Class uCtrlCrearTipoBeca
         Me.Label13.TabIndex = 37
         Me.Label13.Text = "Crear"
         '
+        'cmbEstado
+        '
+        Me.cmbEstado.FormattingEnabled = True
+        Me.cmbEstado.Items.AddRange(New Object() {"Activo", "Inactivo"})
+        Me.cmbEstado.Location = New System.Drawing.Point(137, 126)
+        Me.cmbEstado.Name = "cmbEstado"
+        Me.cmbEstado.Size = New System.Drawing.Size(132, 21)
+        Me.cmbEstado.TabIndex = 38
+        '
         'uCtrlCrearTipoBeca
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -173,6 +175,7 @@ Partial Class uCtrlCrearTipoBeca
         Me.BackColor = System.Drawing.Color.Transparent
         Me.BackgroundImage = Global.UI.My.Resources.Resources.tablaFinalMedianaAzul4
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Controls.Add(Me.cmbEstado)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.btnAñadir)
@@ -181,7 +184,6 @@ Partial Class uCtrlCrearTipoBeca
         Me.Controls.Add(Me.btnRequisitos)
         Me.Controls.Add(Me.txtDescripcion)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.txtEstado)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.txtNombre)
         Me.Controls.Add(Me.Label1)
@@ -195,7 +197,6 @@ Partial Class uCtrlCrearTipoBeca
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents txtNombre As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents txtEstado As System.Windows.Forms.TextBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents txtDescripcion As System.Windows.Forms.TextBox
     Friend WithEvents btnRequisitos As System.Windows.Forms.Button
@@ -204,5 +205,6 @@ Partial Class uCtrlCrearTipoBeca
     Friend WithEvents btnAñadir As System.Windows.Forms.Button
     Friend WithEvents btnCerrar As System.Windows.Forms.Button
     Friend WithEvents Label13 As System.Windows.Forms.Label
+    Friend WithEvents cmbEstado As System.Windows.Forms.ComboBox
 
 End Class

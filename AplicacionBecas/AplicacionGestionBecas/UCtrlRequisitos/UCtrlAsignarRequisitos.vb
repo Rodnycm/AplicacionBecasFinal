@@ -3,6 +3,7 @@ Public Class uCtrlAsignarRequisitos
     Dim listaRequisitos As New List(Of Requisito)
     Dim listaRequisitosSeleccionados As New List(Of Requisito)
     Dim pantalla As uCtrlCrearTipoBeca
+    Dim alerta As UctrlAlerta
    
 
     Private Sub btnAsignar_Click(sender As Object, e As EventArgs) Handles btnAsignar.Click
@@ -17,8 +18,14 @@ Public Class uCtrlAsignarRequisitos
 
 
             Next indexSeleccionado
-        Catch
-            MsgBox("Debe escoger almenos una opcion")
+        Catch ex As Exception
+            alerta = New UctrlAlerta()
+            alerta.txtAlerta.Text = ex.Message
+            alerta.Location = New Point(400, 250)
+            FrmIniciarSesion.principal.Controls.Add(alerta)
+            alerta.BringToFront()
+            alerta.Show()
+            'MsgBox("Debe escoger almenos una opcion")
         End Try
 
         'For i As Integer = 0 To listaRequisitosSeleccionados.Count - 1

@@ -3,6 +3,7 @@ Public Class SeleccionarBeneficios
     Dim listaBeneficios As New List(Of Beneficio)
     Dim listaBeneficiosSeleccionados As New List(Of Beneficio)
     Dim pantalla As uCtrlCrearTipoBeca
+    Dim alerta As UctrlAlerta
 
     Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAñadir.Click
         Dim indexSeleccionado As Integer = 0
@@ -13,8 +14,14 @@ Public Class SeleccionarBeneficios
                 listaBeneficiosSeleccionados.Add(listaBeneficios.Item(indexSeleccionado))
 
             Next indexSeleccionado
-        Catch
-            MsgBox("Debe escoger almenos una opcion")
+        Catch ex As Exception
+            alerta = New UctrlAlerta()
+            alerta.txtAlerta.Text = ex.Message
+            alerta.Location = New Point(400, 250)
+            FrmIniciarSesion.principal.Controls.Add(alerta)
+            alerta.BringToFront()
+            alerta.Show()
+            'MsgBox("Debe escoger almenos una opcion")
         End Try
 
 

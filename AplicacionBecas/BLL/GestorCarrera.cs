@@ -158,6 +158,15 @@ namespace BLL
 
             CarreraRepository.Instance.Save();
         }
+        public void asignarCursosCarrera(List<Curso>listaCursos, Carrera objCarrera)
+        {
+            CursoRepository.objCarrera = objCarrera;
+            foreach (Curso objCurso in listaCursos)
+            {
+                CursoRepository.Instance.Insert(objCurso);
+            }
+            CursoRepository.Instance.asignarCurso(objCarrera);
+        }
     }
 }
 

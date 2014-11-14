@@ -393,6 +393,12 @@ namespace DAL.Repositories
         //{
 
         //}
+        /// <summary>
+        /// Método que asocia requisitos a un tipo de beca
+        /// </summary>
+        /// <author>María Jesús Gutiérrez Calvo</author>
+        /// <param name="pid">id del tipo de beca al cual se desea asignar requisitos</param>
+        /// <returns>retorna una lista de requisitos</returns>
         private List<Requisito> asociarRequisitos(int pid)
         {
             try
@@ -431,6 +437,12 @@ namespace DAL.Repositories
                 throw ex;
             }
         }
+        /// <summary>
+        /// Método que asocia beneficios a un tipo de beca
+        /// </summary>
+        /// <author>María Jesús Gutiérrez Calvo</author>
+        /// <param name="pid">id del tipo de beca al que se le asocia los beneficios</param>
+        /// <returns>retorna una lista de beneficios</returns>
         private List<Beneficio> asociarBeneficios(int pid)
         {
             try
@@ -460,6 +472,10 @@ namespace DAL.Repositories
             }
         }
 
+        /// <summary>
+        /// Método que registra una acción realizada.
+        /// </summary>
+        /// <param name="pactividad"></param>
         public void registrarAccion(string pactividad)
         {
 
@@ -491,7 +507,12 @@ namespace DAL.Repositories
 
 
         }
-
+        /// <summary>
+        /// Método que busca los beneficios asociados a un tipo de beca por medio del id del tipo de beca
+        /// </summary>
+        /// <author>María Jesús Gutiérrez Calvo</author>
+        /// <param name="pid">id del tipo de beca con el que se busca los beneficios que están asociados a ese tipo de beca en específico</param>
+        /// <returns>retorna una lista de beneficios</returns>
             public List<Beneficio> buscarBeneficiosRelacionadosTipoBeca(int pid)
         {
             try
@@ -521,6 +542,12 @@ namespace DAL.Repositories
 
         public int id { get; set; }
 
+        /// <summary>
+        /// Método que busca los requisitos que están relacionados a un tipo de beca en específico
+        /// </summary>
+        /// <author>María Jesús Gutiérrez Calvo</author>
+        /// <param name="pid"> id del tipo de beca con el que se buscan los requisitos que están relacionados a ese id del tipo de beca</param>
+        /// <returns>retorna una lista de requisitos</returns>
         public List<Requisito> buscarRequisitosRelacionadosTipoBeca(int pid)
         {
             try
@@ -549,6 +576,11 @@ namespace DAL.Repositories
                 throw e;
             }
         }
+        /// <summary>
+        /// Método que elimina los requisitos relacionados a un tipo de beca
+        /// </summary>
+        /// <author>María Jesús Gutiérrez Calvo</author>
+        /// <param name="id">id del tipo de beca con el que se busca los requisitos relacionados a ese tipo de beca</param>
         public void DeleteRequisitoTipoBeca(int id)
         {
             try
@@ -569,6 +601,11 @@ namespace DAL.Repositories
                 throw ex;
             }
         }
+        /// <summary>
+        /// Método que elimina los beneficios relacionados a ese tipo de beca
+        /// </summary>
+        /// <author>María Jesús Gutiérrez Calvo</author>
+        /// <param name="id">id del tipo de beca con el que se busca los beneficios asociados a ese tipo de beca</param>
         public void DeleteBeneficioTipoBeca(int id)
         {
             try

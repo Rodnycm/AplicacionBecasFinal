@@ -32,9 +32,12 @@ Partial Class uCtrlReporteRegistroAcciones
         Me.Tb_BitacoraAccionTableAdapter = New UI.DB_Proyecto2DataSetConsultarRegistroAccionesTableAdapters.Tb_BitacoraAccionTableAdapter()
         Me.DB_Proyecto2DataSet1 = New UI.DB_Proyecto2DataSet1()
         Me.DB_Proyecto2DataSet2 = New UI.DB_Proyecto2DataSet2()
+<<<<<<< HEAD
         Me.DB_Proyecto2DataSet3 = New UI.DB_Proyecto2DataSet3()
         Me.Tb_RolesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Tb_RolesTableAdapter = New UI.DB_Proyecto2DataSet3TableAdapters.Tb_RolesTableAdapter()
+=======
+>>>>>>> origin/mariaVFinal
         CType(Me.Tb_BitacoraAccionBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DB_Proyecto2DataSetConsultarRegistroAcciones, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
